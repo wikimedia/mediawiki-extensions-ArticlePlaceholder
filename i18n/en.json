@@ -1,0 +1,10 @@
+{
+    "@metadata": {
+        "authors": ["Lucie-Aimée Kaffee"]
+    },
+    "articleplaceholder-desc": "This is an example extension using the BoilerPlate.",
+    "articleplaceholder-fancyunicorn": "Fancy Unicorn",
+    "articleplaceholder-fancyunicorn-intro": "This is the SpecialPage Fancy Unicorn of the ArticlePlaceholder extension. Much fancy, very unicorn. (so exciting)",
+	"articleplaceholder-fancyunicorn-entityid": "Enter a entity ID to get a auto generated Article Placeholder.",
+	"articleplaceholder-fancyunicorn-submit": "craft"
+}
