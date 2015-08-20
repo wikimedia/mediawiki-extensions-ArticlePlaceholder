@@ -1,29 +1,33 @@
 <?php
+
 /**
  * The FancyUnicorn SpecialPage for the ArticlePlaceholder extension
  *
  * @ingroup Extensions
  * @author Lucie-Aimée Kaffee
  * @license GNU General Public Licence 2.0 or later
- * 
+ *
  */
+
 namespace ArticlePlaceholder\Specials;
 
 use Html;
 use Exception;
 use Wikibase\Client\WikibaseClient;
-use Wikibase\DataModel\Entity\EntityIdParser;
-use Wikibase\DataModel\Entity\EntityIdParsingException;
 use Wikibase\DataModel\Entity\ItemId;
+use Wikibase\DataModel\Entity\EntityId;
+use Wikibase\DataModel\Entity\EntityIdParser;
+use Wikibase\Lib\Store\LanguageFallbackLabelDescriptionLookupFactory;
+use Wikibase\Lib\Store\SiteLinkLookup;
+use SiteStore;
 use SpecialPage;
 
 class SpecialFancyUnicorn extends SpecialPage {
 
 	public static function newFromGlobalState() {
 		$wikibaseClient = WikibaseClient::getDefaultInstance();
-
 		return new self(
-				$wikibaseClient->getEntityIdParser()
+			$wikibaseClient->getEntityIdParser(), $wikibaseClient->getLanguageFallbackLabelDescriptionLookupFactory(), $wikibaseClient->getStore()->getSiteLinkLookup(), $wikibaseClient->getSiteStore()
 		);
 	}
 
@@ -33,10 +37,28 @@ class SpecialFancyUnicorn extends SpecialPage {
 	private $idParser;
 
 	/**
+	 * @var LanguageFallbackLabelDescriptionLookupFactory
+	 */
+	private $lfldlf;
+
+	/**
+	 * @var SitelinkLookup
+	 */
+	private $sitelinkLookup;
+
+	/**
+	 * @var SiteStore
+	 */
+	private $siteStore;
+
+	/**
 	 * Initialize the special page.
 	 */
-	public function __construct( EntityIdParser $idParser ) {
+	public function __construct( EntityIdParser $idParser, LanguageFallbackLabelDescriptionLookupFactory $lfldlf, SiteLinkLookup $sitelinkLookup, SiteStore $siteStore ) {
 		$this->idParser = $idParser;
+		$this->lfldlf = $lfldlf;
+		$this->sitelinkLookup = $sitelinkLookup;
+		$this->siteStore = $siteStore;
 		parent::__construct( 'FancyUnicorn' );
 	}
 
@@ -45,11 +67,10 @@ class SpecialFancyUnicorn extends SpecialPage {
 	 *
 	 */
 	public function execute( $sub ) {
-		$out = $this->getOutput();
-
-		$out->setPageTitle( $this->msg( 'articleplaceholder-fancyunicorn' ) );
+		$this->getOutput()->setPageTitle( $this->msg( 'articleplaceholder-fancyunicorn' ) );
 		if ( $this->getItemIdParam( 'entityid', $sub ) != null ) {
-			$out->addWikiText( 'Testing test test' );
+			$entityId = $this->getItemIdParam( 'entityid', $sub );
+			$this->showPlaceholder( $entityId );
 		} else {
 			//create the html elements
 			$this->createForm();
@@ -58,29 +79,27 @@ class SpecialFancyUnicorn extends SpecialPage {
 
 	/**
 	 *
-	 * @todo add wikibase group?
+	 * @todo add to wikibase group?
 	 */
 	protected function getGroupName() {
 		return 'other';
 	}
 
 	/**
-	 * first function to add a form to enter an entity id and a submit button
+	 * Create html elements
 	 */
 	protected function createForm() {
-		//add css style thing (in Wikibase OutputPage#addModuleStyles
-
 		// Form header
 		$this->getOutput()->addHTML(
-				Html::openElement(
-					'form', array(
+			Html::openElement(
+				'form', array(
 					'method' => 'get',
 					'action' => $this->getPageTitle()->getFullUrl(),
 					'name' => 'ap-fancyunicorn',
 					'id' => 'ap-fancyunicorn-form1',
 					'class' => 'ap-form'
-					)
 				)
+			)
 		);
 
 		// Form elements
@@ -88,13 +107,13 @@ class SpecialFancyUnicorn extends SpecialPage {
 
 		// Form body
 		$this->getOutput()->addHTML(
-				Html::input(
-						'submit', $this->msg( 'articleplaceholder-fancyunicorn-submit' )->text(), 'submit', array(
+			Html::input(
+				'submit', $this->msg( 'articleplaceholder-fancyunicorn-submit' )->text(), 'submit', array(
 					'id' => 'submit'
-					)
 				)
-				. Html::closeElement( 'fieldset' )
-				. Html::closeElement( 'form' )
+			)
+			. Html::closeElement( 'fieldset' )
+			. Html::closeElement( 'form' )
 		);
 	}
 
@@ -106,19 +125,18 @@ class SpecialFancyUnicorn extends SpecialPage {
 	 */
 	protected function getFormElements() {
 		return Html::rawElement(
-					'p', array(),
-					$this->msg( 'articleplaceholder-fancyunicorn-intro' )->parse()
+						'p', array(), $this->msg( 'articleplaceholder-fancyunicorn-intro' )->parse()
 				)
 				. Html::element( 'br' )
 				. Html::element(
-					'label', array(
+						'label', array(
 					'for' => 'ap-fancyunicorn-entityid',
 					'class' => 'ap-label'
-					), $this->msg( 'articleplaceholder-fancyunicorn-entityid' )->text()
+						), $this->msg( 'articleplaceholder-fancyunicorn-entityid' )->text()
 				)
 				. Html::element( 'br' )
 				. Html::input(
-					'entityid', $this->getRequest()->getVal( 'entityid' ), 'text', array(
+						'entityid', $this->getRequest()->getVal( 'entityid' ), 'text', array(
 					'class' => 'ap-input',
 					'id' => 'ap-fancyunicorn-entityid'
 						)
@@ -148,7 +166,7 @@ class SpecialFancyUnicorn extends SpecialPage {
 		try {
 			$id = $this->idParser->parse( $rawId );
 			if ( !( $id instanceof ItemId ) ) {
-					throw new Exception();
+				throw new Exception();
 			}
 
 			return $id;
@@ -156,6 +174,45 @@ class SpecialFancyUnicorn extends SpecialPage {
 			// @todo proper Exception Handling
 			$this->getOutput()->addWikiText( $ex->getMessage() );
 		}
+	}
+
+	/**
+	 * Show placeholder and include template to call lua module
+	 * @param ItemId $entityId
+	 */
+	private function showPlaceholder( ItemId $entityId ) {
+		$this->getOutput()->addWikiText( "{{fancyUnicorn|" . $entityId->getSerialization() . "}}" );
+		$this->showTitle( $entityId );
+		$this->showLanguageLinks( $entityId );
+	}
+
+	/**
+	 * Show label as page title
+	 * @param EntityId $entityId
+	 */
+	private function showTitle( ItemId $entityId ) {
+		$array[] = $entityId;
+		$label = $this->lfldlf->newLabelDescriptionLookup( $this->getLanguage(), $array )->getLabel( $entityId )->getText();
+		$this->getOutput()->setPageTitle( $label );
+	}
+
+	/**
+	 * Set language links
+	 * @param ItemId $entityId
+	 * @todo set links to other projects in sidebar, too!
+	 */
+	private function showLanguageLinks( ItemId $entityId ) {
+		$sitelinks = $this->sitelinkLookup->getSiteLinksForItem( $entityId );
+		$languagelinks = array();
+		foreach ( $sitelinks as $sl ) {
+			$languageCode = $this->siteStore->getSite( ($sl->getSiteId() ) )->getLanguageCode();
+
+			if ( $languageCode != null ) {
+				$languagelinks[$languageCode] = $languageCode . ':' . $sl->getPageName();
+			}
+		}
+
+		$this->getOutput()->setLanguageLinks( $languagelinks );
 	}
 
 }
