@@ -1,9 +1,11 @@
 {
-    "@metadata": {
-        "authors": ["Lucie-Aimée Kaffee"]
-    },
-    "articleplaceholder-desc": "{{desc}}",
-    "articleplaceholder-fancyunicorn": "Title of SpecialFancyUnicorn.",
+	"@metadata": {
+		"authors": [
+			"Lucie-Aimée Kaffee"
+		]
+	},
+	"articleplaceholder-desc": "{{desc|what=extension|name=ArticlePlaceholder|url=https://www.mediawiki.org/wiki/Extension:ArticlePlaceholder}}",
+	"articleplaceholder-fancyunicorn": "Title of SpecialFancyUnicorn.",
 	"articleplaceholder-fancyunicorn-intro": "Intro paragraph shown on SpecialFancyUnicorn.",
 	"articleplaceholder-fancyunicorn-entityid": "Text to encourage the user to enter an entity id.",
 	"articleplaceholder-fancyunicorn-submit": "Label on the submit button."
