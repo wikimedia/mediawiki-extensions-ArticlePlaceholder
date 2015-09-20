@@ -4,6 +4,7 @@
 			"Lucie-Aimée Kaffee"
 		]
 	},
+	"fancyunicorn": "{{doc-special|fancyunicorn}}",
 	"articleplaceholder-desc": "{{desc|what=extension|name=ArticlePlaceholder|url=https://www.mediawiki.org/wiki/Extension:ArticlePlaceholder}}",
 	"articleplaceholder-fancyunicorn": "Title of SpecialFancyUnicorn.",
 	"articleplaceholder-fancyunicorn-intro": "Intro paragraph shown on SpecialFancyUnicorn.",

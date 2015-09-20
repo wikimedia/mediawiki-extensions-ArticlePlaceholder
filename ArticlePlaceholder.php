@@ -30,6 +30,7 @@ $dirbasename = basename( $dir );
 $wgAutoloadClasses[ 'ArticlePlaceholder\Specials\SpecialFancyUnicorn' ] = $dir . '/Specials/SpecialFancyUnicorn.php';
 
 $wgMessagesDirs[ 'ArticlePlaceholder' ] = __DIR__ . '/i18n';
+$wgExtensionMessagesFiles['ArticlePlaceholderAliases'] = __DIR__ . '/ArticlePlaceholder.alias.php';
 
 $wgSpecialPages[ 'FancyUnicorn' ] = array(
 	'ArticlePlaceholder\Specials\SpecialFancyUnicorn',
