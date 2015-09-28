@@ -27,7 +27,9 @@ $wgExtensionCredits['other'][] = array(
 $dir = dirname( __FILE__ );
 $dirbasename = basename( $dir );
 
-$wgAutoloadClasses[ 'ArticlePlaceholder\Specials\SpecialFancyUnicorn' ] = $dir . '/Specials/SpecialFancyUnicorn.php';
+$wgAutoloadClasses['ArticlePlaceholder\Specials\SpecialFancyUnicorn'] = $dir . '/Specials/SpecialFancyUnicorn.php';
+$wgAutoloadClasses['ArticlePlaceholder\Hooks'] = __DIR__ . '/includes/Hooks.php';
+$wgHooks['ScribuntoExternalLibraryPaths'][] = '\ArticlePlaceholder\Hooks::registerScribuntoExternalLibraryPaths';
 
 $wgMessagesDirs[ 'ArticlePlaceholder' ] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['ArticlePlaceholderAliases'] = __DIR__ . '/ArticlePlaceholder.alias.php';

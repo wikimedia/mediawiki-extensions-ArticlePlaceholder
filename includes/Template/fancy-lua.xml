@@ -56,53 +56,24 @@
     <ns>828</ns>
     <id>18</id>
     <revision>
-      <id>244</id>
-      <parentid>243</parentid>
-      <timestamp>2015-08-21T13:26:51Z</timestamp>
+      <id>272</id>
+      <parentid>271</parentid>
+      <timestamp>2015-09-17T16:18:39Z</timestamp>
       <contributor>
         <ip>127.0.0.1</ip>
       </contributor>
       <model>Scribunto</model>
       <format>text/plain</format>
-      <text xml:space="preserve" bytes="1141">local p = {}
+      <text xml:space="preserve" bytes="178">local p = {}
 
 -- get the label of the local entity
 p.showData = function(frame)
-  local entityID = mw.text.trim( frame.args[1] or &quot;&quot; )
-  --if mw.wikibase.sitelink( entityID ) ~= &quot;&quot; then
-  --  return mw.wikibase.sitelink( entityID )
-  --end
-  local entity = mw.wikibase.getEntityObject( entityID )
-  --return entity:getLabel() .. &quot; \n &quot; .. mw.wikibase.description( entityID )
-  content = mw.wikibase.description( entityID )
-  title = entity:getLabel()
-  return content .. ' ' .. tostring( getFancyBox( getPropValuePairs( entity ), title ):getHtml() )
-end
-
-function getPropValuePairs( entity )
-  table = {}
-  for key,value in pairs( entity:getProperties() ) do
-    for k, v in pairs( entity:formatPropertyValues( value ) ) do
-      table[mw.wikibase.label(value)] = v
-    end
-  end
-  return table
-end
-
-function getFancyBox(table, title)
-	local capiunto = require 'capiunto'
-	fancybox = capiunto.create( {
-		title = tostring(title) ,
-		topStyle = 'background:#cfc;'
-	} )
-  --fancybox = tostring(fancybox:getHtml())
-  for key,value in pairs(table) do fancybox:addRow(key,value) end
-  --:addRow(&quot;lucie&quot;, &quot;testing&quot;)
-  return fancybox
+ entityRenderer = require( 'EntityRenderer' )
+ return entityRenderer.render( frame )
 end
 
 return p</text>
-      <sha1>7wycjtn9b556v9pf4bssl1dumtbqr52</sha1>
+      <sha1>raik6wqlcskycfu1y3hntowu9vyuu90</sha1>
     </revision>
   </page>
 </mediawiki>
