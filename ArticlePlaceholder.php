@@ -1,4 +1,5 @@
 <?php
+
 /**
  * AticlePlaceholder extension
  *
@@ -10,16 +11,12 @@
  * The license governing the extension code:
  * @license GNU General Public Licence 2.0 or later
  */
-
 $wgExtensionCredits['other'][] = array(
 	'path' => __FILE__,
-
 	'name' => 'ArticlePlaceholder',
-
 	'author' => array(
 		'Lucie-Aimée Kaffee',
 	),
-
 	'url' => 'https://www.mediawiki.org/wiki/Extension:ArticlePlaceholder',
 	'descriptionmsg' => 'articleplaceholder-desc',
 );
@@ -33,10 +30,31 @@ $wgAutoloadClasses['ArticlePlaceholder\SearchHookHandler'] = __DIR__ . '/include
 $wgHooks['ScribuntoExternalLibraryPaths'][] = '\ArticlePlaceholder\Hooks::registerScribuntoExternalLibraryPaths';
 $wgHooks['SpecialSearchResultsAppend'][] = '\ArticlePlaceholder\SearchHookHandler::onSpecialSearchResultsAppend';
 
-$wgMessagesDirs[ 'ArticlePlaceholder' ] = __DIR__ . '/i18n';
+$wgMessagesDirs['ArticlePlaceholder'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['ArticlePlaceholderAliases'] = __DIR__ . '/ArticlePlaceholder.alias.php';
 
-$wgSpecialPages[ 'FancyUnicorn' ] = array(
+$wgSpecialPages['FancyUnicorn'] = array(
 	'ArticlePlaceholder\Specials\SpecialFancyUnicorn',
 	'newFromGlobalState'
+);
+
+preg_match( '+' . preg_quote( DIRECTORY_SEPARATOR ) . '(?:vendor|extensions)'
+	. preg_quote( DIRECTORY_SEPARATOR ) . '.*+', __DIR__, $remoteExtPath );
+
+$wgResourceModules['ext.articleplaceholder.createArticle'] = array(
+	'position' => 'bottom',
+	'scripts' => 'ext.articleplaceholder.createArticle.js',
+	'dependencies' => array(
+		'oojs-ui',
+		'mediawiki.api',
+		'mediawiki.Title',
+		'mediawiki.util'
+	),
+	'localBasePath' => __DIR__ . '/modules',
+	'remoteExtPath' => '..' . $remoteExtPath[0],
+	'messages' => array(
+		'articleplaceholder-fancyunicorn-create-article',
+		'articleplaceholder-fancyunicorn-article-exists-error',
+		'articleplaceholder-fancyunicorn-create-article-submit-button'
+	)
 );

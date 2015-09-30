@@ -22,6 +22,7 @@ use Wikibase\Lib\Store\LanguageFallbackLabelDescriptionLookupFactory;
 use Wikibase\Lib\Store\SiteLinkLookup;
 use SiteStore;
 use SpecialPage;
+use OOUI;
 
 class SpecialFancyUnicorn extends SpecialPage {
 
@@ -45,7 +46,7 @@ class SpecialFancyUnicorn extends SpecialPage {
 	/**
 	 * @var LanguageFallbackLabelDescriptionLookupFactory
 	 */
-	private $lfldlf;
+	private $termLookupFactory;
 
 	/**
 	 * @var SitelinkLookup
@@ -72,14 +73,14 @@ class SpecialFancyUnicorn extends SpecialPage {
 	 */
 	public function __construct(
 		EntityIdParser $idParser,
-		LanguageFallbackLabelDescriptionLookupFactory $lfldlf,
+		LanguageFallbackLabelDescriptionLookupFactory $termLookupFactory,
 		SiteLinkLookup $sitelinkLookup,
 		SiteStore $siteStore,
 		TitleFactory $titleFactory,
 		$siteGlobalID
 	) {
 		$this->idParser = $idParser;
-		$this->lfldlf = $lfldlf;
+		$this->termLookupFactory = $termLookupFactory;
 		$this->sitelinkLookup = $sitelinkLookup;
 		$this->siteStore = $siteStore;
 		$this->titleFactory = $titleFactory;
@@ -127,7 +128,8 @@ class SpecialFancyUnicorn extends SpecialPage {
 		// Form header
 		$this->getOutput()->addHTML(
 			Html::openElement(
-				'form', array(
+				'form',
+				array(
 					'method' => 'get',
 					'action' => $this->getPageTitle()->getFullUrl(),
 					'name' => 'ap-fancyunicorn',
@@ -143,9 +145,10 @@ class SpecialFancyUnicorn extends SpecialPage {
 		// Form body
 		$this->getOutput()->addHTML(
 			Html::input(
-				'submit', $this->msg( 'articleplaceholder-fancyunicorn-submit' )->text(), 'submit', array(
-					'id' => 'submit'
-				)
+				'submit',
+				$this->msg( 'articleplaceholder-fancyunicorn-submit' )->text(),
+				'submit',
+				array( 'id' => 'submit' )
 			)
 			. Html::closeElement( 'fieldset' )
 			. Html::closeElement( 'form' )
@@ -160,23 +163,29 @@ class SpecialFancyUnicorn extends SpecialPage {
 	 */
 	protected function getFormElements() {
 		return Html::rawElement(
-						'p', array(), $this->msg( 'articleplaceholder-fancyunicorn-intro' )->parse()
-				)
-				. Html::element( 'br' )
-				. Html::element(
-						'label', array(
-					'for' => 'ap-fancyunicorn-entityid',
-					'class' => 'ap-label'
-						), $this->msg( 'articleplaceholder-fancyunicorn-entityid' )->text()
-				)
-				. Html::element( 'br' )
-				. Html::input(
-						'entityid', $this->getRequest()->getVal( 'entityid' ), 'text', array(
-					'class' => 'ap-input',
-					'id' => 'ap-fancyunicorn-entityid'
-						)
-				)
-				. Html::element( 'br' );
+			'p',
+			array(),
+			$this->msg( 'articleplaceholder-fancyunicorn-intro' )->parse()
+		)
+		. Html::element( 'br' )
+		. Html::element(
+			'label',
+			array(
+				'for' => 'ap-fancyunicorn-entityid',
+				'class' => 'ap-label'
+			),
+			$this->msg( 'articleplaceholder-fancyunicorn-entityid' )->text()
+		)
+		. Html::element( 'br' )
+		. Html::input(
+			'entityid',
+			$this->getRequest()->getVal( 'entityid' ),
+			'text', array(
+				'class' => 'ap-input',
+				'id' => 'ap-fancyunicorn-entityid'
+			)
+		)
+		. Html::element( 'br' );
 	}
 
 	private function getTextParam( $name, $fallback ) {
@@ -217,19 +226,50 @@ class SpecialFancyUnicorn extends SpecialPage {
 	 */
 	private function showPlaceholder( ItemId $entityId ) {
 		$this->getOutput()->addWikiText( "{{fancyUnicorn|" . $entityId->getSerialization() . "}}" );
-		$this->showTitle( $entityId );
+		$label = $this->getLabel( $entityId );
+		$this->showTitle( $label );
+		$this->showCreateArticle( $label );
 		$this->showLanguageLinks( $entityId );
+	}
+
+	private function showCreateArticle( $label ) {
+		$output = $this->getOutput();
+
+		$output->enableOOUI();
+		$output->addModules( 'ext.articleplaceholder.createArticle' );
+		$output->addJsConfigVars( 'apLabel', $label );
+
+		$button = new OOUI\ButtonWidget( array(
+			'id' => 'create-article-button',
+			'infusable' => true,
+			'label' => $this->msg( 'articleplaceholder-fancyunicorn-create-article-button' )->text(),
+			'target' => 'blank'
+		) );
+
+		$output->addHTML( $button );
+	}
+
+	/**
+	 * @param EntityId $entityId
+	 * @return string|null label
+	 */
+	private function getLabel( ItemId $entityId ) {
+		$label = $this->termLookupFactory->newLabelDescriptionLookup( $this->getLanguage(), array() )->getLabel( $entityId );
+
+		if ( $label !== null ) {
+			return $label->getText();
+		}
+
+		return null;
 	}
 
 	/**
 	 * Show label as page title
-	 * @param EntityId $entityId
+	 * @param string|null $label
 	 */
-	private function showTitle( ItemId $entityId ) {
-		$array[] = $entityId;
-		$label = $this->lfldlf->newLabelDescriptionLookup( $this->getLanguage(), $array )->getLabel( $entityId );
+	private function showTitle( $label ) {
 		if ( $label !== null ) {
-			$this->getOutput()->setPageTitle( $label->getText() );
+			$this->getOutput()->setPageTitle( $label );
 		}
 	}
 
