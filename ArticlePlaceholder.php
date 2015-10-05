@@ -29,7 +29,9 @@ $dirbasename = basename( $dir );
 
 $wgAutoloadClasses['ArticlePlaceholder\Specials\SpecialFancyUnicorn'] = $dir . '/Specials/SpecialFancyUnicorn.php';
 $wgAutoloadClasses['ArticlePlaceholder\Hooks'] = __DIR__ . '/includes/Hooks.php';
+$wgAutoloadClasses['ArticlePlaceholder\SearchHookHandler'] = __DIR__ . '/includes/SearchHookHandler.php';
 $wgHooks['ScribuntoExternalLibraryPaths'][] = '\ArticlePlaceholder\Hooks::registerScribuntoExternalLibraryPaths';
+$wgHooks['SpecialSearchResultsAppend'][] = '\ArticlePlaceholder\SearchHookHandler::onSpecialSearchResultsAppend';
 
 $wgMessagesDirs[ 'ArticlePlaceholder' ] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['ArticlePlaceholderAliases'] = __DIR__ . '/ArticlePlaceholder.alias.php';

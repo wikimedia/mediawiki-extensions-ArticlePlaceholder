@@ -13,5 +13,6 @@
 	"articleplaceholder-fancyunicorn-lua-entity": "Header of the entity section",
 	"articleplaceholder-fancyunicorn-lua-description": "Word before the description string",
 	"articleplaceholder-fancyunicorn-lua-reference": "Header of the reference section",
-	"articleplaceholder-fancyunicorn-lua-qualifier": "Header of the qualifier section"
+	"articleplaceholder-fancyunicorn-lua-qualifier": "Header of the qualifier section",
+	"articleplaceholder-search-header": "Header in the search for the results of Special:FancyUnicorn generated pages"
 }
