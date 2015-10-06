@@ -156,8 +156,11 @@ end
 -- @param String propertyId
 -- @return String renderedImage
 local topImageRenderer = function( entity, propertyId, orientationImage )
+  renderedImage = ""
   imageName = entity:formatPropertyValues( propertyId ).value
-  renderedImage = "[[File:" .. imageName .. "|thumb|" .. orientationImage .. "]]"
+  if imageName ~= "" then
+    renderedImage = "[[File:" .. imageName .. "|thumb|" .. orientationImage .. "]]"
+  end
   return renderedImage
 end
 
@@ -181,9 +184,13 @@ local renderEntity = function ( entityID )
   local entityResult = statementListRenderer( entity )
 
   result = result .. "__NOTOC__"
-  result = result .. "Description: " ..  description
+  if description ~= nil then
+    result = result .. "Description: " ..  description
+  end
   result = result .. image
-  result = result .. "<h1>Entity</h1>" .. entityResult
+  if entityResult ~= "" then
+    result = result .. "<h1>Entity</h1>" .. entityResult
+  end
 
   return result
 end
