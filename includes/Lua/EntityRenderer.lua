@@ -2,111 +2,160 @@ local entityrenderer = {}
 
 entityrenderer.imageProperty = 'P6'
 entityrenderer.identifierProperties = {}
-
--- render an entity
-entityrenderer.render = function(frame)
-  local entityID = mw.text.trim( frame.args[1] or "" )
-  local entity = mw.wikibase.getEntityObject( entityID )
-  local result = ""
-
-  local description = entityrenderer.descriptionRenderer( entityID )
-  local image = entityrenderer.topImageRenderer( entity, entityrenderer.imageProperty, "right" )
-  local entityResult = entityrenderer.statementListRenderer( entity )
-
-  result = result .. "Description: " ..  description .. " "
-  result = result .. image .. "<br/>"
-  result = result .. "<h1>Entity</h1>" .. "<br/>" .. entityResult
-
-  return result
-end
+libraryUtil = require( 'libraryUtil' )
 
 -- Get the datavalue for a given property.
-local getDatavalue = function( propertyId )
+-- @param String propertyId
+-- @return String datatype
+local getDatatype = function( propertyId )
   local property = mw.wikibase.getEntity( propertyId )
   return property['datatype']
 end
 
 ----------------------------------- Implementation of Renderers -----------------------------------
 
--- Render a list of statements.
-entityrenderer.statementListRenderer = function ( entity )
-  local result = ""
-  local properties = entityrenderer.statementSorter( entity )
-  if properties ~= nil then
-    for _, propertyId in pairs( properties ) do
-      if propertyId ~= entityrenderer.imageProperty then
-        result = result .. "<h2><b>" .. entityrenderer.labelRenderer( propertyId ) .. "</b> </h2>" .. "<br/>"
-        result = result .. entityrenderer.renderBestStatements( entity, propertyId )
-      end
-    end
-  end
-  return result
-end
+-- Render a label to the language of the local Wiki.
+local labelRenderer = mw.wikibase.label
 
 -- Returns a table of statements sorted by *something*
-entityrenderer.statementSorter = function( entity )
+-- @param table entity
+-- @return table of properties
+local statementSorter = function( entity )
   -- sort by *something*
   -- limit number of statements
   return entity:getProperties()
 end
 
--- Renders the best statements.
-entityrenderer.renderBestStatements = function( entity, propertyId )
-  local statement = ""
-  local bestStatements = entity:getBestStatements( propertyId )
-  for _, stat in pairs( bestStatements ) do
-    if getDatavalue( propertyId ) == "commonsMedia" then
-      statement = statement .. entityrenderer.imageRenderer( stat, "center" )
-    else
-      statement = statement .. entityrenderer.statementRenderer(stat)
-    end
+-- Renders a given table of snaks.
+-- @param table snaks
+-- @return String result
+local snaksRenderer = function( snaks )
+  result = ""
+  if snaks ~= nil and type( snaks ) == "table" then
+    result = result ..  mw.wikibase.renderSnaks( snaks )
   end
-  return statement
+  return result
 end
 
--- Renders a statement.
-entityrenderer.statementRenderer = function( statement )
+-- Render a reference.
+-- @param table referenceSnak
+-- @return String result
+local referenceRenderer = function( referenceSnak )
   local result = ""
-  local reference = ""
-  local qualifier = ""
-  local mainsnak = ""
-  if statement ~= nil then
-    for key, value in pairs( statement ) do
-      if key == "mainsnak" then mainsnak = "<h3>" .. mw.wikibase.renderSnak( value ) .. "</h3>"
-      elseif key == "references" then reference = "<h4>Reference</h4>" .. "<br/>" .. entityrenderer.referenceRenderer( value )
-      elseif key == "qualifiers" then qualifier = "<h4>Qualifier</h4>" .. "<br/>" .. entityrenderer.qualifierRenderer( value )
+  if referenceSnak ~= nil then
+    result = result .. "<h4>Reference</h4>"
+    local i = 1
+    while referenceSnak[i] do
+      for k, v in pairs( referenceSnak[i]['snaks'] ) do
+        result = result .. "<p><b>" ..  labelRenderer( k ) .. "</b>: "
+        result = result .. snaksRenderer( v ) .. "</p>"
       end
+      i = i + 1
     end
   end
-  result = result .. mainsnak .. reference .. qualifier
+  return result
+end
+
+-- Render a qualifier.
+-- @param table qualifierSnak
+-- @return String result
+local qualifierRenderer = function( qualifierSnak )
+  local result = ""
+  if qualifierSnak ~= nil then
+    result = result .. "<h4>Qualifier</h4>"
+    for key, value in pairs(qualifierSnak) do
+      result = result .. "<p><b>" ..  labelRenderer( key ) .. "</b>: "
+      result = result .. snaksRenderer( value ) .. "</p>"
+    end
+  end
   return result
 end
 
 -- Render the image.
 -- @param String propertyId
 -- @return String renderedImage
-entityrenderer.imageRenderer = function( statement, orientationImage )
+local imageStatementRenderer = function( statement, orientationImage )
   local result = ""
   local reference = ""
   local qualifier = ""
   local image = ""
   if statement ~= nil then
     for key, value in pairs( statement ) do
-      if key == "mainsnak" then image = mw.wikibase.renderSnak( value )
-    elseif key == "references" then reference = "<b>Reference</b>"  .. "<br/>" .. entityrenderer.referenceRenderer( value )
-  elseif key == "qualifiers" then qualifier = "<b>Qualifier</b>" .. "<br/>" .. entityrenderer.qualifierRenderer( value )
+      if key == "mainsnak" then
+        image = mw.wikibase.renderSnak( value )
+      elseif key == "references" then
+        reference = referenceRenderer( value )
+      elseif key == "qualifiers" then
+        qualifier = qualifierRenderer( value )
       end
     end
   end
-  result = "[[File:" .. image .. "|thumb|" .. orientationImage .. "]] <br/>"
-  result = result .. qualifier .. "<br/>" ..  reference
+  result = "[[File:" .. image .. "|thumb|" .. orientationImage .. "]]"
+  result = result .. qualifier ..  reference
+  return result
+end
+
+-- Renders a statement.
+-- @param table statement
+-- @return string result
+local statementRenderer = function( statement )
+  local result = ""
+  local reference = ""
+  local qualifier = ""
+  local mainsnak = ""
+  if statement ~= nil then
+    for key, value in pairs( statement ) do
+      if key == "mainsnak" then
+        mainsnak = "<br/><h3>" .. mw.wikibase.renderSnak( value ) .. "</h3><br/>"
+      elseif key == "qualifiers" then
+        qualifier = qualifierRenderer( value )
+      elseif key == "references" then
+        reference = referenceRenderer( value )
+      end
+    end
+  end
+  result = result .. mainsnak .. qualifier .. reference
+  return result
+end
+
+-- Renders the best statements.
+-- @param table entity
+-- @param String propertyId
+-- @return string statement
+local bestStatementRenderer = function( entity, propertyId )
+  local statement = ""
+  local bestStatements = entity:getBestStatements( propertyId )
+  for _, stat in pairs( bestStatements ) do
+    if getDatatype( propertyId ) == "commonsMedia" then
+      statement = statement .. imageStatementRenderer( stat, "center" )
+    else
+      statement = statement .. statementRenderer(stat)
+    end
+  end
+  return statement
+end
+
+-- Render a list of statements.
+-- @param table entity
+-- @return string result
+local function statementListRenderer ( entity )
+  local result = ""
+  local properties = statementSorter( entity )
+  if properties ~= nil then
+    for _, propertyId in pairs( properties ) do
+      if propertyId ~= entityrenderer.imageProperty then
+        result = result .. "<h2>" .. labelRenderer( propertyId ) .. "</h2>"
+        result = result .. bestStatementRenderer( entity, propertyId )
+      end
+    end
+  end
   return result
 end
 
 -- Render the image.
 -- @param String propertyId
 -- @return String renderedImage
-entityrenderer.topImageRenderer = function( entity, propertyId, orientationImage )
+local topImageRenderer = function( entity, propertyId, orientationImage )
   imageName = entity:formatPropertyValues( propertyId ).value
   renderedImage = "[[File:" .. imageName .. "|thumb|" .. orientationImage .. "]]"
   return renderedImage
@@ -116,58 +165,148 @@ end
 -- Render the description.
 -- @param String entityId
 -- @return String description
-entityrenderer.descriptionRenderer = function( entityId )
+local function descriptionRenderer( entityId )
   return mw.wikibase.description( entityId )
 end
 
--- Render a label to the language of the local Wiki.
--- @param String id
--- @return String label
-entityrenderer.labelRenderer = function( entityId )
-  return mw.wikibase.label( entityId )
-end
-
--- Render a reference.
-entityrenderer.referenceRenderer = function( referenceSnak )
+-- Render an entity, method to call all renderer
+-- @param String entityId
+-- @return String result
+local renderEntity = function ( entityID )
+  local entity = mw.wikibase.getEntityObject( entityID )
   local result = ""
-  if referenceSnak ~= nil then
-    local i = 1
-    while referenceSnak[i] do
-      for k, v in pairs( referenceSnak[i]['snaks'] ) do
-        result = result .. "<b>" ..  entityrenderer.labelRenderer( k ) .. "</b>: "
-        result = result .. entityrenderer.snakRenderer( v ) .. "<br/>"
-      end
-      i = i + 1
-    end
-  end
-  return result
-end
 
--- Render a qualifier.
-entityrenderer.qualifierRenderer = function( qualifierSnak )
-  local result = ""
-  if qualifierSnak ~= nil then
-    for key, value in pairs(qualifierSnak) do
-      result = result .. "<b>" ..  entityrenderer.labelRenderer( key ) .. "</b>: "
-      result = result .. entityrenderer.snakRenderer( value ) .. "<br/>"
-    end
-  end
-  return result
-end
+  local description = descriptionRenderer( entityID )
+  local image = topImageRenderer( entity, entityrenderer.imageProperty, "right" )
+  local entityResult = statementListRenderer( entity )
 
--- Render a Snak.
-entityrenderer.snakRenderer = function( snak )
-  local result = ""
-  if snak ~= nil and type(snak) == "table" then
-    for key, value in pairs( snak ) do
-      result = result .. mw.wikibase.renderSnak( value ) .. "<br/>"
-    end
-  end
+  result = result .. "__NOTOC__"
+  result = result .. "Description: " ..  description
+  result = result .. image
+  result = result .. "<h1>Entity</h1>" .. entityResult
+
   return result
 end
 
 
+-------------------------------------------------------------------------------------------------
 
-----------------------------------------------------------------------
+----------------------------------- Getter und Setter --------------------------------------------
+entityrenderer.getLabelRenderer = function()
+  return labelRenderer
+end
+
+entityrenderer.setLabelRenderer = function( newLabelRenderer )
+  util.checkType( 'setLabelRenderer', 1, newLabelRenderer, 'function' )
+  labelRenderer = newLabelRenderer
+end
+
+entityrenderer.getStatementSorter = function()
+  return statementSorter
+end
+
+entityrenderer.setStatementSorter = function( newStatementSorter )
+  util.checkType( 'setStatementSorter', 1, newStatementSorter, 'function' )
+  statementSorter = newStatementSorter
+end
+
+entityrenderer.getSnaksRenderer = function()
+  return snaksRenderer
+end
+
+entityrenderer.setSnaksRenderer = function( newsnaksRenderer )
+  util.checkType( 'setSnaksRenderer', 1, newsnaksRenderer, 'function' )
+  snaksRenderer = newSnaksRenderer
+end
+
+entityrenderer.getReferenceRenderer = function()
+  return referenceRenderer
+end
+
+entityrenderer.setReferenceRenderer = function( newReferenceRenderer )
+  util.checkType( 'setReferenceRenderer', 1, newReferenceRenderer, 'function' )
+  referenceRenderer = newReferenceRenderer
+end
+
+entityrenderer.getQualifierRenderer = function()
+  return qualifierRenderer
+end
+
+entityrenderer.setQualifierRenderer = function( newQualifierRenderer )
+  util.checkType( 'setQualifierRenderer', 1, newQualifierRenderer, 'function' )
+  qualifierRenderer = newQualifierRenderer
+end
+
+entityrenderer.getImageStatementRenderer = function()
+  return imageStatementRenderer
+end
+
+entityrenderer.setImageStatementRenderer = function( newImageStatementRenderer )
+  util.checkType( 'setImageStatementRenderer', 1, newImageStatementRenderer, 'function' )
+  imageStatementRenderer = newImageStatementRenderer
+end
+
+entityrenderer.getStatementRenderer = function()
+  return statementRenderer
+end
+
+entityrenderer.setStatementRenderer = function( newStatementRenderer )
+  util.checkType( 'setStatementRenderer', 1, newStatementRenderer, 'function' )
+  statementRenderer = newStatementRenderer
+end
+
+entityrenderer.getBestStatementRenderer = function()
+  return bestStatementRenderer
+end
+
+entityrenderer.setBestStatementRenderer = function( newBestStatementRenderer )
+  util.checkType( 'setBestStatementRenderer', 1, newBestStatementRenderer, 'function' )
+  bestStatementRenderer = newBestStatementRenderer
+end
+
+entityrenderer.getStatementListRenderer = function()
+  return statementListRenderer
+end
+
+entityrenderer.setStatementListRenderer = function( newStatementListRenderer )
+  util.checkType( 'setStatementListRenderer', 1, newStatementListRenderer, 'function' )
+  statementListRenderer = newStatementListRenderer
+end
+
+entityrenderer.getTopImageRenderer = function()
+  return topImageRenderer
+end
+
+entityrenderer.setTopImageRenderer = function( newTopImageRenderer )
+  util.checkType( 'setTopImageRenderer', 1, newTopImageRenderer, 'function' )
+  topImageRenderer = newTopImageRenderer
+end
+
+entityrenderer.getDescriptionRenderer = function()
+  return descriptionRenderer
+end
+
+entityrenderer.setDescriptionRenderer = function( newDescriptionRenderer )
+  util.checkType( 'setDescriptionRenderer', 1, newDescriptionRenderer, 'function' )
+  descriptionRenderer = newDescriptionRenderer
+end
+
+entityrenderer.getRenderEntity = function()
+  return renderEntity
+end
+
+entityrenderer.setRenderEntity = function( newRenderEntity )
+  util.checkType( 'setRenderEntity', 1, newRenderEntity, 'function' )
+  renderEntity = newRenderEntity
+end
+
+
+--------------------------------------------------------------------------------------------------
+
+-- render an entity
+entityrenderer.render = function(frame)
+  local entityID = mw.text.trim( frame.args[1] or "" )
+  return renderEntity( entityID )
+end
 
 return entityrenderer
