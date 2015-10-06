@@ -9,5 +9,9 @@
 	"articleplaceholder-fancyunicorn": "Fancy Unicorn",
 	"articleplaceholder-fancyunicorn-intro": "This is the SpecialPage Fancy Unicorn of the ArticlePlaceholder extension. Much fancy, very unicorn. (so exciting)",
 	"articleplaceholder-fancyunicorn-entityid": "Enter a entity ID to get a auto generated Article Placeholder.",
-	"articleplaceholder-fancyunicorn-submit": "craft"
+	"articleplaceholder-fancyunicorn-submit": "craft",
+	"articleplaceholder-fancyunicorn-lua-entity": "Entity",
+	"articleplaceholder-fancyunicorn-lua-description": "Description: ",
+	"articleplaceholder-fancyunicorn-lua-reference": "Reference",
+	"articleplaceholder-fancyunicorn-lua-qualifier": "Qualifier"
 }
