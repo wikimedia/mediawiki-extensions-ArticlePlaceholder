@@ -14,6 +14,7 @@ namespace ArticlePlaceholder\Specials;
 use Html;
 use Exception;
 use Wikibase\Client\WikibaseClient;
+use Wikibase\Client\Store\TitleFactory;
 use Wikibase\DataModel\Entity\ItemId;
 use Wikibase\DataModel\Entity\EntityId;
 use Wikibase\DataModel\Entity\EntityIdParser;
@@ -27,7 +28,12 @@ class SpecialFancyUnicorn extends SpecialPage {
 	public static function newFromGlobalState() {
 		$wikibaseClient = WikibaseClient::getDefaultInstance();
 		return new self(
-			$wikibaseClient->getEntityIdParser(), $wikibaseClient->getLanguageFallbackLabelDescriptionLookupFactory(), $wikibaseClient->getStore()->getSiteLinkLookup(), $wikibaseClient->getSiteStore()
+			$wikibaseClient->getEntityIdParser(),
+			$wikibaseClient->getLanguageFallbackLabelDescriptionLookupFactory(),
+			$wikibaseClient->getStore()->getSiteLinkLookup(),
+			$wikibaseClient->getSiteStore(),
+			new TitleFactory(),
+			$wikibaseClient->getSettings()->getSetting( 'siteGlobalID' )
 		);
 	}
 
@@ -52,35 +58,64 @@ class SpecialFancyUnicorn extends SpecialPage {
 	private $siteStore;
 
 	/**
+	 * @var TitleFactory
+	 */
+	private $titleFactory;
+
+	/**
+	 * @var string
+	 */
+	private $siteGlobalID;
+
+	/**
 	 * Initialize the special page.
 	 */
-	public function __construct( EntityIdParser $idParser, LanguageFallbackLabelDescriptionLookupFactory $lfldlf, SiteLinkLookup $sitelinkLookup, SiteStore $siteStore ) {
+	public function __construct(
+		EntityIdParser $idParser,
+		LanguageFallbackLabelDescriptionLookupFactory $lfldlf,
+		SiteLinkLookup $sitelinkLookup,
+		SiteStore $siteStore,
+		TitleFactory $titleFactory,
+		$siteGlobalID
+	) {
 		$this->idParser = $idParser;
 		$this->lfldlf = $lfldlf;
 		$this->sitelinkLookup = $sitelinkLookup;
 		$this->siteStore = $siteStore;
+		$this->titleFactory = $titleFactory;
+		$this->siteGlobalID = $siteGlobalID;
+
 		parent::__construct( 'FancyUnicorn' );
 	}
 
 	/**
 	 * @param string $sub
-	 *
 	 */
 	public function execute( $sub ) {
 		$this->getOutput()->setPageTitle( $this->msg( 'articleplaceholder-fancyunicorn' ) );
-		if ( $this->getItemIdParam( 'entityid', $sub ) != null ) {
-			$entityId = $this->getItemIdParam( 'entityid', $sub );
-			$this->showPlaceholder( $entityId );
+		$this->showContent($sub);
+	}
+
+	/**
+	 * @param sting $entityIdString
+	 */
+	private function showContent( $entityIdString ) {
+		$entityId = $this->getItemIdParam( 'entityid', $entityIdString );
+
+		if ( $entityId !== null ) {
+			$articleOnWiki = $this->getArticleOnWiki( $entityId );
+
+			if ( $articleOnWiki !== null ) {
+				$this->getOutput()->redirect( $articleOnWiki );
+
+			} else {
+				$this->showPlaceholder( $entityId );
+			}
 		} else {
-			//create the html elements
 			$this->createForm();
 		}
 	}
 
-	/**
-	 *
-	 * @todo add to wikibase group?
-	 */
 	protected function getGroupName() {
 		return 'other';
 	}
@@ -192,8 +227,10 @@ class SpecialFancyUnicorn extends SpecialPage {
 	 */
 	private function showTitle( ItemId $entityId ) {
 		$array[] = $entityId;
-		$label = $this->lfldlf->newLabelDescriptionLookup( $this->getLanguage(), $array )->getLabel( $entityId )->getText();
-		$this->getOutput()->setPageTitle( $label );
+		$label = $this->lfldlf->newLabelDescriptionLookup( $this->getLanguage(), $array )->getLabel( $entityId );
+		if ( $label !== null ) {
+			$this->getOutput()->setPageTitle( $label->getText() );
+		}
 	}
 
 	/**
@@ -204,15 +241,37 @@ class SpecialFancyUnicorn extends SpecialPage {
 	private function showLanguageLinks( ItemId $entityId ) {
 		$sitelinks = $this->sitelinkLookup->getSiteLinksForItem( $entityId );
 		$languagelinks = array();
+
 		foreach ( $sitelinks as $sl ) {
 			$languageCode = $this->siteStore->getSite( ($sl->getSiteId() ) )->getLanguageCode();
 
-			if ( $languageCode != null ) {
+			if ( $languageCode !== null ) {
 				$languagelinks[$languageCode] = $languageCode . ':' . $sl->getPageName();
 			}
 		}
 
 		$this->getOutput()->setLanguageLinks( $languagelinks );
+	}
+
+	/**
+	 * @param ItemId $entityId
+	 * @return Title
+	 */
+	private function getArticleOnWiki( ItemId $entityId ) {
+		$sitelinkTitles = $this->sitelinkLookup->getLinks(
+			array( $entityId->getNumericId() ),
+			array( $this->siteGlobalID )
+		);
+
+		if ( isset($sitelinksTitles[0][1]) ) {
+			$sitelinkTitle = $sitelinkTitles[0][1];
+		}
+
+		if ( $sitelinkTitle !== null ) {
+			return $this->titleFactory->newFromText( $sitelinkTitle )->getLinkURL();
+		}
+
+		return null;
 	}
 
 }
