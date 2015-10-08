@@ -11,7 +11,7 @@
 	"articleplaceholder-fancyunicorn-entityid": "Enter a entity ID to get a auto generated Article Placeholder.",
 	"articleplaceholder-fancyunicorn-submit": "craft",
 	"articleplaceholder-fancyunicorn-lua-entity": "Entity",
-	"articleplaceholder-fancyunicorn-lua-description": "Description: ",
+	"articleplaceholder-fancyunicorn-lua-description": "Description:",
 	"articleplaceholder-fancyunicorn-lua-reference": "Reference",
 	"articleplaceholder-fancyunicorn-lua-qualifier": "Qualifier"
 }
