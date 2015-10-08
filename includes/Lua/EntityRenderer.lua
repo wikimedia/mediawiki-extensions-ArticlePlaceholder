@@ -189,7 +189,7 @@ local renderEntity = function ( entityID )
   end
   result = result .. image
   if entityResult ~= "" then
-    result = result "<h1>" .. mw.message.new( 'articleplaceholder-fancyunicorn-lua-entity' ):plain() .. "</h1>" .. entityResult
+    result = result .. "<h1>" .. mw.message.new( 'articleplaceholder-fancyunicorn-lua-entity' ):plain() .. "</h1>" .. entityResult
   end
 
   return result
