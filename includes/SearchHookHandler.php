@@ -102,7 +102,7 @@ class SearchHookHandler {
 	 */
 	private function getSearchResults( $term ) {
 		$searchResults = $this->searchEntities( $term );
-		$link = 'Special:FancyUnicorn/';
+		$link = 'Special:AboutTopic/';
 		$wikitext = null;
 		foreach ( $searchResults as $searchResult ) {
 			$wikitext .= '<div class="article-placeholder-searchResult">'

@@ -3,7 +3,7 @@
     <sitename>hey-hey-wiki</sitename>
     <dbname>my_wiki</dbname>
     <base>http://localhost/core/index.php/Main_Page</base>
-    <generator>MediaWiki 1.26alpha</generator>
+    <generator>MediaWiki 1.27alpha</generator>
     <case>first-letter</case>
     <namespaces>
       <namespace key="-2" case="first-letter">Media</namespace>
@@ -33,35 +33,16 @@
     </namespaces>
   </siteinfo>
   <page>
-    <title>Template:FancyUnicorn</title>
-    <ns>10</ns>
-    <id>17</id>
-    <revision>
-      <id>192</id>
-      <parentid>190</parentid>
-      <timestamp>2015-08-20T16:36:46Z</timestamp>
-      <contributor>
-        <ip>127.0.0.1</ip>
-      </contributor>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text xml:space="preserve" bytes="43">
-
-{{#invoke:FancyUnicorn|showData|{{{1}}}}}</text>
-      <sha1>aj7tq9d2ompl5v5c0c7iil61fw4wiyz</sha1>
-    </revision>
-  </page>
-  <page>
-    <title>Module:FancyUnicorn</title>
+    <title>Module:AboutTopic</title>
     <ns>828</ns>
-    <id>18</id>
+    <id>31</id>
     <revision>
-      <id>272</id>
-      <parentid>271</parentid>
-      <timestamp>2015-09-17T16:18:39Z</timestamp>
+      <id>301</id>
+      <timestamp>2015-10-30T23:00:23Z</timestamp>
       <contributor>
         <ip>127.0.0.1</ip>
       </contributor>
+      <comment>Created page with &quot;local p = {}  -- get the label of the local entity p.showData = function(frame)  entityRenderer = require( 'EntityRenderer' )  return entityRenderer.render( frame ) end  return p&quot;</comment>
       <model>Scribunto</model>
       <format>text/plain</format>
       <text xml:space="preserve" bytes="178">local p = {}
@@ -74,6 +55,23 @@ end
 
 return p</text>
       <sha1>raik6wqlcskycfu1y3hntowu9vyuu90</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Template:AboutTopic</title>
+    <ns>10</ns>
+    <id>30</id>
+    <revision>
+      <id>300</id>
+      <timestamp>2015-10-30T23:00:03Z</timestamp>
+      <contributor>
+        <ip>127.0.0.1</ip>
+      </contributor>
+      <comment>Created page with &quot;{{#invoke:AboutTopic|showData|{{{1}}}}}&quot;</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="41">{{#invoke:AboutTopic|showData|{{{1}}}}}</text>
+      <sha1>hcui95310erytbs0eelk13obdz9xoga</sha1>
     </revision>
   </page>
 </mediawiki>

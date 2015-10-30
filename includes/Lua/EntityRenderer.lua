@@ -43,7 +43,7 @@ end
 local referenceRenderer = function( referenceSnak )
   local result = ""
   if referenceSnak ~= nil then
-    result = result .. "<h4>" .. mw.message.new( 'articleplaceholder-fancyunicorn-lua-reference' ):plain() .. "</h4>"
+    result = result .. "<h4>" .. mw.message.new( 'articleplaceholder-abouttopic-lua-reference' ):plain() .. "</h4>"
     local i = 1
     while referenceSnak[i] do
       for k, v in pairs( referenceSnak[i]['snaks'] ) do
@@ -62,7 +62,7 @@ end
 local qualifierRenderer = function( qualifierSnak )
   local result = ""
   if qualifierSnak ~= nil then
-    result = result .. "<h4>" .. mw.message.new( 'articleplaceholder-fancyunicorn-lua-qualifier' ):plain() .. "</h4>"
+    result = result .. "<h4>" .. mw.message.new( 'articleplaceholder-abouttopic-lua-qualifier' ):plain() .. "</h4>"
     for key, value in pairs(qualifierSnak) do
       result = result .. "<p><b>" ..  labelRenderer( key ) .. "</b>: "
       result = result .. snaksRenderer( value ) .. "</p>"
@@ -185,11 +185,11 @@ local renderEntity = function ( entityID )
 
   result = result .. "__NOTOC__"
   if description ~= nil then
-    result = result .. mw.message.new( 'articleplaceholder-fancyunicorn-lua-description' ):plain() ..  description
+    result = result .. mw.message.new( 'articleplaceholder-abouttopic-lua-description' ):plain() ..  description
   end
   result = result .. image
   if entityResult ~= "" then
-    result = result .. "<h1>" .. mw.message.new( 'articleplaceholder-fancyunicorn-lua-entity' ):plain() .. "</h1>" .. entityResult
+    result = result .. "<h1>" .. mw.message.new( 'articleplaceholder-abouttopic-lua-entity' ):plain() .. "</h1>" .. entityResult
   end
 
   return result

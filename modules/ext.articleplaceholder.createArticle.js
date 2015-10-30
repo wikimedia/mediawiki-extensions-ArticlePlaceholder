@@ -29,7 +29,7 @@
 				document.location.href = link;
 			} else {
 				$( '#mw-article-placeholder-error' ).append(
-					'<p>' + mw.message( 'articleplaceholder-fancyunicorn-article-exists-error' ).escaped() + '</p>'
+					'<p>' + mw.message( 'articleplaceholder-abouttopic-article-exists-error' ).escaped() + '</p>'
 				);
 			}
 		} );
@@ -51,10 +51,10 @@
 		} );
 
 		submitButton = new OO.ui.ButtonWidget( {
-			label: mw.message( 'articleplaceholder-fancyunicorn-create-article-submit-button' ).text()
+			label: mw.message( 'articleplaceholder-abouttopic-create-article-submit-button' ).text()
 		} );
 
-		dialogContent = $( '<p>' + mw.message( 'articleplaceholder-fancyunicorn-create-article' ).escaped() + '</p>' );
+		dialogContent = $( '<p>' + mw.message( 'articleplaceholder-abouttopic-create-article' ).escaped() + '</p>' );
 		dialogContent.append( titleInput.$element );
 		dialogContent.append( submitButton.$element );
 		dialogContent.append( '<div id="mw-article-placeholder-error"></div>' );

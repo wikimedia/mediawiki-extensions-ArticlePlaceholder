@@ -11,5 +11,5 @@ $specialPageAliases = array();
 
 /** English (English) */
 $specialPageAliases['en'] = array(
-	'FancyUnicorn' => array( 'FancyUnicorn' ),
+	'AboutTopic' => array( 'AboutTopic', 'FancyUnicorn' ),
 );

@@ -24,7 +24,7 @@ $wgExtensionCredits['other'][] = array(
 $dir = dirname( __FILE__ );
 $dirbasename = basename( $dir );
 
-$wgAutoloadClasses['ArticlePlaceholder\Specials\SpecialFancyUnicorn'] = $dir . '/Specials/SpecialFancyUnicorn.php';
+$wgAutoloadClasses['ArticlePlaceholder\Specials\SpecialAboutTopic'] = $dir . '/Specials/SpecialAboutTopic.php';
 $wgAutoloadClasses['ArticlePlaceholder\Hooks'] = __DIR__ . '/includes/Hooks.php';
 $wgAutoloadClasses['ArticlePlaceholder\SearchHookHandler'] = __DIR__ . '/includes/SearchHookHandler.php';
 $wgHooks['ScribuntoExternalLibraryPaths'][] = '\ArticlePlaceholder\Hooks::registerScribuntoExternalLibraryPaths';
@@ -33,8 +33,8 @@ $wgHooks['SpecialSearchResultsAppend'][] = '\ArticlePlaceholder\SearchHookHandle
 $wgMessagesDirs['ArticlePlaceholder'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['ArticlePlaceholderAliases'] = __DIR__ . '/ArticlePlaceholder.alias.php';
 
-$wgSpecialPages['FancyUnicorn'] = array(
-	'ArticlePlaceholder\Specials\SpecialFancyUnicorn',
+$wgSpecialPages['AboutTopic'] = array(
+	'ArticlePlaceholder\Specials\SpecialAboutTopic',
 	'newFromGlobalState'
 );
 
@@ -53,8 +53,8 @@ $wgResourceModules['ext.articleplaceholder.createArticle'] = array(
 	'localBasePath' => __DIR__ . '/modules',
 	'remoteExtPath' => '..' . $remoteExtPath[0],
 	'messages' => array(
-		'articleplaceholder-fancyunicorn-create-article',
-		'articleplaceholder-fancyunicorn-article-exists-error',
-		'articleplaceholder-fancyunicorn-create-article-submit-button'
+		'articleplaceholder-abouttopic-create-article',
+		'articleplaceholder-abouttopic-article-exists-error',
+		'articleplaceholder-abouttopic-create-article-submit-button'
 	)
 );

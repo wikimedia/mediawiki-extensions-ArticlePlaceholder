@@ -1,7 +1,7 @@
 <?php
 
 /**
- * The FancyUnicorn SpecialPage for the ArticlePlaceholder extension
+ * The AboutTopic SpecialPage for the ArticlePlaceholder extension
  *
  * @ingroup Extensions
  * @author Lucie-Aimée Kaffee
@@ -25,7 +25,7 @@ use SiteStore;
 use SpecialPage;
 use OOUI;
 
-class SpecialFancyUnicorn extends SpecialPage {
+class SpecialAboutTopic extends SpecialPage {
 
 	public static function newFromGlobalState() {
 		$wikibaseClient = WikibaseClient::getDefaultInstance();
@@ -95,14 +95,14 @@ class SpecialFancyUnicorn extends SpecialPage {
 		$this->siteGlobalID = $siteGlobalID;
 		$this->entityLookup = $entityLookup;
 
-		parent::__construct( 'FancyUnicorn' );
+		parent::__construct( 'AboutTopic' );
 	}
 
 	/**
 	 * @param string $sub
 	 */
 	public function execute( $sub ) {
-		$this->getOutput()->setPageTitle( $this->msg( 'articleplaceholder-fancyunicorn' ) );
+		$this->getOutput()->setPageTitle( $this->msg( 'articleplaceholder-abouttopic' ) );
 		$this->showContent($sub);
 	}
 
@@ -146,8 +146,8 @@ class SpecialFancyUnicorn extends SpecialPage {
 				array(
 					'method' => 'get',
 					'action' => $this->getPageTitle()->getFullUrl(),
-					'name' => 'ap-fancyunicorn',
-					'id' => 'ap-fancyunicorn-form1',
+					'name' => 'ap-abouttopic',
+					'id' => 'ap-abouttopic-form1',
 					'class' => 'ap-form'
 				)
 			)
@@ -160,7 +160,7 @@ class SpecialFancyUnicorn extends SpecialPage {
 		$this->getOutput()->addHTML(
 			Html::input(
 				'submit',
-				$this->msg( 'articleplaceholder-fancyunicorn-submit' )->text(),
+				$this->msg( 'articleplaceholder-abouttopic-submit' )->text(),
 				'submit',
 				array( 'id' => 'submit' )
 			)
@@ -179,16 +179,16 @@ class SpecialFancyUnicorn extends SpecialPage {
 		return Html::rawElement(
 			'p',
 			array(),
-			$this->msg( 'articleplaceholder-fancyunicorn-intro' )->parse()
+			$this->msg( 'articleplaceholder-abouttopic-intro' )->parse()
 		)
 		. Html::element( 'br' )
 		. Html::element(
 			'label',
 			array(
-				'for' => 'ap-fancyunicorn-entityid',
+				'for' => 'ap-abouttopic-entityid',
 				'class' => 'ap-label'
 			),
-			$this->msg( 'articleplaceholder-fancyunicorn-entityid' )->text()
+			$this->msg( 'articleplaceholder-abouttopic-entityid' )->text()
 		)
 		. Html::element( 'br' )
 		. Html::input(
@@ -196,7 +196,7 @@ class SpecialFancyUnicorn extends SpecialPage {
 			$this->getRequest()->getVal( 'entityid' ),
 			'text', array(
 				'class' => 'ap-input',
-				'id' => 'ap-fancyunicorn-entityid'
+				'id' => 'ap-abouttopic-entityid'
 			)
 		)
 		. Html::element( 'br' );
@@ -239,7 +239,7 @@ class SpecialFancyUnicorn extends SpecialPage {
 	 * @param ItemId $entityId
 	 */
 	private function showPlaceholder( ItemId $entityId ) {
-		$this->getOutput()->addWikiText( "{{fancyUnicorn|" . $entityId->getSerialization() . "}}" );
+		$this->getOutput()->addWikiText( "{{aboutTopic|" . $entityId->getSerialization() . "}}" );
 		$label = $this->getLabel( $entityId );
 		$this->showTitle( $label );
 		$this->showCreateArticle( $label );
@@ -256,7 +256,7 @@ class SpecialFancyUnicorn extends SpecialPage {
 		$button = new OOUI\ButtonWidget( array(
 			'id' => 'create-article-button',
 			'infusable' => true,
-			'label' => $this->msg( 'articleplaceholder-fancyunicorn-create-article-button' )->text(),
+			'label' => $this->msg( 'articleplaceholder-abouttopic-create-article-button' )->text(),
 			'target' => 'blank'
 		) );
 
