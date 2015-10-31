@@ -5,7 +5,7 @@
 		]
 	},
 	"fancyunicorn": "fancyunicorn",
-	"articleplaceholder-desc": "This is an example extension using the BoilerPlate.",
+	"articleplaceholder-desc": "Provides a special page with {{WBREPONAME}} information about a certain topic, with invitation to create an article for the topic",
 	"articleplaceholder-fancyunicorn": "Fancy Unicorn",
 	"articleplaceholder-fancyunicorn-intro": "This is the SpecialPage Fancy Unicorn of the ArticlePlaceholder extension. Much fancy, very unicorn. (so exciting)",
 	"articleplaceholder-fancyunicorn-entityid": "Enter a entity ID to get a auto generated Article Placeholder.",
