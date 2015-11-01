@@ -18,6 +18,7 @@ use Wikibase\Client\Store\TitleFactory;
 use Wikibase\DataModel\Entity\ItemId;
 use Wikibase\DataModel\Entity\EntityId;
 use Wikibase\DataModel\Entity\EntityIdParser;
+use Wikibase\DataModel\Services\Lookup\EntityLookup;
 use Wikibase\Lib\Store\LanguageFallbackLabelDescriptionLookupFactory;
 use Wikibase\Lib\Store\SiteLinkLookup;
 use SiteStore;
@@ -34,7 +35,8 @@ class SpecialFancyUnicorn extends SpecialPage {
 			$wikibaseClient->getStore()->getSiteLinkLookup(),
 			$wikibaseClient->getSiteStore(),
 			new TitleFactory(),
-			$wikibaseClient->getSettings()->getSetting( 'siteGlobalID' )
+			$wikibaseClient->getSettings()->getSetting( 'siteGlobalID' ),
+			$wikibaseClient->getStore()->getEntityLookup()
 		);
 	}
 
@@ -69,6 +71,11 @@ class SpecialFancyUnicorn extends SpecialPage {
 	private $siteGlobalID;
 
 	/**
+	 * @var EntityLookup
+	 */
+	private $entityLookup;
+
+	/**
 	 * Initialize the special page.
 	 */
 	public function __construct(
@@ -77,7 +84,8 @@ class SpecialFancyUnicorn extends SpecialPage {
 		SiteLinkLookup $sitelinkLookup,
 		SiteStore $siteStore,
 		TitleFactory $titleFactory,
-		$siteGlobalID
+		$siteGlobalID,
+		EntityLookup $entityLookup
 	) {
 		$this->idParser = $idParser;
 		$this->termLookupFactory = $termLookupFactory;
@@ -85,6 +93,7 @@ class SpecialFancyUnicorn extends SpecialPage {
 		$this->siteStore = $siteStore;
 		$this->titleFactory = $titleFactory;
 		$this->siteGlobalID = $siteGlobalID;
+		$this->entityLookup = $entityLookup;
 
 		parent::__construct( 'FancyUnicorn' );
 	}
@@ -103,17 +112,22 @@ class SpecialFancyUnicorn extends SpecialPage {
 	private function showContent( $entityIdString ) {
 		$entityId = $this->getItemIdParam( 'entityid', $entityIdString );
 
-		if ( $entityId !== null ) {
-			$articleOnWiki = $this->getArticleOnWiki( $entityId );
-
-			if ( $articleOnWiki !== null ) {
-				$this->getOutput()->redirect( $articleOnWiki );
-
-			} else {
-				$this->showPlaceholder( $entityId );
-			}
-		} else {
+		if ( $entityId === null ) {
 			$this->createForm();
+			return;
+		}
+		if ( !$this->entityLookup->hasEntity( $entityId ) ) {
+			$this->createForm();
+			$this->getOutput()->addWikiText( $this->msg( 'articleplaceholder-fancyunicorn-no-entity-error' )->text() );
+			return;
+		}
+
+		$articleOnWiki = $this->getArticleOnWiki( $entityId );
+
+		if ( $articleOnWiki !== null ) {
+			$this->getOutput()->redirect( $articleOnWiki );
+		} else {
+			$this->showPlaceholder( $entityId );
 		}
 	}
 

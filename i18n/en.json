@@ -10,6 +10,7 @@
 	"articleplaceholder-fancyunicorn-intro": "This is the SpecialPage Fancy Unicorn of the ArticlePlaceholder extension. Much fancy, very unicorn. (so exciting)",
 	"articleplaceholder-fancyunicorn-entityid": "Enter a entity ID to get a auto generated Article Placeholder.",
 	"articleplaceholder-fancyunicorn-submit": "craft",
+	"articleplaceholder-fancyunicorn-no-entity-error": "This is not a valid entity id.",
 	"articleplaceholder-fancyunicorn-create-article": "Create a new article with the title",
 	"articleplaceholder-fancyunicorn-create-article-button": "Create an article",
 	"articleplaceholder-fancyunicorn-create-article-submit-button": "Submit",

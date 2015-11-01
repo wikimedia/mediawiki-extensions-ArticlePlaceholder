@@ -11,6 +11,7 @@
 	"articleplaceholder-fancyunicorn-intro": "Intro paragraph shown on SpecialFancyUnicorn.",
 	"articleplaceholder-fancyunicorn-entityid": "Text to encourage the user to enter an entity id.",
 	"articleplaceholder-fancyunicorn-submit": "Label on the submit button.\n{{Identical|Craft}}",
+	"articleplaceholder-fancyunicorn-no-entity-error": "Error message in case of a unvalid entity id.",
 	"articleplaceholder-fancyunicorn-create-article": "Text in the popup encouraging the user to create an article with a selectable title",
 	"articleplaceholder-fancyunicorn-create-article-button": "Label on create article button",
 	"articleplaceholder-fancyunicorn-create-article-submit-button": "Label on submit button\n{{Identical|Submit}}",
