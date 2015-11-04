@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Beta16"
+		]
+	},
+	"articleplaceholder-desc": "Fornisce una pagina speciale con informazioni da {{WBREPONAME}} su un certo argomento, con l'invito a creare una voce su di esso",
+	"articleplaceholder-fancyunicorn-create-article": "Crea una nuova voce con il titolo",
+	"articleplaceholder-fancyunicorn-create-article-button": "Crea una voce",
+	"articleplaceholder-fancyunicorn-create-article-submit-button": "Invia",
+	"articleplaceholder-fancyunicorn-article-exists-error": "Una voce con questo nome esiste già",
+	"articleplaceholder-fancyunicorn-lua-entity": "Entità",
+	"articleplaceholder-fancyunicorn-lua-description": "Descrizione:",
+	"articleplaceholder-fancyunicorn-lua-reference": "Riferimento",
+	"articleplaceholder-fancyunicorn-lua-qualifier": "Qualificatore",
+	"articleplaceholder-search-header": "Scopri i dati sull'argomento"
+}
