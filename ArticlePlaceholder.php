@@ -31,6 +31,8 @@ $wgHooks['ScribuntoExternalLibraryPaths'][]
 $wgHooks['SpecialSearchResultsAppend'][]
 	= '\ArticlePlaceholder\SearchHookHandler::onSpecialSearchResultsAppend';
 
+$wgHooks['UnitTestsList'][] = 'ArticlePlaceholder\Hooks::onUnitTestsList';
+
 $wgMessagesDirs['ArticlePlaceholder'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['ArticlePlaceholderAliases'] = __DIR__ . '/ArticlePlaceholder.alias.php';
 

@@ -32,4 +32,12 @@ class Hooks {
 		return true;
 	}
 
+	/**
+	 * @param array $files
+	 * @return bool
+	 */
+	public static function onUnitTestsList( array &$files ) {
+		$files[] = __DIR__ . '/../tests/phpunit/';
+		return true;
+	}
 }
