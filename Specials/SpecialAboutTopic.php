@@ -1,30 +1,28 @@
 <?php
 
+namespace ArticlePlaceholder\Specials;
+
+use Html;
+use OOUI;
+use SiteStore;
+use SpecialPage;
+use Title;
+use Wikibase\Client\Store\TitleFactory;
+use Wikibase\Client\WikibaseClient;
+use Wikibase\DataModel\Entity\EntityIdParser;
+use Wikibase\DataModel\Entity\EntityIdParsingException;
+use Wikibase\DataModel\Entity\ItemId;
+use Wikibase\DataModel\Services\Lookup\EntityLookup;
+use Wikibase\Lib\Store\LanguageFallbackLabelDescriptionLookupFactory;
+use Wikibase\Lib\Store\SiteLinkLookup;
+
 /**
  * The AboutTopic SpecialPage for the ArticlePlaceholder extension
  *
  * @ingroup Extensions
  * @author Lucie-Aimée Kaffee
  * @license GNU General Public Licence 2.0 or later
- *
  */
-
-namespace ArticlePlaceholder\Specials;
-
-use Html;
-use Exception;
-use Wikibase\Client\WikibaseClient;
-use Wikibase\Client\Store\TitleFactory;
-use Wikibase\DataModel\Entity\ItemId;
-use Wikibase\DataModel\Entity\EntityId;
-use Wikibase\DataModel\Entity\EntityIdParser;
-use Wikibase\DataModel\Services\Lookup\EntityLookup;
-use Wikibase\Lib\Store\LanguageFallbackLabelDescriptionLookupFactory;
-use Wikibase\Lib\Store\SiteLinkLookup;
-use SiteStore;
-use SpecialPage;
-use OOUI;
-
 class SpecialAboutTopic extends SpecialPage {
 
 	public static function newFromGlobalState() {
@@ -103,11 +101,11 @@ class SpecialAboutTopic extends SpecialPage {
 	 */
 	public function execute( $sub ) {
 		$this->getOutput()->setPageTitle( $this->msg( 'articleplaceholder-abouttopic' ) );
-		$this->showContent($sub);
+		$this->showContent( $sub );
 	}
 
 	/**
-	 * @param sting $entityIdString
+	 * @param string $entityIdString
 	 */
 	private function showContent( $entityIdString ) {
 		$entityId = $this->getItemIdParam( 'entityid', $entityIdString );
@@ -118,7 +116,7 @@ class SpecialAboutTopic extends SpecialPage {
 		}
 		if ( !$this->entityLookup->hasEntity( $entityId ) ) {
 			$this->createForm();
-			$this->getOutput()->addWikiText( $this->msg( 'articleplaceholder-fancyunicorn-no-entity-error' )->text() );
+			$this->getOutput()->addWikiText( $this->msg( 'articleplaceholder-abouttopic-no-entity-error' )->text() );
 			return;
 		}
 
@@ -224,14 +222,16 @@ class SpecialAboutTopic extends SpecialPage {
 		try {
 			$id = $this->idParser->parse( $rawId );
 			if ( !( $id instanceof ItemId ) ) {
-				throw new Exception();
+				throw new EntityIdParsingException();
 			}
 
 			return $id;
-		} catch ( Exception $ex ) {
+		} catch ( EntityIdParsingException $ex ) {
 			// @todo proper Exception Handling
 			$this->getOutput()->addWikiText( $ex->getMessage() );
 		}
+
+		return null;
 	}
 
 	/**
@@ -239,7 +239,7 @@ class SpecialAboutTopic extends SpecialPage {
 	 * @param ItemId $entityId
 	 */
 	private function showPlaceholder( ItemId $entityId ) {
-		$this->getOutput()->addWikiText( "{{aboutTopic|" . $entityId->getSerialization() . "}}" );
+		$this->getOutput()->addWikiText( '{{aboutTopic|' . $entityId->getSerialization() . '}}' );
 		$label = $this->getLabel( $entityId );
 		$this->showTitle( $label );
 		$this->showCreateArticle( $label );
@@ -264,7 +264,7 @@ class SpecialAboutTopic extends SpecialPage {
 	}
 
 	/**
-	 * @param EntityId $entityId
+	 * @param ItemId $entityId
 	 * @return string|null label
 	 */
 	private function getLabel( ItemId $entityId ) {
@@ -317,7 +317,7 @@ class SpecialAboutTopic extends SpecialPage {
 			array( $this->siteGlobalID )
 		);
 
-		if ( isset($sitelinksTitles[0][1]) ) {
+		if ( isset( $sitelinksTitles[0][1] ) ) {
 			$sitelinkTitle = $sitelinkTitles[0][1];
 		}
 
