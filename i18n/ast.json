@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Xuacu"
+		]
+	},
+	"fancyunicorn": "unicorniuelegante",
+	"articleplaceholder-desc": "Ufre una páxina especial con información de {{WBREPONAME}} sobro un tema determináu, con invitación a crear un artículu pal tema",
+	"articleplaceholder-fancyunicorn": "Unicorniu elegante",
+	"articleplaceholder-fancyunicorn-intro": "Esta ye la páxina especial Unicorniu elegante de la estensión ArticlePlaceholder. Muncho elegante, mui unicorniu. (Tan emocionante)",
+	"articleplaceholder-fancyunicorn-entityid": "Escribe una ID d'entidá pa recibir una maqueta d'artículu xenerada automáticamente.",
+	"articleplaceholder-fancyunicorn-submit": "crear",
+	"articleplaceholder-fancyunicorn-create-article": "Crear un artículu nuevu col títulu",
+	"articleplaceholder-fancyunicorn-create-article-button": "Crear un artículu",
+	"articleplaceholder-fancyunicorn-create-article-submit-button": "Unviar",
+	"articleplaceholder-fancyunicorn-article-exists-error": "Yá esiste un artículu con esi nome.",
+	"articleplaceholder-fancyunicorn-lua-entity": "Entidá",
+	"articleplaceholder-fancyunicorn-lua-description": "Descripción:",
+	"articleplaceholder-fancyunicorn-lua-reference": "Referencia",
+	"articleplaceholder-fancyunicorn-lua-qualifier": "Cualificador",
+	"articleplaceholder-search-header": "Descubrir datos del tema"
+}

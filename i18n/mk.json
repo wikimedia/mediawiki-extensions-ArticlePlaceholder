@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bjankuloski06"
+		]
+	},
+	"fancyunicorn": "Раскошен еднорог",
+	"articleplaceholder-desc": "Дава службена страница со информации од {{WBREPONAME}} за извесна тема и покана за создавање на статија на таа тема",
+	"articleplaceholder-fancyunicorn": "Раскошен еднорог",
+	"articleplaceholder-fancyunicorn-intro": "Ова е службената страница „Раскошен еднорог“ на додатокот Пополнувач на статија. Баш раскошен и многу еднорошки (навистина возбудливо)",
+	"articleplaceholder-fancyunicorn-entityid": "Внесете ја назнаката на единицата за да дибиете самосоздаден пополнувач за статија.",
+	"articleplaceholder-fancyunicorn-submit": "изработи",
+	"articleplaceholder-fancyunicorn-create-article": "Создај нова статија со овој наслов",
+	"articleplaceholder-fancyunicorn-create-article-button": "Создај статија",
+	"articleplaceholder-fancyunicorn-create-article-submit-button": "Поднеси",
+	"articleplaceholder-fancyunicorn-article-exists-error": "Веќе постои статија со тоа име.",
+	"articleplaceholder-fancyunicorn-lua-entity": "Единица",
+	"articleplaceholder-fancyunicorn-lua-description": "Опис:",
+	"articleplaceholder-fancyunicorn-lua-reference": "Навод",
+	"articleplaceholder-fancyunicorn-lua-qualifier": "Определница",
+	"articleplaceholder-search-header": "Откријте ги податоците на темата"
+}
