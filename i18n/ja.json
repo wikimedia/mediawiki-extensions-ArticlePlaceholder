@@ -4,7 +4,8 @@
 			"Sujiniku"
 		]
 	},
-	"articleplaceholder-fancyunicorn-create-article-button": "記事を作成する",
-	"articleplaceholder-fancyunicorn-create-article-submit-button": "提出する",
-	"articleplaceholder-fancyunicorn-lua-description": "説明:"
+	"articleplaceholder-abouttopic-no-entity-error": "これは有効なエンティティIDではありません。",
+	"articleplaceholder-abouttopic-create-article-button": "記事を作成する",
+	"articleplaceholder-abouttopic-create-article-submit-button": "提出する",
+	"articleplaceholder-abouttopic-lua-description": "説明:"
 }

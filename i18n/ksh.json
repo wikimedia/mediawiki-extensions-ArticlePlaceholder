@@ -5,10 +5,10 @@
 		]
 	},
 	"articleplaceholder-desc": "Brängk en {{int:specialpage}} med Aanjahbe {{WBREPONAME}} övver e Tehma, met dä Bedde, doh drövver en neuje Sigg ze schrihve.",
-	"articleplaceholder-fancyunicorn-submit": "Lohß Jonn!",
-	"articleplaceholder-fancyunicorn-create-article": "Donn en Sigg met dä Övverschreff aanlähje.",
-	"articleplaceholder-fancyunicorn-create-article-button": "Donn en Sigg met aanlähje.",
-	"articleplaceholder-fancyunicorn-create-article-submit-button": "Lohß jonn!",
-	"articleplaceholder-fancyunicorn-article-exists-error": "En Sigg met dä Övverschreff jidd_et ald.",
-	"articleplaceholder-fancyunicorn-lua-reference": "Fohßnoht"
+	"articleplaceholder-abouttopic-submit": "Lohß Jonn!",
+	"articleplaceholder-abouttopic-create-article": "Donn en Sigg met dä Övverschreff aanlähje.",
+	"articleplaceholder-abouttopic-create-article-button": "Donn en Sigg met aanlähje.",
+	"articleplaceholder-abouttopic-create-article-submit-button": "Lohß jonn!",
+	"articleplaceholder-abouttopic-article-exists-error": "En Sigg met dä Övverschreff jidd_et ald.",
+	"articleplaceholder-abouttopic-lua-reference": "Fohßnoht"
 }
