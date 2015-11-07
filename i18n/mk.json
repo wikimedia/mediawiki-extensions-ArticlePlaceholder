@@ -5,10 +5,11 @@
 		]
 	},
 	"articleplaceholder-desc": "Дава службена страница со информации од {{WBREPONAME}} за извесна тема и покана за создавање на статија на таа тема",
-	"articleplaceholder-abouttopic": "Раскошен еднорог",
-	"articleplaceholder-abouttopic-intro": "Ова е службената страница „Раскошен еднорог“ на додатокот Пополнувач на статија. Баш раскошен и многу еднорошки (навистина возбудливо)",
+	"articleplaceholder-abouttopic": "За тема",
+	"articleplaceholder-abouttopic-intro": "Оваа службена страница создава содржинска страница за извесна тема во информации од {{WBREPONAME}}",
 	"articleplaceholder-abouttopic-entityid": "Внесете ја назнаката на единицата за да дибиете самосоздаден пополнувач за статија.",
 	"articleplaceholder-abouttopic-submit": "изработи",
+	"articleplaceholder-abouttopic-no-entity-error": "Ова не е важечка назнака на единицата.",
 	"articleplaceholder-abouttopic-create-article": "Создај нова статија со овој наслов",
 	"articleplaceholder-abouttopic-create-article-button": "Создај статија",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Поднеси",

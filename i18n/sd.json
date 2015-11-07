@@ -4,9 +4,11 @@
 			"Mehtab ahmed"
 		]
 	},
-	"articleplaceholder-fancyunicorn-create-article": "هن عنوان سان ڪو نئون مضمون تخليق ڪريو",
-	"articleplaceholder-fancyunicorn-create-article-button": "ڪو مضمون تخليق ڪريو",
-	"articleplaceholder-fancyunicorn-create-article-submit-button": "اماڻيو",
-	"articleplaceholder-fancyunicorn-article-exists-error": "هن نالي سان اڳ ئي هڪ مضمون موجود آهي",
-	"articleplaceholder-fancyunicorn-lua-reference": "حوالو"
+	"articleplaceholder-abouttopic": "موضوع بابت",
+	"articleplaceholder-abouttopic-create-article": "هن عنوان سان ڪو نئون مضمون تخليق ڪريو",
+	"articleplaceholder-abouttopic-create-article-button": "ڪو مضمون تخليق ڪريو",
+	"articleplaceholder-abouttopic-create-article-submit-button": "اماڻيو",
+	"articleplaceholder-abouttopic-article-exists-error": "هن نالي سان اڳ ئي هڪ مضمون موجود آهي",
+	"articleplaceholder-abouttopic-lua-reference": "حوالو",
+	"articleplaceholder-search-header": "موضوع تي مواد جي کوج ڪريو"
 }

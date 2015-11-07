@@ -5,10 +5,11 @@
 		]
 	},
 	"articleplaceholder-desc": "Ufre una páxina especial con información de {{WBREPONAME}} sobro un tema determináu, con invitación a crear un artículu pal tema",
-	"articleplaceholder-abouttopic": "Unicorniu elegante",
-	"articleplaceholder-abouttopic-intro": "Esta ye la páxina especial Unicorniu elegante de la estensión ArticlePlaceholder. Muncho elegante, mui unicorniu. (Tan emocionante)",
+	"articleplaceholder-abouttopic": "Tocante al asuntu",
+	"articleplaceholder-abouttopic-intro": "Esta páxina especial xenera una páxina de conteníu sobro un asuntu determináu con información de {{WBREPONAME}}",
 	"articleplaceholder-abouttopic-entityid": "Escribe una ID d'entidá pa recibir una maqueta d'artículu xenerada automáticamente.",
 	"articleplaceholder-abouttopic-submit": "crear",
+	"articleplaceholder-abouttopic-no-entity-error": "Esta nun ye una id d'entidá válida.",
 	"articleplaceholder-abouttopic-create-article": "Crear un artículu nuevu col títulu",
 	"articleplaceholder-abouttopic-create-article-button": "Crear un artículu",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Unviar",
