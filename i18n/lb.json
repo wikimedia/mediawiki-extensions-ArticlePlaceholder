@@ -4,8 +4,9 @@
 			"Robby"
 		]
 	},
-	"articleplaceholder-fancyunicorn-create-article-button": "En Artikel uleeën",
-	"articleplaceholder-fancyunicorn-lua-entity": "Objet",
-	"articleplaceholder-fancyunicorn-lua-description": "Beschreiwung:",
-	"articleplaceholder-fancyunicorn-lua-reference": "Referenz"
+	"articleplaceholder-abouttopic": "Iwwert Thema",
+	"articleplaceholder-abouttopic-create-article-button": "En Artikel uleeën",
+	"articleplaceholder-abouttopic-lua-entity": "Objet",
+	"articleplaceholder-abouttopic-lua-description": "Beschreiwung:",
+	"articleplaceholder-abouttopic-lua-reference": "Referenz"
 }

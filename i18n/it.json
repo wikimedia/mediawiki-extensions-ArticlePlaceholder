@@ -5,6 +5,8 @@
 		]
 	},
 	"articleplaceholder-desc": "Fornisce una pagina speciale con informazioni da {{WBREPONAME}} su un certo argomento, con l'invito a creare una voce su di esso",
+	"articleplaceholder-abouttopic-intro": "Questa pagina speciale genera una pagina di contenuto su un certo argomento con informazioni da {{WBREPONAME}}",
+	"articleplaceholder-abouttopic-no-entity-error": "Questo non è un ID entità valido.",
 	"articleplaceholder-abouttopic-create-article": "Crea una nuova voce con il titolo",
 	"articleplaceholder-abouttopic-create-article-button": "Crea una voce",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Invia",
