@@ -26,7 +26,8 @@ class SpecialAboutTopicTest extends MediaWikiTestCase {
 	}
 
 	public function testExecute() {
-		$termLookupFactory = $this->getMockBuilder( 'Wikibase\Lib\Store\LanguageFallbackLabelDescriptionLookupFactory' )
+		$termLookupFactory = $this->getMockBuilder(
+			'Wikibase\Lib\Store\LanguageFallbackLabelDescriptionLookupFactory' )
 			->disableOriginalConstructor()
 			->getMock();
 

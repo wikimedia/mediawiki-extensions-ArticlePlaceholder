@@ -116,7 +116,8 @@ class SpecialAboutTopic extends SpecialPage {
 		}
 		if ( !$this->entityLookup->hasEntity( $entityId ) ) {
 			$this->createForm();
-			$this->getOutput()->addWikiText( $this->msg( 'articleplaceholder-abouttopic-no-entity-error' )->text() );
+			$message = $this->msg( 'articleplaceholder-abouttopic-no-entity-error' );
+			$this->getOutput()->addWikiText( $message->text() );
 			return;
 		}
 
@@ -268,7 +269,8 @@ class SpecialAboutTopic extends SpecialPage {
 	 * @return string|null label
 	 */
 	private function getLabel( ItemId $entityId ) {
-		$label = $this->termLookupFactory->newLabelDescriptionLookup( $this->getLanguage(), array() )->getLabel( $entityId );
+		$label = $this->termLookupFactory->newLabelDescriptionLookup( $this->getLanguage() )
+			->getLabel( $entityId );
 
 		if ( $label !== null ) {
 			return $label->getText();
@@ -293,18 +295,18 @@ class SpecialAboutTopic extends SpecialPage {
 	 * @todo set links to other projects in sidebar, too!
 	 */
 	private function showLanguageLinks( ItemId $entityId ) {
-		$sitelinks = $this->sitelinkLookup->getSiteLinksForItem( $entityId );
-		$languagelinks = array();
+		$siteLinks = $this->sitelinkLookup->getSiteLinksForItem( $entityId );
+		$languageLinks = array();
 
-		foreach ( $sitelinks as $sl ) {
-			$languageCode = $this->siteStore->getSite( ($sl->getSiteId() ) )->getLanguageCode();
+		foreach ( $siteLinks as $siteLink ) {
+			$languageCode = $this->siteStore->getSite( $siteLink->getSiteId() )->getLanguageCode();
 
 			if ( $languageCode !== null ) {
-				$languagelinks[$languageCode] = $languageCode . ':' . $sl->getPageName();
+				$languageLinks[$languageCode] = $languageCode . ':' . $siteLink->getPageName();
 			}
 		}
 
-		$this->getOutput()->setLanguageLinks( $languagelinks );
+		$this->getOutput()->setLanguageLinks( $languageLinks );
 	}
 
 	/**

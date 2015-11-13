@@ -7,7 +7,6 @@
  *
  * @author Lucie-Aimée Kaffee
  *
- *
  * The license governing the extension code:
  * @license GNU General Public Licence 2.0 or later
  */
@@ -21,14 +20,16 @@ $wgExtensionCredits['other'][] = array(
 	'descriptionmsg' => 'articleplaceholder-desc',
 );
 
-$dir = dirname( __FILE__ );
-$dirbasename = basename( $dir );
-
-$wgAutoloadClasses['ArticlePlaceholder\Specials\SpecialAboutTopic'] = $dir . '/Specials/SpecialAboutTopic.php';
+$wgAutoloadClasses['ArticlePlaceholder\Specials\SpecialAboutTopic']
+	= __DIR__ . '/Specials/SpecialAboutTopic.php';
 $wgAutoloadClasses['ArticlePlaceholder\Hooks'] = __DIR__ . '/includes/Hooks.php';
-$wgAutoloadClasses['ArticlePlaceholder\SearchHookHandler'] = __DIR__ . '/includes/SearchHookHandler.php';
-$wgHooks['ScribuntoExternalLibraryPaths'][] = '\ArticlePlaceholder\Hooks::registerScribuntoExternalLibraryPaths';
-$wgHooks['SpecialSearchResultsAppend'][] = '\ArticlePlaceholder\SearchHookHandler::onSpecialSearchResultsAppend';
+$wgAutoloadClasses['ArticlePlaceholder\SearchHookHandler']
+	= __DIR__ . '/includes/SearchHookHandler.php';
+
+$wgHooks['ScribuntoExternalLibraryPaths'][]
+	= '\ArticlePlaceholder\Hooks::registerScribuntoExternalLibraryPaths';
+$wgHooks['SpecialSearchResultsAppend'][]
+	= '\ArticlePlaceholder\SearchHookHandler::onSpecialSearchResultsAppend';
 
 $wgMessagesDirs['ArticlePlaceholder'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['ArticlePlaceholderAliases'] = __DIR__ . '/ArticlePlaceholder.alias.php';

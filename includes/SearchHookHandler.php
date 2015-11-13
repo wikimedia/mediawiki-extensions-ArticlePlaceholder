@@ -4,11 +4,11 @@ namespace ArticlePlaceholder;
 
 use OutputPage;
 use SpecialSearch;
-use Wikibase\TermIndex;
-use Wikibase\TermIndexEntry;
 use Wikibase\Client\WikibaseClient;
 use Wikibase\Lib\Interactors\TermIndexSearchInteractor;
 use Wikibase\Lib\Interactors\TermSearchResult;
+use Wikibase\TermIndex;
+use Wikibase\TermIndexEntry;
 
 /**
  * Adding results from ArticlePlaceholder to search
@@ -35,11 +35,14 @@ class SearchHookHandler {
 
 	/**
 	 * @param string $language user language
+	 *
 	 * @return self
 	 */
 	private static function newFromGlobalState( $language ) {
 		global $wgLanguageCode;
+
 		$wikibaseClient = WikibaseClient::getDefaultInstance();
+
 		return new self(
 			$wikibaseClient->getStore()->getTermIndex(),
 			$wikibaseClient->newTermSearchInteractor( $language ),
@@ -52,7 +55,11 @@ class SearchHookHandler {
 	 * @param TermIndexSearchInteractor $termSearchInteractor
 	 * @param string $languageCode content language
 	 */
-	public function __construct( TermIndex $termIndex, TermIndexSearchInteractor $termSearchInteractor, $languageCode ) {
+	public function __construct(
+		TermIndex $termIndex,
+		TermIndexSearchInteractor $termSearchInteractor,
+		$languageCode
+	) {
 		$this->termIndex = $termIndex;
 		$this->termSearchInteractor = $termSearchInteractor;
 		$this->languageCode = $languageCode;
@@ -62,9 +69,14 @@ class SearchHookHandler {
 	 * @param SpecialSearch $specialSearch
 	 * @param OutputPage $output
 	 * @param string|null $term
+	 *
 	 * @return bool
 	 */
-	public static function onSpecialSearchResultsAppend( SpecialSearch $specialSearch, OutputPage $output, $term ) {
+	public static function onSpecialSearchResultsAppend(
+		SpecialSearch $specialSearch,
+		OutputPage $output,
+		$term
+	) {
 		if ( $term === null || $term === '' ) {
 			return;
 		}
@@ -98,6 +110,7 @@ class SearchHookHandler {
 
 	/**
 	 * @param string $term
+	 *
 	 * @return string
 	 */
 	private function getSearchResults( $term ) {
@@ -115,6 +128,7 @@ class SearchHookHandler {
 	/**
 	 * @param TermSearchResult $searchResult
 	 * @param string $link
+	 *
 	 * @return string
 	 */
 	private function createResult( TermSearchResult $searchResult, $link ) {
@@ -122,13 +136,13 @@ class SearchHookHandler {
 		$label = $searchResult->getDisplayLabel()->getText();
 		$description = $searchResult->getDisplayDescription()->getText();
 
-		$wikitextResult = '[[' . $link . wfEscapeWikiText( $entityId ) . '|' . wfEscapeWikiText( $label ) .']]';
-		$wikitextResult .= ': ' . wfEscapeWikiText( $description );
-		return $wikitextResult;
+		return '[[' . $link . wfEscapeWikiText( $entityId ) . '|' . wfEscapeWikiText( $label )
+			.']]: ' . wfEscapeWikiText( $description );
 	}
 
 	/**
 	 * @param string $term
+	 *
 	 * @return TermSearchResult[]
 	 */
 	private function searchEntities( $term ) {
