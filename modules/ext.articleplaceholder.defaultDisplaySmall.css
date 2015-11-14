@@ -1,0 +1,10 @@
+#bodyContent {
+  padding-top: 5%;
+  padding-right: 305px;
+}
+
+.articleplaceholder-sidebar, .articleplaceholder-statementgroup {
+  float: none;
+  position: static;
+  width: auto;
+}

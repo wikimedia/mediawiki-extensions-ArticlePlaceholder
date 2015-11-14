@@ -1,0 +1,37 @@
+.articleplaceholder-statement{
+  display: inline-block;
+  border: 1px solid;
+  vertical-align: top;
+  padding: 10px;
+  margin: 20px;
+  width: 300px;
+}
+
+#bodyContent {
+  padding-top: 5%;
+  padding-right: 305px;
+}
+
+#create-article-button {
+  position: absolute;
+  top: 0px;
+  left: 10px;
+}
+
+.articleplaceholder-sidebar{
+  position: absolute;
+  right: 0px;
+  width: 20%;
+}
+
+.articleplaceholder-topimage {
+  float: right;
+}
+
+.articleplaceholder-identifierlist {
+  clear: both;
+}
+
+.articleplaceholder-statementgroup{
+  margin-top: 5%;
+}

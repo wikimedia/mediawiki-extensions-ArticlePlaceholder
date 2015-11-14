@@ -8,7 +8,7 @@ local entityrenderer = {}
 local libraryUtil = require( 'libraryUtil' )
 
 entityrenderer.imageProperty = 'P6'
-local identifierProperties = require( "Identifier" )
+local identifierProperties = require( 'Identifier' )
 
 -- Get the datavalue for a given property.
 -- @param String propertyId
@@ -35,8 +35,8 @@ end
 -- @param table entity
 -- @return table of properties
 local statementSorter = function( entity )
-  -- sort by *something*
-  -- limit number of statements
+  -- @todo sort by *something*
+  -- @todo limit number of statements
   return entity:getProperties()
 end
 
@@ -44,8 +44,8 @@ end
 -- @param table snaks
 -- @return String result
 local snaksRenderer = function( snaks )
-  result = ""
-  if snaks ~= nil and type( snaks ) == "table" then
+  result = ''
+  if snaks ~= nil and type( snaks ) == 'table' then
     result = result ..  mw.wikibase.renderSnaks( snaks )
   end
   return result
@@ -55,14 +55,14 @@ end
 -- @param table referenceSnak
 -- @return String result
 local referenceRenderer = function( referenceSnak )
-  local result = ""
+  local result = ''
   if referenceSnak ~= nil then
-    result = result .. "<h4>" .. mw.message.new( 'articleplaceholder-abouttopic-lua-reference' ):plain() .. "</h4>"
+    result = result .. '<h4>' .. mw.message.new( 'articleplaceholder-abouttopic-lua-reference' ):plain() .. '</h4>'
     local i = 1
     while referenceSnak[i] do
       for k, v in pairs( referenceSnak[i]['snaks'] ) do
-        result = result .. "<p><b>" ..  labelRenderer( k ) .. "</b>: "
-        result = result .. snaksRenderer( v ) .. "</p>"
+        result = result .. '<p><b>' ..  labelRenderer( k ) .. '</b>: '
+        result = result .. snaksRenderer( v ) .. '</p>'
       end
       i = i + 1
     end
@@ -74,12 +74,12 @@ end
 -- @param table qualifierSnak
 -- @return String result
 local qualifierRenderer = function( qualifierSnak )
-  local result = ""
+  local result = ''
   if qualifierSnak ~= nil then
-    result = result .. "<h4>" .. mw.message.new( 'articleplaceholder-abouttopic-lua-qualifier' ):plain() .. "</h4>"
+    result = result .. '<h4>' .. mw.message.new( 'articleplaceholder-abouttopic-lua-qualifier' ):plain() .. '</h4>'
     for key, value in pairs(qualifierSnak) do
-      result = result .. "<p><b>" ..  labelRenderer( key ) .. "</b>: "
-      result = result .. snaksRenderer( value ) .. "</p>"
+      result = result .. '<p><b>' ..  labelRenderer( key ) .. '</b>: '
+      result = result .. snaksRenderer( value ) .. '</p>'
     end
   end
   return result
@@ -89,22 +89,22 @@ end
 -- @param String propertyId
 -- @return String renderedImage
 local imageStatementRenderer = function( statement, orientationImage )
-  local result = ""
-  local reference = ""
-  local qualifier = ""
-  local image = ""
+  local result = ''
+  local reference = ''
+  local qualifier = ''
+  local image = ''
   if statement ~= nil then
     for key, value in pairs( statement ) do
-      if key == "mainsnak" then
+      if key == 'mainsnak' then
         image = mw.wikibase.renderSnak( value )
-      elseif key == "references" then
+      elseif key == 'references' then
         reference = referenceRenderer( value )
-      elseif key == "qualifiers" then
+      elseif key == 'qualifiers' then
         qualifier = qualifierRenderer( value )
       end
     end
   end
-  result = "[[File:" .. image .. "|thumb|" .. orientationImage .. "]]"
+  result = '[[File:' .. image .. '|thumb|' .. orientationImage .. '|200px]]'
   result = result .. qualifier ..  reference
   return result
 end
@@ -113,17 +113,17 @@ end
 -- @param table statement
 -- @return string result
 local statementRenderer = function( statement )
-  local result = ""
-  local reference = ""
-  local qualifier = ""
-  local mainsnak = ""
+  local result = ''
+  local reference = ''
+  local qualifier = ''
+  local mainsnak = ''
   if statement ~= nil then
     for key, value in pairs( statement ) do
-      if key == "mainsnak" then
-        mainsnak = "<br/><h3>" .. mw.wikibase.renderSnak( value ) .. "</h3><br/>"
-      elseif key == "qualifiers" then
+      if key == 'mainsnak' then
+        mainsnak = '<br/><h3>' .. mw.wikibase.renderSnak( value ) .. '</h3><br/>'
+      elseif key == 'qualifiers' then
         qualifier = qualifierRenderer( value )
-      elseif key == "references" then
+      elseif key == 'references' then
         reference = referenceRenderer( value )
       end
     end
@@ -137,7 +137,7 @@ end
 -- @param String propertyId
 -- @return string statement
 local bestStatementRenderer = function( entity, propertyId )
-  local statement = ""
+  local statement = ''
   local bestStatements = entity:getBestStatements( propertyId )
   for _, stat in pairs( bestStatements ) do
     if getDatatype( propertyId ) == "commonsMedia" then
@@ -149,51 +149,70 @@ local bestStatementRenderer = function( entity, propertyId )
   return statement
 end
 
--- Render the idenfier
+-- Render the identifier
 -- @return string identifier
 local identifierRenderer = function( entity, propertyId )
   return bestStatementRenderer( entity, propertyId )
 end
 
--- Render a list of statements.
+-- Render a list of identifier
 -- @param table entity
--- @return string result
-local function statementListRenderer ( entity )
-  local result = ""
-  local properties = statementSorter( entity )
+-- @return string identifier
+local identifierListRenderer = function( entity )
+  local properties = entity:getProperties()
+  local identifierList = ''
   if properties ~= nil then
     for _, propertyId in pairs( properties ) do
-
       if identifierProperties[propertyId] then
-        result = result .. "<h2>" .. labelRenderer( propertyId ) .. "</h2>"
-        result = result .. identifierRenderer( entity, propertyId )
-
-      elseif propertyId ~= entityrenderer.imageProperty then
-        result = result .. "<h2>" .. labelRenderer( propertyId ) .. "</h2>"
-        result = result .. bestStatementRenderer( entity, propertyId )
+        identifierList = identifierList .. '<div class="articleplaceholder-identifier">' .. '<h2>' .. labelRenderer( propertyId ) .. '</h2>'
+        identifierList = identifierList .. identifierRenderer( entity, propertyId ) .. '</div>'
       end
     end
   end
-  return result
+  if identifierList ~= nil and identifierList ~= '' then
+    local div = '<div class="articleplaceholder-identifierlist">'
+    identifierList = div .. '<h1>' .. mw.message.new( 'articleplaceholder-abouttopic-lua-identifier' ):plain() .. '</h1>' ..  identifierList
+    return  identifierList .. '</div>'
+  end
+  return ''
+end
+
+-- Render a list of statements.
+-- @param table entity
+-- @return string result
+local statementListRenderer = function( entity )
+  local result = ''
+  local properties = statementSorter( entity )
+  if properties ~= nil then
+    for _, propertyId in pairs( properties ) do
+      if propertyId ~= entityrenderer.imageProperty and not identifierProperties[propertyId] then
+        result = result .. '<div class="articleplaceholder-statement">'
+        result = result .. '<h2>' .. labelRenderer( propertyId ) .. '</h2>'
+        result = result .. bestStatementRenderer( entity, propertyId )
+        result = result .. '</div>'
+      end
+    end
+  end
+  return '<div class="articleplaceholder-statementgroup">' .. result .. '</div>'
 end
 
 -- Render the image.
 -- @param String propertyId
 -- @return String renderedImage
 local topImageRenderer = function( entity, propertyId, orientationImage )
-  renderedImage = ""
+  renderedImage = ''
   imageName = entity:formatPropertyValues( propertyId ).value
-  if imageName ~= "" then
-    renderedImage = "[[File:" .. imageName .. "|thumb|" .. orientationImage .. "]]"
+  if imageName ~= '' then
+    renderedImage = '[[File:' .. imageName .. '|thumb|' .. orientationImage .. ']]'
   end
-  return renderedImage
+  return '<div class="articleplaceholder-topimage">' .. renderedImage .. '</div>'
 end
 
 -- Render the description.
 -- @param String entityId
 -- @return String description
 local function descriptionRenderer( entityId )
-  return mw.wikibase.description( entityId )
+  return '<div class="articleplaceholer-description"><p>' .. mw.wikibase.description( entityId ) .. '</p></div>'
 end
 
 -- Render an entity, method to call all renderer
@@ -201,19 +220,21 @@ end
 -- @return String result
 local renderEntity = function ( entityID )
   local entity = mw.wikibase.getEntityObject( entityID )
-  local result = ""
+  local result = ''
 
   local description = descriptionRenderer( entityID )
   local image = topImageRenderer( entity, entityrenderer.imageProperty, "right" )
+  local identifier = identifierListRenderer( entity )
   local entityResult = statementListRenderer( entity )
 
-  result = result .. "__NOTOC__"
+  result = result .. '__NOTOC__'
   if description ~= nil then
     result = result .. mw.message.new( 'articleplaceholder-abouttopic-lua-description' ):plain() ..  description
   end
-  result = result .. image
-  if entityResult ~= "" then
-    result = result .. "<h1>" .. mw.message.new( 'articleplaceholder-abouttopic-lua-entity' ):plain() .. "</h1>" .. entityResult
+  result = result .. '<div class="articleplaceholder-sidebar">' .. image
+  result = result .. identifier .. '</div>'
+  if entityResult ~= '' then
+    result = result .. entityResult
   end
 
   return result
@@ -302,6 +323,15 @@ end
 entityrenderer.setIdentifierRenderer = function( newIdentifierRenderer )
   util.checkType( 'setIdentifierRenderer', 1, newIdentifierRenderer, 'function' )
   identifierRenderer = newIdentifierRenderer
+end
+
+entityrenderer.getIdentifierListRenderer = function()
+  return identifierListRenderer
+end
+
+entityrenderer.setIdentifierListRenderer = function( newIdentifierListRenderer )
+  util.checkType( 'setIdentifierListRenderer', 1, newIdentifierListRenderer, 'function' )
+    identifierListRenderer = newIdentifierListRenderer
 end
 
 entityrenderer.getStatementListRenderer = function()

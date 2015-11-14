@@ -44,6 +44,11 @@ $wgSpecialPages['AboutTopic'] = array(
 preg_match( '+' . preg_quote( DIRECTORY_SEPARATOR ) . '(?:vendor|extensions)'
 	. preg_quote( DIRECTORY_SEPARATOR ) . '.*+', __DIR__, $remoteExtPath );
 
+$commonModuleInfo = array(
+	'localBasePath' => __DIR__ . '/modules',
+	'remoteExtPath' => '..' . $remoteExtPath[0],
+);
+
 $wgResourceModules['ext.articleplaceholder.createArticle'] = array(
 	'position' => 'bottom',
 	'scripts' => 'ext.articleplaceholder.createArticle.js',
@@ -53,11 +58,17 @@ $wgResourceModules['ext.articleplaceholder.createArticle'] = array(
 		'mediawiki.Title',
 		'mediawiki.util'
 	),
-	'localBasePath' => __DIR__ . '/modules',
-	'remoteExtPath' => '..' . $remoteExtPath[0],
 	'messages' => array(
 		'articleplaceholder-abouttopic-create-article',
 		'articleplaceholder-abouttopic-article-exists-error',
 		'articleplaceholder-abouttopic-create-article-submit-button'
-	)
-);
+	),
+) + $commonModuleInfo;
+
+$wgResourceModules['ext.articleplaceholder.defaultDisplay'] = array(
+	'styles' => array(
+		'ext.articleplaceholder.defaultDisplay.css',
+		'ext.articleplaceholder.defaultDisplaySmall.css' => array( 'media' => '(max-width: 880px)' ),
+	),
+	'position' => 'top',
+) + $commonModuleInfo;
