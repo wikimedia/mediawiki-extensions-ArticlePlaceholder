@@ -1,8 +1,14 @@
+--[[
+	@license GNU GPL v2+
+	@author Lucie-Aimée Kaffee
+]]
+
 local entityrenderer = {}
 
+local libraryUtil = require( 'libraryUtil' )
+
 entityrenderer.imageProperty = 'P6'
-entityrenderer.identifierProperties = {}
-libraryUtil = require( 'libraryUtil' )
+local identifierProperties = require( "Identifier" )
 
 -- Get the datavalue for a given property.
 -- @param String propertyId
@@ -135,6 +141,12 @@ local bestStatementRenderer = function( entity, propertyId )
   return statement
 end
 
+-- Render the idenfier
+-- @return string identifier
+local identifierRenderer = function( entity, propertyId )
+  return bestStatementRenderer( entity, propertyId )
+end
+
 -- Render a list of statements.
 -- @param table entity
 -- @return string result
@@ -143,7 +155,12 @@ local function statementListRenderer ( entity )
   local properties = statementSorter( entity )
   if properties ~= nil then
     for _, propertyId in pairs( properties ) do
-      if propertyId ~= entityrenderer.imageProperty then
+
+      if identifierProperties[propertyId] then
+        result = result .. "<h2>" .. labelRenderer( propertyId ) .. "</h2>"
+        result = result .. identifierRenderer( entity, propertyId )
+
+      elseif propertyId ~= entityrenderer.imageProperty then
         result = result .. "<h2>" .. labelRenderer( propertyId ) .. "</h2>"
         result = result .. bestStatementRenderer( entity, propertyId )
       end
@@ -163,7 +180,6 @@ local topImageRenderer = function( entity, propertyId, orientationImage )
   end
   return renderedImage
 end
-
 
 -- Render the description.
 -- @param String entityId
@@ -269,6 +285,15 @@ end
 entityrenderer.setBestStatementRenderer = function( newBestStatementRenderer )
   util.checkType( 'setBestStatementRenderer', 1, newBestStatementRenderer, 'function' )
   bestStatementRenderer = newBestStatementRenderer
+end
+
+entityrenderer.getIdentifierRenderer = function()
+  return identifierRenderer
+end
+
+entityrenderer.setIdentifierRenderer = function( newIdentifierRenderer )
+  util.checkType( 'setIdentifierRenderer', 1, newIdentifierRenderer, 'function' )
+  identifierRenderer = newIdentifierRenderer
 end
 
 entityrenderer.getStatementListRenderer = function()
