@@ -21,7 +21,15 @@ end
 ----------------------------------- Implementation of Renderers -----------------------------------
 
 -- Render a label to the language of the local Wiki.
-local labelRenderer = mw.wikibase.label
+-- @param string entityId
+-- @return string label or entityId if no label available
+local labelRenderer = function( entityId )
+  label = mw.wikibase.label( entityId )
+  if label == nil then
+    label = entityId
+  end
+  return label
+end
 
 -- Returns a table of statements sorted by *something*
 -- @param table entity
