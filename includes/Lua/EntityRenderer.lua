@@ -202,7 +202,7 @@ end
 local topImageRenderer = function( entity, propertyId, orientationImage )
   renderedImage = ''
   imageName = entity:formatPropertyValues( propertyId ).value
-  if imageName ~= '' then
+  if imageName ~= '' and imageName ~= nil then
     renderedImage = '[[File:' .. imageName .. '|thumb|' .. orientationImage .. ']]'
   end
   return '<div class="articleplaceholder-topimage">' .. renderedImage .. '</div>'
