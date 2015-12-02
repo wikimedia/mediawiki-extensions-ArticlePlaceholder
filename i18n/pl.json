@@ -4,7 +4,8 @@
 			"Chrumps"
 		]
 	},
-	"articleplaceholder-fancyunicorn-create-article-button": "Utwórz artykuł",
-	"articleplaceholder-fancyunicorn-lua-description": "Opis:",
-	"articleplaceholder-fancyunicorn-lua-qualifier": "Kwalifikator"
+	"articleplaceholder-abouttopic-create-article-button": "Utwórz artykuł",
+	"articleplaceholder-abouttopic-lua-description": "Opis:",
+	"articleplaceholder-abouttopic-lua-qualifier": "Kwalifikator",
+	"articleplaceholder-abouttopic-lua-identifier": "Identyfikator"
 }
