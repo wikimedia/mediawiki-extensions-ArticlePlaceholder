@@ -6,8 +6,9 @@
 local entityrenderer = {}
 
 local util = require( 'libraryUtil' )
+local php = mw_interface
 
-entityrenderer.imageProperty = 'P6'
+entityrenderer.imageProperty = php.getImageProperty()
 local identifierProperties = require( 'Identifier' )
 
 -- Get the datavalue for a given property.
@@ -200,11 +201,14 @@ end
 -- @return String renderedImage
 local topImageRenderer = function( entity, propertyId, orientationImage )
   local renderedImage = ''
-  local imageName = entity:formatPropertyValues( propertyId ).value
-  if imageName ~= '' and imageName ~= nil then
-    renderedImage = '[[File:' .. imageName .. '|thumb|' .. orientationImage .. ']]'
+  if propertyId ~= nil then
+    local imageName = entity:formatPropertyValues( propertyId ).value
+    if imageName ~= nil and imageName ~= '' then
+      renderedImage = '[[File:' .. imageName .. '|thumb|' .. orientationImage .. ']]'
+      renderedImage = '<div class="articleplaceholder-topimage">' .. renderedImage .. '</div>'
+    end
   end
-  return '<div class="articleplaceholder-topimage">' .. renderedImage .. '</div>'
+  return renderedImage
 end
 
 -- Render the description.

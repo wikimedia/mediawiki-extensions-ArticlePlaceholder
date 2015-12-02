@@ -11,6 +11,27 @@ namespace ArticlePlaceholder;
 class Hooks {
 
 	/**
+	 * External Lua libraries for Scribunto
+	 *
+	 * @param string $engine
+	 * @param array &$extraLibraryPaths
+	 *
+	 * @return bool
+	 */
+	public static function onScribuntoExternalLibraries(
+		$engine,
+		array &$extraLibraries
+	) {
+		if ( $engine === 'lua' ) {
+			$extraLibraries['EntityRenderer'] = array(
+				'class' => 'ArticlePlaceholder\Lua\Scribunto_LuaArticlePlaceholderLibrary',
+				'deferLoad' => true,
+			);
+		}
+		return true;
+	}
+
+	/**
 	 * External Lua library paths for Scribunto
 	 *
 	 * @param string $engine
@@ -22,13 +43,9 @@ class Hooks {
 		$engine,
 		array &$extraLibraryPaths
 	) {
-		if ( $engine !== 'lua' ) {
-			return true;
+		if ( $engine === 'lua' ) {
+			$extraLibraryPaths[] = __DIR__ . '/Lua';
 		}
-
-		// Path containing pure Lua libraries that don't need to interact with PHP
-		$extraLibraryPaths[] = __DIR__ . '/Lua';
-
 		return true;
 	}
 

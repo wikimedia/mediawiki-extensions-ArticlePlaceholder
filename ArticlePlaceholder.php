@@ -20,12 +20,18 @@ $wgExtensionCredits['other'][] = array(
 	'descriptionmsg' => 'articleplaceholder-desc',
 );
 
+$wgArticlePlaceholderImageProperty = 'P18';
+
 $wgAutoloadClasses['ArticlePlaceholder\Specials\SpecialAboutTopic']
 	= __DIR__ . '/Specials/SpecialAboutTopic.php';
+$wgAutoloadClasses['ArticlePlaceholder\Lua\Scribunto_LuaArticlePlaceholderLibrary']
+	= __DIR__ . '/includes/Lua/Scribunto_LuaArticlePlaceholderLibrary.php';
 $wgAutoloadClasses['ArticlePlaceholder\Hooks'] = __DIR__ . '/includes/Hooks.php';
 $wgAutoloadClasses['ArticlePlaceholder\SearchHookHandler']
 	= __DIR__ . '/includes/SearchHookHandler.php';
 
+$wgHooks['ScribuntoExternalLibraries'][]
+	= '\ArticlePlaceholder\Hooks::onScribuntoExternalLibraries';
 $wgHooks['ScribuntoExternalLibraryPaths'][]
 	= '\ArticlePlaceholder\Hooks::registerScribuntoExternalLibraryPaths';
 $wgHooks['SpecialSearchResultsAppend'][]
