@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Macofe"
+			"Macofe",
+			"SinNovedades"
 		]
 	},
 	"articleplaceholder-desc": "Proporciona una página especial información de {{WBREPONAME}} acerca de un determinado tema, con invitación a crear un artículo para el tema",
@@ -18,5 +19,6 @@
 	"articleplaceholder-abouttopic-lua-description": "Descripción:",
 	"articleplaceholder-abouttopic-lua-reference": "Referencia",
 	"articleplaceholder-abouttopic-lua-qualifier": "Calificador",
+	"articleplaceholder-abouttopic-lua-identifier": "Identificador",
 	"articleplaceholder-search-header": "Descubrir datos sobre el tema"
 }
