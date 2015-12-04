@@ -46,7 +46,7 @@ preg_match( '+' . preg_quote( DIRECTORY_SEPARATOR ) . '(?:vendor|extensions)'
 
 $commonModuleInfo = array(
 	'localBasePath' => __DIR__ . '/modules',
-	'remoteExtPath' => '..' . $remoteExtPath[0],
+	'remoteExtPath' => '..' . $remoteExtPath[0] . '/modules',
 );
 
 $wgResourceModules['ext.articleplaceholder.createArticle'] = array(

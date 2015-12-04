@@ -325,9 +325,6 @@ class SpecialAboutTopic extends SpecialPage {
 
 		if ( isset( $sitelinksTitles[0][1] ) ) {
 			$sitelinkTitle = $sitelinkTitles[0][1];
-		}
-
-		if ( $sitelinkTitle !== null ) {
 			return $this->titleFactory->newFromText( $sitelinkTitle )->getLinkURL();
 		}
 
