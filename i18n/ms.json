@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kurniasan"
+		]
+	},
+	"articleplaceholder-desc": "Menyediakan laman khas berisi maklumat {{WBREPONAME}} berkenaan topik tertentu, beserta undangan mencipta rencana untuk topik terbabit",
+	"articleplaceholder-abouttopic-create-article-submit-button": "Hantar",
+	"articleplaceholder-abouttopic-article-exists-error": "Sebuah rencana bernama sama telah wujud",
+	"articleplaceholder-abouttopic-lua-description": "Keterangan:",
+	"articleplaceholder-abouttopic-lua-reference": "Rujukan",
+	"articleplaceholder-search-header": "Temukan data berkenaan topik ini"
+}
