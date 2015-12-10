@@ -23,7 +23,7 @@ $wgExtensionCredits['other'][] = array(
 $wgArticlePlaceholderImageProperty = 'P18';
 
 $wgAutoloadClasses['ArticlePlaceholder\Specials\SpecialAboutTopic']
-	= __DIR__ . '/Specials/SpecialAboutTopic.php';
+	= __DIR__ . '/includes/SpecialAboutTopic.php';
 $wgAutoloadClasses['ArticlePlaceholder\Lua\Scribunto_LuaArticlePlaceholderLibrary']
 	= __DIR__ . '/includes/Lua/Scribunto_LuaArticlePlaceholderLibrary.php';
 $wgAutoloadClasses['ArticlePlaceholder\Hooks'] = __DIR__ . '/includes/Hooks.php';
