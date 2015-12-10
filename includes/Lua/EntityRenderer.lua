@@ -229,7 +229,7 @@ local renderEntity = function ( entityID )
 
   result = result .. '__NOTOC__'
   if description ~= nil then
-    result = result .. mw.message.new( 'articleplaceholder-abouttopic-lua-description' ):plain() ..  description
+    result = result .. description
   end
   result = result .. '<div class="articleplaceholder-sidebar">' .. image
   result = result .. identifier .. '</div>'

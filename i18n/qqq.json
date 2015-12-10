@@ -17,7 +17,6 @@
 	"articleplaceholder-abouttopic-create-article-submit-button": "Label on submit button\n{{Identical|Submit}}",
 	"articleplaceholder-abouttopic-article-exists-error": "Error to indicate the given article title already exists",
 	"articleplaceholder-abouttopic-lua-entity": "Header of the entity section\n{{Identical|Entity}}",
-	"articleplaceholder-abouttopic-lua-description": "Word before the description string\n{{Identical|Description}}",
 	"articleplaceholder-abouttopic-lua-reference": "Header of the reference section\n{{Identical|Reference}}",
 	"articleplaceholder-abouttopic-lua-qualifier": "Header of the qualifier section\n{{Identical|Qualifier}}",
 	"articleplaceholder-abouttopic-lua-identifier": "Header of the identifier section\n{{Identical|Identifier}}",
