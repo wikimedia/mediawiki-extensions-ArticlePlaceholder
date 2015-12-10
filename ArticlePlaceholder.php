@@ -22,7 +22,7 @@ $wgExtensionCredits['other'][] = array(
 
 $wgArticlePlaceholderImageProperty = 'P18';
 
-$wgAutoloadClasses['ArticlePlaceholder\Specials\SpecialAboutTopic']
+$wgAutoloadClasses['ArticlePlaceholder\SpecialAboutTopic']
 	= __DIR__ . '/includes/SpecialAboutTopic.php';
 $wgAutoloadClasses['ArticlePlaceholder\Lua\Scribunto_LuaArticlePlaceholderLibrary']
 	= __DIR__ . '/includes/Lua/Scribunto_LuaArticlePlaceholderLibrary.php';
@@ -43,7 +43,7 @@ $wgMessagesDirs['ArticlePlaceholder'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['ArticlePlaceholderAliases'] = __DIR__ . '/ArticlePlaceholder.alias.php';
 
 $wgSpecialPages['AboutTopic'] = array(
-	'ArticlePlaceholder\Specials\SpecialAboutTopic',
+	'ArticlePlaceholder\SpecialAboutTopic',
 	'newFromGlobalState'
 );
 

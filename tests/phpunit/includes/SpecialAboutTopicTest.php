@@ -2,13 +2,13 @@
 
 namespace ArticlePlaceholder\Tests;
 
-use ArticlePlaceholder\Specials\SpecialAboutTopic;
+use ArticlePlaceholder\SpecialAboutTopic;
 use Language;
 use MediaWikiTestCase;
 use Wikibase\Client\Store\TitleFactory;
 
 /**
- * @covers ArticlePlaceholder\Specials\SpecialAboutTopic
+ * @covers ArticlePlaceholder\SpecialAboutTopic
  *
  * @group ArticlePlaceholder
  *

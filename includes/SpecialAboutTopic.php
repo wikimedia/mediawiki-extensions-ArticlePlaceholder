@@ -1,6 +1,6 @@
 <?php
 
-namespace ArticlePlaceholder\Specials;
+namespace ArticlePlaceholder;
 
 use Html;
 use OOUI;
