@@ -100,7 +100,7 @@ class SpecialAboutTopic extends SpecialPage {
 	 * @param string $sub
 	 */
 	public function execute( $sub ) {
-		$this->getOutput()->setPageTitle( $this->msg( 'articleplaceholder-abouttopic' ) );
+		$this->getOutput()->setPageTitle( $this->msg( 'articleplaceholder-abouttopic' )->escaped() );
 		$this->showContent( $sub );
 	}
 
@@ -289,7 +289,7 @@ class SpecialAboutTopic extends SpecialPage {
 	 */
 	private function showTitle( $label ) {
 		if ( $label !== null ) {
-			$this->getOutput()->setPageTitle( $label );
+			$this->getOutput()->setPageTitle( htmlspecialchars( $label ) );
 		}
 	}
 
