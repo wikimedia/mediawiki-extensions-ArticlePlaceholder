@@ -24,7 +24,7 @@ end
 -- @param string entityId
 -- @return string label or entityId if no label available
 local labelRenderer = function( entityId )
-  label = mw.wikibase.label( entityId )
+  local label = mw.wikibase.label( entityId )
   if label == nil then
     label = entityId
   end
@@ -44,9 +44,9 @@ end
 -- @param table snaks
 -- @return String result
 local snaksRenderer = function( snaks )
-  result = ''
+  local result = ''
   if snaks ~= nil and type( snaks ) == 'table' then
-    result = result ..  mw.wikibase.renderSnaks( snaks )
+    result = result .. mw.wikibase.renderSnaks( snaks )
   end
   return result
 end
@@ -61,7 +61,7 @@ local referenceRenderer = function( referenceSnak )
     local i = 1
     while referenceSnak[i] do
       for k, v in pairs( referenceSnak[i]['snaks'] ) do
-        result = result .. '<p><b>' ..  labelRenderer( k ) .. '</b>: '
+        result = result .. '<p><b>' .. labelRenderer( k ) .. '</b>: '
         result = result .. snaksRenderer( v ) .. '</p>'
       end
       i = i + 1
@@ -78,7 +78,7 @@ local qualifierRenderer = function( qualifierSnak )
   if qualifierSnak ~= nil then
     result = result .. '<h4>' .. mw.message.new( 'articleplaceholder-abouttopic-lua-qualifier' ):plain() .. '</h4>'
     for key, value in pairs(qualifierSnak) do
-      result = result .. '<p><b>' ..  labelRenderer( key ) .. '</b>: '
+      result = result .. '<p><b>' .. labelRenderer( key ) .. '</b>: '
       result = result .. snaksRenderer( value ) .. '</p>'
     end
   end
@@ -89,7 +89,6 @@ end
 -- @param String propertyId
 -- @return String renderedImage
 local imageStatementRenderer = function( statement, orientationImage )
-  local result = ''
   local reference = ''
   local qualifier = ''
   local image = ''
@@ -104,8 +103,8 @@ local imageStatementRenderer = function( statement, orientationImage )
       end
     end
   end
-  result = '[[File:' .. image .. '|thumb|' .. orientationImage .. '|200px]]'
-  result = result .. qualifier ..  reference
+  local result = '[[File:' .. image .. '|thumb|' .. orientationImage .. '|200px]]'
+  result = result .. qualifier .. reference
   return result
 end
 
@@ -172,7 +171,7 @@ local identifierListRenderer = function( entity )
   if identifierList ~= nil and identifierList ~= '' then
     local div = '<div class="articleplaceholder-identifierlist">'
     identifierList = div .. '<h1>' .. mw.message.new( 'articleplaceholder-abouttopic-lua-identifier' ):plain() .. '</h1>' ..  identifierList
-    return  identifierList .. '</div>'
+    return identifierList .. '</div>'
   end
   return ''
 end
@@ -200,8 +199,8 @@ end
 -- @param String propertyId
 -- @return String renderedImage
 local topImageRenderer = function( entity, propertyId, orientationImage )
-  renderedImage = ''
-  imageName = entity:formatPropertyValues( propertyId ).value
+  local renderedImage = ''
+  local imageName = entity:formatPropertyValues( propertyId ).value
   if imageName ~= '' and imageName ~= nil then
     renderedImage = '[[File:' .. imageName .. '|thumb|' .. orientationImage .. ']]'
   end
@@ -331,7 +330,7 @@ end
 
 entityrenderer.setIdentifierListRenderer = function( newIdentifierListRenderer )
   util.checkType( 'setIdentifierListRenderer', 1, newIdentifierListRenderer, 'function' )
-    identifierListRenderer = newIdentifierListRenderer
+  identifierListRenderer = newIdentifierListRenderer
 end
 
 entityrenderer.getStatementListRenderer = function()
