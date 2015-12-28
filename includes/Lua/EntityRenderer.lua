@@ -5,7 +5,7 @@
 
 local entityrenderer = {}
 
-local libraryUtil = require( 'libraryUtil' )
+local util = require( 'libraryUtil' )
 
 entityrenderer.imageProperty = 'P6'
 local identifierProperties = require( 'Identifier' )
