@@ -11,6 +11,8 @@ local php = mw_interface
 entityrenderer.imageProperty = php.getImageProperty()
 local identifierProperties = require( 'Identifier' )
 
+local hasReferences = false
+
 -- Get the datavalue for a given property.
 -- @param String propertyId
 -- @return String datatype
@@ -47,28 +49,32 @@ end
 local snaksRenderer = function( snaks )
   local result = ''
   if snaks ~= nil and type( snaks ) == 'table' then
-    result = result .. mw.wikibase.renderSnaks( snaks )
+    result = mw.wikibase.renderSnaks( snaks )
   end
   return result
 end
 
 -- Render a reference.
--- @param table referenceSnak
+-- @param table references
 -- @return String result
-local referenceRenderer = function( referenceSnak )
-  local result = ''
-  if referenceSnak ~= nil then
-    result = result .. '<h4>' .. mw.message.new( 'articleplaceholder-abouttopic-lua-reference' ):plain() .. '</h4>'
+local referenceRenderer = function( references )
+  local frame = mw:getCurrentFrame()
+  local referencesWikitext = {}
+  local referenceWikitext
+
+  if references ~= nil then
+    hasReferences = true
     local i = 1
-    while referenceSnak[i] do
-      for k, v in pairs( referenceSnak[i]['snaks'] ) do
-        result = result .. '<p><b>' .. labelRenderer( k ) .. '</b>: '
-        result = result .. snaksRenderer( v ) .. '</p>'
+    while references[i] do
+      for propRef, snakRef in pairs( references[i]['snaks'] ) do
+        referenceWikitext = "'''" .. labelRenderer( propRef ) .. "''': " .. snaksRenderer( snakRef )
+        table.insert( referencesWikitext, frame:extensionTag( 'ref', referenceWikitext ) )
       end
       i = i + 1
     end
   end
-  return result
+
+  return table.concat( referencesWikitext, "" )
 end
 
 -- Render a qualifier.
@@ -79,7 +85,7 @@ local qualifierRenderer = function( qualifierSnak )
   if qualifierSnak ~= nil then
     result = result .. '<h4>' .. mw.message.new( 'articleplaceholder-abouttopic-lua-qualifier' ):plain() .. '</h4>'
     for key, value in pairs(qualifierSnak) do
-      result = result .. '<p><b>' .. labelRenderer( key ) .. '</b>: '
+      result = result .. "<p>'''" .. labelRenderer( key ) .. "''': "
       result = result .. snaksRenderer( value ) .. '</p>'
     end
   end
@@ -104,8 +110,8 @@ local imageStatementRenderer = function( statement, orientationImage )
       end
     end
   end
-  local result = '[[File:' .. image .. '|thumb|' .. orientationImage .. '|200px]]'
-  result = result .. qualifier .. reference
+  local result = '[[File:' .. image .. '|thumb|' .. orientationImage .. '|200px|' .. reference .. ']]'
+  result = result .. qualifier
   return result
 end
 
@@ -120,15 +126,15 @@ local statementRenderer = function( statement )
   if statement ~= nil then
     for key, value in pairs( statement ) do
       if key == 'mainsnak' then
-        mainsnak = '<br/><h3>' .. mw.wikibase.renderSnak( value ) .. '</h3><br/>'
-      elseif key == 'qualifiers' then
-        qualifier = qualifierRenderer( value )
+        mainsnak = mw.wikibase.renderSnak( value )
       elseif key == 'references' then
         reference = referenceRenderer( value )
+      elseif key == 'qualifiers' then
+        qualifier = qualifierRenderer( value )
       end
     end
   end
-  result = result .. mainsnak .. qualifier .. reference
+  result = result .. '<p><span class="articleplaceholder-value">' .. mainsnak .. '</span>' .. reference .. '</p>' .. qualifier
   return result
 end
 
@@ -238,6 +244,10 @@ local renderEntity = function ( entityID )
   result = result .. identifier .. '</div>'
   if entityResult ~= '' then
     result = result .. entityResult
+  end
+
+  if hasReferences then
+    result = result .. '<h1>' .. mw.message.new( 'articleplaceholder-abouttopic-lua-reference' ):plain() .. '</h1>'
   end
 
   return result
@@ -373,6 +383,14 @@ entityrenderer.setRenderEntity = function( newRenderEntity )
   renderEntity = newRenderEntity
 end
 
+entityrenderer.getHasReferences = function()
+  return hasReferences
+end
+
+entityrenderer.setHasReferences = function( newHasReferences )
+  util.checkType( 'setHasReferences', 1, newHasReferences, 'boolean' )
+  hasReferences = newHasReferences
+end
 
 --------------------------------------------------------------------------------------------------
 

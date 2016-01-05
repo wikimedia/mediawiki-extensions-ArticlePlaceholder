@@ -1,4 +1,4 @@
-.articleplaceholder-statement{
+.articleplaceholder-statement {
   display: inline-block;
   border: 1px solid;
   vertical-align: top;
@@ -18,7 +18,7 @@
   left: 10px;
 }
 
-.articleplaceholder-sidebar{
+.articleplaceholder-sidebar {
   position: absolute;
   right: 0px;
   width: 20%;
@@ -32,6 +32,10 @@
   clear: both;
 }
 
-.articleplaceholder-statementgroup{
+.articleplaceholder-statementgroup {
   margin-top: 5%;
+}
+
+.articleplaceholder-value {
+  font-size: 150%;
 }
