@@ -55,24 +55,24 @@
     <ns>828</ns>
     <id>31</id>
     <revision>
-      <id>355</id>
-      <parentid>354</parentid>
-      <timestamp>2016-01-22T21:23:28Z</timestamp>
+      <id>354</id>
+      <parentid>353</parentid>
+      <timestamp>2016-01-22T21:22:29Z</timestamp>
       <contributor>
         <ip>127.0.0.1</ip>
       </contributor>
       <model>Scribunto</model>
       <format>text/plain</format>
-      <text xml:space="preserve" bytes="178">local p = {}
+      <text xml:space="preserve" bytes="204">local p = {}
 
 -- get the label of the local entity
 p.showData = function(frame)
- entityRenderer = require( 'EntityRenderer' )
+ entityRenderer = require( 'mw.ext.articlePlaceholder.entityRenderer' )
  return entityRenderer.render( frame )
 end
 
 return p</text>
-      <sha1>raik6wqlcskycfu1y3hntowu9vyuu90</sha1>
+      <sha1>mx55u3pffzrgm5zr0coh5ww9vqvv8ot</sha1>
     </revision>
   </page>
   <page>
