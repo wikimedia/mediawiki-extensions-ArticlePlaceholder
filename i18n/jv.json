@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"NoiX180"
+		]
+	},
+	"articleplaceholder-desc": "Nyadhiyakaké kaca mirunggan mawa pratélan {{WBREPONAME}} bab rembug tinemtu, sarta undangan ngripta artikel jroning rembug iku",
+	"articleplaceholder-abouttopic": "Bab Rembug",
+	"articleplaceholder-abouttopic-intro": "Kaca mirunggan iki ngasilaké kaca isi bab rembug tinamtu mawa pratélan {{WBREPONAME}}",
+	"articleplaceholder-abouttopic-create-article": "Ngripta artikel anyar mawa sesirah iku",
+	"articleplaceholder-abouttopic-create-article-button": "Ngripta artikel",
+	"articleplaceholder-abouttopic-create-article-submit-button": "Kumpulaké",
+	"articleplaceholder-abouttopic-article-exists-error": "Artikel asesirah mangkéné wis ana",
+	"articleplaceholder-abouttopic-lua-reference": "Rujukan",
+	"articleplaceholder-search-header": "Temokaké data bab rembug iku"
+}

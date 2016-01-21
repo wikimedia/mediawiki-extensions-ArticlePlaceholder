@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kandar"
+		]
+	},
+	"articleplaceholder-desc": "Nyadiakeun kaca husus jeung {{WBREPONAME}} émbaran ngeunaan hiji jejer, kalayan uleman pikeun nyieun artikel pikeun éta jejer",
+	"articleplaceholder-abouttopic": "Ngeunaan Jejer",
+	"articleplaceholder-abouttopic-submit": "kriya",
+	"articleplaceholder-abouttopic-create-article": "Jieun artikel maké judul",
+	"articleplaceholder-abouttopic-create-article-button": "Jieun artikel",
+	"articleplaceholder-abouttopic-create-article-submit-button": "Kirim",
+	"articleplaceholder-abouttopic-article-exists-error": "Artikel maké ieu judul geus aya",
+	"articleplaceholder-abouttopic-lua-entity": "Entitas",
+	"articleplaceholder-abouttopic-lua-reference": "Rujukan"
+}
