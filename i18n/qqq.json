@@ -6,7 +6,7 @@
 			"Raymond"
 		]
 	},
-	"articleplaceholder-desc": "{{desc|what=extension|name=ArticlePlaceholder|url=https://www.mediawiki.org/wiki/Extension:ArticlePlaceholder}}",
+	"articleplaceholder-desc": "{{desc|what=extension|name=ArticlePlaceholder|url=https://www.mediawiki.org/wiki/Extension:ArticlePlaceholder}}\n{{WBREPONAME}} is a variable of the repository name of Wikidata (it has replaced the string 'Wikidata').",
 	"articleplaceholder-abouttopic": "Title of Special:AboutTopic.",
 	"articleplaceholder-abouttopic-intro": "Intro paragraph shown on Special:AboutTopic.",
 	"articleplaceholder-abouttopic-entityid": "Text to encourage the user to enter an entity id.",
