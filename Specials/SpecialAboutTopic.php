@@ -323,7 +323,7 @@ class SpecialAboutTopic extends SpecialPage {
 			array( $this->siteGlobalID )
 		);
 
-		if ( isset( $sitelinksTitles[0][1] ) ) {
+		if ( isset( $sitelinkTitles[0][1] ) ) {
 			$sitelinkTitle = $sitelinkTitles[0][1];
 			return $this->titleFactory->newFromText( $sitelinkTitle )->getLinkURL();
 		}
