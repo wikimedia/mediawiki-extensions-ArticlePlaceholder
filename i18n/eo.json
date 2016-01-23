@@ -1,8 +1,22 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robin van der Vliet"
+			"Robin van der Vliet",
+			"Venca24"
 		]
 	},
-	"articleplaceholder-abouttopic-lua-identifier": "Identigilo"
+	"articleplaceholder-abouttopic": "Pri la temo",
+	"articleplaceholder-abouttopic-intro": "Tiu ĉi speciala paĝo generas enhavpaĝon pri iu temo kun informoj de {{WBREPONAME}}",
+	"articleplaceholder-abouttopic-entityid": "Tajpu ento-identigilon por aŭtomate generitan anstataŭigon de artikolo.",
+	"articleplaceholder-abouttopic-submit": "ek",
+	"articleplaceholder-abouttopic-no-entity-error": "Tio ĉi ne estas ĝusta identigilo.",
+	"articleplaceholder-abouttopic-create-article": "Krei novan artikolon kun tiu ĉi titolo",
+	"articleplaceholder-abouttopic-create-article-button": "Krei artikolon",
+	"articleplaceholder-abouttopic-create-article-submit-button": "Ek",
+	"articleplaceholder-abouttopic-article-exists-error": "Artikolo kun tiu ĉi nomo jam ekzistas",
+	"articleplaceholder-abouttopic-lua-entity": "Ento",
+	"articleplaceholder-abouttopic-lua-reference": "Referenco(j)",
+	"articleplaceholder-abouttopic-lua-qualifier": "Kvalifilo",
+	"articleplaceholder-abouttopic-lua-identifier": "Identigilo",
+	"articleplaceholder-search-header": "Malkovru datumojn pri la temo"
 }
