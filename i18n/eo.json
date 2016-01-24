@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Robin van der Vliet",
-			"Venca24"
+			"Venca24",
+			"KuboF"
 		]
 	},
+	"articleplaceholder-desc": "Provizas specialan paĝon kun informoj de {{WBREPONAME}} pri koncerna temo kun invito krei artikolon pri la temo",
 	"articleplaceholder-abouttopic": "Pri la temo",
 	"articleplaceholder-abouttopic-intro": "Tiu ĉi speciala paĝo generas enhavpaĝon pri iu temo kun informoj de {{WBREPONAME}}",
 	"articleplaceholder-abouttopic-entityid": "Tajpu ento-identigilon por aŭtomate generitan anstataŭigon de artikolo.",
