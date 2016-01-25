@@ -1,9 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Frisko"
 		]
 	},
+	"articleplaceholder-abouttopic-no-entity-error": "Detta är inte ett giltigt artikel-ID.",
+	"articleplaceholder-abouttopic-create-article": "Skapa en ny artikel med titeln",
 	"articleplaceholder-abouttopic-create-article-button": "Skapa en artikel",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Skicka",
 	"articleplaceholder-abouttopic-article-exists-error": "En artikel med detta namn finns redan",
