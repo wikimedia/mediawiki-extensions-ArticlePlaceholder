@@ -33,16 +33,34 @@
     </namespaces>
   </siteinfo>
   <page>
+    <title>Template:AboutTopic</title>
+    <ns>10</ns>
+    <id>30</id>
+    <revision>
+      <id>350</id>
+      <parentid>349</parentid>
+      <timestamp>2016-01-21T15:00:18Z</timestamp>
+      <contributor>
+        <ip>127.0.0.1</ip>
+      </contributor>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="260">This template is part of the [https://www.mediawiki.org/wiki/Extension:ArticlePlaceholder ArticlePlaceholder extension]. If you want to adjust it, please consider making your changes upstream.
+&lt;onlyinclude&gt;{{#invoke:AboutTopic|showData|{{{1}}}}}&lt;/onlyinclude&gt;</text>
+      <sha1>f4z4fq5u00orujc7eknv3zljd19u9vy</sha1>
+    </revision>
+  </page>
+  <page>
     <title>Module:AboutTopic</title>
     <ns>828</ns>
     <id>31</id>
     <revision>
-      <id>301</id>
-      <timestamp>2015-10-30T23:00:23Z</timestamp>
+      <id>355</id>
+      <parentid>354</parentid>
+      <timestamp>2016-01-22T21:23:28Z</timestamp>
       <contributor>
         <ip>127.0.0.1</ip>
       </contributor>
-      <comment>Created page with &quot;local p = {}  -- get the label of the local entity p.showData = function(frame)  entityRenderer = require( 'EntityRenderer' )  return entityRenderer.render( frame ) end  return p&quot;</comment>
       <model>Scribunto</model>
       <format>text/plain</format>
       <text xml:space="preserve" bytes="178">local p = {}
@@ -58,20 +76,20 @@ return p</text>
     </revision>
   </page>
   <page>
-    <title>Template:AboutTopic</title>
-    <ns>10</ns>
-    <id>30</id>
+    <title>Module:AboutTopic/doc</title>
+    <ns>828</ns>
+    <id>38</id>
     <revision>
-      <id>300</id>
-      <timestamp>2015-10-30T23:00:03Z</timestamp>
+      <id>346</id>
+      <parentid>345</parentid>
+      <timestamp>2016-01-20T15:02:01Z</timestamp>
       <contributor>
         <ip>127.0.0.1</ip>
       </contributor>
-      <comment>Created page with &quot;{{#invoke:AboutTopic|showData|{{{1}}}}}&quot;</comment>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text xml:space="preserve" bytes="41">{{#invoke:AboutTopic|showData|{{{1}}}}}</text>
-      <sha1>hcui95310erytbs0eelk13obdz9xoga</sha1>
+      <text xml:space="preserve" bytes="190">This Module is part of the [https://www.mediawiki.org/wiki/Extension:ArticlePlaceholder ArticlePlaceholder extension]. If you want to adjust it, please consider making your changes upstream.</text>
+      <sha1>7r1o4e4er1o8eb3pxvaloqapgpucfbw</sha1>
     </revision>
   </page>
 </mediawiki>
