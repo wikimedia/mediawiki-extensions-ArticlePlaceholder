@@ -39,7 +39,7 @@ class Scribunto_LuaArticlePlaceholderLibrary extends Scribunto_LuaLibraryBase {
 		);
 
 		return $this->getEngine()->registerInterface(
-			__DIR__ . '/EntityRenderer.lua', $lib, array()
+			__DIR__ . '/mw.ext.articlePlaceholder.entityRenderer.lua', $lib, array()
 		);
 	}
 }
