@@ -97,15 +97,15 @@ class SpecialAboutTopic extends SpecialPage {
 	}
 
 	/**
-	 * @param string $sub
+	 * @param string|null $sub
 	 */
 	public function execute( $sub ) {
-		$this->getOutput()->setPageTitle( $this->msg( 'articleplaceholder-abouttopic' )->escaped() );
+		$this->setHeaders();
 		$this->showContent( $sub );
 	}
 
 	/**
-	 * @param string $entityIdString
+	 * @param string|null $entityIdString
 	 */
 	private function showContent( $entityIdString ) {
 		$entityId = $this->getItemIdParam( 'entityid', $entityIdString );
@@ -128,6 +128,15 @@ class SpecialAboutTopic extends SpecialPage {
 		} else {
 			$this->showPlaceholder( $entityId );
 		}
+	}
+
+	/**
+	 * @see SpecialPage::getDescription
+	 *
+	 * @return string
+	 */
+	public function getDescription() {
+		return $this->msg( 'articleplaceholder-abouttopic' )->text();
 	}
 
 	protected function getGroupName() {
