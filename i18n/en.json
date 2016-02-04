@@ -5,7 +5,7 @@
 		]
 	},
 	"articleplaceholder-desc": "Provides a special page with {{WBREPONAME}} information about a certain topic, with invitation to create an article for the topic",
-	"articleplaceholder-abouttopic": "About Topic",
+	"articleplaceholder-abouttopic": "About topic",
 	"articleplaceholder-abouttopic-intro": "This special page generates a content page about a certain topic with {{WBREPONAME}} information",
 	"articleplaceholder-abouttopic-entityid": "Enter an entity id to get an auto-generated article placeholder.",
 	"articleplaceholder-abouttopic-submit": "craft",
