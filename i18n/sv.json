@@ -5,6 +5,7 @@
 			"Frisko"
 		]
 	},
+	"articleplaceholder-abouttopic": "Om ämnet",
 	"articleplaceholder-abouttopic-no-entity-error": "Detta är inte ett giltigt artikel-ID.",
 	"articleplaceholder-abouttopic-create-article": "Skapa en ny artikel med titeln",
 	"articleplaceholder-abouttopic-create-article-button": "Skapa en artikel",

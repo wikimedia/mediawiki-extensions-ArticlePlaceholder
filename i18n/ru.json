@@ -4,9 +4,11 @@
 			"Okras"
 		]
 	},
+	"articleplaceholder-abouttopic": "О теме",
 	"articleplaceholder-abouttopic-create-article-button": "Создать статью",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Отправить",
 	"articleplaceholder-abouttopic-article-exists-error": "Статья с таким названием уже существует.",
+	"articleplaceholder-abouttopic-lua-entity": "Сущность",
 	"articleplaceholder-abouttopic-lua-reference": "Примечание",
 	"articleplaceholder-abouttopic-lua-qualifier": "Квалификатор",
 	"articleplaceholder-abouttopic-lua-identifier": "Идентификатор"

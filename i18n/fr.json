@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Gomoko"
+			"Gomoko",
+			"Wladek92"
 		]
 	},
 	"articleplaceholder-desc": "Fournit une page spéciale avec l’information {{WBREPONAME}} sur un certain sujet, avec une invitation à créer un article pour le sujet",
-	"articleplaceholder-abouttopic": "À propos de Topic",
+	"articleplaceholder-abouttopic": "Sujet \"À propos\"",
 	"articleplaceholder-abouttopic-intro": "Cette page spéciale génère une page de contenu sur un certain sujet avec l’information {{WBREPONAME}}",
 	"articleplaceholder-abouttopic-entityid": "Entrer un id d’entité pour obtenir un article fictif généré automatiquement.",
 	"articleplaceholder-abouttopic-submit": "réaliser",
@@ -15,7 +16,6 @@
 	"articleplaceholder-abouttopic-create-article-submit-button": "Soumettre",
 	"articleplaceholder-abouttopic-article-exists-error": "Un article avec ce nom existe déjà",
 	"articleplaceholder-abouttopic-lua-entity": "Entité",
-	"articleplaceholder-abouttopic-lua-description": "Description :",
 	"articleplaceholder-abouttopic-lua-reference": "Référence",
 	"articleplaceholder-abouttopic-lua-qualifier": "Qualificatif",
 	"articleplaceholder-abouttopic-lua-identifier": "Identifiant",
