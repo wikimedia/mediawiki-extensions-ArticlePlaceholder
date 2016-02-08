@@ -221,7 +221,13 @@ end
 -- @param String entityId
 -- @return String description
 local function descriptionRenderer( entityId )
-  return '<div class="articleplaceholer-description"><p>' .. mw.wikibase.description( entityId ) .. '</p></div>'
+  local description = mw.wikibase.description( entityId )
+
+  if description ~= nil then
+    return '<div class="articleplaceholer-description"><p>' .. description .. '</p></div>'
+  else
+    return ''
+  end
 end
 
 -- Render an entity, method to call all renderer
