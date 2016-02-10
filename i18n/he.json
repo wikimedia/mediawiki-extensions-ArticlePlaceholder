@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Amire80"
+		]
+	},
+	"articleplaceholder-desc": "אספקת דף מיוחד עם מידע מתוך {{WBREPONAME}} על נושא מסוים, עם הזמנה ליצור ערך על הנושא",
+	"articleplaceholder-abouttopic": "על נושא",
+	"articleplaceholder-abouttopic-intro": "הדף המיוחד הזה מחולל דף תוכן על נושא מסוים עם מידע מתוך {{WBREPONAME}}",
+	"articleplaceholder-abouttopic-entityid": "נא להזין מזהה ישות כדי לקבל ערך ממלא מקום.",
+	"articleplaceholder-abouttopic-submit": "לחולל",
+	"articleplaceholder-abouttopic-no-entity-error": "זה לא ישות תקין.",
+	"articleplaceholder-abouttopic-create-article": "יצירת ערך חדש עם הכותרת",
+	"articleplaceholder-abouttopic-create-article-button": "יצירת ערך",
+	"articleplaceholder-abouttopic-create-article-submit-button": "שליחה",
+	"articleplaceholder-abouttopic-article-exists-error": "ערך בשם כזה כבר קיים",
+	"articleplaceholder-abouttopic-lua-entity": "ישות",
+	"articleplaceholder-abouttopic-lua-reference": "אסמכתאות",
+	"articleplaceholder-abouttopic-lua-qualifier": "מבחין",
+	"articleplaceholder-abouttopic-lua-identifier": "מזהה",
+	"articleplaceholder-search-header": "לגלות נתונים על הנושא"
+}
