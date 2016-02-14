@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"HalanTul"
+		]
+	},
+	"articleplaceholder-desc": "Ханнык эрэ талыллыбыт тиэмэҕэ аналлаах {{WBREPONAME}} сирэйи оҥорор, онно ыстатыйа суруйарга ыҥырыы баар буолар",
+	"articleplaceholder-abouttopic": "Тиэмэ туһунан",
+	"articleplaceholder-abouttopic-intro": "Бу аналлаах сирэй ханнык эрэ тиэмэҕэ сирэй оҥорор, {{WBREPONAME}}",
+	"articleplaceholder-abouttopic-entityid": "Эбийиэк нүөмэрин уган ыстатыйаны аптамаатынан оҥор.",
+	"articleplaceholder-abouttopic-submit": "сатабыл",
+	"articleplaceholder-abouttopic-no-entity-error": "Нүөмэр алҕастаах.",
+	"articleplaceholder-abouttopic-create-article": "Маннык ааттаах ыстатыйаны суруйарга",
+	"articleplaceholder-abouttopic-create-article-button": "Саҥа ыстатыйаны суруйарга",
+	"articleplaceholder-abouttopic-create-article-submit-button": "Толор",
+	"articleplaceholder-abouttopic-article-exists-error": "Маннык ааттаах ыстатыйа хайыы-үйэ баар эбит",
+	"articleplaceholder-abouttopic-lua-reference": "Быһаарыы",
+	"articleplaceholder-abouttopic-lua-qualifier": "Квалификатор",
+	"articleplaceholder-abouttopic-lua-identifier": "Идентификатор",
+	"articleplaceholder-search-header": "Бу тиэмэҕэ баары кытта билис"
+}
