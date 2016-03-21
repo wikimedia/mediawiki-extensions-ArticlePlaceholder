@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Minh Nguyen"
+		]
+	},
+	"articleplaceholder-abouttopic": "Giới thiệu về đề tài",
+	"articleplaceholder-abouttopic-no-entity-error": "ID thực thể này không hợp lệ.",
+	"articleplaceholder-abouttopic-create-article": "Tạo bài mới với tên",
+	"articleplaceholder-abouttopic-create-article-button": "Tạo bài mới",
+	"articleplaceholder-abouttopic-create-article-submit-button": "Lưu",
+	"articleplaceholder-abouttopic-article-exists-error": "Đã có bài với tên này",
+	"articleplaceholder-abouttopic-lua-entity": "Thực thể",
+	"articleplaceholder-abouttopic-lua-reference": "Chú thích",
+	"articleplaceholder-abouttopic-lua-qualifier": "Từ hạn định",
+	"articleplaceholder-abouttopic-lua-identifier": "Định danh",
+	"articleplaceholder-search-header": "Tìm hiểu về đề tài"
+}
