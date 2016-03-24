@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Айбикә"
+		]
+	},
+	"articleplaceholder-abouttopic": "Тема тураһында",
+	"articleplaceholder-abouttopic-create-article-button": "Мәҡәлә булдырырға",
+	"articleplaceholder-abouttopic-create-article-submit-button": "Ебәрергә",
+	"articleplaceholder-abouttopic-article-exists-error": "Бындай атамалы тема бар",
+	"articleplaceholder-abouttopic-lua-entity": "Төп нигеҙ",
+	"articleplaceholder-abouttopic-lua-reference": "Иҫкәрмә",
+	"articleplaceholder-abouttopic-lua-qualifier": "Квалификатор",
+	"articleplaceholder-abouttopic-lua-identifier": "Идентификатор"
+}
