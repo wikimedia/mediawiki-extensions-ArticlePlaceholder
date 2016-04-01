@@ -9,7 +9,6 @@ local util = require( 'libraryUtil' )
 local php = mw_interface
 
 entityrenderer.imageProperty = php.getImageProperty()
-local identifierProperties = require( 'Identifier' )
 
 local hasReferences = false
 
@@ -169,7 +168,7 @@ local identifierListRenderer = function( entity )
   local identifierList = ''
   if properties ~= nil then
     for _, propertyId in pairs( properties ) do
-      if identifierProperties[propertyId] then
+      if getDatatype( propertyId ) == "external-id" then
         identifierList = identifierList .. '<div class="articleplaceholder-identifier">' .. '<h2>' .. labelRenderer( propertyId ) .. '</h2>'
         identifierList = identifierList .. identifierRenderer( entity, propertyId ) .. '</div>'
       end
@@ -191,7 +190,7 @@ local statementListRenderer = function( entity )
   local properties = statementSorter( entity )
   if properties ~= nil then
     for _, propertyId in pairs( properties ) do
-      if propertyId ~= entityrenderer.imageProperty and not identifierProperties[propertyId] then
+      if propertyId ~= entityrenderer.imageProperty and getDatatype( propertyId ) ~= "external-id" then
         result = result .. '<div class="articleplaceholder-statement">'
         result = result .. '<h2>' .. labelRenderer( propertyId ) .. '</h2>'
         result = result .. bestStatementRenderer( entity, propertyId )
