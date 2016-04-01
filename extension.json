@@ -1,0 +1,77 @@
+{
+	"name": "ArticlePlaceholder",
+	"author": [
+		"Lucie-Aimée Kaffee"
+	],
+	"url": "https://www.mediawiki.org/wiki/Extension:ArticlePlaceholder",
+	"descriptionmsg": "articleplaceholder-desc",
+	"type": "other",
+	"SpecialPages": {
+		"AboutTopic": [
+			"ArticlePlaceholder\\SpecialAboutTopic",
+			"newFromGlobalState"
+		]
+	},
+	"MessagesDirs": {
+		"ArticlePlaceholder": [
+			"i18n"
+		]
+	},
+	"ExtensionMessagesFiles": {
+		"ArticlePlaceholderAliases": "ArticlePlaceholder.alias.php"
+	},
+	"AutoloadClasses": {
+		"ArticlePlaceholder\\SpecialAboutTopic": "includes/SpecialAboutTopic.php",
+		"ArticlePlaceholder\\Lua\\Scribunto_LuaArticlePlaceholderLibrary": "includes/Lua/Scribunto_LuaArticlePlaceholderLibrary.php",
+		"ArticlePlaceholder\\Hooks": "includes/Hooks.php",
+		"ArticlePlaceholder\\SearchHookHandler": "includes/SearchHookHandler.php"
+	},
+	"ResourceModules": {
+		"ext.articleplaceholder.createArticle": {
+			"position": "bottom",
+			"scripts": "ext.articleplaceholder.createArticle.js",
+			"dependencies": [
+				"oojs-ui",
+				"mediawiki.api",
+				"mediawiki.Title",
+				"mediawiki.util"
+			],
+			"messages": [
+				"articleplaceholder-abouttopic-create-article",
+				"articleplaceholder-abouttopic-article-exists-error",
+				"articleplaceholder-abouttopic-create-article-submit-button"
+			]
+		},
+		"ext.articleplaceholder.defaultDisplay": {
+			"styles": {
+				"0": "ext.articleplaceholder.defaultDisplay.css",
+				"ext.articleplaceholder.defaultDisplaySmall.css": {
+					"media": "(max-width: 880px)"
+				}
+			},
+			"position": "top"
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "modules",
+		"remoteExtPath": "ArticlePlaceholder/modules"
+	},
+	"Hooks": {
+		"ScribuntoExternalLibraries": [
+			"\\ArticlePlaceholder\\Hooks::onScribuntoExternalLibraries"
+		],
+		"ScribuntoExternalLibraryPaths": [
+			"\\ArticlePlaceholder\\Hooks::registerScribuntoExternalLibraryPaths"
+		],
+		"SpecialSearchResultsAppend": [
+			"\\ArticlePlaceholder\\SearchHookHandler::onSpecialSearchResultsAppend"
+		],
+		"UnitTestsList": [
+			"ArticlePlaceholder\\Hooks::onUnitTestsList"
+		]
+	},
+	"config": {
+		"ArticlePlaceholderImageProperty": "P18"
+	},
+	"manifest_version": 1
+}
