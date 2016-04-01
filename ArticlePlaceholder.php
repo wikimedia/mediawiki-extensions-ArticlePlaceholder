@@ -47,12 +47,9 @@ $wgSpecialPages['AboutTopic'] = array(
 	'newFromGlobalState'
 );
 
-preg_match( '+' . preg_quote( DIRECTORY_SEPARATOR ) . '(?:vendor|extensions)'
-	. preg_quote( DIRECTORY_SEPARATOR ) . '.*+', __DIR__, $remoteExtPath );
-
 $commonModuleInfo = array(
 	'localBasePath' => __DIR__ . '/modules',
-	'remoteExtPath' => '..' . $remoteExtPath[0] . '/modules',
+	'remoteExtPath' => 'ArticlePlaceholder/modules',
 );
 
 $wgResourceModules['ext.articleplaceholder.createArticle'] = array(
