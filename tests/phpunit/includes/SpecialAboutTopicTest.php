@@ -3,8 +3,11 @@
 namespace ArticlePlaceholder\Tests;
 
 use ArticlePlaceholder\SpecialAboutTopic;
+use DerivativeContext;
 use Language;
 use MediaWikiTestCase;
+use RequestContext;
+use SpecialPage;
 use Wikibase\Client\Store\TitleFactory;
 
 /**
@@ -31,6 +34,9 @@ class SpecialAboutTopicTest extends MediaWikiTestCase {
 			->disableOriginalConstructor()
 			->getMock();
 
+		$context = new DerivativeContext( RequestContext::getMain() );
+		$title = SpecialPage::getTitleFor( 'AboutTopic' );
+		$context->setTitle( $title );
 		$instance = new SpecialAboutTopic(
 			$this->getMock( 'Wikibase\DataModel\Entity\EntityIdParser' ),
 			$termLookupFactory,
@@ -40,14 +46,15 @@ class SpecialAboutTopicTest extends MediaWikiTestCase {
 			'',
 			$this->getMock( 'Wikibase\DataModel\Services\Lookup\EntityLookup' )
 		);
+		$instance->setContext( $context );
 
 		$instance->execute( '' );
 		$output = $instance->getOutput();
 		$this->assertSame( '(articleplaceholder-abouttopic)', $output->getPageTitle() );
 
 		$html = $output->getHTML();
-		$this->assertContains( 'id="ap-abouttopic-form1"', $html );
-		$this->assertContains( 'id="ap-abouttopic-entityid"', $html );
+		$this->assertContains( 'id=\'ap-abouttopic-form1\'', $html );
+		$this->assertContains( 'id=\'ap-abouttopic-entityid\'', $html );
 		$this->assertContains( '(articleplaceholder-abouttopic-intro)', $html );
 		$this->assertContains( '(articleplaceholder-abouttopic-entityid)', $html );
 		$this->assertContains( '(articleplaceholder-abouttopic-submit)', $html );

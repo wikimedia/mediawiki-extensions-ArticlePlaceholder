@@ -3,6 +3,7 @@
 namespace ArticlePlaceholder;
 
 use Html;
+use HTMLForm;
 use OOUI;
 use SiteStore;
 use SpecialPage;
@@ -147,67 +148,25 @@ class SpecialAboutTopic extends SpecialPage {
 	 * Create html elements
 	 */
 	protected function createForm() {
-		// Form header
-		$this->getOutput()->addHTML(
-			Html::openElement(
-				'form',
-				array(
-					'method' => 'get',
-					'action' => $this->getPageTitle()->getFullUrl(),
-					'name' => 'ap-abouttopic',
-					'id' => 'ap-abouttopic-form1',
-					'class' => 'ap-form'
-				)
-			)
-		);
+		$form = HTMLForm::factory( 'ooui', [
+			'text' => [
+				'type' => 'text',
+				'name' => 'entityid',
+				'id' => 'ap-abouttopic-entityid',
+				'cssclass' => 'ap-input',
+				'label-message' => 'articleplaceholder-abouttopic-entityid',
+				'default' => $this->getRequest()->getVal( 'entityid' ),
+			]
+		], $this->getContext() );
 
-		// Form elements
-		$this->getOutput()->addHTML( $this->getFormElements() );
-
-		// Form body
-		$this->getOutput()->addHTML(
-			Html::input(
-				'submit',
-				$this->msg( 'articleplaceholder-abouttopic-submit' )->text(),
-				'submit',
-				array( 'id' => 'submit' )
-			)
-			. Html::closeElement( 'fieldset' )
-			. Html::closeElement( 'form' )
-		);
-	}
-
-	/**
-	 * Returns the form elements.
-	 *
-	 * @return string
-	 * @todo exchange all those . Html::element( 'br' ) with something pretty
-	 */
-	protected function getFormElements() {
-		return Html::rawElement(
-			'p',
-			array(),
-			$this->msg( 'articleplaceholder-abouttopic-intro' )->parse()
-		)
-		. Html::element( 'br' )
-		. Html::element(
-			'label',
-			array(
-				'for' => 'ap-abouttopic-entityid',
-				'class' => 'ap-label'
-			),
-			$this->msg( 'articleplaceholder-abouttopic-entityid' )->text()
-		)
-		. Html::element( 'br' )
-		. Html::input(
-			'entityid',
-			$this->getRequest()->getVal( 'entityid' ),
-			'text', array(
-				'class' => 'ap-input',
-				'id' => 'ap-abouttopic-entityid'
-			)
-		)
-		. Html::element( 'br' );
+		$form
+			->setMethod( 'get' )
+			->setId( 'ap-abouttopic-form1' )
+			->setHeaderText( $this->msg( 'articleplaceholder-abouttopic-intro' )->parse() )
+			->setWrapperLegend( '' )
+			->setSubmitTextMsg( 'articleplaceholder-abouttopic-submit' )
+			->prepareForm()
+			->displayForm( false );
 	}
 
 	private function getTextParam( $name, $fallback ) {
