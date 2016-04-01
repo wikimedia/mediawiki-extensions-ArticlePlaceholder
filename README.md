@@ -16,6 +16,7 @@ ArticlePlaceholder requires
 * Wikibase Client, connected to a Wikibase Repo
 * Scribunto for the display of the content
 * Cite for the display of the references on a placeholder page
+* ContentTranslation (optional) for creating new articles based on existing ones in other languages
 
 ### Configuration
 ```

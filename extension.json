@@ -24,8 +24,10 @@
 		"ext.articleplaceholder.createArticle": {
 			"position": "bottom",
 			"scripts": [
+				"ext.articleplaceholder.createArticle/ext.articleplaceholder.createArticle.js",
 				"ext.articleplaceholder.createArticle/ext.articleplaceholder.newEmptyArticle.js"
 			],
+			"styles": "ext.articleplaceholder.createArticle/ext.articleplaceholder.createArticle.css",
 			"dependencies": [
 				"oojs-ui",
 				"mediawiki.api",
@@ -38,6 +40,16 @@
 				"articleplaceholder-abouttopic-create-article-label",
 				"articleplaceholder-abouttopic-create-article-mandatory",
 				"cancel"
+			]
+		},
+		"ext.articleplaceholder.translateArticle": {
+			"position": "bottom",
+			"scripts": "ext.articleplaceholder.translateArticle/ext.articleplaceholder.translateArticle.js",
+			"dependencies": [
+				"ext.articleplaceholder.createArticle"
+			],
+			"messages": [
+				"articleplaceholder-abouttopic-translate-article-label"
 			]
 		},
 		"ext.articleplaceholder.defaultDisplay": {
