@@ -252,7 +252,10 @@ class SpecialAboutTopic extends SpecialPage {
 		$this->getOutput()->addWikiText( '{{aboutTopic|' . $entityId->getSerialization() . '}}' );
 		$label = $this->getLabel( $entityId );
 		$this->showTitle( $label );
-		$this->showCreateArticle( $label );
+		$labelTitle = Title::newFromText( $label );
+		if ( $labelTitle && $labelTitle->quickUserCan( 'createpage', $this->getUser() ) ) {
+			$this->showCreateArticle( $label );
+		}
 		$this->showLanguageLinks( $entityId );
 	}
 
