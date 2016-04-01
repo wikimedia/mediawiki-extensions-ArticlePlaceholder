@@ -42,24 +42,17 @@
 			windowManager,
 			button,
 			submitButton,
-			dialogContent
-;
+			dialogContent;
+
 		titleInput = new OO.ui.TextInputWidget( {
 			value: mw.config.get( 'apLabel' ),
+			label: mw.msg( 'articleplaceholder-abouttopic-create-article-label' ),
 			multiline: false,
 			autosize: true
 		} );
 
-		submitButton = new OO.ui.ButtonWidget( {
-			label: mw.message( 'articleplaceholder-abouttopic-create-article-submit-button' ).text()
-		} );
-
-		dialogContent = $( '<p>' + mw.message( 'articleplaceholder-abouttopic-create-article' ).escaped() + '</p>' );
-		dialogContent.append( titleInput.$element );
-		dialogContent.append( submitButton.$element );
+		dialogContent = titleInput.$element;
 		dialogContent.append( '<div id="mw-article-placeholder-error"></div>' );
-
-		submitButton.on( 'click', onSubmit );
 
 		titleInput.on( 'change', function () {
 			$( '#mw-article-placeholder-error' ).empty();
@@ -72,7 +65,17 @@
 		function CreateArticleDialog( config ) {
 			CreateArticleDialog.super.call( this, config ); // jshint:ignore
 		}
-		OO.inheritClass( CreateArticleDialog, OO.ui.Dialog );
+		OO.inheritClass( CreateArticleDialog, OO.ui.ProcessDialog );
+
+		CreateArticleDialog.static.title = mw.message( 'articleplaceholder-abouttopic-create-article' ).text();
+		CreateArticleDialog.static.actions = [
+			{
+				action: 'save',
+				label: mw.message( 'articleplaceholder-abouttopic-create-article-submit-button' ).text(),
+				flags: [ 'primary', 'progressive' ]
+			},
+			{ label: mw.message( 'cancel' ).text(), flags: 'safe' }
+		];
 
 		// Customize the initialize() function: This is where to add content to the dialog body and set up event handlers.
 		CreateArticleDialog.prototype.initialize = function () {
@@ -86,16 +89,28 @@
 			return this.content.$element.outerHeight( true );
 		};
 
+		CreateArticleDialog.prototype.getActionProcess = function ( action ) {
+			if ( action ) {
+				return new OO.ui.Process( function () {
+					var saveDeferred = $.Deferred();
+					onSubmit();
+					return saveDeferred.promise();
+				}, this );
+			}
+			return CreateArticleDialog.parent.prototype.getActionProcess.call( this, action );
+		};
+
 		dialog = new CreateArticleDialog( {
 			size: 'medium'
 		} );
+
 		windowManager = new OO.ui.WindowManager();
-		button = OO.ui.infuse( 'create-article-button' );
 
 		$( 'body' ).append( windowManager.$element );
 		// Add the window to the window manager using the addWindows() method.
 		windowManager.addWindows( [ dialog ] );
 
+		button = OO.ui.infuse( 'create-article-button' );
 		button.on( 'click', function () {
 			windowManager.openWindow( dialog );
 		} );

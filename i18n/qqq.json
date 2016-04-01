@@ -13,6 +13,7 @@
 	"articleplaceholder-abouttopic-submit": "Label on the submit button.\n{{Identical|Craft}}",
 	"articleplaceholder-abouttopic-no-entity-error": "Error message in case of an invalid entity id.",
 	"articleplaceholder-abouttopic-create-article": "Text in the popup encouraging the user to create an article with a selectable title",
+	"articleplaceholder-abouttopic-create-article-label": "Label of the article page title input in the 'Create article' popup.",
 	"articleplaceholder-abouttopic-create-article-button": "Label on create article button",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Label on submit button\n{{Identical|Submit}}",
 	"articleplaceholder-abouttopic-article-exists-error": "Error to indicate the given article title already exists",

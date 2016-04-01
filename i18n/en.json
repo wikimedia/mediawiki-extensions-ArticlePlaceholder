@@ -11,6 +11,7 @@
 	"articleplaceholder-abouttopic-submit": "craft",
 	"articleplaceholder-abouttopic-no-entity-error": "This is not a valid entity ID.",
 	"articleplaceholder-abouttopic-create-article": "Create a new article with the title",
+	"articleplaceholder-abouttopic-create-article-label": "Article title",
 	"articleplaceholder-abouttopic-create-article-button": "Create an article",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Submit",
 	"articleplaceholder-abouttopic-article-exists-error": "An article with this name already exists",

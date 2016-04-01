@@ -39,7 +39,9 @@
 			"messages": [
 				"articleplaceholder-abouttopic-create-article",
 				"articleplaceholder-abouttopic-article-exists-error",
-				"articleplaceholder-abouttopic-create-article-submit-button"
+				"articleplaceholder-abouttopic-create-article-submit-button",
+				"articleplaceholder-abouttopic-create-article-label",
+				"cancel"
 			]
 		},
 		"ext.articleplaceholder.defaultDisplay": {
