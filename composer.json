@@ -19,7 +19,8 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"ArticlePlaceholder\\": "includes/"
+			"ArticlePlaceholder\\": "includes/",
+			"ArticlePlaceholder\\Specials\\": "includes/specials/"
 		}
 	},
 	"scripts": {

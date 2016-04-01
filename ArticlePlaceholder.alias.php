@@ -12,4 +12,5 @@ $specialPageAliases = array();
 /** English (English) */
 $specialPageAliases['en'] = array(
 	'AboutTopic' => array( 'AboutTopic', 'FancyUnicorn' ),
+	'CreateTopicPage' => array( 'CreateTopicPage' ),
 );

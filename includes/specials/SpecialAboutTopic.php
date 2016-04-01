@@ -1,6 +1,6 @@
 <?php
 
-namespace ArticlePlaceholder;
+namespace ArticlePlaceholder\Specials;
 
 use HTMLForm;
 use OOUI;
@@ -213,23 +213,25 @@ class SpecialAboutTopic extends SpecialPage {
 		$this->showTitle( $label );
 		$labelTitle = Title::newFromText( $label );
 		if ( $labelTitle && $labelTitle->quickUserCan( 'createpage', $this->getUser() ) ) {
-			$this->showCreateArticle( $label );
+			$this->showCreateArticle( $labelTitle );
 		}
 		$this->showLanguageLinks( $entityId );
 	}
 
-	private function showCreateArticle( $label ) {
+	private function showCreateArticle( Title $labelTitle ) {
 		$output = $this->getOutput();
 
 		$output->enableOOUI();
 		$output->addModuleStyles( 'ext.articleplaceholder.defaultDisplay' );
 		$output->addModules( 'ext.articleplaceholder.createArticle' );
-		$output->addJsConfigVars( 'apLabel', $label );
+		$output->addJsConfigVars( 'apLabel', $labelTitle->getPrefixedText() );
 
 		$button = new OOUI\ButtonWidget( [
 			'id' => 'create-article-button',
 			'infusable' => true,
 			'label' => $this->msg( 'articleplaceholder-abouttopic-create-article-button' )->text(),
+			'href' =>  SpecialPage::getTitleFor( 'CreateTopicPage', $labelTitle->getPrefixedText() )
+				->getLocalURL( [ 'ref' => 'button' ] ),
 			'target' => 'blank'
 		] );
 

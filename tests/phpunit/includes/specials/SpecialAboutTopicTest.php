@@ -1,8 +1,8 @@
 <?php
 
-namespace ArticlePlaceholder\Tests;
+namespace ArticlePlaceholder\Tests\Specials;
 
-use ArticlePlaceholder\SpecialAboutTopic;
+use ArticlePlaceholder\Specials\SpecialAboutTopic;
 use DerivativeContext;
 use Language;
 use MediaWikiTestCase;
