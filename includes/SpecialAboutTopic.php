@@ -260,11 +260,8 @@ class SpecialAboutTopic extends SpecialPage {
 		$output = $this->getOutput();
 
 		$output->enableOOUI();
-		$modules = array(
-			'ext.articleplaceholder.createArticle',
-			'ext.articleplaceholder.defaultDisplay'
-		);
-		$output->addModules( $modules );
+		$output->addModuleStyles( 'ext.articleplaceholder.defaultDisplay' );
+		$output->addModules( 'ext.articleplaceholder.createArticle' );
 		$output->addJsConfigVars( 'apLabel', $label );
 
 		$button = new OOUI\ButtonWidget( array(
