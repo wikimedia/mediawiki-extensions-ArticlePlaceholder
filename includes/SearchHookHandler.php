@@ -4,6 +4,7 @@ namespace ArticlePlaceholder;
 
 use OutputPage;
 use SpecialSearch;
+use SpecialPage;
 use Wikibase\Client\WikibaseClient;
 use Wikibase\Lib\Interactors\TermIndexSearchInteractor;
 use Wikibase\Lib\Interactors\TermSearchResult;
@@ -34,19 +35,17 @@ class SearchHookHandler {
 	private $languageCode;
 
 	/**
-	 * @param string $language user language
+	 * @param SpecialPage $specialPage
 	 *
 	 * @return self
 	 */
-	private static function newFromGlobalState( $language ) {
-		global $wgLanguageCode;
-
+	private static function newFromGlobalState( SpecialPage $specialPage ) {
 		$wikibaseClient = WikibaseClient::getDefaultInstance();
 
 		return new self(
 			$wikibaseClient->getStore()->getTermIndex(),
-			$wikibaseClient->newTermSearchInteractor( $language ),
-			$wgLanguageCode
+			$wikibaseClient->newTermSearchInteractor( $specialPage->getLanguage()->getCode() ),
+			$specialPage->getConfig()->get( 'LanguageCode' )
 		);
 	}
 
@@ -80,8 +79,7 @@ class SearchHookHandler {
 		if ( $term === null || $term === '' ) {
 			return;
 		}
-		// user language, not content language
-		$instance = self::newFromGlobalState( $specialSearch->getLanguage()->getCode() );
+		$instance = self::newFromGlobalState( $specialSearch );
 		$instance->addToSearch( $specialSearch, $output, $term );
 		return true;
 	}
@@ -94,18 +92,14 @@ class SearchHookHandler {
 	public function addToSearch( SpecialSearch $specialSearch, OutputPage $output, $term ) {
 		$searchResult = $this->getSearchResults( $term );
 		if ( $searchResult !== null ) {
-			$output->addWikiText( $this->getSearchHeader() );
+			$output->addWikiText(
+				'==' .
+				$output->msg( 'articleplaceholder-search-header' )->text() .
+				'=='
+			);
 
 			$output->addWikiText( $searchResult );
 		}
-	}
-
-	/**
-	 * @return string
-	 */
-	private function getSearchHeader() {
-		$header = '==' . wfMessage( 'articleplaceholder-search-header' )->text() . '==';
-		return $header;
 	}
 
 	/**
