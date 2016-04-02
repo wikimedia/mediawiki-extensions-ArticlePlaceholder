@@ -114,6 +114,7 @@ class SpecialAboutTopic extends SpecialPage {
 			$this->createForm();
 			return;
 		}
+
 		if ( !$this->entityLookup->hasEntity( $entityId ) ) {
 			$this->createForm();
 			$message = $this->msg( 'articleplaceholder-abouttopic-no-entity-error' );
@@ -237,8 +238,8 @@ class SpecialAboutTopic extends SpecialPage {
 
 			return $id;
 		} catch ( EntityIdParsingException $ex ) {
-			// @todo proper Exception Handling
-			$this->getOutput()->addWikiText( $ex->getMessage() );
+			$message = $this->msg( 'articleplaceholder-abouttopic-no-entity-error' );
+			$this->getOutput()->addWikiText( $message->text() );
 		}
 
 		return null;
