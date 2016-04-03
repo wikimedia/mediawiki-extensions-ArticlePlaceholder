@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Gomoko",
-			"Wladek92"
+			"Wladek92",
+			"Verdy p"
 		]
 	},
 	"articleplaceholder-desc": "Fournit une page spéciale avec l’information {{WBREPONAME}} sur un certain sujet, avec une invitation à créer un article pour le sujet",
@@ -12,6 +13,8 @@
 	"articleplaceholder-abouttopic-submit": "réaliser",
 	"articleplaceholder-abouttopic-no-entity-error": "Ce n’est pas un id d’entité valide.",
 	"articleplaceholder-abouttopic-create-article": "Créer un nouvel article avec le titre",
+	"articleplaceholder-abouttopic-create-article-label": "Titre de l’article",
+	"articleplaceholder-abouttopic-create-article-mandatory": "Le titre de l’article est obligatoire.",
 	"articleplaceholder-abouttopic-create-article-button": "Créer un article",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Soumettre",
 	"articleplaceholder-abouttopic-article-exists-error": "Un article avec ce nom existe déjà",
