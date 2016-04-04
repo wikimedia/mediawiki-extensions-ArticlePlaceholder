@@ -12,6 +12,8 @@
 	"articleplaceholder-abouttopic-submit": "crear",
 	"articleplaceholder-abouttopic-no-entity-error": "Este identificador de identidad no es válido.",
 	"articleplaceholder-abouttopic-create-article": "Crear un artículo nuevo con el título",
+	"articleplaceholder-abouttopic-create-article-label": "Título del artículo",
+	"articleplaceholder-abouttopic-create-article-mandatory": "El título del artículo es obligatorio.",
 	"articleplaceholder-abouttopic-create-article-button": "Crear un artículo",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Enviar",
 	"articleplaceholder-abouttopic-article-exists-error": "Ya existe un arttículo con este nombre",

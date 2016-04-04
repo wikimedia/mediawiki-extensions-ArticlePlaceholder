@@ -11,6 +11,8 @@
 	"articleplaceholder-abouttopic-submit": "згенерувати",
 	"articleplaceholder-abouttopic-no-entity-error": "Цей ідентифікатор сутності некоректний",
 	"articleplaceholder-abouttopic-create-article": "Створити нову статтю з цією назвою",
+	"articleplaceholder-abouttopic-create-article-label": "Назва статті",
+	"articleplaceholder-abouttopic-create-article-mandatory": "Назва статті є обов'язковою.",
 	"articleplaceholder-abouttopic-create-article-button": "Створити статтю",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Надіслати",
 	"articleplaceholder-abouttopic-article-exists-error": "Стаття з цією назвою вже існує",
