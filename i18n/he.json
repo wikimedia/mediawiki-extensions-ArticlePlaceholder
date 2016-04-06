@@ -11,6 +11,8 @@
 	"articleplaceholder-abouttopic-submit": "לחולל",
 	"articleplaceholder-abouttopic-no-entity-error": "זה לא ישות תקין.",
 	"articleplaceholder-abouttopic-create-article": "יצירת ערך חדש עם הכותרת",
+	"articleplaceholder-abouttopic-create-article-label": "כותרת הערך",
+	"articleplaceholder-abouttopic-create-article-mandatory": "כותרת הערך הזה נדרשת.",
 	"articleplaceholder-abouttopic-create-article-button": "יצירת ערך",
 	"articleplaceholder-abouttopic-create-article-submit-button": "שליחה",
 	"articleplaceholder-abouttopic-article-exists-error": "ערך בשם כזה כבר קיים",
