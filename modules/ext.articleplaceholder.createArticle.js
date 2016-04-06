@@ -17,19 +17,21 @@
 				mw.msg( 'articleplaceholder-abouttopic-create-article-mandatory' )
 			) );
 		} else {
-			api.get( { action: 'query', titles: titleRaw } ).done( function ( data ) {
+			api.get( {
+				formatversion: 2,
+				action: 'query',
+				titles: titleRaw
+			} ).done( function ( data ) {
 				var query = data.query,
-					pageKeys,
 					title,
 					link;
 
 				if ( query && query.hasOwnProperty( 'pages' ) ) {
-					pageKeys = Object.keys( query.pages );
 					if ( titleRaw !== titleInput.getValue() ) {
 						return;
 					}
 
-					if ( pageKeys[ 0 ] === '-1' ) {
+					if ( query.pages[ 0 ].missing ) {
 						title = mw.Title.newFromUserInput( titleRaw, 0 );
 						link = '?title=' + encodeURIComponent( title.getNameText() ) + '&action=edit';
 						link = mw.util.wikiScript() + link;
