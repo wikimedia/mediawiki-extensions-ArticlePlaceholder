@@ -34,8 +34,7 @@
 			"dependencies": [
 				"oojs-ui",
 				"mediawiki.api",
-				"mediawiki.Title",
-				"mediawiki.util"
+				"mediawiki.Title"
 			],
 			"messages": [
 				"articleplaceholder-abouttopic-create-article",
