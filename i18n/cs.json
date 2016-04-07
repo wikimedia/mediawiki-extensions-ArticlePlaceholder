@@ -12,6 +12,8 @@
 	"articleplaceholder-abouttopic-submit": "sestavit",
 	"articleplaceholder-abouttopic-no-entity-error": "Toto není platné ID entity.",
 	"articleplaceholder-abouttopic-create-article": "Vytvořit nový článek s názvem",
+	"articleplaceholder-abouttopic-create-article-label": "Název článku",
+	"articleplaceholder-abouttopic-create-article-mandatory": "Název článku je povinný.",
 	"articleplaceholder-abouttopic-create-article-button": "Vytvořit článek",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Odeslat",
 	"articleplaceholder-abouttopic-article-exists-error": "Článek s tímto jménem již existuje",
