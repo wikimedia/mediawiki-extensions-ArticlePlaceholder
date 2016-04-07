@@ -2,7 +2,6 @@
 
 namespace ArticlePlaceholder;
 
-use Html;
 use HTMLForm;
 use OOUI;
 use SiteStore;
