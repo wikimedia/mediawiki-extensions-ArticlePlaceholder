@@ -1,8 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Maroen1990"
+			"Maroen1990",
+			"محمد أحمد عبد الفتاح"
 		]
 	},
-	"articleplaceholder-abouttopic-create-article-label": "عنوان المقال"
+	"articleplaceholder-abouttopic": "عن الموضوع",
+	"articleplaceholder-abouttopic-create-article-label": "عنوان المقالة",
+	"articleplaceholder-abouttopic-create-article-button": "أنشأ مقالة",
+	"articleplaceholder-abouttopic-article-exists-error": "هناك بالفعل مقالة بهذا الاسم",
+	"articleplaceholder-abouttopic-lua-reference": "المرجع"
 }

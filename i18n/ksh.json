@@ -7,6 +7,7 @@
 	"articleplaceholder-desc": "Brängk en {{int:specialpage}} med Aanjahbe {{WBREPONAME}} övver e Tehma, met dä Bedd, doh drövver en neuje Sigg ze schrihve. ",
 	"articleplaceholder-abouttopic-submit": "Lohß Jonn!",
 	"articleplaceholder-abouttopic-create-article": "Donn en Sigg met dä Övverschreff aanlähje.",
+	"articleplaceholder-abouttopic-create-article-label": "Övverschreff vum Atikel",
 	"articleplaceholder-abouttopic-create-article-button": "Donn en Sigg met aanlähje.",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Lohß jonn!",
 	"articleplaceholder-abouttopic-article-exists-error": "En Sigg met dä Övverschreff jidd_et ald.",

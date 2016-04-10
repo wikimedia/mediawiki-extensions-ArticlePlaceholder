@@ -5,8 +5,9 @@
 		]
 	},
 	"articleplaceholder-abouttopic": "Iwwert Thema",
+	"articleplaceholder-abouttopic-create-article-label": "Titel vum Artikel",
+	"articleplaceholder-abouttopic-create-article-mandatory": "Den Titel vum Artikel ass obligatorech.",
 	"articleplaceholder-abouttopic-create-article-button": "En Artikel uleeën",
 	"articleplaceholder-abouttopic-lua-entity": "Objet",
-	"articleplaceholder-abouttopic-lua-description": "Beschreiwung:",
 	"articleplaceholder-abouttopic-lua-reference": "Referenz"
 }
