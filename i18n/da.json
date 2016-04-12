@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Fnielsen"
+		]
+	},
+	"articleplaceholder-abouttopic": "Om emne",
+	"articleplaceholder-abouttopic-create-article": "Opret en ny artikel med titlen",
+	"articleplaceholder-abouttopic-create-article-label": "Artikeltitel",
+	"articleplaceholder-abouttopic-create-article-mandatory": "Artiklens titel er obligatorisk",
+	"articleplaceholder-abouttopic-create-article-button": "Opret et nyt emne",
+	"articleplaceholder-abouttopic-article-exists-error": "En artikel med dette navn eksisterer allerede",
+	"articleplaceholder-abouttopic-lua-reference": "Reference",
+	"articleplaceholder-abouttopic-lua-qualifier": "Kvalifikator",
+	"articleplaceholder-abouttopic-lua-identifier": "Identifikator"
+}
