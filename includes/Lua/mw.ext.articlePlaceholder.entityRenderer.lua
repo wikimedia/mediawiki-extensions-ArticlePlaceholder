@@ -90,8 +90,9 @@ local qualifierRenderer = function( qualifierSnak )
   return result
 end
 
--- Render the image.
--- @param String propertyId
+-- Render a statement containing images.
+-- @param table statement
+-- @param String orientationImage
 -- @return String renderedImage
 local imageStatementRenderer = function( statement, orientationImage )
   local reference = ''
@@ -108,7 +109,7 @@ local imageStatementRenderer = function( statement, orientationImage )
       end
     end
   end
-  local result = '[[File:' .. image .. '|thumb|' .. orientationImage .. '|200px|' .. reference .. ']]'
+  local result = '[[File:' .. image .. '|thumb|' .. orientationImage .. '|300px|' .. reference .. ']]'
   result = result .. qualifier
   return result
 end
@@ -201,17 +202,20 @@ local statementListRenderer = function( entity )
 end
 
 -- Render the image.
--- @param String propertyId
--- @return String renderedImage
+-- @param table entity
+-- @param string propertyId
+-- @param string orientationImage
+-- @return string renderedImage
 local topImageRenderer = function( entity, propertyId, orientationImage )
   local renderedImage = ''
-  if propertyId ~= nil then
-    local imageName = entity:formatPropertyValues( propertyId ).value
-    if imageName ~= nil and imageName ~= '' then
-      renderedImage = '[[File:' .. imageName .. '|thumb|300px|' .. orientationImage .. ']]'
-      renderedImage = '<div class="articleplaceholder-topimage">' .. renderedImage .. '</div>'
-    end
+
+  imageStatement = entity:getBestStatements( propertyId )[1]
+
+  if imageStatement ~= nil then
+    renderedImage = imageStatementRenderer( imageStatement, orientationImage )
+    renderedImage = '<div class="articleplaceholder-topimage">' .. renderedImage .. '</div>'
   end
+
   return renderedImage
 end
 
