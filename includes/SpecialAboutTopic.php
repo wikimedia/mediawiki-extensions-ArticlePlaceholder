@@ -105,29 +105,29 @@ class SpecialAboutTopic extends SpecialPage {
 	}
 
 	/**
-	 * @param string|null $entityIdString
+	 * @param string|null $itemIdString
 	 */
-	private function showContent( $entityIdString ) {
-		$entityId = $this->getItemIdParam( 'entityid', $entityIdString );
+	private function showContent( $itemIdString ) {
+		$itemId = $this->getItemIdParam( 'entityid', $itemIdString );
 
-		if ( $entityId === null ) {
+		if ( $itemId === null ) {
 			$this->createForm();
 			return;
 		}
 
-		if ( !$this->entityLookup->hasEntity( $entityId ) ) {
+		if ( !$this->entityLookup->hasEntity( $itemId ) ) {
 			$this->createForm();
 			$message = $this->msg( 'articleplaceholder-abouttopic-no-entity-error' );
 			$this->getOutput()->addWikiText( $message->text() );
 			return;
 		}
 
-		$articleOnWiki = $this->getArticleOnWiki( $entityId );
+		$articleOnWiki = $this->getArticleOnWiki( $itemId );
 
 		if ( $articleOnWiki !== null ) {
 			$this->getOutput()->redirect( $articleOnWiki );
 		} else {
-			$this->showPlaceholder( $entityId );
+			$this->showPlaceholder( $itemId );
 		}
 	}
 
