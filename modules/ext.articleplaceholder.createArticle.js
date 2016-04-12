@@ -23,8 +23,7 @@
 				titles: titleRaw
 			} ).done( function ( data ) {
 				var query = data.query,
-					title,
-					link;
+					title;
 
 				if ( query && query.hasOwnProperty( 'pages' ) ) {
 					if ( titleRaw !== titleInput.getValue() ) {
@@ -33,9 +32,7 @@
 
 					if ( query.pages[ 0 ].missing ) {
 						title = mw.Title.newFromUserInput( titleRaw, 0 );
-						link = '?title=' + encodeURIComponent( title.getNameText() ) + '&action=edit';
-						link = mw.util.wikiScript() + link;
-						document.location.href = link;
+						document.location.href = title.getUrl( { action: 'edit' } );
 					} else {
 						deferred.reject( new OO.ui.Error(
 							mw.msg( 'articleplaceholder-abouttopic-article-exists-error' )
