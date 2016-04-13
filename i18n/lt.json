@@ -4,5 +4,12 @@
 			"Zygimantus"
 		]
 	},
-	"articleplaceholder-abouttopic-lua-identifier": "Identifikatorius"
+	"articleplaceholder-abouttopic": "Apie temą",
+	"articleplaceholder-abouttopic-create-article-label": "Straipsnio pavadinimas",
+	"articleplaceholder-abouttopic-create-article-mandatory": "Straipsnio pavadinimas yra privalomas.",
+	"articleplaceholder-abouttopic-create-article-button": "Sukurti straipsnį",
+	"articleplaceholder-abouttopic-create-article-submit-button": "Pateikti",
+	"articleplaceholder-abouttopic-article-exists-error": "Straipsnis su tokiu pavadinimu jau egzistuoja",
+	"articleplaceholder-abouttopic-lua-identifier": "Identifikatorius",
+	"articleplaceholder-search-header": "Atrasti duomenis tema"
 }
