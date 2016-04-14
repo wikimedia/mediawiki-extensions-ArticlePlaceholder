@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"Máté"
+		]
+	},
+	"articleplaceholder-abouttopic": "A témában",
+	"articleplaceholder-abouttopic-intro": "Ez a speciális lap a {{WBREPONAME}} információit felhasználva hoz létre adott témában tartalmi oldalt.",
+	"articleplaceholder-abouttopic-entityid": "Az automatikusan generált szócikkhelykitöltő eléréséhez add meg egy entitás azonosítóját.",
+	"articleplaceholder-abouttopic-no-entity-error": "Érvénytelen azonosító.",
+	"articleplaceholder-abouttopic-create-article": "Új szócikk létrehozás ezen a címen",
+	"articleplaceholder-abouttopic-create-article-label": "Szócikk címe",
+	"articleplaceholder-abouttopic-create-article-mandatory": "A cikk címének megadása kötelező.",
+	"articleplaceholder-abouttopic-create-article-button": "Szócikk létrehozása",
+	"articleplaceholder-abouttopic-create-article-submit-button": "Küldés",
+	"articleplaceholder-abouttopic-article-exists-error": "Már létezik ilyen című szócikk",
+	"articleplaceholder-abouttopic-lua-entity": "Entitás",
+	"articleplaceholder-abouttopic-lua-reference": "Hivatkozás",
+	"articleplaceholder-abouttopic-lua-identifier": "Külső források",
+	"articleplaceholder-search-header": "Adatok felfedezése a témában"
+}

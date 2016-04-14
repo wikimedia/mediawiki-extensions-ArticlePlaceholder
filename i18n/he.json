@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Amire80"
+			"Amire80",
+			"Guycn2"
 		]
 	},
 	"articleplaceholder-desc": "אספקת דף מיוחד עם מידע מתוך {{WBREPONAME}} על נושא מסוים, עם הזמנה ליצור ערך על הנושא",
@@ -18,7 +19,6 @@
 	"articleplaceholder-abouttopic-article-exists-error": "ערך בשם כזה כבר קיים",
 	"articleplaceholder-abouttopic-lua-entity": "ישות",
 	"articleplaceholder-abouttopic-lua-reference": "אסמכתאות",
-	"articleplaceholder-abouttopic-lua-qualifier": "מבחין",
-	"articleplaceholder-abouttopic-lua-identifier": "מזהה",
+	"articleplaceholder-abouttopic-lua-identifier": "משאבים חיצוניים",
 	"articleplaceholder-search-header": "לגלות נתונים על הנושא"
 }

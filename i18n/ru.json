@@ -19,7 +19,6 @@
 	"articleplaceholder-abouttopic-article-exists-error": "Статья с таким названием уже существует.",
 	"articleplaceholder-abouttopic-lua-entity": "Сущность",
 	"articleplaceholder-abouttopic-lua-reference": "Ссылка",
-	"articleplaceholder-abouttopic-lua-qualifier": "Квалификатор",
 	"articleplaceholder-abouttopic-lua-identifier": "Идентификатор",
 	"articleplaceholder-search-header": "Получите сведения по теме"
 }

@@ -18,7 +18,6 @@
 	"articleplaceholder-abouttopic-article-exists-error": "Xa existe un artigo con ese nome.",
 	"articleplaceholder-abouttopic-lua-entity": "Entidade",
 	"articleplaceholder-abouttopic-lua-reference": "Referencia",
-	"articleplaceholder-abouttopic-lua-qualifier": "Cualificador",
-	"articleplaceholder-abouttopic-lua-identifier": "Identificador",
+	"articleplaceholder-abouttopic-lua-identifier": "Recursos externos",
 	"articleplaceholder-search-header": "Descubrir datos sobre o tema"
 }

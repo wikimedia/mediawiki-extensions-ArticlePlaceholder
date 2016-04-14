@@ -18,7 +18,6 @@
 	"articleplaceholder-abouttopic-article-exists-error": "Ein Artikel mit diesem Namen ist bereits vorhanden",
 	"articleplaceholder-abouttopic-lua-entity": "Objekt",
 	"articleplaceholder-abouttopic-lua-reference": "Referenz",
-	"articleplaceholder-abouttopic-lua-qualifier": "Qualifikator",
-	"articleplaceholder-abouttopic-lua-identifier": "Identifikator",
+	"articleplaceholder-abouttopic-lua-identifier": "Externe Quellen",
 	"articleplaceholder-search-header": "Daten zum Thema entdecken"
 }
