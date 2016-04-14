@@ -20,7 +20,6 @@
 	"articleplaceholder-abouttopic-article-exists-error": "Error to indicate the given article title already exists",
 	"articleplaceholder-abouttopic-lua-entity": "Header of the entity section\n{{Identical|Entity}}",
 	"articleplaceholder-abouttopic-lua-reference": "Header of the reference section\n{{Identical|Reference}}",
-	"articleplaceholder-abouttopic-lua-qualifier": "Header of the qualifier section\n{{Identical|Qualifier}}",
 	"articleplaceholder-abouttopic-lua-identifier": "Header of the identifier section\n{{Identical|Identifier}}",
 	"articleplaceholder-search-header": "Header in the search for the results of Special:AboutTopic generated pages"
 }

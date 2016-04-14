@@ -1,10 +1,10 @@
 #bodyContent {
   padding-top: 5%;
   padding-right: 305px;
+  margin-left: 20%;
 }
 
 .articleplaceholder-sidebar, .articleplaceholder-statementgroup {
   float: none;
   position: static;
-  width: auto;
 }

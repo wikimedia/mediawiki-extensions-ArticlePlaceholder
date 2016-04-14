@@ -18,7 +18,6 @@
 	"articleplaceholder-abouttopic-article-exists-error": "An article with this name already exists",
 	"articleplaceholder-abouttopic-lua-entity": "Entity",
 	"articleplaceholder-abouttopic-lua-reference": "Reference",
-	"articleplaceholder-abouttopic-lua-qualifier": "Qualifier",
-	"articleplaceholder-abouttopic-lua-identifier": "Identifier",
+	"articleplaceholder-abouttopic-lua-identifier": "External resources",
 	"articleplaceholder-search-header": "Discover data on the topic"
 }
