@@ -18,7 +18,6 @@
 	"articleplaceholder-abouttopic-article-exists-error": "已存在使用此名称的条目",
 	"articleplaceholder-abouttopic-lua-entity": "实体",
 	"articleplaceholder-abouttopic-lua-reference": "参考文献",
-	"articleplaceholder-abouttopic-lua-qualifier": "限定符",
-	"articleplaceholder-abouttopic-lua-identifier": "标识符",
+	"articleplaceholder-abouttopic-lua-identifier": "外部来源",
 	"articleplaceholder-search-header": "发现数据在主题"
 }

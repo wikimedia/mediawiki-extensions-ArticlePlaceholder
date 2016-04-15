@@ -18,7 +18,6 @@
 	"articleplaceholder-abouttopic-article-exists-error": "Стаття з цією назвою вже існує",
 	"articleplaceholder-abouttopic-lua-entity": "Сутність",
 	"articleplaceholder-abouttopic-lua-reference": "Посилання на джерело",
-	"articleplaceholder-abouttopic-lua-qualifier": "Уточнення",
-	"articleplaceholder-abouttopic-lua-identifier": "Ідентифікатор",
+	"articleplaceholder-abouttopic-lua-identifier": "Зовнішні ресурси",
 	"articleplaceholder-search-header": "Ознайомитися з даними на цю тему"
 }
