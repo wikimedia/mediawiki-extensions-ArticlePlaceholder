@@ -18,7 +18,6 @@
 	"articleplaceholder-abouttopic-article-exists-error": "Una voce con questo nome esiste già",
 	"articleplaceholder-abouttopic-lua-entity": "Entità",
 	"articleplaceholder-abouttopic-lua-reference": "Riferimento",
-	"articleplaceholder-abouttopic-lua-qualifier": "Qualificatore",
-	"articleplaceholder-abouttopic-lua-identifier": "Identificatore",
+	"articleplaceholder-abouttopic-lua-identifier": "Risorse esterne",
 	"articleplaceholder-search-header": "Scopri i dati sull'argomento"
 }

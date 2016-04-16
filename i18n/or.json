@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"MKar"
+		]
+	},
+	"articleplaceholder-abouttopic-create-article": "ଏହି ନାମରେ ପ୍ରସଙ୍ଗଟିଏ ଗଢ଼ନ୍ତୁ",
+	"articleplaceholder-abouttopic-create-article-label": "ପ୍ରସଙ୍ଗ ନାମ",
+	"articleplaceholder-abouttopic-create-article-mandatory": "ପ୍ରସଙ୍ଗର ନାମ ନିହାତି ଦରକାର ।",
+	"articleplaceholder-abouttopic-create-article-button": "ପ୍ରସଙ୍ଗଟିଏ ଗଢ଼ନ୍ତୁ",
+	"articleplaceholder-abouttopic-create-article-submit-button": "ଦାଖଲ କରିବା",
+	"articleplaceholder-abouttopic-article-exists-error": "ଏହି ସମାନ ନାମରେ ଗୋଟିଏ ପ୍ରସଙ୍ଗ ପୂର୍ବରୁ ଅଛି ।",
+	"articleplaceholder-abouttopic-lua-reference": "ଆଧାର"
+}
