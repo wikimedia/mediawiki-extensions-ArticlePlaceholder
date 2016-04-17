@@ -9,5 +9,6 @@
 	"articleplaceholder-abouttopic-create-article-mandatory": "Den Titel vum Artikel ass obligatorech.",
 	"articleplaceholder-abouttopic-create-article-button": "En Artikel uleeën",
 	"articleplaceholder-abouttopic-lua-entity": "Objet",
-	"articleplaceholder-abouttopic-lua-reference": "Referenz"
+	"articleplaceholder-abouttopic-lua-reference": "Referenz",
+	"articleplaceholder-abouttopic-lua-identifier": "Extern Quellen"
 }
