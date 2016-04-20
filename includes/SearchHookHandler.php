@@ -127,8 +127,11 @@ class SearchHookHandler {
 	 */
 	private function createResult( TermSearchResult $searchResult, $link ) {
 		$entityId = $searchResult->getEntityId();
-		$label = $searchResult->getDisplayLabel()->getText();
-		$description = $searchResult->getDisplayDescription()->getText();
+		$displayLabel = $searchResult->getDisplayLabel();
+		$displayDescription = $searchResult->getDisplayDescription();
+
+		$label = $displayLabel ? $displayLabel->getText() : '';
+		$description = $displayDescription ? $displayDescription->getText() : '';
 
 		return '[[' . $link . wfEscapeWikiText( $entityId ) . '|' . wfEscapeWikiText( $label )
 			.']]: ' . wfEscapeWikiText( $description );
