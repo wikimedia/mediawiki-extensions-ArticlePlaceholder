@@ -19,7 +19,7 @@ use Wikibase\Test\MockTermIndex;
 /**
  * @group ArticlePlaceholder
  *
- * @covers SearchHookHandler
+ * @covers ArticlePlaceholder\SearchHookHandler
  *
  * @licence GNU GPL v2+
  * @author Lucie-Aimée Kaffee
@@ -73,11 +73,15 @@ class SearchHookHandlerTest extends MediaWikiTestCase {
 		) );
 	}
 
-	private function getMockedTermSearchInteractor( $language ) {
+	private function getMockedTermSearchInteractor( $language, $doNotReturnTerms = false ) {
+		$termLookupIndex = $doNotReturnTerms
+			? new MockTermIndex( array() )
+			: $this->getMockTermIndex();
+
 		$termSearchInteractor = new TermIndexSearchInteractor(
 			$this->getMockTermIndex(),
 			new LanguageFallbackChainFactory,
-			new BufferingTermLookup( $this->getMockTermIndex() ),
+			new BufferingTermLookup( $termLookupIndex ),
 			$language
 		);
 		return $termSearchInteractor;
@@ -94,11 +98,11 @@ class SearchHookHandlerTest extends MediaWikiTestCase {
 		return 'en';
 	}
 
-	protected function newSearchHookHandler() {
+	protected function newSearchHookHandler( $doNotReturnTerms = false ) {
 		$language = $this->getLanguageCode();
 		$page = new SearchHookHandler(
 			$this->getMockTermIndex(),
-			$this->getMockedTermSearchInteractor( $language ),
+			$this->getMockedTermSearchInteractor( $language, $doNotReturnTerms ),
 			$language
 		);
 		return $page;
@@ -109,7 +113,13 @@ class SearchHookHandlerTest extends MediaWikiTestCase {
 			array(
 				'get term, check if entity with right title is returned',
 				'Unicorn',
-				'Unicorn'
+				'>Unicorn</a>: Unicorn</div>'
+			),
+			array(
+				'search result with no label and no description',
+				'Unicorn',
+				'>Q111</a></div>',
+				true
 			),
 		);
 	}
@@ -117,12 +127,12 @@ class SearchHookHandlerTest extends MediaWikiTestCase {
 	/**
 	 * @dataProvider provideAddToSearch
 	 */
-	public function testAddToSearch( $message, $term, $expected ) {
+	public function testAddToSearch( $message, $term, $expected, $doNotReturnTerms = false ) {
 		$specialSearch = $this->getSpecialSearch();
 		$output = new OutputPage( new RequestContext() );
 		$output->setTitle( Title::makeTitle( 0, 'testOutputSearch' ) );
 
-		$searchHookHander = $this->newSearchHookHandler();
+		$searchHookHander = $this->newSearchHookHandler( $doNotReturnTerms );
 		$searchHookHander->addToSearch( $specialSearch, $output, $term );
 		$html = $output->getHTML();
 		$this->assertContains( $expected, $html, $message );

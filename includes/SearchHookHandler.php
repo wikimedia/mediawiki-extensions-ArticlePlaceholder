@@ -69,7 +69,7 @@ class SearchHookHandler {
 	 * @param OutputPage $output
 	 * @param string|null $term
 	 *
-	 * @return bool
+	 * @return bool|null
 	 */
 	public static function onSpecialSearchResultsAppend(
 		SpecialSearch $specialSearch,
@@ -79,9 +79,9 @@ class SearchHookHandler {
 		if ( $term === null || $term === '' ) {
 			return;
 		}
+
 		$instance = self::newFromGlobalState( $specialSearch );
 		$instance->addToSearch( $specialSearch, $output, $term );
-		return true;
 	}
 
 	/**
@@ -105,15 +105,14 @@ class SearchHookHandler {
 	/**
 	 * @param string $term
 	 *
-	 * @return string
+	 * @return string Wikitext
 	 */
 	private function getSearchResults( $term ) {
-		$searchResults = $this->searchEntities( $term );
-		$link = 'Special:AboutTopic/';
-		$wikitext = null;
-		foreach ( $searchResults as $searchResult ) {
+		$wikitext = '';
+
+		foreach ( $this->searchEntities( $term ) as $searchResult ) {
 			$wikitext .= '<div class="article-placeholder-searchResult">'
-						. $this->createResult( $searchResult, $link )
+						. $this->createResult( $searchResult )
 						. '</div>';
 		}
 		return $wikitext;
@@ -121,20 +120,25 @@ class SearchHookHandler {
 
 	/**
 	 * @param TermSearchResult $searchResult
-	 * @param string $link
 	 *
-	 * @return string
+	 * @return string Wikitext
 	 */
-	private function createResult( TermSearchResult $searchResult, $link ) {
+	private function createResult( TermSearchResult $searchResult ) {
 		$entityId = $searchResult->getEntityId();
 		$displayLabel = $searchResult->getDisplayLabel();
 		$displayDescription = $searchResult->getDisplayDescription();
 
-		$label = $displayLabel ? $displayLabel->getText() : '';
-		$description = $displayDescription ? $displayDescription->getText() : '';
+		$label = $displayLabel ? $displayLabel->getText() : $entityId->getSerialization();
 
-		return '[[' . $link . wfEscapeWikiText( $entityId ) . '|' . wfEscapeWikiText( $label )
-			.']]: ' . wfEscapeWikiText( $description );
+		// TODO: Properly construct the page name of the special page.
+		$wikitext = '[[Special:AboutTopic/' . wfEscapeWikiText( $entityId ) . '|'
+			. wfEscapeWikiText( $label ) . ']]';
+
+		if ( $displayDescription ) {
+			$wikitext .= ': ' . wfEscapeWikiText( $displayDescription->getText() );
+		}
+
+		return $wikitext;
 	}
 
 	/**
