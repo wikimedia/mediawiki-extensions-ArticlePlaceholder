@@ -6,6 +6,7 @@
 		]
 	},
 	"articleplaceholder-abouttopic": "عن الموضوع",
+	"articleplaceholder-abouttopic-no-entity-error": "هذا ليس معرفًا صالحًا لعنصر.",
 	"articleplaceholder-abouttopic-create-article-label": "عنوان المقالة",
 	"articleplaceholder-abouttopic-create-article-button": "أنشأ مقالة",
 	"articleplaceholder-abouttopic-article-exists-error": "هناك بالفعل مقالة بهذا الاسم",
