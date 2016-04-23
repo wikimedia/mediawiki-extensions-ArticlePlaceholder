@@ -12,5 +12,6 @@
 	"articleplaceholder-abouttopic-create-article-submit-button": "Skicka",
 	"articleplaceholder-abouttopic-article-exists-error": "En artikel med detta namn finns redan",
 	"articleplaceholder-abouttopic-lua-entity": "Entitet",
-	"articleplaceholder-abouttopic-lua-reference": "Referens"
+	"articleplaceholder-abouttopic-lua-reference": "Referens",
+	"articleplaceholder-abouttopic-lua-identifier": "Externa resurser"
 }
