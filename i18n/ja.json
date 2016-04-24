@@ -1,11 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Sujiniku"
+			"Sujiniku",
+			"Otokoume"
 		]
 	},
-	"articleplaceholder-abouttopic-no-entity-error": "これは有効なエンティティIDではありません。",
+	"articleplaceholder-abouttopic-no-entity-error": "これは有効な項目 ID ではありません。",
 	"articleplaceholder-abouttopic-create-article-button": "記事を作成する",
-	"articleplaceholder-abouttopic-create-article-submit-button": "提出する",
-	"articleplaceholder-abouttopic-lua-description": "説明:"
+	"articleplaceholder-abouttopic-create-article-submit-button": "提出する"
 }
