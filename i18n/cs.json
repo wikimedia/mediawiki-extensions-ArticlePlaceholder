@@ -8,9 +8,9 @@
 	"articleplaceholder-desc": "Poskytuje speciální stránku s informacemi z {{grammar:2sg|{{WBREPONAME}}}} o nějakém tématu s výzvou k založení článku na dané téma",
 	"articleplaceholder-abouttopic": "O tématu",
 	"articleplaceholder-abouttopic-intro": "Tato speciální stránka generuje stránku s obsahem na nějaké téma s využitím informací z {{grammar:2sg|{{WBREPONAME}}}}",
-	"articleplaceholder-abouttopic-entityid": "Zadejte ID entity pro získání automaticky vygenerované kostry článku.",
+	"articleplaceholder-abouttopic-entityid": "Zadáním ID položky získáte automaticky vygenerovanou kostru článku.",
 	"articleplaceholder-abouttopic-submit": "sestavit",
-	"articleplaceholder-abouttopic-no-entity-error": "Toto není platné ID entity.",
+	"articleplaceholder-abouttopic-no-entity-error": "Toto není platné ID položky.",
 	"articleplaceholder-abouttopic-create-article": "Vytvořit nový článek s názvem",
 	"articleplaceholder-abouttopic-create-article-label": "Název článku",
 	"articleplaceholder-abouttopic-create-article-mandatory": "Název článku je povinný.",
@@ -19,5 +19,6 @@
 	"articleplaceholder-abouttopic-article-exists-error": "Článek s tímto jménem již existuje",
 	"articleplaceholder-abouttopic-lua-entity": "Entita",
 	"articleplaceholder-abouttopic-lua-reference": "Reference",
-	"articleplaceholder-abouttopic-lua-identifier": "Identifikátor"
+	"articleplaceholder-abouttopic-lua-identifier": "Externí zdroje",
+	"articleplaceholder-search-header": "Objevte data na toto téma"
 }
