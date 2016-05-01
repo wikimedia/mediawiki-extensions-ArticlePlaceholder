@@ -4,15 +4,20 @@
 			"Purodha"
 		]
 	},
-	"articleplaceholder-desc": "Brängk en {{int:specialpage}} med Aanjahbe {{WBREPONAME}} övver e Tehma, met dä Bedd, doh drövver en neuje Sigg ze schrihve. ",
+	"articleplaceholder-desc": "Brängk en {{int:specialpage}} med Aanjahbe {{GRAMMAR:Dat vum|{{WBREPONAME}}}} övver e Tehma, met dä Bedd, doh drövver en neuje Sigg ze schrihve.",
+	"articleplaceholder-abouttopic": "Övver et Tehma",
+	"articleplaceholder-abouttopic-intro": "Heh di {{int:specialpage}} med Aanjahbe {{int:specialpage}} med Dahte {{GRAMMAR:Dat vum|{{WBREPONAME}}}} övver e Tehma, met dä Bedd, doh drövver en neuje Sigg ze schrihve.",
 	"articleplaceholder-abouttopic-entityid": "Jivv en Kännong en, öm ene automattesche Plazhallder för en Sigg ze krijje.",
 	"articleplaceholder-abouttopic-submit": "Lohß Jonn!",
 	"articleplaceholder-abouttopic-no-entity-error": "Dat es kei jölteje Kännong.",
 	"articleplaceholder-abouttopic-create-article": "Donn en Sigg met dä Övverschreff aanlähje.",
 	"articleplaceholder-abouttopic-create-article-label": "Övverschreff vum Atikel",
+	"articleplaceholder-abouttopic-create-article-mandatory": "En Övverschreff moß sinn!",
 	"articleplaceholder-abouttopic-create-article-button": "Donn en Sigg met aanlähje.",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Lohß jonn!",
 	"articleplaceholder-abouttopic-article-exists-error": "En Sigg met dä Övverschreff jidd_et ald.",
+	"articleplaceholder-abouttopic-lua-entity": "Saach",
 	"articleplaceholder-abouttopic-lua-reference": "Fohßnoht",
-	"articleplaceholder-abouttopic-lua-identifier": "Dahte vun Ußerhallef"
+	"articleplaceholder-abouttopic-lua-identifier": "Dahte vun Ußerhallef",
+	"articleplaceholder-search-header": "Aanjahbe zom Tehma erus fenge"
 }
