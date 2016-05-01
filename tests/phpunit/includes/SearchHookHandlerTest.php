@@ -12,9 +12,9 @@ use Wikibase\DataModel\Entity\ItemId;
 use Wikibase\DataModel\Entity\PropertyId;
 use Wikibase\LanguageFallbackChainFactory;
 use Wikibase\Lib\Interactors\TermIndexSearchInteractor;
+use Wikibase\Lib\Tests\Store\MockTermIndex;
 use Wikibase\Store\BufferingTermLookup;
 use Wikibase\TermIndexEntry;
-use Wikibase\Test\MockTermIndex;
 
 /**
  * @group ArticlePlaceholder
