@@ -7,9 +7,9 @@
 	"articleplaceholder-desc": "Ufre una páxina especial con información de {{WBREPONAME}} sobro un tema determináu, con invitación a crear un artículu pal tema",
 	"articleplaceholder-abouttopic": "Tocante al asuntu",
 	"articleplaceholder-abouttopic-intro": "Esta páxina especial xenera una páxina de conteníu sobro un asuntu determináu con información de {{WBREPONAME}}",
-	"articleplaceholder-abouttopic-entityid": "Escribe una ID d'entidá pa recibir una maqueta d'artículu xenerada automáticamente.",
+	"articleplaceholder-abouttopic-entityid": "Escribe una ID d'elementu pa recibir una maqueta d'artículu xenerada automáticamente.",
 	"articleplaceholder-abouttopic-submit": "crear",
-	"articleplaceholder-abouttopic-no-entity-error": "Esta nun ye una id d'entidá válida.",
+	"articleplaceholder-abouttopic-no-entity-error": "Esta nun ye una id d'elementu válida.",
 	"articleplaceholder-abouttopic-create-article": "Crear un artículu nuevu col títulu",
 	"articleplaceholder-abouttopic-create-article-label": "Títulu d'artículu",
 	"articleplaceholder-abouttopic-create-article-mandatory": "El títulu del artículu ye obligatoriu.",
@@ -18,6 +18,6 @@
 	"articleplaceholder-abouttopic-article-exists-error": "Yá esiste un artículu con esi nome.",
 	"articleplaceholder-abouttopic-lua-entity": "Entidá",
 	"articleplaceholder-abouttopic-lua-reference": "Referencia",
-	"articleplaceholder-abouttopic-lua-identifier": "Identificador",
+	"articleplaceholder-abouttopic-lua-identifier": "Recursos esternos",
 	"articleplaceholder-search-header": "Descubrir datos del tema"
 }

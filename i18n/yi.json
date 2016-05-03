@@ -4,5 +4,16 @@
 			"פוילישער"
 		]
 	},
-	"articleplaceholder-abouttopic": "וועגן טעמע"
+	"articleplaceholder-abouttopic": "וועגן טעמע",
+	"articleplaceholder-abouttopic-no-entity-error": "דאס איז נישט קיין גילטיקער אביעקט אידענטיפיצירער.",
+	"articleplaceholder-abouttopic-create-article": "שאפֿן א נייעם ארטיקל מיט דעם טיטל",
+	"articleplaceholder-abouttopic-create-article-label": "ארטיקל־טיטל",
+	"articleplaceholder-abouttopic-create-article-mandatory": "דער ארטיקל־טיטל איז פֿליכטלעך.",
+	"articleplaceholder-abouttopic-create-article-button": "שאפֿן אן ארטיקל",
+	"articleplaceholder-abouttopic-create-article-submit-button": "איינגעבן",
+	"articleplaceholder-abouttopic-article-exists-error": "אן ארטיקל מיט דעם נאמען עקזיסטירט שוין",
+	"articleplaceholder-abouttopic-lua-entity": "אביעקט",
+	"articleplaceholder-abouttopic-lua-reference": "רעפערענץ",
+	"articleplaceholder-abouttopic-lua-identifier": "דרויסנדיקע קוואלן",
+	"articleplaceholder-search-header": "אנטדעקן דאטן וועגן דער טעמע"
 }
