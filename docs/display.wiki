@@ -1,0 +1,72 @@
+The ArticlePlaceholder extensions provides the option to override the functions used to render an entity to display it on a generated local page (placeholder).
+
+The module [[Module:AboutTopic]] per default uses the entityRenderer provided by the ArticlePlaceholder extension.
+It is possible to use a custom entityRenderer or to overwrite each part of ArticlePlaceholder's entityRenderer separately.
+
+The following diagram represents all available functions and their connections. The blue ovals are the functions provided by [https://www.mediawiki.org/wiki/Extension:Wikibase_Client/Lua Wikibase Client's Lua Scribunto] interface.
+
+[[File:EntityRenderer_Functions.png]]
+
+For every function in the graphic there are setters and getters. Following is the documentation of the default functions provided by the entityRenderer, the setter functions as well as a list of all getters. All setter functions take a function as parameter. The getter functions return a function.
+
+== Default functions ==
+
+The functions, that can be get and set in the Module:AboutTopic are depending on each other.
+Therefore it might be useful to read through the default functions' documentation when overwriting these.
+
+The <code>topImageRenderer( entity, propertyId, orientationImage )</code> renders the image on the top right (in left to right languages) and takes a table and two strings as arguments. It is one of the four functions the renderEntity() calls.
+In case a community decided that all top images should be exchanged with a certain kitten image the topImageRenderer would be overwritten using the function getTopImageRenderer and the module Module:AboutTopic would look like the following:
+<code>
+local p = {}
+
+-- get the label of the local entity
+p.showData = function(frame)
+ entityRenderer = require( 'mw.ext.articlePlaceholder.entityRenderer' )
+ local newTopImg = function()
+  return '<div class="articleplaceholder-topimage">[[File:Cute_grey_kitten.jpg|thumb|right|300px]]</div>'
+ end
+ entityRenderer.setTopImageRenderer( newTopImg )
+ return entityRenderer.render( frame )
+end
+
+return p
+</code>
+*<code>statementListRenderer( entity )</code>: render a list of statements, takes a table as argument
+*<code>identifierListRenderer( entity )</code>: render a list of external identifier, takes a table as argument
+*<code>descriptionRenderer( entity )</code>: render the description of an item, takes an string as argument
+*<code>bestStatementRenderer( entity, propertyId )</code>: render the best (preferred rank if present, otherwise all normal rank) statement, takes a table and a string as argument
+*<code>statementRenderer( statement )</code>: render a given statement, takes a table as argument
+*<code>imageStatementRenderer( imageStatement, orientationImage )</code>: render a statement containing images, takes a table and a string as arguments
+*<code>qualifierRenderer( qualifierSnak )</code>: render the qualifier of a statement, takes a table as argument
+*<code>referenceRenderer( references )</code>: render the references of a statement, takes a table as argument
+*<code>labelRenderer( entityId )</code>: render the labels of entities, takes a string as argument
+*<code>snaksRenderer( snaks )</code>: render the snaks, takes a table as argument
+
+
+== Setter functions ==
+
+*<code>setTopImageRenderer( function )</code>
+*<code>setStatementListRenderer( function )</code>
+*<code>setIdentifierListRenderer( function )</code>
+*<code>setDescriptionRenderer( function )</code>
+*<code>setBestStatementRenderer( function )</code>
+*<code>setStatementRenderer( function )</code>
+*<code>setImageStatementRenderer( function )</code>
+*<code>setQualifierRenderer( function )</code>
+*<code>setReferenceRenderer( function )</code>
+*<code>setLabelRenderer( function )</code>
+*<code>setSnaksRenderer( function )</code>
+
+== Getter functions ==
+
+*<code>getTopImageRenderer()</code>
+*<code>getStatementListRenderer()</code>
+*<code>getIdentifierListRenderer()</code>
+*<code>getDescriptionRenderer()</code>
+*<code>getBestStatementRenderer()</code>
+*<code>getStatementRenderer()</code>
+*<code>getImageStatementRenderer()</code>
+*<code>getQualifierRenderer()</code>
+*<code>getReferenceRenderer()</code>
+*<code>getLabelRenderer()</code>
+*<code>getSnaksRenderer()</code>
