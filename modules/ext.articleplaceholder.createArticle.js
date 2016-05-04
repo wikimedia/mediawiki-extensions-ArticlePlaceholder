@@ -116,6 +116,7 @@
 
 		button = OO.ui.infuse( 'create-article-button' );
 		button.on( 'click', function () {
+			mw.track( 'counter.MediaWiki.wikibase.articleplaceholder.button.create-article' );
 			windowManager.openWindow( dialog );
 		} );
 	}
