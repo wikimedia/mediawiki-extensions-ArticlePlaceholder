@@ -192,7 +192,16 @@ local statementListRenderer = function( entity )
     for _, propertyId in pairs( properties ) do
       if propertyId ~= entityrenderer.imageProperty and getDatatype( propertyId ) ~= "external-id" then
         result = result .. '<div class="articleplaceholder-statementgroup">'
-        result = result .. '<h1>' .. labelRenderer( propertyId ) .. '</h1>'
+
+        -- check if the label is 'coordinates' and upper case it
+        -- this is necessary since headings will be rendered to id="*label*"
+        -- and 'coordinates' has specific CSS values on most mayor Wikipedias
+        local label = labelRenderer( propertyId )
+        if label == 'coordinates' then
+          label = label:gsub("^%l", string.upper)
+        end
+
+        result = result .. '<h1>' .. label .. '</h1>'
         result = result .. bestStatementRenderer( entity, propertyId )
         result = result .. '</div>'
       end
