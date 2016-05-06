@@ -65,10 +65,8 @@ local referenceRenderer = function( references )
     hasReferences = true
     local i = 1
     while references[i] do
-      for propRef, snakRef in pairs( references[i]['snaks'] ) do
-        referenceWikitext = "'''" .. labelRenderer( propRef ) .. "''': " .. snaksRenderer( snakRef )
-        table.insert( referencesWikitext, frame:extensionTag( 'ref', referenceWikitext ) )
-      end
+      referenceWikitext = snaksRenderer( references[i]['snaks'] )
+      table.insert( referencesWikitext, frame:extensionTag( 'ref', referenceWikitext ) )
       i = i + 1
     end
   end
