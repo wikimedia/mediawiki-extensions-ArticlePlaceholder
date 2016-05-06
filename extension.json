@@ -81,7 +81,8 @@
 		]
 	},
 	"config": {
-		"ArticlePlaceholderImageProperty": "P18"
+		"ArticlePlaceholderImageProperty": "P18",
+		"ArticlePlaceholderReferencesBlacklist": "P143"
 	},
 	"manifest_version": 1
 }

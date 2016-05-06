@@ -9,6 +9,7 @@ local util = require( 'libraryUtil' )
 local php = mw_interface
 
 entityrenderer.imageProperty = php.getImageProperty()
+entityrenderer.referencesBlacklist = php.getReferencesBlacklist()
 
 local hasReferences = false
 
@@ -53,13 +54,39 @@ local snaksRenderer = function( snaks )
   return result
 end
 
+-- Remove the references that include a Snak with the blacklisted property id.
+-- @param table references
+-- @return table newRefs
+local removeBlacklistedReferences = function( references )
+  local newRefs = {}
+
+  for key, reference in pairs(references) do
+    local blacklisted = false
+    for propRef, snakRef in pairs( reference['snaks'] ) do
+
+      if propRef == entityrenderer.referencesBlacklist then
+        blacklisted = true
+        break
+      end
+    end
+    if blacklisted == false then
+      table.insert( newRefs, reference )
+    end
+  end
+
+  return newRefs
+end
+
 -- Render a reference.
 -- @param table references
 -- @return String result
 local referenceRenderer = function( references )
   local frame = mw:getCurrentFrame()
   local referencesWikitext = {}
-  local referenceWikitext
+
+  if entityrenderer.referencesBlacklist ~= nil then
+    references = removeBlacklistedReferences( references )
+  end
 
   if references ~= nil then
     hasReferences = true
