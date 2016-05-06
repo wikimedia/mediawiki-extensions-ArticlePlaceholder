@@ -50,9 +50,16 @@
 				"0": "ext.articleplaceholder.defaultDisplay.css",
 				"ext.articleplaceholder.defaultDisplaySmall.css": {
 					"media": "(max-width: 880px)"
+				},
+				"ext.articleplaceholder.defaultDisplayMobile.css": {
+					"media": "only screen and (max-device-width: 880px)"
 				}
 			},
-			"position": "top"
+			"position": "top",
+			"targets" : [
+				"desktop",
+				"mobile"
+			]
 		}
 	},
 	"ResourceFileModulePaths": {

@@ -1,0 +1,22 @@
+#bodyContent {
+  padding-right: 0px;
+  margin-top: 10%;
+}
+
+.articleplaceholder-sidebar, .articleplaceholder-statementgroup {
+  float: none;
+  position: static;
+}
+
+#create-article-button {
+  top: 100px;
+  margin:0 auto;
+}
+
+.articleplaceholder-statementgroup {
+  width: 80%;
+}
+
+.articleplaceholder-sidebar {
+  width: 95%;
+}
