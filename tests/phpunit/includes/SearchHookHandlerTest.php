@@ -32,7 +32,7 @@ class SearchHookHandlerTest extends MediaWikiTestCase {
 		$typeDescription = TermIndexEntry::TYPE_DESCRIPTION;
 
 		return new MockTermIndex(
-			array(
+			[
 				// Q7246 - Has label, description and alias all the same
 				// (multiple sitelinks and statements in the ApiRequest.json)
 				$this->getTermIndexEntry( 'Unicorn', 'en', $typeLabel, new ItemId( 'Q7246' ) ),
@@ -57,7 +57,7 @@ class SearchHookHandlerTest extends MediaWikiTestCase {
 				// P44
 				$this->getTermIndexEntry( 'Lama', 'en', $typeLabel, new PropertyId( 'P44' ) ),
 				$this->getTermIndexEntry( 'Lama-de-desc', 'de', $typeDescription, new PropertyId( 'P44' ) ),
-			)
+			]
 		);
 	}
 
@@ -70,18 +70,18 @@ class SearchHookHandlerTest extends MediaWikiTestCase {
 	 * @returns TermIndexEntry
 	 */
 	private function getTermIndexEntry( $text, $languageCode, $termType, EntityId $entityId ) {
-		return new TermIndexEntry( array(
+		return new TermIndexEntry( [
 			'termText' => $text,
 			'termLanguage' => $languageCode,
 			'termType' => $termType,
 			'entityId' => $entityId->getNumericId(),
 			'entityType' => $entityId->getEntityType(),
-		) );
+		] );
 	}
 
 	private function getMockedTermSearchInteractor( $language, $doNotReturnTerms = false ) {
 		$termLookupIndex = $doNotReturnTerms
-			? new MockTermIndex( array() )
+			? new MockTermIndex( [] )
 			: $this->getMockTermIndex();
 
 		$termSearchInteractor = new TermIndexSearchInteractor(
@@ -120,19 +120,19 @@ class SearchHookHandlerTest extends MediaWikiTestCase {
 	}
 
 	public function provideAddToSearch() {
-		return array(
-			array(
+		return [
+			[
 				'get term, check if entity with right title is returned',
 				'Unicorn',
 				'>Unicorn</a>: Unicorn</div>'
-			),
-			array(
+			],
+			[
 				'search result with no label and no description',
 				'Unicorn',
 				'>Q7246</a></div>',
 				true
-			),
-		);
+			],
+		];
 	}
 
 	/**

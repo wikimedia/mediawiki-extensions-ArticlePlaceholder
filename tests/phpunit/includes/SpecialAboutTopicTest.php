@@ -23,9 +23,9 @@ class SpecialAboutTopicTest extends MediaWikiTestCase {
 	protected function setUp() {
 		parent::setUp();
 
-		$this->setMwGlobals( array(
+		$this->setMwGlobals( [
 			'wgContLang' => Language::factory( 'qqx' )
-		) );
+		] );
 	}
 
 	public function testExecute() {

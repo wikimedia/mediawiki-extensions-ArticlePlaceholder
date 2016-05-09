@@ -226,12 +226,12 @@ class SpecialAboutTopic extends SpecialPage {
 		$output->addModules( 'ext.articleplaceholder.createArticle' );
 		$output->addJsConfigVars( 'apLabel', $label );
 
-		$button = new OOUI\ButtonWidget( array(
+		$button = new OOUI\ButtonWidget( [
 			'id' => 'create-article-button',
 			'infusable' => true,
 			'label' => $this->msg( 'articleplaceholder-abouttopic-create-article-button' )->text(),
 			'target' => 'blank'
-		) );
+		] );
 
 		$output->addHTML( $button );
 	}
@@ -268,7 +268,7 @@ class SpecialAboutTopic extends SpecialPage {
 	 */
 	private function showLanguageLinks( ItemId $entityId ) {
 		$siteLinks = $this->sitelinkLookup->getSiteLinksForItem( $entityId );
-		$languageLinks = array();
+		$languageLinks = [];
 
 		foreach ( $siteLinks as $siteLink ) {
 			$languageCode = $this->siteStore->getSite( $siteLink->getSiteId() )->getLanguageCode();
@@ -287,8 +287,8 @@ class SpecialAboutTopic extends SpecialPage {
 	 */
 	private function getArticleOnWiki( ItemId $entityId ) {
 		$sitelinkTitles = $this->sitelinkLookup->getLinks(
-			array( $entityId->getNumericId() ),
-			array( $this->siteGlobalID )
+			[ $entityId->getNumericId() ],
+			[ $this->siteGlobalID ]
 		);
 
 		if ( isset( $sitelinkTitles[0][1] ) ) {

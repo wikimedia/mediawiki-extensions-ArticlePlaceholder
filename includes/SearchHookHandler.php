@@ -147,7 +147,7 @@ class SearchHookHandler {
 	 */
 	private function getSearchResults( $term ) {
 		$wikitext = '';
-		$entityIdSearchResult = array();
+		$entityIdSearchResult = [];
 
 		foreach ( $this->searchEntities( $term ) as $searchResult ) {
 			$entityId = $searchResult->getEntityId()->getSerialization();
@@ -202,7 +202,7 @@ class SearchHookHandler {
 			$term,
 			$this->languageCode,
 			'item',
-			array( TermIndexEntry::TYPE_LABEL, TermIndexEntry::TYPE_ALIAS )
+			[ TermIndexEntry::TYPE_LABEL, TermIndexEntry::TYPE_ALIAS ]
 		);
 		return $searchResults;
 	}
@@ -214,7 +214,7 @@ class SearchHookHandler {
 	 * @return string[]|null $notableEntityIds
 	 */
 	private function getNotableEntityIds( $entityIds ) {
-		$notableEntityIds = array();
+		$notableEntityIds = [];
 		$data = $this->loadEntityData( $entityIds );
 
 		if ( $data === null ) {
@@ -262,12 +262,12 @@ class SearchHookHandler {
 		// due to limitation of the API
 		$entityIds = array_splice( $entityIds, 0, 50 );
 
-		$params = wfArrayToCgi( array(
+		$params = wfArrayToCgi( [
 			'action' => 'wbgetentities',
-			'props' => ['sitelinks', 'claims'],
+			'props' => [ 'sitelinks', ],
 			'format' => 'json',
 			'ids' => implode( '|', $entityIds )
-		) );
+		] );
 		$url = $apiUrl . '?' . $params;
 		return $url;
 	}

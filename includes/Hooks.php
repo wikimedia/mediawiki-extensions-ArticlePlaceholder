@@ -23,10 +23,10 @@ class Hooks {
 		array &$extraLibraries
 	) {
 		if ( $engine === 'lua' ) {
-			$extraLibraries['mw.ext.articlePlaceholder.entityRenderer'] = array(
+			$extraLibraries['mw.ext.articlePlaceholder.entityRenderer'] = [
 				'class' => 'ArticlePlaceholder\Lua\Scribunto_LuaArticlePlaceholderLibrary',
 				'deferLoad' => true,
-			);
+			];
 		}
 		return true;
 	}
