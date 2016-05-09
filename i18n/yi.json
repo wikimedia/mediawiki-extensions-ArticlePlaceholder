@@ -4,6 +4,7 @@
 			"פוילישער"
 		]
 	},
+	"articleplaceholder-desc": "פֿאַרזארגט א באַזונדערן בלאַט מיט {{WBREPONAME}} אינפֿארמאַציע וועגן אַ געװיסער טעמע, מיט אן איינלאַדונג צו שאַפֿן אַן אַרטיקל פֿאַר דער טעמע.",
 	"articleplaceholder-abouttopic": "וועגן טעמע",
 	"articleplaceholder-abouttopic-no-entity-error": "דאס איז נישט קיין גילטיקער אביעקט אידענטיפיצירער.",
 	"articleplaceholder-abouttopic-create-article": "שאפֿן א נייעם ארטיקל מיט דעם טיטל",
