@@ -2,12 +2,10 @@
 
 namespace ArticlePlaceholder;
 
-use Http;
 use OutputPage;
 use SpecialSearch;
 use SpecialPage;
 use Wikibase\Client\WikibaseClient;
-use Wikibase\DataModel\Entity\EntityId;
 use Wikibase\Lib\Interactors\TermIndexSearchInteractor;
 use Wikibase\Lib\Interactors\TermSearchResult;
 use Wikibase\TermIndex;
@@ -264,7 +262,7 @@ class SearchHookHandler {
 
 		$params = wfArrayToCgi( [
 			'action' => 'wbgetentities',
-			'props' => [ 'sitelinks', ],
+			'props' => [ 'sitelinks', 'claims' ],
 			'format' => 'json',
 			'ids' => implode( '|', $entityIds )
 		] );
@@ -280,4 +278,5 @@ class SearchHookHandler {
 	public function setHttpGetOverride( $http_get ) {
 		$this->http_get = $http_get;
 	}
+
 }
