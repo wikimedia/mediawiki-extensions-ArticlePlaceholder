@@ -5,5 +5,12 @@
 		]
 	},
 	"articleplaceholder-abouttopic-submit": "luonnos",
-	"articleplaceholder-abouttopic-create-article-submit-button": "Lähetä"
+	"articleplaceholder-abouttopic-create-article": "Luo uusi artikkeli otsikolla",
+	"articleplaceholder-abouttopic-create-article-label": "Artikkelin otsikko",
+	"articleplaceholder-abouttopic-create-article-mandatory": "Artikkelin otsikko on pakollinen.",
+	"articleplaceholder-abouttopic-create-article-button": "Luo artikkeli",
+	"articleplaceholder-abouttopic-create-article-submit-button": "Lähetä",
+	"articleplaceholder-abouttopic-article-exists-error": "Artikkeli löytyy jo tällä nimellä",
+	"articleplaceholder-abouttopic-lua-entity": "Aihe",
+	"articleplaceholder-abouttopic-lua-reference": "Lähde"
 }
