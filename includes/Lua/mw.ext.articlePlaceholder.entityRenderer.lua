@@ -34,13 +34,12 @@ local labelRenderer = function( entityId )
   return label
 end
 
--- Returns a table of statements sorted by *something*
+-- Returns a table of ordered property IDs
 -- @param table entity
--- @return table of properties
-local statementSorter = function( entity )
-  -- @todo sort by *something*
-  -- @todo limit number of statements
-  return entity:getProperties()
+-- @return table of property IDs
+local orderProperties = function( entity )
+  local propertyIDs = entity:getProperties()
+  return mw.wikibase.orderProperties( propertyIDs )
 end
 
 -- Renders a given table of snaks.
@@ -212,26 +211,28 @@ end
 -- @return string result
 local statementListRenderer = function( entity )
   local result = ''
-  local properties = statementSorter( entity )
-  if properties ~= nil then
-    for _, propertyId in pairs( properties ) do
-      if propertyId ~= entityrenderer.imageProperty and getDatatype( propertyId ) ~= "external-id" then
-        result = result .. '<div class="articleplaceholder-statementgroup">'
+  local propertyIDs = orderProperties( entity )
 
+  if propertyIDs ~= nil then
+
+    for i=1, #propertyIDs do
+      if propertyIDs[i] ~= entityrenderer.imageProperty and getDatatype( propertyIDs[i] ) ~= "external-id" then
+        result = result .. '<div class="articleplaceholder-statementgroup">'
         -- check if the label is 'coordinates' and upper case it
         -- this is necessary since headings will be rendered to id="*label*"
         -- and 'coordinates' has specific CSS values on most mayor Wikipedias
-        local label = labelRenderer( propertyId )
+        local label = labelRenderer( propertyIDs[i] )
         if label == 'coordinates' then
           label = label:gsub("^%l", string.upper)
         end
 
         result = result .. '<h1>' .. label .. '</h1>'
-        result = result .. bestStatementRenderer( entity, propertyId )
+        result = result .. bestStatementRenderer( entity, propertyIDs[i] )
         result = result .. '</div>'
       end
     end
   end
+
   return '<div class="articleplaceholder-statementgrouplist">' .. result .. '</div>'
 end
 
@@ -308,13 +309,13 @@ entityrenderer.setLabelRenderer = function( newLabelRenderer )
   labelRenderer = newLabelRenderer
 end
 
-entityrenderer.getStatementSorter = function()
-  return statementSorter
+entityrenderer.getOrderProperties = function()
+  return orderProperties
 end
 
-entityrenderer.setStatementSorter = function( newStatementSorter )
-  util.checkType( 'setStatementSorter', 1, newStatementSorter, 'function' )
-  statementSorter = newStatementSorter
+entityrenderer.setOrderProperties = function( newOrderProperties )
+  util.checkType( 'setOrderProperties', 1, newOrderProperties, 'function' )
+  orderProperties = newOrderProperties
 end
 
 entityrenderer.getSnaksRenderer = function()
