@@ -59,7 +59,7 @@ class SearchHookHandler {
 	/**
 	 * @var callable Override for the Http::get function
 	 */
-	private $http_get = 'Http::get';
+	private $httpGet = 'Http::get';
 
 	/**
 	 * @param SpecialPage $specialPage
@@ -102,16 +102,14 @@ class SearchHookHandler {
 	/**
 	 * @param SpecialSearch $specialSearch
 	 * @param OutputPage $output
-	 * @param string|null $term
-	 *
-	 * @return bool|null
+	 * @param string $term
 	 */
 	public static function onSpecialSearchResultsAppend(
 		SpecialSearch $specialSearch,
 		OutputPage $output,
 		$term
 	) {
-		if ( $term === null || $term === '' ) {
+		if ( trim( $term ) === '' ) {
 			return;
 		}
 
@@ -237,7 +235,7 @@ class SearchHookHandler {
 	 */
 	private function loadEntityData( $entityIds ) {
 		$url = $this->getEntitiesApiRequestUrl( $entityIds );
-		$json = call_user_func( $this->http_get, $url, [ 'timeout' => 3 ] );
+		$json = call_user_func( $this->httpGet, $url, [ 'timeout' => 3 ] );
 		// $json will be false if the request fails, json_decode can handle that.
 		$data = json_decode( $json, true );
 
@@ -258,7 +256,7 @@ class SearchHookHandler {
 		$apiUrl .= '/api.php';
 
 		// due to limitation of the API
-		$entityIds = array_splice( $entityIds, 0, 50 );
+		$entityIds = array_slice( $entityIds, 0, 50 );
 
 		$params = wfArrayToCgi( [
 			'action' => 'wbgetentities',
@@ -273,10 +271,10 @@ class SearchHookHandler {
 	/**
 	 * Set override for Http::get(), for testing.
 	 *
-	 * @param callable $http_get
+	 * @param callable $httpGet
 	 */
-	public function setHttpGetOverride( $http_get ) {
-		$this->http_get = $http_get;
+	public function setHttpGetOverride( $httpGet ) {
+		$this->httpGet = $httpGet;
 	}
 
 }

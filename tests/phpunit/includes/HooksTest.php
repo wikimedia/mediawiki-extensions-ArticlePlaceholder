@@ -18,7 +18,7 @@ class HooksTest extends PHPUnit_Framework_TestCase {
 	public function testRegisterScribuntoExternalLibraryPaths() {
 		$instance = new Hooks();
 		$paths = [];
-		$this->assertTrue( $instance->registerScribuntoExternalLibraryPaths( 'lua', $paths ) );
+		$instance->registerScribuntoExternalLibraryPaths( 'lua', $paths );
 		$this->assertArrayHasKey( 0, $paths );
 		$this->assertStringEndsWith( '/includes/Lua', $paths[0] );
 	}
