@@ -14,30 +14,22 @@ class Hooks {
 	 * External Lua libraries for Scribunto
 	 *
 	 * @param string $engine
-	 * @param array &$extraLibraryPaths
-	 *
-	 * @return bool
+	 * @param array[] &$extraLibraries
 	 */
-	public static function onScribuntoExternalLibraries(
-		$engine,
-		array &$extraLibraries
-	) {
+	public static function onScribuntoExternalLibraries( $engine, array &$extraLibraries ) {
 		if ( $engine === 'lua' ) {
 			$extraLibraries['mw.ext.articlePlaceholder.entityRenderer'] = [
 				'class' => 'ArticlePlaceholder\Lua\Scribunto_LuaArticlePlaceholderLibrary',
 				'deferLoad' => true,
 			];
 		}
-		return true;
 	}
 
 	/**
 	 * External Lua library paths for Scribunto
 	 *
 	 * @param string $engine
-	 * @param array &$extraLibraryPaths
-	 *
-	 * @return bool
+	 * @param string[] &$extraLibraryPaths
 	 */
 	public static function registerScribuntoExternalLibraryPaths(
 		$engine,
@@ -46,15 +38,13 @@ class Hooks {
 		if ( $engine === 'lua' ) {
 			$extraLibraryPaths[] = __DIR__ . '/Lua';
 		}
-		return true;
 	}
 
 	/**
-	 * @param array $files
-	 * @return bool
+	 * @param string[] $files
 	 */
 	public static function onUnitTestsList( array &$files ) {
 		$files[] = __DIR__ . '/../tests/phpunit/';
-		return true;
 	}
+
 }

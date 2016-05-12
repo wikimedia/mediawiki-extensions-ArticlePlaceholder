@@ -68,13 +68,13 @@
 	},
 	"Hooks": {
 		"ScribuntoExternalLibraries": [
-			"\\ArticlePlaceholder\\Hooks::onScribuntoExternalLibraries"
+			"ArticlePlaceholder\\Hooks::onScribuntoExternalLibraries"
 		],
 		"ScribuntoExternalLibraryPaths": [
-			"\\ArticlePlaceholder\\Hooks::registerScribuntoExternalLibraryPaths"
+			"ArticlePlaceholder\\Hooks::registerScribuntoExternalLibraryPaths"
 		],
 		"SpecialSearchResultsAppend": [
-			"\\ArticlePlaceholder\\SearchHookHandler::onSpecialSearchResultsAppend"
+			"ArticlePlaceholder\\SearchHookHandler::onSpecialSearchResultsAppend"
 		],
 		"UnitTestsList": [
 			"ArticlePlaceholder\\Hooks::onUnitTestsList"
