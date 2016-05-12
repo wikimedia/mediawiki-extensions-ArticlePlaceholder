@@ -254,7 +254,7 @@ class SearchHookHandler {
 	 * @return string $url
 	 */
 	private function getEntitiesApiRequestUrl( $entityIds ) {
-		$apiUrl = $this->repoUrl . '/' . $this->repoScriptPath;
+		$apiUrl = rtrim( $this->repoUrl, '/' ) . '/' . ltrim( $this->repoScriptPath, '/' );
 		$apiUrl .= '/api.php';
 
 		// due to limitation of the API
@@ -262,7 +262,7 @@ class SearchHookHandler {
 
 		$params = wfArrayToCgi( [
 			'action' => 'wbgetentities',
-			'props' => [ 'sitelinks', 'claims' ],
+			'props' => 'sitelinks|claims',
 			'format' => 'json',
 			'ids' => implode( '|', $entityIds )
 		] );
