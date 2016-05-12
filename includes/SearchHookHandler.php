@@ -218,9 +218,9 @@ class SearchHookHandler {
 		}
 
 		foreach ( $entityIds as $entityId ) {
-			if ( count( $data[$entityId][ 'claims' ] ) > self::MIN_STATEMENTS
-				&& count( $data[$entityId][ 'sitelinks' ] ) > self::MIN_SITELINKS ) {
-					array_push( $notableEntityIds, $entityId );
+			if ( count( $data[$entityId][ 'claims' ] ) >= self::MIN_STATEMENTS
+				&& count( $data[$entityId][ 'sitelinks' ] ) >= self::MIN_SITELINKS ) {
+					$notableEntityIds[] = $entityId;
 			}
 		}
 		return $notableEntityIds;
