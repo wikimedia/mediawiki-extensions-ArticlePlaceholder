@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Gombang"
+		]
+	},
+	"articleplaceholder-abouttopic": "Tentang topik",
+	"articleplaceholder-abouttopic-intro": "Halaman khusus ini memberikan Anda tinjauan cepat tentang topik berdasarkan data dari {{WBREPONAME}}",
+	"articleplaceholder-abouttopic-entityid": "Masukkan sebuah ID item, misalnya Q12345",
+	"articleplaceholder-abouttopic-submit": "konsep",
+	"articleplaceholder-abouttopic-no-entity-error": "Ini bukan ID item yang sah.",
+	"articleplaceholder-abouttopic-create-article": "Buat artikel baru dengan judul yang diberikan",
+	"articleplaceholder-abouttopic-create-article-label": "Judul artikel",
+	"articleplaceholder-abouttopic-create-article-mandatory": "Judul artikel wajib diberikan.",
+	"articleplaceholder-abouttopic-create-article-button": "Buat artikel",
+	"articleplaceholder-abouttopic-create-article-submit-button": "Kirim",
+	"articleplaceholder-abouttopic-article-exists-error": "Artikel lain dengan nama yang sama sudah ada.",
+	"articleplaceholder-abouttopic-lua-entity": "Entitas",
+	"articleplaceholder-abouttopic-lua-reference": "Referensi",
+	"articleplaceholder-abouttopic-lua-identifier": "Sumber luar",
+	"articleplaceholder-search-header": "Temukan data tentang topik ini"
+}
