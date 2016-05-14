@@ -7,7 +7,7 @@
 	},
 	"articleplaceholder-desc": "Предоставляет специальную страницу информацией о определенной теме из {{WBREPONAME}}, с приглашением создать статью по этой теме.",
 	"articleplaceholder-abouttopic": "О теме",
-	"articleplaceholder-abouttopic-intro": "Эта специальная страница генерирует содержание страницы о какой-либо теме с информацией из {{WBREPONAME}}.",
+	"articleplaceholder-abouttopic-intro": "Эта специальная страница представляет краткий обзор темы на основе данных из {{WBREPONAME}}.",
 	"articleplaceholder-abouttopic-entityid": "Введите идентификатор элемента, чтобы получить автоматически сгенерированную статью.",
 	"articleplaceholder-abouttopic-submit": "создать",
 	"articleplaceholder-abouttopic-no-entity-error": "Это не правильный идентификатор элемента.",

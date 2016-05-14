@@ -7,7 +7,7 @@
 	},
 	"articleplaceholder-desc": "Proporciona una página especial información de {{WBREPONAME}} acerca de un determinado tema, con invitación a crear un artículo para el tema",
 	"articleplaceholder-abouttopic": "Sobre el tema",
-	"articleplaceholder-abouttopic-intro": "Esta página especial genera una página de contenido sobre un tema determinado con información de {{WBREPONAME}}",
+	"articleplaceholder-abouttopic-intro": "Esta página especial te proporciona un resumen rápido de un tema basado en datos de {{WBREPONAME}}.",
 	"articleplaceholder-abouttopic-entityid": "Escribe un identificador de elemento, como Q12345",
 	"articleplaceholder-abouttopic-submit": "crear",
 	"articleplaceholder-abouttopic-no-entity-error": "Este identificador de elemento no es válido.",
