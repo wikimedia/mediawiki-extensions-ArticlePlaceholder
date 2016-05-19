@@ -12,6 +12,10 @@
   padding-right: 305px;
 }
 
+.mw-body .mw-body-content .articleplaceholder-statementgroup h1 {
+  margin-top: 0; /*overwrite standard 1em top margin*/
+}
+
 #create-article-button {
   position: absolute;
   top: 0px;
@@ -30,11 +34,15 @@
 
 .articleplaceholder-identifierlist {
   clear: both;
-  border: 1px solid black;
+  border: 1px solid #ccc;
   background-color: #F9F9F9;
   width: 100%;
-  padding: 0.6em;
-  text-align: left;
+  padding: 0.4em;
+}
+
+.articleplaceholder-identifierlist td{
+  vertical-align: top;
+  padding:0.25em;
 }
 
 .mw-body .articleplaceholder-identifierlist p {
@@ -45,18 +53,23 @@
   word-break:break-all;
 }
 
-.articleplaceholder-statementgrouplist {
-  margin-top: 5%;
+.articleplaceholder-statement {
+  margin-top: 0em;
 }
 
-.articleplaceholder-value {
-  font-size: 130%;
+.articleplaceholder-statementgrouplist {
+  margin-top: 1.5em;
 }
 
 .articleplaceholder-identifierlist .articleplaceholder-value {
   font-size: 100%;
 }
 
+.articleplaceholder-identifierlist .articleplaceholder-value {
+  font-size: 100%;
+  margin-left: 1.5em;
+}
+
 .articleplaceholder-qualifier {
-  text-indent: 1em;
+  margin-left: 1em;
 }
