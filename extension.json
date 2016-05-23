@@ -21,12 +21,7 @@
 	"ExtensionMessagesFiles": {
 		"ArticlePlaceholderAliases": "ArticlePlaceholder.alias.php"
 	},
-	"AutoloadClasses": {
-		"ArticlePlaceholder\\SpecialAboutTopic": "includes/SpecialAboutTopic.php",
-		"ArticlePlaceholder\\Lua\\Scribunto_LuaArticlePlaceholderLibrary": "includes/Lua/Scribunto_LuaArticlePlaceholderLibrary.php",
-		"ArticlePlaceholder\\Hooks": "includes/Hooks.php",
-		"ArticlePlaceholder\\SearchHookHandler": "includes/SearchHookHandler.php"
-	},
+	"load_composer_autoloader": true,
 	"ResourceModules": {
 		"ext.articleplaceholder.createArticle": {
 			"position": "bottom",
