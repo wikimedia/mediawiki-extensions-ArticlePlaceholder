@@ -4,6 +4,7 @@
 			"Papuass"
 		]
 	},
+	"articleplaceholder-desc": "Nodrošina īpašo lapu ar {{WBREPONAME}} informāciju par konkrētu tēmu un aicinājumu par to izveidot rakstu",
 	"articleplaceholder-abouttopic": "Par tēmu",
 	"articleplaceholder-abouttopic-intro": "Šī īpašā lapa sniedz ātru ieskatu šajā tēmā, izmantojot datus no {{WBREPONAME}}.",
 	"articleplaceholder-abouttopic-entityid": "Lūdzu, ievadi vienuma ID, piemēram, Q12345",
