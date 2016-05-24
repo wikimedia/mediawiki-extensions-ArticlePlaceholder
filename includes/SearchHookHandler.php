@@ -153,6 +153,10 @@ class SearchHookHandler {
 
 		$notableEntityIds = $this->getNotableEntityIds( array_keys( $entityIdSearchResult ) );
 
+		if ( $notableEntityIds === null ) {
+			return '';
+		}
+
 		foreach ( $notableEntityIds as $entityId ) {
 			$result = $this->createResult( $entityIdSearchResult[ $entityId ] );
 
@@ -239,7 +243,7 @@ class SearchHookHandler {
 		// $json will be false if the request fails, json_decode can handle that.
 		$data = json_decode( $json, true );
 
-		if ( is_array( $data ) ) {
+		if ( is_array( $data ) && array_key_exists( 'entities', $data ) ) {
 			return $data[ 'entities' ];
 		} else {
 			return null;
