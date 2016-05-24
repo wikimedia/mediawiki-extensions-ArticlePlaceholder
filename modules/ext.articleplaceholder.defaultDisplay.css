@@ -33,14 +33,20 @@
   border: 1px solid black;
   background-color: #F9F9F9;
   width: 100%;
+  padding: 0.6em;
+  text-align: left;
+}
+
+.mw-body .articleplaceholder-identifierlist p {
+  margin-top: 0;
+}
+
+.articleplaceholder-id-value {
+  word-break:break-all;
 }
 
 .articleplaceholder-statementgrouplist {
   margin-top: 5%;
-}
-
-.articleplaceholder-statement {
-  margin-top: 1.5em;
 }
 
 .articleplaceholder-value {
@@ -49,7 +55,6 @@
 
 .articleplaceholder-identifierlist .articleplaceholder-value {
   font-size: 100%;
-  margin-left: 1.5em;
 }
 
 .articleplaceholder-qualifier {
