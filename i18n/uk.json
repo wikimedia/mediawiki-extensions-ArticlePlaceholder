@@ -2,13 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Piramidion",
-			"Ата"
+			"Ата",
+			"Base"
 		]
 	},
 	"articleplaceholder-desc": "Надає спеціальну сторінку з інформацією з {{WBREPONAME}} про певну тему, із запрошенням створити статтю на цю тему",
 	"articleplaceholder-abouttopic": "Про тему",
-	"articleplaceholder-abouttopic-intro": "Ця спеціальна сторінка генерує сторінку із вмістом про певну тему з інформацією з {{WBREPONAME}}",
-	"articleplaceholder-abouttopic-entityid": "Введіть ідентифікатор елемента, аби автоматично згенерувати тимчасове наповнення статті.",
+	"articleplaceholder-abouttopic-intro": "Ця спеціальна сторінка дає Вам коротке уявлення про тему на основі даних з {{GRAMMAR:genitive|{{WBREPONAME}}}}.",
+	"articleplaceholder-abouttopic-entityid": "Будь ласка, введіть ідентифікатор елемента, такий як Q12345",
 	"articleplaceholder-abouttopic-submit": "згенерувати",
 	"articleplaceholder-abouttopic-no-entity-error": "Цей ідентифікатор елемента некоректний.",
 	"articleplaceholder-abouttopic-create-article": "Створити нову статтю з цією назвою",
