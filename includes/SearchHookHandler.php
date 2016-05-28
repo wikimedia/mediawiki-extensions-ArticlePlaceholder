@@ -2,12 +2,15 @@
 
 namespace ArticlePlaceholder;
 
+use DatabaseBase;
 use OutputPage;
 use SpecialSearch;
 use SpecialPage;
 use Wikibase\Client\WikibaseClient;
+use Wikibase\Client\Store\Sql\ConsistentReadConnectionManager;
 use Wikibase\Lib\Interactors\TermIndexSearchInteractor;
 use Wikibase\Lib\Interactors\TermSearchResult;
+use Wikibase\Lib\Store\EntityNamespaceLookup;
 use Wikibase\TermIndex;
 use Wikibase\TermIndexEntry;
 
@@ -57,9 +60,14 @@ class SearchHookHandler {
 	private $repoUrl;
 
 	/**
-	 * @var callable Override for the Http::get function
+	 * @var ConsistentReadConnectionManager
 	 */
-	private $httpGet = 'Http::get';
+	private $connectionManager;
+
+	/**
+	 * EntityNamespaceLookup
+	 */
+	private $entityNamespaceLookup;
 
 	/**
 	 * @param SpecialPage $specialPage
@@ -68,13 +76,16 @@ class SearchHookHandler {
 	 */
 	private static function newFromGlobalState( SpecialPage $specialPage ) {
 		$wikibaseClient = WikibaseClient::getDefaultInstance();
+		$repoDB = $wikibaseClient->getSettings()->getSetting( 'repoDatabase' );
 
 		return new self(
 			$wikibaseClient->getStore()->getTermIndex(),
 			$wikibaseClient->newTermSearchInteractor( $specialPage->getLanguage()->getCode() ),
 			$specialPage->getConfig()->get( 'LanguageCode' ),
 			$wikibaseClient->getSettings()->getSetting( 'repoScriptPath' ),
-			$wikibaseClient->getSettings()->getSetting( 'repoUrl' )
+			$wikibaseClient->getSettings()->getSetting( 'repoUrl' ),
+			new ConsistentReadConnectionManager( wfGetLB( $repoDB ), $repoDB ),
+			$wikibaseClient->getEntityNamespaceLookup()
 		);
 	}
 
@@ -84,19 +95,25 @@ class SearchHookHandler {
 	 * @param string $languageCode content language
 	 * @param string $repoScriptPath
 	 * @param string $repoUrl
+	 * @param ConsistentReadConnectionManager $connectionManager
+	 * @param EntityNamespaceLookup $entityNamespaceLookup
 	 */
 	public function __construct(
 		TermIndex $termIndex,
 		TermIndexSearchInteractor $termSearchInteractor,
 		$languageCode,
 		$repoScriptPath,
-		$repoUrl
+		$repoUrl,
+		ConsistentReadConnectionManager $connectionManager,
+		EntityNamespaceLookup $entityNamespaceLookup
 	) {
 		$this->termIndex = $termIndex;
 		$this->termSearchInteractor = $termSearchInteractor;
 		$this->languageCode = $languageCode;
 		$this->repoScriptPath = $repoScriptPath;
 		$this->repoUrl = $repoUrl;
+		$this->connectionManager = $connectionManager;
+		$this->entityNamespaceLookup = $entityNamespaceLookup;
 	}
 
 	/**
@@ -215,70 +232,71 @@ class SearchHookHandler {
 	 */
 	private function getNotableEntityIds( $entityIds ) {
 		$notableEntityIds = [];
-		$data = $this->loadEntityData( $entityIds );
 
-		if ( $data === null ) {
-			return null;
-		}
+		$statementClaimsCount = $this->getStatementClaimsCount( $entityIds );
 
 		foreach ( $entityIds as $entityId ) {
-			if ( count( $data[$entityId][ 'claims' ] ) >= self::MIN_STATEMENTS
-				&& count( $data[$entityId][ 'sitelinks' ] ) >= self::MIN_SITELINKS ) {
-					$notableEntityIds[] = $entityId;
+			if ( $statementClaimsCount[ $entityId ][ 'wb-claims' ] >= self::MIN_STATEMENTS
+				&& $statementClaimsCount[ $entityId ][ 'wb-sitelinks' ] >= self::MIN_SITELINKS ) {
+
+				$notableEntityIds[] = $entityId;
 			}
 		}
 		return $notableEntityIds;
 	}
 
 	/**
-	 * Request to the repo's wbgetentities api, in order to find out which Items are notable.
-	 *
+	 * Get number of statements and claims for a list of entityIds
 	 * @param string[] $entityIds
-	 *
-	 * @return array[]|null $data Null if empty, entity serialization otherwise
+	 * @return array() int[page_title][propname] => value
 	 */
-	private function loadEntityData( $entityIds ) {
-		$url = $this->getEntitiesApiRequestUrl( $entityIds );
-		$json = call_user_func( $this->httpGet, $url, [ 'timeout' => 3 ] );
-		// $json will be false if the request fails, json_decode can handle that.
-		$data = json_decode( $json, true );
+	private function getStatementClaimsCount( $entityIds ) {
+		$statementsClaimsCount = [];
 
-		if ( is_array( $data ) && array_key_exists( 'entities', $data ) ) {
-			return $data[ 'entities' ];
-		} else {
-			return null;
+		$db = $this->connectionManager->getReadConnection();
+
+		$res = $this->selectPagePropsPage( $db, $entityIds );
+
+		$this->connectionManager->releaseConnection( $db );
+
+		foreach ( $res as $row ) {
+			if ( $row !== false ) {
+				if ( !$row->pp_value ) {
+					$statementsClaimsCount[ $row->page_title ][ $row->pp_propname ] = 0;
+				} else {
+					$statementsClaimsCount[ $row->page_title ][ $row->pp_propname ] = $row->pp_value;
+				}
+			}
 		}
+
+		return $statementsClaimsCount;
 	}
 
 	/**
+	 * @param DatabaseBase $db
 	 * @param string[] $entityIds
-	 *
-	 * @return string $url
+	 * @return type
 	 */
-	private function getEntitiesApiRequestUrl( $entityIds ) {
-		$apiUrl = rtrim( $this->repoUrl, '/' ) . '/' . ltrim( $this->repoScriptPath, '/' );
-		$apiUrl .= '/api.php';
+	private function selectPagePropsPage( DatabaseBase $db, $entityIds ) {
+		$entityNamespace = $this->entityNamespaceLookup->getEntityNamespace( 'item' );
 
-		// due to limitation of the API
-		$entityIds = array_slice( $entityIds, 0, 50 );
+		if ( $entityNamespace === false ) {
+			wfLogWarning( 'EntityNamespaceLookup returns false' );
+			return [];
+		}
 
-		$params = wfArrayToCgi( [
-			'action' => 'wbgetentities',
-			'props' => 'sitelinks|claims',
-			'format' => 'json',
-			'ids' => implode( '|', $entityIds )
-		] );
-		$url = $apiUrl . '?' . $params;
-		return $url;
-	}
-
-	/**
-	 * Set override for Http::get(), for testing.
-	 *
-	 * @param callable $httpGet
-	 */
-	public function setHttpGetOverride( $httpGet ) {
-		$this->httpGet = $httpGet;
+		return $db->select(
+			[ 'page_props', 'page' ],
+			[ 'page_title', 'pp_propname', 'pp_value' ],
+			[
+				'page_namespace' => $entityNamespace,
+				'page_title' => $entityIds,
+				'pp_propname' => [ 'wb-sitelinks', 'wb-claims' ]
+			],
+			__METHOD__,
+			[],
+			[ 'page' => [ 'LEFT JOIN', 'page_id=pp_page' ] ]
+		);
 	}
 
 }
