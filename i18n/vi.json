@@ -4,15 +4,20 @@
 			"Minh Nguyen"
 		]
 	},
+	"articleplaceholder-desc": "Cung cấp trang đặc biệt có thông tin {{WBREPONAME}} về một đề tài cụ thể và lời khuyên tạo bài về đề tài",
 	"articleplaceholder-abouttopic": "Giới thiệu về đề tài",
-	"articleplaceholder-abouttopic-no-entity-error": "ID thực thể này không hợp lệ.",
+	"articleplaceholder-abouttopic-intro": "Trang đặc biệt này tóm lược đề tài dùng dữ liệu từ {{WBREPONAME}}.",
+	"articleplaceholder-abouttopic-entityid": "Xin hãy nhập mã số mục dưới dạng Q12345",
+	"articleplaceholder-abouttopic-submit": "xây dựng",
+	"articleplaceholder-abouttopic-no-entity-error": "Mã số mục này không hợp lệ.",
 	"articleplaceholder-abouttopic-create-article": "Tạo bài mới với tên",
+	"articleplaceholder-abouttopic-create-article-label": "Tên bài",
+	"articleplaceholder-abouttopic-create-article-mandatory": "Tên bài là bắt buộc.",
 	"articleplaceholder-abouttopic-create-article-button": "Tạo bài mới",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Lưu",
 	"articleplaceholder-abouttopic-article-exists-error": "Đã có bài với tên này",
 	"articleplaceholder-abouttopic-lua-entity": "Thực thể",
 	"articleplaceholder-abouttopic-lua-reference": "Chú thích",
-	"articleplaceholder-abouttopic-lua-qualifier": "Từ hạn định",
-	"articleplaceholder-abouttopic-lua-identifier": "Định danh",
+	"articleplaceholder-abouttopic-lua-identifier": "Nguồn bên ngoài",
 	"articleplaceholder-search-header": "Tìm hiểu về đề tài"
 }
