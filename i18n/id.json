@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Gombang"
+			"Gombang",
+			"Beeyan"
 		]
 	},
+	"articleplaceholder-desc": "Menyediakan sebuah laman khusus dengan informasi {{WBREPONAME}} tentang topik tertentu beserta undangan untuk membuat artikel untuk topik tersebut",
 	"articleplaceholder-abouttopic": "Tentang topik",
 	"articleplaceholder-abouttopic-intro": "Halaman khusus ini memberikan Anda tinjauan cepat tentang topik berdasarkan data dari {{WBREPONAME}}",
 	"articleplaceholder-abouttopic-entityid": "Masukkan sebuah ID item, misalnya Q12345",
