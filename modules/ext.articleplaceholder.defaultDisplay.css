@@ -5,6 +5,8 @@
   padding: 10px;
   margin: 20px;
   width: 350px;
+  max-height: 20em;
+  overflow: auto;
 }
 
 #bodyContent {
