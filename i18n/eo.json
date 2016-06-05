@@ -3,22 +3,24 @@
 		"authors": [
 			"Robin van der Vliet",
 			"Venca24",
-			"KuboF"
+			"KuboF",
+			"Lucas"
 		]
 	},
 	"articleplaceholder-desc": "Provizas specialan paĝon kun informoj de {{WBREPONAME}} pri koncerna temo kun invito krei artikolon pri la temo",
 	"articleplaceholder-abouttopic": "Pri la temo",
 	"articleplaceholder-abouttopic-intro": "Tiu ĉi speciala paĝo generas enhavpaĝon pri iu temo kun informoj de {{WBREPONAME}}",
-	"articleplaceholder-abouttopic-entityid": "Tajpu ento-identigilon por aŭtomate generitan anstataŭigon de artikolo.",
-	"articleplaceholder-abouttopic-submit": "ek",
+	"articleplaceholder-abouttopic-entityid": "Bonvolu eniri eran identigilon, ekzemple Q12345",
+	"articleplaceholder-abouttopic-submit": "krei",
 	"articleplaceholder-abouttopic-no-entity-error": "Tio ĉi ne estas ĝusta identigilo.",
 	"articleplaceholder-abouttopic-create-article": "Krei novan artikolon kun tiu ĉi titolo",
+	"articleplaceholder-abouttopic-create-article-label": "Titolo de la artikolo",
+	"articleplaceholder-abouttopic-create-article-mandatory": "La titolo de la artikolo estas deviga.",
 	"articleplaceholder-abouttopic-create-article-button": "Krei artikolon",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Ek",
 	"articleplaceholder-abouttopic-article-exists-error": "Artikolo kun tiu ĉi nomo jam ekzistas",
 	"articleplaceholder-abouttopic-lua-entity": "Ento",
 	"articleplaceholder-abouttopic-lua-reference": "Referenco(j)",
-	"articleplaceholder-abouttopic-lua-qualifier": "Kvalifilo",
-	"articleplaceholder-abouttopic-lua-identifier": "Identigilo",
-	"articleplaceholder-search-header": "Malkovru datumojn pri la temo"
+	"articleplaceholder-abouttopic-lua-identifier": "Eksteraj rimedoj",
+	"articleplaceholder-search-header": "Malkovri datumojn pri la temo"
 }
