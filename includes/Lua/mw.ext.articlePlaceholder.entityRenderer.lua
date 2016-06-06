@@ -87,13 +87,15 @@ local referenceRenderer = function( references )
     references = removeBlacklistedReferences( references )
   end
 
-  if references ~= nil then
+  local i, reference = next( references, nil )
+
+  if i then
     hasReferences = true
-    local i = 1
-    while references[i] do
-      referenceWikitext = snaksRenderer( references[i]['snaks'] )
+
+    while i do
+      referenceWikitext = snaksRenderer( reference['snaks'] )
       table.insert( referencesWikitext, frame:extensionTag( 'ref', referenceWikitext ) )
-      i = i + 1
+      i, reference = next( references, i )
     end
   end
 
