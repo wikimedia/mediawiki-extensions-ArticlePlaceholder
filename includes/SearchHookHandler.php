@@ -158,7 +158,7 @@ class SearchHookHandler {
 		}
 
 		foreach ( $notableEntityIds as $entityId ) {
-			$result = $this->createResult( $entityIdSearchResult[ $entityId ] );
+			$result = $this->renderTermSearchResult( $entityIdSearchResult[ $entityId ] );
 
 			$wikitext .= '<div class="article-placeholder-searchResult">'
 						. $result
@@ -173,7 +173,7 @@ class SearchHookHandler {
 	 *
 	 * @return string Wikitext
 	 */
-	private function createResult( TermSearchResult $searchResult ) {
+	private function renderTermSearchResult( TermSearchResult $searchResult ) {
 		$entityId = $searchResult->getEntityId();
 
 		$displayLabel = $searchResult->getDisplayLabel();
