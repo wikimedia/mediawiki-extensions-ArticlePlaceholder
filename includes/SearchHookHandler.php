@@ -140,42 +140,53 @@ class SearchHookHandler {
 	 * @param string $term
 	 */
 	public function addToSearch( SpecialSearch $specialSearch, OutputPage $output, $term ) {
-		$searchResult = $this->getSearchResults( $term );
+		$termSearchResults = $this->getTermSearchResults( $term );
 
-		if ( $searchResult !== '' ) {
-			$output->addWikiText(
-				'==' .
-				$output->msg( 'articleplaceholder-search-header' )->text() .
-				'=='
-			);
+		if ( !empty( $termSearchResults ) ) {
+			$renderedTermSearchResults = $this->renderTermSearchResults( $termSearchResults );
 
-			$output->addWikiText( $searchResult );
+			if ( $renderedTermSearchResults !== '' ) {
+				$output->addWikiText(
+					'==' .
+					$output->msg( 'articleplaceholder-search-header' )->text() .
+					'=='
+				);
+
+				$output->addWikiText( $renderedTermSearchResults );
+			}
 		}
 	}
 
 	/**
 	 * @param string $term
 	 *
-	 * @return string Wikitext
+	 * @return TermSearchResult[]
 	 */
-	private function getSearchResults( $term ) {
-		$wikitext = '';
-		$entityIdSearchResult = [];
+	private function getTermSearchResults( $term ) {
+		$termSearchResults = [];
 
 		foreach ( $this->searchEntities( $term ) as $searchResult ) {
 			$entityId = $searchResult->getEntityId()->getSerialization();
 
-			$entityIdSearchResult[ $entityId ] = $searchResult;
+			$termSearchResults[ $entityId ] = $searchResult;
 		}
 
-		$notableEntityIds = $this->getNotableEntityIds( array_keys( $entityIdSearchResult ) );
+		return $termSearchResults;
+	}
 
-		if ( $notableEntityIds === null ) {
-			return '';
-		}
+	/**
+	 * Render search results, filtered for notability.
+	 *
+	 * @param TermSearchResult[] $termSearchResults
+	 *
+	 * @return string Wikitext
+	 */
+	private function renderTermSearchResults( array $termSearchResults ) {
+		$wikitext = '';
+		$notableEntityIds = $this->getNotableEntityIds( array_keys( $termSearchResults ) );
 
 		foreach ( $notableEntityIds as $entityId ) {
-			$result = $this->renderTermSearchResult( $entityIdSearchResult[ $entityId ] );
+			$result = $this->renderTermSearchResult( $termSearchResults[ $entityId ] );
 
 			$wikitext .= '<div class="article-placeholder-searchResult">'
 						. $result
@@ -228,7 +239,7 @@ class SearchHookHandler {
 	 * TODO: instead of api request database?
 	 * @param string[] $entityIds
 	 *
-	 * @return string[]|null $notableEntityIds
+	 * @return string[] $notableEntityIds
 	 */
 	private function getNotableEntityIds( $entityIds ) {
 		$notableEntityIds = [];
