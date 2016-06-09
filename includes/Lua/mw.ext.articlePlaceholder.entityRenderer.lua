@@ -25,11 +25,13 @@ end
 
 -- Render a label to the language of the local Wiki.
 -- @param string entityId
--- @return string label or entityId if no label available
+-- @return wikitext label or entityId if no label available
 local labelRenderer = function( entityId )
   local label = mw.wikibase.label( entityId )
-  if label == nil then
-    label = entityId
+  if label ~= nil then
+    label = mw.text.nowiki( label )
+  else
+    label = '[' .. mw.wikibase.getEntityUrl( entityId ) .. ' ' .. entityId .. ']'
   end
   return label
 end
