@@ -8,6 +8,7 @@
 	"articleplaceholder-abouttopic": "Par tēmu",
 	"articleplaceholder-abouttopic-intro": "Šī īpašā lapa sniedz ātru ieskatu šajā tēmā, izmantojot datus no {{WBREPONAME}}.",
 	"articleplaceholder-abouttopic-entityid": "Lūdzu, ievadi vienuma ID, piemēram, Q12345",
+	"articleplaceholder-abouttopic-submit": "iesniegt",
 	"articleplaceholder-abouttopic-no-entity-error": "Tas nav derīgs vienuma ID.",
 	"articleplaceholder-abouttopic-create-article": "Izveidot jaunu rakstu ar nosaukumu",
 	"articleplaceholder-abouttopic-create-article-label": "Raksta nosaukums",
@@ -15,7 +16,8 @@
 	"articleplaceholder-abouttopic-create-article-button": "Izveidot rakstu",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Iesniegt",
 	"articleplaceholder-abouttopic-article-exists-error": "Raksts ar šādu nosaukumu jau pastāv",
-	"articleplaceholder-abouttopic-lua-reference": "Atsauce",
+	"articleplaceholder-abouttopic-lua-entity": "Entītija",
+	"articleplaceholder-abouttopic-lua-reference": "Atsauces",
 	"articleplaceholder-abouttopic-lua-identifier": "Ārējie resursi",
 	"articleplaceholder-search-header": "Atklāj datus par šo tēmu"
 }

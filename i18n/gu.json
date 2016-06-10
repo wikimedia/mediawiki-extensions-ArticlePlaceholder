@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"KartikMistry"
+		]
+	},
+	"articleplaceholder-desc": "{{WBREPONAME}} માહિતી સાથે ચોક્કસ વિષય પર ખાસ પાનું પૂરું પાડે છે, સાથે તે વિષય પર નવો લેખ બનાવવાનું નિમંત્રણ આપે છે",
+	"articleplaceholder-abouttopic": "વિષય વિષે",
+	"articleplaceholder-abouttopic-intro": "આ ખાસ પાનું તમને {{WBREPONAME}} માંથી વિષયની ત્વરિત માહિતી આપશે.",
+	"articleplaceholder-abouttopic-entityid": "Q12345 જેવી કોઇક વસ્તુ ઓળખ દાખલ કરો",
+	"articleplaceholder-abouttopic-submit": "બનાવો",
+	"articleplaceholder-abouttopic-no-entity-error": "આ યોગ્ય વસ્તુ ઓળખ નથી.",
+	"articleplaceholder-abouttopic-create-article": "શીર્ષક સાથેનો નવો લેખ બનાવો",
+	"articleplaceholder-abouttopic-create-article-label": "લેખ શીર્ષક",
+	"articleplaceholder-abouttopic-create-article-mandatory": "લેખનું શીર્ષક જરુરી છે.",
+	"articleplaceholder-abouttopic-create-article-button": "લેખ બનાવો",
+	"articleplaceholder-abouttopic-create-article-submit-button": "જમા કરો",
+	"articleplaceholder-abouttopic-article-exists-error": "આ નામનો લેખ હાજર છે જ.",
+	"articleplaceholder-abouttopic-lua-entity": "વસ્તુ",
+	"articleplaceholder-abouttopic-lua-reference": "સંદર્ભ",
+	"articleplaceholder-abouttopic-lua-identifier": "બાહ્ય સ્રોતો",
+	"articleplaceholder-search-header": "વિષય પરની માહિતી શોધો"
+}
