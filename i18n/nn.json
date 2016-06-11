@@ -4,6 +4,13 @@
 			"Njardarlogar"
 		]
 	},
+	"articleplaceholder-abouttopic-create-article": "Opprett ein ny artikkel med tittelen under",
+	"articleplaceholder-abouttopic-create-article-label": "Artikkeltittel",
+	"articleplaceholder-abouttopic-create-article-mandatory": "Tittelen til artikkelen er påkravd",
 	"articleplaceholder-abouttopic-create-article-button": "Lag ein artikkel",
-	"articleplaceholder-abouttopic-create-article-submit-button": "Send"
+	"articleplaceholder-abouttopic-create-article-submit-button": "Send",
+	"articleplaceholder-abouttopic-article-exists-error": "Det finst alt ein artikkel med dette namnet",
+	"articleplaceholder-abouttopic-lua-reference": "Kjelder",
+	"articleplaceholder-abouttopic-lua-identifier": "Eksterne ressursar",
+	"articleplaceholder-search-header": "Finn data om emnet"
 }
