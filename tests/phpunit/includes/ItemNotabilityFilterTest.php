@@ -6,7 +6,6 @@ use ArticlePlaceholder\ItemNotabilityFilter;
 use DataValues\StringValue;
 use MediaWikiTestCase;
 use Wikibase\Client\Store\Sql\ConsistentReadConnectionManager;
-use Wikibase\Client\WikibaseClient;
 use Wikibase\DataModel\Entity\Item;
 use Wikibase\DataModel\Entity\ItemId;
 use Wikibase\DataModel\Entity\PropertyId;
@@ -26,6 +25,7 @@ use Wikibase\Repo\WikibaseRepo;
  *
  * @license GPL-2.0+
  * @author Marius Hoch
+ * @author Lucie-Aimée Kaffee
  */
 class ItemNotabilityFilterTest extends MediaWikiTestCase {
 
@@ -50,9 +50,22 @@ class ItemNotabilityFilterTest extends MediaWikiTestCase {
 		}
 	}
 
+	/**
+	 * @return ItemNotabilityFilter
+	 */
+	private function getInstance() {
+		$wikibaseRepo = WikibaseRepo::getDefaultInstance();
+
+		return new ItemNotabilityFilter(
+			new ConsistentReadConnectionManager( wfGetLB() ),
+			$wikibaseRepo->getEntityNamespaceLookup(),
+			$wikibaseRepo->getStore()->newSiteLinkStore(),
+			'enwiki'
+		);
+	}
+
 	private function createTestEntities() {
 		global $wgUser;
-
 		$entityStore = WikibaseRepo::getDefaultInstance()->getEntityStore();
 
 		$snak = new PropertyValueSnak(
@@ -88,24 +101,31 @@ class ItemNotabilityFilterTest extends MediaWikiTestCase {
 		] );
 		$item2 = new Item( null, $fingerprint, $siteLinkList2, $statementListNotNotable );
 
+		// Not notable, has an article on wiki:
+		$siteLinkList3 = new SiteLinkList( [
+			new SiteLink( 'enwiki', 'has-an-article' ),
+			new SiteLink( 'b', 'not notable 2' ),
+			new SiteLink( 'c', 'not notable 2' )
+		] );
+		$item3 = new Item( null, $fingerprint, $siteLinkList3, $statementListNotable );
+
 		$entityStore->saveEntity( $item0, 'ItemNotabilityFilterTest', $wgUser, EDIT_NEW );
 		$entityStore->saveEntity( $item1, 'ItemNotabilityFilterTest', $wgUser, EDIT_NEW );
 		$entityStore->saveEntity( $item2, 'ItemNotabilityFilterTest', $wgUser, EDIT_NEW );
+		$entityStore->saveEntity( $item3, 'ItemNotabilityFilterTest', $wgUser, EDIT_NEW );
 
 		$this->testItemIds[] = $item0->getId();
 		$this->testItemIds[] = $item1->getId();
 		$this->testItemIds[] = $item2->getId();
+		$this->testItemIds[] = $item3->getId();
 	}
 
 	public function testGetNotableEntityIds() {
-		$itemNotabilityFilter = new ItemNotabilityFilter(
-			new ConsistentReadConnectionManager( wfGetLB() ),
-			WikibaseClient::getDefaultInstance()->getEntityNamespaceLookup()
-		);
+		$itemNotabilityFilter = $this->getInstance();
 
 		$result = $itemNotabilityFilter->getNotableEntityIds( $this->testItemIds );
 
-		$this->assertSame(
+		$this->assertEquals(
 			[ $this->testItemIds[0] ],
 			$result
 		);
