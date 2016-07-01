@@ -5,13 +5,20 @@
 			"Frisko"
 		]
 	},
+	"articleplaceholder-desc": "Tillhandahåller en specialsida med information från {{WBREPONAME}} om ett särskilt ämne med en uppmaning att skapa en artikel för ämnet",
 	"articleplaceholder-abouttopic": "Om ämnet",
-	"articleplaceholder-abouttopic-no-entity-error": "Detta är inte ett giltigt artikel-ID.",
+	"articleplaceholder-abouttopic-intro": "Denna specialsida ger dig en snabb översikt för ett ämne baserat på data från {{WBREPONAME}}.",
+	"articleplaceholder-abouttopic-entityid": "Ange ett objekt-ID, t.ex. Q12345",
+	"articleplaceholder-abouttopic-submit": "tillverka",
+	"articleplaceholder-abouttopic-no-entity-error": "Detta är inte ett giltigt objekt-ID.",
 	"articleplaceholder-abouttopic-create-article": "Skapa en ny artikel med titeln",
+	"articleplaceholder-abouttopic-create-article-label": "Artikelns titel",
+	"articleplaceholder-abouttopic-create-article-mandatory": "Artikelns titel är nödvändig.",
 	"articleplaceholder-abouttopic-create-article-button": "Skapa en artikel",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Skicka",
 	"articleplaceholder-abouttopic-article-exists-error": "En artikel med detta namn finns redan",
 	"articleplaceholder-abouttopic-lua-entity": "Entitet",
 	"articleplaceholder-abouttopic-lua-reference": "Referens",
-	"articleplaceholder-abouttopic-lua-identifier": "Externa resurser"
+	"articleplaceholder-abouttopic-lua-identifier": "Externa resurser",
+	"articleplaceholder-search-header": "Upptäck data om ämnet"
 }
