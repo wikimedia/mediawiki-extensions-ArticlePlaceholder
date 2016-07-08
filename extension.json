@@ -8,10 +8,7 @@
 	"type": "other",
 	"license-name": "GPL-2.0+",
 	"SpecialPages": {
-		"AboutTopic": [
-			"ArticlePlaceholder\\SpecialAboutTopic",
-			"newFromGlobalState"
-		]
+		"AboutTopic": "ArticlePlaceholder\\SpecialAboutTopic::newFromGlobalState"
 	},
 	"MessagesDirs": {
 		"ArticlePlaceholder": [
