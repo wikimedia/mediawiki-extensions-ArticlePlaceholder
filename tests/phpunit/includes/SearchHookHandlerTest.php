@@ -2,14 +2,12 @@
 
 namespace ArticlePlaceholder\Tests;
 
+use ArticlePlaceholder\ItemNotabilityFilter;
 use ArticlePlaceholder\SearchHookHandler;
-use DatabaseBase;
 use MediaWikiTestCase;
 use OutputPage;
 use RequestContext;
 use Title;
-use Wikibase\Client\WikibaseClient;
-use Wikibase\Client\Store\Sql\ConsistentReadConnectionManager;
 use Wikibase\DataModel\Entity\EntityId;
 use Wikibase\DataModel\Entity\ItemId;
 use Wikibase\DataModel\Entity\PropertyId;
@@ -17,11 +15,9 @@ use Wikibase\LanguageFallbackChainFactory;
 use Wikibase\Lib\Interactors\TermIndexSearchInteractor;
 use Wikibase\Lib\Tests\Store\MockTermIndex;
 use Wikibase\Store\BufferingTermLookup;
-use Wikibase\Lib\Store\EntityNamespaceLookup;
 use Wikibase\TermIndexEntry;
 
 /**
- * @group Database
  * @group ArticlePlaceholder
  *
  * @covers ArticlePlaceholder\SearchHookHandler
@@ -108,64 +104,33 @@ class SearchHookHandlerTest extends MediaWikiTestCase {
 		return 'en';
 	}
 
-	protected function newSearchHookHandler(
-		$doNotReturnTerms = false,
-		ConsistentReadConnectionManager $connectionManager,
-		EntityNamespaceLookup $entityNsLookup
-	) {
+	protected function newSearchHookHandler( $doNotReturnTerms = false ) {
+		$itemNotabilityFilter = $this->getMockBuilder( ItemNotabilityFilter::class )
+			->disableOriginalConstructor()
+			->getMock();
+
+		$itemNotabilityFilter->expects( $this->any() )
+			->method( 'getNotableEntityIds' )
+			->with( $this->isType( 'array' ) )
+			->will( $this->returnCallback( function( array $itemIds ) {
+				// Q7246 is notable, nothing else is
+				$Q7246 = new ItemId( 'Q7246' );
+				if ( in_array( $Q7246, $itemIds ) ) {
+					return [ $Q7246 ];
+				}
+
+				return [];
+			} ) );
+
 		$language = $this->getLanguageCode();
-		$page = new SearchHookHandler(
+
+		return new SearchHookHandler(
 			$this->getMockTermIndex(),
 			$this->getMockedTermSearchInteractor( $language, $doNotReturnTerms ),
 			$language,
 			'repo-script-path',
 			'repo-url',
-			$connectionManager,
-			$entityNsLookup
-		);
-		return $page;
-	}
-
-	/**
-	 * Insert necessary data in the page_props and page table
-	 * @param DatabaseBase $db
-	 * @param int $pageId
-	 * @param string $entityId
-	 * @param int $numSitelinks
-	 * @param int $numClaims
-	 */
-	private function insertPageProps(
-		DatabaseBase $db, $pageId, $entityIdSer, $numSitelinks, $numClaims, $itemNamespace
-	) {
-		$this->tablesUsed[] = 'page_props';
-		$this->tablesUsed[] = 'page';
-		$db->insert(
-			'page_props',
-			[
-				[
-					'pp_page' => $pageId,
-					'pp_propname' => 'wb-sitelinks',
-					'pp_value' => $numSitelinks,
-				],
-				[
-					'pp_page' => $pageId,
-					'pp_propname' => 'wb-claims',
-					'pp_value' => $numClaims,
-				]
-			]
-		);
-		$this->insertPage( $db, $pageId, $entityIdSer, $itemNamespace );
-	}
-
-	protected function insertPage( DatabaseBase $db, $pageId, $entityIdSer, $itemNamespace ) {
-		$this->tablesUsed[] = 'page';
-		$db->insert(
-			'page',
-			[
-				'page_namespace' => $itemNamespace,
-				'page_title' => $entityIdSer,
-				'page_id' => $pageId,
-			]
+			$itemNotabilityFilter
 		);
 	}
 
@@ -174,19 +139,11 @@ class SearchHookHandlerTest extends MediaWikiTestCase {
 			[
 				'get term, check if entity with right title is returned',
 				'Unicorn',
-				'Q7246',
-				'7246',
-				'5',
-				'7',
 				'>Unicorn</a>: Unicorn</div>'
 			],
 			[
 				'search result with no label and no description',
 				'Unicorn',
-				'Q7246',
-				'7246',
-				'5',
-				'7',
 				'>Q7246</a></div>',
 				true
 			],
@@ -196,38 +153,12 @@ class SearchHookHandlerTest extends MediaWikiTestCase {
 	/**
 	 * @dataProvider provideAddToSearch
 	 */
-	public function testAddToSearch(
-		$message, $term, $entityIdSer, $pageId, $numSitelinks, $numClaims, $expected,
-		$doNotReturnTerms = false
-	) {
-		$wikibaseClient = WikibaseClient::getDefaultInstance();
-		$repoDb = $wikibaseClient->getSettings()->getSetting( 'repoDatabase' );
-		$entityNsLookup = $wikibaseClient->getEntityNamespaceLookup();
-		$itemNamespace = $entityNsLookup->getEntityNamespace( 'item' );
-
-		if ( $repoDb !== false ) {
-			$this->markTestSkipped( 'Test skipped if repo database is not same as client' );
-		}
-
-		$connectionManager = new ConsistentReadConnectionManager( wfGetLB( $repoDb ), $repoDb );
-
-		$db = $connectionManager->getWriteConnection();
-
-		$this->insertPageProps(
-			$db, $pageId, $entityIdSer, $numSitelinks, $numClaims, $itemNamespace
-		);
-		// test an item with only 2 sitelinks and 2 claims
-		$this->insertPageProps( $db, 111, 'Q111', 2, 2, $itemNamespace );
-		// test an item only in page table, not in pageprops
-		$this->insertPage( $db, 222, 'Q222', $itemNamespace );
-
+	public function testAddToSearch( $message, $term, $expected, $doNotReturnTerms = false ) {
 		$specialSearch = $this->getSpecialSearch();
 		$output = new OutputPage( new RequestContext() );
-		$output->setTitle( Title::makeTitle( 0, 'testOutputSearch' ) );
+		$output->setTitle( Title::makeTitle( -1, 'Search' ) );
 
-		$searchHookHander = $this->newSearchHookHandler(
-			$doNotReturnTerms, $connectionManager, $entityNsLookup
-		);
+		$searchHookHander = $this->newSearchHookHandler( $doNotReturnTerms );
 		$searchHookHander->addToSearch( $specialSearch, $output, $term );
 		$html = $output->getHTML();
 

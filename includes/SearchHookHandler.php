@@ -2,7 +2,6 @@
 
 namespace ArticlePlaceholder;
 
-use DatabaseBase;
 use OutputPage;
 use SpecialSearch;
 use SpecialPage;
@@ -21,18 +20,6 @@ use Wikibase\TermIndexEntry;
  * @license GNU General Public Licence 2.0 or later
  */
 class SearchHookHandler {
-
-	/**
-	 * minimum number of statements for an item to be notable
-	 * @var int
-	 */
-	const MIN_STATEMENTS = 3;
-
-	/**
-	 * minimum number of sitelinks for an item to be notable
-	 * @var int
-	 */
-	const MIN_SITELINKS = 3;
 
 	/**
 	 * @var TermIndex
@@ -60,14 +47,9 @@ class SearchHookHandler {
 	private $repoUrl;
 
 	/**
-	 * @var ConsistentReadConnectionManager
+	 * @var ItemNotabilityFilter
 	 */
-	private $connectionManager;
-
-	/**
-	 * EntityNamespaceLookup
-	 */
-	private $entityNamespaceLookup;
+	private $itemNotabilityFilter;
 
 	/**
 	 * @param SpecialPage $specialPage
@@ -78,14 +60,18 @@ class SearchHookHandler {
 		$wikibaseClient = WikibaseClient::getDefaultInstance();
 		$repoDB = $wikibaseClient->getSettings()->getSetting( 'repoDatabase' );
 
+		$itemNotabilityFilter = new ItemNotabilityFilter(
+			new ConsistentReadConnectionManager( wfGetLB( $repoDB ), $repoDB ),
+			$wikibaseClient->getEntityNamespaceLookup()
+		);
+
 		return new self(
 			$wikibaseClient->getStore()->getTermIndex(),
 			$wikibaseClient->newTermSearchInteractor( $specialPage->getLanguage()->getCode() ),
 			$specialPage->getConfig()->get( 'LanguageCode' ),
 			$wikibaseClient->getSettings()->getSetting( 'repoScriptPath' ),
 			$wikibaseClient->getSettings()->getSetting( 'repoUrl' ),
-			new ConsistentReadConnectionManager( wfGetLB( $repoDB ), $repoDB ),
-			$wikibaseClient->getEntityNamespaceLookup()
+			$itemNotabilityFilter
 		);
 	}
 
@@ -95,8 +81,7 @@ class SearchHookHandler {
 	 * @param string $languageCode content language
 	 * @param string $repoScriptPath
 	 * @param string $repoUrl
-	 * @param ConsistentReadConnectionManager $connectionManager
-	 * @param EntityNamespaceLookup $entityNamespaceLookup
+	 * @param ItemNotabilityFilter $itemNotabilityFilter
 	 */
 	public function __construct(
 		TermIndex $termIndex,
@@ -104,16 +89,14 @@ class SearchHookHandler {
 		$languageCode,
 		$repoScriptPath,
 		$repoUrl,
-		ConsistentReadConnectionManager $connectionManager,
-		EntityNamespaceLookup $entityNamespaceLookup
+		ItemNotabilityFilter $itemNotabilityFilter
 	) {
 		$this->termIndex = $termIndex;
 		$this->termSearchInteractor = $termSearchInteractor;
 		$this->languageCode = $languageCode;
 		$this->repoScriptPath = $repoScriptPath;
 		$this->repoUrl = $repoUrl;
-		$this->connectionManager = $connectionManager;
-		$this->entityNamespaceLookup = $entityNamespaceLookup;
+		$this->itemNotabilityFilter = $itemNotabilityFilter;
 	}
 
 	/**
@@ -183,10 +166,15 @@ class SearchHookHandler {
 	 */
 	private function renderTermSearchResults( array $termSearchResults ) {
 		$wikitext = '';
-		$notableEntityIds = $this->getNotableEntityIds( array_keys( $termSearchResults ) );
+
+		$itemIds = [];
+		foreach ( $termSearchResults as $termSearchResult ) {
+			$itemIds[] = $termSearchResult->getEntityId();
+		}
+		$notableEntityIds = $this->itemNotabilityFilter->getNotableEntityIds( $itemIds );
 
 		foreach ( $notableEntityIds as $entityId ) {
-			$result = $this->renderTermSearchResult( $termSearchResults[ $entityId ] );
+			$result = $this->renderTermSearchResult( $termSearchResults[ $entityId->getSerialization() ] );
 
 			$wikitext .= '<div class="article-placeholder-searchResult">'
 						. $result
@@ -233,81 +221,6 @@ class SearchHookHandler {
 			[ TermIndexEntry::TYPE_LABEL, TermIndexEntry::TYPE_ALIAS ]
 		);
 		return $searchResults;
-	}
-
-	/**
-	 * TODO: instead of api request database?
-	 * @param string[] $entityIds
-	 *
-	 * @return string[] $notableEntityIds
-	 */
-	private function getNotableEntityIds( $entityIds ) {
-		$notableEntityIds = [];
-
-		$statementClaimsCount = $this->getStatementClaimsCount( $entityIds );
-
-		foreach ( $entityIds as $entityId ) {
-			if ( $statementClaimsCount[ $entityId ][ 'wb-claims' ] >= self::MIN_STATEMENTS
-				&& $statementClaimsCount[ $entityId ][ 'wb-sitelinks' ] >= self::MIN_SITELINKS ) {
-
-				$notableEntityIds[] = $entityId;
-			}
-		}
-		return $notableEntityIds;
-	}
-
-	/**
-	 * Get number of statements and claims for a list of entityIds
-	 * @param string[] $entityIds
-	 * @return array() int[page_title][propname] => value
-	 */
-	private function getStatementClaimsCount( $entityIds ) {
-		$statementsClaimsCount = [];
-
-		$db = $this->connectionManager->getReadConnection();
-
-		$res = $this->selectPagePropsPage( $db, $entityIds );
-
-		$this->connectionManager->releaseConnection( $db );
-
-		foreach ( $res as $row ) {
-			if ( $row !== false ) {
-				if ( !$row->pp_value ) {
-					$statementsClaimsCount[ $row->page_title ][ $row->pp_propname ] = 0;
-				} else {
-					$statementsClaimsCount[ $row->page_title ][ $row->pp_propname ] = $row->pp_value;
-				}
-			}
-		}
-
-		return $statementsClaimsCount;
-	}
-
-	/**
-	 * @param DatabaseBase $db
-	 * @param string[] $entityIds
-	 * @return type
-	 */
-	private function selectPagePropsPage( DatabaseBase $db, $entityIds ) {
-		$entityNamespace = $this->entityNamespaceLookup->getEntityNamespace( 'item' );
-
-		if ( $entityNamespace === false ) {
-			wfLogWarning( 'EntityNamespaceLookup returns false' );
-			return [];
-		}
-
-		return $db->select(
-			[ 'page_props', 'page' ],
-			[ 'page_title', 'pp_propname', 'pp_value' ],
-			[
-				'page_namespace' => $entityNamespace,
-				'page_title' => $entityIds,
-				'pp_propname' => [ 'wb-sitelinks', 'wb-claims' ]
-			],
-			__METHOD__,
-			[],
-			[ 'page' => [ 'LEFT JOIN', 'page_id=pp_page' ] ]
-		);
 	}
 
 }
