@@ -14,11 +14,11 @@ entityrenderer.referencesBlacklist = php.getReferencesBlacklist()
 local hasReferences = false
 
 -- Get the datavalue for a given property.
--- @param String propertyId
--- @return String datatype
+-- @param string propertyId
+-- @return string|nil datatype or nil if property couldn't be loaded
 local getDatatype = function( propertyId )
   local property = mw.wikibase.getEntity( propertyId )
-  return property['datatype']
+  return property and property['datatype']
 end
 
 ----------------------------------- Implementation of Renderers -----------------------------------
