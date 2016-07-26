@@ -4,6 +4,7 @@
 			"Lucie-Aimée Kaffee"
 		]
 	},
+	"createtopicpage": "Create page",
 	"articleplaceholder-desc": "Provides a special page with {{WBREPONAME}} information about a certain topic, with invitation to create an article for the topic",
 	"articleplaceholder-abouttopic": "About topic",
 	"articleplaceholder-abouttopic-intro": "This special page gives you a quick overview of a topic based on data from {{WBREPONAME}}.",
@@ -19,5 +20,9 @@
 	"articleplaceholder-abouttopic-lua-entity": "Entity",
 	"articleplaceholder-abouttopic-lua-reference": "Reference",
 	"articleplaceholder-abouttopic-lua-identifier": "External resources",
-	"articleplaceholder-search-header": "Discover data on the topic"
+	"articleplaceholder-search-header": "Discover data on the topic",
+	"articleplaceholder-createpage-title": "Create $1",
+	"articleplaceholder-createpage-alreadyexists": "The page with the title $1 already exists. Please choose another one.",
+	"articleplaceholder-createpage-notitleprovided": "No title was entered, please enter a title for the page you want to create.",
+	"articleplaceholder-createpage-invalidtitleprovided": "The title you entered is invalid. Please provide a valid title."
 }
