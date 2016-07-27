@@ -4,6 +4,7 @@
 			"Purodha"
 		]
 	},
+	"createtopicpage": "Sigg aanlähje",
 	"articleplaceholder-desc": "Brängk en {{int:specialpage}} med Aanjahbe {{GRAMMAR:Dat vum|{{WBREPONAME}}}} övver e Tehma, met dä Bedd, doh drövver en neuje Sigg ze schrihve.",
 	"articleplaceholder-abouttopic": "Övver et Tehma",
 	"articleplaceholder-abouttopic-intro": "Heh di {{int:specialpage}} med Aanjahbe {{int:specialpage}} med Dahte {{GRAMMAR:Dat vum|{{WBREPONAME}}}} övver e Tehma, met dä Bedd, doh drövver en neuje Sigg ze schrihve.",
@@ -19,5 +20,9 @@
 	"articleplaceholder-abouttopic-lua-entity": "Saach",
 	"articleplaceholder-abouttopic-lua-reference": "Fohßnoht",
 	"articleplaceholder-abouttopic-lua-identifier": "Dahte vun Ußerhallef",
-	"articleplaceholder-search-header": "Aanjahbe zom Tehma erus fenge"
+	"articleplaceholder-search-header": "Aanjahbe zom Tehma erus fenge",
+	"articleplaceholder-createpage-title": "Donn $1 aanlääje",
+	"articleplaceholder-createpage-alreadyexists": "Di Sigg met dä Övverschreff $1 jidd_et alld. Bes usu johd un jivv_en anndere Övverschreff aan.",
+	"articleplaceholder-createpage-notitleprovided": "Kein Övverschreff es enjejovve wohde. Bes usu johd un jivv_en Övverschreff för di Sigg aan, di De aanlähje wells.",
+	"articleplaceholder-createpage-invalidtitleprovided": "Di Övverschreff, di De ennjeovve häs, e nit jöltesch. Bes usu johd un jivv_en jöltejje Övverschrevv aan."
 }

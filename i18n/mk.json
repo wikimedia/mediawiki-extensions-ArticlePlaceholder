@@ -4,10 +4,11 @@
 			"Bjankuloski06"
 		]
 	},
+	"createtopicpage": "Создај страница",
 	"articleplaceholder-desc": "Дава службена страница со информации од {{WBREPONAME}} за извесна тема и покана за создавање на статија на таа тема",
 	"articleplaceholder-abouttopic": "За тема",
-	"articleplaceholder-abouttopic-intro": "Оваа службена страница создава содржинска страница за извесна тема во информации од {{WBREPONAME}}",
-	"articleplaceholder-abouttopic-entityid": "Внесете ја назнаката на предметот за да добиете самосоздаден текст-пополнувач за статија.",
+	"articleplaceholder-abouttopic-intro": "Оваа службена страница ви дава краток преглед на темата  на основа на податоците од {{WBREPONAME}}.",
+	"articleplaceholder-abouttopic-entityid": "Внесете назнака на предметот, како на пр. Q12345",
 	"articleplaceholder-abouttopic-submit": "изработи",
 	"articleplaceholder-abouttopic-no-entity-error": "Ова не е важечка назнака на предметот.",
 	"articleplaceholder-abouttopic-create-article": "Создај нова статија со овој наслов",
@@ -19,5 +20,9 @@
 	"articleplaceholder-abouttopic-lua-entity": "Единица",
 	"articleplaceholder-abouttopic-lua-reference": "Навод",
 	"articleplaceholder-abouttopic-lua-identifier": "Надворешни ресурси",
-	"articleplaceholder-search-header": "Откријте ги податоците на темата"
+	"articleplaceholder-search-header": "Откријте ги податоците на темата",
+	"articleplaceholder-createpage-title": "Создај $1",
+	"articleplaceholder-createpage-alreadyexists": "Страницата со наслов $1 веќе постои. Одберете друга.",
+	"articleplaceholder-createpage-notitleprovided": "Немате внесено наслов. Внесете наслов за страницата што сакате да ја создадете.",
+	"articleplaceholder-createpage-invalidtitleprovided": "Внесениот наслов е неважечки. Внесете важечки наслов."
 }

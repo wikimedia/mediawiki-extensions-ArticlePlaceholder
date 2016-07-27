@@ -4,6 +4,7 @@
 			"Liuxinyu970226"
 		]
 	},
+	"createtopicpage": "创建页面",
 	"articleplaceholder-desc": "提供包含有关特定主题的{{WBREPONAME}}信息的特殊页面，并带有邀请为主题创建条目的功能",
 	"articleplaceholder-abouttopic": "关于话题",
 	"articleplaceholder-abouttopic-intro": "此特殊页面基于来自{{WBREPONAME}}的数据，向您提供一段话题的快速预览。",
@@ -19,5 +20,9 @@
 	"articleplaceholder-abouttopic-lua-entity": "实体",
 	"articleplaceholder-abouttopic-lua-reference": "参考文献",
 	"articleplaceholder-abouttopic-lua-identifier": "外部来源",
-	"articleplaceholder-search-header": "发现数据在主题"
+	"articleplaceholder-search-header": "发现数据在主题",
+	"articleplaceholder-createpage-title": "创建$1",
+	"articleplaceholder-createpage-alreadyexists": "标题为$1的页面已存在。请选择其他标题。",
+	"articleplaceholder-createpage-notitleprovided": "未输入标题，请输入您要创建页面的标题。",
+	"articleplaceholder-createpage-invalidtitleprovided": "您输入的标题无效。请提供一个有效的标题。"
 }

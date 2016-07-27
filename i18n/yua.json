@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lorenzoitza"
+		]
+	},
+	"createtopicpage": "Tumben wáal",
+	"articleplaceholder-createpage-title": "Beeta'ab $1",
+	"articleplaceholder-createpage-alreadyexists": "Le waal yeetel le tiitulo' $1 yaam. Much kaax u láak'.",
+	"articleplaceholder-createpage-notitleprovided": "Le u tiituloi ma' ta tsibtaji', much tsib up'e tiitulo utia'al le waal taak a tumben tsibtik.",
+	"articleplaceholder-createpage-invalidtitleprovided": "U títuloi ta tsibtajo' ma' tu beeli'. Much ts'ib up'e tiitulo ma'alob."
+}

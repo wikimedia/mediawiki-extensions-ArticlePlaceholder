@@ -2,14 +2,19 @@
 	"@metadata": {
 		"authors": [
 			"Mehtab ahmed",
-			"Aursani"
+			"Aursani",
+			"Indusian1236"
 		]
 	},
+	"createtopicpage": "صفحو تخليق ڪريو",
 	"articleplaceholder-abouttopic": "موضوع بابت",
 	"articleplaceholder-abouttopic-create-article": "هن عنوان سان ڪو نئون مضمون تخليق ڪريو",
 	"articleplaceholder-abouttopic-create-article-button": "ڪو مضمون تخليق ڪريو",
 	"articleplaceholder-abouttopic-create-article-submit-button": "اماڻيو",
 	"articleplaceholder-abouttopic-article-exists-error": "هن نالي سان اڳ ئي هڪ مضمون موجود آهي",
 	"articleplaceholder-abouttopic-lua-reference": "حوالو",
-	"articleplaceholder-search-header": "موضوع تي مواد دريافت ڪريو"
+	"articleplaceholder-search-header": "موضوع تي مواد دريافت ڪريو",
+	"articleplaceholder-createpage-title": "1$ تخليق ڪريو",
+	"articleplaceholder-createpage-notitleprovided": "ڪوبه عنوان داخل ناهي ڪيو ويو. مهرباني ڪري تخليق ٿيندڙ صفحي جو عنوان داخل ڪريو.",
+	"articleplaceholder-createpage-invalidtitleprovided": "اوهان جو داخل ڪيل عنوان موزون ناهي، مهرباني ڪري بهتر عنوان ڏيو."
 }

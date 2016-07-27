@@ -4,6 +4,7 @@
 			"Zygimantus"
 		]
 	},
+	"createtopicpage": "Kurti puslapį",
 	"articleplaceholder-desc": "Suteikia specialų puslapį su {{WBREPONAME}} informacija apie tam tikrą temą, su kvietimu sukurti straipsnį šia tema",
 	"articleplaceholder-abouttopic": "Apie temą",
 	"articleplaceholder-abouttopic-intro": "Šis specialus puslapis suteikia jums greita apžvalga tema, remiantis duomenimis iš {{WBREPONAME}}.",
@@ -19,5 +20,7 @@
 	"articleplaceholder-abouttopic-lua-entity": "Esybė",
 	"articleplaceholder-abouttopic-lua-reference": "Šaltinis",
 	"articleplaceholder-abouttopic-lua-identifier": "Išoriniai resursai",
-	"articleplaceholder-search-header": "Atrasti duomenis tema"
+	"articleplaceholder-search-header": "Atrasti duomenis tema",
+	"articleplaceholder-createpage-title": "Kurti $1",
+	"articleplaceholder-createpage-invalidtitleprovided": "Pavadinimas, kurį įvedėte, yra neteisingas. Prašome nurodyti teisingą."
 }

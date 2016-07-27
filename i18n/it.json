@@ -4,6 +4,7 @@
 			"Beta16"
 		]
 	},
+	"createtopicpage": "Crea pagina",
 	"articleplaceholder-desc": "Fornisce una pagina speciale con informazioni da {{WBREPONAME}} su un certo argomento, con l'invito a creare una voce su di esso",
 	"articleplaceholder-abouttopic": "Sull'argomento",
 	"articleplaceholder-abouttopic-intro": "Questa pagina speciale ti fornisce una rapida panoramica di un argomento basata sui dati provenienti da {{WBREPONAME}}.",
@@ -19,5 +20,9 @@
 	"articleplaceholder-abouttopic-lua-entity": "Entità",
 	"articleplaceholder-abouttopic-lua-reference": "Riferimento",
 	"articleplaceholder-abouttopic-lua-identifier": "Risorse esterne",
-	"articleplaceholder-search-header": "Scopri i dati sull'argomento"
+	"articleplaceholder-search-header": "Scopri i dati sull'argomento",
+	"articleplaceholder-createpage-title": "Crea $1",
+	"articleplaceholder-createpage-alreadyexists": "La pagina con il titolo $1 esiste già. Scegline un altro.",
+	"articleplaceholder-createpage-notitleprovided": "Non è stato inserito alcun titolo; fornisci un titolo per la pagina che vuoi creare.",
+	"articleplaceholder-createpage-invalidtitleprovided": "Il titolo che hai inserito non è valido. Scegli un titolo valido."
 }

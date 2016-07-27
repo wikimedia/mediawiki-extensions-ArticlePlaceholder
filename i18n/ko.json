@@ -5,6 +5,7 @@
 			"Ykhwong"
 		]
 	},
+	"createtopicpage": "문서 만들기",
 	"articleplaceholder-desc": "특정 주제에 대한 {{WBREPONAME}} 정보를 다루는 특수 문서를 제공하며, 해당 주제에 대한 새 문서를 만들도록 추천합니다",
 	"articleplaceholder-abouttopic": "주제에 대하여",
 	"articleplaceholder-abouttopic-intro": "이 특수 문서는 {{WBREPONAME}}으로 특정한 주제에 대한 문서를 생성합니다.",
@@ -16,5 +17,9 @@
 	"articleplaceholder-abouttopic-article-exists-error": "이 제목으로 된 문서가 이미 존재합니다",
 	"articleplaceholder-abouttopic-lua-entity": "개체",
 	"articleplaceholder-abouttopic-lua-reference": "참고",
-	"articleplaceholder-search-header": "주제에 대한 데이터 탐색"
+	"articleplaceholder-search-header": "주제에 대한 데이터 탐색",
+	"articleplaceholder-createpage-title": "$1 만들기",
+	"articleplaceholder-createpage-alreadyexists": "$1 제목의 문서가 이미 존재합니다. 다른 문서를 선택해 주십시오.",
+	"articleplaceholder-createpage-notitleprovided": "제목이 입력되지 않았습니다. 작성하고자 하는 문서의 제목을 입력해 주십시오.",
+	"articleplaceholder-createpage-invalidtitleprovided": "입력한 제목이 유효하지 않습니다. 유효한 제목을 지정해 주십시오."
 }

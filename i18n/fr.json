@@ -6,6 +6,7 @@
 			"Verdy p"
 		]
 	},
+	"createtopicpage": "Créer la page",
 	"articleplaceholder-desc": "Fournit une page spéciale avec l’information {{WBREPONAME}} sur un certain sujet, avec une invitation à créer un article pour le sujet",
 	"articleplaceholder-abouttopic": "Sujet \"À propos\"",
 	"articleplaceholder-abouttopic-intro": "Cette page spéciale vous donne un aperçu rapide d’un sujet basé sur les données de {{WBREPONAME}}.",
@@ -21,5 +22,9 @@
 	"articleplaceholder-abouttopic-lua-entity": "Entité",
 	"articleplaceholder-abouttopic-lua-reference": "Référence",
 	"articleplaceholder-abouttopic-lua-identifier": "Ressources externes",
-	"articleplaceholder-search-header": "Découvrir les données sur le sujet"
+	"articleplaceholder-search-header": "Découvrir les données sur le sujet",
+	"articleplaceholder-createpage-title": "Créer $1",
+	"articleplaceholder-createpage-alreadyexists": "La page de titre $1 existe déjà. Veuillez en choisir un autre.",
+	"articleplaceholder-createpage-notitleprovided": "Aucun titre n’a été saisi, veuillez en saisir un pour la page que vous voulez créer.",
+	"articleplaceholder-createpage-invalidtitleprovided": "Le titre que vous avez saisi n’est pas valide. Veuillez fournir un titre valide."
 }

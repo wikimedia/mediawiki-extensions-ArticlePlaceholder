@@ -4,6 +4,7 @@
 			"Metalhead64"
 		]
 	},
+	"createtopicpage": "Seite erstellen",
 	"articleplaceholder-desc": "Ergänzt eine Spezialseite mit {{WBREPONAME}}-Informationen über ein bestimmtes Thema mit einer Einladung zum Erstellen eines Artikels zum Thema",
 	"articleplaceholder-abouttopic": "Über Thema",
 	"articleplaceholder-abouttopic-intro": "Diese Spezialseite gibt dir einen schnellen Überblick über ein Thema, das auf Daten von {{WBREPONAME}} basiert.",
@@ -19,5 +20,9 @@
 	"articleplaceholder-abouttopic-lua-entity": "Objekt",
 	"articleplaceholder-abouttopic-lua-reference": "Referenz",
 	"articleplaceholder-abouttopic-lua-identifier": "Externe Quellen",
-	"articleplaceholder-search-header": "Daten zum Thema entdecken"
+	"articleplaceholder-search-header": "Daten zum Thema entdecken",
+	"articleplaceholder-createpage-title": "$1 erstellen",
+	"articleplaceholder-createpage-alreadyexists": "Die Seite mit dem Titel $1 ist bereits vorhanden. Bitte wähle einen anderen.",
+	"articleplaceholder-createpage-notitleprovided": "Es wurde kein Titel eingegeben. Bitte gib einen Titel für die Seite ein, die du erstellen möchtest.",
+	"articleplaceholder-createpage-invalidtitleprovided": "Der eingegebene Titel ist ungültig. Bitte gib einen gültigen Titel an."
 }

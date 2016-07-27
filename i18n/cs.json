@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Cvanca",
-			"Mormegil"
+			"Mormegil",
+			"Dvorapa"
 		]
 	},
+	"createtopicpage": "Tvorba stránky",
 	"articleplaceholder-desc": "Poskytuje speciální stránku s informacemi z {{grammar:2sg|{{WBREPONAME}}}} o nějakém tématu s výzvou k založení článku na dané téma",
 	"articleplaceholder-abouttopic": "O tématu",
 	"articleplaceholder-abouttopic-intro": "Tato speciální stránka vám poskytne rychlý přehled tématu na základě dat z {{grammar:2sg|{{WBREPONAME}}}}.",
@@ -20,5 +22,9 @@
 	"articleplaceholder-abouttopic-lua-entity": "Entita",
 	"articleplaceholder-abouttopic-lua-reference": "Reference",
 	"articleplaceholder-abouttopic-lua-identifier": "Externí zdroje",
-	"articleplaceholder-search-header": "Objevte data na toto téma"
+	"articleplaceholder-search-header": "Objevte data na toto téma",
+	"articleplaceholder-createpage-title": "Tvorba $1",
+	"articleplaceholder-createpage-alreadyexists": "Stránka s názvem $1 již existuje. Prosím, zvolte jiný.",
+	"articleplaceholder-createpage-notitleprovided": "Žádný název nebyl zadán, prosím, vložte název stránky, kterou chcete vytvořit.",
+	"articleplaceholder-createpage-invalidtitleprovided": "Název, který jste {{GENDER:|zadal|zadala|zadal(a)}}, je chybný. Prosím, zadejte správný."
 }

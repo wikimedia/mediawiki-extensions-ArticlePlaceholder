@@ -4,6 +4,11 @@
 			"Vitorvicentevalente"
 		]
 	},
+	"createtopicpage": "Criar página",
 	"articleplaceholder-abouttopic-create-article-label": "Título do artigo",
-	"articleplaceholder-abouttopic-create-article-mandatory": "O título do artigo é obrigatório."
+	"articleplaceholder-abouttopic-create-article-mandatory": "O título do artigo é obrigatório.",
+	"articleplaceholder-createpage-title": "Criar $1",
+	"articleplaceholder-createpage-alreadyexists": "A página com o título do $1 já existe. Por favor escolha outro.",
+	"articleplaceholder-createpage-notitleprovided": "Não foi introduzido nenhum título, por favor, insira um para a página que deseja criar.",
+	"articleplaceholder-createpage-invalidtitleprovided": "O título introduzido é inválido. Por favor, forneça um título válido."
 }
