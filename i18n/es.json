@@ -5,6 +5,7 @@
 			"SinNovedades"
 		]
 	},
+	"createtopicpage": "Crear página",
 	"articleplaceholder-desc": "Proporciona una página especial información de {{WBREPONAME}} acerca de un determinado tema, con invitación a crear un artículo para el tema",
 	"articleplaceholder-abouttopic": "Sobre el tema",
 	"articleplaceholder-abouttopic-intro": "Esta página especial te proporciona un resumen rápido de un tema basado en datos de {{WBREPONAME}}.",
@@ -20,5 +21,9 @@
 	"articleplaceholder-abouttopic-lua-entity": "Entidad",
 	"articleplaceholder-abouttopic-lua-reference": "Referencia",
 	"articleplaceholder-abouttopic-lua-identifier": "Recursos externos",
-	"articleplaceholder-search-header": "Descubrir datos sobre el tema"
+	"articleplaceholder-search-header": "Descubrir datos sobre el tema",
+	"articleplaceholder-createpage-title": "Crear $1",
+	"articleplaceholder-createpage-alreadyexists": "La página con el título $1 ya existe. Elige otro.",
+	"articleplaceholder-createpage-notitleprovided": "No se proporcionó ningún título. Escribe un título para la página que quieres crear.",
+	"articleplaceholder-createpage-invalidtitleprovided": "El título escrito no es válido. Proporciona un título válido."
 }

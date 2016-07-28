@@ -4,6 +4,7 @@
 			"Elisardojm"
 		]
 	},
+	"createtopicpage": "Crear páxina",
 	"articleplaceholder-desc": "Proporciona unha páxina especial con información de {{WBREPONAME}} sobre tema determinado, con invitación a crear un artigo para o tema",
 	"articleplaceholder-abouttopic": "Sobre o tema",
 	"articleplaceholder-abouttopic-intro": "Esta páxina especial proporciónalle unha vista rápida dun tema baseado nos datos de {{WBREPONAME}}.",
@@ -19,5 +20,9 @@
 	"articleplaceholder-abouttopic-lua-entity": "Entidade",
 	"articleplaceholder-abouttopic-lua-reference": "Referencia",
 	"articleplaceholder-abouttopic-lua-identifier": "Recursos externos",
-	"articleplaceholder-search-header": "Descubrir datos sobre o tema"
+	"articleplaceholder-search-header": "Descubrir datos sobre o tema",
+	"articleplaceholder-createpage-title": "Crear $1",
+	"articleplaceholder-createpage-alreadyexists": "A páxina co título $1 xa existe. Por favor, escolla outro.",
+	"articleplaceholder-createpage-notitleprovided": "Non se indicou ningún título, por favor, escriba un título para a páxina que quere crear.",
+	"articleplaceholder-createpage-invalidtitleprovided": "O título escrito non é válido, por favor, indique un título válido."
 }

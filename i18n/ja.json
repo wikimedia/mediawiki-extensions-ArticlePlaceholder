@@ -5,7 +5,12 @@
 			"Otokoume"
 		]
 	},
+	"createtopicpage": "ページの作成",
 	"articleplaceholder-abouttopic-no-entity-error": "これは有効な項目 ID ではありません。",
 	"articleplaceholder-abouttopic-create-article-button": "記事を作成する",
-	"articleplaceholder-abouttopic-create-article-submit-button": "提出する"
+	"articleplaceholder-abouttopic-create-article-submit-button": "提出する",
+	"articleplaceholder-createpage-title": "$1 の作成",
+	"articleplaceholder-createpage-alreadyexists": "$1 という名前のページは既に存在します。別のページ名を指定してください。",
+	"articleplaceholder-createpage-notitleprovided": "ページ名が入力されていません。作成するページ名を入力してください。",
+	"articleplaceholder-createpage-invalidtitleprovided": "入力したページ名は無効です。有効なページ名を入力してください。"
 }
