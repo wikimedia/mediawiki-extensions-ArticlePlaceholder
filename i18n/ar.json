@@ -11,5 +11,6 @@
 	"articleplaceholder-abouttopic-create-article-button": "أنشأ مقالة",
 	"articleplaceholder-abouttopic-article-exists-error": "هناك بالفعل مقالة بهذا الاسم",
 	"articleplaceholder-abouttopic-lua-reference": "المرجع",
-	"articleplaceholder-abouttopic-lua-identifier": "مصادر خارجية"
+	"articleplaceholder-abouttopic-lua-identifier": "مصادر خارجية",
+	"articleplaceholder-createpage-title": "أنشئ $1"
 }
