@@ -140,7 +140,7 @@ local imageStatementRenderer = function( statement, orientationImage, inlineQual
       end
     end
   end
-  local result = '[[File:' .. image .. '|thumb|' .. orientationImage .. '|300px|'
+  local result = '[[File:' .. image .. '|thumb|' .. orientationImage .. '|340x280px|'
   if inlineQualifiers == true then
     result = result .. reference .. ' ' .. qualifier .. ']]'
   else
