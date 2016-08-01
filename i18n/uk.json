@@ -6,6 +6,7 @@
 			"Base"
 		]
 	},
+	"createtopicpage": "Створити сторінку",
 	"articleplaceholder-desc": "Надає спеціальну сторінку з інформацією з {{WBREPONAME}} про певну тему, із запрошенням створити статтю на цю тему",
 	"articleplaceholder-abouttopic": "Про тему",
 	"articleplaceholder-abouttopic-intro": "Ця спеціальна сторінка дає Вам коротке уявлення про тему на основі даних з {{GRAMMAR:genitive|{{WBREPONAME}}}}.",
@@ -21,5 +22,9 @@
 	"articleplaceholder-abouttopic-lua-entity": "Сутність",
 	"articleplaceholder-abouttopic-lua-reference": "Посилання на джерело",
 	"articleplaceholder-abouttopic-lua-identifier": "Зовнішні ресурси",
-	"articleplaceholder-search-header": "Ознайомитися з даними на цю тему"
+	"articleplaceholder-search-header": "Ознайомитися з даними на цю тему",
+	"articleplaceholder-createpage-title": "Створити $1",
+	"articleplaceholder-createpage-alreadyexists": "Сторінка з назвою «$1» вже існує. Будь ласка, виберіть іншу.",
+	"articleplaceholder-createpage-notitleprovided": "Заголовка не вказано, будь ласка, введіть заголовок сторінки, яку Ви хочете створити.",
+	"articleplaceholder-createpage-invalidtitleprovided": "Заголовок, який Ви ввели, неприпустимий. Будь ласка, вкажіть дійсний заголовок."
 }
