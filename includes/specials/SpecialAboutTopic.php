@@ -34,7 +34,8 @@ class SpecialAboutTopic extends SpecialPage {
 			$wikibaseClient->getSiteStore(),
 			new TitleFactory(),
 			$wikibaseClient->getSettings()->getSetting( 'siteGlobalID' ),
-			$wikibaseClient->getStore()->getEntityLookup()
+			$wikibaseClient->getStore()->getEntityLookup(),
+			$wikibaseClient->getLangLinkSiteGroup()
 		);
 	}
 
@@ -74,6 +75,11 @@ class SpecialAboutTopic extends SpecialPage {
 	private $entityLookup;
 
 	/**
+	 * @var string
+	 */
+	private $langLinkSiteGroup;
+
+	/**
 	 * @param EntityIdParser $idParser
 	 * @param LanguageFallbackLabelDescriptionLookupFactory $termLookupFactory
 	 * @param SiteLinkLookup $siteLinkLookup
@@ -81,6 +87,7 @@ class SpecialAboutTopic extends SpecialPage {
 	 * @param TitleFactory $titleFactory
 	 * @param string $siteGlobalID
 	 * @param EntityLookup $entityLookup
+	 * @param string $langLinkSiteGroup
 	 */
 	public function __construct(
 		EntityIdParser $idParser,
@@ -89,7 +96,8 @@ class SpecialAboutTopic extends SpecialPage {
 		SiteStore $siteStore,
 		TitleFactory $titleFactory,
 		$siteGlobalID,
-		EntityLookup $entityLookup
+		EntityLookup $entityLookup,
+		$langLinkSiteGroup
 	) {
 		parent::__construct( 'AboutTopic' );
 
@@ -100,6 +108,7 @@ class SpecialAboutTopic extends SpecialPage {
 		$this->titleFactory = $titleFactory;
 		$this->siteGlobalID = $siteGlobalID;
 		$this->entityLookup = $entityLookup;
+		$this->langLinkSiteGroup = $langLinkSiteGroup;
 	}
 
 	/**
@@ -279,9 +288,10 @@ class SpecialAboutTopic extends SpecialPage {
 		$languageLinks = [];
 
 		foreach ( $siteLinks as $siteLink ) {
-			$languageCode = $this->siteStore->getSite( $siteLink->getSiteId() )->getLanguageCode();
-
-			if ( $languageCode !== null ) {
+			$site = $this->siteStore->getSite( $siteLink->getSiteId() );
+			$languageCode = $site->getLanguageCode();
+			$group = $site->getGroup();
+			if ( $languageCode !== null && $group === $this->langLinkSiteGroup ) {
 				$languageLinks[$languageCode] = $languageCode . ':' . $siteLink->getPageName();
 			}
 		}

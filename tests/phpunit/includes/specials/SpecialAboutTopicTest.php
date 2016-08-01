@@ -36,6 +36,21 @@ class SpecialAboutTopicTest extends MediaWikiTestCase {
 	}
 
 	public function testExecute() {
+		$output = $this->getInstanceOutput();
+		$this->assertSame( '(articleplaceholder-abouttopic)', $output->getPageTitle() );
+
+		$html = $output->getHTML();
+		$this->assertContains( 'id=\'ap-abouttopic-form1\'', $html );
+		$this->assertContains( 'id=\'ap-abouttopic-entityid\'', $html );
+		$this->assertContains( '(articleplaceholder-abouttopic-intro)', $html );
+		$this->assertContains( '(articleplaceholder-abouttopic-entityid)', $html );
+		$this->assertContains( '(articleplaceholder-abouttopic-submit)', $html );
+	}
+
+	/**
+	 * @return OutputPage
+	 */
+	private function getInstanceOutput() {
 		$termLookupFactory = $this->getMockBuilder(
 			'Wikibase\Lib\Store\LanguageFallbackLabelDescriptionLookupFactory' )
 			->disableOriginalConstructor()
@@ -51,20 +66,13 @@ class SpecialAboutTopicTest extends MediaWikiTestCase {
 			$this->getMock( 'SiteStore' ),
 			new TitleFactory(),
 			'',
-			$this->getMock( 'Wikibase\DataModel\Services\Lookup\EntityLookup' )
+			$this->getMock( 'Wikibase\DataModel\Services\Lookup\EntityLookup' ),
+			'wikipedia'
 		);
 		$instance->setContext( $context );
 
 		$instance->execute( '' );
-		$output = $instance->getOutput();
-		$this->assertSame( '(articleplaceholder-abouttopic)', $output->getPageTitle() );
-
-		$html = $output->getHTML();
-		$this->assertContains( 'id=\'ap-abouttopic-form1\'', $html );
-		$this->assertContains( 'id=\'ap-abouttopic-entityid\'', $html );
-		$this->assertContains( '(articleplaceholder-abouttopic-intro)', $html );
-		$this->assertContains( '(articleplaceholder-abouttopic-entityid)', $html );
-		$this->assertContains( '(articleplaceholder-abouttopic-submit)', $html );
+		return $instance->getOutput();
 	}
 
 }
