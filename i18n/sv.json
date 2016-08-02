@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"WikiPhoenix",
-			"Frisko"
+			"Frisko",
+			"Josve05a"
 		]
 	},
+	"createtopicpage": "Skapa sida",
 	"articleplaceholder-desc": "Tillhandahåller en specialsida med information från {{WBREPONAME}} om ett särskilt ämne med en uppmaning att skapa en artikel för ämnet",
 	"articleplaceholder-abouttopic": "Om ämnet",
 	"articleplaceholder-abouttopic-intro": "Denna specialsida ger dig en snabb översikt för ett ämne baserat på data från {{WBREPONAME}}.",
@@ -20,5 +22,6 @@
 	"articleplaceholder-abouttopic-lua-entity": "Entitet",
 	"articleplaceholder-abouttopic-lua-reference": "Referens",
 	"articleplaceholder-abouttopic-lua-identifier": "Externa resurser",
-	"articleplaceholder-search-header": "Upptäck data om ämnet"
+	"articleplaceholder-search-header": "Upptäck data om ämnet",
+	"articleplaceholder-createpage-title": "Skapa $1"
 }
