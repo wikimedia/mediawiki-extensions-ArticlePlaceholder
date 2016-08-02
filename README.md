@@ -6,6 +6,8 @@ The ArticlePlaceholder is a MediaWiki extension. Read the detailed documentation
 
 ArticlePlaceholder enables placeholder pages on Wikibase Client installations using data of the repository.
 
+The file includes/Template/Wikidata-P18.xml shouldn't be used in production but is for testing purposes.
+
 ## Installation
 
 ### Dependencies
