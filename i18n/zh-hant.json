@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"一個正常人"
 		]
 	},
 	"articleplaceholder-abouttopic-create-article-submit-button": "送出",
-	"articleplaceholder-abouttopic-lua-reference": "參考文獻"
+	"articleplaceholder-abouttopic-lua-reference": "參考文獻",
+	"articleplaceholder-createpage-title": "建立$1"
 }
