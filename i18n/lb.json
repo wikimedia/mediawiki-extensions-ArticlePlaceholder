@@ -11,5 +11,8 @@
 	"articleplaceholder-abouttopic-create-article-button": "En Artikel uleeën",
 	"articleplaceholder-abouttopic-lua-entity": "Objet",
 	"articleplaceholder-abouttopic-lua-reference": "Referenz",
-	"articleplaceholder-abouttopic-lua-identifier": "Extern Quellen"
+	"articleplaceholder-abouttopic-lua-identifier": "Extern Quellen",
+	"articleplaceholder-createpage-title": "$1 uleeën",
+	"articleplaceholder-createpage-alreadyexists": "D'Säit mam  Titel $1 gëtt et schonn. Sicht w.e.g. een aneren eraus.",
+	"articleplaceholder-createpage-invalidtitleprovided": "Den Titel deen Dir uginn hutt ass net valabel. Gitt w.e.g. e valabelen Titel un."
 }

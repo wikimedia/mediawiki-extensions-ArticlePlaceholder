@@ -23,5 +23,6 @@
 	"articleplaceholder-abouttopic-lua-reference": "Referens",
 	"articleplaceholder-abouttopic-lua-identifier": "Externa resurser",
 	"articleplaceholder-search-header": "Upptäck data om ämnet",
-	"articleplaceholder-createpage-title": "Skapa $1"
+	"articleplaceholder-createpage-title": "Skapa $1",
+	"articleplaceholder-createpage-alreadyexists": "Sidan med titeln $1 finns redan. Välj en annan."
 }
