@@ -23,7 +23,9 @@
 	"ResourceModules": {
 		"ext.articleplaceholder.createArticle": {
 			"position": "bottom",
-			"scripts": "ext.articleplaceholder.createArticle.js",
+			"scripts": [
+				"ext.articleplaceholder.createArticle/ext.articleplaceholder.createArticle.js"
+			],
 			"dependencies": [
 				"oojs-ui",
 				"mediawiki.api",
@@ -40,11 +42,11 @@
 		},
 		"ext.articleplaceholder.defaultDisplay": {
 			"styles": {
-				"0": "ext.articleplaceholder.defaultDisplay.css",
-				"ext.articleplaceholder.defaultDisplaySmall.css": {
+				"0": "ext.articleplaceholder.defaultDisplay/ext.articleplaceholder.defaultDisplay.css",
+				"ext.articleplaceholder.defaultDisplay/ext.articleplaceholder.defaultDisplaySmall.css": {
 					"media": "(max-width: 880px)"
 				},
-				"ext.articleplaceholder.defaultDisplayMobile.css": {
+				"ext.articleplaceholder.defaultDisplay/ext.articleplaceholder.defaultDisplayMobile.css": {
 					"media": "only screen and (max-device-width: 880px)"
 				}
 			},
