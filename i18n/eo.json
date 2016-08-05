@@ -7,6 +7,7 @@
 			"Lucas"
 		]
 	},
+	"createtopicpage": "Krei paĝon",
 	"articleplaceholder-desc": "Provizas specialan paĝon kun informoj de {{WBREPONAME}} pri koncerna temo kun invito krei artikolon pri la temo",
 	"articleplaceholder-abouttopic": "Pri la temo",
 	"articleplaceholder-abouttopic-intro": "Tiu ĉi speciala paĝo generas enhavpaĝon pri iu temo kun informoj de {{WBREPONAME}}",
@@ -22,5 +23,6 @@
 	"articleplaceholder-abouttopic-lua-entity": "Ento",
 	"articleplaceholder-abouttopic-lua-reference": "Referenco(j)",
 	"articleplaceholder-abouttopic-lua-identifier": "Eksteraj rimedoj",
-	"articleplaceholder-search-header": "Malkovri datumojn pri la temo"
+	"articleplaceholder-search-header": "Malkovri datumojn pri la temo",
+	"articleplaceholder-createpage-title": "Krei la paĝon $1"
 }
