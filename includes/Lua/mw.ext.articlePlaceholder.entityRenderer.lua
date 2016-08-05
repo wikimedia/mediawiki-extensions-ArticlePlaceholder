@@ -211,7 +211,7 @@ local identifierListRenderer = function( entity )
   end
   if identifierList ~= nil and identifierList ~= '' then
     identifierList = '<table>' .. identifierList .. '</table>'
-    identifierList = '<h1>' .. mw.message.new( 'articleplaceholder-abouttopic-lua-identifier' ):plain() .. '</h1>' ..  identifierList
+    identifierList = '<h2>' .. mw.message.new( 'articleplaceholder-abouttopic-lua-identifier' ):plain() .. '</h2>' ..  identifierList
     return '<div class="articleplaceholder-identifierlist">' .. identifierList .. '</div>'
   end
   return ''
@@ -237,7 +237,7 @@ local statementListRenderer = function( entity )
           label = label:gsub("^%l", string.upper)
         end
 
-        result = result .. '<h1>' .. label .. '</h1>'
+        result = result .. '<h2>' .. label .. '</h2>'
         result = result .. bestStatementRenderer( entity, propertyIDs[i] )
         result = result .. '</div>'
       end
@@ -301,7 +301,7 @@ local renderEntity = function ( entityID )
   end
 
   if hasReferences then
-    result = result .. '<h1>' .. mw.message.new( 'articleplaceholder-abouttopic-lua-reference' ):plain() .. '</h1>'
+    result = result .. '<h2>' .. mw.message.new( 'articleplaceholder-abouttopic-lua-reference' ):plain() .. '</h2>'
   end
 
   return result

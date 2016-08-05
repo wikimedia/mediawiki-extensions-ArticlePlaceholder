@@ -10,12 +10,14 @@
 }
 
 #bodyContent {
-  padding-top: 5%;
+  padding-top: 3em;
   padding-right: 305px;
 }
 
-.mw-body .mw-body-content .articleplaceholder-statementgroup h1 {
-  margin-top: 0; /*overwrite standard 1em top margin*/
+/* Needs a selector that's stronger than ".mw-body h2" */
+.mw-body .articleplaceholder-statementgroup h2,
+.mw-body .articleplaceholder-identifierlist h2 {
+  margin-top: 0;
 }
 
 #create-article-button {
@@ -45,10 +47,6 @@
 .articleplaceholder-identifierlist td{
   vertical-align: top;
   padding:0.25em;
-}
-
-.mw-body .articleplaceholder-identifierlist p {
-  margin-top: 0;
 }
 
 .articleplaceholder-id-value {
