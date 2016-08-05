@@ -58,4 +58,5 @@ class Scribunto_LuaArticlePlaceholderLibrary extends Scribunto_LuaLibraryBase {
 			__DIR__ . '/mw.ext.articlePlaceholder.entityRenderer.lua', $lib, []
 		);
 	}
+
 }

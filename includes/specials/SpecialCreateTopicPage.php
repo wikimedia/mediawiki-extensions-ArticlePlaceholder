@@ -18,6 +18,7 @@ use MWException;
  * @license GNU General Public Licence 2.0 or later
  */
 class SpecialCreateTopicPage extends UnlistedSpecialPage {
+
 	public function __construct() {
 		parent::__construct( 'CreateTopicPage' );
 	}
@@ -107,4 +108,5 @@ class SpecialCreateTopicPage extends UnlistedSpecialPage {
 			->prepareForm()
 			->displayForm( false );
 	}
+
 }

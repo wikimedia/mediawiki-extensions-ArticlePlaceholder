@@ -230,7 +230,7 @@ class SpecialAboutTopic extends SpecialPage {
 			'id' => 'create-article-button',
 			'infusable' => true,
 			'label' => $this->msg( 'articleplaceholder-abouttopic-create-article-button' )->text(),
-			'href' =>  SpecialPage::getTitleFor( 'CreateTopicPage', $labelTitle->getPrefixedText() )
+			'href' => SpecialPage::getTitleFor( 'CreateTopicPage', $labelTitle->getPrefixedText() )
 				->getLocalURL( [ 'ref' => 'button' ] ),
 			'target' => 'blank'
 		] );

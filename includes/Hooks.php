@@ -39,4 +39,5 @@ class Hooks {
 			$extraLibraryPaths[] = __DIR__ . '/Lua';
 		}
 	}
+
 }
