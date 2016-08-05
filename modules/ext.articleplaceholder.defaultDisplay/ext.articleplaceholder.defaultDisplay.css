@@ -18,7 +18,7 @@
   margin-top: 0; /*overwrite standard 1em top margin*/
 }
 
-#create-article-button {
+#new-empty-article-button {
   position: absolute;
   top: 0px;
   left: 10px;
