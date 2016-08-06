@@ -70,9 +70,6 @@
 		],
 		"SpecialSearchResultsAppend": [
 			"ArticlePlaceholder\\SearchHookHandler::onSpecialSearchResultsAppend"
-		],
-		"UnitTestsList": [
-			"ArticlePlaceholder\\Hooks::onUnitTestsList"
 		]
 	},
 	"config": {
