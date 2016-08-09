@@ -39,12 +39,4 @@ class Hooks {
 			$extraLibraryPaths[] = __DIR__ . '/Lua';
 		}
 	}
-
-	/**
-	 * @param string[] $files
-	 */
-	public static function onUnitTestsList( array &$files ) {
-		$files[] = __DIR__ . '/../tests/phpunit/';
-	}
-
 }
