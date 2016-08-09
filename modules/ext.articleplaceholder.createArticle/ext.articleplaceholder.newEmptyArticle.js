@@ -61,13 +61,13 @@
 
 		dialogContent = titleInput.$element;
 
-		function CreateArticleDialog( config ) {
-			CreateArticleDialog.super.call( this, config ); // jshint:ignore
+		function NewEmptyArticleDialog( config ) {
+			NewEmptyArticleDialog.super.call( this, config ); // jshint:ignore
 		}
-		OO.inheritClass( CreateArticleDialog, OO.ui.ProcessDialog );
+		OO.inheritClass( NewEmptyArticleDialog, OO.ui.ProcessDialog );
 
-		CreateArticleDialog.static.title = mw.message( 'articleplaceholder-abouttopic-create-article' ).text();
-		CreateArticleDialog.static.actions = [
+		NewEmptyArticleDialog.static.title = mw.message( 'articleplaceholder-abouttopic-create-article' ).text();
+		NewEmptyArticleDialog.static.actions = [
 			{
 				action: 'save',
 				label: mw.message( 'articleplaceholder-abouttopic-create-article-submit-button' ).text(),
@@ -77,18 +77,18 @@
 		];
 
 		// Customize the initialize() function: This is where to add content to the dialog body and set up event handlers.
-		CreateArticleDialog.prototype.initialize = function () {
-			CreateArticleDialog.super.prototype.initialize.call( this ); // jshint:ignore
+		NewEmptyArticleDialog.prototype.initialize = function () {
+			NewEmptyArticleDialog.super.prototype.initialize.call( this ); // jshint:ignore
 			this.content = new OO.ui.PanelLayout( { $: this.$, padded: true, expanded: false } );
 			this.content.$element.append( dialogContent );
 			this.$body.append( this.content.$element );
 		};
 
-		CreateArticleDialog.prototype.getBodyHeight = function () {
+		NewEmptyArticleDialog.prototype.getBodyHeight = function () {
 			return this.content.$element.outerHeight( true ) * 2;
 		};
 
-		CreateArticleDialog.prototype.getActionProcess = function ( action ) {
+		NewEmptyArticleDialog.prototype.getActionProcess = function ( action ) {
 			if ( action ) {
 				return new OO.ui.Process( function () {
 					var saveDeferred = $.Deferred();
@@ -97,10 +97,10 @@
 					return saveDeferred.promise();
 				}, this );
 			}
-			return CreateArticleDialog.parent.prototype.getActionProcess.call( this, action );
+			return NewEmptyArticleDialog.parent.prototype.getActionProcess.call( this, action );
 		};
 
-		dialog = new CreateArticleDialog( {
+		dialog = new NewEmptyArticleDialog( {
 			size: 'medium'
 		} );
 
@@ -114,7 +114,7 @@
 		// Add the window to the window manager using the addWindows() method.
 		windowManager.addWindows( [ dialog ] );
 
-		button = OO.ui.infuse( 'create-article-button' );
+		button = OO.ui.infuse( 'new-empty-article-button' );
 		button.on( 'click', function () {
 			mw.track( 'counter.MediaWiki.wikibase.articleplaceholder.button.create-article' );
 			windowManager.openWindow( dialog );

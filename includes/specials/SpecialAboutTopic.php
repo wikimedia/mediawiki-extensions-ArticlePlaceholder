@@ -227,7 +227,7 @@ class SpecialAboutTopic extends SpecialPage {
 		$output->addJsConfigVars( 'apLabel', $labelTitle->getPrefixedText() );
 
 		$button = new OOUI\ButtonWidget( [
-			'id' => 'create-article-button',
+			'id' => 'new-empty-article-button',
 			'infusable' => true,
 			'label' => $this->msg( 'articleplaceholder-abouttopic-create-article-button' )->text(),
 			'href' => SpecialPage::getTitleFor( 'CreateTopicPage', $labelTitle->getPrefixedText() )
