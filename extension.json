@@ -62,6 +62,9 @@
 		"remoteExtPath": "ArticlePlaceholder/modules"
 	},
 	"Hooks": {
+		"BaseTemplateToolbox": [
+			"ArticlePlaceholder\\BaseTemplateToolboxHookHandler::onBaseTemplateToolbox"
+		],
 		"ScribuntoExternalLibraries": [
 			"ArticlePlaceholder\\Hooks::onScribuntoExternalLibraries"
 		],
