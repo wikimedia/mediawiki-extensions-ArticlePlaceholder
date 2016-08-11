@@ -1,0 +1,29 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jason.nlw",
+			"Robin Owain"
+		]
+	},
+	"createtopicpage": "Creu'r ddalen",
+	"articleplaceholder-desc": "Darparwch ddalen arbennig gyda gwybodaeth {{WBREPONAME}} am unrhyw bwnc, gyda gwahoddiad i greu erthygl am y topig hwnnw.",
+	"articleplaceholder-abouttopic": "Am y pwnc",
+	"articleplaceholder-abouttopic-intro": "Mae'r ddalen arbennig hon yn rhoi braslun i chi o dopig, sy'n tynnu data o {{WBREPONAME}}.",
+	"articleplaceholder-abouttopic-entityid": "Rhowch ID yr eitem ee Q25",
+	"articleplaceholder-abouttopic-submit": "crefft",
+	"articleplaceholder-abouttopic-no-entity-error": "Nid yw'r ID yma'n ddilys.",
+	"articleplaceholder-abouttopic-create-article": "Crewch erthygl newydd, gyda theitl",
+	"articleplaceholder-abouttopic-create-article-label": "Teitl yr erthygl",
+	"articleplaceholder-abouttopic-create-article-mandatory": "Mae'n rhaid rhoi teitl i'r erthygl",
+	"articleplaceholder-abouttopic-create-article-button": "Creu erthygl",
+	"articleplaceholder-abouttopic-create-article-submit-button": "Cyflwyner",
+	"articleplaceholder-abouttopic-article-exists-error": "Mae tudalen o'r enw yma ar y wici hwn",
+	"articleplaceholder-abouttopic-lua-entity": "Endid",
+	"articleplaceholder-abouttopic-lua-reference": "Cyfeiriadau",
+	"articleplaceholder-abouttopic-lua-identifier": "Adnoddau allanol",
+	"articleplaceholder-search-header": "Darganfod data ar y pwnc",
+	"articleplaceholder-createpage-title": "Creu $1",
+	"articleplaceholder-createpage-alreadyexists": "Mae dalen gyda'r teitl $1 yn bodloi eisioes. Dewisiwch deitl arall.",
+	"articleplaceholder-createpage-notitleprovided": "Ni roesoch deitl; gwnewch hynny ar gyfer y ddalen yr hoffwch ei chreu.",
+	"articleplaceholder-createpage-invalidtitleprovided": "Mae'r teitl a roesoch yn annilys. Rhowch deitl dilys."
+}
