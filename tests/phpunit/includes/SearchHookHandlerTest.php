@@ -4,9 +4,12 @@ namespace ArticlePlaceholder\Tests;
 
 use ArticlePlaceholder\ItemNotabilityFilter;
 use ArticlePlaceholder\SearchHookHandler;
+use Config;
+use Language;
 use Liuggio\StatsdClient\Factory\StatsdDataFactory;
 use MediaWikiTestCase;
 use OutputPage;
+use ReflectionMethod;
 use RequestContext;
 use Title;
 use Wikibase\DataModel\Entity\EntityId;
@@ -151,6 +154,23 @@ class SearchHookHandlerTest extends MediaWikiTestCase {
 			$itemNotabilityFilter,
 			$statsdDataFactory
 		);
+	}
+
+	public function testNewFromGlobalState() {
+		$specialPage = $this->getSpecialSearch();
+		$specialPage->expects( $this->once() )
+			->method( 'getConfig' )
+			->will( $this->returnValue( $this->getMock( Config::class ) ) );
+
+		$specialPage->expects( $this->once() )
+			->method( 'getLanguage' )
+			->will( $this->returnValue( Language::factory( 'en' ) ) );
+
+		$reflectionMethod = new ReflectionMethod( SearchHookHandler::class, 'newFromGlobalState' );
+		$reflectionMethod->setAccessible( true );
+		$handler = $reflectionMethod->invoke( null, $specialPage );
+
+		$this->assertInstanceOf( SearchHookHandler::class, $handler );
 	}
 
 	public function provideAddToSearch() {

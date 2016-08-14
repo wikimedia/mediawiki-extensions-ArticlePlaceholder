@@ -28,6 +28,13 @@ class SpecialAboutTopicTest extends MediaWikiTestCase {
 		] );
 	}
 
+	public function testNewFromGlobalState() {
+		$this->assertInstanceOf(
+			SpecialAboutTopic::class,
+			SpecialAboutTopic::newFromGlobalState()
+		);
+	}
+
 	public function testExecute() {
 		$termLookupFactory = $this->getMockBuilder(
 			'Wikibase\Lib\Store\LanguageFallbackLabelDescriptionLookupFactory' )
