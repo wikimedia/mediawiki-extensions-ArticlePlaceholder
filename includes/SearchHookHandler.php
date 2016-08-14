@@ -5,11 +5,12 @@ namespace ArticlePlaceholder;
 use OutputPage;
 use SpecialSearch;
 use SpecialPage;
+use Liuggio\StatsdClient\Factory\StatsdDataFactory;
+use MediaWiki\MediaWikiServices;
 use Wikibase\Client\WikibaseClient;
 use Wikibase\Client\Store\Sql\ConsistentReadConnectionManager;
 use Wikibase\Lib\Interactors\TermIndexSearchInteractor;
 use Wikibase\Lib\Interactors\TermSearchResult;
-use Wikibase\Lib\Store\EntityNamespaceLookup;
 use Wikibase\TermIndex;
 use Wikibase\TermIndexEntry;
 
@@ -52,6 +53,11 @@ class SearchHookHandler {
 	private $itemNotabilityFilter;
 
 	/**
+	 * @var StatsdDataFactory
+	 */
+	private $statsdDataFactory;
+
+	/**
 	 * @param SpecialPage $specialPage
 	 *
 	 * @return self
@@ -71,7 +77,8 @@ class SearchHookHandler {
 			$specialPage->getConfig()->get( 'LanguageCode' ),
 			$wikibaseClient->getSettings()->getSetting( 'repoScriptPath' ),
 			$wikibaseClient->getSettings()->getSetting( 'repoUrl' ),
-			$itemNotabilityFilter
+			$itemNotabilityFilter,
+			MediaWikiServices::getInstance()->getStatsdDataFactory()
 		);
 	}
 
@@ -82,6 +89,7 @@ class SearchHookHandler {
 	 * @param string $repoScriptPath
 	 * @param string $repoUrl
 	 * @param ItemNotabilityFilter $itemNotabilityFilter
+	 * @param StatsdDataFactory $statsdDataFactory
 	 */
 	public function __construct(
 		TermIndex $termIndex,
@@ -89,7 +97,8 @@ class SearchHookHandler {
 		$languageCode,
 		$repoScriptPath,
 		$repoUrl,
-		ItemNotabilityFilter $itemNotabilityFilter
+		ItemNotabilityFilter $itemNotabilityFilter,
+		StatsdDataFactory $statsdDataFactory
 	) {
 		$this->termIndex = $termIndex;
 		$this->termSearchInteractor = $termSearchInteractor;
@@ -97,6 +106,7 @@ class SearchHookHandler {
 		$this->repoScriptPath = $repoScriptPath;
 		$this->repoUrl = $repoUrl;
 		$this->itemNotabilityFilter = $itemNotabilityFilter;
+		$this->statsdDataFactory = $statsdDataFactory;
 	}
 
 	/**
@@ -136,8 +146,18 @@ class SearchHookHandler {
 				);
 
 				$output->addWikiText( $renderedTermSearchResults );
+
+				$this->statsdDataFactory->increment(
+					'wikibase.articleplaceholder.search.has_results'
+				);
+
+				return;
 			}
 		}
+
+		$this->statsdDataFactory->increment(
+			'wikibase.articleplaceholder.search.no_results'
+		);
 	}
 
 	/**
