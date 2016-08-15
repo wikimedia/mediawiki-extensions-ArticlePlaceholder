@@ -4,7 +4,6 @@ namespace ArticlePlaceholder;
 
 use BaseTemplate;
 use Exception;
-use SpecialPage;
 use SpecialPageFactory;
 use Title;
 use WebRequest;
@@ -38,8 +37,6 @@ class BaseTemplateToolboxHookHandler {
 	private $entityLookup;
 
 	/**
-	 * @param SpecialPage $specialPage
-	 *
 	 * @return self
 	 */
 	private static function newFromGlobalState() {

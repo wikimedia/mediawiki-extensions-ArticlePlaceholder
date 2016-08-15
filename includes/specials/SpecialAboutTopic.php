@@ -49,9 +49,9 @@ class SpecialAboutTopic extends SpecialPage {
 	private $termLookupFactory;
 
 	/**
-	 * @var SitelinkLookup
+	 * @var SiteLinkLookup
 	 */
-	private $sitelinkLookup;
+	private $siteLinkLookup;
 
 	/**
 	 * @var SiteStore
@@ -74,26 +74,32 @@ class SpecialAboutTopic extends SpecialPage {
 	private $entityLookup;
 
 	/**
-	 * Initialize the special page.
+	 * @param EntityIdParser $idParser
+	 * @param LanguageFallbackLabelDescriptionLookupFactory $termLookupFactory
+	 * @param SiteLinkLookup $siteLinkLookup
+	 * @param SiteStore $siteStore
+	 * @param TitleFactory $titleFactory
+	 * @param string $siteGlobalID
+	 * @param EntityLookup $entityLookup
 	 */
 	public function __construct(
 		EntityIdParser $idParser,
 		LanguageFallbackLabelDescriptionLookupFactory $termLookupFactory,
-		SiteLinkLookup $sitelinkLookup,
+		SiteLinkLookup $siteLinkLookup,
 		SiteStore $siteStore,
 		TitleFactory $titleFactory,
 		$siteGlobalID,
 		EntityLookup $entityLookup
 	) {
+		parent::__construct( 'AboutTopic' );
+
 		$this->idParser = $idParser;
 		$this->termLookupFactory = $termLookupFactory;
-		$this->sitelinkLookup = $sitelinkLookup;
+		$this->siteLinkLookup = $siteLinkLookup;
 		$this->siteStore = $siteStore;
 		$this->titleFactory = $titleFactory;
 		$this->siteGlobalID = $siteGlobalID;
 		$this->entityLookup = $entityLookup;
-
-		parent::__construct( 'AboutTopic' );
 	}
 
 	/**
@@ -269,7 +275,7 @@ class SpecialAboutTopic extends SpecialPage {
 	 * @todo set links to other projects in sidebar, too!
 	 */
 	private function showLanguageLinks( ItemId $entityId ) {
-		$siteLinks = $this->sitelinkLookup->getSiteLinksForItem( $entityId );
+		$siteLinks = $this->siteLinkLookup->getSiteLinksForItem( $entityId );
 		$languageLinks = [];
 
 		foreach ( $siteLinks as $siteLink ) {
@@ -288,7 +294,7 @@ class SpecialAboutTopic extends SpecialPage {
 	 * @return Title
 	 */
 	private function getArticleOnWiki( ItemId $entityId ) {
-		$sitelinkTitles = $this->sitelinkLookup->getLinks(
+		$sitelinkTitles = $this->siteLinkLookup->getLinks(
 			[ $entityId->getNumericId() ],
 			[ $this->siteGlobalID ]
 		);
