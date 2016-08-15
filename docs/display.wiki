@@ -31,23 +31,28 @@ end
 
 return p
 </code>
+*<code>renderEntity( entityID )</code>: render an entity, entry point
 *<code>statementListRenderer( entity )</code>: render a list of statements, takes a table as argument
 *<code>identifierListRenderer( entity )</code>: render a list of external identifier, takes a table as argument
-*<code>descriptionRenderer( entity )</code>: render the description of an item, takes an string as argument
+*<code>identifierRenderer( entity )</code>: render a an external identifier, takes a table as argument
+*<code>descriptionRenderer( entityId )</code>: render the description of an item, takes an string as argument
 *<code>bestStatementRenderer( entity, propertyId )</code>: render the best (preferred rank if present, otherwise all normal rank) statement, takes a table and a string as argument
 *<code>statementRenderer( statement )</code>: render a given statement, takes a table as argument
-*<code>imageStatementRenderer( imageStatement, orientationImage )</code>: render a statement containing images, takes a table and a string as arguments
+*<code>imageStatementRenderer( imageStatement, orientationImage, inlineQualifiers )</code>: render a statement containing images, takes a table and a string as arguments
 *<code>qualifierRenderer( qualifierSnak )</code>: render the qualifier of a statement, takes a table as argument
 *<code>referenceRenderer( references )</code>: render the references of a statement, takes a table as argument
 *<code>labelRenderer( entityId )</code>: render the labels of entities, takes a string as argument
 *<code>snaksRenderer( snaks )</code>: render the snaks, takes a table as argument
+*<code>orderProperties( entity )</code>: orders a list of property ids
 
 
 == Setter functions ==
 
+*<code>getRenderEntity( function )</code>
 *<code>setTopImageRenderer( function )</code>
 *<code>setStatementListRenderer( function )</code>
 *<code>setIdentifierListRenderer( function )</code>
+*<code>setIdentifierRenderer( function )</code>
 *<code>setDescriptionRenderer( function )</code>
 *<code>setBestStatementRenderer( function )</code>
 *<code>setStatementRenderer( function )</code>
@@ -56,12 +61,15 @@ return p
 *<code>setReferenceRenderer( function )</code>
 *<code>setLabelRenderer( function )</code>
 *<code>setSnaksRenderer( function )</code>
+*<code>setOrderProperties( function )</code>
 
 == Getter functions ==
 
+*<code>getRenderEntity()</code>
 *<code>getTopImageRenderer()</code>
 *<code>getStatementListRenderer()</code>
 *<code>getIdentifierListRenderer()</code>
+*<code>setIdentifierRenderer()</code>
 *<code>getDescriptionRenderer()</code>
 *<code>getBestStatementRenderer()</code>
 *<code>getStatementRenderer()</code>
@@ -70,3 +78,4 @@ return p
 *<code>getReferenceRenderer()</code>
 *<code>getLabelRenderer()</code>
 *<code>getSnaksRenderer()</code>
+*<code>getOrderProperties()</code>
