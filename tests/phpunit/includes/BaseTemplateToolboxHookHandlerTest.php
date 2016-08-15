@@ -5,6 +5,7 @@ namespace ArticlePlaceholder\Tests;
 use ArticlePlaceholder\BaseTemplateToolboxHookHandler;
 use BaseTemplate;
 use MediaWikiTestCase;
+use ReflectionMethod;
 use Skin;
 use Title;
 use WebRequest;
@@ -42,6 +43,17 @@ class BaseTemplateToolboxHookHandlerTest extends MediaWikiTestCase {
 		parent::tearDown();
 
 		WikibaseClient::getDefaultInstance( 'reset' );
+	}
+
+	public function testNewFromGlobalState() {
+		$reflectionMethod = new ReflectionMethod(
+			BaseTemplateToolboxHookHandler::class,
+			'newFromGlobalState'
+		);
+		$reflectionMethod->setAccessible( true );
+		$handler = $reflectionMethod->invoke( null );
+
+		$this->assertInstanceOf( BaseTemplateToolboxHookHandler::class, $handler );
 	}
 
 	public function testOnBaseTemplateToolbox_wrongNamespace() {
