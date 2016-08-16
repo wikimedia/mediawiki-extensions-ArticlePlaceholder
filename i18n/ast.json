@@ -4,10 +4,11 @@
 			"Xuacu"
 		]
 	},
+	"createtopicpage": "Crear páxina",
 	"articleplaceholder-desc": "Ufre una páxina especial con información de {{WBREPONAME}} sobro un tema determináu, con invitación a crear un artículu pal tema",
 	"articleplaceholder-abouttopic": "Tocante al asuntu",
-	"articleplaceholder-abouttopic-intro": "Esta páxina especial xenera una páxina de conteníu sobro un asuntu determináu con información de {{WBREPONAME}}",
-	"articleplaceholder-abouttopic-entityid": "Escribe una ID d'elementu pa recibir una maqueta d'artículu xenerada automáticamente.",
+	"articleplaceholder-abouttopic-intro": "Esta páxina especial ufre un resume rápidu sobro un asuntu basáu en datos de {{WBREPONAME}}",
+	"articleplaceholder-abouttopic-entityid": "Escribe un ID d'elementu como Q12345",
 	"articleplaceholder-abouttopic-submit": "crear",
 	"articleplaceholder-abouttopic-no-entity-error": "Esta nun ye una id d'elementu válida.",
 	"articleplaceholder-abouttopic-create-article": "Crear un artículu nuevu col títulu",
@@ -19,5 +20,9 @@
 	"articleplaceholder-abouttopic-lua-entity": "Entidá",
 	"articleplaceholder-abouttopic-lua-reference": "Referencia",
 	"articleplaceholder-abouttopic-lua-identifier": "Recursos esternos",
-	"articleplaceholder-search-header": "Descubrir datos del tema"
+	"articleplaceholder-search-header": "Descubrir datos del tema",
+	"articleplaceholder-createpage-title": "Crear $1",
+	"articleplaceholder-createpage-alreadyexists": "Yá esiste la páxina col títulu $1. Escueye otru.",
+	"articleplaceholder-createpage-notitleprovided": "Nun s'apurrió nengún títulu, escribe un títulu pa la páxina que quies crear.",
+	"articleplaceholder-createpage-invalidtitleprovided": "El títulu qu'escribisti ye inválidu. Apurre un títulu válidu."
 }
