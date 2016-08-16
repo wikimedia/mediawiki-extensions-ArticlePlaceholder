@@ -13,270 +13,33 @@ entityrenderer.referencesBlacklist = php.getReferencesBlacklist()
 
 local hasReferences = false
 
--- Get the datavalue for a given property.
--- @param string propertyId
--- @return string|nil datatype or nil if property couldn't be loaded
-local getDatatype = function( propertyId )
-  local property = mw.wikibase.getEntity( propertyId )
-  return property and property['datatype']
-end
-
 ----------------------------------- Implementation of Renderers -----------------------------------
 
--- Render a label to the language of the local Wiki.
--- @param string entityId
--- @return wikitext label or entityId if no label available
-local labelRenderer = function( entityId )
-  local label = mw.wikibase.label( entityId )
-  if label ~= nil then
-    label = mw.text.nowiki( label )
-  else
-    label = '[' .. mw.wikibase.getEntityUrl( entityId ) .. ' ' .. entityId .. ']'
-  end
-  return label
-end
+local labelRenderer = require( 'mw.ext.articlePlaceholder.labelRenderer' ).render
 
--- Returns a table of ordered property IDs
--- @param table entity
--- @return table of property IDs
-local orderProperties = function( entity )
-  local propertyIDs = entity:getProperties()
-  return mw.wikibase.orderProperties( propertyIDs )
-end
+local orderProperties = require( 'mw.ext.articlePlaceholder.orderProperties' ).render
 
--- Renders a given table of snaks.
--- @param table snaks
--- @return String result
-local snaksRenderer = function( snaks )
-  local result = ''
-  if snaks ~= nil and type( snaks ) == 'table' then
-    result = mw.wikibase.renderSnaks( snaks )
-  end
-  return result
-end
+local snaksRenderer = require( 'mw.ext.articlePlaceholder.snaksRenderer' ).render
 
--- Remove the references that include a Snak with the blacklisted property id.
--- @param table references
--- @return table newRefs
-local removeBlacklistedReferences = function( references )
-  local newRefs = {}
+local referenceRenderer = require( 'mw.ext.articlePlaceholder.referenceRenderer' ).newRenderer( entityrenderer )
 
-  for key, reference in pairs(references) do
-    local blacklisted = false
-    for propRef, snakRef in pairs( reference['snaks'] ) do
+local qualifierRenderer = require( 'mw.ext.articlePlaceholder.qualifierRenderer' ).newRenderer( entityrenderer )
 
-      if propRef == entityrenderer.referencesBlacklist then
-        blacklisted = true
-        break
-      end
-    end
-    if blacklisted == false then
-      table.insert( newRefs, reference )
-    end
-  end
+local imageStatementRenderer = require( 'mw.ext.articlePlaceholder.imageStatementRenderer' ).newRenderer( entityrenderer )
 
-  return newRefs
-end
+local statementRenderer = require( 'mw.ext.articlePlaceholder.statementRenderer' ).newRenderer( entityrenderer )
 
--- Render a reference.
--- @param table references
--- @return String result
-local referenceRenderer = function( references )
-  local frame = mw:getCurrentFrame()
-  local referencesWikitext = {}
+local bestStatementRenderer = require( 'mw.ext.articlePlaceholder.bestStatementRenderer' ).newRenderer( entityrenderer )
 
-  if entityrenderer.referencesBlacklist ~= nil then
-    references = removeBlacklistedReferences( references )
-  end
+local identifierRenderer = require( 'mw.ext.articlePlaceholder.identifierRenderer' ).newRenderer( entityrenderer )
 
-  local i, reference = next( references, nil )
+local identifierListRenderer = require( 'mw.ext.articlePlaceholder.identifierListRenderer' ).newRenderer( entityrenderer )
 
-  if i then
-    hasReferences = true
+local statementListRenderer = require( 'mw.ext.articlePlaceholder.statementListRenderer' ).newRenderer( entityrenderer )
 
-    while i do
-      referenceWikitext = snaksRenderer( reference['snaks'] )
-      table.insert( referencesWikitext, frame:extensionTag( 'ref', referenceWikitext ) )
-      i, reference = next( references, i )
-    end
-  end
+local topImageRenderer = require( 'mw.ext.articlePlaceholder.topImageRenderer' ).newRenderer( entityrenderer )
 
-  return table.concat( referencesWikitext, "" )
-end
-
--- Render a qualifier.
--- @param table qualifierSnak
--- @return String result
-local qualifierRenderer = function( qualifierSnak )
-  local result = ''
-  if qualifierSnak ~= nil then
-    for key, value in pairs(qualifierSnak) do
-      result = result .. '<div class="articleplaceholder-qualifier"><p>' .. labelRenderer( key ) .. ': '
-      result = result .. snaksRenderer( value ) .. '</p></div>'
-    end
-  end
-  return result
-end
-
--- Render a statement containing images.
--- @param table statement
--- @param String orientationImage
--- @param bool inlineQualifiers, default false
--- @return String renderedImage
-local imageStatementRenderer = function( statement, orientationImage, inlineQualifiers )
-  local inlineQualifiers = inlineQualifiers or false
-  local reference = ''
-  local qualifier = ''
-  local image = ''
-
-  if statement ~= nil then
-    for key, value in pairs( statement ) do
-      if key == 'mainsnak' then
-        image = mw.wikibase.renderSnak( value )
-      elseif key == 'references' then
-        reference = referenceRenderer( value )
-      elseif key == 'qualifiers' then
-        qualifier = qualifierRenderer( value )
-      end
-    end
-  end
-  local result = '[[File:' .. image .. '|thumb|' .. orientationImage .. '|340x280px|'
-  if inlineQualifiers == true then
-    result = result .. reference .. ' ' .. qualifier .. ']]'
-  else
-    result = result .. reference .. ' ' .. ']]' .. qualifier
-  end
-  return result
-end
-
--- Renders a statement.
--- @param table statement
--- @return string result
-local statementRenderer = function( statement )
-  local result = ''
-  local reference = ''
-  local qualifier = ''
-  local mainsnak = ''
-  if statement ~= nil then
-    for key, value in pairs( statement ) do
-      if key == 'mainsnak' then
-        mainsnak = mw.wikibase.renderSnak( value )
-      elseif key == 'references' then
-        reference = referenceRenderer( value )
-      elseif key == 'qualifiers' then
-        qualifier = qualifierRenderer( value )
-      end
-    end
-  end
-  result = result .. '<div class="articleplaceholder-statement"><p><span class="articleplaceholder-value">' .. mainsnak .. '</span>' .. reference .. '</p></div>' .. qualifier
-  return result
-end
-
--- Renders the best statements.
--- @param table entity
--- @param String propertyId
--- @return string statement
-local bestStatementRenderer = function( entity, propertyId )
-  local statement = ''
-  local bestStatements = entity:getBestStatements( propertyId )
-  for _, stat in pairs( bestStatements ) do
-    if getDatatype( propertyId ) == "commonsMedia" then
-      statement = statement .. imageStatementRenderer( stat, "left" )
-    else
-      statement = statement .. statementRenderer(stat)
-    end
-  end
-  return statement
-end
-
--- Render the identifier
--- @return string identifier
-local identifierRenderer = function( entity, propertyId )
-  return bestStatementRenderer( entity, propertyId )
-end
-
--- Render a list of identifier
--- @param table entity
--- @return string identifier
-local identifierListRenderer = function( entity )
-  local properties = entity:getProperties()
-  local identifierList = ''
-  if properties ~= nil then
-    for _, propertyId in pairs( properties ) do
-      if getDatatype( propertyId ) == "external-id" then
-        identifierList = identifierList .. '<tr><td class="articleplaceholder-id-prop">' .. labelRenderer( propertyId ) .. '</td>'
-        identifierList = identifierList .. '<td class="articleplaceholder-id-value">' .. identifierRenderer( entity, propertyId ) .. '</td></tr>'
-      end
-    end
-  end
-  if identifierList ~= nil and identifierList ~= '' then
-    identifierList = '<table>' .. identifierList .. '</table>'
-    identifierList = '<h2>' .. mw.message.new( 'articleplaceholder-abouttopic-lua-identifier' ):plain() .. '</h2>' ..  identifierList
-    return '<div class="articleplaceholder-identifierlist">' .. identifierList .. '</div>'
-  end
-  return ''
-end
-
--- Render a list of statements.
--- @param table entity
--- @return string result
-local statementListRenderer = function( entity )
-  local result = ''
-  local propertyIDs = orderProperties( entity )
-
-  if propertyIDs ~= nil then
-
-    for i=1, #propertyIDs do
-      if propertyIDs[i] ~= entityrenderer.imageProperty and getDatatype( propertyIDs[i] ) ~= "external-id" then
-        result = result .. '<div class="articleplaceholder-statementgroup">'
-        -- check if the label is 'coordinates' and upper case it
-        -- this is necessary since headings will be rendered to id="*label*"
-        -- and 'coordinates' has specific CSS values on most mayor Wikipedias
-        local label = labelRenderer( propertyIDs[i] )
-        if label == 'coordinates' then
-          label = label:gsub("^%l", string.upper)
-        end
-
-        result = result .. '<h2>' .. label .. '</h2>'
-        result = result .. bestStatementRenderer( entity, propertyIDs[i] )
-        result = result .. '</div>'
-      end
-    end
-  end
-
-  return '<div class="articleplaceholder-statementgrouplist">' .. result .. '</div>'
-end
-
--- Render the image.
--- @param table entity
--- @param string propertyId
--- @param string orientationImage
--- @return string renderedImage
-local topImageRenderer = function( entity, propertyId, orientationImage )
-  local renderedImage = ''
-
-  imageStatement = entity:getBestStatements( propertyId )[1]
-
-  if imageStatement ~= nil then
-    renderedImage = imageStatementRenderer( imageStatement, orientationImage, true )
-    renderedImage = '<div class="articleplaceholder-topimage">' .. renderedImage .. '</div>'
-  end
-
-  return renderedImage
-end
-
--- Render the description.
--- @param String entityId
--- @return String description
-local function descriptionRenderer( entityId )
-  local description = mw.wikibase.description( entityId )
-
-  if description ~= nil then
-    return '<div class="articleplaceholer-description"><p>' .. description .. '</p></div>'
-  else
-    return ''
-  end
-end
+local descriptionRenderer = require( 'mw.ext.articlePlaceholder.descriptionRenderer' ).render
 
 -- Render an entity, method to call all renderer
 -- @param String entityId
