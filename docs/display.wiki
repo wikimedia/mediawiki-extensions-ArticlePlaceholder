@@ -31,7 +31,7 @@ end
 
 return p
 </code>
-*<code>renderEntity( entityID )</code>: render an entity, entry point
+*<code>renderEntity( entityId )</code>: render an entity, entry point
 *<code>statementListRenderer( entity )</code>: render a list of statements, takes a table as argument
 *<code>identifierListRenderer( entity )</code>: render a list of external identifier, takes a table as argument
 *<code>identifierRenderer( entity )</code>: render a an external identifier, takes a table as argument

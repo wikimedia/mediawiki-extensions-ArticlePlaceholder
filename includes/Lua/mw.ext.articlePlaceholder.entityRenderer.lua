@@ -42,13 +42,14 @@ local topImageRenderer = require( 'mw.ext.articlePlaceholder.topImageRenderer' )
 local descriptionRenderer = require( 'mw.ext.articlePlaceholder.descriptionRenderer' ).render
 
 -- Render an entity, method to call all renderer
--- @param String entityId
--- @return String result
-local renderEntity = function ( entityID )
-  local entity = mw.wikibase.getEntityObject( entityID )
+--
+-- @param string entityId
+-- @return string wikitext
+local renderEntity = function ( entityId )
+  local entity = mw.wikibase.getEntityObject( entityId )
   local result = ''
 
-  local description = descriptionRenderer( entityID )
+  local description = descriptionRenderer( entityId )
   local image = topImageRenderer( entity, entityrenderer.imageProperty, "right" )
   local identifier = identifierListRenderer( entity )
   local entityResult = statementListRenderer( entity )
@@ -213,8 +214,8 @@ end
 
 -- render an entity
 entityrenderer.render = function(frame)
-  local entityID = mw.text.trim( frame.args[1] or "" )
-  return renderEntity( entityID )
+  local entityId = mw.text.trim( frame.args[1] or "" )
+  return renderEntity( entityId )
 end
 
 return entityrenderer
