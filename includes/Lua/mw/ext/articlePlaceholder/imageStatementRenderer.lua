@@ -36,7 +36,7 @@ local render = function( self, statement, orientationImage, inlineQualifiers )
   if inlineQualifiers == true then
     result = result .. '|300px|' .. reference .. ' ' .. qualifier .. ']]'
   else
-    result = result .. '|340x280px|' .. reference .. ' ' .. ']]' .. qualifier
+    result = result .. '|340x220px|' .. reference .. ' ' .. ']]' .. qualifier
   end
   return result
 end
