@@ -32,11 +32,11 @@ local render = function( self, statement, orientationImage, inlineQualifiers )
       end
     end
   end
-  local result = '[[File:' .. image .. '|thumb|' .. orientationImage .. '|340x280px|'
+  local result = '[[File:' .. image .. '|thumb|' .. orientationImage
   if inlineQualifiers == true then
-    result = result .. reference .. ' ' .. qualifier .. ']]'
+    result = result .. '|300px|' .. reference .. ' ' .. qualifier .. ']]'
   else
-    result = result .. reference .. ' ' .. ']]' .. qualifier
+    result = result .. '|340x280px|' .. reference .. ' ' .. ']]' .. qualifier
   end
   return result
 end
