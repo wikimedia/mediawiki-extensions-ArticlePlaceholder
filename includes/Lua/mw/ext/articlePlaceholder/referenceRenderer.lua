@@ -48,8 +48,14 @@ local render = function( self, references )
     self._entityrenderer.setHasReferences( true )
 
     while i do
-      referenceWikitext = snaksRenderer( reference['snaks'] )
-      table.insert( referencesWikitext, frame:extensionTag( 'ref', referenceWikitext ) )
+      local referenceWikitext = snaksRenderer( reference['snaks'] )
+      -- Prefix reference name with r as the hash might be numeric
+      local referenceTagName = 'r' .. mw.hash.hashValue( 'crc32', referenceWikitext )
+      table.insert(
+        referencesWikitext,
+        frame:extensionTag( 'ref', referenceWikitext, { name = referenceTagName } )
+      )
+
       i, reference = next( references, i )
     end
   end
