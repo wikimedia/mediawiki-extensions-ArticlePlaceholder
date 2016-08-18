@@ -11,7 +11,6 @@
 
 #bodyContent {
   padding-top: 3em;
-  padding-right: 305px;
 }
 
 /* Needs a selector that's stronger than ".mw-body h2" */
@@ -27,8 +26,7 @@
 }
 
 .articleplaceholder-sidebar {
-  position: absolute;
-  right: 0px;
+  float: right;
   width: 310px;
 }
 
