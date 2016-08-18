@@ -68,7 +68,9 @@ class SearchHookHandler {
 
 		$itemNotabilityFilter = new ItemNotabilityFilter(
 			new ConsistentReadConnectionManager( wfGetLB( $repoDB ), $repoDB ),
-			$wikibaseClient->getEntityNamespaceLookup()
+			$wikibaseClient->getEntityNamespaceLookup(),
+			$wikibaseClient->getStore()->getSiteLinkLookup(),
+			$wikibaseClient->getSettings()->getSetting( 'siteGlobalID' )
 		);
 
 		return new self(
@@ -191,6 +193,7 @@ class SearchHookHandler {
 		foreach ( $termSearchResults as $termSearchResult ) {
 			$itemIds[] = $termSearchResult->getEntityId();
 		}
+
 		$notableEntityIds = $this->itemNotabilityFilter->getNotableEntityIds( $itemIds );
 
 		foreach ( $notableEntityIds as $entityId ) {

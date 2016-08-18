@@ -6,6 +6,7 @@ use DatabaseBase;
 use Wikibase\Client\Store\Sql\ConsistentReadConnectionManager;
 use Wikibase\DataModel\Entity\ItemId;
 use Wikibase\Lib\Store\EntityNamespaceLookup;
+use Wikibase\Lib\Store\SiteLinkLookup;
 
 /**
  * Filter a list of items by article placeholder notability.
@@ -38,15 +39,32 @@ class ItemNotabilityFilter {
 	private $entityNamespaceLookup;
 
 	/**
+	 * @var SiteLinkLookup
+	 */
+	private $siteLinkLookup;
+
+	/**
+	 * @var string
+	 */
+	private $siteGlobalId;
+
+	/**
 	 * @param ConsistentReadConnectionManager $connectionManager
 	 * @param EntityNamespaceLookup $entityNamespaceLookup
+	 * @param SiteLinkLookup $siteLinkLookup
+	 * @param string $siteGlobalId
 	 */
 	public function __construct(
 		ConsistentReadConnectionManager $connectionManager,
-		EntityNamespaceLookup $entityNamespaceLookup
+		EntityNamespaceLookup $entityNamespaceLookup,
+		SiteLinkLookup $siteLinkLookup,
+		$siteGlobalId
 	) {
 		$this->connectionManager = $connectionManager;
 		$this->entityNamespaceLookup = $entityNamespaceLookup;
+		$this->siteLinkLookup = $siteLinkLookup;
+		$this->siteGlobalId = $siteGlobalId;
+
 	}
 
 	/**
@@ -55,7 +73,7 @@ class ItemNotabilityFilter {
 	 * @return ItemId[]
 	 */
 	public function getNotableEntityIds( array $itemIds ) {
-		$notableItemIds = [];
+		$numericItemIds = [];
 
 		$statementClaimsCount = $this->getStatementClaimsCount( $itemIds );
 
@@ -65,11 +83,11 @@ class ItemNotabilityFilter {
 			if ( $statementClaimsCount[$itemIdSerialization]['wb-claims'] >= self::MIN_STATEMENTS
 				&& $statementClaimsCount[$itemIdSerialization]['wb-sitelinks'] >= self::MIN_SITELINKS ) {
 
-				$notableItemIds[] = $itemId;
+				$numericItemIds[] = $itemId->getNumericId();
 			}
 		}
 
-		return $notableItemIds;
+		return $this->getItemsWithoutArticle( $numericItemIds );
 	}
 
 	/**
@@ -125,6 +143,31 @@ class ItemNotabilityFilter {
 			[],
 			[ 'page' => [ 'LEFT JOIN', 'page_id=pp_page' ] ]
 		);
+	}
+
+	/**
+	 * @param int[] $numericItemIds
+	 *
+	 * @return ItemId[]
+	 */
+	private function getItemsWithoutArticle( $numericItemIds ) {
+		$itemIds = [];
+		$links = $this->siteLinkLookup->getLinks( $numericItemIds, [ $this->siteGlobalId ] );
+
+		if ( !empty( $links ) ) {
+			foreach ( $links as $link ) {
+				$key = array_search( $link[2], $numericItemIds );
+				if ( $key !== false ) {
+					unset( $numericItemIds[$key] );
+				}
+			}
+		}
+
+		foreach ( $numericItemIds as $itemId ) {
+			$itemIds[] = ItemId::newFromNumber( $itemId );
+		}
+
+		return $itemIds;
 	}
 
 }
