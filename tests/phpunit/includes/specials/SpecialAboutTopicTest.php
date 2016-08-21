@@ -8,6 +8,7 @@ use Language;
 use MediaWikiTestCase;
 use RequestContext;
 use SpecialPage;
+use Wikibase\Client\WikibaseClient;
 use Wikibase\Client\Store\TitleFactory;
 
 /**
@@ -29,10 +30,17 @@ class SpecialAboutTopicTest extends MediaWikiTestCase {
 	}
 
 	public function testNewFromGlobalState() {
+		$settings = WikibaseClient::getDefaultInstance()->getSettings();
+
+		$siteGroup = $settings->getSetting( 'siteGroup' );
+		$settings->setSetting( 'siteGroup', 'wikipedia' );
+
 		$this->assertInstanceOf(
 			SpecialAboutTopic::class,
 			SpecialAboutTopic::newFromGlobalState()
 		);
+
+		$settings->setSetting( 'siteGroup', $siteGroup );
 	}
 
 	public function testExecute() {
