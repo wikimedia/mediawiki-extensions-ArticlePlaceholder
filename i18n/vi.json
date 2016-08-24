@@ -4,6 +4,7 @@
 			"Minh Nguyen"
 		]
 	},
+	"createtopicpage": "Tạo trang",
 	"articleplaceholder-desc": "Cung cấp trang đặc biệt có thông tin {{WBREPONAME}} về một đề tài cụ thể và lời khuyên tạo bài về đề tài",
 	"articleplaceholder-abouttopic": "Giới thiệu về đề tài",
 	"articleplaceholder-abouttopic-intro": "Trang đặc biệt này tóm lược đề tài dùng dữ liệu từ {{WBREPONAME}}.",
@@ -19,5 +20,9 @@
 	"articleplaceholder-abouttopic-lua-entity": "Thực thể",
 	"articleplaceholder-abouttopic-lua-reference": "Chú thích",
 	"articleplaceholder-abouttopic-lua-identifier": "Nguồn bên ngoài",
-	"articleplaceholder-search-header": "Tìm hiểu về đề tài"
+	"articleplaceholder-search-header": "Tìm hiểu về đề tài",
+	"articleplaceholder-createpage-title": "Tạo $1",
+	"articleplaceholder-createpage-alreadyexists": "Trang với tên $1 đã tồn tại. Xin vui lòng chọn tên khác.",
+	"articleplaceholder-createpage-notitleprovided": "Tên trang không được xác định. Xin vui lòng nhập tên trang để tạo.",
+	"articleplaceholder-createpage-invalidtitleprovided": "Bạn đã nhập tên trang không hợp lệ. Xin vui lòng nhập một tên hợp lệ."
 }
