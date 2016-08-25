@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Jfblanc"
+			"Jfblanc",
+			"Cedric31"
 		]
 	},
 	"articleplaceholder-desc": "Porgís una pagina especiala d'informacion de {{WBREPONAME}} sus un subjècte determinat, amb invitacion a crear un article sul subjècte.",
@@ -16,7 +17,6 @@
 	"articleplaceholder-abouttopic-article-exists-error": "Un article d'aquel nom ja existís",
 	"articleplaceholder-abouttopic-lua-entity": "Entitat",
 	"articleplaceholder-abouttopic-lua-reference": "Referéncia",
-	"articleplaceholder-abouttopic-lua-qualifier": "Calificador",
-	"articleplaceholder-abouttopic-lua-identifier": "Identificador",
+	"articleplaceholder-abouttopic-lua-identifier": "Ressorsas extèrnas",
 	"articleplaceholder-search-header": "Descobrir de donadas sobratz lo tèma"
 }
