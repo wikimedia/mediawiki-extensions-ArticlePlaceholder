@@ -1,9 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Subi"
+			"Subi",
+			"Sator"
 		]
 	},
 	"articleplaceholder-abouttopic": "Gaiari buruz",
-	"articleplaceholder-abouttopic-lua-identifier": "Identifikatzailea"
+	"articleplaceholder-abouttopic-lua-identifier": "Kanpo baliabideak"
 }
