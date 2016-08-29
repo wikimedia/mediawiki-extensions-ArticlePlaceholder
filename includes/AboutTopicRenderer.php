@@ -2,17 +2,18 @@
 
 namespace ArticlePlaceholder;
 
+use Language;
 use OOUI;
+use SiteLookup;
 use SpecialPage;
 use Title;
-use Wikibase\Client\Store\TitleFactory;
+use User;
+use OutputPage;
 use Wikibase\DataModel\Entity\ItemId;
+use Wikibase\Client\Store\TitleFactory;
+use Wikibase\Client\Hooks\OtherProjectsSidebarGeneratorFactory;
 use Wikibase\Lib\Store\LanguageFallbackLabelDescriptionLookupFactory;
 use Wikibase\Lib\Store\SiteLinkLookup;
-use OutputPage;
-use SiteLookup;
-use Language;
-use User;
 
 /**
  * The AboutTopic SpecialPage for the ArticlePlaceholder extension
@@ -49,24 +50,32 @@ class AboutTopicRenderer {
 	private $titleFactory;
 
 	/**
+	 * @var OtherProjectsSidebarGeneratorFactory
+	 */
+	private $otherProjectsSidebarGeneratorFactory;
+
+	/**
 	 * @param LanguageFallbackLabelDescriptionLookupFactory $termLookupFactory
 	 * @param SiteLinkLookup $siteLinkLookup
 	 * @param SiteLookup $siteLookup
 	 * @param string $langLinkSiteGroup
 	 * @param TitleFactory $titleFactory
+	 * @param OtherProjectsSidebarGeneratorFactory $otherProjectsSidebarGeneratorFactory
 	 */
 	public function __construct(
 		LanguageFallbackLabelDescriptionLookupFactory $termLookupFactory,
 		SiteLinkLookup $siteLinkLookup,
 		SiteLookup $siteLookup,
 		$langLinkSiteGroup,
-		TitleFactory $titleFactory
+		TitleFactory $titleFactory,
+		OtherProjectsSidebarGeneratorFactory $otherProjectsSidebarGeneratorFactory
 	) {
 		$this->termLookupFactory = $termLookupFactory;
 		$this->siteLinkLookup = $siteLinkLookup;
 		$this->siteLookup = $siteLookup;
 		$this->langLinkSiteGroup = $langLinkSiteGroup;
 		$this->titleFactory = $titleFactory;
+		$this->otherProjectsSidebarGeneratorFactory = $otherProjectsSidebarGeneratorFactory;
 	}
 
 	/**
@@ -93,6 +102,7 @@ class AboutTopicRenderer {
 			$this->showCreateArticle( $labelTitle, $output );
 		}
 		$this->showLanguageLinks( $entityId, $output );
+		$this->setOtherProjectsLinks( $entityId, $output );
 	}
 
 	/**
@@ -162,6 +172,20 @@ class AboutTopicRenderer {
 		}
 
 		$output->setLanguageLinks( $languageLinks );
+	}
+
+	/**
+	 * Set other projects links
+	 * @param ItemId $itemId
+	 * @param OutputPage $output
+	 */
+	private function setOtherProjectsLinks( ItemId $itemId, OutputPage $output ) {
+		$otherProjectsSidebarGenerator = $this->otherProjectsSidebarGeneratorFactory
+			->getOtherProjectsSidebarGenerator();
+
+		$otherProjects = $otherProjectsSidebarGenerator->buildProjectLinkSidebarFromItemId( $itemId );
+		$output->setProperty( 'wikibase-otherprojects-sidebar', $otherProjects );
+		$output->setProperty( 'wikibase_item', $itemId->getSerialization() );
 	}
 
 }

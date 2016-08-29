@@ -30,7 +30,8 @@ class SpecialAboutTopic extends SpecialPage {
 				$wikibaseClient->getStore()->getSiteLinkLookup(),
 				$wikibaseClient->getSiteStore(),
 				$wikibaseClient->getLangLinkSiteGroup(),
-				new TitleFactory()
+				new TitleFactory(),
+				$wikibaseClient->getOtherProjectsSidebarGeneratorFactory()
 			),
 			$wikibaseClient->getEntityIdParser(),
 			$wikibaseClient->getStore()->getSiteLinkLookup(),

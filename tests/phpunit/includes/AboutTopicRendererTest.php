@@ -13,6 +13,8 @@ use Language;
 use User;
 use OutputPage;
 use Wikibase\Client\Store\TitleFactory;
+use Wikibase\Client\Hooks\OtherProjectsSidebarGenerator;
+use Wikibase\Client\Hooks\OtherProjectsSidebarGeneratorFactory;
 use Wikibase\DataModel\Entity\ItemId;
 use Wikibase\DataModel\SiteLink;
 use Wikibase\DataModel\Services\Lookup\LabelDescriptionLookup;
@@ -40,12 +42,26 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 		$title = SpecialPage::getTitleFor( 'AboutTopic' );
 		$context->getOutput()->setTitle( $title );
 
+		$otherProjectsSidebarGenerator = $this->getMockBuilder( OtherProjectsSidebarGenerator::class )
+			->disableOriginalConstructor()
+			->getMock();
+
+		$otherProjectsSidebarGeneratorFactory = $this->getMockBuilder(
+			OtherProjectsSidebarGeneratorFactory::class
+		)->disableOriginalConstructor()
+		->getMock();
+
+		$otherProjectsSidebarGeneratorFactory->expects( $this->any() )
+			->method( 'getOtherProjectsSidebarGenerator' )
+			->will( $this->returnValue( $otherProjectsSidebarGenerator ) );
+
 		$instance = new AboutTopicRenderer(
 			$this->getTermLookupFactory(),
 			$this->getSiteLinkLookup(),
 			$this->getSiteLookup(),
 			'wikipedia',
-			new TitleFactory()
+			new TitleFactory(),
+			$otherProjectsSidebarGeneratorFactory
 		);
 
 		$instance->showPlaceholder(
