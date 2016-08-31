@@ -10,7 +10,7 @@
 	"articleplaceholder-abouttopic-intro": "Aquesta pagina especiala genèra una pagina de contengut sus un subjècte determinat amb de donadas de {{WBREPONAME}}",
 	"articleplaceholder-abouttopic-entityid": "Picatz un identificador d'entitat per obténer un esquelèta d'article autogenerat",
 	"articleplaceholder-abouttopic-submit": "borrolhon",
-	"articleplaceholder-abouttopic-no-entity-error": "Aqueste identificador d'identitat es pas valid.",
+	"articleplaceholder-abouttopic-no-entity-error": "Es pas un ID d’element valid.",
 	"articleplaceholder-abouttopic-create-article": "Crear un article nòu amb lo títol",
 	"articleplaceholder-abouttopic-create-article-button": "Crear un article",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Sometre",
