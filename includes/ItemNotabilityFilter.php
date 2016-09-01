@@ -26,7 +26,7 @@ class ItemNotabilityFilter {
 	/**
 	 * Minimum number of sitelinks for an item to be notable
 	 */
-	const MIN_SITELINKS = 3;
+	const MIN_SITELINKS = 2;
 
 	/**
 	 * @var ConsistentReadConnectionManager

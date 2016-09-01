@@ -81,15 +81,13 @@ class ItemNotabilityFilterTest extends MediaWikiTestCase {
 		// Notable:
 		$siteLinkList0 = new SiteLinkList( [
 			new SiteLink( 'a', 'notable' ),
-			new SiteLink( 'b', 'notable' ),
-			new SiteLink( 'c', 'notable' )
+			new SiteLink( 'b', 'notable' )
 		] );
 		$item0 = new Item( null, $fingerprint, $siteLinkList0, $statementListNotable );
 
 		// Not notable (to few sitelinks):
 		$siteLinkList1 = new SiteLinkList( [
-			new SiteLink( 'a', 'not notable 0' ),
-			new SiteLink( 'b', 'not notable 0' )
+			new SiteLink( 'a', 'not notable 0' )
 		] );
 		$item1 = new Item( null, $fingerprint, $siteLinkList1, $statementListNotable );
 
