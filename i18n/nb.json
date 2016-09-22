@@ -1,5 +1,9 @@
 {
-	"@metadata": [],
+	"@metadata": {
+		"authors": [
+			"Jon Harald Søby"
+		]
+	},
 	"createtopicpage": "Opprett side",
 	"articleplaceholder-desc": "Gir en spesialside med {{WBREPONAME}}-informasjon om et gitt emne, med invitasjon til å opprette en artikkel om emnet",
 	"articleplaceholder-abouttopic": "Om emnet",
