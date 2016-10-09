@@ -3,13 +3,14 @@
 		"authors": [
 			"Lucie-Aimée Kaffee",
 			"Liuxinyu970226",
-			"Raymond"
+			"Raymond",
+			"Hamilton Abreu"
 		]
 	},
 	"createtopicpage": "Title of [[Special:CreateTopicPage]].\n{{Identical|Create page}}",
-	"articleplaceholder-desc": "{{desc|what=extension|name=ArticlePlaceholder|url=https://www.mediawiki.org/wiki/Extension:ArticlePlaceholder}}\n{{WBREPONAME}} is a variable of the repository name of Wikidata (it has replaced the string 'Wikidata').",
+	"articleplaceholder-desc": "{{desc|what=extension|name=ArticlePlaceholder|url=https://www.mediawiki.org/wiki/Extension:ArticlePlaceholder}}\n<nowiki>{{WBREPONAME}}</nowiki> is a variable of the repository name of Wikidata (it has replaced the string 'Wikidata').",
 	"articleplaceholder-abouttopic": "Title of Special:AboutTopic.",
-	"articleplaceholder-abouttopic-intro": "Intro paragraph shown on Special:AboutTopic.",
+	"articleplaceholder-abouttopic-intro": "Intro paragraph shown on Special:AboutTopic.\n\n<nowiki>{{WBREPONAME}}</nowiki> is a variable of the repository name of Wikidata (it has replaced the string 'Wikidata').",
 	"articleplaceholder-abouttopic-entityid": "Text to encourage the user to enter an item id.",
 	"articleplaceholder-abouttopic-submit": "Label on the submit button.\n{{Identical|Craft}}",
 	"articleplaceholder-abouttopic-no-entity-error": "Error message in case of an invalid item id.",

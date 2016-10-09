@@ -1,12 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Máté"
+			"Máté",
+			"Tacsipacsi"
 		]
 	},
+	"createtopicpage": "Lap létrehozása",
+	"articleplaceholder-desc": "Egy speciális lapot kínál {{WBREPONAME}}-információkkal egy adott témáról, és invitál egy valódi szócikk létrehozására",
 	"articleplaceholder-abouttopic": "A témában",
-	"articleplaceholder-abouttopic-intro": "Ez a speciális lap a {{WBREPONAME}} információit felhasználva hoz létre adott témában tartalmi oldalt.",
-	"articleplaceholder-abouttopic-entityid": "Az automatikusan generált szócikkhelykitöltő eléréséhez add meg egy entitás azonosítóját.",
+	"articleplaceholder-abouttopic-intro": "Ez a speciális lap gyors áttekintést ad témákról {{WBREPONAME}}-adatok felhasználásával.",
+	"articleplaceholder-abouttopic-entityid": "Add meg egy elem azonosítóját (pl. Q12345)",
 	"articleplaceholder-abouttopic-no-entity-error": "Érvénytelen azonosító.",
 	"articleplaceholder-abouttopic-create-article": "Új szócikk létrehozás ezen a címen",
 	"articleplaceholder-abouttopic-create-article-label": "Szócikk címe",
@@ -17,5 +20,9 @@
 	"articleplaceholder-abouttopic-lua-entity": "Entitás",
 	"articleplaceholder-abouttopic-lua-reference": "Hivatkozás",
 	"articleplaceholder-abouttopic-lua-identifier": "Külső források",
-	"articleplaceholder-search-header": "Adatok felfedezése a témában"
+	"articleplaceholder-search-header": "Adatok felfedezése a témában",
+	"articleplaceholder-createpage-title": "$1 létrehozása",
+	"articleplaceholder-createpage-alreadyexists": "Már létezik $1 című lap. Válassz egy másik címet.",
+	"articleplaceholder-createpage-notitleprovided": "Nem adtál meg címet, adj meg egyet a létrehozandó laphoz.",
+	"articleplaceholder-createpage-invalidtitleprovided": "A megadott cím érvénytelen, válassz egy érvényeset."
 }

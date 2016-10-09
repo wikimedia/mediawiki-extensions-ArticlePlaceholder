@@ -1,12 +1,27 @@
 {
 	"@metadata": {
 		"authors": [
-			"Vitorvicentevalente"
+			"Vitorvicentevalente",
+			"Hamilton Abreu"
 		]
 	},
 	"createtopicpage": "Criar página",
+	"articleplaceholder-desc": "Fornece uma página especial com informação do repositório {{WBREPONAME}} sobre determinado tema, com um convite para criar um artigo sobre o tema",
+	"articleplaceholder-abouttopic": "Sobre o tema",
+	"articleplaceholder-abouttopic-intro": "Esta página especial fornece um resumo rápido de um tema, com base em dados do repositório {{WBREPONAME}}.",
+	"articleplaceholder-abouttopic-entityid": "Introduza um identificador do elemento, como Q12345",
+	"articleplaceholder-abouttopic-submit": "criar",
+	"articleplaceholder-abouttopic-no-entity-error": "Este identificador de elemento não é válido.",
+	"articleplaceholder-abouttopic-create-article": "Crie um artigo novo com o título",
 	"articleplaceholder-abouttopic-create-article-label": "Título do artigo",
 	"articleplaceholder-abouttopic-create-article-mandatory": "O título do artigo é obrigatório.",
+	"articleplaceholder-abouttopic-create-article-button": "Criar um artigo",
+	"articleplaceholder-abouttopic-create-article-submit-button": "Enviar",
+	"articleplaceholder-abouttopic-article-exists-error": "Já existe um artigo com este nome",
+	"articleplaceholder-abouttopic-lua-entity": "Entidade",
+	"articleplaceholder-abouttopic-lua-reference": "Referência",
+	"articleplaceholder-abouttopic-lua-identifier": "Recursos externos",
+	"articleplaceholder-search-header": "Descobrir dados sobre este tema",
 	"articleplaceholder-createpage-title": "Criar $1",
 	"articleplaceholder-createpage-alreadyexists": "A página com o título do $1 já existe. Por favor escolha outro.",
 	"articleplaceholder-createpage-notitleprovided": "Não foi introduzido nenhum título, por favor, insira um para a página que deseja criar.",
