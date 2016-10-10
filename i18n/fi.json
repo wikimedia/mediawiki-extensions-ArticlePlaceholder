@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Stryn"
+			"Stryn",
+			"01miki10"
 		]
 	},
+	"createtopicpage": "Luo sivu",
 	"articleplaceholder-abouttopic-submit": "luonnos",
 	"articleplaceholder-abouttopic-create-article": "Luo uusi artikkeli otsikolla",
 	"articleplaceholder-abouttopic-create-article-label": "Artikkelin otsikko",
@@ -12,5 +14,9 @@
 	"articleplaceholder-abouttopic-create-article-submit-button": "Lähetä",
 	"articleplaceholder-abouttopic-article-exists-error": "Artikkeli löytyy jo tällä nimellä",
 	"articleplaceholder-abouttopic-lua-entity": "Aihe",
-	"articleplaceholder-abouttopic-lua-reference": "Lähde"
+	"articleplaceholder-abouttopic-lua-reference": "Lähde",
+	"articleplaceholder-createpage-title": "Luo $1",
+	"articleplaceholder-createpage-alreadyexists": "Sivu nimeltään $1 on jo olemassa. Valitse toinen nimi.",
+	"articleplaceholder-createpage-notitleprovided": "Nimeä ei annettu, anna luotavalle sivulle nimi.",
+	"articleplaceholder-createpage-invalidtitleprovided": "Antamasi nimi oli virheellinen. Anna kelvollinen nimi."
 }
