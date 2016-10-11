@@ -7,7 +7,9 @@
 	"createtopicpage": "Utwórz stronę",
 	"articleplaceholder-abouttopic-create-article-label": "Tytuł artykułu",
 	"articleplaceholder-abouttopic-create-article-button": "Utwórz artykuł",
+	"articleplaceholder-abouttopic-create-article-submit-button": "Wyślij",
 	"articleplaceholder-abouttopic-lua-identifier": "Źródła zewnętrzne",
+	"articleplaceholder-createpage-title": "Tworzenie $1",
 	"articleplaceholder-createpage-alreadyexists": "Strona o tytule $1 już istnieje. Proszę wybrać inny tytuł.",
 	"articleplaceholder-createpage-notitleprovided": "Tytuł nie został wpisany. Wpisz tytuł strony, którą chcesz utworzyć.",
 	"articleplaceholder-createpage-invalidtitleprovided": "Tytuł jest nieprawidłowy. Podaj prawidłowy tytuł."
