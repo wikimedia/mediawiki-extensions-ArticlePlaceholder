@@ -86,12 +86,14 @@ class AboutTopicRenderer {
 	 * @param OutputPage $output
 	 */
 	public function showPlaceholder(
-			ItemId $entityId,
-			Language $language,
-			User $user,
-			OutputPage $output
-		) {
+		ItemId $entityId,
+		Language $language,
+		User $user,
+		OutputPage $output
+	) {
+		$output->addModuleStyles( 'ext.articleplaceholder.defaultDisplay' );
 		$output->addWikiText( '{{aboutTopic|' . $entityId->getSerialization() . '}}' );
+
 		$label = $this->getLabel( $entityId, $language );
 		$labelTitle = null;
 		if ( $label ) {
@@ -101,6 +103,7 @@ class AboutTopicRenderer {
 		if ( $labelTitle && $labelTitle->quickUserCan( 'createpage', $user ) ) {
 			$this->showCreateArticle( $labelTitle, $output );
 		}
+
 		$this->showLanguageLinks( $entityId, $output );
 		$this->setOtherProjectsLinks( $entityId, $output );
 	}
@@ -112,7 +115,6 @@ class AboutTopicRenderer {
 	 */
 	private function showCreateArticle( Title $labelTitle, OutputPage $output ) {
 		$output->enableOOUI();
-		$output->addModuleStyles( 'ext.articleplaceholder.defaultDisplay' );
 		$output->addModules( 'ext.articleplaceholder.createArticle' );
 		$output->addJsConfigVars( 'apLabel', $labelTitle->getPrefixedText() );
 
