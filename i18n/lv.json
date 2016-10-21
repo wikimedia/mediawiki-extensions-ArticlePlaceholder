@@ -20,5 +20,7 @@
 	"articleplaceholder-abouttopic-lua-entity": "Entītija",
 	"articleplaceholder-abouttopic-lua-reference": "Atsauces",
 	"articleplaceholder-abouttopic-lua-identifier": "Ārējie resursi",
-	"articleplaceholder-search-header": "Atklāj datus par šo tēmu"
+	"articleplaceholder-search-header": "Atklāj datus par šo tēmu",
+	"articleplaceholder-createpage-title": "Izveidot $1",
+	"articleplaceholder-createpage-alreadyexists": "Lapa ar nosaukumu $1 jau pastāv. Lūdzu, izvēlies citu."
 }
