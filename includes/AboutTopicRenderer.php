@@ -6,7 +6,6 @@ use Language;
 use OOUI;
 use SiteLookup;
 use SpecialPage;
-use Title;
 use User;
 use OutputPage;
 use Wikibase\DataModel\Entity\ItemId;
@@ -102,7 +101,7 @@ class AboutTopicRenderer {
 			$labelTitle = $this->titleFactory->newFromText( $label );
 		}
 		if ( $labelTitle && $labelTitle->quickUserCan( 'createpage', $user ) ) {
-			$this->showCreateArticle( $labelTitle, $output );
+			$this->showCreateArticle( $label, $output );
 		}
 
 		$this->showLanguageLinks( $entityId, $output );
@@ -112,19 +111,19 @@ class AboutTopicRenderer {
 	/**
 	 * Adds a button to create an article
 	 *
-	 * @param Title $labelTitle
+	 * @param string $label
 	 * @param OutputPage $output
 	 */
-	private function showCreateArticle( Title $labelTitle, OutputPage $output ) {
+	private function showCreateArticle( $label, OutputPage $output ) {
 		$output->enableOOUI();
 		$output->addModules( 'ext.articleplaceholder.createArticle' );
-		$output->addJsConfigVars( 'apLabel', $labelTitle->getPrefixedText() );
+		$output->addJsConfigVars( 'apLabel', $label );
 
 		$button = new OOUI\ButtonWidget( [
 			'id' => 'new-empty-article-button',
 			'infusable' => true,
 			'label' => wfMessage( 'articleplaceholder-abouttopic-create-article-button' )->text(),
-			'href' => SpecialPage::getTitleFor( 'CreateTopicPage', $labelTitle->getPrefixedText() )
+			'href' => SpecialPage::getTitleFor( 'CreateTopicPage', $label )
 				->getLocalURL( [ 'ref' => 'button' ] ),
 			'target' => 'blank'
 		] );
