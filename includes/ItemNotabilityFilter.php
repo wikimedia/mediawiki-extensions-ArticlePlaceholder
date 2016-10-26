@@ -3,6 +3,7 @@
 namespace ArticlePlaceholder;
 
 use DatabaseBase;
+use ResultWrapper;
 use Wikibase\Client\Store\Sql\ConsistentReadConnectionManager;
 use Wikibase\DataModel\Entity\ItemId;
 use Wikibase\Lib\Store\EntityNamespaceLookup;
@@ -121,8 +122,8 @@ class ItemNotabilityFilter {
 	private function selectPagePropsPage( DatabaseBase $dbr, array $itemIds ) {
 		$entityNamespace = $this->entityNamespaceLookup->getEntityNamespace( 'item' );
 
-		if ( $entityNamespace === false ) {
-			wfLogWarning( 'EntityNamespaceLookup returns false' );
+		if ( !is_int( $entityNamespace ) ) {
+			wfLogWarning( 'The ArticlePlaceholder extension requires an "item" namespace' );
 			return [];
 		}
 
