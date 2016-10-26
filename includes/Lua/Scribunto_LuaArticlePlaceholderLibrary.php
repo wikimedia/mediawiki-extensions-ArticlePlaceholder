@@ -29,6 +29,7 @@ class Scribunto_LuaArticlePlaceholderLibrary extends Scribunto_LuaLibraryBase {
 
 	/**
 	 * Returns an array containing the serialization of a blacklisted reference property id
+	 *
 	 * @return string[]|null Null if $wgArticlePlaceholderReferencesBlacklist empty or not string
 	 */
 	public function getReferencesBlacklist() {

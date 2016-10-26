@@ -80,6 +80,7 @@ class AboutTopicRenderer {
 
 	/**
 	 * Show content of the ArticlePlaceholder
+	 *
 	 * @param ItemId $entityId
 	 * @param Language $language
 	 * @param User $user
@@ -110,6 +111,7 @@ class AboutTopicRenderer {
 
 	/**
 	 * Adds a button to create an article
+	 *
 	 * @param Title $labelTitle
 	 * @param OutputPage $output
 	 */
@@ -133,6 +135,7 @@ class AboutTopicRenderer {
 	/**
 	 * @param ItemId $entityId
 	 * @param Language $language
+	 *
 	 * @return string|null null if the item doesn't have a label
 	 */
 	private function getLabel( ItemId $entityId, Language $language ) {
@@ -148,6 +151,7 @@ class AboutTopicRenderer {
 
 	/**
 	 * Show label as page title
+	 *
 	 * @param string $label
 	 * @param OutputPage $output
 	 */
@@ -157,6 +161,7 @@ class AboutTopicRenderer {
 
 	/**
 	 * Set language links
+	 *
 	 * @param ItemId $entityId
 	 * @param OutputPage $output
 	 */
@@ -178,6 +183,7 @@ class AboutTopicRenderer {
 
 	/**
 	 * Set other projects links
+	 *
 	 * @param ItemId $itemId
 	 * @param OutputPage $output
 	 */

@@ -3,6 +3,7 @@
 namespace ArticlePlaceholder;
 
 use DatabaseBase;
+use ResultWrapper;
 use Wikibase\Client\Store\Sql\ConsistentReadConnectionManager;
 use Wikibase\DataModel\Entity\ItemId;
 use Wikibase\Lib\Store\EntityNamespaceLookup;
@@ -92,6 +93,7 @@ class ItemNotabilityFilter {
 
 	/**
 	 * Get number of statements and claims for a list of ItemIds
+	 *
 	 * @param ItemId[] $itemIds
 	 *
 	 * @return array() int[page_title][propname] => value
