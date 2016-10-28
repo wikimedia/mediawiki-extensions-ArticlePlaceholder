@@ -123,8 +123,8 @@ class ItemNotabilityFilter {
 	private function selectPagePropsPage( DatabaseBase $dbr, array $itemIds ) {
 		$entityNamespace = $this->entityNamespaceLookup->getEntityNamespace( 'item' );
 
-		if ( $entityNamespace === false ) {
-			wfLogWarning( 'EntityNamespaceLookup returns false' );
+		if ( !is_int( $entityNamespace ) ) {
+			wfLogWarning( 'The ArticlePlaceholder extension requires an "item" namespace' );
 			return [];
 		}
 
