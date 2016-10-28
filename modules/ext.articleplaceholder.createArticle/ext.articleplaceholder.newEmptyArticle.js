@@ -8,9 +8,13 @@
 
 	var titleInput;
 
-	function onSubmit( deferred ) {
+	/**
+	 * @return {jQuery.Promise}
+	 */
+	function onSubmit() {
 		var titleRaw = titleInput.getValue(),
-			api = new mw.Api();
+			api = new mw.Api(),
+			deferred = $.Deferred();
 
 		if ( titleRaw.trim() === '' ) {
 			deferred.reject( new OO.ui.Error(
@@ -42,7 +46,7 @@
 			} );
 		}
 
-		return false;
+		return deferred.promise();
 	}
 
 	function onWikipageContent() {
@@ -91,10 +95,7 @@
 		NewEmptyArticleDialog.prototype.getActionProcess = function ( action ) {
 			if ( action ) {
 				return new OO.ui.Process( function () {
-					var saveDeferred = $.Deferred();
-					onSubmit( saveDeferred );
-
-					return saveDeferred.promise();
+					return onSubmit();
 				}, this );
 			}
 			return NewEmptyArticleDialog.parent.prototype.getActionProcess.call( this, action );
