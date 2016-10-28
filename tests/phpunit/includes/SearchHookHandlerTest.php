@@ -71,7 +71,7 @@ class SearchHookHandlerTest extends MediaWikiTestCase {
 	 * @param string $termType
 	 * @param EntityId|ItemId|PropertyId $entityId
 	 *
-	 * @returns TermIndexEntry
+	 * @return TermIndexEntry
 	 */
 	private function getTermIndexEntry( $text, $languageCode, $termType, EntityId $entityId ) {
 		return new TermIndexEntry( [
