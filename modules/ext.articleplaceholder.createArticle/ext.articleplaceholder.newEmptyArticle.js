@@ -17,34 +17,34 @@
 			deferred = $.Deferred();
 
 		if ( titleRaw.trim() === '' ) {
-			deferred.reject( new OO.ui.Error(
+			return deferred.reject( new OO.ui.Error(
 				mw.msg( 'articleplaceholder-abouttopic-create-article-mandatory' )
-			) );
-		} else {
-			api.get( {
-				formatversion: 2,
-				action: 'query',
-				titles: titleRaw
-			} ).done( function ( data ) {
-				var query = data.query,
-					title;
-
-				if ( query && query.hasOwnProperty( 'pages' ) ) {
-					if ( titleRaw !== titleInput.getValue() ) {
-						return;
-					}
-
-					if ( query.pages[ 0 ].missing ) {
-						title = mw.Title.newFromUserInput( titleRaw, 0 );
-						document.location.href = title.getUrl( { action: 'edit' } );
-					} else {
-						deferred.reject( new OO.ui.Error(
-							mw.msg( 'articleplaceholder-abouttopic-article-exists-error' )
-						) );
-					}
-				}
-			} );
+			) ).promise();
 		}
+
+		api.get( {
+			formatversion: 2,
+			action: 'query',
+			titles: titleRaw
+		} ).done( function ( data ) {
+			var query = data.query,
+				title;
+
+			if ( titleRaw !== titleInput.getValue() || !query || !query.pages ) {
+				deferred.reject();
+				return;
+			}
+
+			if ( query.pages[ 0 ].missing ) {
+				title = mw.Title.newFromUserInput( titleRaw, 0 );
+				document.location.href = title.getUrl( { action: 'edit' } );
+				deferred.resolve();
+			} else {
+				deferred.reject( new OO.ui.Error(
+					mw.msg( 'articleplaceholder-abouttopic-article-exists-error' )
+				) );
+			}
+		} );
 
 		return deferred.promise();
 	}
