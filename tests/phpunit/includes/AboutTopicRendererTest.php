@@ -47,8 +47,12 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 	 */
 	private function getInstanceOutput( ItemId $itemId, TitleFactory $titleFactory = null ) {
 		$context = new DerivativeContext( RequestContext::getMain() );
+		$outputPage = $context->getOutput();
 		$title = SpecialPage::getTitleFor( 'AboutTopic' );
-		$context->getOutput()->setTitle( $title );
+		$outputPage->setTitle( $title );
+
+		// is set in SpecialAboutTopic
+		$outputPage->setProperty( 'wikibase_item', $itemId->getSerialization() );
 
 		$otherProjectsSidebarGenerator = $this->getMockBuilder( OtherProjectsSidebarGenerator::class )
 			->disableOriginalConstructor()
@@ -74,17 +78,18 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 			$this->getSiteLookup(),
 			'wikipedia',
 			$titleFactory ?: $this->getTitleFactory(),
-			$otherProjectsSidebarGeneratorFactory
+			$otherProjectsSidebarGeneratorFactory,
+			true
 		);
 
 		$instance->showPlaceholder(
 			$itemId,
 			Language::factory( 'eo' ),
 			$this->getMock( User::class ),
-			$context->getOutput()
+			$outputPage
 		);
 
-		return $context->getOutput();
+		return $outputPage;
 	}
 
 	private function getTitleFactory( $canCreate = true ) {

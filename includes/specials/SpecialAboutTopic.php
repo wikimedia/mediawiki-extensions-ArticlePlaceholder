@@ -2,6 +2,7 @@
 
 namespace ArticlePlaceholder\Specials;
 
+use Config;
 use HTMLForm;
 use MediaWiki\MediaWikiServices;
 use SpecialPage;
@@ -13,6 +14,7 @@ use Wikibase\DataModel\Entity\EntityIdParsingException;
 use Wikibase\DataModel\Entity\ItemId;
 use Wikibase\DataModel\Services\Lookup\EntityLookup;
 use Wikibase\Lib\Store\SiteLinkLookup;
+use Wikimedia\Assert\Assert;
 
 /**
  * The AboutTopic SpecialPage for the ArticlePlaceholder extension
@@ -30,6 +32,10 @@ class SpecialAboutTopic extends SpecialPage {
 		// TODO: Remove the feature flag when not needed any more!
 		$settings->setSetting( 'enableLuaEntityFormatStatements', true );
 
+		$articlePlaceholderSearchEngineIndexed = MediaWikiServices::getInstance()->getMainConfig()->get(
+			'ArticlePlaceholderSearchEngineIndexed'
+		);
+
 		return new self(
 			new AboutTopicRenderer(
 				$wikibaseClient->getLanguageFallbackLabelDescriptionLookupFactory(),
@@ -43,7 +49,8 @@ class SpecialAboutTopic extends SpecialPage {
 			$wikibaseClient->getStore()->getSiteLinkLookup(),
 			new TitleFactory(),
 			$settings->getSetting( 'siteGlobalID' ),
-			$wikibaseClient->getStore()->getEntityLookup()
+			$wikibaseClient->getStore()->getEntityLookup(),
+			$articlePlaceholderSearchEngineIndexed
 		);
 	}
 
@@ -78,12 +85,19 @@ class SpecialAboutTopic extends SpecialPage {
 	private $entityLookup;
 
 	/**
+	 * @var bool|string $searchEngineIndexed
+	 */
+	private $searchEngineIndexed;
+
+	/**
 	 * @param AboutTopicRenderer $aboutTopicRenderer
 	 * @param EntityIdParser $idParser
 	 * @param SiteLinkLookup $siteLinkLookup
 	 * @param TitleFactory $titleFactory
 	 * @param string $siteGlobalID
 	 * @param EntityLookup $entityLookup
+	 * @param bool|string $searchEngineIndexed
+	 * @throws InvalidArgumentException
 	 */
 	public function __construct(
 		AboutTopicRenderer $aboutTopicRenderer,
@@ -91,9 +105,16 @@ class SpecialAboutTopic extends SpecialPage {
 		SiteLinkLookup $siteLinkLookup,
 		TitleFactory $titleFactory,
 		$siteGlobalID,
-		EntityLookup $entityLookup
+		EntityLookup $entityLookup,
+		$searchEngineIndexed
 	) {
 		parent::__construct( 'AboutTopic' );
+
+		Assert::parameterType(
+			'boolean|string',
+			$searchEngineIndexed,
+			'$searchEngineIndexed'
+		);
 
 		$this->aboutTopicRenderer = $aboutTopicRenderer;
 		$this->idParser = $idParser;
@@ -101,13 +122,13 @@ class SpecialAboutTopic extends SpecialPage {
 		$this->titleFactory = $titleFactory;
 		$this->siteGlobalID = $siteGlobalID;
 		$this->entityLookup = $entityLookup;
+		$this->searchEngineIndexed = $searchEngineIndexed;
 	}
 
 	/**
 	 * @param string|null $sub
 	 */
 	public function execute( $sub ) {
-		$this->setHeaders();
 		$this->showContent( $sub );
 	}
 
@@ -116,6 +137,11 @@ class SpecialAboutTopic extends SpecialPage {
 	 */
 	private function showContent( $itemIdString ) {
 		$itemId = $this->getItemIdParam( 'entityid', $itemIdString );
+
+		if ( $itemId !== null ) {
+			$this->getOutput()->setProperty( 'wikibase_item', $itemId->getSerialization() );
+		}
+		$this->setHeaders();
 
 		if ( $itemId === null ) {
 			$this->createForm();
@@ -232,6 +258,29 @@ class SpecialAboutTopic extends SpecialPage {
 		}
 
 		return null;
+	}
+
+	/**
+	 * @return string
+	 */
+	protected function getRobotPolicy() {
+		if ( $this->searchEngineIndexed === true ) {
+			return 'index,follow';
+		}
+
+		if ( is_string( $this->searchEngineIndexed ) ) {
+			$wikibaseItem = $this->getOutput()->getProperty( 'wikibase_item' );
+
+			$entityId = new ItemId( $wikibaseItem );
+
+			$maxEntityId = new ItemId( $this->searchEngineIndexed );
+
+			if ( $entityId->getNumericId() <= $maxEntityId->getNumericId() ) {
+				return 'index,follow';
+			}
+		}
+
+		return parent::getRobotPolicy();
 	}
 
 }

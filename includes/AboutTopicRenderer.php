@@ -18,6 +18,8 @@ use Wikibase\Lib\Store\SiteLinkLookup;
 
 /**
  * The AboutTopic SpecialPage for the ArticlePlaceholder extension
+ * The AboutTopicRenderer assumes the 'wikibase_item' OutputPage property
+ * is set in SpecialAboutTopic
  *
  * @ingroup Extensions
  * @author Lucie-Aimée Kaffee
@@ -221,7 +223,6 @@ class AboutTopicRenderer {
 
 		$otherProjects = $otherProjectsSidebarGenerator->buildProjectLinkSidebarFromItemId( $itemId );
 		$output->setProperty( 'wikibase-otherprojects-sidebar', $otherProjects );
-		$output->setProperty( 'wikibase_item', $itemId->getSerialization() );
 	}
 
 }

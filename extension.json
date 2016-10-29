@@ -83,7 +83,8 @@
 	},
 	"config": {
 		"ArticlePlaceholderImageProperty": "P18",
-		"ArticlePlaceholderReferencesBlacklist": "P143"
+		"ArticlePlaceholderReferencesBlacklist": "P143",
+		"ArticlePlaceholderSearchEngineIndexed": false
 	},
 	"manifest_version": 1
 }

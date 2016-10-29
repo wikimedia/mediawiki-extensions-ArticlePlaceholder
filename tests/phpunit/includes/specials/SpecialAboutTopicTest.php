@@ -8,6 +8,7 @@ use DerivativeContext;
 use Language;
 use MediaWikiTestCase;
 use RequestContext;
+use OutputPage;
 use SpecialPage;
 use Title;
 use Wikibase\Client\WikibaseClient;
@@ -74,17 +75,25 @@ class SpecialAboutTopicTest extends MediaWikiTestCase {
 	 *
 	 * @return OutputPage
 	 */
-	private function getInstanceOutput( $itemIdSerialization ) {
+	private function getInstanceOutput( $itemIdSerialization, $searchEngineIndexed = true ) {
 		$context = new DerivativeContext( RequestContext::getMain() );
 		$title = SpecialPage::getTitleFor( 'AboutTopic' );
 		$context->setTitle( $title );
+		$outputPage = new OutputPage( $context );
+
+		// initial robot policy should be like the one gotten from the SpecialPage
+		$outputPage->setRobotPolicy( 'noindex,nofollow' );
+
+		$context->setOutput( $outputPage );
+
 		$instance = new SpecialAboutTopic(
 			$this->getMockBuilder( AboutTopicRenderer::class )->disableOriginalConstructor()->getMock(),
 			$this->getEntityIdParser(),
 			$this->getSiteLinkLookup(),
 			new TitleFactory(),
 			'enwiki',
-			$this->getEntityLookup()
+			$this->getEntityLookup(),
+			$searchEngineIndexed
 		);
 		$instance->setContext( $context );
 
@@ -128,6 +137,42 @@ class SpecialAboutTopicTest extends MediaWikiTestCase {
 		$entityLookup->putEntity( $item );
 
 		return $entityLookup;
+	}
+
+	public function provideRobotPolicy() {
+		return [
+			[
+				true,
+				true
+			],
+			[
+				false,
+				false
+			],
+			[
+				'Q1',
+				false
+			],
+			[
+				'Q2000',
+				true
+			]
+		];
+	}
+
+	/**
+	 * @dataProvider provideRobotPolicy
+	 */
+	public function testRobotPolicy( $searchEngineIndexed, $expected ) {
+		$output = $this->getInstanceOutput( 'Q1234', $searchEngineIndexed );
+		$metatags = $output->getHeadLinksArray();
+
+		if ( $expected === true ) {
+			$this->assertArrayNotHasKey( 'meta-robots', $metatags );
+		} else {
+			$this->assertArrayHasKey( 'meta-robots', $metatags );
+			$this->assertContains( 'noindex,nofollow', $metatags['meta-robots'] );
+		}
 	}
 
 }
