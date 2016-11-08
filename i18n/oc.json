@@ -8,7 +8,7 @@
 	"articleplaceholder-desc": "Porgís una pagina especiala d'informacion de {{WBREPONAME}} sus un subjècte determinat, amb invitacion a crear un article sul subjècte.",
 	"articleplaceholder-abouttopic": "Sul subjècte",
 	"articleplaceholder-abouttopic-intro": "Aquesta pagina especiala genèra una pagina de contengut sus un subjècte determinat amb de donadas de {{WBREPONAME}}",
-	"articleplaceholder-abouttopic-entityid": "Picatz un identificador d'entitat per obténer un esquelèta d'article autogenerat",
+	"articleplaceholder-abouttopic-entityid": "Entratz un ID d'element coma Q12345",
 	"articleplaceholder-abouttopic-submit": "borrolhon",
 	"articleplaceholder-abouttopic-no-entity-error": "Es pas un ID d’element valid.",
 	"articleplaceholder-abouttopic-create-article": "Crear un article nòu amb lo títol",
