@@ -8,7 +8,7 @@
   position: static;
 }
 
-#new-empty-article-button {
+.mw-articleplaceholder-createarticle-buttons {
   top: 100px;
   margin: 0 auto;
 }

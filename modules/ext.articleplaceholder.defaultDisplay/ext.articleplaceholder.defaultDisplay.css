@@ -19,7 +19,7 @@
   margin-top: 0;
 }
 
-#new-empty-article-button {
+.mw-articleplaceholder-createarticle-buttons {
   position: absolute;
   top: 0px;
   left: 10px;

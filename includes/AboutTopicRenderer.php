@@ -2,6 +2,7 @@
 
 namespace ArticlePlaceholder;
 
+use Html;
 use Language;
 use OOUI;
 use SiteLookup;
@@ -119,7 +120,7 @@ class AboutTopicRenderer {
 		$output->addModules( 'ext.articleplaceholder.createArticle' );
 		$output->addJsConfigVars( 'apLabel', $label );
 
-		$button = new OOUI\ButtonWidget( [
+		$buttons = new OOUI\ButtonWidget( [
 			'id' => 'new-empty-article-button',
 			'infusable' => true,
 			'label' => wfMessage( 'articleplaceholder-abouttopic-create-article-button' )->text(),
@@ -128,7 +129,11 @@ class AboutTopicRenderer {
 			'target' => 'blank'
 		] );
 
-		$output->addHTML( $button );
+		$output->addHTML( Html::rawElement(
+			'div',
+			[ 'class' => 'mw-articleplaceholder-createarticle-buttons' ],
+			$buttons
+		) );
 	}
 
 	/**
