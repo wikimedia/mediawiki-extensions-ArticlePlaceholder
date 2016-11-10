@@ -24,6 +24,11 @@ class SpecialAboutTopic extends SpecialPage {
 
 	public static function newFromGlobalState() {
 		$wikibaseClient = WikibaseClient::getDefaultInstance();
+		$settings = $wikibaseClient->getSettings();
+
+		// TODO: Remove the feature flag when not needed any more!
+		$settings->setSetting( 'enableStatementsParserFunction', true );
+
 		return new self(
 			new AboutTopicRenderer(
 				$wikibaseClient->getLanguageFallbackLabelDescriptionLookupFactory(),
@@ -36,7 +41,7 @@ class SpecialAboutTopic extends SpecialPage {
 			$wikibaseClient->getEntityIdParser(),
 			$wikibaseClient->getStore()->getSiteLinkLookup(),
 			new TitleFactory(),
-			$wikibaseClient->getSettings()->getSetting( 'siteGlobalID' ),
+			$settings->getSetting( 'siteGlobalID' ),
 			$wikibaseClient->getStore()->getEntityLookup()
 		);
 	}

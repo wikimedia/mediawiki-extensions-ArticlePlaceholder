@@ -22,7 +22,7 @@ local render = function( self, statement )
   if statement ~= nil then
     for key, value in pairs( statement ) do
       if key == 'mainsnak' then
-        mainsnak = mw.wikibase.renderSnak( value )
+        mainsnak = mw.wikibase.formatValue( value )
       elseif key == 'references' then
         reference = referenceRenderer( value )
       elseif key == 'qualifiers' then

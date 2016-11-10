@@ -13,7 +13,7 @@ local snaksRenderer = {}
 snaksRenderer.render = function( snaks )
   local result = ''
   if snaks ~= nil and type( snaks ) == 'table' then
-    result = mw.wikibase.renderSnaks( snaks )
+    result = mw.wikibase.formatValues( snaks )
   end
   return result
 end
