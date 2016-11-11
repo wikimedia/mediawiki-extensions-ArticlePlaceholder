@@ -11,7 +11,7 @@
 	"articleplaceholder-abouttopic-entityid": "Bitte gib eine Objektkennung wie Q12345 ein",
 	"articleplaceholder-abouttopic-submit": "entwerfen",
 	"articleplaceholder-abouttopic-no-entity-error": "Dies ist keine gültige Objektkennung.",
-	"articleplaceholder-abouttopic-create-article": "Einen neuen Artikel mit dem Titel erstellen",
+	"articleplaceholder-abouttopic-create-article-title": "Einen neuen Artikel erstellen",
 	"articleplaceholder-abouttopic-create-article-label": "Artikeltitel",
 	"articleplaceholder-abouttopic-create-article-mandatory": "Der Artikeltitel ist verpflichtend.",
 	"articleplaceholder-abouttopic-create-article-button": "Einen Artikel erstellen",

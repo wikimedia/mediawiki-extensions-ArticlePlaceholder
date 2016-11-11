@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Zygimantus"
+			"Zygimantus",
+			"Eitvys200"
 		]
 	},
 	"createtopicpage": "Kurti puslapį",
@@ -11,7 +12,6 @@
 	"articleplaceholder-abouttopic-entityid": "Prašome įvesti elemento ID, pvz., Q12345",
 	"articleplaceholder-abouttopic-submit": "ruošti",
 	"articleplaceholder-abouttopic-no-entity-error": "Šis elemento ID neteisingas.",
-	"articleplaceholder-abouttopic-create-article": "Kurti naują straipsnį su pavadinimu",
 	"articleplaceholder-abouttopic-create-article-label": "Straipsnio pavadinimas",
 	"articleplaceholder-abouttopic-create-article-mandatory": "Straipsnio pavadinimas yra privalomas.",
 	"articleplaceholder-abouttopic-create-article-button": "Sukurti straipsnį",
@@ -22,5 +22,7 @@
 	"articleplaceholder-abouttopic-lua-identifier": "Išoriniai resursai",
 	"articleplaceholder-search-header": "Atrasti duomenis tema",
 	"articleplaceholder-createpage-title": "Kurti $1",
+	"articleplaceholder-createpage-alreadyexists": "Puslapis su pavadinimu $1 jau egzistuoja. Prašome pasirinkti kitą.",
+	"articleplaceholder-createpage-notitleprovided": "Neįvestas joks pavadinimas, prašome įvesti puslapio pavadinimą, kurį norite sukurti.",
 	"articleplaceholder-createpage-invalidtitleprovided": "Pavadinimas, kurį įvedėte, yra neteisingas. Prašome nurodyti teisingą."
 }

@@ -5,13 +5,13 @@
 			"Laboramus"
 		]
 	},
+	"createtopicpage": "Создать страницу",
 	"articleplaceholder-desc": "Предоставляет специальную страницу информацией о определенной теме из {{WBREPONAME}}, с приглашением создать статью по этой теме.",
 	"articleplaceholder-abouttopic": "О теме",
 	"articleplaceholder-abouttopic-intro": "Эта специальная страница представляет краткий обзор темы на основе данных из {{WBREPONAME}}.",
 	"articleplaceholder-abouttopic-entityid": "Введите идентификатор элемента, например, Q12345",
 	"articleplaceholder-abouttopic-submit": "создать",
 	"articleplaceholder-abouttopic-no-entity-error": "Это не правильный идентификатор элемента.",
-	"articleplaceholder-abouttopic-create-article": "Создать новую статью с названием",
 	"articleplaceholder-abouttopic-create-article-label": "Название статьи",
 	"articleplaceholder-abouttopic-create-article-mandatory": "Название статьи указывать обязательно.",
 	"articleplaceholder-abouttopic-create-article-button": "Создать статью",
@@ -20,5 +20,9 @@
 	"articleplaceholder-abouttopic-lua-entity": "Сущность",
 	"articleplaceholder-abouttopic-lua-reference": "Ссылка",
 	"articleplaceholder-abouttopic-lua-identifier": "Внешние ресурсы",
-	"articleplaceholder-search-header": "Получите сведения по теме"
+	"articleplaceholder-search-header": "Получите сведения по теме",
+	"articleplaceholder-createpage-title": "Создать $1",
+	"articleplaceholder-createpage-alreadyexists": "Страницы с названием $1 уже существует. Пожалуйста, выберите другое название.",
+	"articleplaceholder-createpage-notitleprovided": "Заголовок не был введён. Пожалуйста, укажите заголовок для страницы, которую вы хотите создать.",
+	"articleplaceholder-createpage-invalidtitleprovided": "Заголовок некорректен. Пожалуйста, укажите корректный заголовок."
 }
