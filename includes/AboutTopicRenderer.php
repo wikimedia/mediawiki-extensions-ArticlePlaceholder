@@ -137,13 +137,7 @@ class AboutTopicRenderer {
 		// TODO: Button should be hidden if the only sitelink links to the current wiki.
 		// $wikibaseClient->getSettings()->getSetting( 'siteGlobalID' ) should be injected here!
 		if ( ExtensionRegistry::getInstance()->isLoaded( 'ContentTranslation' ) && $siteLinks ) {
-			$output->addModules( 'ext.articleplaceholder.translateArticle' );
-			$contents .= new OOUI\ButtonWidget( [
-				'id' => 'translate-article-button',
-				'infusable' => true,
-				'label' => wfMessage( 'articleplaceholder-abouttopic-translate-article-button' )->text(),
-				'target' => 'blank'
-			] );
+			$output->addJsConfigVars( 'apContentTranslation', true );
 		}
 
 		$output->addHTML( Html::rawElement(

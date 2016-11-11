@@ -4,86 +4,112 @@
  * @author Jonas M. Kress
  */
 
-( function ( $, mw, OO ) {
+( function ( $, mw, OO, module ) {
 	'use strict';
 
-	var windowManager,
-		dialog,
-		languageInput,
-		titleInput,
-		CreateArticleDialog = mw.loader.require( 'ext.articleplaceholder.createArticle' ).CreateArticleDialog;
+	var CreateArticleDialog = module.exports.CreateArticleDialog;
 
-	function onSubmit() {
-		if ( titleInput.getValue().trim() === '' ) {
-			return $.Deferred().reject(
-				new OO.ui.Error( mw.msg( 'articleplaceholder-abouttopic-create-article-mandatory' ) )
-			).promise();
+	/**
+	 * @class
+	 */
+	function CreateArticleTranslationDialog() {
+		CreateArticleTranslationDialog.super.call( this ); // jshint:ignore
+	}
+	OO.inheritClass( CreateArticleTranslationDialog, CreateArticleDialog );
+
+	/**
+	 * @property {OO.ui.DropdownInputWidget}
+	 * @protected
+	 */
+	CreateArticleTranslationDialog.prototype.languageInput = null;
+
+	/**
+	 * @property {OO.ui.CheckboxInputWidget}
+	 * @protected
+	 */
+	CreateArticleTranslationDialog.prototype.translateCheckbox = null;
+
+	/**
+	 * @override
+	 * @return {jQuery.Promise}
+	 */
+	CreateArticleTranslationDialog.prototype.onSubmit = function () {
+		var self = this,
+			deferred = $.Deferred();
+
+		if ( !this.translateCheckbox.isSelected() ) {
+			return CreateArticleTranslationDialog.super.prototype.onSubmit.apply( this );
 		}
+
+		mw.track( 'counter.MediaWiki.wikibase.articleplaceholder.button.translate-article' );
 
 		mw.loader.using( 'ext.cx.sitemapper' ).then( function () {
 			document.location.href = mw.cx.SiteMapper.prototype.getCXUrl(
-				mw.config.get( 'apPageNames' )[ languageInput.getValue() ],
-				titleInput.getValue(),
-				languageInput.getValue(),
+				mw.config.get( 'apPageNames' )[ self.languageInput.getValue() ],
+				self.titleInput.getValue(),
+				self.languageInput.getValue(),
 				mw.config.get( 'wgContentLanguage' )
 			);
+
+			deferred.resolve();
 		} );
 
-		// To not leave the dialog in a stale, unusable state.
-		dialog.close();
-		return $.Deferred();
-	}
+		return deferred.promise();
+	};
 
-	function createDialogContent() {
-		titleInput = new OO.ui.TextInputWidget( {
-			value: mw.config.get( 'apLabel' ),
-			label: mw.msg( 'articleplaceholder-abouttopic-create-article-label' ),
-			multiline: false,
-			required: true,
-			autosize: true
-		} );
-
-		languageInput = new OO.ui.DropdownInputWidget( {
+	/**
+	 * @protected
+	 * @return {OO.ui.DropdownInputWidget}
+	 */
+	CreateArticleTranslationDialog.prototype.createLanguageInput = function () {
+		this.languageInput = new OO.ui.DropdownInputWidget( {
 			text: mw.msg( 'articleplaceholder-abouttopic-translate-article-label' ),
 			options: mw.config.get( 'apLanguages' ),
-			required: true
+			disabled: true
 		} );
 
-		return new OO.ui.StackLayout( {
-			items: [
-					new OO.ui.PanelLayout( {
-						$content: languageInput.$element,
-						padded: true
-					} ), new OO.ui.PanelLayout( {
-						$content: titleInput.$element,
-						padded: true
-					} )
-			],
-			continuous: true
+		return this.languageInput;
+	};
+
+	/**
+	 * @protected
+	 * @return {OO.ui.CheckboxInputWidget}
+	 */
+	CreateArticleTranslationDialog.prototype.createTranslateCheckbox = function () {
+		var self = this;
+
+		this.translateCheckbox = new OO.ui.CheckboxInputWidget()
+		.on( 'change', function ( selected ) {
+			self.languageInput.setDisabled( !selected );
 		} );
-	}
 
-	function createDialog() {
-		dialog = new CreateArticleDialog();
+		return this.translateCheckbox;
+	};
 
-		dialog.setContent( createDialogContent().$element );
-		dialog.onSubmit = onSubmit;
+	/**
+	 * @protected
+	 * @return {jQuery}
+	 */
+	CreateArticleTranslationDialog.prototype.createTranslateSection = function () {
+		var msg = mw.msg( 'articleplaceholder-abouttopic-translate-article-button' );
 
-		windowManager = new OO.ui.WindowManager();
+		return $( '<div>' ).append(
+			new OO.ui.FieldLayout(
+				this.createTranslateCheckbox(),
+				{ label: msg, align: 'inline' }
+			).$element,
+			this.createLanguageInput().$element
+		);
+	};
 
-		$( 'body' ).append( windowManager.$element );
-		windowManager.addWindows( [ dialog ] );
-	}
+	/**
+	 * @protected
+	 */
+	CreateArticleTranslationDialog.prototype.createContentElements = function () {
+		this.addElement( this.createTranslateSection() );
+		this.addElement( this.createTitleInput().$element );
+	};
 
-	function onWikipageContent() {
-		createDialog();
+	module.exports.CreateArticleTranslationDialog = CreateArticleTranslationDialog;
 
-		OO.ui.infuse( 'translate-article-button' ).on( 'click', function () {
-			mw.track( 'counter.MediaWiki.wikibase.articleplaceholder.button.translate-article' );
-			windowManager.openWindow( dialog );
-		} );
-	}
-
-	mw.hook( 'wikipage.content' ).add( onWikipageContent );
-
-} )( jQuery, mediaWiki, OO );
+} )( jQuery, mediaWiki, OO, module );
