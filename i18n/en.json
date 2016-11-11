@@ -11,7 +11,7 @@
 	"articleplaceholder-abouttopic-entityid": "Please enter an item ID such as Q12345",
 	"articleplaceholder-abouttopic-submit": "craft",
 	"articleplaceholder-abouttopic-no-entity-error": "This is not a valid item ID.",
-	"articleplaceholder-abouttopic-create-article": "Create a new article with the title",
+	"articleplaceholder-abouttopic-create-article-title": "Create a new article",
 	"articleplaceholder-abouttopic-create-article-label": "Article title",
 	"articleplaceholder-abouttopic-create-article-mandatory": "The title of the article is mandatory.",
 	"articleplaceholder-abouttopic-create-article-button": "Create an article",

@@ -14,7 +14,7 @@
 	"articleplaceholder-abouttopic-entityid": "Text to encourage the user to enter an item id.",
 	"articleplaceholder-abouttopic-submit": "Label on the submit button.\n{{Identical|Craft}}",
 	"articleplaceholder-abouttopic-no-entity-error": "Error message in case of an invalid item id.",
-	"articleplaceholder-abouttopic-create-article": "Text in the popup encouraging the user to create an article with a selectable title",
+	"articleplaceholder-abouttopic-create-article-title": "Title of the popup window encouraging the user to create a new article.",
 	"articleplaceholder-abouttopic-create-article-label": "Label of the article page title input in the 'Create article' popup.",
 	"articleplaceholder-abouttopic-create-article-mandatory": "Used as an error message in the 'Create article', if the article title wasn't supplied.",
 	"articleplaceholder-abouttopic-create-article-button": "Label on create article button",

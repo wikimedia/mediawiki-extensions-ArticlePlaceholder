@@ -37,7 +37,7 @@
 
 			if ( query.pages[ 0 ].missing ) {
 				title = mw.Title.newFromUserInput( titleRaw, 0 );
-				document.location.href = title.getUrl( { action: 'edit' } );
+				document.location.href = mw.config.get( 'wgServer' ) + title.getUrl( { action: 'edit' } );
 				deferred.resolve();
 			} else {
 				deferred.reject( new OO.ui.Error(
@@ -70,14 +70,19 @@
 		}
 		OO.inheritClass( NewEmptyArticleDialog, OO.ui.ProcessDialog );
 
-		NewEmptyArticleDialog.static.title = mw.message( 'articleplaceholder-abouttopic-create-article' ).text();
+		NewEmptyArticleDialog.static.title =
+			mw.msg( 'articleplaceholder-abouttopic-create-article-title' );
+
 		NewEmptyArticleDialog.static.actions = [
 			{
 				action: 'save',
-				label: mw.message( 'articleplaceholder-abouttopic-create-article-submit-button' ).text(),
+				label: mw.msg( 'articleplaceholder-abouttopic-create-article-submit-button' ),
 				flags: [ 'primary', 'progressive' ]
 			},
-			{ label: mw.message( 'cancel' ).text(), flags: 'safe' }
+			{
+				label: mw.msg( 'cancel' ),
+				flags: 'safe'
+			}
 		];
 
 		// Customize the initialize() function: This is where to add content to the dialog body and set up event handlers.
