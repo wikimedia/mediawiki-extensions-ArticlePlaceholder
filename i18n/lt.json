@@ -12,6 +12,7 @@
 	"articleplaceholder-abouttopic-entityid": "Prašome įvesti elemento ID, pvz., Q12345",
 	"articleplaceholder-abouttopic-submit": "ruošti",
 	"articleplaceholder-abouttopic-no-entity-error": "Šis elemento ID neteisingas.",
+	"articleplaceholder-abouttopic-create-article-title": "Kurti naują straipsnis",
 	"articleplaceholder-abouttopic-create-article-label": "Straipsnio pavadinimas",
 	"articleplaceholder-abouttopic-create-article-mandatory": "Straipsnio pavadinimas yra privalomas.",
 	"articleplaceholder-abouttopic-create-article-button": "Sukurti straipsnį",

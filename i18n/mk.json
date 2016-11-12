@@ -11,7 +11,7 @@
 	"articleplaceholder-abouttopic-entityid": "Внесете назнака на предметот, како на пр. Q12345",
 	"articleplaceholder-abouttopic-submit": "изработи",
 	"articleplaceholder-abouttopic-no-entity-error": "Ова не е важечка назнака на предметот.",
-	"articleplaceholder-abouttopic-create-article": "Создај нова статија со овој наслов",
+	"articleplaceholder-abouttopic-create-article-title": "Создајте нова статија",
 	"articleplaceholder-abouttopic-create-article-label": "Наслов на статијата",
 	"articleplaceholder-abouttopic-create-article-mandatory": "Насловот на статијата е задолжителен.",
 	"articleplaceholder-abouttopic-create-article-button": "Создај статија",

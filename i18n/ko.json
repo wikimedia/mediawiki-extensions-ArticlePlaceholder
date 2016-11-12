@@ -11,7 +11,7 @@
 	"articleplaceholder-abouttopic-intro": "이 특수 문서는 {{WBREPONAME}}으로 특정한 주제에 대한 문서를 생성합니다.",
 	"articleplaceholder-abouttopic-entityid": "Q12345와 같은 항목 ID를 입력해 주십시오.",
 	"articleplaceholder-abouttopic-no-entity-error": "유효한 항목 ID가 아닙니다.",
-	"articleplaceholder-abouttopic-create-article": "이 제목으로 새 문서 만들기",
+	"articleplaceholder-abouttopic-create-article-title": "새 문서 만들기",
 	"articleplaceholder-abouttopic-create-article-button": "새 문서 만들기",
 	"articleplaceholder-abouttopic-create-article-submit-button": "제출",
 	"articleplaceholder-abouttopic-article-exists-error": "이 제목으로 된 문서가 이미 존재합니다",
