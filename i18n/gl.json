@@ -11,7 +11,7 @@
 	"articleplaceholder-abouttopic-entityid": "Por favor, indique un identificador de elemento como por exemplo Q12345",
 	"articleplaceholder-abouttopic-submit": "crear",
 	"articleplaceholder-abouttopic-no-entity-error": "Este identificador de elemento non é válido.",
-	"articleplaceholder-abouttopic-create-article": "Crear un artigo novo co título",
+	"articleplaceholder-abouttopic-create-article-title": "Crear un novo artigo",
 	"articleplaceholder-abouttopic-create-article-label": "Título do artigo",
 	"articleplaceholder-abouttopic-create-article-mandatory": "O título do artigo é obrigatorio.",
 	"articleplaceholder-abouttopic-create-article-button": "Crear un artigo",

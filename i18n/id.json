@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Gombang",
-			"Beeyan"
+			"Beeyan",
+			"Presidenvolksraad"
 		]
 	},
 	"articleplaceholder-desc": "Menyediakan sebuah laman khusus dengan informasi {{WBREPONAME}} tentang topik tertentu beserta undangan untuk membuat artikel untuk topik tersebut",
@@ -11,7 +12,7 @@
 	"articleplaceholder-abouttopic-entityid": "Masukkan sebuah ID item, misalnya Q12345",
 	"articleplaceholder-abouttopic-submit": "konsep",
 	"articleplaceholder-abouttopic-no-entity-error": "Ini bukan ID item yang sah.",
-	"articleplaceholder-abouttopic-create-article": "Buat artikel baru dengan judul yang diberikan",
+	"articleplaceholder-abouttopic-create-article-title": "Buat artikel baru",
 	"articleplaceholder-abouttopic-create-article-label": "Judul artikel",
 	"articleplaceholder-abouttopic-create-article-mandatory": "Judul artikel wajib diberikan.",
 	"articleplaceholder-abouttopic-create-article-button": "Buat artikel",

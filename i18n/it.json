@@ -11,7 +11,7 @@
 	"articleplaceholder-abouttopic-entityid": "Inserisci un ID elemento come Q12345",
 	"articleplaceholder-abouttopic-submit": "crea",
 	"articleplaceholder-abouttopic-no-entity-error": "Questo non è un ID elemento valido.",
-	"articleplaceholder-abouttopic-create-article": "Crea una nuova voce con il titolo",
+	"articleplaceholder-abouttopic-create-article-title": "Crea una nuova voce",
 	"articleplaceholder-abouttopic-create-article-label": "Titolo della voce",
 	"articleplaceholder-abouttopic-create-article-mandatory": "Il titolo della voce è obbligatorio.",
 	"articleplaceholder-abouttopic-create-article-button": "Crea una voce",
