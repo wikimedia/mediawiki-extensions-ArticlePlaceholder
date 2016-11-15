@@ -11,7 +11,7 @@
 	"articleplaceholder-abouttopic-entityid": "Escribe un ID d'elementu como Q12345",
 	"articleplaceholder-abouttopic-submit": "crear",
 	"articleplaceholder-abouttopic-no-entity-error": "Esta nun ye una id d'elementu válida.",
-	"articleplaceholder-abouttopic-create-article": "Crear un artículu nuevu col títulu",
+	"articleplaceholder-abouttopic-create-article-title": "Crear un artículu nuevu",
 	"articleplaceholder-abouttopic-create-article-label": "Títulu d'artículu",
 	"articleplaceholder-abouttopic-create-article-mandatory": "El títulu del artículu ye obligatoriu.",
 	"articleplaceholder-abouttopic-create-article-button": "Crear un artículu",
