@@ -1,12 +1,14 @@
 /**
  * @licence GNU GPL v2+
- *
  * @author Lucie-Aimée Kaffee
+ * @author Florian Schmidt
  */
 
-( function ( $, mw, OO ) {
+( function ( $, mw, OO, module ) {
+	'use strict';
 
-	var titleInput;
+	var titleInput,
+		CreateArticleDialog = module.exports.CreateArticleDialog;
 
 	/**
 	 * @return {jQuery.Promise}
@@ -63,52 +65,18 @@
 			autosize: true
 		} );
 
-		dialogContent = titleInput.$element;
+		dialogContent = new OO.ui.PanelLayout( { $: $, padded: true, expanded: false } );
+		dialogContent.$element.append( titleInput.$element );
 
-		function NewEmptyArticleDialog( config ) {
-			NewEmptyArticleDialog.super.call( this, config ); // jshint:ignore
-		}
-		OO.inheritClass( NewEmptyArticleDialog, OO.ui.ProcessDialog );
+		titleInput.on( 'change', function () {
+			$( '#mw-article-placeholder-error' ).empty();
+		} );
 
-		NewEmptyArticleDialog.static.title =
-			mw.msg( 'articleplaceholder-abouttopic-create-article-title' );
-
-		NewEmptyArticleDialog.static.actions = [
-			{
-				action: 'save',
-				label: mw.msg( 'articleplaceholder-abouttopic-create-article-submit-button' ),
-				flags: [ 'primary', 'progressive' ]
-			},
-			{
-				label: mw.msg( 'cancel' ),
-				flags: 'safe'
-			}
-		];
-
-		// Customize the initialize() function: This is where to add content to the dialog body and set up event handlers.
-		NewEmptyArticleDialog.prototype.initialize = function () {
-			NewEmptyArticleDialog.super.prototype.initialize.call( this ); // jshint:ignore
-			this.content = new OO.ui.PanelLayout( { $: this.$, padded: true, expanded: false } );
-			this.content.$element.append( dialogContent );
-			this.$body.append( this.content.$element );
-		};
-
-		NewEmptyArticleDialog.prototype.getBodyHeight = function () {
-			return this.content.$element.outerHeight( true ) * 2;
-		};
-
-		NewEmptyArticleDialog.prototype.getActionProcess = function ( action ) {
-			if ( action ) {
-				return new OO.ui.Process( function () {
-					return onSubmit();
-				}, this );
-			}
-			return NewEmptyArticleDialog.parent.prototype.getActionProcess.call( this, action );
-		};
-
-		dialog = new NewEmptyArticleDialog( {
+		dialog = new CreateArticleDialog( {
 			size: 'medium'
 		} );
+		dialog.setContent( dialogContent.$element );
+		dialog.onSubmit = onSubmit;
 
 		titleInput.on( 'enter', function () {
 			dialog.executeAction( 'save' );
@@ -129,4 +97,4 @@
 
 	mw.hook( 'wikipage.content' ).add( onWikipageContent );
 
-} )( jQuery, mediaWiki, OO );
+} )( jQuery, mediaWiki, OO, module );

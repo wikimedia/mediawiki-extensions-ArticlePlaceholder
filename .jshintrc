@@ -17,6 +17,7 @@
 		"$": false,
 		"jQuery": false,
 		"mediaWiki": false,
+		"module": true,
 		"OO": false
 	}
 }

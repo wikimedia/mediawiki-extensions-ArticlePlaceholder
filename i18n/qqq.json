@@ -18,6 +18,8 @@
 	"articleplaceholder-abouttopic-create-article-label": "Label of the article page title input in the 'Create article' popup.",
 	"articleplaceholder-abouttopic-create-article-mandatory": "Used as an error message in the 'Create article', if the article title wasn't supplied.",
 	"articleplaceholder-abouttopic-create-article-button": "Label on create article button",
+	"articleplaceholder-abouttopic-translate-article-label": "Label of the source language input in the 'Translate article' popup.",
+	"articleplaceholder-abouttopic-translate-article-button": "Label of the Translate button to start translating the article/item.",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Label on submit button\n{{Identical|Submit}}",
 	"articleplaceholder-abouttopic-article-exists-error": "Error to indicate the given article title already exists",
 	"articleplaceholder-abouttopic-lua-entity": "Header of the entity section\n{{Identical|Entity}}",
