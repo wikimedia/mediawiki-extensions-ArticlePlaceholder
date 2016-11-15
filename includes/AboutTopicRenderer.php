@@ -127,6 +127,7 @@ class AboutTopicRenderer {
 
 		$contents = new OOUI\ButtonWidget( [
 			'id' => 'new-article-button',
+			'flags' => [ 'primary', 'progressive' ],
 			'infusable' => true,
 			'label' => wfMessage( 'articleplaceholder-abouttopic-create-article-button' )->text(),
 			'href' => SpecialPage::getTitleFor( 'CreateTopicPage', $label )

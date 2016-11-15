@@ -10,7 +10,7 @@
 }
 
 #bodyContent {
-  padding-top: 3em;
+  padding-bottom: 3em;
 }
 
 /* Needs a selector that's stronger than ".mw-body h2" */
@@ -21,8 +21,8 @@
 
 .mw-articleplaceholder-createarticle-buttons {
   position: absolute;
-  top: 0px;
-  left: 10px;
+  bottom: 0px;
+  right: 10px;
 }
 
 .articleplaceholder-sidebar {
