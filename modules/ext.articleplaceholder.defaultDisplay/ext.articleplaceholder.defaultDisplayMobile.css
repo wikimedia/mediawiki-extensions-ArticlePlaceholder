@@ -1,16 +1,6 @@
-#bodyContent {
-  padding-right: 0px;
-  margin-top: 10%;
-}
-
 .articleplaceholder-sidebar, .articleplaceholder-statementgroup {
   float: none;
   position: static;
-}
-
-.mw-articleplaceholder-createarticle-buttons {
-  top: 100px;
-  margin: 0 auto;
 }
 
 .articleplaceholder-statementgroup {

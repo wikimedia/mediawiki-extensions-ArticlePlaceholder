@@ -172,7 +172,6 @@ class AboutTopicRenderer {
 	 * @param OutputPage $output
 	 */
 	private function showTitle( $label, OutputPage $output ) {
-		$output->setTitle( Title::newFromText( $label ) );
 		$output->setPageTitle( htmlspecialchars( $label ) );
 	}
 

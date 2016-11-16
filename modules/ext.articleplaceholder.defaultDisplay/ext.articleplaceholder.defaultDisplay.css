@@ -9,10 +9,6 @@
   overflow: auto;
 }
 
-#bodyContent {
-  padding-bottom: 3em;
-}
-
 /* Needs a selector that's stronger than ".mw-body h2" */
 .mw-body .articleplaceholder-statementgroup h2,
 .mw-body .articleplaceholder-identifierlist h2 {
@@ -20,9 +16,8 @@
 }
 
 .mw-articleplaceholder-createarticle-buttons {
-  position: absolute;
-  bottom: 0px;
-  right: 10px;
+  margin-top: 2em;
+  text-align: right;
 }
 
 .articleplaceholder-sidebar {
