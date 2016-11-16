@@ -17,6 +17,7 @@
 	"articleplaceholder-abouttopic-create-article-label": "Название статьи",
 	"articleplaceholder-abouttopic-create-article-mandatory": "Название статьи указывать обязательно.",
 	"articleplaceholder-abouttopic-create-article-button": "Создать статью",
+	"articleplaceholder-abouttopic-translate-article-label": "Исходный язык:",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Отправить",
 	"articleplaceholder-abouttopic-article-exists-error": "Статья с таким названием уже существует.",
 	"articleplaceholder-abouttopic-lua-entity": "Сущность",

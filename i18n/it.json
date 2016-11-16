@@ -15,6 +15,8 @@
 	"articleplaceholder-abouttopic-create-article-label": "Titolo della voce",
 	"articleplaceholder-abouttopic-create-article-mandatory": "Il titolo della voce è obbligatorio.",
 	"articleplaceholder-abouttopic-create-article-button": "Crea una voce",
+	"articleplaceholder-abouttopic-translate-article-label": "Lingua di partenza:",
+	"articleplaceholder-abouttopic-translate-article-button": "Traduci voce",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Invia",
 	"articleplaceholder-abouttopic-article-exists-error": "Una voce con questo nome esiste già",
 	"articleplaceholder-abouttopic-lua-entity": "Entità",

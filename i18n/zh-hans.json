@@ -15,6 +15,8 @@
 	"articleplaceholder-abouttopic-create-article-label": "条目标题",
 	"articleplaceholder-abouttopic-create-article-mandatory": "条目的标题是强制的。",
 	"articleplaceholder-abouttopic-create-article-button": "创建条目",
+	"articleplaceholder-abouttopic-translate-article-label": "源语言：",
+	"articleplaceholder-abouttopic-translate-article-button": "翻译条目",
 	"articleplaceholder-abouttopic-create-article-submit-button": "提交",
 	"articleplaceholder-abouttopic-article-exists-error": "已存在使用此名称的条目",
 	"articleplaceholder-abouttopic-lua-entity": "实体",

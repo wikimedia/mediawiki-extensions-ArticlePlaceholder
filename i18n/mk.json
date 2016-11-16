@@ -15,6 +15,8 @@
 	"articleplaceholder-abouttopic-create-article-label": "Наслов на статијата",
 	"articleplaceholder-abouttopic-create-article-mandatory": "Насловот на статијата е задолжителен.",
 	"articleplaceholder-abouttopic-create-article-button": "Создај статија",
+	"articleplaceholder-abouttopic-translate-article-label": "Изворен јазик:",
+	"articleplaceholder-abouttopic-translate-article-button": "Преведи статија",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Поднеси",
 	"articleplaceholder-abouttopic-article-exists-error": "Веќе постои статија со тоа име.",
 	"articleplaceholder-abouttopic-lua-entity": "Единица",
