@@ -17,6 +17,8 @@
 	"articleplaceholder-abouttopic-create-article-label": "Titre de l’article",
 	"articleplaceholder-abouttopic-create-article-mandatory": "Le titre de l’article est obligatoire.",
 	"articleplaceholder-abouttopic-create-article-button": "Créer un article",
+	"articleplaceholder-abouttopic-translate-article-label": "Langue source :",
+	"articleplaceholder-abouttopic-translate-article-button": "Traduire l’article",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Soumettre",
 	"articleplaceholder-abouttopic-article-exists-error": "Un article avec ce nom existe déjà",
 	"articleplaceholder-abouttopic-lua-entity": "Entité",

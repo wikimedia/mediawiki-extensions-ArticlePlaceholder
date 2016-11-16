@@ -2,15 +2,18 @@
 	"@metadata": {
 		"authors": [
 			"Stryn",
-			"01miki10"
+			"01miki10",
+			"Valtlait"
 		]
 	},
 	"createtopicpage": "Luo sivu",
 	"articleplaceholder-abouttopic-submit": "luonnos",
-	"articleplaceholder-abouttopic-create-article": "Luo uusi artikkeli otsikolla",
+	"articleplaceholder-abouttopic-create-article-title": "Luo uusi artikkeli",
 	"articleplaceholder-abouttopic-create-article-label": "Artikkelin otsikko",
 	"articleplaceholder-abouttopic-create-article-mandatory": "Artikkelin otsikko on pakollinen.",
 	"articleplaceholder-abouttopic-create-article-button": "Luo artikkeli",
+	"articleplaceholder-abouttopic-translate-article-label": "Lähdekieli:",
+	"articleplaceholder-abouttopic-translate-article-button": "Käännä artikkeli",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Lähetä",
 	"articleplaceholder-abouttopic-article-exists-error": "Artikkeli löytyy jo tällä nimellä",
 	"articleplaceholder-abouttopic-lua-entity": "Aihe",
