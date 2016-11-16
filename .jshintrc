@@ -13,8 +13,6 @@
 	"browser": true,
 
 	"globals": {
-		"mw": false,
-		"$": false,
 		"jQuery": false,
 		"mediaWiki": false,
 		"module": true,
