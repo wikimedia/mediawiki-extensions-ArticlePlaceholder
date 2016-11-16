@@ -82,8 +82,8 @@ class ItemNotabilityFilter {
 			$itemIdSerialization = $itemId->getSerialization();
 
 			if ( $statementClaimsCount[$itemIdSerialization]['wb-claims'] >= self::MIN_STATEMENTS
-				&& $statementClaimsCount[$itemIdSerialization]['wb-sitelinks'] >= self::MIN_SITELINKS ) {
-
+				&& $statementClaimsCount[$itemIdSerialization]['wb-sitelinks'] >= self::MIN_SITELINKS
+			) {
 				$numericItemIds[] = $itemId->getNumericId();
 			}
 		}
