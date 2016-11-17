@@ -15,6 +15,8 @@
 	"articleplaceholder-abouttopic-create-article-label": "Títulu d'artículu",
 	"articleplaceholder-abouttopic-create-article-mandatory": "El títulu del artículu ye obligatoriu.",
 	"articleplaceholder-abouttopic-create-article-button": "Crear un artículu",
+	"articleplaceholder-abouttopic-translate-article-label": "Llingua d'orixe:",
+	"articleplaceholder-abouttopic-translate-article-button": "Traducir artículu",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Unviar",
 	"articleplaceholder-abouttopic-article-exists-error": "Yá esiste un artículu con esi nome.",
 	"articleplaceholder-abouttopic-lua-entity": "Entidá",
