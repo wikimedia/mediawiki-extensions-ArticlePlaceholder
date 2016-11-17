@@ -72,9 +72,7 @@
 			$( '#mw-article-placeholder-error' ).empty();
 		} );
 
-		dialog = new CreateArticleDialog( {
-			size: 'medium'
-		} );
+		dialog = new CreateArticleDialog();
 		dialog.setContent( dialogContent.$element );
 		dialog.onSubmit = onSubmit;
 
@@ -88,7 +86,7 @@
 		// Add the window to the window manager using the addWindows() method.
 		windowManager.addWindows( [ dialog ] );
 
-		button = OO.ui.infuse( 'new-empty-article-button' );
+		button = OO.ui.infuse( 'new-article-button' );
 		button.on( 'click', function () {
 			mw.track( 'counter.MediaWiki.wikibase.articleplaceholder.button.create-article' );
 			windowManager.openWindow( dialog );

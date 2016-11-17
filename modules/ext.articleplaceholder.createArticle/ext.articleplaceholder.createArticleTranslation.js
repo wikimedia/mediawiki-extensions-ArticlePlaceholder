@@ -64,9 +64,7 @@
 	}
 
 	function createDialog() {
-		dialog = new CreateArticleDialog( {
-			size: 'medium'
-		} );
+		dialog = new CreateArticleDialog();
 
 		dialog.setContent( createDialogContent().$element );
 		dialog.onSubmit = onSubmit;

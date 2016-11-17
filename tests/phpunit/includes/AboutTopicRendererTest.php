@@ -140,7 +140,7 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 	 */
 	public function testCreateArticleButton() {
 		$output = $this->getInstanceOutput( new ItemId( 'Q123' ), $this->getTitleFactory( true ) );
-		$this->assertContains( 'new-empty-article-button', $output->getHTML() );
+		$this->assertContains( 'new-article-button', $output->getHTML() );
 	}
 
 	/**
@@ -149,7 +149,7 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 	 */
 	public function testNoCreateArticleButton_ifUserNotAllowedToCreatePage() {
 		$output = $this->getInstanceOutput( new ItemId( 'Q123' ), $this->getTitleFactory( false ) );
-		$this->assertNotContains( 'new-empty-article-button', $output->getHTML() );
+		$this->assertNotContains( 'new-article-button', $output->getHTML() );
 	}
 
 	/**

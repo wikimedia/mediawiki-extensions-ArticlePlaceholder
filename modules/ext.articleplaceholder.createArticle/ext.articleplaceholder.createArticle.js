@@ -9,8 +9,10 @@
 	/**
 	 * @class
 	 */
-	function CreateArticleDialog( config ) {
-		CreateArticleDialog.super.call( this, config ); // jshint:ignore
+	function CreateArticleDialog() {
+		CreateArticleDialog.super.call( this, {
+			size: 'medium'
+		} ); // jshint:ignore
 	}
 
 	OO.inheritClass( CreateArticleDialog, OO.ui.ProcessDialog );

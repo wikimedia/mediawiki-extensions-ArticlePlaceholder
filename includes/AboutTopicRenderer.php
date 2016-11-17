@@ -125,8 +125,8 @@ class AboutTopicRenderer {
 		$output->addModules( 'ext.articleplaceholder.createArticle' );
 		$output->addJsConfigVars( 'apLabel', $label );
 
-		$buttons = new OOUI\ButtonWidget( [
-			'id' => 'new-empty-article-button',
+		$contents = new OOUI\ButtonWidget( [
+			'id' => 'new-article-button',
 			'infusable' => true,
 			'label' => wfMessage( 'articleplaceholder-abouttopic-create-article-button' )->text(),
 			'href' => SpecialPage::getTitleFor( 'CreateTopicPage', $label )
@@ -138,7 +138,7 @@ class AboutTopicRenderer {
 		// $wikibaseClient->getSettings()->getSetting( 'siteGlobalID' ) should be injected here!
 		if ( ExtensionRegistry::getInstance()->isLoaded( 'ContentTranslation' ) && $siteLinks ) {
 			$output->addModules( 'ext.articleplaceholder.translateArticle' );
-			$buttons .= new OOUI\ButtonWidget( [
+			$contents .= new OOUI\ButtonWidget( [
 				'id' => 'translate-article-button',
 				'infusable' => true,
 				'label' => wfMessage( 'articleplaceholder-abouttopic-translate-article-button' )->text(),
@@ -149,7 +149,7 @@ class AboutTopicRenderer {
 		$output->addHTML( Html::rawElement(
 			'div',
 			[ 'class' => 'mw-articleplaceholder-createarticle-buttons' ],
-			$buttons
+			$contents
 		) );
 	}
 
