@@ -25,7 +25,7 @@
 			"position": "bottom",
 			"scripts": [
 				"ext.articleplaceholder.createArticle/ext.articleplaceholder.createArticle.js",
-				"ext.articleplaceholder.createArticle/ext.articleplaceholder.newEmptyArticle.js"
+				"ext.articleplaceholder.createArticle/ext.articleplaceholder.newArticle.js"
 			],
 			"styles": "ext.articleplaceholder.createArticle/ext.articleplaceholder.createArticle.css",
 			"dependencies": [
@@ -44,7 +44,7 @@
 		},
 		"ext.articleplaceholder.translateArticle": {
 			"position": "bottom",
-			"scripts": "ext.articleplaceholder.translateArticle/ext.articleplaceholder.translateArticle.js",
+			"scripts": "ext.articleplaceholder.createArticle/ext.articleplaceholder.createArticleTranslation.js",
 			"dependencies": [
 				"ext.articleplaceholder.createArticle"
 			],
