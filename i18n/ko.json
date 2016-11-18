@@ -13,6 +13,8 @@
 	"articleplaceholder-abouttopic-no-entity-error": "유효한 항목 ID가 아닙니다.",
 	"articleplaceholder-abouttopic-create-article-title": "새 문서 만들기",
 	"articleplaceholder-abouttopic-create-article-button": "새 문서 만들기",
+	"articleplaceholder-abouttopic-translate-article-label": "원본 언어:",
+	"articleplaceholder-abouttopic-translate-article-button": "문서 번역",
 	"articleplaceholder-abouttopic-create-article-submit-button": "제출",
 	"articleplaceholder-abouttopic-article-exists-error": "이 제목으로 된 문서가 이미 존재합니다",
 	"articleplaceholder-abouttopic-lua-entity": "개체",

@@ -5,5 +5,7 @@
 		]
 	},
 	"createtopicpage": "পাতা তৈরি করুন",
+	"articleplaceholder-abouttopic-translate-article-label": "উৎস ভাষা:",
+	"articleplaceholder-abouttopic-translate-article-button": "নিবন্ধ অনুবাদ করুন",
 	"articleplaceholder-createpage-title": "$1 তৈরি করুন"
 }
