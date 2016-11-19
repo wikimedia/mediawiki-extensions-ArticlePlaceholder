@@ -3,7 +3,8 @@
 		"authors": [
 			"Okras",
 			"Laboramus",
-			"Kareyac"
+			"Kareyac",
+			"Семён"
 		]
 	},
 	"createtopicpage": "Создать страницу",
@@ -18,7 +19,7 @@
 	"articleplaceholder-abouttopic-create-article-mandatory": "Название статьи указывать обязательно.",
 	"articleplaceholder-abouttopic-create-article-button": "Создать статью",
 	"articleplaceholder-abouttopic-translate-article-label": "Исходный язык:",
-	"articleplaceholder-abouttopic-translate-article-button": "Перевод статьи",
+	"articleplaceholder-abouttopic-translate-article-button": "Перевести статью",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Отправить",
 	"articleplaceholder-abouttopic-article-exists-error": "Статья с таким названием уже существует.",
 	"articleplaceholder-abouttopic-lua-entity": "Сущность",
