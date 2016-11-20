@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Minh Nguyen"
+			"Minh Nguyen",
+			"Yue Ling"
 		]
 	},
 	"createtopicpage": "Tạo trang",
@@ -11,10 +12,10 @@
 	"articleplaceholder-abouttopic-entityid": "Xin hãy nhập mã số mục dưới dạng Q12345",
 	"articleplaceholder-abouttopic-submit": "xây dựng",
 	"articleplaceholder-abouttopic-no-entity-error": "Mã số mục này không hợp lệ.",
-	"articleplaceholder-abouttopic-create-article": "Tạo bài mới với tên",
 	"articleplaceholder-abouttopic-create-article-label": "Tên bài",
 	"articleplaceholder-abouttopic-create-article-mandatory": "Tên bài là bắt buộc.",
 	"articleplaceholder-abouttopic-create-article-button": "Tạo bài mới",
+	"articleplaceholder-abouttopic-translate-article-button": "Dịch bài viết",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Lưu",
 	"articleplaceholder-abouttopic-article-exists-error": "Đã có bài với tên này",
 	"articleplaceholder-abouttopic-lua-entity": "Thực thể",
