@@ -2,7 +2,7 @@
 
 namespace ArticlePlaceholder;
 
-use DatabaseBase;
+use Database;
 use ResultWrapper;
 use Wikibase\Client\Store\Sql\ConsistentReadConnectionManager;
 use Wikibase\DataModel\Entity\ItemId;
@@ -115,12 +115,12 @@ class ItemNotabilityFilter {
 	}
 
 	/**
-	 * @param DatabaseBase $dbr
+	 * @param Database $dbr
 	 * @param ItemId[] $itemIds
 	 *
 	 * @return ResultWrapper
 	 */
-	private function selectPagePropsPage( DatabaseBase $dbr, array $itemIds ) {
+	private function selectPagePropsPage( Database $dbr, array $itemIds ) {
 		$entityNamespace = $this->entityNamespaceLookup->getEntityNamespace( 'item' );
 
 		if ( !is_int( $entityNamespace ) ) {
