@@ -4,10 +4,10 @@ namespace ArticlePlaceholder;
 
 use Database;
 use ResultWrapper;
-use Wikibase\Client\Store\Sql\ConsistentReadConnectionManager;
 use Wikibase\DataModel\Entity\ItemId;
 use Wikibase\Lib\Store\EntityNamespaceLookup;
 use Wikibase\Lib\Store\SiteLinkLookup;
+use Wikimedia\Rdbms\SessionConsistentConnectionManager;
 
 /**
  * Filter a list of items by article placeholder notability.
@@ -30,7 +30,7 @@ class ItemNotabilityFilter {
 	const MIN_SITELINKS = 2;
 
 	/**
-	 * @var ConsistentReadConnectionManager
+	 * @var SessionConsistentConnectionManager
 	 */
 	private $connectionManager;
 
@@ -50,13 +50,13 @@ class ItemNotabilityFilter {
 	private $siteGlobalId;
 
 	/**
-	 * @param ConsistentReadConnectionManager $connectionManager
+	 * @param SessionConsistentConnectionManager $connectionManager
 	 * @param EntityNamespaceLookup $entityNamespaceLookup
 	 * @param SiteLinkLookup $siteLinkLookup
 	 * @param string $siteGlobalId
 	 */
 	public function __construct(
-		ConsistentReadConnectionManager $connectionManager,
+		SessionConsistentConnectionManager $connectionManager,
 		EntityNamespaceLookup $entityNamespaceLookup,
 		SiteLinkLookup $siteLinkLookup,
 		$siteGlobalId

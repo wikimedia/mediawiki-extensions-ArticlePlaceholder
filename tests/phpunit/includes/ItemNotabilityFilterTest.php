@@ -5,7 +5,6 @@ namespace ArticlePlaceholder\Tests;
 use ArticlePlaceholder\ItemNotabilityFilter;
 use DataValues\StringValue;
 use MediaWikiTestCase;
-use Wikibase\Client\Store\Sql\ConsistentReadConnectionManager;
 use Wikibase\DataModel\Entity\Item;
 use Wikibase\DataModel\Entity\ItemId;
 use Wikibase\DataModel\Entity\PropertyId;
@@ -16,6 +15,7 @@ use Wikibase\DataModel\Statement\Statement;
 use Wikibase\DataModel\Statement\StatementList;
 use Wikibase\DataModel\Term\Fingerprint;
 use Wikibase\Repo\WikibaseRepo;
+use Wikimedia\Rdbms\SessionConsistentConnectionManager;
 
 /**
  * @group Database
@@ -57,7 +57,7 @@ class ItemNotabilityFilterTest extends MediaWikiTestCase {
 		$wikibaseRepo = WikibaseRepo::getDefaultInstance();
 
 		return new ItemNotabilityFilter(
-			new ConsistentReadConnectionManager( wfGetLB() ),
+			new SessionConsistentConnectionManager( wfGetLB() ),
 			$wikibaseRepo->getEntityNamespaceLookup(),
 			$wikibaseRepo->getStore()->newSiteLinkStore(),
 			'enwiki'

@@ -8,11 +8,11 @@ use SpecialPage;
 use Liuggio\StatsdClient\Factory\StatsdDataFactory;
 use MediaWiki\MediaWikiServices;
 use Wikibase\Client\WikibaseClient;
-use Wikibase\Client\Store\Sql\ConsistentReadConnectionManager;
 use Wikibase\Lib\Interactors\TermIndexSearchInteractor;
 use Wikibase\Lib\Interactors\TermSearchResult;
 use Wikibase\TermIndex;
 use Wikibase\TermIndexEntry;
+use Wikimedia\Rdbms\SessionConsistentConnectionManager;
 
 /**
  * Adding results from ArticlePlaceholder to search
@@ -67,7 +67,7 @@ class SearchHookHandler {
 		$repoDB = $wikibaseClient->getSettings()->getSetting( 'repoDatabase' );
 
 		$itemNotabilityFilter = new ItemNotabilityFilter(
-			new ConsistentReadConnectionManager( wfGetLB( $repoDB ), $repoDB ),
+			new SessionConsistentConnectionManager( wfGetLB( $repoDB ), $repoDB ),
 			$wikibaseClient->getEntityNamespaceLookup(),
 			$wikibaseClient->getStore()->getSiteLinkLookup(),
 			$wikibaseClient->getSettings()->getSetting( 'siteGlobalID' )
