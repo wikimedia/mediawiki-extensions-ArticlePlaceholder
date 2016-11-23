@@ -205,7 +205,7 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 
 		$siteLinkLookup->expects( $this->any() )
 			->method( 'getSiteLinksForItem' )
-			->with( ItemId::newFromNumber( '123' ) )
+			->with( new ItemId( 'Q123' ) )
 			->will(
 				$this->returnValue( [
 					new SiteLink( 'eowiki', 'Unicorn' ),
