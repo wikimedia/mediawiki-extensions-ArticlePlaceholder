@@ -27,7 +27,7 @@ class SpecialAboutTopic extends SpecialPage {
 		$settings = $wikibaseClient->getSettings();
 
 		// TODO: Remove the feature flag when not needed any more!
-		$settings->setSetting( 'enableStatementsParserFunction', true );
+		$settings->setSetting( 'enableLuaEntityFormatStatements', true );
 
 		return new self(
 			new AboutTopicRenderer(
