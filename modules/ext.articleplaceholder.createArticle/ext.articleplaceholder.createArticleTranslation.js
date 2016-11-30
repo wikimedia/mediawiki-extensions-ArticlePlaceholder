@@ -24,10 +24,16 @@
 	CreateArticleTranslationDialog.prototype.languageInput = null;
 
 	/**
-	 * @property {OO.ui.CheckboxInputWidget}
+	 * @property {OO.ui.RadioOptionWidget}
 	 * @protected
 	 */
-	CreateArticleTranslationDialog.prototype.translateCheckbox = null;
+	CreateArticleTranslationDialog.prototype.translateOption = null;
+
+	/**
+	 * @property {OO.ui.RadioOptionWidget}
+	 * @protected
+	 */
+	CreateArticleTranslationDialog.prototype.emptyOption = null;
 
 	/**
 	 * @override
@@ -37,7 +43,7 @@
 		var self = this,
 			deferred = $.Deferred();
 
-		if ( !this.translateCheckbox.isSelected() ) {
+		if ( !this.translateOption.isSelected() ) {
 			return CreateArticleTranslationDialog.super.prototype.onSubmit.apply( this );
 		}
 
@@ -62,10 +68,15 @@
 	 * @return {OO.ui.DropdownInputWidget}
 	 */
 	CreateArticleTranslationDialog.prototype.createLanguageInput = function () {
+		var self = this;
+
 		this.languageInput = new OO.ui.DropdownInputWidget( {
 			text: mw.msg( 'articleplaceholder-abouttopic-translate-article-label' ),
-			options: mw.config.get( 'apLanguages' ),
-			disabled: true
+			options: mw.config.get( 'apLanguages' )
+		} );
+
+		this.languageInput.$element.find( '*' ).on( 'click', function () {
+			self.toggleTranslateArticle( true );
 		} );
 
 		return this.languageInput;
@@ -73,41 +84,64 @@
 
 	/**
 	 * @protected
-	 * @return {OO.ui.CheckboxInputWidget}
 	 */
-	CreateArticleTranslationDialog.prototype.createTranslateCheckbox = function () {
+	CreateArticleTranslationDialog.prototype.toggleTranslateArticle = function ( translate ) {
+		this.emptyOption.setSelected( !translate );
+		this.translateOption.setSelected( translate );
+	};
+
+	/**
+	 * @protected
+	 */
+	CreateArticleTranslationDialog.prototype.createRadioOptions = function () {
 		var self = this;
 
-		this.translateCheckbox = new OO.ui.CheckboxInputWidget()
-		.on( 'change', function ( selected ) {
-			self.languageInput.setDisabled( !selected );
+		this.translateOption = new OO.ui.RadioOptionWidget( {
+			label: mw.msg( 'articleplaceholder-abouttopic-translate-article-button' )
+		} );
+		self.translateOption.setSelected( true );
+
+		this.emptyOption = new OO.ui.RadioOptionWidget( {
+			label: mw.msg( 'articleplaceholder-abouttopic-create-emtpy-article-button' )
 		} );
 
-		return this.translateCheckbox;
+		this.translateOption.$element.click( function () {
+			self.toggleTranslateArticle( true );
+		} );
+
+		this.emptyOption.$element.click( function () {
+			self.toggleTranslateArticle( false );
+		} );
 	};
 
 	/**
 	 * @protected
 	 * @return {jQuery}
 	 */
-	CreateArticleTranslationDialog.prototype.createTranslateSection = function () {
-		var msg = mw.msg( 'articleplaceholder-abouttopic-translate-article-button' );
+	CreateArticleTranslationDialog.prototype.createRadioSelect = function () {
+		this.createRadioOptions();
+		this.createLanguageInput();
 
-		return $( '<div>' ).append(
-			new OO.ui.FieldLayout(
-				this.createTranslateCheckbox(),
-				{ label: msg, align: 'inline' }
-			).$element,
-			this.createLanguageInput().$element
-		);
+		return new OO.ui.StackLayout( {
+			items: [
+					this.translateOption,
+					this.languageInput,
+					this.emptyOption
+			],
+			continuous: true,
+			scrollable: false,
+			classes: [
+				'create-options'
+			]
+		} );
 	};
 
 	/**
 	 * @protected
 	 */
 	CreateArticleTranslationDialog.prototype.createContentElements = function () {
-		this.addElement( this.createTranslateSection() );
 		this.addElement( this.createTitleInput().$element );
+		this.addElement( this.createRadioSelect().$element );
 	};
 
 	module.exports.CreateArticleTranslationDialog = CreateArticleTranslationDialog;
