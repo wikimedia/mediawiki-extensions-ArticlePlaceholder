@@ -79,7 +79,6 @@ class SearchHookHandlerTest extends MediaWikiTestCase {
 			'termLanguage' => $languageCode,
 			'termType' => $termType,
 			'entityId' => $entityId,
-			'entityType' => $entityId->getEntityType(),
 		] );
 	}
 
