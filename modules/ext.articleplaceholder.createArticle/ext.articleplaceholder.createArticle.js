@@ -13,7 +13,7 @@
 	function CreateArticleDialog() {
 		CreateArticleDialog.super.call( this, {
 			size: 'medium'
-		} ); // jshint:ignore
+		} );
 		this.createContentLayout();
 	}
 
@@ -165,8 +165,10 @@
 	 * @return {jQuery.Promise}
 	 */
 	CreateArticleDialog.prototype.onSubmit = function () {
-		var title = this.titleInput.getValue(),
-			deferred = $.Deferred();
+		var self = this,
+			title = this.titleInput.getValue(),
+			deferred = $.Deferred(),
+			url = null;
 
 		new mw.Api().get( {
 			formatversion: 2,
@@ -182,9 +184,10 @@
 
 			if ( query.pages[ 0 ].missing ) {
 				title = mw.Title.newFromUserInput( title, 0 );
-				document.location.href = mw.config.get( 'wgServer' ) + title.getUrl( {
+				url = mw.config.get( 'wgServer' ) + title.getUrl( {
 					action: 'edit'
 				} );
+				self.forwardTo( url );
 				deferred.resolve();
 			} else {
 				deferred.reject( mw.msg( 'articleplaceholder-abouttopic-article-exists-error' ) );
@@ -192,6 +195,13 @@
 		} );
 
 		return deferred;
+	};
+
+	/**
+	 * @protected
+	 */
+	CreateArticleDialog.prototype.forwardTo = function ( url ) {
+		document.location.href = url;
 	};
 
 	module.exports.CreateArticleDialog = CreateArticleDialog;
