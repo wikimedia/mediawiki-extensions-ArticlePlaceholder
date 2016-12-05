@@ -41,7 +41,7 @@
 			return CreateArticleTranslationDialog.super.prototype.onSubmit.apply( this );
 		}
 
-		mw.track( 'counter.MediaWiki.wikibase.articleplaceholder.button.translate-article' );
+		mw.track( 'counter.MediaWiki.wikibase.articleplaceholder.button.translateArticle' );
 
 		mw.loader.using( 'ext.cx.sitemapper' ).then( function () {
 			document.location.href = mw.cx.SiteMapper.prototype.getCXUrl(

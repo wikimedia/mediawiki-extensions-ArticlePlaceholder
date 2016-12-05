@@ -19,7 +19,7 @@
 		windowManager.addWindows( [ dialog ] );
 
 		OO.ui.infuse( 'new-article-button' ).on( 'click', function () {
-			mw.track( 'counter.MediaWiki.wikibase.articleplaceholder.button.create-article' );
+			mw.track( 'counter.MediaWiki.wikibase.articleplaceholder.button.createArticle' );
 			windowManager.openWindow( dialog );
 		} );
 	}

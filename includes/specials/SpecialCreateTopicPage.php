@@ -28,7 +28,7 @@ class SpecialCreateTopicPage extends UnlistedSpecialPage {
 		$this->setHeaders();
 		if ( $this->getRequest()->getVal( 'ref' ) === 'button' ) {
 			$statsd = MediaWikiServices::getInstance()->getStatsdDataFactory();
-			$statsd->increment( 'wikibase.articleplaceholder.button.create-article' );
+			$statsd->increment( 'wikibase.articleplaceholder.button.createArticle' );
 		}
 		$page = $this->getRequest()->getVal( 'wptitleinput', $par );
 		if ( $page === '' || $page === null ) {
