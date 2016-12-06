@@ -1,3 +1,17 @@
 .oo-ui-processDialog > .oo-ui-window-frame {
-	min-height: 20em;
+	min-height: 25em;
+}
+
+.oo-ui-layout .create-options {
+	padding-left: 2em;
+	padding-right: 2em;
+}
+
+.oo-ui-layout .create-options > .oo-ui-radioOptionWidget {
+	margin-top: 1.5em;
+}
+
+.oo-ui-layout .create-options > .oo-ui-dropdownInputWidget {
+	padding-left: 3em;
+	padding-right: 3em;
 }
