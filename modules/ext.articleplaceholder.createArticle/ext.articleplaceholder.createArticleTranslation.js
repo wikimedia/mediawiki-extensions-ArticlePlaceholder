@@ -3,7 +3,6 @@
  * @author Florian Schmidt
  * @author Jonas M. Kress
  */
-
 ( function ( $, mw, OO, module ) {
 	'use strict';
 
@@ -19,19 +18,19 @@
 
 	/**
 	 * @property {OO.ui.DropdownInputWidget}
-	 * @protected
+	 * @private
 	 */
 	CreateArticleTranslationDialog.prototype.languageInput = null;
 
 	/**
 	 * @property {OO.ui.RadioOptionWidget}
-	 * @protected
+	 * @private
 	 */
 	CreateArticleTranslationDialog.prototype.translateOption = null;
 
 	/**
 	 * @property {OO.ui.RadioOptionWidget}
-	 * @protected
+	 * @private
 	 */
 	CreateArticleTranslationDialog.prototype.emptyOption = null;
 
@@ -64,7 +63,7 @@
 	};
 
 	/**
-	 * @protected
+	 * @private
 	 * @return {OO.ui.DropdownInputWidget}
 	 */
 	CreateArticleTranslationDialog.prototype.createLanguageInput = function () {
@@ -73,9 +72,13 @@
 		this.languageInput = new OO.ui.DropdownInputWidget( {
 			text: mw.msg( 'articleplaceholder-abouttopic-translate-article-label' ),
 			options: mw.config.get( 'apLanguages' )
+		} ).on( 'change', function () {
+			self.toggleTranslateArticle( true );
 		} );
 
-		this.languageInput.$element.find( '*' ).on( 'click', function () {
+		// Workaround to focus the translate option when clicking the dropdown.
+		// TODO: Replace with a proper upstream solution when available.
+		this.languageInput.$element.find( '.oo-ui-dropdownWidget-handle' ).click( function () {
 			self.toggleTranslateArticle( true );
 		} );
 
@@ -83,15 +86,16 @@
 	};
 
 	/**
-	 * @protected
+	 * @private
+	 * @param {boolean} translate
 	 */
 	CreateArticleTranslationDialog.prototype.toggleTranslateArticle = function ( translate ) {
-		this.emptyOption.setSelected( !translate );
 		this.translateOption.setSelected( translate );
+		this.emptyOption.setSelected( !translate );
 	};
 
 	/**
-	 * @protected
+	 * @private
 	 */
 	CreateArticleTranslationDialog.prototype.createRadioOptions = function () {
 		var self = this;
@@ -99,7 +103,7 @@
 		this.translateOption = new OO.ui.RadioOptionWidget( {
 			label: mw.msg( 'articleplaceholder-abouttopic-translate-article-button' )
 		} );
-		self.translateOption.setSelected( true );
+		this.translateOption.setSelected( true );
 
 		this.emptyOption = new OO.ui.RadioOptionWidget( {
 			label: mw.msg( 'articleplaceholder-abouttopic-create-emtpy-article-button' )
@@ -115,8 +119,8 @@
 	};
 
 	/**
-	 * @protected
-	 * @return {jQuery}
+	 * @private
+	 * @return {OO.ui.StackLayout}
 	 */
 	CreateArticleTranslationDialog.prototype.createRadioSelect = function () {
 		this.createRadioOptions();
@@ -124,9 +128,9 @@
 
 		return new OO.ui.StackLayout( {
 			items: [
-					this.translateOption,
-					this.languageInput,
-					this.emptyOption
+				this.translateOption,
+				this.languageInput,
+				this.emptyOption
 			],
 			continuous: true,
 			scrollable: false,
