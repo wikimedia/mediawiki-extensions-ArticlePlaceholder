@@ -3,7 +3,8 @@
 		"authors": [
 			"Piramidion",
 			"Ата",
-			"Base"
+			"Base",
+			"AS"
 		]
 	},
 	"createtopicpage": "Створити сторінку",
@@ -17,6 +18,7 @@
 	"articleplaceholder-abouttopic-create-article-label": "Назва статті",
 	"articleplaceholder-abouttopic-create-article-mandatory": "Назва статті є обов'язковою.",
 	"articleplaceholder-abouttopic-create-article-button": "Створити статтю",
+	"articleplaceholder-abouttopic-create-emtpy-article-button": "Створити нову статтю",
 	"articleplaceholder-abouttopic-translate-article-label": "Вихідна мова:",
 	"articleplaceholder-abouttopic-translate-article-button": "Перекласти статтю",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Надіслати",

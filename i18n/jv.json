@@ -4,13 +4,25 @@
 			"NoiX180"
 		]
 	},
+	"createtopicpage": "Gawé kaca",
 	"articleplaceholder-desc": "Nyadhiyakaké kaca mirunggan mawa pratélan {{WBREPONAME}} bab rembug tinemtu, sarta undangan ngripta artikel jroning rembug iku",
-	"articleplaceholder-abouttopic": "Bab Rembug",
+	"articleplaceholder-abouttopic": "Ngenani rembug",
 	"articleplaceholder-abouttopic-intro": "Kaca mirunggan iki ngasilaké kaca isi bab rembug tinamtu mawa pratélan {{WBREPONAME}}",
-	"articleplaceholder-abouttopic-create-article": "Ngripta artikel anyar mawa sesirah iku",
+	"articleplaceholder-abouttopic-create-article-title": "Gawé artikel anyar",
+	"articleplaceholder-abouttopic-create-article-label": "Sesirah artikel",
+	"articleplaceholder-abouttopic-create-article-mandatory": "Sesirah artikel iku kudu ada.",
 	"articleplaceholder-abouttopic-create-article-button": "Ngripta artikel",
+	"articleplaceholder-abouttopic-create-emtpy-article-button": "Wiwiti artikel anyar",
+	"articleplaceholder-abouttopic-translate-article-label": "Basa sumber:",
+	"articleplaceholder-abouttopic-translate-article-button": "Pertal artikel",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Kumpulaké",
 	"articleplaceholder-abouttopic-article-exists-error": "Artikel asesirah mangkéné wis ana",
+	"articleplaceholder-abouttopic-lua-entity": "Èntitas",
 	"articleplaceholder-abouttopic-lua-reference": "Rujukan",
-	"articleplaceholder-search-header": "Temokaké data bab rembug iku"
+	"articleplaceholder-abouttopic-lua-identifier": "Sumber njaba",
+	"articleplaceholder-search-header": "Temokaké data ngenani rembug iku",
+	"articleplaceholder-createpage-title": "Gawé $1",
+	"articleplaceholder-createpage-alreadyexists": "Kaca mawa sesirah $1 wis ana. Mangga pilih sesirah liya.",
+	"articleplaceholder-createpage-notitleprovided": "Sesirah ora ana. Mangga isi sesirah kaca sing arep kokgawé.",
+	"articleplaceholder-createpage-invalidtitleprovided": "Sesirah sing koklebokaké ora sah. Mangga isi mawa sesirah sing sah."
 }
