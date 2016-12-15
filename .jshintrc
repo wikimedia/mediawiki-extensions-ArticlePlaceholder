@@ -16,6 +16,8 @@
 		"jQuery": false,
 		"mediaWiki": false,
 		"module": true,
-		"OO": false
+		"OO": false,
+		"QUnit": false,
+		"sinon": false
 	}
 }

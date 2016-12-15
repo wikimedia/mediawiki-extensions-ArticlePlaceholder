@@ -12,7 +12,7 @@
 	 * @class
 	 */
 	function CreateArticleTranslationDialog() {
-		CreateArticleTranslationDialog.super.call( this ); // jshint:ignore
+		CreateArticleTranslationDialog.super.call( this );
 	}
 	OO.inheritClass( CreateArticleTranslationDialog, CreateArticleDialog );
 
@@ -49,13 +49,14 @@
 		mw.track( 'counter.MediaWiki.wikibase.articleplaceholder.button.translateArticle' );
 
 		mw.loader.using( 'ext.cx.sitemapper' ).then( function () {
-			document.location.href = mw.cx.SiteMapper.prototype.getCXUrl(
+			var url = ( new mw.cx.SiteMapper() ).getCXUrl(
 				mw.config.get( 'apPageNames' )[ self.languageInput.getValue() ],
 				self.titleInput.getValue(),
 				self.languageInput.getValue(),
 				mw.config.get( 'wgContentLanguage' )
 			);
 
+			self.forwardTo( url );
 			deferred.resolve();
 		} );
 
