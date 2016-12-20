@@ -8,7 +8,6 @@ use Language;
 use OOUI;
 use SiteLookup;
 use SpecialPage;
-use Title;
 use User;
 use OutputPage;
 use Wikibase\DataModel\Entity\ItemId;
