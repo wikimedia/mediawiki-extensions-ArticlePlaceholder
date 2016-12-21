@@ -3,6 +3,7 @@
 namespace ArticlePlaceholder\Specials;
 
 use HTMLForm;
+use MediaWiki\MediaWikiServices;
 use SpecialPage;
 use ArticlePlaceholder\AboutTopicRenderer;
 use Wikibase\Client\Store\TitleFactory;
@@ -33,7 +34,7 @@ class SpecialAboutTopic extends SpecialPage {
 			new AboutTopicRenderer(
 				$wikibaseClient->getLanguageFallbackLabelDescriptionLookupFactory(),
 				$wikibaseClient->getStore()->getSiteLinkLookup(),
-				$wikibaseClient->getSiteStore(),
+				MediaWikiServices::getInstance()->getSiteLookup(),
 				$wikibaseClient->getLangLinkSiteGroup(),
 				new TitleFactory(),
 				$wikibaseClient->getOtherProjectsSidebarGeneratorFactory()
