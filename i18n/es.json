@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Macofe",
-			"SinNovedades"
+			"SinNovedades",
+			"Dgstranz"
 		]
 	},
 	"createtopicpage": "Crear página",
@@ -16,6 +17,7 @@
 	"articleplaceholder-abouttopic-create-article-label": "Título del artículo",
 	"articleplaceholder-abouttopic-create-article-mandatory": "El título del artículo es obligatorio.",
 	"articleplaceholder-abouttopic-create-article-button": "Crear un artículo",
+	"articleplaceholder-abouttopic-create-emtpy-article-button": "Empezar un nuevo artículo",
 	"articleplaceholder-abouttopic-translate-article-label": "Idioma de origen:",
 	"articleplaceholder-abouttopic-translate-article-button": "Traducir artículo",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Enviar",
