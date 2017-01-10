@@ -15,7 +15,7 @@ if ( function_exists( 'wfLoadExtension' ) ) {
 	wfLoadExtension( 'ArticlePlaceholder', __DIR__ . '/extension.json' );
 	// Keep i18n globals so mergeMessageFileList.php doesn't break
 	$wgMessagesDirs['ArticlePlaceholder'] = __DIR__ . '/i18n';
-	$wgExtensionMessagesFiles['ArticlePlaceholder'] = __DIR__ . '/ArticlePlaceholder.alias.php';
+	$wgExtensionMessagesFiles['ArticlePlaceholderAliases'] = __DIR__ . '/ArticlePlaceholder.alias.php';
 	/* wfWarn(
 		'Deprecated PHP entry point used for ArticlePlaceholder extension. ' .
 		'Please use wfLoadExtension instead, ' .
