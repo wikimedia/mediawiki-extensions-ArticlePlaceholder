@@ -1,0 +1,31 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"createtopicpage": "Crear pagina",
+	"articleplaceholder-desc": "Forni un pagina special con information de {{WBREPONAME}} sur un certe subjecto, con invitation a crear un articulo sur illo",
+	"articleplaceholder-abouttopic": "A proposito del subjecto",
+	"articleplaceholder-abouttopic-intro": "Iste pagina special te forni un supervista rapide de un subjecto a base de datos de {{WBREPONAME}}.",
+	"articleplaceholder-abouttopic-entityid": "Scribe le ID de un elemento, como Q12345",
+	"articleplaceholder-abouttopic-submit": "crear",
+	"articleplaceholder-abouttopic-no-entity-error": "Isto non es un ID de elemento valide.",
+	"articleplaceholder-abouttopic-create-article-title": "Crear un nove articulo",
+	"articleplaceholder-abouttopic-create-article-label": "Titulo del articulo",
+	"articleplaceholder-abouttopic-create-article-mandatory": "Le titulo del articulo es obligatori.",
+	"articleplaceholder-abouttopic-create-article-button": "Crear un articulo",
+	"articleplaceholder-abouttopic-create-emtpy-article-button": "Comenciar un nove articulo",
+	"articleplaceholder-abouttopic-translate-article-label": "Lingua de origine:",
+	"articleplaceholder-abouttopic-translate-article-button": "Traducer articulo",
+	"articleplaceholder-abouttopic-create-article-submit-button": "Submitter",
+	"articleplaceholder-abouttopic-article-exists-error": "Un articulo con iste nomine jam existe",
+	"articleplaceholder-abouttopic-lua-entity": "Entitate",
+	"articleplaceholder-abouttopic-lua-reference": "Referentia",
+	"articleplaceholder-abouttopic-lua-identifier": "Ressources externe",
+	"articleplaceholder-search-header": "Discoperir datos sur le subjecto",
+	"articleplaceholder-createpage-title": "Crear $1",
+	"articleplaceholder-createpage-alreadyexists": "Le pagina con le titulo $1 jam existe. Elige un altere.",
+	"articleplaceholder-createpage-notitleprovided": "Nulle titulo ha essite entrate. Per favor, entra un titulo pro le pagina que tu vole crear.",
+	"articleplaceholder-createpage-invalidtitleprovided": "Le titulo que tu ha entrate non es valide. Per favor, scribe un titulo valide."
+}

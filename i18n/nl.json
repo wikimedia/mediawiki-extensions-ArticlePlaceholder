@@ -1,13 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mainframe98"
+			"Mainframe98",
+			"McDutchie"
 		]
 	},
 	"articleplaceholder-abouttopic": "Over het onderwerp",
 	"articleplaceholder-abouttopic-create-article-label": "Paginanaam",
 	"articleplaceholder-abouttopic-create-article-mandatory": "De titel van het artikel is verplicht.",
-	"articleplaceholder-abouttopic-create-emtpy-article-button": "Start een nieuw artikel",
+	"articleplaceholder-abouttopic-create-emtpy-article-button": "Begin een nieuw artikel",
 	"articleplaceholder-abouttopic-translate-article-label": "Brontaal:",
 	"articleplaceholder-abouttopic-lua-entity": "Entiteit"
 }
