@@ -136,12 +136,16 @@ class SpecialAboutTopic extends SpecialPage {
 	 * @param string|null $itemIdString
 	 */
 	private function showContent( $itemIdString ) {
+		$out = $this->getOutput();
 		$itemId = $this->getItemIdParam( 'entityid', $itemIdString );
 
 		if ( $itemId !== null ) {
-			$this->getOutput()->setProperty( 'wikibase_item', $itemId->getSerialization() );
+			$out->setProperty( 'wikibase_item', $itemId->getSerialization() );
 		}
 		$this->setHeaders();
+
+		// Unconditionally cache the special page for a day, see T109458
+		$out->setCdnMaxage( 86400 );
 
 		if ( $itemId === null ) {
 			$this->createForm();
@@ -151,20 +155,20 @@ class SpecialAboutTopic extends SpecialPage {
 		if ( !$this->entityLookup->hasEntity( $itemId ) ) {
 			$this->createForm();
 			$message = $this->msg( 'articleplaceholder-abouttopic-no-entity-error' );
-			$this->getOutput()->addWikiText( $message->text() );
+			$out->addWikiText( $message->text() );
 			return;
 		}
 
 		$articleOnWiki = $this->getArticleUrl( $itemId );
 
 		if ( $articleOnWiki !== null ) {
-			$this->getOutput()->redirect( $articleOnWiki );
+			$out->redirect( $articleOnWiki );
 		} else {
 			$this->aboutTopicRenderer->showPlaceholder(
 				$itemId,
 				$this->getLanguage(),
 				$this->getUser(),
-				$this->getOutput()
+				$out
 			);
 		}
 	}
