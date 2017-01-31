@@ -5,10 +5,19 @@
 			"McDutchie"
 		]
 	},
+	"createtopicpage": "Pagina aanmaken",
 	"articleplaceholder-abouttopic": "Over het onderwerp",
+	"articleplaceholder-abouttopic-create-article-title": "Maak een nieuw artikel aan",
 	"articleplaceholder-abouttopic-create-article-label": "Paginanaam",
 	"articleplaceholder-abouttopic-create-article-mandatory": "De titel van het artikel is verplicht.",
+	"articleplaceholder-abouttopic-create-article-button": "Maak een artikel aan",
 	"articleplaceholder-abouttopic-create-emtpy-article-button": "Begin een nieuw artikel",
 	"articleplaceholder-abouttopic-translate-article-label": "Brontaal:",
-	"articleplaceholder-abouttopic-lua-entity": "Entiteit"
+	"articleplaceholder-abouttopic-translate-article-button": "Vertaal artikel",
+	"articleplaceholder-abouttopic-create-article-submit-button": "Opslaan",
+	"articleplaceholder-abouttopic-article-exists-error": "Een artikel met deze naam bestaat al",
+	"articleplaceholder-abouttopic-lua-entity": "Entiteit",
+	"articleplaceholder-abouttopic-lua-identifier": "Externe bronnen",
+	"articleplaceholder-createpage-title": "$1 aanmaken",
+	"articleplaceholder-createpage-alreadyexists": "Een pagina met de title $1 bestaat al. Kies een andere titel."
 }
