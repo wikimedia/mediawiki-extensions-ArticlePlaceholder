@@ -54,6 +54,23 @@
 	margin-top: 1.5em;
 }
 
+/*
+ * At screen widths between 982px and 880px, statementgroups's right edges
+ * are 911px from the left side of the screen (including the 1px border).
+ * However, the sidebar's float is only set to `none` at 880px, resulting in
+ * the right side of the statementgroups being cut off if we apply
+ * `overflow: hidden` to the statementgrouplist. However, we need
+ * `overflow: hidden` in order to prevent statementgroups from appearing under
+ * the sidebar. To work around this, we only apply `overflow: hidden` at screen
+ * sizes at least 912px wide (with 1 extra pixel for breathing room).
+ */
+@media screen and ( min-width: 912px ) {
+	.articleplaceholder-statementgrouplist {
+		width: auto;
+		overflow: hidden;
+	}
+}
+
 .articleplaceholder-qualifier {
 	margin-left: 1em;
 }
