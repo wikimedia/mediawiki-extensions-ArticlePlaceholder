@@ -52,8 +52,19 @@ class SpecialAboutTopicTest extends MediaWikiTestCase {
 		$settings->setSetting( 'siteGroup', $siteGroup );
 	}
 
-	public function testHTML() {
-		$output = $this->getInstanceOutput( '' );
+	public function provideSearchEngineIndexed() {
+		return [
+			[ true ],
+			[ false ],
+			[ 'Q123' ]
+		];
+	}
+
+	/**
+	 * @dataProvider provideSearchEngineIndexed
+	 */
+	public function testHTML( $searchEngineIndexed ) {
+		$output = $this->getInstanceOutput( '', $searchEngineIndexed );
 		$this->assertSame( '(articleplaceholder-abouttopic)', $output->getPageTitle() );
 
 		$html = $output->getHTML();

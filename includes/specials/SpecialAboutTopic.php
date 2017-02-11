@@ -268,13 +268,17 @@ class SpecialAboutTopic extends SpecialPage {
 	 * @return string
 	 */
 	protected function getRobotPolicy() {
+		$wikibaseItem = $this->getOutput()->getProperty( 'wikibase_item' );
+		if ( $wikibaseItem === null ) {
+			// No item id set: We're showing the form, not an actual placeholder.
+			return parent::getRobotPolicy();
+		}
+
 		if ( $this->searchEngineIndexed === true ) {
 			return 'index,follow';
 		}
 
 		if ( is_string( $this->searchEngineIndexed ) ) {
-			$wikibaseItem = $this->getOutput()->getProperty( 'wikibase_item' );
-
 			$entityId = new ItemId( $wikibaseItem );
 
 			$maxEntityId = new ItemId( $this->searchEngineIndexed );
