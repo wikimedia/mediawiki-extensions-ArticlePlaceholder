@@ -8,7 +8,7 @@ use SpecialPage;
 use Liuggio\StatsdClient\Factory\StatsdDataFactory;
 use MediaWiki\MediaWikiServices;
 use Wikibase\Client\WikibaseClient;
-use Wikibase\Lib\Interactors\TermIndexSearchInteractor;
+use Wikibase\Lib\Interactors\TermSearchInteractor;
 use Wikibase\Lib\Interactors\TermSearchResult;
 use Wikibase\TermIndex;
 use Wikibase\TermIndexEntry;
@@ -28,7 +28,7 @@ class SearchHookHandler {
 	private $termIndex;
 
 	/**
-	 * @var TermIndexSearchInteractor
+	 * @var TermSearchInteractor
 	 */
 	private $termSearchInteractor;
 
@@ -86,7 +86,7 @@ class SearchHookHandler {
 
 	/**
 	 * @param TermIndex $termIndex
-	 * @param TermIndexSearchInteractor $termSearchInteractor
+	 * @param TermSearchInteractor $termSearchInteractor
 	 * @param string $languageCode content language
 	 * @param string $repoScriptPath
 	 * @param string $repoUrl
@@ -95,7 +95,7 @@ class SearchHookHandler {
 	 */
 	public function __construct(
 		TermIndex $termIndex,
-		TermIndexSearchInteractor $termSearchInteractor,
+		TermSearchInteractor $termSearchInteractor,
 		$languageCode,
 		$repoScriptPath,
 		$repoUrl,
