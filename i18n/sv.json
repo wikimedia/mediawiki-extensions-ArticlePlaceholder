@@ -17,6 +17,7 @@
 	"articleplaceholder-abouttopic-create-article-label": "Artikelns titel",
 	"articleplaceholder-abouttopic-create-article-mandatory": "Artikelns titel är nödvändig.",
 	"articleplaceholder-abouttopic-create-article-button": "Skapa en artikel",
+	"articleplaceholder-abouttopic-create-emtpy-article-button": "Starta en ny artikel",
 	"articleplaceholder-abouttopic-translate-article-label": "Källspråk:",
 	"articleplaceholder-abouttopic-translate-article-button": "Översätt artikel",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Skicka",
@@ -26,5 +27,7 @@
 	"articleplaceholder-abouttopic-lua-identifier": "Externa resurser",
 	"articleplaceholder-search-header": "Upptäck data om ämnet",
 	"articleplaceholder-createpage-title": "Skapa $1",
-	"articleplaceholder-createpage-alreadyexists": "Sidan med titeln $1 finns redan. Välj en annan."
+	"articleplaceholder-createpage-alreadyexists": "Sidan med titeln $1 finns redan. Välj en annan.",
+	"articleplaceholder-createpage-notitleprovided": "Ingen titel har angivits, ange en titel för sidan du vill skapa.",
+	"articleplaceholder-createpage-invalidtitleprovided": "Titeln du angav är ogiltig. Tillhandahåll en giltig titel."
 }
