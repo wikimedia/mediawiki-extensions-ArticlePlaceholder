@@ -13,7 +13,7 @@
 					module.exports.CreateArticleTranslationDialog :
 					module.exports.CreateArticleDialog,
 			windowManager = new OO.ui.WindowManager(),
-			dialog =  new CreateArticleDialog();
+			dialog = new CreateArticleDialog();
 
 		$( 'body' ).append( windowManager.$element );
 		windowManager.addWindows( [ dialog ] );

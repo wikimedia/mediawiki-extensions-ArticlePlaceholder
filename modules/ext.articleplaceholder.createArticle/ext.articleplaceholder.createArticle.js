@@ -19,6 +19,8 @@
 
 	OO.inheritClass( CreateArticleDialog, OO.ui.ProcessDialog );
 
+	CreateArticleDialog.static.name = 'createArticleDialog';
+
 	/**
 	 * @property {string}
 	 * @protected
