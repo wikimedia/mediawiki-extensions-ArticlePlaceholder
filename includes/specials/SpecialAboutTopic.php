@@ -29,9 +29,6 @@ class SpecialAboutTopic extends SpecialPage {
 		$wikibaseClient = WikibaseClient::getDefaultInstance();
 		$settings = $wikibaseClient->getSettings();
 
-		// TODO: Remove the feature flag when not needed any more!
-		$settings->setSetting( 'enableLuaEntityFormatStatements', true );
-
 		$articlePlaceholderSearchEngineIndexed = MediaWikiServices::getInstance()->getMainConfig()->get(
 			'ArticlePlaceholderSearchEngineIndexed'
 		);
