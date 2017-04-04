@@ -11,7 +11,6 @@ local statementRenderer = {}
 -- @param table statement
 -- @return string wikitext
 local render = function( self, statement )
-  local result = ''
   local reference = ''
   local qualifier = ''
   local mainsnak = ''
@@ -30,7 +29,7 @@ local render = function( self, statement )
       end
     end
   end
-  return result .. '<div class="articleplaceholder-statement">' .. mainsnak .. reference .. qualifier .. '</div>'
+  return '<div class="articleplaceholder-statement">' .. mainsnak .. reference .. qualifier .. '</div>'
 end
 
 -- Get a function which is bound to the given entityrenderer.
