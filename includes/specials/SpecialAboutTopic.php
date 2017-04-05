@@ -2,7 +2,6 @@
 
 namespace ArticlePlaceholder\Specials;
 
-use Config;
 use HTMLForm;
 use MediaWiki\MediaWikiServices;
 use SpecialPage;
@@ -138,6 +137,10 @@ class SpecialAboutTopic extends SpecialPage {
 
 		if ( $itemId !== null ) {
 			$out->setProperty( 'wikibase_item', $itemId->getSerialization() );
+
+			$out->setCanonicalUrl(
+				$this->getTitleFor( $this->getName(), $itemId->getSerialization() )->getCanonicalURL()
+			);
 		}
 		$this->setHeaders();
 

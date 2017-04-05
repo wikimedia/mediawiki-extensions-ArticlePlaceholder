@@ -186,4 +186,16 @@ class SpecialAboutTopicTest extends MediaWikiTestCase {
 		}
 	}
 
+	public function testCanonicalUrl() {
+		$output = $this->getInstanceOutput( 'Q1234' );
+
+		$this->assertType( 'string', $output->getCanonicalUrl() );
+		$this->assertSame(
+			SpecialPage::getTitleFor( 'AboutTopic', 'Q1234' )->getCanonicalURL(),
+			$output->getCanonicalUrl()
+		);
+		// Should use the sub page syntax
+		$this->assertContains( '/Q1234', $output->getCanonicalUrl() );
+	}
+
 }
