@@ -50,12 +50,12 @@
 		formatversion: 2,
 		action: 'query',
 		titles: EXISTING_ARTICLE_TITLE
-	} ).returns(  $.Deferred().resolve( API_EXISTING_RESPONSE ).promise() );
+	} ).returns( $.Deferred().resolve( API_EXISTING_RESPONSE ).promise() );
 	mw.Api().get.withArgs( {
 		formatversion: 2,
 		action: 'query',
 		titles: NON_EXISTING_ARTICLE_TITLE
-	} ).returns(  $.Deferred().resolve( API_NON_EXISTING_RESPONSE ).promise() );
+	} ).returns( $.Deferred().resolve( API_NON_EXISTING_RESPONSE ).promise() );
 
 	mw.Title = {
 		newFromUserInput: sinon.stub().returns( {
@@ -69,7 +69,7 @@
 
 	function createAndShowDialog() {
 		var windowManager = new OO.ui.WindowManager(),
-			dialog =  new module.exports.CreateArticleDialog();
+			dialog = new module.exports.CreateArticleDialog();
 
 		$( 'body' ).append( windowManager.$element );
 		windowManager.addWindows( [ dialog ] );
@@ -86,7 +86,7 @@
 
 	QUnit.test( 'When calling the constructor', function ( assert ) {
 		assert.expect( 1 );
-		assert.ok( new module.exports.CreateArticleDialog()	instanceof
+		assert.ok( new module.exports.CreateArticleDialog() instanceof
 				module.exports.CreateArticleDialog, 'it should return a valid object' );
 	} );
 
