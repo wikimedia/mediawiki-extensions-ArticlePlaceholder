@@ -8,7 +8,7 @@
 ( function ( $, mw, OO, module ) {
 	'use strict';
 
-	function onWikipageContent() {
+	function init() {
 		var CreateArticleDialog = mw.config.get( 'apContentTranslation' ) ?
 					module.exports.CreateArticleTranslationDialog :
 					module.exports.CreateArticleDialog,
@@ -24,6 +24,6 @@
 		} );
 	}
 
-	mw.hook( 'wikipage.content' ).add( onWikipageContent );
+	$( init );
 
 } )( jQuery, mediaWiki, OO, module );
