@@ -1,59 +1,59 @@
 .articleplaceholder-statementgroup {
-  display: inline-block;
-  border: 1px solid #AAA;
-  vertical-align: top;
-  padding: 10px;
-  margin: 20px;
-  width: 350px;
-  max-height: 300px;
-  overflow: auto;
+	display: inline-block;
+	border: 1px solid #aaa;
+	vertical-align: top;
+	padding: 10px;
+	margin: 20px;
+	width: 350px;
+	max-height: 300px;
+	overflow: auto;
 }
 
 /* Needs a selector that's stronger than ".mw-body h2" */
 .mw-body .articleplaceholder-statementgroup h2,
 .mw-body .articleplaceholder-identifierlist h2 {
-  margin-top: 0;
+	margin-top: 0;
 }
 
 .mw-articleplaceholder-createarticle-buttons {
-  margin-top: 2em;
-  text-align: right;
+	margin-top: 2em;
+	text-align: right;
 }
 
 .articleplaceholder-sidebar {
-  float: right;
-  width: 310px;
+	float: right;
+	width: 310px;
 }
 
 .articleplaceholder-topimage {
-  float: right;
+	float: right;
 }
 
 .articleplaceholder-identifierlist {
-  clear: both;
-  border: 1px solid #ccc;
-  background-color: #F9F9F9;
-  width: 100%;
-  padding: 0.4em;
+	clear: both;
+	border: 1px solid #ccc;
+	background-color: #f9f9f9;
+	width: 100%;
+	padding: 0.4em;
 }
 
-.articleplaceholder-identifierlist td{
-  vertical-align: top;
-  padding:0.25em;
+.articleplaceholder-identifierlist td {
+	vertical-align: top;
+	padding: 0.25em;
 }
 
 .articleplaceholder-id-value {
-  word-break:break-all;
+	word-break: break-all;
 }
 
 .articleplaceholder-statement {
-  margin-top: 0em;
+	margin-top: 0;
 }
 
 .articleplaceholder-statementgrouplist {
-  margin-top: 1.5em;
+	margin-top: 1.5em;
 }
 
 .articleplaceholder-qualifier {
-  margin-left: 1em;
+	margin-left: 1em;
 }

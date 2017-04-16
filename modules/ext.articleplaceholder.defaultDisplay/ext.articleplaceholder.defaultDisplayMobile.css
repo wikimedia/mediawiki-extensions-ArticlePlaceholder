@@ -1,12 +1,13 @@
-.articleplaceholder-sidebar, .articleplaceholder-statementgroup {
-  float: none;
-  position: static;
+.articleplaceholder-sidebar,
+.articleplaceholder-statementgroup {
+	float: none;
+	position: static;
 }
 
 .articleplaceholder-statementgroup {
-  width: 80%;
+	width: 80%;
 }
 
 .articleplaceholder-sidebar {
-  width: 95%;
+	width: 95%;
 }

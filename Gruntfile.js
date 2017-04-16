@@ -23,6 +23,13 @@ module.exports = function ( grunt ) {
 			all: [
 				'*.json',
 				'**/*.json',
+				'.stylelintrc',
+				'!node_modules/**'
+			]
+		},
+		stylelint: {
+			all: [
+				'**/*.css',
 				'!node_modules/**'
 			]
 		},
@@ -33,6 +40,6 @@ module.exports = function ( grunt ) {
 		}
 	} );
 
-	grunt.registerTask( 'test', [ 'jshint', 'jscs', 'jsonlint', 'banana', 'qunit' ] );
+	grunt.registerTask( 'test', [ 'jshint', 'jscs', 'jsonlint', 'banana', 'qunit', 'stylelint' ] );
 	grunt.registerTask( 'default', 'test' );
 };

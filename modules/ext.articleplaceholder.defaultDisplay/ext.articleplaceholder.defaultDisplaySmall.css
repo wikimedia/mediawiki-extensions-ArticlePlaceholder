@@ -1,8 +1,9 @@
 #bodyContent {
-  margin-left: 20%;
+	margin-left: 20%;
 }
 
-.articleplaceholder-sidebar, .articleplaceholder-statementgroup {
-  float: none;
-  position: static;
+.articleplaceholder-sidebar,
+.articleplaceholder-statementgroup {
+	float: none;
+	position: static;
 }
