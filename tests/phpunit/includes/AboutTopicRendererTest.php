@@ -204,9 +204,7 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 	 * @return SiteLinkLookup
 	 */
 	private function getSiteLinkLookup() {
-		$siteLinkLookup = $this->getMockBuilder( SiteLinkLookup::class )
-			->disableOriginalConstructor()
-			->getMock();
+		$siteLinkLookup = $this->getMock( SiteLinkLookup::class );
 
 		$siteLinkLookup->expects( $this->any() )
 			->method( 'getSiteLinksForItem' )
