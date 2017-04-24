@@ -110,6 +110,7 @@ class AboutTopicRenderer {
 
 		$this->showLanguageLinks( $entityId, $output );
 		$this->setOtherProjectsLinks( $entityId, $output );
+		$this->addMetaTags( $entityId, $output, $language );
 	}
 
 	/**
@@ -161,6 +162,23 @@ class AboutTopicRenderer {
 
 		if ( $label !== null ) {
 			return $label->getText();
+		}
+
+		return null;
+	}
+
+	/**
+	 * @param ItemId $entityId
+	 * @param Language $language
+	 *
+	 * @return string|null null if the item doesn't have a description
+	 */
+	private function getDescription( ItemId $entityId, Language $language ) {
+		$description = $this->termLookupFactory->newLabelDescriptionLookup( $language )
+			->getDescription( $entityId );
+
+		if ( $description !== null ) {
+			return $description->getText();
 		}
 
 		return null;
@@ -223,6 +241,13 @@ class AboutTopicRenderer {
 
 		$otherProjects = $otherProjectsSidebarGenerator->buildProjectLinkSidebarFromItemId( $itemId );
 		$output->setProperty( 'wikibase-otherprojects-sidebar', $otherProjects );
+	}
+
+	private function addMetaTags( ItemId $itemId, OutputPage $output, Language $language ) {
+		$description = $this->getDescription( $itemId, $language );
+		if ( $description !== null ) {
+			$output->addMeta( 'description', trim( $description ) );
+		}
 	}
 
 }
