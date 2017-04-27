@@ -170,6 +170,17 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 	}
 
 	/**
+	 * Test meta tags
+	 */
+	public function testMetaTags() {
+		$output = $this->getInstanceOutput( new ItemId( 'Q123' ) );
+		$this->assertSame(
+			[ [ 'description', 'Description of Q123' ] ],
+			$output->getMetaTags()
+		);
+	}
+
+	/**
 	 * @return LanguageFallbackLabelDescriptionLookupFactory
 	 */
 	private function getTermLookupFactory() {
@@ -178,10 +189,10 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 			)
 			->disableOriginalConstructor()
 			->getMock();
-		$labelDescriptionLookupFactory->expects( $this->once() )
+		$labelDescriptionLookupFactory->expects( $this->atLeastOnce() )
 			->method( 'newLabelDescriptionLookup' )
 			->with( Language::factory( 'eo' ) )
-			->will( $this->returnValue( $this->getLabelLookup() ) );
+			->will( $this->returnValue( $this->getLabelDescriptionLookup() ) );
 
 		return $labelDescriptionLookupFactory;
 	}
@@ -189,15 +200,21 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 	/**
 	 * @return LabelDescriptionLookup
 	 */
-	private function getLabelLookup() {
-		$labelLookup = $this->getMock( LabelDescriptionLookup::class );
-		$labelLookup->expects( $this->any() )
+	private function getLabelDescriptionLookup() {
+		$labelDescriptionLookup = $this->getMock( LabelDescriptionLookup::class );
+		$labelDescriptionLookup->expects( $this->any() )
 			->method( 'getLabel' )
 			->will( $this->returnCallback( function( ItemId $id ) {
 				return new Term( 'eo', 'Label of ' . $id->getSerialization() );
 			} ) );
 
-		return $labelLookup;
+		$labelDescriptionLookup->expects( $this->any() )
+			->method( 'getDescription' )
+			->will( $this->returnCallback( function( ItemId $id ) {
+				return new Term( 'eo', 'Description of ' . $id->getSerialization() );
+			} ) );
+
+		return $labelDescriptionLookup;
 	}
 
 	/**
