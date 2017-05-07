@@ -4,5 +4,14 @@
 			"Sfic"
 		]
 	},
-	"articleplaceholder-abouttopic-lua-identifier": "बाहरी संसाधन"
+	"createtopicpage": "पृष्ठ बनाएँ",
+	"articleplaceholder-abouttopic-create-article-label": "लेख का शीर्षक",
+	"articleplaceholder-abouttopic-create-article-button": "लेख बनाएँ",
+	"articleplaceholder-abouttopic-create-emtpy-article-button": "नया लेख शुरू करें",
+	"articleplaceholder-abouttopic-translate-article-label": "स्रोत भाषा:",
+	"articleplaceholder-abouttopic-translate-article-button": "लेख का अनुवाद करें",
+	"articleplaceholder-abouttopic-create-article-submit-button": "भेजें",
+	"articleplaceholder-abouttopic-lua-reference": "संदर्भ",
+	"articleplaceholder-abouttopic-lua-identifier": "बाहरी संसाधन",
+	"articleplaceholder-createpage-title": "$1 बनाएँ"
 }
