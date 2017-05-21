@@ -104,7 +104,7 @@
 		dialog.translateOption.setSelected( false );
 
 		stub = sinon.stub().returns( $.Deferred().resolve().promise() );
-		dialog.__proto__.onSubmit = stub; // jshint ignore:line
+		dialog.__proto__.onSubmit = stub;
 
 		return dialog.onSubmit().done( function () {
 			assert.ok( stub.called, 'it should call parent method' );

@@ -56,7 +56,7 @@
 	 * @override
 	 */
 	CreateArticleDialog.prototype.initialize = function () {
-		CreateArticleDialog.parent.prototype.initialize.call( this ); // jshint:ignore
+		CreateArticleDialog.parent.prototype.initialize.call( this );
 		this.createContentElements();
 		this.$body.append( this.dialogContent );
 	};
