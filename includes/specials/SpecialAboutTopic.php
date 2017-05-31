@@ -81,7 +81,7 @@ class SpecialAboutTopic extends SpecialPage {
 	private $entityLookup;
 
 	/**
-	 * @var bool|string $searchEngineIndexed
+	 * @var bool|string
 	 */
 	private $searchEngineIndexed;
 

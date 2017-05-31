@@ -2,6 +2,8 @@
 
 namespace ArticlePlaceholder;
 
+use ArticlePlaceholder\Lua\Scribunto_LuaArticlePlaceholderLibrary;
+
 /**
  * File defining the hook handlers for the ArticlePlaceholder extension.
  *
@@ -19,7 +21,7 @@ class Hooks {
 	public static function onScribuntoExternalLibraries( $engine, array &$extraLibraries ) {
 		if ( $engine === 'lua' ) {
 			$extraLibraries['mw.ext.articlePlaceholder.entityRenderer'] = [
-				'class' => 'ArticlePlaceholder\Lua\Scribunto_LuaArticlePlaceholderLibrary',
+				'class' => Scribunto_LuaArticlePlaceholderLibrary::class,
 				'deferLoad' => true,
 			];
 		}
