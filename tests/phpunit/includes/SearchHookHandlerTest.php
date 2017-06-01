@@ -9,8 +9,10 @@ use Language;
 use Liuggio\StatsdClient\Factory\StatsdDataFactory;
 use MediaWikiTestCase;
 use OutputPage;
+use PHPUnit_Framework_MockObject_MockObject;
 use ReflectionMethod;
 use RequestContext;
+use SpecialSearch;
 use Title;
 use Wikibase\DataModel\Entity\EntityId;
 use Wikibase\DataModel\Entity\ItemId;
@@ -96,17 +98,29 @@ class SearchHookHandlerTest extends MediaWikiTestCase {
 		return $termSearchInteractor;
 	}
 
+	/**
+	 * @return SpecialSearch|PHPUnit_Framework_MockObject_MockObject
+	 */
 	private function getSpecialSearch() {
-		$mock = $this->getMockBuilder( 'SpecialSearch' )
+		return $this->getMockBuilder( SpecialSearch::class )
 			->disableOriginalConstructor()
 			->getMock();
-		return $mock;
 	}
 
+	/**
+	 * @return string
+	 */
 	private function getLanguageCode() {
 		return 'en';
 	}
 
+	/**
+	 * @param bool $doNotReturnTerms
+	 * @param int &$hasResults
+	 * @param int &$noResults
+	 *
+	 * @return SearchHookHandler
+	 */
 	protected function newSearchHookHandler(
 		$doNotReturnTerms = false,
 		&$hasResults = 0,
