@@ -5,18 +5,17 @@
  * @file
  * @ingroup Extensions
  */
-// @codingStandardsIgnoreFile
 
-$specialPageAliases = array();
+$specialPageAliases = [];
 
 /** English (English) */
-$specialPageAliases['en'] = array(
-	'AboutTopic' => array( 'AboutTopic', 'FancyUnicorn' ),
-	'CreateTopicPage' => array( 'CreateTopicPage' ),
-);
+$specialPageAliases['en'] = [
+	'AboutTopic' => [ 'AboutTopic', 'FancyUnicorn' ],
+	'CreateTopicPage' => [ 'CreateTopicPage' ],
+];
 
 /** Welsh (Cymraeg) */
-$specialPageAliases['cy'] = array(
-	'AboutTopic' => array( 'Am_y_Pwnc' ),
-	'CreateTopicPage' => array( 'Creu_Dalen_Bwnc' ),
-);
+$specialPageAliases['cy'] = [
+	'AboutTopic' => [ 'Am_y_Pwnc' ],
+	'CreateTopicPage' => [ 'Creu_Dalen_Bwnc' ],
+];
