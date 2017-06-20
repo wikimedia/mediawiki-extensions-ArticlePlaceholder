@@ -97,7 +97,7 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 		$titleFactory->expects( $this->any() )
 			->method( 'newFromText' )
 			->with( $this->isType( 'string' ) )
-			->will( $this->returnCallback( function( $text ) use ( $canCreate ) {
+			->will( $this->returnCallback( function ( $text ) use ( $canCreate ) {
 				$title = $this->getMockBuilder( Title::class )
 					->disableOriginalConstructor()
 					->getMock();
@@ -204,13 +204,13 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 		$labelDescriptionLookup = $this->getMock( LabelDescriptionLookup::class );
 		$labelDescriptionLookup->expects( $this->any() )
 			->method( 'getLabel' )
-			->will( $this->returnCallback( function( ItemId $id ) {
+			->will( $this->returnCallback( function ( ItemId $id ) {
 				return new Term( 'eo', 'Label of ' . $id->getSerialization() );
 			} ) );
 
 		$labelDescriptionLookup->expects( $this->any() )
 			->method( 'getDescription' )
-			->will( $this->returnCallback( function( ItemId $id ) {
+			->will( $this->returnCallback( function ( ItemId $id ) {
 				return new Term( 'eo', 'Description of ' . $id->getSerialization() );
 			} ) );
 
@@ -244,7 +244,7 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 
 		$siteLookup->expects( $this->any() )
 			->method( 'getSite' )
-			->will( $this->returnCallback( function( $siteId ) {
+			->will( $this->returnCallback( function ( $siteId ) {
 				$site = new Site();
 				$site->setGlobalId( $siteId );
 

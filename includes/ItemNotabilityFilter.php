@@ -65,7 +65,6 @@ class ItemNotabilityFilter {
 		$this->entityNamespaceLookup = $entityNamespaceLookup;
 		$this->siteLinkLookup = $siteLinkLookup;
 		$this->siteGlobalId = $siteGlobalId;
-
 	}
 
 	/**

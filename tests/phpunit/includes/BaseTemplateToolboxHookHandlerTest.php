@@ -188,7 +188,7 @@ class BaseTemplateToolboxHookHandlerTest extends MediaWikiTestCase {
 		$request = $this->getMock( WebRequest::class );
 		$request->expects( $this->any() )
 			->method( 'getText' )
-			->will( $this->returnCallback( function( $name, $default ) use ( $itemIdParam ) {
+			->will( $this->returnCallback( function ( $name, $default ) use ( $itemIdParam ) {
 				$this->assertSame( 'entityid', $name );
 
 				return $itemIdParam ?: $default;
