@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <ruleset name="ArticlePlaceholder">
 	<!-- See https://github.com/wikimedia/mediawiki-tools-codesniffer/blob/master/MediaWiki/ruleset.xml -->
-	<rule ref="vendor/mediawiki/mediawiki-codesniffer/MediaWiki">
+	<rule ref="./vendor/mediawiki/mediawiki-codesniffer/MediaWiki">
 		<exclude name="MediaWiki.Commenting.FunctionComment" />
 		<exclude name="MediaWiki.NamingConventions.LowerCamelFunctionsName" />
 	</rule>
@@ -39,6 +39,7 @@
 
 	<file>.</file>
 	<arg name="extensions" value="php" />
-	<arg name="encoding" value="utf8" />
+	<arg name="encoding" value="UTF-8" />
 	<exclude-pattern>vendor</exclude-pattern>
+	<exclude-pattern>node_modules</exclude-pattern>
 </ruleset>
