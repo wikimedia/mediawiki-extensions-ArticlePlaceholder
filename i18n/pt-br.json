@@ -1,8 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Luk3"
+			"Luk3",
+			"Felipe L. Ewald"
 		]
 	},
-	"articleplaceholder-abouttopic-no-entity-error": "Este não é um ID de item válido."
+	"createtopicpage": "Criar página",
+	"articleplaceholder-abouttopic-no-entity-error": "Este não é um ID de item válido.",
+	"articleplaceholder-abouttopic-create-article-submit-button": "Enviar",
+	"articleplaceholder-abouttopic-lua-entity": "Entidade",
+	"articleplaceholder-abouttopic-lua-reference": "Referência"
 }
