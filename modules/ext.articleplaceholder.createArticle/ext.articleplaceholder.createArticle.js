@@ -136,9 +136,7 @@
 		this.titleInput = new OO.ui.TextInputWidget( {
 			value: mw.config.get( 'apLabel' ),
 			label: mw.msg( 'articleplaceholder-abouttopic-create-article-label' ),
-			multiline: false,
-			required: true,
-			autosize: true
+			required: true
 		} );
 
 		this.titleInput.on( 'enter', function () {
