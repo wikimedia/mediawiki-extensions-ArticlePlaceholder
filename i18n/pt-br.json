@@ -10,5 +10,6 @@
 	"articleplaceholder-abouttopic-no-entity-error": "Este não é um ID de item válido.",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Enviar",
 	"articleplaceholder-abouttopic-lua-entity": "Entidade",
-	"articleplaceholder-abouttopic-lua-reference": "Referência"
+	"articleplaceholder-abouttopic-lua-reference": "Referência",
+	"articleplaceholder-createpage-title": "Criado $1"
 }
