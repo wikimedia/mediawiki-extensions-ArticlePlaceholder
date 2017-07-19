@@ -6,8 +6,10 @@
 		]
 	},
 	"createtopicpage": "Criar página",
+	"articleplaceholder-abouttopic": "Sobre o tópico",
 	"articleplaceholder-abouttopic-submit": "criar",
 	"articleplaceholder-abouttopic-no-entity-error": "Este não é um ID de item válido.",
+	"articleplaceholder-abouttopic-create-article-label": "Título do artigo",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Enviar",
 	"articleplaceholder-abouttopic-lua-entity": "Entidade",
 	"articleplaceholder-abouttopic-lua-reference": "Referência",
