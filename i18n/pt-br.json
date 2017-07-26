@@ -6,19 +6,27 @@
 		]
 	},
 	"createtopicpage": "Criar página",
+	"articleplaceholder-desc": "Fornece uma página especial com informações {{WBREPONAME}} sobre um determinado tópico, com convite para criar um artigo para o tópico",
 	"articleplaceholder-abouttopic": "Sobre o tópico",
+	"articleplaceholder-abouttopic-intro": "Esta página especial oferece uma visão geral rápida de um tópico com base em dados de {{WBREPONAME}}.",
+	"articleplaceholder-abouttopic-entityid": "Digite um ID de item, como Q12345",
 	"articleplaceholder-abouttopic-submit": "criar",
 	"articleplaceholder-abouttopic-no-entity-error": "Este não é um ID de item válido.",
 	"articleplaceholder-abouttopic-create-article-title": "Criar uma novo artigo",
 	"articleplaceholder-abouttopic-create-article-label": "Título do artigo",
+	"articleplaceholder-abouttopic-create-article-mandatory": "O título do artigo é obrigatório.",
 	"articleplaceholder-abouttopic-create-article-button": "Criar um artigo",
 	"articleplaceholder-abouttopic-create-emtpy-article-button": "Criar um novo artigo",
 	"articleplaceholder-abouttopic-translate-article-label": "Língua de origem:",
 	"articleplaceholder-abouttopic-translate-article-button": "Traduzir artigo",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Enviar",
+	"articleplaceholder-abouttopic-article-exists-error": "Um artigo com esse nome já existe",
 	"articleplaceholder-abouttopic-lua-entity": "Entidade",
 	"articleplaceholder-abouttopic-lua-reference": "Referência",
 	"articleplaceholder-abouttopic-lua-identifier": "Recursos externos",
 	"articleplaceholder-search-header": "Descobrir dados no tópico",
-	"articleplaceholder-createpage-title": "Criado $1"
+	"articleplaceholder-createpage-title": "Criado $1",
+	"articleplaceholder-createpage-alreadyexists": "A página com o título $1 já existe. Por favor, escolha outro.",
+	"articleplaceholder-createpage-notitleprovided": "Nenhum título foi digitado, insira um título para a página que deseja criar.",
+	"articleplaceholder-createpage-invalidtitleprovided": "O título que você inseriu é inválido. Forneça um título válido."
 }
