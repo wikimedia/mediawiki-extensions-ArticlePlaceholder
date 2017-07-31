@@ -24,6 +24,7 @@
 		"oojs-ui": "^0.18.1",
 		"qunitjs": "^2.0.1",
 		"sinon": "^1.17.6",
+		"stylelint": "7.8.0",
 		"stylelint-config-wikimedia": "0.4.1"
 	}
 }
