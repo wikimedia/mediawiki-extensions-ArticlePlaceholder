@@ -2,11 +2,11 @@
 
 namespace ArticlePlaceholder;
 
-use Database;
-use ResultWrapper;
 use Wikibase\DataModel\Entity\ItemId;
 use Wikibase\Lib\Store\EntityNamespaceLookup;
 use Wikibase\Lib\Store\SiteLinkLookup;
+use Wikimedia\Rdbms\Database;
+use Wikimedia\Rdbms\ResultWrapper;
 use Wikimedia\Rdbms\SessionConsistentConnectionManager;
 
 /**
@@ -151,7 +151,7 @@ class ItemNotabilityFilter {
 	 *
 	 * @return ItemId[]
 	 */
-	private function getItemsWithoutArticle( $numericItemIds ) {
+	private function getItemsWithoutArticle( array $numericItemIds ) {
 		$itemIds = [];
 		$links = $this->siteLinkLookup->getLinks( $numericItemIds, [ $this->siteGlobalId ] );
 

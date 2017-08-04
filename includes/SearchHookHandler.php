@@ -2,10 +2,10 @@
 
 namespace ArticlePlaceholder;
 
+use Liuggio\StatsdClient\Factory\StatsdDataFactoryInterface;
 use OutputPage;
 use SpecialSearch;
 use SpecialPage;
-use Liuggio\StatsdClient\Factory\StatsdDataFactory;
 use MediaWiki\MediaWikiServices;
 use Wikibase\Client\WikibaseClient;
 use Wikibase\Lib\Interactors\TermSearchInteractor;
@@ -53,7 +53,7 @@ class SearchHookHandler {
 	private $itemNotabilityFilter;
 
 	/**
-	 * @var StatsdDataFactory
+	 * @var StatsdDataFactoryInterface
 	 */
 	private $statsdDataFactory;
 
@@ -91,7 +91,7 @@ class SearchHookHandler {
 	 * @param string $repoScriptPath
 	 * @param string $repoUrl
 	 * @param ItemNotabilityFilter $itemNotabilityFilter
-	 * @param StatsdDataFactory $statsdDataFactory
+	 * @param StatsdDataFactoryInterface $statsdDataFactory
 	 */
 	public function __construct(
 		TermIndex $termIndex,
@@ -100,7 +100,7 @@ class SearchHookHandler {
 		$repoScriptPath,
 		$repoUrl,
 		ItemNotabilityFilter $itemNotabilityFilter,
-		StatsdDataFactory $statsdDataFactory
+		StatsdDataFactoryInterface $statsdDataFactory
 	) {
 		$this->termIndex = $termIndex;
 		$this->termSearchInteractor = $termSearchInteractor;
