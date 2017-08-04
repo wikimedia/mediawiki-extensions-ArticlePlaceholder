@@ -14,6 +14,7 @@ use Wikibase\DataModel\Entity\ItemId;
 use Wikibase\DataModel\Services\Lookup\EntityLookup;
 use Wikibase\Lib\Store\SiteLinkLookup;
 use Wikimedia\Assert\Assert;
+use Wikimedia\Assert\ParameterTypeException;
 
 /**
  * The AboutTopic SpecialPage for the ArticlePlaceholder extension
@@ -93,7 +94,8 @@ class SpecialAboutTopic extends SpecialPage {
 	 * @param string $siteGlobalID
 	 * @param EntityLookup $entityLookup
 	 * @param bool|string $searchEngineIndexed
-	 * @throws InvalidArgumentException
+	 *
+	 * @throws ParameterTypeException
 	 */
 	public function __construct(
 		AboutTopicRenderer $aboutTopicRenderer,

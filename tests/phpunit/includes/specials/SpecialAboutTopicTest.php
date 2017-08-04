@@ -83,6 +83,7 @@ class SpecialAboutTopicTest extends MediaWikiTestCase {
 
 	/**
 	 * @param string $itemIdSerialization
+	 * @param bool $searchEngineIndexed
 	 *
 	 * @return OutputPage
 	 */
@@ -112,6 +113,9 @@ class SpecialAboutTopicTest extends MediaWikiTestCase {
 		return $instance->getOutput();
 	}
 
+	/**
+	 * @return SiteLinkLookup
+	 */
 	private function getSiteLinkLookup() {
 		$siteLinkLookup = $this->getMock( SiteLinkLookup::class );
 
@@ -123,6 +127,9 @@ class SpecialAboutTopicTest extends MediaWikiTestCase {
 		return $siteLinkLookup;
 	}
 
+	/**
+	 * @return EntityIdParser
+	 */
 	private function getEntityIdParser() {
 		$idParser = $this->getMock( EntityIdParser::class );
 

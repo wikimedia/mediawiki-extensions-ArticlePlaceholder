@@ -165,6 +165,11 @@ class BaseTemplateToolboxHookHandlerTest extends MediaWikiTestCase {
 		);
 	}
 
+	/**
+	 * @param string|null $subPage
+	 *
+	 * @return Title
+	 */
 	private function getAboutTopicTitle( $subPage = null ) {
 		$titleText = 'AboutTopic';
 
@@ -184,6 +189,12 @@ class BaseTemplateToolboxHookHandlerTest extends MediaWikiTestCase {
 		return $title;
 	}
 
+	/**
+	 * @param Title $title
+	 * @param string|null $itemIdParam
+	 *
+	 * @return BaseTemplate
+	 */
 	private function getBaseTemplate( Title $title, $itemIdParam = null ) {
 		$request = $this->getMock( WebRequest::class );
 		$request->expects( $this->any() )

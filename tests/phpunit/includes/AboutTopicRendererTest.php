@@ -42,6 +42,7 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 
 	/**
 	 * @param ItemId $itemId
+	 * @param TitleFactory|null $titleFactory
 	 *
 	 * @return OutputPage
 	 */
