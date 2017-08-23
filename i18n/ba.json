@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Айбикә"
+			"Айбикә",
+			"Ләйсән"
 		]
 	},
 	"articleplaceholder-abouttopic": "Тема тураһында",
@@ -10,6 +11,5 @@
 	"articleplaceholder-abouttopic-article-exists-error": "Бындай атамалы тема бар",
 	"articleplaceholder-abouttopic-lua-entity": "Төп нигеҙ",
 	"articleplaceholder-abouttopic-lua-reference": "Иҫкәрмә",
-	"articleplaceholder-abouttopic-lua-qualifier": "Квалификатор",
-	"articleplaceholder-abouttopic-lua-identifier": "Идентификатор"
+	"articleplaceholder-abouttopic-lua-identifier": "Тышҡы сығанаҡтар"
 }
