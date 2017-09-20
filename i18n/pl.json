@@ -12,6 +12,7 @@
 	"articleplaceholder-abouttopic-translate-article-button": "Przetłumacz artykuł",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Wyślij",
 	"articleplaceholder-abouttopic-article-exists-error": "Artykuł o tej nazwie już istnieje",
+	"articleplaceholder-abouttopic-lua-reference": "Przypis",
 	"articleplaceholder-abouttopic-lua-identifier": "Źródła zewnętrzne",
 	"articleplaceholder-createpage-title": "Tworzenie $1",
 	"articleplaceholder-createpage-alreadyexists": "Strona o tytule $1 już istnieje. Proszę wybrać inny tytuł.",
