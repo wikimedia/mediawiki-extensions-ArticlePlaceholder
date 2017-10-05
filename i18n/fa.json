@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Reza1615"
+			"Reza1615",
+			"Ladsgroup"
 		]
 	},
 	"createtopicpage": "ایجاد صفحه",
+	"articleplaceholder-abouttopic-create-article-label": "عنوان مقاله",
 	"articleplaceholder-abouttopic-translate-article-label": "زبان مبدأ:",
 	"articleplaceholder-abouttopic-create-article-submit-button": "ارسال",
 	"articleplaceholder-abouttopic-lua-reference": "منبع",
