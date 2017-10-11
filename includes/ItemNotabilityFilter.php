@@ -73,6 +73,10 @@ class ItemNotabilityFilter {
 	 * @return ItemId[]
 	 */
 	public function getNotableEntityIds( array $itemIds ) {
+		if ( $itemIds === [] ) {
+			return [];
+		}
+
 		$numericItemIds = [];
 
 		$statementClaimsCount = $this->getStatementClaimsCount( $itemIds );
@@ -152,6 +156,10 @@ class ItemNotabilityFilter {
 	 * @return ItemId[]
 	 */
 	private function getItemsWithoutArticle( array $numericItemIds ) {
+		if ( $numericItemIds === [] ) {
+			return [];
+		}
+
 		$itemIds = [];
 		$links = $this->siteLinkLookup->getLinks( $numericItemIds, [ $this->siteGlobalId ] );
 
