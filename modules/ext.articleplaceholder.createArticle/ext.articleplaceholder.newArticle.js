@@ -1,10 +1,8 @@
 /**
- * @licence GNU GPL v2+
- *
+ * @license GNU GPL v2+
  * @author Lucie-Aimée Kaffee
  * @author Florian Schmidt
  */
-
 ( function ( $, mw, OO, module ) {
 	'use strict';
 

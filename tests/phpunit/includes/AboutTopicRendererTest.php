@@ -29,7 +29,7 @@ use Wikibase\Lib\Store\LanguageFallbackLabelDescriptionLookupFactory;
  * @group ArticlePlaceholder
  * @group Database
  *
- * @licence GNU GPL v2+
+ * @license GNU GPL v2+
  * @author Lucie-Aimée Kaffee
  */
 class AboutTopicRendererTest extends MediaWikiTestCase {

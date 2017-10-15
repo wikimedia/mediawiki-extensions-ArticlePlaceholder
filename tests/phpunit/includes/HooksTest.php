@@ -10,7 +10,7 @@ use PHPUnit_Framework_TestCase;
  *
  * @group ArticlePlaceholder
  *
- * @licence GNU GPL v2+
+ * @license GNU GPL v2+
  * @author Thiemo Mättig
  */
 class HooksTest extends PHPUnit_Framework_TestCase {

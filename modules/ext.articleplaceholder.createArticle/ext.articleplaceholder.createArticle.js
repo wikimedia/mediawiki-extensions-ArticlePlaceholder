@@ -1,9 +1,8 @@
 /**
- * @licence GNU GPL v2+
+ * @license GNU GPL v2+
  * @author Florian Schmidt
  * @author Jonas M. Kress
  */
-
 ( function ( $, mw, OO, module ) {
 	'use strict';
 

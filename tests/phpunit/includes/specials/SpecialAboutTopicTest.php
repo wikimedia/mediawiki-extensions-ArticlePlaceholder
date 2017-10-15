@@ -24,7 +24,7 @@ use Wikibase\Lib\Tests\MockRepository;
  *
  * @group ArticlePlaceholder
  *
- * @licence GNU GPL v2+
+ * @license GNU GPL v2+
  * @author Thiemo Mättig
  * @author Lucie-Aimée Kaffee
  */

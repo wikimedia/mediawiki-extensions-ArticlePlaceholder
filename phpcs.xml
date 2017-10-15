@@ -2,13 +2,10 @@
 <ruleset name="ArticlePlaceholder">
 	<rule ref="./vendor/wikibase/wikibase-codesniffer/Wikibase" />
 
-	<rule ref="Generic.Formatting.NoSpaceAfterCast" />
 	<rule ref="PSR1" />
 	<rule ref="Squiz.Classes.ValidClassName.NotCamelCaps">
 		<exclude-pattern>Scribunto_LuaArticlePlaceholderLibrary</exclude-pattern>
 	</rule>
-	<rule ref="Squiz.Operators.ValidLogicalOperators" />
 
 	<file>.</file>
-	<exclude-pattern>node_modules</exclude-pattern>
 </ruleset>

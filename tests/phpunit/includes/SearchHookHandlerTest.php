@@ -28,7 +28,7 @@ use Wikibase\TermIndexEntry;
  *
  * @covers ArticlePlaceholder\SearchHookHandler
  *
- * @licence GNU GPL v2+
+ * @license GNU GPL v2+
  * @author Lucie-Aimée Kaffee
  */
 class SearchHookHandlerTest extends MediaWikiTestCase {

@@ -8,7 +8,7 @@ use Scribunto_LuaLibraryBase;
 /**
  * Registers and defines functions needed by the Lua modules
  *
- * @licence GNU GPL v2+
+ * @license GNU GPL v2+
  * @author Lucie-Aimée Kaffee
  */
 class Scribunto_LuaArticlePlaceholderLibrary extends Scribunto_LuaLibraryBase {
