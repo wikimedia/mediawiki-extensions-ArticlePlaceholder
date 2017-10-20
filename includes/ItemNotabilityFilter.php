@@ -79,13 +79,17 @@ class ItemNotabilityFilter {
 
 		$numericItemIds = [];
 
-		$statementClaimsCount = $this->getStatementClaimsCount( $itemIds );
+		$pagePropsByItem = $this->getPagePropsByItem( $itemIds );
 
 		foreach ( $itemIds as $itemId ) {
 			$itemIdSerialization = $itemId->getSerialization();
+			$pageProps = $pagePropsByItem[$itemIdSerialization];
 
-			if ( $statementClaimsCount[$itemIdSerialization]['wb-claims'] >= self::MIN_STATEMENTS
-				&& $statementClaimsCount[$itemIdSerialization]['wb-sitelinks'] >= self::MIN_SITELINKS
+			if (
+				isset( $pageProps['wb-claims'] ) &&
+				isset( $pageProps['wb-sitelinks'] ) &&
+				$pageProps['wb-claims'] >= self::MIN_STATEMENTS &&
+				$pageProps['wb-sitelinks'] >= self::MIN_SITELINKS
 			) {
 				$numericItemIds[] = $itemId->getNumericId();
 			}
@@ -99,9 +103,9 @@ class ItemNotabilityFilter {
 	 *
 	 * @param ItemId[] $itemIds
 	 *
-	 * @return array() int[page_title][propname] => value
+	 * @return int[][] Map of page_title => propname => numeric value
 	 */
-	private function getStatementClaimsCount( array $itemIds ) {
+	private function getPagePropsByItem( array $itemIds ) {
 		$statementsClaimsCount = [];
 
 		$dbr = $this->connectionManager->getReadConnection();
@@ -111,7 +115,7 @@ class ItemNotabilityFilter {
 		$this->connectionManager->releaseConnection( $dbr );
 
 		foreach ( $res as $row ) {
-			$statementsClaimsCount[$row->page_title][$row->pp_propname] = $row->pp_value ?: 0;
+			$statementsClaimsCount[$row->page_title][$row->pp_propname] = intval( $row->pp_value ?: 0 );
 		}
 
 		return $statementsClaimsCount;
