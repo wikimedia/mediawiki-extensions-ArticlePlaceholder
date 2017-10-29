@@ -49,12 +49,15 @@
 		mw.track( 'counter.MediaWiki.wikibase.articleplaceholder.button.translateArticle' );
 
 		mw.loader.using( 'ext.cx.sitemapper' ).then( function () {
-			var url = ( new mw.cx.SiteMapper() ).getCXUrl(
-				mw.config.get( 'apPageNames' )[ self.languageInput.getValue() ],
-				self.titleInput.getValue(),
-				self.languageInput.getValue(),
-				mw.config.get( 'wgContentLanguage' )
-			);
+			var siteMapper = new mw.cx.SiteMapper(
+					mw.config.get( 'wgContentTranslationSiteTemplates' )
+				),
+				url = siteMapper.getCXUrl(
+					mw.config.get( 'apPageNames' )[ self.languageInput.getValue() ],
+					self.titleInput.getValue(),
+					self.languageInput.getValue(),
+					mw.config.get( 'wgContentLanguage' )
+				);
 
 			self.forwardTo( url );
 			deferred.resolve();
