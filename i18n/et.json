@@ -1,0 +1,30 @@
+{
+	"@metadata": {
+		"authors": [
+			"Metsavend"
+		]
+	},
+	"createtopicpage": "Loo lehekülg",
+	"articleplaceholder-abouttopic": "Teema kohta",
+	"articleplaceholder-abouttopic-intro": "See erilehekülg annab sulle kiirülevaate teemast tuginedes andmetele, mille allikas on {{WBREPONAME}}",
+	"articleplaceholder-abouttopic-entityid": "Palun sisesta üksuse ID, näiteks Q12345",
+	"articleplaceholder-abouttopic-submit": "visand",
+	"articleplaceholder-abouttopic-no-entity-error": "See pole sobiv üksuse ID.",
+	"articleplaceholder-abouttopic-create-article-title": "Alusta uut artiklit",
+	"articleplaceholder-abouttopic-create-article-label": "Artikli pealkiri",
+	"articleplaceholder-abouttopic-create-article-mandatory": "Artikli pealkiri on kohustuslik.",
+	"articleplaceholder-abouttopic-create-article-button": "Loo artikkel",
+	"articleplaceholder-abouttopic-create-emtpy-article-button": "Alusta uut artiklit",
+	"articleplaceholder-abouttopic-translate-article-label": "Lähtekeel:",
+	"articleplaceholder-abouttopic-translate-article-button": "Tõlgi artikkel",
+	"articleplaceholder-abouttopic-create-article-submit-button": "Saada",
+	"articleplaceholder-abouttopic-article-exists-error": "Sellise nimega artikkel on juba olemas",
+	"articleplaceholder-abouttopic-lua-entity": "Olem",
+	"articleplaceholder-abouttopic-lua-reference": "Viide",
+	"articleplaceholder-abouttopic-lua-identifier": "Välised allikad",
+	"articleplaceholder-search-header": "Leia andmeid teema kohta",
+	"articleplaceholder-createpage-title": "Loo $1",
+	"articleplaceholder-createpage-alreadyexists": "Lehekülg pealkirjaga $1 on juba olemas. Vali mõni teine.",
+	"articleplaceholder-createpage-notitleprovided": "Pealkirja ei sisestatud, sisesta pealkiri lehele, mida soovid luua.",
+	"articleplaceholder-createpage-invalidtitleprovided": "Sinu sisestatud pealkiri on vigane. Palun sisesta sobiv pealkiri."
+}
