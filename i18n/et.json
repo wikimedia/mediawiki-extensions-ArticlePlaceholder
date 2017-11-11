@@ -1,16 +1,17 @@
 {
 	"@metadata": {
 		"authors": [
-			"Metsavend"
+			"Metsavend",
+			"Pikne"
 		]
 	},
-	"createtopicpage": "Loo lehekülg",
+	"createtopicpage": "Lehekülje alustamine",
 	"articleplaceholder-abouttopic": "Teema kohta",
-	"articleplaceholder-abouttopic-intro": "See erilehekülg annab sulle kiirülevaate teemast tuginedes andmetele, mille allikas on {{WBREPONAME}}",
+	"articleplaceholder-abouttopic-intro": "See erilehekülg annab kiirülevaate teemast, tuginedes Vikiandmetest pärit andmetele.",
 	"articleplaceholder-abouttopic-entityid": "Palun sisesta üksuse ID, näiteks Q12345",
 	"articleplaceholder-abouttopic-submit": "visand",
 	"articleplaceholder-abouttopic-no-entity-error": "See pole sobiv üksuse ID.",
-	"articleplaceholder-abouttopic-create-article-title": "Alusta uut artiklit",
+	"articleplaceholder-abouttopic-create-article-title": "Uue artikli alustamine",
 	"articleplaceholder-abouttopic-create-article-label": "Artikli pealkiri",
 	"articleplaceholder-abouttopic-create-article-mandatory": "Artikli pealkiri on kohustuslik.",
 	"articleplaceholder-abouttopic-create-article-button": "Loo artikkel",
@@ -18,7 +19,7 @@
 	"articleplaceholder-abouttopic-translate-article-label": "Lähtekeel:",
 	"articleplaceholder-abouttopic-translate-article-button": "Tõlgi artikkel",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Saada",
-	"articleplaceholder-abouttopic-article-exists-error": "Sellise nimega artikkel on juba olemas",
+	"articleplaceholder-abouttopic-article-exists-error": "Sellise pealkirjaga artikkel on juba olemas",
 	"articleplaceholder-abouttopic-lua-entity": "Olem",
 	"articleplaceholder-abouttopic-lua-reference": "Viide",
 	"articleplaceholder-abouttopic-lua-identifier": "Välised allikad",
