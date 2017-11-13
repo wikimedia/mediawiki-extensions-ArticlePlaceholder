@@ -22,12 +22,6 @@
 		"wikibase/wikibase-codesniffer": "^0.2.0",
 		"mediawiki/minus-x": "0.2.0"
 	},
-	"autoload": {
-		"psr-4": {
-			"ArticlePlaceholder\\": "includes/",
-			"ArticlePlaceholder\\Specials\\": "includes/specials/"
-		}
-	},
 	"scripts": {
 		"test": [
 			"parallel-lint . --exclude vendor --exclude node_modules",

@@ -16,10 +16,19 @@
 			"i18n"
 		]
 	},
+	"AutoloadClasses": {
+		"ArticlePlaceholder\\AboutTopicRenderer": "includes/AboutTopicRenderer.php",
+		"ArticlePlaceholder\\BaseTemplateToolboxHookHandler": "includes/BaseTemplateToolboxHookHandler.php",
+		"ArticlePlaceholder\\Hooks": "includes/Hooks.php",
+		"ArticlePlaceholder\\ItemNotabilityFilter": "includes/ItemNotabilityFilter.php",
+		"ArticlePlaceholder\\Lua\\Scribunto_LuaArticlePlaceholderLibrary": "includes/Lua/Scribunto_LuaArticlePlaceholderLibrary.php",
+		"ArticlePlaceholder\\SearchHookHandler": "includes/SearchHookHandler.php",
+		"ArticlePlaceholder\\Specials\\SpecialAboutTopic": "includes/specials/SpecialAboutTopic.php",
+		"ArticlePlaceholder\\Specials\\SpecialCreateTopicPage": "includes/specials/SpecialCreateTopicPage.php"
+	},
 	"ExtensionMessagesFiles": {
 		"ArticlePlaceholderAliases": "ArticlePlaceholder.alias.php"
 	},
-	"load_composer_autoloader": true,
 	"ResourceModules": {
 		"ext.articleplaceholder.createArticle": {
 			"position": "bottom",
