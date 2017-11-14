@@ -77,7 +77,7 @@ class ItemNotabilityFilter {
 			return [];
 		}
 
-		$numericItemIds = [];
+		$byNumericId = [];
 
 		$pagePropsByItem = $this->getPagePropsByItem( $itemIds );
 
@@ -91,22 +91,20 @@ class ItemNotabilityFilter {
 				$pageProps['wb-claims'] >= self::MIN_STATEMENTS &&
 				$pageProps['wb-sitelinks'] >= self::MIN_SITELINKS
 			) {
-				$numericItemIds[] = $itemId->getNumericId();
+				$byNumericId[$itemId->getNumericId()] = $itemId;
 			}
 		}
 
-		return $this->getItemsWithoutArticle( $numericItemIds );
+		return $this->getItemsWithoutArticle( $byNumericId );
 	}
 
 	/**
-	 * Get number of statements and claims for a list of ItemIds
-	 *
 	 * @param ItemId[] $itemIds
 	 *
 	 * @return int[][] Map of page_title => propname => numeric value
 	 */
 	private function getPagePropsByItem( array $itemIds ) {
-		$statementsClaimsCount = [];
+		$values = [];
 
 		$dbr = $this->connectionManager->getReadConnection();
 
@@ -115,10 +113,10 @@ class ItemNotabilityFilter {
 		$this->connectionManager->releaseConnection( $dbr );
 
 		foreach ( $res as $row ) {
-			$statementsClaimsCount[$row->page_title][$row->pp_propname] = intval( $row->pp_value ?: 0 );
+			$values[$row->page_title][$row->pp_propname] = intval( $row->pp_value ?: 0 );
 		}
 
-		return $statementsClaimsCount;
+		return $values;
 	}
 
 	/**
@@ -155,32 +153,23 @@ class ItemNotabilityFilter {
 	}
 
 	/**
-	 * @param int[] $numericItemIds
+	 * @param ItemId[] $itemIds expected to be indexed by numeric item ID
 	 *
 	 * @return ItemId[]
 	 */
-	private function getItemsWithoutArticle( array $numericItemIds ) {
-		if ( $numericItemIds === [] ) {
+	private function getItemsWithoutArticle( array $itemIds ) {
+		if ( $itemIds === [] ) {
 			return [];
 		}
 
-		$itemIds = [];
-		$links = $this->siteLinkLookup->getLinks( $numericItemIds, [ $this->siteGlobalId ] );
+		$links = $this->siteLinkLookup->getLinks( array_keys( $itemIds ), [ $this->siteGlobalId ] );
 
-		if ( !empty( $links ) ) {
-			foreach ( $links as $link ) {
-				$key = array_search( $link[2], $numericItemIds );
-				if ( $key !== false ) {
-					unset( $numericItemIds[$key] );
-				}
-			}
+		foreach ( $links as $link ) {
+			list( , , $numericId ) = $link;
+			unset( $itemIds[$numericId] );
 		}
 
-		foreach ( $numericItemIds as $itemId ) {
-			$itemIds[] = ItemId::newFromNumber( $itemId );
-		}
-
-		return $itemIds;
+		return array_values( $itemIds );
 	}
 
 }
