@@ -7,6 +7,7 @@
 	},
 	"createtopicpage": "ایجاد صفحه",
 	"articleplaceholder-abouttopic": "درباره موضوع",
+	"articleplaceholder-abouttopic-no-entity-error": "این یک شناسه معتبر آیتم نیست.",
 	"articleplaceholder-abouttopic-create-article-title": "یک مقاله جدید بسازید",
 	"articleplaceholder-abouttopic-create-article-label": "عنوان مقاله",
 	"articleplaceholder-abouttopic-create-article-mandatory": "عنوان مقاله اجباری است.",
