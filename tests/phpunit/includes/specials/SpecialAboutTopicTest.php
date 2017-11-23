@@ -25,7 +25,7 @@ use Wikibase\Lib\Tests\MockRepository;
  * @group ArticlePlaceholder
  *
  * @license GNU GPL v2+
- * @author Thiemo Mättig
+ * @author Thiemo Kreuz
  * @author Lucie-Aimée Kaffee
  */
 class SpecialAboutTopicTest extends MediaWikiTestCase {

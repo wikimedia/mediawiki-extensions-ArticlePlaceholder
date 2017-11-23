@@ -11,7 +11,7 @@ use PHPUnit_Framework_TestCase;
  * @group ArticlePlaceholder
  *
  * @license GNU GPL v2+
- * @author Thiemo Mättig
+ * @author Thiemo Kreuz
  */
 class HooksTest extends PHPUnit_Framework_TestCase {
 
