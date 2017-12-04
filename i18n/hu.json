@@ -11,7 +11,6 @@
 	"articleplaceholder-abouttopic-intro": "Ez a speciális lap gyors áttekintést ad témákról {{WBREPONAME}}-adatok felhasználásával.",
 	"articleplaceholder-abouttopic-entityid": "Add meg egy elem azonosítóját (pl. Q12345)",
 	"articleplaceholder-abouttopic-no-entity-error": "Érvénytelen azonosító.",
-	"articleplaceholder-abouttopic-create-article": "Új szócikk létrehozás ezen a címen",
 	"articleplaceholder-abouttopic-create-article-label": "Szócikk címe",
 	"articleplaceholder-abouttopic-create-article-mandatory": "A cikk címének megadása kötelező.",
 	"articleplaceholder-abouttopic-create-article-button": "Szócikk létrehozása",
