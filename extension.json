@@ -7,6 +7,9 @@
 	"descriptionmsg": "articleplaceholder-desc",
 	"type": "other",
 	"license-name": "GPL-2.0+",
+	"requires": {
+		"MediaWiki": ">= 1.31.0"
+	},
 	"SpecialPages": {
 		"AboutTopic": "ArticlePlaceholder\\Specials\\SpecialAboutTopic::newFromGlobalState",
 		"CreateTopicPage": "ArticlePlaceholder\\Specials\\SpecialCreateTopicPage"
@@ -16,15 +19,8 @@
 			"i18n"
 		]
 	},
-	"AutoloadClasses": {
-		"ArticlePlaceholder\\AboutTopicRenderer": "includes/AboutTopicRenderer.php",
-		"ArticlePlaceholder\\BaseTemplateToolboxHookHandler": "includes/BaseTemplateToolboxHookHandler.php",
-		"ArticlePlaceholder\\Hooks": "includes/Hooks.php",
-		"ArticlePlaceholder\\ItemNotabilityFilter": "includes/ItemNotabilityFilter.php",
-		"ArticlePlaceholder\\Lua\\Scribunto_LuaArticlePlaceholderLibrary": "includes/Lua/Scribunto_LuaArticlePlaceholderLibrary.php",
-		"ArticlePlaceholder\\SearchHookHandler": "includes/SearchHookHandler.php",
-		"ArticlePlaceholder\\Specials\\SpecialAboutTopic": "includes/specials/SpecialAboutTopic.php",
-		"ArticlePlaceholder\\Specials\\SpecialCreateTopicPage": "includes/specials/SpecialCreateTopicPage.php"
+	"AutoloadNamespaces": {
+		"ArticlePlaceholder\\": "includes/"
 	},
 	"ExtensionMessagesFiles": {
 		"ArticlePlaceholderAliases": "ArticlePlaceholder.alias.php"
