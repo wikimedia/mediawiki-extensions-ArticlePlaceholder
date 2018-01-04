@@ -23,7 +23,7 @@ use Wikimedia\Rdbms\SessionConsistentConnectionManager;
  *
  * @covers ArticlePlaceholder\ItemNotabilityFilter
  *
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  * @author Marius Hoch
  * @author Lucie-Aimée Kaffee
  */

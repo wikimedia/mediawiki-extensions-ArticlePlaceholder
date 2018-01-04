@@ -1,6 +1,6 @@
 {
 	"name": "articleplaceholder",
-	"license": "GPL-2.0+",
+	"license": "GPL-2.0-or-later",
 	"version": "0.0.1",
 	"repository": {
 		"type": "git",

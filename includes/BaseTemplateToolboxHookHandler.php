@@ -16,7 +16,7 @@ use Wikibase\DataModel\Services\Lookup\EntityLookup;
 /**
  * Add Wikibase item link in toolbox for placeholders: Handler for the "BaseTemplateToolbox" hook.
  *
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  * @author Marius Hoch < hoo@online.de >
  */
 class BaseTemplateToolboxHookHandler {

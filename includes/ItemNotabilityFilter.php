@@ -15,7 +15,7 @@ use Wikimedia\Rdbms\SessionConsistentConnectionManager;
  * @author Lucie-Aimée Kaffee
  * @author Marius Hoch
  *
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  */
 class ItemNotabilityFilter {
 
