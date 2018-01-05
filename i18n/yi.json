@@ -4,16 +4,23 @@
 			"פוילישער"
 		]
 	},
+	"createtopicpage": "שאַפֿן בלאַט",
 	"articleplaceholder-desc": "פֿאַרזארגט א באַזונדערן בלאַט מיט {{WBREPONAME}} אינפֿארמאַציע וועגן אַ געװיסער טעמע, מיט אן איינלאַדונג צו שאַפֿן אַן אַרטיקל פֿאַר דער טעמע.",
 	"articleplaceholder-abouttopic": "וועגן טעמע",
 	"articleplaceholder-abouttopic-no-entity-error": "דאס איז נישט קיין גילטיקער אביעקט אידענטיפיצירער.",
+	"articleplaceholder-abouttopic-create-article-title": "שאפֿן א נייעם ארטיקל",
 	"articleplaceholder-abouttopic-create-article-label": "ארטיקל־טיטל",
 	"articleplaceholder-abouttopic-create-article-mandatory": "דער ארטיקל־טיטל איז פֿליכטלעך.",
 	"articleplaceholder-abouttopic-create-article-button": "שאפֿן אן ארטיקל",
+	"articleplaceholder-abouttopic-create-emtpy-article-button": "אנהייבן א נייעם ארטיקל",
+	"articleplaceholder-abouttopic-translate-article-label": "קוואלשפראך:",
+	"articleplaceholder-abouttopic-translate-article-button": "איבערזעצן ארטיקל",
 	"articleplaceholder-abouttopic-create-article-submit-button": "איינגעבן",
 	"articleplaceholder-abouttopic-article-exists-error": "אן ארטיקל מיט דעם נאמען עקזיסטירט שוין",
 	"articleplaceholder-abouttopic-lua-entity": "אביעקט",
 	"articleplaceholder-abouttopic-lua-reference": "רעפערענץ",
 	"articleplaceholder-abouttopic-lua-identifier": "דרויסנדיקע קוואלן",
-	"articleplaceholder-search-header": "אנטדעקן דאטן וועגן דער טעמע"
+	"articleplaceholder-search-header": "אנטדעקן דאטן וועגן דער טעמע",
+	"articleplaceholder-createpage-title": "שאפן $1",
+	"articleplaceholder-createpage-alreadyexists": "דער בלאט מיטן טיטל $1 איז שוין פֿאראן. זייט אזוי גוט און קלויבט אן אנדערן."
 }
