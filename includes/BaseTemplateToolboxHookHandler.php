@@ -49,11 +49,6 @@ class BaseTemplateToolboxHookHandler {
 		);
 	}
 
-	/**
-	 * @param EntityIdParser $entityIdParser
-	 * @param RepoLinker $repoLinker
-	 * @param EntityLookup $entityLookup
-	 */
 	public function __construct(
 		EntityIdParser $entityIdParser,
 		RepoLinker $repoLinker,
