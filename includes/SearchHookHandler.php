@@ -64,7 +64,7 @@ class SearchHookHandler {
 	 */
 	private static function newFromGlobalState( SpecialPage $specialPage ) {
 		$wikibaseClient = WikibaseClient::getDefaultInstance();
-		$repoDB = $wikibaseClient->getSettings()->getSetting( 'repoDatabase' );
+		$repoDB = $wikibaseClient->getRepositoryDefinitions()->getDatabaseNames()[''];
 
 		$itemNotabilityFilter = new ItemNotabilityFilter(
 			new SessionConsistentConnectionManager( wfGetLB( $repoDB ), $repoDB ),
