@@ -5,7 +5,7 @@ namespace ArticlePlaceholder;
 use Wikibase\DataModel\Entity\ItemId;
 use Wikibase\Lib\Store\EntityNamespaceLookup;
 use Wikibase\Lib\Store\SiteLinkLookup;
-use Wikimedia\Rdbms\Database;
+use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\ResultWrapper;
 use Wikimedia\Rdbms\SessionConsistentConnectionManager;
 
@@ -120,12 +120,12 @@ class ItemNotabilityFilter {
 	}
 
 	/**
-	 * @param Database $dbr
+	 * @param IDatabase $dbr
 	 * @param ItemId[] $itemIds
 	 *
 	 * @return ResultWrapper
 	 */
-	private function selectPagePropsPage( Database $dbr, array $itemIds ) {
+	private function selectPagePropsPage( IDatabase $dbr, array $itemIds ) {
 		$entityNamespace = $this->entityNamespaceLookup->getEntityNamespace( 'item' );
 
 		if ( !is_int( $entityNamespace ) ) {
