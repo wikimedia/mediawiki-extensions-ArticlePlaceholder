@@ -15,6 +15,15 @@ use PHPUnit_Framework_TestCase;
  */
 class HooksTest extends PHPUnit_Framework_TestCase {
 
+	public function testOnScribuntoExternalLibraries() {
+		$instance = new Hooks();
+		$extraLibraries = [];
+		$instance->onScribuntoExternalLibraries( 'lua', $extraLibraries );
+		$this->assertCount( 1, $extraLibraries );
+		$this->assertContainsOnly( 'array', $extraLibraries );
+		$this->assertArrayHasKey( 'class', reset( $extraLibraries ) );
+	}
+
 	public function testRegisterScribuntoExternalLibraryPaths() {
 		$instance = new Hooks();
 		$paths = [];
