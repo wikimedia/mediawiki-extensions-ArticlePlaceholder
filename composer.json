@@ -3,7 +3,7 @@
 	"type": "mediawiki-extension",
 	"description": "Provides a special page with Wikibase information about a certain topic, with invitation to create an article for the topic",
 	"homepage": "https://www.mediawiki.org/wiki/Extension:ArticlePlaceholder",
-	"license": "GPL-2.0+",
+	"license": "GPL-2.0-or-later",
 	"authors": [
 		{
 			"name": "Lucie-Aimée Kaffee"
