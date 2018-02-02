@@ -27,7 +27,6 @@
 	},
 	"ResourceModules": {
 		"ext.articleplaceholder.createArticle": {
-			"position": "bottom",
 			"scripts": [
 				"ext.articleplaceholder.createArticle/ext.articleplaceholder.createArticle.js",
 				"ext.articleplaceholder.createArticle/ext.articleplaceholder.createArticleTranslation.js",
@@ -61,7 +60,6 @@
 					"media": "only screen and (max-device-width: 880px)"
 				}
 			},
-			"position": "top",
 			"targets" : [
 				"desktop",
 				"mobile"
