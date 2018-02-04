@@ -19,3 +19,9 @@ $specialPageAliases['cy'] = [
 	'AboutTopic' => [ 'Am_y_Pwnc' ],
 	'CreateTopicPage' => [ 'Creu_Dalen_Bwnc' ],
 ];
+
+/** Urdu (اردو) */
+$specialPageAliases['ur'] = [
+	'AboutTopic' => [ 'تعارف_موضوع' ],
+	'CreateTopicPage' => [ 'تخلیق_صفحہ_موضوع' ],
+];
