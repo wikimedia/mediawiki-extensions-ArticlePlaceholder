@@ -1,0 +1,31 @@
+{
+	"@metadata": {
+		"authors": [
+			"Muhammad Shuaib"
+		]
+	},
+	"createtopicpage": "تخلیق صفحہ",
+	"articleplaceholder-desc": "مخصوص موضوع ر {{WBREPONAME}} سے ماخوذ معلومات پر مبنی ایک خصوصی صفحہ فراہم کرتا ہے جس میں اس متعلقہ موضوع پر نیا مضمون تحریر کرنے کی دعوت بھی دی جاتی ہے",
+	"articleplaceholder-abouttopic": "موضوع کا تعارف",
+	"articleplaceholder-abouttopic-intro": "اس خصوصی صفحے میں آپ کو موضوع کے متعلق مختصر معلوماتی خاکہ دستیاب ہوگا، یہ خاکہ {{WBREPONAME}} سے ماخوذ معلومات پر مبنی ہے۔",
+	"articleplaceholder-abouttopic-entityid": "براہ کرم آئٹم کا شناختی نمبر درج کریں مثلاً Q12345",
+	"articleplaceholder-abouttopic-submit": "مسودہ",
+	"articleplaceholder-abouttopic-no-entity-error": "شناختی نمبر درست نہیں ہے۔",
+	"articleplaceholder-abouttopic-create-article-title": "نیا مضمون تحریر کریں",
+	"articleplaceholder-abouttopic-create-article-label": "مضمون کا عنوان",
+	"articleplaceholder-abouttopic-create-article-mandatory": "مضمون کا عنوان لازمی ہے۔",
+	"articleplaceholder-abouttopic-create-article-button": "مضمون تحریر کریں",
+	"articleplaceholder-abouttopic-create-emtpy-article-button": "نیا مضمون بنائیں",
+	"articleplaceholder-abouttopic-translate-article-label": "ماخذ زبان:",
+	"articleplaceholder-abouttopic-translate-article-button": "ترجمہ مضمون",
+	"articleplaceholder-abouttopic-create-article-submit-button": "روانہ کریں",
+	"articleplaceholder-abouttopic-article-exists-error": "اس نام سے ایک دوسرا مضمون موجود ہے",
+	"articleplaceholder-abouttopic-lua-entity": "وجود",
+	"articleplaceholder-abouttopic-lua-reference": "حوالہ",
+	"articleplaceholder-abouttopic-lua-identifier": "بیرونی وسائل",
+	"articleplaceholder-search-header": "اس موضوع پر معلومات تلاش کریں",
+	"articleplaceholder-createpage-title": "تخلیق $1",
+	"articleplaceholder-createpage-alreadyexists": "$1 کے عنوان سے ایک صفحہ پہلے سے موجود ہے۔ براہ کرم کوئی دوسرا عنوان درج کریں۔",
+	"articleplaceholder-createpage-notitleprovided": "عنوان درج نہیں کیا گیا ہے، براہ کرم جس صفحہ کو آپ بنانا چاہ رہے ہیں اس کا عنوان درج کریں۔",
+	"articleplaceholder-createpage-invalidtitleprovided": "آپ کا درج کردہ عنوان درست نہیں ہے، براہ کرم درست عنوان درج کریں۔"
+}
