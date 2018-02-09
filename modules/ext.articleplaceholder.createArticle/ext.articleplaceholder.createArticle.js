@@ -205,4 +205,4 @@
 
 	module.exports.CreateArticleDialog = CreateArticleDialog;
 
-} )( jQuery, mediaWiki, OO, module );
+}( jQuery, mediaWiki, OO, module ) );

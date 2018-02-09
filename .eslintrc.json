@@ -12,7 +12,6 @@
 	"rules": {
 		"dot-notation": "off",
 		"no-proto": "off",
-		"valid-jsdoc": "off",
-		"wrap-iife": "off"
+		"valid-jsdoc": "off"
 	}
 }

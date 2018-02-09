@@ -24,4 +24,4 @@
 
 	$( init );
 
-} )( jQuery, mediaWiki, OO, module );
+}( jQuery, mediaWiki, OO, module ) );
