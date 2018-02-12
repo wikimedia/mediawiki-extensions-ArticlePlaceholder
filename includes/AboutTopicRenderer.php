@@ -5,6 +5,7 @@ namespace ArticlePlaceholder;
 use ExtensionRegistry;
 use Html;
 use Language;
+use MalformedTitleException;
 use OOUI;
 use SiteLookup;
 use SpecialPage;
@@ -99,13 +100,18 @@ class AboutTopicRenderer {
 		$output->addWikiText( '{{aboutTopic|' . $entityId->getSerialization() . '}}' );
 
 		$label = $this->getLabel( $entityId, $language );
-		$labelTitle = null;
-		if ( $label ) {
+		if ( $label !== null ) {
 			$this->showTitle( $label, $output );
-			$labelTitle = $this->titleFactory->newFromText( $label );
-		}
-		if ( $labelTitle && $labelTitle->quickUserCan( 'createpage', $user ) ) {
-			$this->showCreateArticle( $entityId, $label, $output );
+
+			try {
+				$title = $this->titleFactory->newFromText( $label );
+				if ( $title->quickUserCan( 'createpage', $user ) ) {
+					$this->showCreateArticle( $entityId, $label, $output );
+				}
+			} catch ( MalformedTitleException $ex ) {
+				// When the entity's label contains characters not allowed in page titles
+				$this->showCreateArticle( $entityId, '', $output );
+			}
 		}
 
 		$this->showLanguageLinks( $entityId, $output );
