@@ -1,8 +1,7 @@
 <?xml version="1.0"?>
-<ruleset name="ArticlePlaceholder">
+<ruleset>
 	<rule ref="./vendor/wikibase/wikibase-codesniffer/Wikibase" />
 
-	<rule ref="PSR1" />
 	<rule ref="Squiz.Classes.ValidClassName.NotCamelCaps">
 		<exclude-pattern>Scribunto_LuaArticlePlaceholderLibrary</exclude-pattern>
 	</rule>
