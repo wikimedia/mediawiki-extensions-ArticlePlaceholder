@@ -122,7 +122,7 @@
 		dialog.titleInput.setValue( NON_EXISTING_ARTICLE_TITLE );
 		dialog.onSubmit().done( function () {
 			assert.equal( dialog.forwardTo.getCall( 0 ).args[ 0 ],
-					SERVER + ARTICLE_URL, 'it should redirect to new create article URL' );
+				SERVER + ARTICLE_URL, 'it should redirect to new create article URL' );
 		} );
 	} );
 

@@ -8,8 +8,8 @@
 
 	function init() {
 		var CreateArticleDialog = mw.config.get( 'apContentTranslation' ) ?
-					module.exports.CreateArticleTranslationDialog :
-					module.exports.CreateArticleDialog,
+				module.exports.CreateArticleTranslationDialog :
+				module.exports.CreateArticleDialog,
 			windowManager = new OO.ui.WindowManager(),
 			dialog = new CreateArticleDialog();
 

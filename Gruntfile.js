@@ -32,6 +32,6 @@ module.exports = function ( grunt ) {
 		}
 	} );
 
-	grunt.registerTask( 'test', [ 'eslint', 'jsonlint', 'banana', 'qunit', 'stylelint' ] );
+	grunt.registerTask( 'test', [ 'eslint', 'stylelint', 'jsonlint', 'banana', 'qunit' ] );
 	grunt.registerTask( 'default', 'test' );
 };

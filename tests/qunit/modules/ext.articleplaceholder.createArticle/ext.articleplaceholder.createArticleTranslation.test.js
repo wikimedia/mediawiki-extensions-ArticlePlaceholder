@@ -74,7 +74,7 @@
 
 		return dialog.onSubmit().done( function () {
 			assert.equal( dialog.forwardTo.getCall( 0 ).args[ 0 ],
-					ARTICLE_URL, 'it should redirect to translate article URL' );
+				ARTICLE_URL, 'it should redirect to translate article URL' );
 		} );
 
 	} );
@@ -89,7 +89,7 @@
 
 		return dialog.onSubmit().done( function () {
 			assert.equal( dialog.forwardTo.getCall( 0 ).args[ 0 ],
-					ARTICLE_URL, 'it should redirect to translate article URL' );
+				ARTICLE_URL, 'it should redirect to translate article URL' );
 		} );
 
 	} );
