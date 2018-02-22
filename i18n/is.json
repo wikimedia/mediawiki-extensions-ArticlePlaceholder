@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sveinn í Felli"
+		]
+	},
+	"createtopicpage": "Búa til síðu",
+	"articleplaceholder-abouttopic-submit": "Útbúa",
+	"articleplaceholder-abouttopic-translate-article-label": "Upphaflegt tungumál:",
+	"articleplaceholder-abouttopic-create-article-submit-button": "Senda",
+	"articleplaceholder-abouttopic-lua-entity": "Einindi",
+	"articleplaceholder-abouttopic-lua-reference": "Tilvísun",
+	"articleplaceholder-createpage-title": "Búa til $1"
+}
