@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nikosgranturismogt"
+		]
+	},
+	"createtopicpage": "Δημιουργία σελίδας",
+	"articleplaceholder-abouttopic": "Σχετικά με θέμα",
+	"articleplaceholder-abouttopic-entityid": "Παρακαλούμε εισάγετε ένα αναγνωριστικό αντικειμένου όπως το Q12345",
+	"articleplaceholder-abouttopic-create-article-title": "Δημιουργία ενός νέου άρθρου",
+	"articleplaceholder-abouttopic-create-article-label": "Τίτλος άρθρου",
+	"articleplaceholder-abouttopic-create-article-mandatory": "Ο τίτλος του άρθρου είναι υποχρεωτικός.",
+	"articleplaceholder-abouttopic-create-article-button": "Δημιουργία άρθρου",
+	"articleplaceholder-abouttopic-create-emtpy-article-button": "Ξεκινήστε ένα νέο άρθρο",
+	"articleplaceholder-abouttopic-translate-article-label": "Γλώσσα πηγής:",
+	"articleplaceholder-abouttopic-translate-article-button": "Μετάφραση άρθρου",
+	"articleplaceholder-abouttopic-create-article-submit-button": "Υποβολή",
+	"articleplaceholder-abouttopic-article-exists-error": "Ένα λήμμα με αυτό το όνομα υπάρχει ήδη",
+	"articleplaceholder-abouttopic-lua-entity": "οντότητα",
+	"articleplaceholder-abouttopic-lua-reference": "Παραπομπή",
+	"articleplaceholder-abouttopic-lua-identifier": "Εξωτερικοί πόροι",
+	"articleplaceholder-search-header": "Ανακάλυψη δεδομένων στο θέμα",
+	"articleplaceholder-createpage-title": "Δημιουργία $1"
+}
