@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Mainframe98",
-			"McDutchie"
+			"McDutchie",
+			"Ooswesthoesbes"
 		]
 	},
 	"createtopicpage": "Pagina aanmaken",
@@ -19,5 +20,5 @@
 	"articleplaceholder-abouttopic-lua-entity": "Entiteit",
 	"articleplaceholder-abouttopic-lua-identifier": "Externe bronnen",
 	"articleplaceholder-createpage-title": "$1 aanmaken",
-	"articleplaceholder-createpage-alreadyexists": "Een pagina met de title $1 bestaat al. Kies een andere titel."
+	"articleplaceholder-createpage-alreadyexists": "Een pagina met de titel $1 bestaat al. Kies een andere titel."
 }

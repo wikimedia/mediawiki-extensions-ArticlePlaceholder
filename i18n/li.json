@@ -1,0 +1,31 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ooswesthoesbes"
+		]
+	},
+	"createtopicpage": "Maak pagina aan",
+	"articleplaceholder-desc": "Verzuut van 'n speciaal pagina mit {{WBREPONAME}}-infermasie euver e bestump óngerwerp mit oetnuuejing veur 'n artikel dao-euver aan te make",
+	"articleplaceholder-abouttopic": "Euver 't óngerwerp",
+	"articleplaceholder-abouttopic-intro": "Dees speciaal pagina geuf dich e snel euverzich van 'n óngerwerp gegrundj op gegaeves van {{WBREPONAME}}.",
+	"articleplaceholder-abouttopic-entityid": "Tik estebleef 'n deil-id in wie Q12345",
+	"articleplaceholder-abouttopic-submit": "sjöp",
+	"articleplaceholder-abouttopic-no-entity-error": "Dit is gein geljige deil-id.",
+	"articleplaceholder-abouttopic-create-article-title": "Maak e nuuj artikel aan",
+	"articleplaceholder-abouttopic-create-article-label": "Artikelnaam",
+	"articleplaceholder-abouttopic-create-article-mandatory": "De naam van 't artikel is verplich.",
+	"articleplaceholder-abouttopic-create-article-button": "Maak 'n artikel aan",
+	"articleplaceholder-abouttopic-create-emtpy-article-button": "Begin e nuuj artikel",
+	"articleplaceholder-abouttopic-translate-article-label": "Brónspraok:",
+	"articleplaceholder-abouttopic-translate-article-button": "Zèt artikel euver",
+	"articleplaceholder-abouttopic-create-article-submit-button": "Slaon op",
+	"articleplaceholder-abouttopic-article-exists-error": "'n Artikel mit deze naam besteit al",
+	"articleplaceholder-abouttopic-lua-entity": "Entiteit",
+	"articleplaceholder-abouttopic-lua-reference": "Verwiezing",
+	"articleplaceholder-abouttopic-lua-identifier": "Extern brónne",
+	"articleplaceholder-search-header": "Óntdèk gegaeves euver 't óngerwerp",
+	"articleplaceholder-createpage-title": "Maak $1 aan",
+	"articleplaceholder-createpage-alreadyexists": "'n Pagina mit de titel $1 besteit al. Kees 'nen angere titel.",
+	"articleplaceholder-createpage-notitleprovided": "Geinen titel is ingetik wore; tik estebleef 'nen titel in veur de pagina die se wils aanmake.",
+	"articleplaceholder-createpage-invalidtitleprovided": "d'n Titel dae se höbs ingetik is óngeljig. Verzeen ós estebleef van 'ne geljigen titel."
+}

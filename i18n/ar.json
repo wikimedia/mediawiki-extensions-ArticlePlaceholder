@@ -6,13 +6,28 @@
 			"ديفيد"
 		]
 	},
+	"createtopicpage": "إنشاء صفحة",
+	"articleplaceholder-desc": "يوفر صفحة خاصة تحتوي على معلومات {{WBREPONAME}} حول موضوع معين، مع دعوة لإنشاء مقالة للموضوع",
 	"articleplaceholder-abouttopic": "عن الموضوع",
+	"articleplaceholder-abouttopic-intro": "تمنحك هذه الصفحة الخاصة نظرة عامة سريعة على موضوع يستند إلى بيانات من {{WBREPONAME}}.",
+	"articleplaceholder-abouttopic-entityid": "الرجاء إدخال معرف عنصر مثل Q12345",
+	"articleplaceholder-abouttopic-submit": "حرفة",
 	"articleplaceholder-abouttopic-no-entity-error": "هذا ليس معرفًا صالحًا لعنصر.",
+	"articleplaceholder-abouttopic-create-article-title": "إنشاء مقالة جديدة",
 	"articleplaceholder-abouttopic-create-article-label": "عنوان المقالة",
+	"articleplaceholder-abouttopic-create-article-mandatory": "عنوان المقالة إلزامي.",
 	"articleplaceholder-abouttopic-create-article-button": "أنشأ مقالة",
+	"articleplaceholder-abouttopic-create-emtpy-article-button": "بدء مقالة جديدة",
+	"articleplaceholder-abouttopic-translate-article-label": "اللغة المصدر:",
+	"articleplaceholder-abouttopic-translate-article-button": "ترجمة المقالة",
 	"articleplaceholder-abouttopic-create-article-submit-button": "إرسال",
 	"articleplaceholder-abouttopic-article-exists-error": "هناك بالفعل مقالة بهذا الاسم",
+	"articleplaceholder-abouttopic-lua-entity": "كيان",
 	"articleplaceholder-abouttopic-lua-reference": "المرجع",
 	"articleplaceholder-abouttopic-lua-identifier": "مصادر خارجية",
-	"articleplaceholder-createpage-title": "أنشئ $1"
+	"articleplaceholder-search-header": "اكتشاف البيانات حول الموضوع",
+	"articleplaceholder-createpage-title": "أنشئ $1",
+	"articleplaceholder-createpage-alreadyexists": "الصفحة التي تحمل العنوان $1 موجودة بالفعل; الرجاء اختيار واحد آخر.",
+	"articleplaceholder-createpage-notitleprovided": "لم يتم إدخال عنوان; يُرجَى إدخال عنوان للصفحة التي تريد إنشاءها.",
+	"articleplaceholder-createpage-invalidtitleprovided": "العنوان الذي أدخلته غير صالح; يُرجَى تقديم عنوان صالح."
 }
