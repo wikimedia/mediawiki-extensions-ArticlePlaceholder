@@ -10,7 +10,6 @@ use MediaWiki\MediaWikiServices;
 use Wikibase\Client\WikibaseClient;
 use Wikibase\Lib\Interactors\TermSearchInteractor;
 use Wikibase\Lib\Interactors\TermSearchResult;
-use Wikibase\TermIndex;
 use Wikibase\TermIndexEntry;
 use Wikimedia\Rdbms\SessionConsistentConnectionManager;
 
@@ -21,11 +20,6 @@ use Wikimedia\Rdbms\SessionConsistentConnectionManager;
  * @license GNU General Public Licence 2.0 or later
  */
 class SearchHookHandler {
-
-	/**
-	 * @var TermIndex
-	 */
-	private $termIndex;
 
 	/**
 	 * @var TermSearchInteractor
@@ -74,7 +68,6 @@ class SearchHookHandler {
 		);
 
 		return new self(
-			$wikibaseClient->getStore()->getTermIndex(),
 			$wikibaseClient->newTermSearchInteractor( $specialPage->getLanguage()->getCode() ),
 			$specialPage->getConfig()->get( 'LanguageCode' ),
 			$wikibaseClient->getSettings()->getSetting( 'repoScriptPath' ),
@@ -85,7 +78,6 @@ class SearchHookHandler {
 	}
 
 	/**
-	 * @param TermIndex $termIndex
 	 * @param TermSearchInteractor $termSearchInteractor
 	 * @param string $languageCode content language
 	 * @param string $repoScriptPath
@@ -94,7 +86,6 @@ class SearchHookHandler {
 	 * @param StatsdDataFactoryInterface $statsdDataFactory
 	 */
 	public function __construct(
-		TermIndex $termIndex,
 		TermSearchInteractor $termSearchInteractor,
 		$languageCode,
 		$repoScriptPath,
@@ -102,7 +93,6 @@ class SearchHookHandler {
 		ItemNotabilityFilter $itemNotabilityFilter,
 		StatsdDataFactoryInterface $statsdDataFactory
 	) {
-		$this->termIndex = $termIndex;
 		$this->termSearchInteractor = $termSearchInteractor;
 		$this->languageCode = $languageCode;
 		$this->repoScriptPath = $repoScriptPath;

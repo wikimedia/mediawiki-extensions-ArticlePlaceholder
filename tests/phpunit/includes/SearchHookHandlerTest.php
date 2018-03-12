@@ -159,7 +159,6 @@ class SearchHookHandlerTest extends MediaWikiTestCase {
 		$language = $this->getLanguageCode();
 
 		return new SearchHookHandler(
-			$this->getMockTermIndex(),
 			$this->getMockedTermSearchInteractor( $language, $doNotReturnTerms ),
 			$language,
 			'repo-script-path',
