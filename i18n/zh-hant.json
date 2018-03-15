@@ -2,12 +2,32 @@
 	"@metadata": {
 		"authors": [
 			"Liuxinyu970226",
-			"一個正常人"
+			"一個正常人",
+			"Kly"
 		]
 	},
 	"createtopicpage": "建立頁面",
+	"articleplaceholder-desc": "提供有關特定主題的 {{WBREPONAME}} 資訊，並邀請為主題來建立條目的特殊頁面",
+	"articleplaceholder-abouttopic": "關於話題",
+	"articleplaceholder-abouttopic-intro": "此特殊頁面基於來自 {{WBREPONAME}} 的資料來提供給您快速預覽話題。",
+	"articleplaceholder-abouttopic-entityid": "請輸入項目的 ID，例如像是 Q12345",
+	"articleplaceholder-abouttopic-submit": "提交成品",
+	"articleplaceholder-abouttopic-no-entity-error": "不是有效的項目 ID。",
+	"articleplaceholder-abouttopic-create-article-title": "建立一個新條目",
+	"articleplaceholder-abouttopic-create-article-label": "條目標題",
+	"articleplaceholder-abouttopic-create-article-mandatory": "條目的標題為必須。",
+	"articleplaceholder-abouttopic-create-article-button": "創建條目",
+	"articleplaceholder-abouttopic-create-emtpy-article-button": "開始新條目",
 	"articleplaceholder-abouttopic-translate-article-label": "來源語言：",
+	"articleplaceholder-abouttopic-translate-article-button": "翻譯條目",
 	"articleplaceholder-abouttopic-create-article-submit-button": "送出",
+	"articleplaceholder-abouttopic-article-exists-error": "已存在相同名稱的條目。",
+	"articleplaceholder-abouttopic-lua-entity": "實體",
 	"articleplaceholder-abouttopic-lua-reference": "參考文獻",
-	"articleplaceholder-createpage-title": "建立$1"
+	"articleplaceholder-abouttopic-lua-identifier": "外部來源",
+	"articleplaceholder-search-header": "在主題裡發掘資料",
+	"articleplaceholder-createpage-title": "建立$1",
+	"articleplaceholder-createpage-alreadyexists": "標題為$1的頁面已存在，請選擇別的。",
+	"articleplaceholder-createpage-notitleprovided": "未輸入標題，請輸入您所想建立頁面的標題。",
+	"articleplaceholder-createpage-invalidtitleprovided": "您輸入的標題無效，請提供一個有效的標題。"
 }
