@@ -3,7 +3,6 @@
 namespace ArticlePlaceholder\Tests;
 
 use ArticlePlaceholder\Hooks;
-use PHPUnit_Framework_TestCase;
 
 /**
  * @covers ArticlePlaceholder\Hooks
@@ -13,7 +12,7 @@ use PHPUnit_Framework_TestCase;
  * @license GNU GPL v2+
  * @author Thiemo Kreuz
  */
-class HooksTest extends PHPUnit_Framework_TestCase {
+class HooksTest extends \PHPUnit\Framework\TestCase {
 
 	public function testOnScribuntoExternalLibraries() {
 		$instance = new Hooks();
