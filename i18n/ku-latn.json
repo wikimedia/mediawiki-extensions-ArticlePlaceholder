@@ -1,11 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"George Animal"
+			"George Animal",
+			"Ghybu"
 		]
 	},
 	"createtopicpage": "Rûpelekê çêke",
 	"articleplaceholder-abouttopic": "Di derbarê mijarê de",
 	"articleplaceholder-abouttopic-create-article-title": "Gotareka nû çêke",
-	"articleplaceholder-abouttopic-create-article-label": "Sernavê gotarê"
+	"articleplaceholder-abouttopic-create-article-label": "Sernavê gotarê",
+	"articleplaceholder-abouttopic-lua-reference": "Çavkanî"
 }
