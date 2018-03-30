@@ -2,10 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Sujiniku",
-			"Otokoume"
+			"Otokoume",
+			"Yusuke1109"
 		]
 	},
 	"createtopicpage": "ページの作成",
+	"articleplaceholder-desc": "特定のトピックに関する{{WBREPONAME}}情報を含む特別ページを提供し、トピックの記事を作成するための招待状を提供します",
+	"articleplaceholder-abouttopic": "トピックについて",
 	"articleplaceholder-abouttopic-no-entity-error": "これは有効な項目 ID ではありません。",
 	"articleplaceholder-abouttopic-create-article-button": "記事を作成する",
 	"articleplaceholder-abouttopic-create-article-submit-button": "提出する",
