@@ -18,11 +18,11 @@
 		"grunt-jsonlint": "1.1.0",
 		"grunt-stylelint": "0.9.0",
 		"jquery": "3.1.1",
-		"karma-qunit": "1.2.1",
+		"karma-qunit": "2.0.1",
 		"load-grunt-tasks": "3.5.2",
 		"oojs": "2.1.0",
 		"oojs-ui": "0.25.2",
-		"qunitjs": "2.4.1",
+		"qunit": "2.5.0",
 		"sinon": "4.3.0",
 		"stylelint": "8.2.0",
 		"stylelint-config-wikimedia": "0.4.2"
