@@ -59,9 +59,10 @@ class SearchHookHandler {
 	private static function newFromGlobalState( SpecialPage $specialPage ) {
 		$wikibaseClient = WikibaseClient::getDefaultInstance();
 		$repoDB = $wikibaseClient->getRepositoryDefinitions()->getDatabaseNames()[''];
+		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
 
 		$itemNotabilityFilter = new ItemNotabilityFilter(
-			new SessionConsistentConnectionManager( wfGetLB( $repoDB ), $repoDB ),
+			new SessionConsistentConnectionManager( $lbFactory->getMainLB( $repoDB ), $repoDB ),
 			$wikibaseClient->getEntityNamespaceLookup(),
 			$wikibaseClient->getStore()->getSiteLinkLookup(),
 			$wikibaseClient->getSettings()->getSetting( 'siteGlobalID' )

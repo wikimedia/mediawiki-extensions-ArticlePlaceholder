@@ -4,6 +4,7 @@ namespace ArticlePlaceholder\Tests;
 
 use ArticlePlaceholder\ItemNotabilityFilter;
 use DataValues\StringValue;
+use MediaWiki\MediaWikiServices;
 use MediaWikiTestCase;
 use Wikibase\DataModel\Entity\Item;
 use Wikibase\DataModel\Entity\ItemId;
@@ -55,9 +56,10 @@ class ItemNotabilityFilterTest extends MediaWikiTestCase {
 	 */
 	private function getInstance() {
 		$wikibaseRepo = WikibaseRepo::getDefaultInstance();
+		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
 
 		return new ItemNotabilityFilter(
-			new SessionConsistentConnectionManager( wfGetLB() ),
+			new SessionConsistentConnectionManager( $lbFactory->getMainLB() ),
 			$wikibaseRepo->getEntityNamespaceLookup(),
 			$wikibaseRepo->getStore()->newSiteLinkStore(),
 			'enwiki'
