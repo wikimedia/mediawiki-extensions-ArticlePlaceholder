@@ -27,6 +27,6 @@
 	"articleplaceholder-search-header": "לגלות נתונים על הנושא",
 	"articleplaceholder-createpage-title": "יצירת הדף $1",
 	"articleplaceholder-createpage-alreadyexists": "הדף עם הכותרת $1 כבר קיים. נא לבחור אחרת.",
-	"articleplaceholder-createpage-notitleprovided": "לא הוזנה כותרת נא להזין כותרת לדף שברצונך ליצור.",
+	"articleplaceholder-createpage-notitleprovided": "לא הוזנה כותרת, נא להזין כותרת לדף שברצונך ליצור.",
 	"articleplaceholder-createpage-invalidtitleprovided": "הכותרת שהזנת אינה תקינה. נא לספק כותרת תקינה."
 }
