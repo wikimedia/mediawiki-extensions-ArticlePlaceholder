@@ -39,8 +39,7 @@
 	 * @return {jQuery.Promise}
 	 */
 	CreateArticleTranslationDialog.prototype.onSubmit = function () {
-		var self = this,
-			deferred = $.Deferred();
+		var self = this;
 
 		if ( !this.translateOption.isSelected() ) {
 			return CreateArticleTranslationDialog.super.prototype.onSubmit.apply( this );
@@ -48,7 +47,7 @@
 
 		mw.track( 'counter.MediaWiki.wikibase.articleplaceholder.button.translateArticle' );
 
-		mw.loader.using( 'ext.cx.sitemapper' ).then( function () {
+		return mw.loader.using( 'ext.cx.sitemapper' ).then( function () {
 			var siteMapper = new mw.cx.SiteMapper(
 					mw.config.get( 'wgContentTranslationSiteTemplates' )
 				),
@@ -60,10 +59,7 @@
 				);
 
 			self.forwardTo( url );
-			deferred.resolve();
 		} );
-
-		return deferred.promise();
 	};
 
 	/**

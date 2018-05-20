@@ -79,20 +79,16 @@
 	 * @private
 	 */
 	CreateArticleDialog.prototype.process = function () {
-		var self = this,
-			deferred = $.Deferred();
+		var self = this;
 
-		$.when(
+		return $.when(
 			this.onValidate(),
 			this.onSubmit()
-		).done( function () {
+		).then( function () {
 			self.close();
-			deferred.resolve();
-		} ).fail( function ( message ) {
-			deferred.reject( new OO.ui.Error( message ) );
+		}, function ( message ) {
+			return $.Deferred().reject( new OO.ui.Error( message ) );
 		} );
-
-		return deferred.promise();
 	};
 
 	/**
@@ -166,34 +162,29 @@
 	CreateArticleDialog.prototype.onSubmit = function () {
 		var self = this,
 			title = this.titleInput.getValue(),
-			deferred = $.Deferred(),
 			url = null;
 
-		new mw.Api().get( {
+		return new mw.Api().get( {
 			formatversion: 2,
 			action: 'query',
 			titles: title
-		} ).done( function ( data ) {
+		} ).then( function ( data ) {
 			var query = data.query;
 
 			if ( !query || !query.pages ) {
-				deferred.reject();
-				return;
+				return $.Deferred().reject();
 			}
 
-			if ( query.pages[ 0 ].missing ) {
-				title = mw.Title.newFromUserInput( title, 0 );
-				url = mw.config.get( 'wgServer' ) + title.getUrl( {
-					action: 'edit'
-				} );
-				self.forwardTo( url );
-				deferred.resolve();
-			} else {
-				deferred.reject( mw.msg( 'articleplaceholder-abouttopic-article-exists-error' ) );
+			if ( !query.pages[ 0 ].missing ) {
+				return $.Deferred().reject( mw.msg( 'articleplaceholder-abouttopic-article-exists-error' ) );
 			}
+
+			title = mw.Title.newFromUserInput( title, 0 );
+			url = mw.config.get( 'wgServer' ) + title.getUrl( {
+				action: 'edit'
+			} );
+			self.forwardTo( url );
 		} );
-
-		return deferred;
 	};
 
 	/**
