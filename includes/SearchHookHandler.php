@@ -116,6 +116,13 @@ class SearchHookHandler {
 			return;
 		}
 
+		$articlePlaceholderSearchEnabled = MediaWikiServices::getInstance()->getMainConfig()->get(
+			'ArticlePlaceholderSearchIntegrationEnabled'
+		);
+		if ( $articlePlaceholderSearchEnabled !== true ) {
+			return;
+		}
+
 		$instance = self::newFromGlobalState( $specialSearch );
 		$instance->addToSearch( $specialSearch, $output, $term );
 	}

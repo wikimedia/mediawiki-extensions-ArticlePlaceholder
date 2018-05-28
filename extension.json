@@ -87,7 +87,8 @@
 	"config": {
 		"ArticlePlaceholderImageProperty": "P18",
 		"ArticlePlaceholderReferencesBlacklist": "P143",
-		"ArticlePlaceholderSearchEngineIndexed": false
+		"ArticlePlaceholderSearchEngineIndexed": false,
+		"ArticlePlaceholderSearchIntegrationEnabled": true
 	},
 	"manifest_version": 1
 }
