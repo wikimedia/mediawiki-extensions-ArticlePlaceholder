@@ -5,6 +5,7 @@ namespace ArticlePlaceholder\Tests;
 use ArticlePlaceholder\AboutTopicRenderer;
 use DerivativeContext;
 use Language;
+use MalformedTitleException;
 use MediaWikiTestCase;
 use RequestContext;
 use Site;
@@ -147,6 +148,14 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 	public function testCreateArticleButton() {
 		$output = $this->getInstanceOutput( new ItemId( 'Q123' ), $this->getTitleFactory( true ) );
 		$this->assertContains( 'new-article-button', $output->getHTML() );
+	}
+
+	public function testCreateArticleButton_ifLabelIsNotAValidTitle() {
+		$titleFactory = $this->getMock( TitleFactory::class );
+		$titleFactory->method( 'newFromText' )
+			->willThrowException( new MalformedTitleException( '' ) );
+		$html = $this->getInstanceOutput( new ItemId( 'Q123' ), $titleFactory )->getHTML();
+		$this->assertContains( 'new-article-button', $html );
 	}
 
 	/**
