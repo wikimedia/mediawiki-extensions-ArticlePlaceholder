@@ -99,8 +99,8 @@
 	} );
 
 	QUnit.test( 'When submit creating existing article', function ( assert ) {
-		var dialog = null;
-		assert.expect( 1 );
+		var dialog = null,
+			done = assert.async();
 
 		dialog = createAndShowDialog();
 		dialog.forwardTo = sinon.spy();
@@ -108,13 +108,14 @@
 		dialog.titleInput.setValue( EXISTING_ARTICLE_TITLE );
 		dialog.onSubmit().fail( function () {
 			assert.ok( true, 'it should throw an error' );
+			done();
 		} );
 
 	} );
 
 	QUnit.test( 'When submit creating non existing article', function ( assert ) {
-		var dialog = null;
-		assert.expect( 1 );
+		var dialog = null,
+			done = assert.async();
 
 		dialog = createAndShowDialog();
 		dialog.forwardTo = sinon.spy();
@@ -123,6 +124,7 @@
 		dialog.onSubmit().done( function () {
 			assert.equal( dialog.forwardTo.getCall( 0 ).args[ 0 ],
 				SERVER + ARTICLE_URL, 'it should redirect to new create article URL' );
+			done();
 		} );
 	} );
 
