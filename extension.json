@@ -25,6 +25,10 @@
 	"ExtensionMessagesFiles": {
 		"ArticlePlaceholderAliases": "ArticlePlaceholder.alias.php"
 	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "modules",
+		"remoteExtPath": "ArticlePlaceholder/modules"
+	},
 	"ResourceModules": {
 		"ext.articleplaceholder.createArticle": {
 			"scripts": [
@@ -66,9 +70,16 @@
 			]
 		}
 	},
-	"ResourceFileModulePaths": {
-		"localBasePath": "modules",
-		"remoteExtPath": "ArticlePlaceholder/modules"
+	"QUnitTestModule": {
+		"localBasePath": "tests/qunit",
+		"remoteExtPath": "ArticlePlaceholder/tests/qunit",
+		"dependencies": [
+			"ext.articleplaceholder.createArticle"
+		],
+		"scripts": [
+			"ext.articleplaceholder.createArticle/createArticle.test.js",
+			"ext.articleplaceholder.createArticle/createArticleTranslation.test.js"
+		]
 	},
 	"Hooks": {
 		"BaseTemplateToolbox": [

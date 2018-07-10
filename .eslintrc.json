@@ -7,7 +7,9 @@
 	},
 	"globals": {
 		"mediaWiki": false,
+		"mw": false,
 		"module": false,
+		"require": false,
 		"OO": false
 	},
 	"rules": {

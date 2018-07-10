@@ -2,48 +2,52 @@
  * @license GPL-2.0-or-later
  * @author Jonas Kress
  */
-( function ( $, QUnit, sinon, mw ) {
+( function () {
 	'use strict';
-
 	/*
 	 * Constants
 	 */
 	var ARTICLE_URL = '[ARTICLE_URL]',
 		PAGE_NAMES = '[PAGE_NAMES]',
-		CONTENT_LANGUAGE = '[CONTENT_LANGUAGE]';
+		CONTENT_LANGUAGE = '[CONTENT_LANGUAGE]',
+		sandbox,
+		setupStubs,
+		CreateArticleTranslationDialog;
 
 	/*
 	 * Stubs
 	 */
-	module.exports = {};
+	setupStubs = function () {
+		sandbox.stub( mw, 'track' );
 
-	mw.track = sinon.stub();
+		sandbox.stub( mw.loader, 'using' )
+			.returns( $.Deferred().resolve().promise() );
 
-	mw.loader = {};
-	mw.loader.using = sinon.stub().returns( $.Deferred().resolve().promise() );
+		sandbox.stub( mw.config, 'get' )
+			.withArgs( 'apPageNames' ).returns( PAGE_NAMES )
+			.withArgs( 'wgContentLanguage' ).returns( CONTENT_LANGUAGE );
 
-	mw.config.get.withArgs( 'apPageNames' ).returns( PAGE_NAMES );
-	mw.config.get.withArgs( 'wgContentLanguage' ).returns( CONTENT_LANGUAGE );
+		mw.cx = sandbox.stub().returns( {
+			using: sandbox.stub()
+		} );
 
-	mw.cx = sinon.stub().returns( {
-		using: sinon.stub()
-	} );
-
-	mw.cx = {
-		SiteMapper: sinon.stub().returns( {
-			getCXUrl: sinon.stub().returns( ARTICLE_URL )
-		} )
+		mw.cx = {
+			SiteMapper: sandbox.stub().returns( {
+				getCXUrl: sandbox.stub().returns( ARTICLE_URL )
+			} )
+		};
 	};
 
 	/*
 	 * Helper functions
 	 */
+	CreateArticleTranslationDialog = require( 'ext.articleplaceholder.createArticle' ).CreateArticleTranslationDialog;
 
 	function createAndShowDialog() {
 		var windowManager = new OO.ui.WindowManager(),
-			dialog = new module.exports.CreateArticleTranslationDialog();
+			dialog = new CreateArticleTranslationDialog();
 
-		$( 'body' ).append( windowManager.$element );
+		$( '#qunit-fixture' ).append( windowManager.$element );
 		windowManager.addWindows( [
 			dialog
 		] );
@@ -55,43 +59,48 @@
 	/*
 	 * Tests
 	 */
-	$.getScript( '../../modules/ext.articleplaceholder.createArticle/ext.articleplaceholder.createArticle.js' );
-	$.getScript( '../../modules/ext.articleplaceholder.createArticle/ext.articleplaceholder.createArticleTranslation.js' );
-
-	QUnit.module( 'createArticleTranslation' );
+	QUnit.module( 'ext.ArticlePlaceHolder.createArticleTranslation', {
+		beforeEach: function () {
+			sandbox = sinon.sandbox.create();
+			setupStubs();
+		},
+		afterEach: function () {
+			sandbox.restore();
+		}
+	} );
 
 	QUnit.test( 'When calling the constructor', function ( assert ) {
 		assert.expect( 1 );
-		assert.ok( new module.exports.CreateArticleDialog() instanceof module.exports.CreateArticleDialog, 'it should return a valid object' );
+		assert.ok( new CreateArticleTranslationDialog() instanceof CreateArticleTranslationDialog, 'it should return a valid object' );
 	} );
 
 	QUnit.test( 'When submit translate article', function ( assert ) {
 		var dialog = null;
+
 		assert.expect( 1 );
 
 		dialog = createAndShowDialog();
-		dialog.forwardTo = sinon.spy();
+		dialog.forwardTo = sandbox.spy();
 
 		return dialog.onSubmit().done( function () {
 			assert.equal( dialog.forwardTo.getCall( 0 ).args[ 0 ],
 				ARTICLE_URL, 'it should redirect to translate article URL' );
 		} );
-
 	} );
 
 	QUnit.test( 'When submit and translate selected translate article', function ( assert ) {
 		var dialog = null;
+
 		assert.expect( 1 );
 
 		dialog = createAndShowDialog();
-		dialog.forwardTo = sinon.spy();
+		dialog.forwardTo = sandbox.spy();
 		dialog.translateOption.setSelected( true );
 
 		return dialog.onSubmit().done( function () {
 			assert.equal( dialog.forwardTo.getCall( 0 ).args[ 0 ],
 				ARTICLE_URL, 'it should redirect to translate article URL' );
 		} );
-
 	} );
 
 	QUnit.test( 'When submit and translate is not selected create article', function ( assert ) {
@@ -100,16 +109,15 @@
 		assert.expect( 1 );
 
 		dialog = createAndShowDialog();
-		dialog.forwardTo = sinon.spy();
+		dialog.forwardTo = sandbox.spy();
 		dialog.translateOption.setSelected( false );
 
-		stub = sinon.stub().returns( $.Deferred().resolve().promise() );
+		stub = sandbox.stub().returns( $.Deferred().resolve().promise() );
 		dialog.__proto__.onSubmit = stub;
 
 		return dialog.onSubmit().done( function () {
 			assert.ok( stub.called, 'it should call parent method' );
 		} );
-
 	} );
 
-}( jQuery, QUnit, sinon, mediaWiki ) );
+}() );

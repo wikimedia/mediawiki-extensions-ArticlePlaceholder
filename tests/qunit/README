@@ -1,4 +1,0 @@
-The QUnit test are not run, they were not using MediaWiki QUnit runner and the
-test runner has been removed.
-
-See: https://phabricator.wikimedia.org/T180171

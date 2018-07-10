@@ -2,7 +2,7 @@
  * @license GPL-2.0-or-later
  * @author Jonas Kress
  */
-( function ( $, QUnit, sinon, mw ) {
+( function () {
 	'use strict';
 
 	/*
@@ -28,50 +28,52 @@
 			}
 		},
 		SERVER = '[SERVER]',
-		ARTICLE_URL = '[ARTICLE_URL]';
+		ARTICLE_URL = '[ARTICLE_URL]',
+		sandbox,
+		setupStubs,
+		CreateArticleDialog;
 
 	/*
 	 * Stubs
 	 */
-	module.exports = {};
+	setupStubs = function () {
+		sandbox.stub( mw, 'msg' ).returnsArg( 1 );
 
-	mw.msg = sinon.stub().returnsArg( 1 );
+		sandbox.stub( mw.config, 'get' );
+		mw.config.get.withArgs( 'apLabel' ).returns( DEFAULT_TITLE );
+		mw.config.get.withArgs( 'wgServer' ).returns( SERVER );
 
-	mw.config = {
-		get: sinon.stub()
-	};
-	mw.config.get.withArgs( 'apLabel' ).returns( DEFAULT_TITLE );
-	mw.config.get.withArgs( 'wgServer' ).returns( SERVER );
+		sandbox.stub( mw, 'Api' ).returns( {
+			get: sandbox.stub()
+		} );
 
-	mw.Api = sinon.stub().returns( {
-		get: sinon.stub()
-	} );
-	mw.Api().get.withArgs( {
-		formatversion: 2,
-		action: 'query',
-		titles: EXISTING_ARTICLE_TITLE
-	} ).returns( $.Deferred().resolve( API_EXISTING_RESPONSE ).promise() );
-	mw.Api().get.withArgs( {
-		formatversion: 2,
-		action: 'query',
-		titles: NON_EXISTING_ARTICLE_TITLE
-	} ).returns( $.Deferred().resolve( API_NON_EXISTING_RESPONSE ).promise() );
+		mw.Api().get.withArgs( {
+			formatversion: 2,
+			action: 'query',
+			titles: EXISTING_ARTICLE_TITLE
+		} ).returns( $.Deferred().resolve( API_EXISTING_RESPONSE ).promise() );
+		mw.Api().get.withArgs( {
+			formatversion: 2,
+			action: 'query',
+			titles: NON_EXISTING_ARTICLE_TITLE
+		} ).returns( $.Deferred().resolve( API_NON_EXISTING_RESPONSE ).promise() );
 
-	mw.Title = {
-		newFromUserInput: sinon.stub().returns( {
-			getUrl: sinon.stub().returns( ARTICLE_URL )
-		} )
+		sandbox.stub( mw.Title, 'newFromUserInput' ).returns( {
+			getUrl: sandbox.stub().returns( ARTICLE_URL )
+		} );
 	};
 
 	/*
 	 * Helper functions
 	 */
 
+	CreateArticleDialog = require( 'ext.articleplaceholder.createArticle' ).CreateArticleDialog;
+
 	function createAndShowDialog() {
 		var windowManager = new OO.ui.WindowManager(),
-			dialog = new module.exports.CreateArticleDialog();
+			dialog = new CreateArticleDialog();
 
-		$( 'body' ).append( windowManager.$element );
+		$( '#qunit-fixture' ).append( windowManager.$element );
 		windowManager.addWindows( [ dialog ] );
 		windowManager.openWindow( dialog );
 
@@ -81,12 +83,19 @@
 	/*
 	 * Tests
 	 */
-	$.getScript( '../../modules/ext.articleplaceholder.createArticle/ext.articleplaceholder.createArticle.js' );
-	QUnit.module( 'createArticle' );
+	QUnit.module( 'ext.ArticlePlaceHolder.createArticle', {
+		beforeEach: function () {
+			sandbox = sinon.sandbox.create();
+			setupStubs();
+		},
+		afterEach: function () {
+			sandbox.restore();
+		}
+	} );
 
 	QUnit.test( 'When calling the constructor', function ( assert ) {
-		assert.ok( new module.exports.CreateArticleDialog() instanceof
-				module.exports.CreateArticleDialog, 'it should return a valid object' );
+		assert.ok( new CreateArticleDialog() instanceof
+				CreateArticleDialog, 'it should return a valid object' );
 	} );
 
 	QUnit.test( 'When opening dialog', function ( assert ) {
@@ -97,7 +106,7 @@
 	QUnit.test( 'When submit creating existing article', function ( assert ) {
 		var done = assert.async(),
 			dialog = createAndShowDialog();
-		dialog.forwardTo = sinon.spy();
+		dialog.forwardTo = sandbox.spy();
 
 		dialog.titleInput.setValue( EXISTING_ARTICLE_TITLE );
 		// assert.rejects( dialog.onSubmit(), 'it should throw an error' );
@@ -110,7 +119,7 @@
 	QUnit.test( 'When submit creating non existing article', function ( assert ) {
 		var done = assert.async(),
 			dialog = createAndShowDialog();
-		dialog.forwardTo = sinon.spy();
+		dialog.forwardTo = sandbox.spy();
 
 		dialog.titleInput.setValue( NON_EXISTING_ARTICLE_TITLE );
 		dialog.onSubmit().done( function () {
@@ -120,4 +129,4 @@
 		} );
 	} );
 
-}( jQuery, QUnit, sinon, mediaWiki ) );
+}() );

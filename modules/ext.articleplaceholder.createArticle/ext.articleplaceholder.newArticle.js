@@ -22,6 +22,10 @@
 		} );
 	}
 
-	$( init );
+	// Don't init while testing. This file is not supposed to run.
+	// The tests instead invoke individual methods directly.
+	if ( typeof QUnit === 'undefined' ) {
+		$( init );
+	}
 
 }( jQuery, mediaWiki, OO, module ) );
