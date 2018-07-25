@@ -3,11 +3,13 @@
 		"authors": [
 			"Mehtab ahmed",
 			"Aursani",
-			"Indusian1236"
+			"Indusian1236",
+			"Tweety"
 		]
 	},
 	"createtopicpage": "صفحو تخليق ڪريو",
 	"articleplaceholder-abouttopic": "موضوع بابت",
+	"articleplaceholder-abouttopic-create-article-title": "نئون مضمون تطليق ڪيو",
 	"articleplaceholder-abouttopic-create-article-button": "ڪو مضمون تخليق ڪريو",
 	"articleplaceholder-abouttopic-create-article-submit-button": "اماڻيو",
 	"articleplaceholder-abouttopic-article-exists-error": "هن نالي سان اڳ ئي هڪ مضمون موجود آهي",
