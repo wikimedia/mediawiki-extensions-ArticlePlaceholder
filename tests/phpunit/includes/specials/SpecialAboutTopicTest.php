@@ -5,7 +5,6 @@ namespace ArticlePlaceholder\Tests\Specials;
 use ArticlePlaceholder\AboutTopicRenderer;
 use ArticlePlaceholder\Specials\SpecialAboutTopic;
 use DerivativeContext;
-use Language;
 use MediaWikiTestCase;
 use RequestContext;
 use OutputPage;
@@ -33,9 +32,7 @@ class SpecialAboutTopicTest extends MediaWikiTestCase {
 	protected function setUp() {
 		parent::setUp();
 
-		$this->setMwGlobals( [
-			'wgContLang' => Language::factory( 'qqx' )
-		] );
+		$this->setContentLang( 'qqx' );
 	}
 
 	public function testNewFromGlobalState() {
