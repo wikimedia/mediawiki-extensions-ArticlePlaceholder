@@ -223,7 +223,6 @@ class SpecialAboutTopic extends SpecialPage {
 	 * @param string $fallback
 	 *
 	 * @return ItemId|null
-	 * @throws @todo UserInputException
 	 */
 	private function getItemIdParam( $name, $fallback ) {
 		$rawId = $this->getTextParam( $name, $fallback );
