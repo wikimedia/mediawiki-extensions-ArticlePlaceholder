@@ -61,7 +61,7 @@ class BaseTemplateToolboxHookHandler {
 
 	/**
 	 * @param BaseTemplate $baseTemplate
-	 * @param array &$toolbox
+	 * @param array[] &$toolbox
 	 */
 	public static function onBaseTemplateToolbox( BaseTemplate $baseTemplate, array &$toolbox ) {
 		// Return early (for performance reasons) in case we're not on
@@ -83,7 +83,7 @@ class BaseTemplateToolboxHookHandler {
 
 	/**
 	 * @param BaseTemplate $baseTemplate
-	 * @param array &$toolbox
+	 * @param array[] &$toolbox
 	 */
 	public function doBaseTemplateToolbox( BaseTemplate $baseTemplate, array &$toolbox ) {
 		$itemId = $this->getItemId(
