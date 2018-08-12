@@ -17,6 +17,7 @@
 	"articleplaceholder-abouttopic-translate-article-button": "ترجمه مقاله",
 	"articleplaceholder-abouttopic-create-article-submit-button": "ارسال",
 	"articleplaceholder-abouttopic-article-exists-error": "یک مقاله با این نام از قبل موجود است",
+	"articleplaceholder-abouttopic-lua-entity": "موجودیت",
 	"articleplaceholder-abouttopic-lua-reference": "منبع",
 	"articleplaceholder-abouttopic-lua-identifier": "منابع خارجی",
 	"articleplaceholder-createpage-title": "ایجاد $1"
