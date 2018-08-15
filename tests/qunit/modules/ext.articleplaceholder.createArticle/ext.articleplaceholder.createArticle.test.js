@@ -85,39 +85,31 @@
 	QUnit.module( 'createArticle' );
 
 	QUnit.test( 'When calling the constructor', function ( assert ) {
-		assert.expect( 1 );
 		assert.ok( new module.exports.CreateArticleDialog() instanceof
 				module.exports.CreateArticleDialog, 'it should return a valid object' );
 	} );
 
 	QUnit.test( 'When opening dialog', function ( assert ) {
-		var dialog = null;
-		assert.expect( 1 );
-
-		dialog = createAndShowDialog();
+		var dialog = createAndShowDialog();
 		assert.equal( dialog.titleInput.getValue(), DEFAULT_TITLE, 'input value should be default title' );
 	} );
 
 	QUnit.test( 'When submit creating existing article', function ( assert ) {
-		var dialog = null,
-			done = assert.async();
-
-		dialog = createAndShowDialog();
+		var done = assert.async(),
+			dialog = createAndShowDialog();
 		dialog.forwardTo = sinon.spy();
 
 		dialog.titleInput.setValue( EXISTING_ARTICLE_TITLE );
+		// assert.rejects( dialog.onSubmit(), 'it should throw an error' );
 		dialog.onSubmit().fail( function () {
 			assert.ok( true, 'it should throw an error' );
 			done();
 		} );
-
 	} );
 
 	QUnit.test( 'When submit creating non existing article', function ( assert ) {
-		var dialog = null,
-			done = assert.async();
-
-		dialog = createAndShowDialog();
+		var done = assert.async(),
+			dialog = createAndShowDialog();
 		dialog.forwardTo = sinon.spy();
 
 		dialog.titleInput.setValue( NON_EXISTING_ARTICLE_TITLE );
