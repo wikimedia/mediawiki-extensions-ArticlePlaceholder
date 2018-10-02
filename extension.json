@@ -88,7 +88,9 @@
 		"ArticlePlaceholderImageProperty": "P18",
 		"ArticlePlaceholderReferencesBlacklist": "P143",
 		"ArticlePlaceholderSearchEngineIndexed": false,
-		"ArticlePlaceholderSearchIntegrationEnabled": true
+		"ArticlePlaceholderSearchIntegrationEnabled": true,
+		"ArticlePlaceholderSearchIntegrationBackend": "Database",
+		"ArticlePlaceholderRepoApiUrl": "https://www.wikidata.org/w/api.php"
 	},
 	"manifest_version": 1
 }

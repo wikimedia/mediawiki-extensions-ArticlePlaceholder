@@ -2,6 +2,7 @@
 
 namespace ArticlePlaceholder;
 
+use InvalidArgumentException;
 use Liuggio\StatsdClient\Factory\StatsdDataFactoryInterface;
 use OutputPage;
 use SpecialSearch;
@@ -68,14 +69,56 @@ class SearchHookHandler {
 			$wikibaseClient->getSettings()->getSetting( 'siteGlobalID' )
 		);
 
+		$statsdDataFactory = MediaWikiServices::getInstance()->getStatsdDataFactory();
+		$config = MediaWikiServices::getInstance()->getMainConfig();
+
+		$termSearchInteractor = self::getTermSearchInteractor(
+			$wikibaseClient,
+			$specialPage,
+			$statsdDataFactory,
+			$config->get( 'ArticlePlaceholderSearchIntegrationBackend' ),
+			$config->get( 'ArticlePlaceholderRepoApiUrl' )
+		);
+
 		return new self(
-			$wikibaseClient->newTermSearchInteractor( $specialPage->getLanguage()->getCode() ),
+			$termSearchInteractor,
 			$specialPage->getConfig()->get( 'LanguageCode' ),
 			$wikibaseClient->getSettings()->getSetting( 'repoScriptPath' ),
 			$wikibaseClient->getSettings()->getSetting( 'repoUrl' ),
 			$itemNotabilityFilter,
-			MediaWikiServices::getInstance()->getStatsdDataFactory()
+			$statsdDataFactory
 		);
+	}
+
+	/**
+	 * @param WikibaseClient $wikibaseClient
+	 * @param SpecialPage $specialPage
+	 * @param StatsdDataFactoryInterface $statsdDataFactory
+	 * @param string $searchIntegrationBackend
+	 * @param string $repoApiUrl
+	 * @return TermSearchInteractor
+	 */
+	private static function getTermSearchInteractor(
+		WikibaseClient $wikibaseClient,
+		SpecialPage $specialPage,
+		StatsdDataFactoryInterface $statsdDataFactory,
+		$searchIntegrationBackend,
+		$repoApiUrl
+	): TermSearchInteractor {
+		if ( $searchIntegrationBackend === 'Database' ) {
+			return $wikibaseClient->newTermSearchInteractor(
+				$specialPage->getLanguage()->getCode()
+			);
+		} elseif ( $searchIntegrationBackend === 'API' ) {
+			return new TermSearchApiInteractor(
+				new RepoApiInteractor( $repoApiUrl, $statsdDataFactory ),
+				$wikibaseClient->getEntityIdParser()
+			);
+		} else {
+			throw new InvalidArgumentException(
+				'$wgArticlePlaceholderSearchIntegrationBackend can be either "Databse" or "API".'
+			);
+		}
 	}
 
 	/**
