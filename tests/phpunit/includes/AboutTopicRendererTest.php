@@ -240,7 +240,8 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 				$this->returnValue( [
 					new SiteLink( 'eowiki', 'Unicorn' ),
 					new SiteLink( 'qwertz', 'Unicorn' ),
-					new SiteLink( 'eowikivoyage', 'TravelUnicorn' )
+					new SiteLink( 'eowikivoyage', 'TravelUnicorn' ),
+					new SiteLink( 'null', 'A very nully page' )
 				] )
 			);
 
@@ -271,6 +272,8 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 						$site->setGroup( 'wikivoyage' );
 						$site->setLanguageCode( 'eo' );
 						return $site;
+					case 'null':
+						return null;
 				}
 			} ) );
 

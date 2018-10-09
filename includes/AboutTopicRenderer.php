@@ -214,6 +214,9 @@ class AboutTopicRenderer {
 
 		foreach ( $siteLinks as $siteLink ) {
 			$site = $this->siteLookup->getSite( $siteLink->getSiteId() );
+			if ( $site === null ) {
+				continue;
+			}
 			$languageCode = $site->getLanguageCode();
 			$group = $site->getGroup();
 			// TODO: This should not contain the current wiki.
