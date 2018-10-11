@@ -156,8 +156,7 @@ class SpecialAboutTopic extends SpecialPage {
 
 		if ( !$this->entityLookup->hasEntity( $itemId ) ) {
 			$this->createForm();
-			$message = $this->msg( 'articleplaceholder-abouttopic-no-entity-error' );
-			$out->addWikiText( $message->text() );
+			$out->addWikiMsg( 'articleplaceholder-abouttopic-no-entity-error' );
 			return;
 		}
 
@@ -239,8 +238,7 @@ class SpecialAboutTopic extends SpecialPage {
 
 			return $id;
 		} catch ( EntityIdParsingException $ex ) {
-			$message = $this->msg( 'articleplaceholder-abouttopic-no-entity-error' );
-			$this->getOutput()->addWikiText( $message->text() );
+			$this->getOutput()->addWikiMsg( 'articleplaceholder-abouttopic-no-entity-error' );
 		}
 
 		return null;

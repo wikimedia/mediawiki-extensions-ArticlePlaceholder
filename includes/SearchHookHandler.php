@@ -184,7 +184,7 @@ class SearchHookHandler {
 			if ( $renderedTermSearchResults !== '' ) {
 				$output->addWikiText(
 					'==' .
-					$output->msg( 'articleplaceholder-search-header' )->text() .
+					$output->msg( 'articleplaceholder-search-header' )->plain() .
 					'=='
 				);
 
