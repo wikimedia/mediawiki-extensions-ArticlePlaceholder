@@ -5,6 +5,9 @@
 		]
 	},
 	"createtopicpage": "Ccreje 'a vôsce",
+	"articleplaceholder-desc": "Dèje 'na pàgena speciale cu 'mbormaziune da {{WBREPONAME}} sus a 'nu certe argoende, cu 'u 'nvite de ccrejà 'na vôsce sus a jidde",
+	"articleplaceholder-abouttopic": "Sus a l'argomende",
+	"articleplaceholder-abouttopic-translate-article-label": "Lènghe d'origgene:",
 	"articleplaceholder-abouttopic-lua-entity": "Entità",
 	"articleplaceholder-abouttopic-lua-reference": "Riferimende",
 	"articleplaceholder-abouttopic-lua-identifier": "Resorse de fore"
