@@ -182,13 +182,13 @@ class SearchHookHandler {
 			$renderedTermSearchResults = $this->renderTermSearchResults( $termSearchResults );
 
 			if ( $renderedTermSearchResults !== '' ) {
-				$output->addWikiText(
+				$output->addWikiTextAsInterface(
 					'==' .
 					$output->msg( 'articleplaceholder-search-header' )->plain() .
 					'=='
 				);
 
-				$output->addWikiText( $renderedTermSearchResults );
+				$output->addWikiTextAsInterface( $renderedTermSearchResults );
 
 				$this->statsdDataFactory->increment(
 					'wikibase.articleplaceholder.search.has_results'

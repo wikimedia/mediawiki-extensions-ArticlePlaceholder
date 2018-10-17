@@ -97,7 +97,7 @@ class AboutTopicRenderer {
 		OutputPage $output
 	) {
 		$output->addModuleStyles( 'ext.articleplaceholder.defaultDisplay' );
-		$output->addWikiText( '{{aboutTopic|' . $entityId->getSerialization() . '}}' );
+		$output->addWikiTextAsInterface( '{{aboutTopic|' . $entityId->getSerialization() . '}}' );
 
 		$label = $this->getLabel( $entityId, $language );
 		if ( $label !== null ) {
