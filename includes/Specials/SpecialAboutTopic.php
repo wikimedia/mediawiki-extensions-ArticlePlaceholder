@@ -20,8 +20,8 @@ use Wikimedia\Assert\ParameterTypeException;
  * The AboutTopic SpecialPage for the ArticlePlaceholder extension
  *
  * @ingroup Extensions
+ * @license GPL-2.0-or-later
  * @author Lucie-Aimée Kaffee
- * @license GNU General Public Licence 2.0 or later
  */
 class SpecialAboutTopic extends SpecialPage {
 

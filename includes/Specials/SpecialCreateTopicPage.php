@@ -14,8 +14,8 @@ use MWException;
  * The CreateTopicPage SpecialPage for the ArticlePlaceholder extension
  *
  * @ingroup Extensions
+ * @license GPL-2.0-or-later
  * @author Florian Schmidt
- * @license GNU General Public Licence 2.0 or later
  */
 class SpecialCreateTopicPage extends UnlistedSpecialPage {
 

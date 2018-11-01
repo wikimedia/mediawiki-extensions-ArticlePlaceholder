@@ -12,7 +12,7 @@ use Scribunto_LuaEngine;
  *
  * @group ArticlePlaceholder
  *
- * @license GNU GPL v2+
+ * @license GPL-2.0-or-later
  * @author Thiemo Kreuz
  */
 class Scribunto_LuaArticlePlaceholderLibraryTest extends MediaWikiTestCase {

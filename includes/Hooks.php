@@ -7,7 +7,7 @@ use ArticlePlaceholder\Lua\Scribunto_LuaArticlePlaceholderLibrary;
 /**
  * File defining the hook handlers for the ArticlePlaceholder extension.
  *
- * @license GNU GPL v2+
+ * @license GPL-2.0-or-later
  * @author Lucie-Aimée Kaffee
  */
 class Hooks {

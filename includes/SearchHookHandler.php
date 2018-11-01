@@ -17,8 +17,8 @@ use Wikimedia\Rdbms\SessionConsistentConnectionManager;
 /**
  * Adding results from ArticlePlaceholder to search
  *
+ * @license GPL-2.0-or-later
  * @author Lucie-Aimée Kaffee
- * @license GNU General Public Licence 2.0 or later
  */
 class SearchHookHandler {
 

@@ -23,7 +23,7 @@ use Wikibase\Lib\Tests\MockRepository;
  *
  * @group ArticlePlaceholder
  *
- * @license GNU GPL v2+
+ * @license GPL-2.0-or-later
  * @author Thiemo Kreuz
  * @author Lucie-Aimée Kaffee
  */

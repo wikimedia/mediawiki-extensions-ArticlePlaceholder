@@ -24,7 +24,7 @@ use Wikibase\Lib\Store\SiteLinkLookup;
  *
  * @ingroup Extensions
  * @author Lucie-Aimée Kaffee
- * @license GNU General Public Licence 2.0 or later
+ * @license GPL-2.0-or-later
  */
 class AboutTopicRenderer {
 

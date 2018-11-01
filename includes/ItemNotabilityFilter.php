@@ -12,10 +12,9 @@ use Wikimedia\Rdbms\SessionConsistentConnectionManager;
 /**
  * Filter a list of items by article placeholder notability.
  *
+ * @license GPL-2.0-or-later
  * @author Lucie-Aimée Kaffee
  * @author Marius Hoch
- *
- * @license GPL-2.0-or-later
  */
 class ItemNotabilityFilter {
 
