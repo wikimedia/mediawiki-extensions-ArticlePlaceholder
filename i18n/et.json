@@ -6,6 +6,7 @@
 		]
 	},
 	"createtopicpage": "Lehekülje alustamine",
+	"articleplaceholder-desc": "Lisab erilehekülje, mis sisaldab kindla teema kohta Vikiandmetest pärit teavet, ja kutsub sellel teemal artiklit looma.",
 	"articleplaceholder-abouttopic": "Teema kohta",
 	"articleplaceholder-abouttopic-intro": "See erilehekülg annab kiirülevaate teemast, tuginedes Vikiandmetest pärit andmetele.",
 	"articleplaceholder-abouttopic-entityid": "Palun sisesta üksuse ID, näiteks Q12345",
@@ -21,7 +22,7 @@
 	"articleplaceholder-abouttopic-create-article-submit-button": "Saada",
 	"articleplaceholder-abouttopic-article-exists-error": "Sellise pealkirjaga artikkel on juba olemas",
 	"articleplaceholder-abouttopic-lua-entity": "Olem",
-	"articleplaceholder-abouttopic-lua-reference": "Viide",
+	"articleplaceholder-abouttopic-lua-reference": "Viited",
 	"articleplaceholder-abouttopic-lua-identifier": "Välised allikad",
 	"articleplaceholder-search-header": "Leia andmeid teema kohta",
 	"articleplaceholder-createpage-title": "Loo $1",
