@@ -1,0 +1,29 @@
+{
+	"@metadata": {
+		"authors": [
+			"Fwolff"
+		]
+	},
+	"createtopicpage": "Skep bladsy",
+	"articleplaceholder-desc": "Skep 'n spesiale bladsy met {{WBREPONAME}}-inligting oor 'n spesifieke onderwerp, met 'n uitnodiging om 'n artikel oor die onderwerp te skep",
+	"articleplaceholder-abouttopic": "Oor die onderwerp",
+	"articleplaceholder-abouttopic-intro": "Hierdie spesiale bladsy gee 'n vinnige oorsig van 'n onderwerp gebaseer op data vanuit {{WBREPONAME}}.",
+	"articleplaceholder-abouttopic-entityid": "Gee 'n item-ID soos Q12345",
+	"articleplaceholder-abouttopic-submit": "bou",
+	"articleplaceholder-abouttopic-no-entity-error": "Dit is nie 'n geldige item-ID nie.",
+	"articleplaceholder-abouttopic-create-article-title": "Skep 'n nuwe artikele",
+	"articleplaceholder-abouttopic-create-article-label": "Bladsytitel",
+	"articleplaceholder-abouttopic-create-article-mandatory": "Die titel van die artikel is verpligtend.",
+	"articleplaceholder-abouttopic-create-article-button": "Skep 'n artikel",
+	"articleplaceholder-abouttopic-create-emtpy-article-button": "Begin 'n nuwe artikel",
+	"articleplaceholder-abouttopic-translate-article-label": "Brontaal:",
+	"articleplaceholder-abouttopic-translate-article-button": "Vertaal artikel",
+	"articleplaceholder-abouttopic-create-article-submit-button": "Dien in",
+	"articleplaceholder-abouttopic-article-exists-error": "'n Artikel met dié naam bestaan reeds",
+	"articleplaceholder-abouttopic-lua-entity": "Entiteit",
+	"articleplaceholder-abouttopic-lua-reference": "Verwysing",
+	"articleplaceholder-abouttopic-lua-identifier": "Eksterne bronne",
+	"articleplaceholder-search-header": "Ontdek data oor die onderwerp",
+	"articleplaceholder-createpage-title": "Skep $1",
+	"articleplaceholder-createpage-alreadyexists": "'n Bladsy met die titel $1 bestaan reeds. Kies asb. 'n ander een."
+}
