@@ -7,7 +7,7 @@
 		]
 	},
 	"createtopicpage": "Crear página",
-	"articleplaceholder-desc": "Proporciona una página especial información de {{WBREPONAME}} acerca de un determinado tema, con invitación a crear un artículo para el tema",
+	"articleplaceholder-desc": "Proporciona una página especial de información de {{WBREPONAME}} acerca de un determinado tema, con invitación a crear un artículo para el tema",
 	"articleplaceholder-abouttopic": "Sobre el tema",
 	"articleplaceholder-abouttopic-intro": "Esta página especial te proporciona un resumen rápido de un tema basado en datos de {{WBREPONAME}}.",
 	"articleplaceholder-abouttopic-entityid": "Escribe un identificador de elemento, como Q12345",
