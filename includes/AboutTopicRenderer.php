@@ -11,6 +11,7 @@ use SiteLookup;
 use SpecialPage;
 use User;
 use OutputPage;
+use Wikibase\Client\Usage\HashUsageAccumulator;
 use Wikibase\DataModel\Entity\ItemId;
 use Wikibase\Client\Store\TitleFactory;
 use Wikibase\Client\Hooks\OtherProjectsSidebarGeneratorFactory;
@@ -246,7 +247,7 @@ class AboutTopicRenderer {
 	 */
 	private function setOtherProjectsLinks( ItemId $itemId, OutputPage $output ) {
 		$otherProjectsSidebarGenerator = $this->otherProjectsSidebarGeneratorFactory
-			->getOtherProjectsSidebarGenerator();
+			->getOtherProjectsSidebarGenerator( new HashUsageAccumulator() );
 
 		$otherProjects = $otherProjectsSidebarGenerator->buildProjectLinkSidebarFromItemId( $itemId );
 		$output->setProperty( 'wikibase-otherprojects-sidebar', $otherProjects );
