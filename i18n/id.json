@@ -3,7 +3,8 @@
 		"authors": [
 			"Gombang",
 			"Beeyan",
-			"Presidenvolksraad"
+			"Presidenvolksraad",
+			"J Nia30"
 		]
 	},
 	"articleplaceholder-desc": "Menyediakan sebuah laman khusus dengan informasi {{WBREPONAME}} tentang topik tertentu beserta undangan untuk membuat artikel untuk topik tersebut",
@@ -16,6 +17,7 @@
 	"articleplaceholder-abouttopic-create-article-label": "Judul artikel",
 	"articleplaceholder-abouttopic-create-article-mandatory": "Judul artikel wajib diberikan.",
 	"articleplaceholder-abouttopic-create-article-button": "Buat artikel",
+	"articleplaceholder-abouttopic-translate-article-label": "Bahasa sumber:",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Kirim",
 	"articleplaceholder-abouttopic-article-exists-error": "Artikel lain dengan nama yang sama sudah ada.",
 	"articleplaceholder-abouttopic-lua-entity": "Entitas",
