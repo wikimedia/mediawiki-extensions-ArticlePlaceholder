@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nerogaf",
+			"Red Winged Duck"
+		]
+	},
+	"createtopicpage": "Стварыць старонку",
+	"articleplaceholder-abouttopic": "Пра тэму",
+	"articleplaceholder-abouttopic-submit": "стварыць",
+	"articleplaceholder-abouttopic-create-article-submit-button": "Падпісацца",
+	"articleplaceholder-abouttopic-article-exists-error": "Артыкул з гэтай назвай ужо існуе.",
+	"articleplaceholder-abouttopic-lua-entity": "Сутнасьць",
+	"articleplaceholder-abouttopic-lua-reference": "Спасылка",
+	"articleplaceholder-abouttopic-lua-identifier": "Вонкавыя рэсурсы",
+	"articleplaceholder-createpage-title": "Стварыць $1"
+}
