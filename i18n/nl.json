@@ -18,6 +18,7 @@
 	"articleplaceholder-abouttopic-create-article-submit-button": "Opslaan",
 	"articleplaceholder-abouttopic-article-exists-error": "Een artikel met deze naam bestaat al",
 	"articleplaceholder-abouttopic-lua-entity": "Entiteit",
+	"articleplaceholder-abouttopic-lua-reference": "Referentie",
 	"articleplaceholder-abouttopic-lua-identifier": "Externe bronnen",
 	"articleplaceholder-createpage-title": "$1 aanmaken",
 	"articleplaceholder-createpage-alreadyexists": "Een pagina met de titel $1 bestaat al. Kies een andere titel."

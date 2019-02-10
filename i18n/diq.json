@@ -1,9 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kumkumuk"
+			"Kumkumuk",
+			"Mirzali"
 		]
 	},
 	"createtopicpage": "Pele vıraze",
-	"articleplaceholder-createpage-title": "$1 vıraz"
+	"articleplaceholder-createpage-title": "$1 vıraze"
 }
