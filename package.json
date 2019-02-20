@@ -1,11 +1,5 @@
 {
-	"name": "articleplaceholder",
-	"license": "GPL-2.0-or-later",
-	"version": "0.0.1",
-	"repository": {
-		"type": "git",
-		"url": "https://gerrit.wikimedia.org/r/mediawiki/extensions/ArticlePlaceholder"
-	},
+	"private": true,
 	"scripts": {
 		"test": "grunt test"
 	},
