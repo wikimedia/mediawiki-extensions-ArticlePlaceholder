@@ -11,32 +11,8 @@
 		PAGE_NAMES = '[PAGE_NAMES]',
 		CONTENT_LANGUAGE = '[CONTENT_LANGUAGE]',
 		sandbox,
-		setupStubs,
+		savedMwCx,
 		CreateArticleTranslationDialog;
-
-	/*
-	 * Stubs
-	 */
-	setupStubs = function () {
-		sandbox.stub( mw, 'track' );
-
-		sandbox.stub( mw.loader, 'using' )
-			.returns( $.Deferred().resolve().promise() );
-
-		sandbox.stub( mw.config, 'get' )
-			.withArgs( 'apPageNames' ).returns( PAGE_NAMES )
-			.withArgs( 'wgContentLanguage' ).returns( CONTENT_LANGUAGE );
-
-		mw.cx = sandbox.stub().returns( {
-			using: sandbox.stub()
-		} );
-
-		mw.cx = {
-			SiteMapper: sandbox.stub().returns( {
-				getCXUrl: sandbox.stub().returns( ARTICLE_URL )
-			} )
-		};
-	};
 
 	/*
 	 * Helper functions
@@ -62,10 +38,33 @@
 	QUnit.module( 'ext.ArticlePlaceHolder.createArticleTranslation', {
 		beforeEach: function () {
 			sandbox = sinon.sandbox.create();
-			setupStubs();
+			sandbox.stub( mw, 'track' );
+
+			// Stub lazy-loading of 'ext.cx.sitemapper' module
+			sandbox.stub( mw.loader, 'using' )
+				.returns( $.Deferred().resolve() );
+
+			sandbox.stub( mw.config, 'get' )
+				.withArgs( 'apPageNames' ).returns( PAGE_NAMES )
+				.withArgs( 'wgContentLanguage' ).returns( CONTENT_LANGUAGE );
+
+			// This may be undefined, so we can't use Sinon to stub
+			savedMwCx = mw.cx;
+			mw.cx = {
+				SiteMapper: function () {
+					return {
+						getCXUrl: function () { return ARTICLE_URL; }
+					};
+				}
+			};
 		},
 		afterEach: function () {
 			sandbox.restore();
+			if ( savedMwCx ) {
+				mw.cx = savedMwCx;
+			} else {
+				delete mw.cx;
+			}
 		}
 	} );
 
@@ -82,7 +81,7 @@
 		dialog = createAndShowDialog();
 		dialog.forwardTo = sandbox.spy();
 
-		return dialog.onSubmit().done( function () {
+		return dialog.onSubmit().then( function () {
 			assert.equal( dialog.forwardTo.getCall( 0 ).args[ 0 ],
 				ARTICLE_URL, 'it should redirect to translate article URL' );
 		} );
@@ -97,7 +96,7 @@
 		dialog.forwardTo = sandbox.spy();
 		dialog.translateOption.setSelected( true );
 
-		return dialog.onSubmit().done( function () {
+		return dialog.onSubmit().then( function () {
 			assert.equal( dialog.forwardTo.getCall( 0 ).args[ 0 ],
 				ARTICLE_URL, 'it should redirect to translate article URL' );
 		} );
@@ -112,10 +111,10 @@
 		dialog.forwardTo = sandbox.spy();
 		dialog.translateOption.setSelected( false );
 
-		stub = sandbox.stub().returns( $.Deferred().resolve().promise() );
+		stub = sandbox.stub().returns( $.Deferred().resolve() );
 		dialog.__proto__.onSubmit = stub;
 
-		return dialog.onSubmit().done( function () {
+		return dialog.onSubmit().then( function () {
 			assert.ok( stub.called, 'it should call parent method' );
 		} );
 	} );
