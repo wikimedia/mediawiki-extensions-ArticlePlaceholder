@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Milicevic01"
+			"Milicevic01",
+			"Zoranzoki21"
 		]
 	},
-	"articleplaceholder-abouttopic": "О теми"
+	"articleplaceholder-abouttopic": "О теми",
+	"articleplaceholder-createpage-title": "Направи $1"
 }
