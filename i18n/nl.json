@@ -8,6 +8,7 @@
 	},
 	"createtopicpage": "Pagina aanmaken",
 	"articleplaceholder-abouttopic": "Over het onderwerp",
+	"articleplaceholder-abouttopic-no-entity-error": "Dit is geen geldig item-ID.",
 	"articleplaceholder-abouttopic-create-article-title": "Maak een nieuw artikel aan",
 	"articleplaceholder-abouttopic-create-article-label": "Paginanaam",
 	"articleplaceholder-abouttopic-create-article-mandatory": "De titel van het artikel is verplicht.",
