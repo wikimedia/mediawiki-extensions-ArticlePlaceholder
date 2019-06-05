@@ -82,6 +82,10 @@ class ItemNotabilityFilter {
 
 		foreach ( $itemIds as $itemId ) {
 			$itemIdSerialization = $itemId->getSerialization();
+
+			if ( !isset( $pagePropsByItem[$itemIdSerialization] ) ) {
+				continue;
+			}
 			$pageProps = $pagePropsByItem[$itemIdSerialization];
 
 			if (
