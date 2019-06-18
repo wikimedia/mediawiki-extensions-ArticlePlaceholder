@@ -14,7 +14,7 @@ $cfg['directory_list'] = array_merge(
 $cfg['exclude_file_list'] = array_merge(
 	$cfg['exclude_file_list'],
 	[
-		'../../extensions/Wikibase/tests/phan/stubs/scribunto.php',
+		'../../extensions/Wikibase/.phan/stubs/scribunto.php',
 	]
 );
 
