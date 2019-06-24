@@ -4,7 +4,8 @@
 			"Sujiniku",
 			"Otokoume",
 			"Yusuke1109",
-			"Omotecho"
+			"Omotecho",
+			"神樂坂秀吉"
 		]
 	},
 	"createtopicpage": "ページの作成",
@@ -22,6 +23,7 @@
 	"articleplaceholder-abouttopic-translate-article-button": "記事を翻訳する",
 	"articleplaceholder-abouttopic-create-article-submit-button": "提出する",
 	"articleplaceholder-abouttopic-article-exists-error": "この名前の記事は既に存在します",
+	"articleplaceholder-abouttopic-lua-entity": "実体",
 	"articleplaceholder-abouttopic-lua-reference": "脚注",
 	"articleplaceholder-abouttopic-lua-identifier": "外部リンク",
 	"articleplaceholder-search-header": "主題の関連データを探す",
