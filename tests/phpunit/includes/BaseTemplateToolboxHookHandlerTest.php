@@ -9,10 +9,10 @@ use ReflectionMethod;
 use Skin;
 use Title;
 use WebRequest;
+use Wikibase\Client\Tests\MockClientStore;
 use Wikibase\Client\WikibaseClient;
 use Wikibase\DataModel\Entity\Item;
 use Wikibase\DataModel\Entity\ItemId;
-use Wikibase\Test\MockClientStore;
 
 /**
  * @group ArticlePlaceholder
