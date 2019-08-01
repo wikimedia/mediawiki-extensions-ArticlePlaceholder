@@ -7,15 +7,15 @@
 			"Tweety"
 		]
 	},
-	"createtopicpage": "صفحو تخليق ڪريو",
+	"createtopicpage": "صفحو سرجيو",
 	"articleplaceholder-abouttopic": "موضوع بابت",
 	"articleplaceholder-abouttopic-create-article-title": "نئون مضمون تطليق ڪيو",
-	"articleplaceholder-abouttopic-create-article-button": "ڪو مضمون تخليق ڪريو",
+	"articleplaceholder-abouttopic-create-article-button": "ڪو مضمون سرجيو",
 	"articleplaceholder-abouttopic-create-article-submit-button": "اماڻيو",
 	"articleplaceholder-abouttopic-article-exists-error": "هن نالي سان اڳ ئي هڪ مضمون موجود آهي",
 	"articleplaceholder-abouttopic-lua-reference": "حوالو",
 	"articleplaceholder-search-header": "موضوع تي مواد دريافت ڪريو",
-	"articleplaceholder-createpage-title": "$1 تخليق ڪريو",
-	"articleplaceholder-createpage-notitleprovided": "ڪوبه عنوان داخل ناهي ڪيو ويو. مهرباني ڪري تخليق ٿيندڙ صفحي جو عنوان داخل ڪريو.",
+	"articleplaceholder-createpage-title": "$1 سرجيو",
+	"articleplaceholder-createpage-notitleprovided": "ڪوبہ عنوان داخل نہ ڪيو ويو ھو، مھرباني ڪري جيڪو صفحو توھان سرجڻ چاھيو ٿا ان لاءِ عنوان داخل ڪريو.",
 	"articleplaceholder-createpage-invalidtitleprovided": "اوهان جو داخل ڪيل عنوان موزون ناهي، مهرباني ڪري بهتر عنوان ڏيو."
 }
