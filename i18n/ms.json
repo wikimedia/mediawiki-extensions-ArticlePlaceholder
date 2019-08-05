@@ -1,12 +1,20 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kurniasan"
+			"Kurniasan",
+			"Tofeiku"
 		]
 	},
 	"articleplaceholder-desc": "Menyediakan laman khas berisi maklumat {{WBREPONAME}} berkenaan topik tertentu, beserta undangan mencipta rencana untuk topik terbabit",
+	"articleplaceholder-abouttopic-create-article-label": "Tajuk rencana",
+	"articleplaceholder-abouttopic-create-article-button": "Cipta sebuah rencana",
+	"articleplaceholder-abouttopic-create-emtpy-article-button": "Mulakan rencana baru",
+	"articleplaceholder-abouttopic-translate-article-label": "Bahasa sumber:",
+	"articleplaceholder-abouttopic-translate-article-button": "Terjemah rencana",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Hantar",
 	"articleplaceholder-abouttopic-article-exists-error": "Sebuah rencana bernama sama telah wujud",
 	"articleplaceholder-abouttopic-lua-reference": "Rujukan",
-	"articleplaceholder-search-header": "Temukan data berkenaan topik ini"
+	"articleplaceholder-abouttopic-lua-identifier": "Sumber luar",
+	"articleplaceholder-search-header": "Temukan data berkenaan topik ini",
+	"articleplaceholder-createpage-title": "Cipta $1"
 }
