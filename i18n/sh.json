@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"Vlad5250"
+		]
+	},
+	"createtopicpage": "Napravi stranicu",
+	"articleplaceholder-abouttopic": "O temi",
+	"articleplaceholder-abouttopic-create-article-title": "Napravite novi članak",
+	"articleplaceholder-abouttopic-create-article-label": "Naslov članka",
+	"articleplaceholder-abouttopic-create-article-mandatory": "Naslov članka je obavezan.",
+	"articleplaceholder-abouttopic-create-article-button": "Napravi članak",
+	"articleplaceholder-abouttopic-create-emtpy-article-button": "Započnite novi članak",
+	"articleplaceholder-abouttopic-translate-article-label": "Izvorni jezik:",
+	"articleplaceholder-abouttopic-translate-article-button": "Prevedi članak",
+	"articleplaceholder-abouttopic-create-article-submit-button": "Unesi",
+	"articleplaceholder-abouttopic-article-exists-error": "Već postoji članak s tim imenom.",
+	"articleplaceholder-abouttopic-lua-reference": "Referenca",
+	"articleplaceholder-abouttopic-lua-identifier": "Vanjski resursi",
+	"articleplaceholder-createpage-title": "Napravi $1"
+}
