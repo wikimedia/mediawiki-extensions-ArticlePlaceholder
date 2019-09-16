@@ -47,10 +47,8 @@
 
 		mw.track( 'counter.MediaWiki.wikibase.articleplaceholder.button.translateArticle' );
 
-		return mw.loader.using( 'ext.cx.sitemapper' ).then( function () {
-			var siteMapper = new mw.cx.SiteMapper(
-					mw.config.get( 'wgContentTranslationSiteTemplates' )
-				),
+		return mw.loader.using( 'mw.cx.SiteMapper' ).then( function () {
+			var siteMapper = new mw.cx.SiteMapper(),
 				url = siteMapper.getCXUrl(
 					mw.config.get( 'apPageNames' )[ self.languageInput.getValue() ],
 					self.titleInput.getValue(),
