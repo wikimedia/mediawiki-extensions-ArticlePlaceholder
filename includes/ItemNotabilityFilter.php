@@ -6,7 +6,7 @@ use Wikibase\DataModel\Entity\ItemId;
 use Wikibase\Lib\Store\EntityNamespaceLookup;
 use Wikibase\Lib\Store\SiteLinkLookup;
 use Wikimedia\Rdbms\IDatabase;
-use Wikimedia\Rdbms\ResultWrapper;
+use Wikimedia\Rdbms\IResultWrapper;
 use Wikimedia\Rdbms\SessionConsistentConnectionManager;
 
 /**
@@ -126,7 +126,7 @@ class ItemNotabilityFilter {
 	 * @param IDatabase $dbr
 	 * @param ItemId[] $itemIds
 	 *
-	 * @return ResultWrapper
+	 * @return IResultWrapper
 	 */
 	private function selectPagePropsPage( IDatabase $dbr, array $itemIds ) {
 		$entityNamespace = $this->entityNamespaceLookup->getEntityNamespace( 'item' );
