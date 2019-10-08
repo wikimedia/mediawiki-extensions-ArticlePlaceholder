@@ -37,7 +37,7 @@ class Scribunto_LuaArticlePlaceholderLibraryTest extends MediaWikiTestCase {
 		$this->setMwGlobals( 'wgArticlePlaceholderImageProperty', '' );
 		$instance = $this->newInstance();
 
-		$this->setExpectedException( RuntimeException::class );
+		$this->expectException( RuntimeException::class );
 		$instance->getImageProperty();
 	}
 
