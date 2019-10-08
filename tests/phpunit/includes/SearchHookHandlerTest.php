@@ -9,7 +9,7 @@ use Language;
 use Liuggio\StatsdClient\Factory\StatsdDataFactory;
 use MediaWikiTestCase;
 use OutputPage;
-use PHPUnit_Framework_MockObject_MockObject;
+use PHPUnit\Framework\MockObject\MockObject;
 use ReflectionMethod;
 use RequestContext;
 use SpecialSearch;
@@ -99,7 +99,7 @@ class SearchHookHandlerTest extends MediaWikiTestCase {
 	}
 
 	/**
-	 * @return SpecialSearch|PHPUnit_Framework_MockObject_MockObject
+	 * @return SpecialSearch|MockObject
 	 */
 	private function getSpecialSearch() {
 		return $this->getMockBuilder( SpecialSearch::class )
