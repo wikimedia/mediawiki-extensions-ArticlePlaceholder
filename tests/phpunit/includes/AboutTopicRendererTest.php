@@ -87,7 +87,7 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 		$instance->showPlaceholder(
 			$itemId,
 			Language::factory( 'eo' ),
-			$this->getMock( User::class ),
+			$this->createMock( User::class ),
 			$outputPage
 		);
 
@@ -95,7 +95,7 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 	}
 
 	private function getTitleFactory( $canCreate = true ) {
-		$titleFactory = $this->getMock( TitleFactory::class );
+		$titleFactory = $this->createMock( TitleFactory::class );
 		$titleFactory->expects( $this->any() )
 			->method( 'newFromText' )
 			->with( $this->isType( 'string' ) )
@@ -151,7 +151,7 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 	}
 
 	public function testCreateArticleButton_ifLabelIsNotAValidTitle() {
-		$titleFactory = $this->getMock( TitleFactory::class );
+		$titleFactory = $this->createMock( TitleFactory::class );
 		$titleFactory->method( 'newFromText' )
 			->willThrowException( new MalformedTitleException( '' ) );
 		$html = $this->getInstanceOutput( new ItemId( 'Q123' ), $titleFactory )->getHTML();
@@ -211,7 +211,7 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 	 * @return LabelDescriptionLookup
 	 */
 	private function getLabelDescriptionLookup() {
-		$labelDescriptionLookup = $this->getMock( LabelDescriptionLookup::class );
+		$labelDescriptionLookup = $this->createMock( LabelDescriptionLookup::class );
 		$labelDescriptionLookup->expects( $this->any() )
 			->method( 'getLabel' )
 			->will( $this->returnCallback( function ( ItemId $id ) {
@@ -231,7 +231,7 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 	 * @return SiteLinkLookup
 	 */
 	private function getSiteLinkLookup() {
-		$siteLinkLookup = $this->getMock( SiteLinkLookup::class );
+		$siteLinkLookup = $this->createMock( SiteLinkLookup::class );
 
 		$siteLinkLookup->expects( $this->any() )
 			->method( 'getSiteLinksForItem' )

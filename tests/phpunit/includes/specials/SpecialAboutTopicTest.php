@@ -114,7 +114,7 @@ class SpecialAboutTopicTest extends MediaWikiTestCase {
 	 * @return SiteLinkLookup
 	 */
 	private function getSiteLinkLookup() {
-		$siteLinkLookup = $this->getMock( SiteLinkLookup::class );
+		$siteLinkLookup = $this->createMock( SiteLinkLookup::class );
 
 		$siteLinkLookup->expects( $this->any() )
 			->method( 'getLinks' )
@@ -128,7 +128,7 @@ class SpecialAboutTopicTest extends MediaWikiTestCase {
 	 * @return EntityIdParser
 	 */
 	private function getEntityIdParser() {
-		$idParser = $this->getMock( EntityIdParser::class );
+		$idParser = $this->createMock( EntityIdParser::class );
 
 		$idParser->expects( $this->any() )
 			->method( 'parse' )

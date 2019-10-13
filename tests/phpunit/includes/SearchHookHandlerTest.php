@@ -143,7 +143,7 @@ class SearchHookHandlerTest extends MediaWikiTestCase {
 				return [];
 			} ) );
 
-		$statsdDataFactory = $this->getMock( StatsdDataFactory::class );
+		$statsdDataFactory = $this->createMock( StatsdDataFactory::class );
 		$statsdDataFactory->expects( $this->any() )
 			->method( 'increment' )
 			->will( $this->returnCallback( function ( $key ) use ( &$hasResults, &$noResults ) {
@@ -172,7 +172,7 @@ class SearchHookHandlerTest extends MediaWikiTestCase {
 		$specialPage = $this->getSpecialSearch();
 		$specialPage->expects( $this->once() )
 			->method( 'getConfig' )
-			->will( $this->returnValue( $this->getMock( Config::class ) ) );
+			->will( $this->returnValue( $this->createMock( Config::class ) ) );
 
 		$specialPage->expects( $this->once() )
 			->method( 'getLanguage' )
