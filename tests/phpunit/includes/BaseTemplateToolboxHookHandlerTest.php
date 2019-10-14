@@ -57,7 +57,7 @@ class BaseTemplateToolboxHookHandlerTest extends MediaWikiTestCase {
 	}
 
 	public function testOnBaseTemplateToolbox_wrongNamespace() {
-		$title = $this->getMock( Title::class );
+		$title = $this->createMock( Title::class );
 		$title->expects( $this->once() )
 			->method( 'getNamespace' )
 			->will( $this->returnValue( 2 ) );
@@ -75,7 +75,7 @@ class BaseTemplateToolboxHookHandlerTest extends MediaWikiTestCase {
 	}
 
 	public function testOnBaseTemplateToolbox_wrongSpecialPageName() {
-		$title = $this->getMock( Title::class );
+		$title = $this->createMock( Title::class );
 		$title->expects( $this->once() )
 			->method( 'getNamespace' )
 			->will( $this->returnValue( NS_SPECIAL ) );
@@ -177,7 +177,7 @@ class BaseTemplateToolboxHookHandlerTest extends MediaWikiTestCase {
 			$titleText .= '/' . $subPage;
 		}
 
-		$title = $this->getMock( Title::class );
+		$title = $this->createMock( Title::class );
 		$title->expects( $this->once() )
 			->method( 'getNamespace' )
 			->will( $this->returnValue( NS_SPECIAL ) );
@@ -196,7 +196,7 @@ class BaseTemplateToolboxHookHandlerTest extends MediaWikiTestCase {
 	 * @return BaseTemplate
 	 */
 	private function getBaseTemplate( Title $title, $itemIdParam = null ) {
-		$request = $this->getMock( WebRequest::class );
+		$request = $this->createMock( WebRequest::class );
 		$request->expects( $this->any() )
 			->method( 'getText' )
 			->will( $this->returnCallback( function ( $name, $default ) use ( $itemIdParam ) {
