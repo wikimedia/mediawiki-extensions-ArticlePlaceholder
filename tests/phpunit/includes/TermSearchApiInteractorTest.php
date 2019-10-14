@@ -16,7 +16,6 @@ use Wikibase\DataModel\Term\Term;
  * @license GPL-2.0-or-later
  */
 class TermSearchApiInteractorTest extends \PHPUnit\Framework\TestCase {
-	use \PHPUnit4And6Compat;
 
 	private function mockApiInteractor() {
 		$mock = $this->createMock( RepoApiInteractor::class );
