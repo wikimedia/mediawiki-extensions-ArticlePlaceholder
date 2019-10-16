@@ -17,7 +17,7 @@ use Scribunto_LuaEngine;
  */
 class Scribunto_LuaArticlePlaceholderLibraryTest extends MediaWikiTestCase {
 
-	protected function setUp() {
+	protected function setUp() : void {
 		parent::setUp();
 
 		$this->setMwGlobals( [

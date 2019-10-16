@@ -35,7 +35,7 @@ use Wikibase\Lib\Store\LanguageFallbackLabelDescriptionLookupFactory;
  */
 class AboutTopicRendererTest extends MediaWikiTestCase {
 
-	public function setUp() {
+	public function setUp() : void {
 		parent::setUp();
 
 		$this->insertPage( 'Template:AboutTopic', '(aboutTopic: {{{1}}})' );

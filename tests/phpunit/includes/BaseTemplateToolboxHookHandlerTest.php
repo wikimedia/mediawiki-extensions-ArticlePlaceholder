@@ -24,7 +24,7 @@ use Wikibase\DataModel\Entity\ItemId;
  */
 class BaseTemplateToolboxHookHandlerTest extends MediaWikiTestCase {
 
-	public function setUp() {
+	public function setUp() : void {
 		parent::setUp();
 
 		$this->setUserLang( 'qqx' );
@@ -39,7 +39,7 @@ class BaseTemplateToolboxHookHandlerTest extends MediaWikiTestCase {
 		$mockRepository->putEntity( $item );
 	}
 
-	public function tearDown() {
+	public function tearDown() : void {
 		parent::tearDown();
 
 		WikibaseClient::getDefaultInstance( 'reset' );

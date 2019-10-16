@@ -19,7 +19,7 @@ use SpecialPage;
  */
 class SpecialCreateTopicPageTest extends MediaWikiTestCase {
 
-	public function setUp() {
+	public function setUp() : void {
 		parent::setUp();
 		$this->setMwGlobals( [
 			'wgScript' => '/w/index.php'
