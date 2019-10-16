@@ -21,12 +21,12 @@ class ItemNotabilityFilter {
 	/**
 	 * Minimum number of statements for an item to be notable
 	 */
-	const MIN_STATEMENTS = 3;
+	private const MIN_STATEMENTS = 3;
 
 	/**
 	 * Minimum number of sitelinks for an item to be notable
 	 */
-	const MIN_SITELINKS = 2;
+	private const MIN_SITELINKS = 2;
 
 	/**
 	 * @var SessionConsistentConnectionManager

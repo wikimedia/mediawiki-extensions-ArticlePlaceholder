@@ -175,14 +175,15 @@ class SpecialAboutTopic extends SpecialPage {
 	}
 
 	/**
-	 * @see SpecialPage::getDescription
-	 *
-	 * @return string
+	 * @inheritDoc
 	 */
 	public function getDescription() {
 		return $this->msg( 'articleplaceholder-abouttopic' )->text();
 	}
 
+	/**
+	 * @inheritDoc
+	 */
 	protected function getGroupName() {
 		return 'other';
 	}

@@ -13,14 +13,11 @@
 		"issues": "https://phabricator.wikimedia.org/",
 		"irc": "irc://irc.freenode.net/wikidata"
 	},
-	"require": {
-		"php": ">=5.6.99"
-	},
 	"require-dev": {
 		"jakub-onderka/php-parallel-lint": "1.0.0",
 		"jakub-onderka/php-console-highlighter": "0.3.2",
 		"mediawiki/minus-x": "0.3.1",
-		"wikibase/wikibase-codesniffer": "1.0.0",
+		"mediawiki/mediawiki-codesniffer": "28.0.0",
 		"mediawiki/mediawiki-phan-config": "0.6.1"
 	},
 	"scripts": {
