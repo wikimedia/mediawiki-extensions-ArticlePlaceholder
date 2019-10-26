@@ -35,7 +35,7 @@ end
 -- @return string wikitext
 local render = function( self, references )
   local snaksRenderer = self._entityrenderer:getSnaksRenderer()
-  local frame = mw:getCurrentFrame()
+  local frame = self._entityrenderer.frame
   local referencesWikitext = {}
 
   if self._entityrenderer.referencesBlacklist ~= nil then

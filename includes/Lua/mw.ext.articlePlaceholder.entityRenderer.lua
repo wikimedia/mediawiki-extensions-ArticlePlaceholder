@@ -8,6 +8,7 @@ local entityrenderer = {}
 local util = require( 'libraryUtil' )
 local php = mw_interface
 
+entityrenderer.frame = nil
 entityrenderer.imageProperty = php.getImageProperty()
 entityrenderer.referencesBlacklist = php.getReferencesBlacklist()
 
@@ -214,6 +215,8 @@ end
 
 -- render an entity
 entityrenderer.render = function(frame)
+  entityrenderer.frame = frame
+
   local entityId = mw.text.trim( frame.args[1] or "" )
   return renderEntity( entityId )
 end
