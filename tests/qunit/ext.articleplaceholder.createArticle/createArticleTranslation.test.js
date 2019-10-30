@@ -40,7 +40,7 @@
 			sandbox = sinon.sandbox.create();
 			sandbox.stub( mw, 'track' );
 
-			// Stub lazy-loading of 'ext.cx.sitemapper' module
+			// Stub lazy-loading of 'mw.cx.SiteMapper' module
 			sandbox.stub( mw.loader, 'using' )
 				.returns( $.Deferred().resolve() );
 
