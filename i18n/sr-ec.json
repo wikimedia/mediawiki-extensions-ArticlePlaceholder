@@ -5,6 +5,19 @@
 			"Zoranzoki21"
 		]
 	},
+	"createtopicpage": "Направи страницу",
 	"articleplaceholder-abouttopic": "О теми",
+	"articleplaceholder-abouttopic-create-article-title": "Направи нови чланак",
+	"articleplaceholder-abouttopic-create-article-label": "Наслов чланка",
+	"articleplaceholder-abouttopic-create-article-mandatory": "Наслов чланка је обавезан.",
+	"articleplaceholder-abouttopic-create-article-button": "Направи чланак",
+	"articleplaceholder-abouttopic-create-emtpy-article-button": "Направи нов чланак",
+	"articleplaceholder-abouttopic-translate-article-label": "Изворни језик:",
+	"articleplaceholder-abouttopic-translate-article-button": "Преведи чланак",
+	"articleplaceholder-abouttopic-create-article-submit-button": "Објави",
+	"articleplaceholder-abouttopic-article-exists-error": "Чланак са овим именом већ постоји",
+	"articleplaceholder-abouttopic-lua-entity": "Ентитет",
+	"articleplaceholder-abouttopic-lua-reference": "Референца",
+	"articleplaceholder-abouttopic-lua-identifier": "Спољашњи ресурси",
 	"articleplaceholder-createpage-title": "Направи $1"
 }
