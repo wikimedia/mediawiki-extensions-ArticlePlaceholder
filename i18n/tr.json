@@ -1,9 +1,32 @@
 {
 	"@metadata": {
 		"authors": [
-			"HakanIST"
+			"HakanIST",
+			"BaRaN6161 TURK"
 		]
 	},
+	"createtopicpage": "Sayfa oluştur",
+	"articleplaceholder-desc": "Belirli bir konuyla ilgili {{WBREPONAME}} bilgileriyle, konuyla ilgili bir makale oluşturma davetini içeren özel bir sayfa sunar",
 	"articleplaceholder-abouttopic": "Konu Hakkında",
-	"articleplaceholder-abouttopic-lua-identifier": "Tanımlayıcı"
+	"articleplaceholder-abouttopic-intro": "Bu özel sayfa, {{WBREPONAME}} verilerini temel alan bir konuya hızlı bir genel bakış sunar.",
+	"articleplaceholder-abouttopic-entityid": "Lütfen Q12345 gibi bir öğe kimliği girin",
+	"articleplaceholder-abouttopic-submit": "zanaat",
+	"articleplaceholder-abouttopic-no-entity-error": "Bu geçerli bir öğe kimliği değil.",
+	"articleplaceholder-abouttopic-create-article-title": "Yeni bir makale oluştur",
+	"articleplaceholder-abouttopic-create-article-label": "Makale başlığı",
+	"articleplaceholder-abouttopic-create-article-mandatory": "Makalenin başlığı zorunludur.",
+	"articleplaceholder-abouttopic-create-article-button": "Bir makale oluştur",
+	"articleplaceholder-abouttopic-create-emtpy-article-button": "Yeni bir makale başlat",
+	"articleplaceholder-abouttopic-translate-article-label": "Kaynak dil:",
+	"articleplaceholder-abouttopic-translate-article-button": "Makaleyi çevir",
+	"articleplaceholder-abouttopic-create-article-submit-button": "Gönder",
+	"articleplaceholder-abouttopic-article-exists-error": "Bu ada sahip bir makale zaten var",
+	"articleplaceholder-abouttopic-lua-entity": "Varlık",
+	"articleplaceholder-abouttopic-lua-reference": "Kaynak",
+	"articleplaceholder-abouttopic-lua-identifier": "Dış kaynaklar",
+	"articleplaceholder-search-header": "Konuyla ilgili verileri keşfet",
+	"articleplaceholder-createpage-title": "Oluştur $1",
+	"articleplaceholder-createpage-alreadyexists": "$1 başlıklı sayfa zaten var. Lütfen başka birini seçiniz.",
+	"articleplaceholder-createpage-notitleprovided": "Başlık girilmedi, lütfen oluşturmak istediğiniz sayfa için bir başlık girin.",
+	"articleplaceholder-createpage-invalidtitleprovided": "Girdiğiniz başlık geçersiz. Lütfen geçerli bir başlık girin."
 }
