@@ -13,7 +13,6 @@
 		"OO": false
 	},
 	"rules": {
-		"dot-notation": "off",
 		"no-proto": "off",
 		"valid-jsdoc": "off"
 	}
