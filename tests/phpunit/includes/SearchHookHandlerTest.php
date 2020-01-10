@@ -20,7 +20,7 @@ use Wikibase\DataModel\Entity\PropertyId;
 use Wikibase\LanguageFallbackChainFactory;
 use Wikibase\Lib\Interactors\TermIndexSearchInteractor;
 use Wikibase\Lib\Tests\Store\MockTermIndex;
-use Wikibase\Store\BufferingTermLookup;
+use Wikibase\Store\BufferingTermIndexTermLookup;
 use Wikibase\TermIndexEntry;
 
 /**
@@ -92,7 +92,7 @@ class SearchHookHandlerTest extends MediaWikiTestCase {
 		$termSearchInteractor = new TermIndexSearchInteractor(
 			$this->getMockTermIndex(),
 			new LanguageFallbackChainFactory,
-			new BufferingTermLookup( $termLookupIndex ),
+			new BufferingTermIndexTermLookup( $termLookupIndex ),
 			$language
 		);
 		return $termSearchInteractor;
