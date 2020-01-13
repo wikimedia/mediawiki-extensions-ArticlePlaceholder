@@ -18,7 +18,7 @@ use Wikibase\DataModel\Entity\EntityId;
 use Wikibase\DataModel\Entity\ItemId;
 use Wikibase\DataModel\Entity\PropertyId;
 use Wikibase\LanguageFallbackChainFactory;
-use Wikibase\Lib\Interactors\TermIndexSearchInteractor;
+use Wikibase\Lib\Interactors\MatchingTermsLookupSearchInteractor;
 use Wikibase\Lib\Tests\Store\MockTermIndex;
 use Wikibase\Store\BufferingTermIndexTermLookup;
 use Wikibase\TermIndexEntry;
@@ -26,7 +26,7 @@ use Wikibase\TermIndexEntry;
 /**
  * @group ArticlePlaceholder
  *
- * @covers ArticlePlaceholder\SearchHookHandler
+ * @covers \ArticlePlaceholder\SearchHookHandler
  *
  * @license GPL-2.0-or-later
  * @author Lucie-Aimée Kaffee
@@ -89,7 +89,7 @@ class SearchHookHandlerTest extends MediaWikiTestCase {
 			? new MockTermIndex( [] )
 			: $this->getMockTermIndex();
 
-		$termSearchInteractor = new TermIndexSearchInteractor(
+		$termSearchInteractor = new MatchingTermsLookupSearchInteractor(
 			$this->getMockTermIndex(),
 			new LanguageFallbackChainFactory,
 			new BufferingTermIndexTermLookup( $termLookupIndex ),
