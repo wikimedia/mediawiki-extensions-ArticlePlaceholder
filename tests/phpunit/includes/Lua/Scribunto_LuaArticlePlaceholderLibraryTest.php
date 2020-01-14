@@ -68,8 +68,8 @@ class Scribunto_LuaArticlePlaceholderLibraryTest extends MediaWikiTestCase {
 				array $setupOptions
 			) {
 				$this->assertFileExists( $moduleFileName );
-				$this->assertInternalType( 'callable', $interfaceFuncs['getImageProperty'] );
-				$this->assertInternalType( 'callable', $interfaceFuncs['getReferencesBlacklist'] );
+				$this->assertIsCallable( $interfaceFuncs['getImageProperty'] );
+				$this->assertIsCallable( $interfaceFuncs['getReferencesBlacklist'] );
 
 				return 'dummyReturnValue';
 			} );

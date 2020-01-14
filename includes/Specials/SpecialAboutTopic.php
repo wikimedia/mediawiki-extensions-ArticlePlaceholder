@@ -2,10 +2,10 @@
 
 namespace ArticlePlaceholder\Specials;
 
+use ArticlePlaceholder\AboutTopicRenderer;
 use HTMLForm;
 use MediaWiki\MediaWikiServices;
 use SpecialPage;
-use ArticlePlaceholder\AboutTopicRenderer;
 use Wikibase\Client\Store\TitleFactory;
 use Wikibase\Client\WikibaseClient;
 use Wikibase\DataModel\Entity\EntityIdParser;

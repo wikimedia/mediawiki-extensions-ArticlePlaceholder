@@ -2,8 +2,8 @@
 
 namespace ArticlePlaceholder\Tests;
 
-use ArticlePlaceholder\TermSearchApiInteractor;
 use ArticlePlaceholder\RepoApiInteractor;
+use ArticlePlaceholder\TermSearchApiInteractor;
 use Wikibase\Client\WikibaseClient;
 use Wikibase\DataModel\Entity\ItemId;
 use Wikibase\DataModel\Term\Term;

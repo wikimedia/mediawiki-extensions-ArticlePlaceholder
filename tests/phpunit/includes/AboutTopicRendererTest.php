@@ -7,22 +7,22 @@ use DerivativeContext;
 use Language;
 use MalformedTitleException;
 use MediaWikiTestCase;
+use OutputPage;
 use RequestContext;
 use Site;
 use SiteLookup;
 use SpecialPage;
 use Title;
 use User;
-use OutputPage;
-use Wikibase\Client\Store\TitleFactory;
 use Wikibase\Client\Hooks\OtherProjectsSidebarGenerator;
 use Wikibase\Client\Hooks\OtherProjectsSidebarGeneratorFactory;
+use Wikibase\Client\Store\TitleFactory;
 use Wikibase\DataModel\Entity\ItemId;
-use Wikibase\DataModel\SiteLink;
 use Wikibase\DataModel\Services\Lookup\LabelDescriptionLookup;
+use Wikibase\DataModel\SiteLink;
 use Wikibase\DataModel\Term\Term;
-use Wikibase\Lib\Store\SiteLinkLookup;
 use Wikibase\Lib\Store\LanguageFallbackLabelDescriptionLookupFactory;
+use Wikibase\Lib\Store\SiteLinkLookup;
 
 /**
  * @covers ArticlePlaceholder\AboutTopicRenderer

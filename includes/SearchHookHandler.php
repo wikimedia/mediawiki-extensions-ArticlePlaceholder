@@ -4,10 +4,10 @@ namespace ArticlePlaceholder;
 
 use InvalidArgumentException;
 use Liuggio\StatsdClient\Factory\StatsdDataFactoryInterface;
-use OutputPage;
-use SpecialSearch;
-use SpecialPage;
 use MediaWiki\MediaWikiServices;
+use OutputPage;
+use SpecialPage;
+use SpecialSearch;
 use Wikibase\Client\WikibaseClient;
 use Wikibase\Lib\Interactors\TermSearchInteractor;
 use Wikibase\Lib\Interactors\TermSearchResult;

@@ -7,14 +7,14 @@ use Html;
 use Language;
 use MalformedTitleException;
 use OOUI;
+use OutputPage;
 use SiteLookup;
 use SpecialPage;
 use User;
-use OutputPage;
+use Wikibase\Client\Hooks\OtherProjectsSidebarGeneratorFactory;
+use Wikibase\Client\Store\TitleFactory;
 use Wikibase\Client\Usage\HashUsageAccumulator;
 use Wikibase\DataModel\Entity\ItemId;
-use Wikibase\Client\Store\TitleFactory;
-use Wikibase\Client\Hooks\OtherProjectsSidebarGeneratorFactory;
 use Wikibase\Lib\Store\LanguageFallbackLabelDescriptionLookupFactory;
 use Wikibase\Lib\Store\SiteLinkLookup;
 

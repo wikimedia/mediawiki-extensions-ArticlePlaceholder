@@ -2,13 +2,13 @@
 
 namespace ArticlePlaceholder\Specials;
 
-use MediaWiki\MediaWikiServices;
-use UnlistedSpecialPage;
-use Title;
-use PermissionsError;
 use HTMLForm;
+use MediaWiki\MediaWikiServices;
 use Message;
 use MWException;
+use PermissionsError;
+use Title;
+use UnlistedSpecialPage;
 
 /**
  * The CreateTopicPage SpecialPage for the ArticlePlaceholder extension

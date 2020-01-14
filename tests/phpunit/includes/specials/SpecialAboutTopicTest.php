@@ -6,12 +6,12 @@ use ArticlePlaceholder\AboutTopicRenderer;
 use ArticlePlaceholder\Specials\SpecialAboutTopic;
 use DerivativeContext;
 use MediaWikiTestCase;
-use RequestContext;
 use OutputPage;
+use RequestContext;
 use SpecialPage;
 use Title;
-use Wikibase\Client\WikibaseClient;
 use Wikibase\Client\Store\TitleFactory;
+use Wikibase\Client\WikibaseClient;
 use Wikibase\DataModel\Entity\EntityIdParser;
 use Wikibase\DataModel\Entity\Item;
 use Wikibase\DataModel\Entity\ItemId;
@@ -189,7 +189,7 @@ class SpecialAboutTopicTest extends MediaWikiTestCase {
 	public function testCanonicalUrl() {
 		$output = $this->getInstanceOutput( 'Q1234' );
 
-		$this->assertType( 'string', $output->getCanonicalUrl() );
+		$this->assertIsString( $output->getCanonicalUrl() );
 		$this->assertSame(
 			SpecialPage::getTitleFor( 'AboutTopic', 'Q1234' )->getCanonicalURL(),
 			$output->getCanonicalUrl()
