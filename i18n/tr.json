@@ -7,7 +7,7 @@
 	},
 	"createtopicpage": "Sayfa oluştur",
 	"articleplaceholder-desc": "Belirli bir konuyla ilgili {{WBREPONAME}} bilgileriyle, konuyla ilgili bir makale oluşturma davetini içeren özel bir sayfa sunar",
-	"articleplaceholder-abouttopic": "Konu Hakkında",
+	"articleplaceholder-abouttopic": "Konu hakkında",
 	"articleplaceholder-abouttopic-intro": "Bu özel sayfa, {{WBREPONAME}} verilerini temel alan bir konuya hızlı bir genel bakış sunar.",
 	"articleplaceholder-abouttopic-entityid": "Lütfen Q12345 gibi bir öğe kimliği girin",
 	"articleplaceholder-abouttopic-submit": "zanaat",
@@ -25,7 +25,7 @@
 	"articleplaceholder-abouttopic-lua-reference": "Kaynak",
 	"articleplaceholder-abouttopic-lua-identifier": "Dış kaynaklar",
 	"articleplaceholder-search-header": "Konuyla ilgili verileri keşfet",
-	"articleplaceholder-createpage-title": "Oluştur $1",
+	"articleplaceholder-createpage-title": "$1 sayfasını oluştur",
 	"articleplaceholder-createpage-alreadyexists": "$1 başlıklı sayfa zaten var. Lütfen başka birini seçiniz.",
 	"articleplaceholder-createpage-notitleprovided": "Başlık girilmedi, lütfen oluşturmak istediğiniz sayfa için bir başlık girin.",
 	"articleplaceholder-createpage-invalidtitleprovided": "Girdiğiniz başlık geçersiz. Lütfen geçerli bir başlık girin."
