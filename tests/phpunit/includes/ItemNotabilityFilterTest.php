@@ -67,7 +67,7 @@ class ItemNotabilityFilterTest extends MediaWikiTestCase {
 	}
 
 	private function createTestEntities() {
-		global $wgUser;
+		$user = $this->getTestSysop()->getUser();
 		$entityStore = WikibaseRepo::getDefaultInstance()->getEntityStore();
 
 		$snak = new PropertyValueSnak(
@@ -109,10 +109,10 @@ class ItemNotabilityFilterTest extends MediaWikiTestCase {
 		] );
 		$item3 = new Item( null, $fingerprint, $siteLinkList3, $statementListNotable );
 
-		$entityStore->saveEntity( $item0, 'ItemNotabilityFilterTest', $wgUser, EDIT_NEW );
-		$entityStore->saveEntity( $item1, 'ItemNotabilityFilterTest', $wgUser, EDIT_NEW );
-		$entityStore->saveEntity( $item2, 'ItemNotabilityFilterTest', $wgUser, EDIT_NEW );
-		$entityStore->saveEntity( $item3, 'ItemNotabilityFilterTest', $wgUser, EDIT_NEW );
+		$entityStore->saveEntity( $item0, 'ItemNotabilityFilterTest', $user, EDIT_NEW );
+		$entityStore->saveEntity( $item1, 'ItemNotabilityFilterTest', $user, EDIT_NEW );
+		$entityStore->saveEntity( $item2, 'ItemNotabilityFilterTest', $user, EDIT_NEW );
+		$entityStore->saveEntity( $item3, 'ItemNotabilityFilterTest', $user, EDIT_NEW );
 
 		$this->testItemIds[] = $item0->getId();
 		$this->testItemIds[] = $item1->getId();
