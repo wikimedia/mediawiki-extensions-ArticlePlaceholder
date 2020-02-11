@@ -46,7 +46,8 @@ class SpecialCreateTopicPage extends UnlistedSpecialPage {
 			return;
 		}
 
-		$permissionErrors = $title->getUserPermissionsErrors( 'edit', $this->getUser() );
+		$permissionErrors = MediaWikiServices::getInstance()->getPermissionManager()
+			->getPermissionErrors( 'edit', $this->getUser(), $title );
 		if ( $permissionErrors ) {
 			throw new PermissionsError( 'edit', $permissionErrors );
 		}
