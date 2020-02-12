@@ -6,6 +6,7 @@ use ExtensionRegistry;
 use Html;
 use Language;
 use MalformedTitleException;
+use MediaWiki\Permissions\PermissionManager;
 use OOUI;
 use OutputPage;
 use SiteLookup;
@@ -60,12 +61,18 @@ class AboutTopicRenderer {
 	private $otherProjectsSidebarGeneratorFactory;
 
 	/**
+	 * @var PermissionManager
+	 */
+	private $permissionManager;
+
+	/**
 	 * @param LanguageFallbackLabelDescriptionLookupFactory $termLookupFactory
 	 * @param SiteLinkLookup $siteLinkLookup
 	 * @param SiteLookup $siteLookup
 	 * @param string $langLinkSiteGroup
 	 * @param TitleFactory $titleFactory
 	 * @param OtherProjectsSidebarGeneratorFactory $otherProjectsSidebarGeneratorFactory
+	 * @param PermissionManager $permissionManager
 	 */
 	public function __construct(
 		LanguageFallbackLabelDescriptionLookupFactory $termLookupFactory,
@@ -73,7 +80,8 @@ class AboutTopicRenderer {
 		SiteLookup $siteLookup,
 		$langLinkSiteGroup,
 		TitleFactory $titleFactory,
-		OtherProjectsSidebarGeneratorFactory $otherProjectsSidebarGeneratorFactory
+		OtherProjectsSidebarGeneratorFactory $otherProjectsSidebarGeneratorFactory,
+		PermissionManager $permissionManager
 	) {
 		$this->termLookupFactory = $termLookupFactory;
 		$this->siteLinkLookup = $siteLinkLookup;
@@ -81,6 +89,7 @@ class AboutTopicRenderer {
 		$this->langLinkSiteGroup = $langLinkSiteGroup;
 		$this->titleFactory = $titleFactory;
 		$this->otherProjectsSidebarGeneratorFactory = $otherProjectsSidebarGeneratorFactory;
+		$this->permissionManager = $permissionManager;
 	}
 
 	/**
@@ -106,7 +115,7 @@ class AboutTopicRenderer {
 
 			try {
 				$title = $this->titleFactory->newFromText( $label );
-				if ( $title->quickUserCan( 'createpage', $user ) ) {
+				if ( $this->permissionManager->quickUserCan( 'createpage', $user, $title ) ) {
 					$this->showCreateArticle( $entityId, $label, $output );
 				}
 			} catch ( MalformedTitleException $ex ) {
