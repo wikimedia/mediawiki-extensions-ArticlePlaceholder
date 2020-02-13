@@ -40,7 +40,8 @@ class SpecialAboutTopic extends SpecialPage {
 				MediaWikiServices::getInstance()->getSiteLookup(),
 				$wikibaseClient->getLangLinkSiteGroup(),
 				new TitleFactory(),
-				$wikibaseClient->getOtherProjectsSidebarGeneratorFactory()
+				$wikibaseClient->getOtherProjectsSidebarGeneratorFactory(),
+				MediaWikiServices::getInstance()->getPermissionManager()
 			),
 			$wikibaseClient->getEntityIdParser(),
 			$wikibaseClient->getStore()->getSiteLinkLookup(),

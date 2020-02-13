@@ -6,13 +6,13 @@ use ArticlePlaceholder\AboutTopicRenderer;
 use DerivativeContext;
 use Language;
 use MalformedTitleException;
+use MediaWiki\Permissions\PermissionManager;
 use MediaWikiTestCase;
 use OutputPage;
 use RequestContext;
 use Site;
 use SiteLookup;
 use SpecialPage;
-use Title;
 use User;
 use Wikibase\Client\Hooks\OtherProjectsSidebarGenerator;
 use Wikibase\Client\Hooks\OtherProjectsSidebarGeneratorFactory;
@@ -43,11 +43,16 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 
 	/**
 	 * @param ItemId $itemId
+	 * @param bool $canCreate
 	 * @param TitleFactory|null $titleFactory
 	 *
 	 * @return OutputPage
 	 */
-	private function getInstanceOutput( ItemId $itemId, TitleFactory $titleFactory = null ) {
+	private function getInstanceOutput(
+		ItemId $itemId,
+		$canCreate = true,
+		TitleFactory $titleFactory = null
+	) {
 		$context = new DerivativeContext( RequestContext::getMain() );
 		$outputPage = $context->getOutput();
 		$title = SpecialPage::getTitleFor( 'AboutTopic' );
@@ -74,14 +79,21 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 			->method( 'getOtherProjectsSidebarGenerator' )
 			->will( $this->returnValue( $otherProjectsSidebarGenerator ) );
 
+		$permMock = $this->getMockBuilder( PermissionManager::class )
+			->disableOriginalConstructor()
+			->getMock();
+		$permMock->expects( $this->any() )
+			->method( 'quickUserCan' )
+			->willReturn( $canCreate );
+
 		$instance = new AboutTopicRenderer(
 			$this->getTermLookupFactory(),
 			$this->getSiteLinkLookup(),
 			$this->getSiteLookup(),
 			'wikipedia',
-			$titleFactory ?: $this->getTitleFactory(),
+			$titleFactory ?: new TitleFactory(),
 			$otherProjectsSidebarGeneratorFactory,
-			true
+			$permMock
 		);
 
 		$instance->showPlaceholder(
@@ -92,27 +104,6 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 		);
 
 		return $outputPage;
-	}
-
-	private function getTitleFactory( $canCreate = true ) {
-		$titleFactory = $this->createMock( TitleFactory::class );
-		$titleFactory->expects( $this->any() )
-			->method( 'newFromText' )
-			->with( $this->isType( 'string' ) )
-			->will( $this->returnCallback( function ( $text ) use ( $canCreate ) {
-				$title = $this->getMockBuilder( Title::class )
-					->disableOriginalConstructor()
-					->getMock();
-
-				$title->expects( $this->once() )
-					->method( 'quickUserCan' )
-					->with( 'createpage', $this->isInstanceOf( User::class ) )
-					->will( $this->returnValue( $canCreate ) );
-
-				return $title;
-			} ) );
-
-		return $titleFactory;
 	}
 
 	/**
@@ -146,7 +137,7 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 	 * Test that the create article button has been inserted
 	 */
 	public function testCreateArticleButton() {
-		$output = $this->getInstanceOutput( new ItemId( 'Q123' ), $this->getTitleFactory( true ) );
+		$output = $this->getInstanceOutput( new ItemId( 'Q123' ) );
 		$this->assertContains( 'new-article-button', $output->getHTML() );
 	}
 
@@ -154,7 +145,7 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 		$titleFactory = $this->createMock( TitleFactory::class );
 		$titleFactory->method( 'newFromText' )
 			->willThrowException( new MalformedTitleException( '' ) );
-		$html = $this->getInstanceOutput( new ItemId( 'Q123' ), $titleFactory )->getHTML();
+		$html = $this->getInstanceOutput( new ItemId( 'Q123' ), true, $titleFactory )->getHTML();
 		$this->assertContains( 'new-article-button', $html );
 	}
 
@@ -163,7 +154,7 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 	 * to create the page.
 	 */
 	public function testNoCreateArticleButton_ifUserNotAllowedToCreatePage() {
-		$output = $this->getInstanceOutput( new ItemId( 'Q123' ), $this->getTitleFactory( false ) );
+		$output = $this->getInstanceOutput( new ItemId( 'Q123' ), false );
 		$this->assertNotContains( 'new-article-button', $output->getHTML() );
 	}
 
