@@ -4,7 +4,7 @@ namespace ArticlePlaceholder;
 
 use BaseTemplate;
 use Exception;
-use SpecialPageFactory;
+use MediaWiki\MediaWikiServices;
 use Title;
 use WebRequest;
 use Wikibase\Client\RepoLinker;
@@ -72,7 +72,8 @@ class BaseTemplateToolboxHookHandler {
 			return;
 		}
 
-		$canonicalSpecialPageName = SpecialPageFactory::resolveAlias( $title->getText() )[0];
+		$canonicalSpecialPageName = MediaWikiServices::getInstance()
+			->getSpecialPageFactory()->resolveAlias( $title->getText() )[0];
 		if ( $canonicalSpecialPageName !== 'AboutTopic' ) {
 			return;
 		}
@@ -110,7 +111,8 @@ class BaseTemplateToolboxHookHandler {
 	private function getItemId( Title $title, WebRequest $webRequest ) {
 		$idSerialization = $webRequest->getText(
 			'entityid',
-			SpecialPageFactory::resolveAlias( $title->getText() )[1]
+			MediaWikiServices::getInstance()->getSpecialPageFactory()
+				->resolveAlias( $title->getText() )[1]
 		);
 
 		if ( !$idSerialization ) {
