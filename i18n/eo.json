@@ -30,5 +30,5 @@
 	"articleplaceholder-createpage-title": "Krei la paĝon $1",
 	"articleplaceholder-createpage-alreadyexists": "La paĝo kun la titolo $1 jam ekzistas. Bonvolu elekti alian titolon.",
 	"articleplaceholder-createpage-notitleprovided": "Neniu titolo estis enigita, bonvolu enigi titolon por la paĝo, kiun vi volas krei.",
-	"articleplaceholder-createpage-invalidtitleprovided": "La titolo, kiun vi provizis estas malvalida. Bonvolu provizi validan titolon."
+	"articleplaceholder-createpage-invalidtitleprovided": "La titolo, kiun vi provizis estas nevalida. Bonvolu provizi validan titolon."
 }

@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robby"
+			"Robby",
+			"Soued031"
 		]
 	},
 	"createtopicpage": "Säit uleeën",
@@ -16,6 +17,6 @@
 	"articleplaceholder-abouttopic-lua-reference": "Referenz",
 	"articleplaceholder-abouttopic-lua-identifier": "Extern Quellen",
 	"articleplaceholder-createpage-title": "$1 uleeën",
-	"articleplaceholder-createpage-alreadyexists": "D'Säit mam  Titel $1 gëtt et schonn. Sicht w.e.g. een aneren eraus.",
-	"articleplaceholder-createpage-invalidtitleprovided": "Den Titel deen Dir uginn hutt ass net valabel. Gitt w.e.g. e valabelen Titel un."
+	"articleplaceholder-createpage-alreadyexists": "D'Säit mam  Titel $1 gëtt et schonn. Sicht wgl. een aneren eraus.",
+	"articleplaceholder-createpage-invalidtitleprovided": "Den Titel deen Dir uginn hutt ass net valabel. Gitt wgl. e valabelen Titel un."
 }
