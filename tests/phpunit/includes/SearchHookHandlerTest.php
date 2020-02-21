@@ -19,8 +19,8 @@ use Wikibase\DataModel\Entity\ItemId;
 use Wikibase\DataModel\Entity\PropertyId;
 use Wikibase\LanguageFallbackChainFactory;
 use Wikibase\Lib\Interactors\MatchingTermsLookupSearchInteractor;
+use Wikibase\Lib\Store\BufferingTermIndexTermLookup;
 use Wikibase\Lib\Tests\Store\MockTermIndex;
-use Wikibase\Store\BufferingTermIndexTermLookup;
 use Wikibase\TermIndexEntry;
 
 /**
