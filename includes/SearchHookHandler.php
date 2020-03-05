@@ -2,7 +2,6 @@
 
 namespace ArticlePlaceholder;
 
-use InvalidArgumentException;
 use Liuggio\StatsdClient\Factory\StatsdDataFactoryInterface;
 use MediaWiki\MediaWikiServices;
 use OutputPage;
@@ -72,12 +71,9 @@ class SearchHookHandler {
 		$statsdDataFactory = MediaWikiServices::getInstance()->getStatsdDataFactory();
 		$config = MediaWikiServices::getInstance()->getMainConfig();
 
-		$termSearchInteractor = self::getTermSearchInteractor(
-			$wikibaseClient,
-			$specialPage,
-			$statsdDataFactory,
-			$config->get( 'ArticlePlaceholderSearchIntegrationBackend' ),
-			$config->get( 'ArticlePlaceholderRepoApiUrl' )
+		$termSearchInteractor = new TermSearchApiInteractor(
+			new RepoApiInteractor( $config->get( 'ArticlePlaceholderRepoApiUrl' ), $statsdDataFactory ),
+			$wikibaseClient->getEntityIdParser()
 		);
 
 		return new self(
@@ -88,37 +84,6 @@ class SearchHookHandler {
 			$itemNotabilityFilter,
 			$statsdDataFactory
 		);
-	}
-
-	/**
-	 * @param WikibaseClient $wikibaseClient
-	 * @param SpecialPage $specialPage
-	 * @param StatsdDataFactoryInterface $statsdDataFactory
-	 * @param string $searchIntegrationBackend
-	 * @param string $repoApiUrl
-	 * @return TermSearchInteractor
-	 */
-	private static function getTermSearchInteractor(
-		WikibaseClient $wikibaseClient,
-		SpecialPage $specialPage,
-		StatsdDataFactoryInterface $statsdDataFactory,
-		$searchIntegrationBackend,
-		$repoApiUrl
-	): TermSearchInteractor {
-		if ( $searchIntegrationBackend === 'Database' ) {
-			return $wikibaseClient->newTermSearchInteractor(
-				$specialPage->getLanguage()->getCode()
-			);
-		} elseif ( $searchIntegrationBackend === 'API' ) {
-			return new TermSearchApiInteractor(
-				new RepoApiInteractor( $repoApiUrl, $statsdDataFactory ),
-				$wikibaseClient->getEntityIdParser()
-			);
-		} else {
-			throw new InvalidArgumentException(
-				'$wgArticlePlaceholderSearchIntegrationBackend can be either "Databse" or "API".'
-			);
-		}
 	}
 
 	/**

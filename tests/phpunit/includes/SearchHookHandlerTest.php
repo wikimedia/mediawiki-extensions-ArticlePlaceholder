@@ -5,7 +5,6 @@ namespace ArticlePlaceholder\Tests;
 use ArticlePlaceholder\ItemNotabilityFilter;
 use ArticlePlaceholder\SearchHookHandler;
 use Config;
-use Language;
 use Liuggio\StatsdClient\Factory\StatsdDataFactory;
 use MediaWikiTestCase;
 use OutputPage;
@@ -174,10 +173,6 @@ class SearchHookHandlerTest extends MediaWikiTestCase {
 			->method( 'getConfig' )
 			->will( $this->returnValue( $this->createMock( Config::class ) ) );
 
-		$specialPage->expects( $this->once() )
-			->method( 'getLanguage' )
-			->will( $this->returnValue( Language::factory( 'en' ) ) );
-
 		$reflectionMethod = new ReflectionMethod( SearchHookHandler::class, 'newFromGlobalState' );
 		$reflectionMethod->setAccessible( true );
 		$handler = $reflectionMethod->invoke( null, $specialPage );
@@ -214,9 +209,9 @@ class SearchHookHandlerTest extends MediaWikiTestCase {
 		$searchHookHander->addToSearch( $specialSearch, $output, $term );
 		$html = $output->getHTML();
 
-		$this->assertNotContains( 'Q111', $html );
-		$this->assertNotContains( 'Q222', $html );
-		$this->assertContains( $expected, $html, $message );
+		$this->assertStringNotContainsString( 'Q111', $html );
+		$this->assertStringNotContainsString( 'Q222', $html );
+		$this->assertStringContainsString( $expected, $html, $message );
 		$this->assertSame( 1, $hasResults );
 		$this->assertSame( 0, $noResults );
 	}

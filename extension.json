@@ -100,7 +100,6 @@
 		"ArticlePlaceholderReferencesBlacklist": "P143",
 		"ArticlePlaceholderSearchEngineIndexed": false,
 		"ArticlePlaceholderSearchIntegrationEnabled": true,
-		"ArticlePlaceholderSearchIntegrationBackend": "Database",
 		"ArticlePlaceholderRepoApiUrl": "https://www.wikidata.org/w/api.php"
 	},
 	"manifest_version": 1
