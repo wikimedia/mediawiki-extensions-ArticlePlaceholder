@@ -11,7 +11,7 @@ use SpecialSearch;
 use Wikibase\Client\WikibaseClient;
 use Wikibase\Lib\Interactors\TermSearchInteractor;
 use Wikibase\Lib\Interactors\TermSearchResult;
-use Wikibase\TermIndexEntry;
+use Wikibase\Lib\TermIndexEntry;
 use Wikimedia\Rdbms\SessionConsistentConnectionManager;
 
 /**
