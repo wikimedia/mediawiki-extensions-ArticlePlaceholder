@@ -16,11 +16,11 @@ use Title;
 use Wikibase\DataModel\Entity\EntityId;
 use Wikibase\DataModel\Entity\ItemId;
 use Wikibase\DataModel\Entity\PropertyId;
-use Wikibase\LanguageFallbackChainFactory;
 use Wikibase\Lib\Interactors\MatchingTermsLookupSearchInteractor;
+use Wikibase\Lib\LanguageFallbackChainFactory;
 use Wikibase\Lib\Store\BufferingTermIndexTermLookup;
+use Wikibase\Lib\TermIndexEntry;
 use Wikibase\Lib\Tests\Store\MockTermIndex;
-use Wikibase\TermIndexEntry;
 
 /**
  * @group ArticlePlaceholder
