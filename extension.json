@@ -82,18 +82,10 @@
 		]
 	},
 	"Hooks": {
-		"BaseTemplateToolbox": [
-			"ArticlePlaceholder\\BaseTemplateToolboxHookHandler::onBaseTemplateToolbox"
-		],
-		"ScribuntoExternalLibraries": [
-			"ArticlePlaceholder\\Hooks::onScribuntoExternalLibraries"
-		],
-		"ScribuntoExternalLibraryPaths": [
-			"ArticlePlaceholder\\Hooks::registerScribuntoExternalLibraryPaths"
-		],
-		"SpecialSearchResultsAppend": [
-			"ArticlePlaceholder\\SearchHookHandler::onSpecialSearchResultsAppend"
-		]
+		"BaseTemplateToolbox": "ArticlePlaceholder\\BaseTemplateToolboxHookHandler::onBaseTemplateToolbox",
+		"ScribuntoExternalLibraries": "ArticlePlaceholder\\Hooks::onScribuntoExternalLibraries",
+		"ScribuntoExternalLibraryPaths": "ArticlePlaceholder\\Hooks::registerScribuntoExternalLibraryPaths",
+		"SpecialSearchResultsAppend": "ArticlePlaceholder\\SearchHookHandler::onSpecialSearchResultsAppend"
 	},
 	"config": {
 		"ArticlePlaceholderImageProperty": "P18",
