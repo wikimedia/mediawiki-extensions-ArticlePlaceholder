@@ -198,6 +198,7 @@ class SpecialAboutTopic extends SpecialPage {
 				'type' => 'text',
 				'name' => 'entityid',
 				'id' => 'ap-abouttopic-entityid',
+				'required' => true,
 				'cssclass' => 'ap-input',
 				'label-message' => 'articleplaceholder-abouttopic-entityid',
 				'default' => $this->getRequest()->getVal( 'entityid' ),
