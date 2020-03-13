@@ -130,7 +130,7 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 	 */
 	public function testTemplateUsed() {
 		$output = $this->getInstanceOutput( new ItemId( 'Q123' ) );
-		$this->assertContains( '(aboutTopic: Q123)', $output->getHTML() );
+		$this->assertStringContainsString( '(aboutTopic: Q123)', $output->getHTML() );
 	}
 
 	/**
@@ -138,7 +138,7 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 	 */
 	public function testCreateArticleButton() {
 		$output = $this->getInstanceOutput( new ItemId( 'Q123' ) );
-		$this->assertContains( 'new-article-button', $output->getHTML() );
+		$this->assertStringContainsString( 'new-article-button', $output->getHTML() );
 	}
 
 	public function testCreateArticleButton_ifLabelIsNotAValidTitle() {
@@ -146,7 +146,7 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 		$titleFactory->method( 'newFromText' )
 			->willThrowException( new MalformedTitleException( '' ) );
 		$html = $this->getInstanceOutput( new ItemId( 'Q123' ), true, $titleFactory )->getHTML();
-		$this->assertContains( 'new-article-button', $html );
+		$this->assertStringContainsString( 'new-article-button', $html );
 	}
 
 	/**
@@ -155,7 +155,7 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 	 */
 	public function testNoCreateArticleButton_ifUserNotAllowedToCreatePage() {
 		$output = $this->getInstanceOutput( new ItemId( 'Q123' ), false );
-		$this->assertNotContains( 'new-article-button', $output->getHTML() );
+		$this->assertStringNotContainsString( 'new-article-button', $output->getHTML() );
 	}
 
 	/**
