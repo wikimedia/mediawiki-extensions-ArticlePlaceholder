@@ -5,9 +5,13 @@
 		]
 	},
 	"createtopicpage": "สร้างหน้า",
+	"articleplaceholder-abouttopic-create-article-title": "สร้างบทความใหม่",
 	"articleplaceholder-abouttopic-create-article-label": "ชื่อบทความ",
 	"articleplaceholder-abouttopic-create-article-mandatory": "ต้องระบุชื่อบทความ",
 	"articleplaceholder-abouttopic-create-article-button": "สร้างบทความ",
+	"articleplaceholder-abouttopic-create-emtpy-article-button": "เริ่มบทความใหม่",
+	"articleplaceholder-abouttopic-translate-article-label": "ภาษาต้นฉบับ:",
+	"articleplaceholder-abouttopic-translate-article-button": "แปลบทความ",
 	"articleplaceholder-abouttopic-create-article-submit-button": "ส่ง",
 	"articleplaceholder-abouttopic-article-exists-error": "มีบทความชื่อนี้อยู่แล้ว",
 	"articleplaceholder-abouttopic-lua-reference": "แหล่งอ้างอิง",
