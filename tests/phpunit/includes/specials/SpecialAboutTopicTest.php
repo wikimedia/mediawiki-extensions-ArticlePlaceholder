@@ -65,11 +65,11 @@ class SpecialAboutTopicTest extends MediaWikiTestCase {
 		$this->assertSame( '(articleplaceholder-abouttopic)', $output->getPageTitle() );
 
 		$html = $output->getHTML();
-		$this->assertContains( 'id=\'ap-abouttopic-form1\'', $html );
-		$this->assertContains( 'id=\'ap-abouttopic-entityid\'', $html );
-		$this->assertContains( '(articleplaceholder-abouttopic-intro)', $html );
-		$this->assertContains( '(articleplaceholder-abouttopic-entityid)', $html );
-		$this->assertContains( '(articleplaceholder-abouttopic-submit)', $html );
+		$this->assertStringContainsString( 'id=\'ap-abouttopic-form1\'', $html );
+		$this->assertStringContainsString( 'id=\'ap-abouttopic-entityid\'', $html );
+		$this->assertStringContainsString( '(articleplaceholder-abouttopic-intro)', $html );
+		$this->assertStringContainsString( '(articleplaceholder-abouttopic-entityid)', $html );
+		$this->assertStringContainsString( '(articleplaceholder-abouttopic-submit)', $html );
 	}
 
 	public function testRedirect() {
@@ -182,7 +182,7 @@ class SpecialAboutTopicTest extends MediaWikiTestCase {
 			$this->assertArrayNotHasKey( 'meta-robots', $metatags );
 		} else {
 			$this->assertArrayHasKey( 'meta-robots', $metatags );
-			$this->assertContains( 'noindex,nofollow', $metatags['meta-robots'] );
+			$this->assertStringContainsString( 'noindex,nofollow', $metatags['meta-robots'] );
 		}
 	}
 
@@ -195,7 +195,7 @@ class SpecialAboutTopicTest extends MediaWikiTestCase {
 			$output->getCanonicalUrl()
 		);
 		// Should use the sub page syntax
-		$this->assertContains( '/Q1234', $output->getCanonicalUrl() );
+		$this->assertStringContainsString( '/Q1234', $output->getCanonicalUrl() );
 	}
 
 }
