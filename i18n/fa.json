@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Reza1615",
-			"Ladsgroup"
+			"Ladsgroup",
+			"FarsiNevis"
 		]
 	},
 	"createtopicpage": "ایجاد صفحه",
@@ -21,5 +22,7 @@
 	"articleplaceholder-abouttopic-lua-reference": "منبع",
 	"articleplaceholder-abouttopic-lua-identifier": "منابع خارجی",
 	"articleplaceholder-search-header": "کشف اطلاعات در مورد موضوع",
-	"articleplaceholder-createpage-title": "ایجاد $1"
+	"articleplaceholder-createpage-title": "ایجاد $1",
+	"articleplaceholder-createpage-alreadyexists": "صفحه‌ای با عنوان «$1» از قبل وجود دارد. لطفاً عنوان دیگری انتخاب کنید.",
+	"articleplaceholder-createpage-notitleprovided": "عنوانی وارد نشده است. لطفاً برای صفحهٔ مورد نظرتان عنوانی برگزینید."
 }
