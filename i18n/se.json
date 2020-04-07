@@ -1,5 +1,7 @@
 {
-	"@metadata": [],
+	"@metadata": {
+		"authors": []
+	},
 	"createtopicpage": "Álggat siiddu",
 	"articleplaceholder-abouttopic": "Fáddá birra",
 	"articleplaceholder-abouttopic-create-article-title": "Álggat ođđa artihkal",
