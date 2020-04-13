@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
+			"Kghbln",
 			"Metalhead64"
 		]
 	},
 	"createtopicpage": "Seite erstellen",
-	"articleplaceholder-desc": "Ergänzt eine Spezialseite mit {{WBREPONAME}}-Informationen über ein bestimmtes Thema mit einer Einladung zum Erstellen eines Artikels zum Thema",
+	"articleplaceholder-desc": "Erweitert das Wiki um eine Spezialseite mit Informationen aus {{WBREPONAME}} zu einem bestimmten Thema, die zum Erstellen eines zugehörigen Artikels einlädt",
 	"articleplaceholder-abouttopic": "Über Thema",
 	"articleplaceholder-abouttopic-intro": "Diese Spezialseite gibt dir einen schnellen Überblick über ein Thema, das auf Daten von {{WBREPONAME}} basiert.",
 	"articleplaceholder-abouttopic-entityid": "Bitte gib eine Objektkennung wie Q12345 ein",
