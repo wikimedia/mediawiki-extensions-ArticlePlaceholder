@@ -6,7 +6,7 @@
 		]
 	},
 	"createtopicpage": "Sayfa oluştur",
-	"articleplaceholder-desc": "Belirli bir konuyla ilgili {{WBREPONAME}} bilgileriyle, konuyla ilgili bir makale oluşturma davetini içeren özel bir sayfa sunar",
+	"articleplaceholder-desc": "Belirli bir konuyla ilgili {{WBREPONAME}} bilgileriyle, konuyla ilgili bir madde oluşturma davetini içeren özel bir sayfa sunar",
 	"articleplaceholder-abouttopic": "Konu hakkında",
 	"articleplaceholder-abouttopic-intro": "Bu özel sayfa, {{WBREPONAME}} verilerini temel alan bir konuya hızlı bir genel bakış sunar.",
 	"articleplaceholder-abouttopic-entityid": "Lütfen Q12345 gibi bir öğe kimliği girin",
