@@ -6,7 +6,7 @@ use ArticlePlaceholder\AboutTopicRenderer;
 use HTMLForm;
 use MediaWiki\MediaWikiServices;
 use SpecialPage;
-use Wikibase\Client\Store\TitleFactory;
+use TitleFactory;
 use Wikibase\Client\WikibaseClient;
 use Wikibase\DataModel\Entity\EntityIdParser;
 use Wikibase\DataModel\Entity\EntityIdParsingException;
