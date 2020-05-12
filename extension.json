@@ -64,7 +64,7 @@
 					"media": "only screen and (max-device-width: 880px)"
 				}
 			},
-			"targets" : [
+			"targets": [
 				"desktop",
 				"mobile"
 			]
@@ -88,11 +88,21 @@
 		"SpecialSearchResultsAppend": "ArticlePlaceholder\\SearchHookHandler::onSpecialSearchResultsAppend"
 	},
 	"config": {
-		"ArticlePlaceholderImageProperty": "P18",
-		"ArticlePlaceholderReferencesBlacklist": "P143",
-		"ArticlePlaceholderSearchEngineIndexed": false,
-		"ArticlePlaceholderSearchIntegrationEnabled": true,
-		"ArticlePlaceholderRepoApiUrl": "https://www.wikidata.org/w/api.php"
+		"ArticlePlaceholderImageProperty": {
+			"value": "P18"
+		},
+		"ArticlePlaceholderReferencesBlacklist": {
+			"value": "P143"
+		},
+		"ArticlePlaceholderSearchEngineIndexed": {
+			"value": false
+		},
+		"ArticlePlaceholderSearchIntegrationEnabled": {
+			"value": true
+		},
+		"ArticlePlaceholderRepoApiUrl": {
+			"value": "https://www.wikidata.org/w/api.php"
+		}
 	},
-	"manifest_version": 1
+	"manifest_version": 2
 }
