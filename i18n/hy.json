@@ -4,5 +4,6 @@
 			"Kareyac"
 		]
 	},
-	"createtopicpage": "Ստեղծել էջ"
+	"createtopicpage": "Ստեղծել էջ",
+	"articleplaceholder-createpage-title": "Ստեղծել $1"
 }
