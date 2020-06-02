@@ -114,7 +114,7 @@ class AboutTopicRenderer {
 			$this->showTitle( $label, $output );
 
 			try {
-				$title = $this->titleFactory->newFromText( $label );
+				$title = $this->titleFactory->newFromTextThrow( $label );
 				if ( $this->permissionManager->quickUserCan( 'createpage', $user, $title ) ) {
 					$this->showCreateArticle( $entityId, $label, $output );
 				}

@@ -143,7 +143,7 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 
 	public function testCreateArticleButton_ifLabelIsNotAValidTitle() {
 		$titleFactory = $this->createMock( TitleFactory::class );
-		$titleFactory->method( 'newFromText' )
+		$titleFactory->method( 'newFromTextThrow' )
 			->willThrowException( new MalformedTitleException( '' ) );
 		$html = $this->getInstanceOutput( new ItemId( 'Q123' ), true, $titleFactory )->getHTML();
 		$this->assertStringContainsString( 'new-article-button', $html );
