@@ -82,7 +82,7 @@
 		]
 	},
 	"Hooks": {
-		"BaseTemplateToolbox": "ArticlePlaceholder\\BaseTemplateToolboxHookHandler::onBaseTemplateToolbox",
+		"SidebarBeforeOutput": "ArticlePlaceholder\\SidebarBeforeOutputHookHandler::onSidebarBeforeOutput",
 		"ScribuntoExternalLibraries": "ArticlePlaceholder\\Hooks::onScribuntoExternalLibraries",
 		"ScribuntoExternalLibraryPaths": "ArticlePlaceholder\\Hooks::registerScribuntoExternalLibraryPaths",
 		"SpecialSearchResultsAppend": "ArticlePlaceholder\\SearchHookHandler::onSpecialSearchResultsAppend"
