@@ -10,7 +10,7 @@ local php = mw_interface
 
 entityrenderer.frame = nil
 entityrenderer.imageProperty = php.getImageProperty()
-entityrenderer.referencesBlacklist = php.getReferencesBlacklist()
+entityrenderer.referencePropertyToHide = php.getReferencePropertyToHide()
 
 local hasReferences = false
 

@@ -41,18 +41,18 @@ class Scribunto_LuaArticlePlaceholderLibraryTest extends MediaWikiTestCase {
 		$instance->getImageProperty();
 	}
 
-	public function testGetReferencesBlacklist() {
+	public function testGetReferencePropertyToHide() {
 		$instance = $this->newInstance();
 
-		$actual = $instance->getReferencesBlacklist();
+		$actual = $instance->getReferencePropertyToHide();
 		$this->assertSame( [ 'P2002' ], $actual );
 	}
 
-	public function testGetReferencesBlacklist_returnsNull() {
+	public function testGetReferencePropertyToHide_returnsNull() {
 		$this->setMwGlobals( 'wgArticlePlaceholderReferencesBlacklist', '' );
 		$instance = $this->newInstance();
 
-		$actual = $instance->getReferencesBlacklist();
+		$actual = $instance->getReferencePropertyToHide();
 		$this->assertNull( $actual );
 	}
 
@@ -69,7 +69,7 @@ class Scribunto_LuaArticlePlaceholderLibraryTest extends MediaWikiTestCase {
 			) {
 				$this->assertFileExists( $moduleFileName );
 				$this->assertIsCallable( $interfaceFuncs['getImageProperty'] );
-				$this->assertIsCallable( $interfaceFuncs['getReferencesBlacklist'] );
+				$this->assertIsCallable( $interfaceFuncs['getReferencePropertyToHide'] );
 
 				return 'dummyReturnValue';
 			} );

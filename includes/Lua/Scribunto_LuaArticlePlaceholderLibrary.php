@@ -28,11 +28,11 @@ class Scribunto_LuaArticlePlaceholderLibrary extends Scribunto_LuaLibraryBase {
 	}
 
 	/**
-	 * Returns an array containing the serialization of a blacklisted reference property id
+	 * Returns an array containing the serialization of a single reference property id to hide
 	 *
 	 * @return string[]|null Null if $wgArticlePlaceholderReferencesBlacklist empty or not string
 	 */
-	public function getReferencesBlacklist() {
+	public function getReferencePropertyToHide() {
 		global $wgArticlePlaceholderReferencesBlacklist;
 		if (
 			!is_string( $wgArticlePlaceholderReferencesBlacklist ) ||
@@ -52,7 +52,7 @@ class Scribunto_LuaArticlePlaceholderLibrary extends Scribunto_LuaLibraryBase {
 		// these can't be called from user code, unless explicitly exposed in Lua.
 		$lib = [
 			'getImageProperty' => [ $this, 'getImageProperty' ],
-			'getReferencesBlacklist' => [ $this, 'getReferencesBlacklist' ],
+			'getReferencePropertyToHide' => [ $this, 'getReferencePropertyToHide' ],
 		];
 
 		return $this->getEngine()->registerInterface(

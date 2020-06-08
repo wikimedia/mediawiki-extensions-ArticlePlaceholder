@@ -6,22 +6,22 @@
 
 local referenceRenderer = {}
 
--- Remove the references that include a Snak with the blacklisted property id.
+-- Remove the references that include a Snak with the property id to hide.
 -- @param table references
 -- @return table newRefs
-local removeBlacklistedReferences = function( referencesBlacklist, references )
+local removeReferencesByProperty = function( propertyToHide, references )
   local newRefs = {}
 
   for key, reference in pairs(references) do
-    local blacklisted = false
+    local display = true
     for propRef, snakRef in pairs( reference['snaks'] ) do
 
-      if propRef == referencesBlacklist then
-        blacklisted = true
+      if propRef == propertyToHide then
+        display = false
         break
       end
     end
-    if blacklisted == false then
+    if display then
       table.insert( newRefs, reference )
     end
   end
@@ -38,8 +38,8 @@ local render = function( self, references )
   local frame = self._entityrenderer.frame
   local referencesWikitext = {}
 
-  if self._entityrenderer.referencesBlacklist ~= nil then
-    references = removeBlacklistedReferences( self._entityrenderer.referencesBlacklist, references )
+  if self._entityrenderer.referencePropertyToHide ~= nil then
+    references = removeReferencesByProperty( self._entityrenderer.referencePropertyToHide, references )
   end
 
   local i, reference = next( references, nil )
