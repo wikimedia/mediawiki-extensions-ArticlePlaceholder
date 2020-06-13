@@ -35,7 +35,7 @@ class ItemNotabilityFilterTest extends MediaWikiTestCase {
 	 */
 	private $testItemIds = [];
 
-	public function setUp() : void {
+	protected function setUp() : void {
 		parent::setUp();
 
 		if ( !defined( 'WB_VERSION' ) ) {
