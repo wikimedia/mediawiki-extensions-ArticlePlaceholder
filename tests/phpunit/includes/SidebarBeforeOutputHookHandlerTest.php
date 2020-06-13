@@ -35,7 +35,7 @@ class SidebarBeforeOutputHookHandlerTest extends MediaWikiTestCase {
 		parent::tearDown();
 	}
 
-	protected function testNewFromGlobalState() {
+	public function testNewFromGlobalState() {
 		$reflectionMethod = new ReflectionMethod(
 			SidebarBeforeOutputHookHandler::class,
 			'newFromGlobalState'
