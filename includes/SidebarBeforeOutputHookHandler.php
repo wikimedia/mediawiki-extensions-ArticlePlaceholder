@@ -61,14 +61,14 @@ class SidebarBeforeOutputHookHandler {
 	 * @param Skin $skin
 	 * @param array[] &$sidebar
 	 *
-	 * @return bool|void
+	 * @return void
 	 */
-	public static function onSidebarBeforeOutput( Skin $skin, &$sidebar ) {
+	public static function onSidebarBeforeOutput( Skin $skin, &$sidebar ): void {
 		$self = self::newFromGlobalState();
 		$sidebarLink = $self->buildSidebarLink( $skin );
 
 		if ( !$sidebarLink ) {
-			return false;
+			return;
 		}
 
 		// Append link
