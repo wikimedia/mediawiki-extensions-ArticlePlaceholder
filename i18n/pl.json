@@ -1,11 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chrumps"
+			"Chrumps",
+			"WaldiSt"
 		]
 	},
 	"createtopicpage": "Utwórz stronę",
+	"articleplaceholder-abouttopic": "O temacie",
 	"articleplaceholder-abouttopic-intro": "Ta strona specjalna daje szybki przegląd tematu w oparciu o dane z pochodzące z Wikidanych.",
+	"articleplaceholder-abouttopic-entityid": "Wprowadź identyfikator ID produktu, taki jak Q12345",
 	"articleplaceholder-abouttopic-create-article-title": "Utwórz nowy artykuł",
 	"articleplaceholder-abouttopic-create-article-label": "Tytuł artykułu",
 	"articleplaceholder-abouttopic-create-article-mandatory": "Tytuł artykułu jest obowiązkowy.",
