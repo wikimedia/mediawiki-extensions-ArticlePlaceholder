@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"BaRaN6161 TURK",
 			"Hamilton Abreu",
 			"Liuxinyu970226",
 			"Lucie-Aimée Kaffee",
@@ -12,7 +13,7 @@
 	"articleplaceholder-abouttopic": "Title of Special:AboutTopic.",
 	"articleplaceholder-abouttopic-intro": "Intro paragraph shown on Special:AboutTopic.\n\n<nowiki>{{WBREPONAME}}</nowiki> is a variable of the repository name of Wikidata (it has replaced the string 'Wikidata').",
 	"articleplaceholder-abouttopic-entityid": "Text to encourage the user to enter an item id.",
-	"articleplaceholder-abouttopic-submit": "Label on the submit button.\n{{Identical|Craft}}",
+	"articleplaceholder-abouttopic-submit": "Label on the submit button.",
 	"articleplaceholder-abouttopic-no-entity-error": "Error message in case of an invalid item id.",
 	"articleplaceholder-abouttopic-create-article-title": "Title of the popup window encouraging the user to create a new article.",
 	"articleplaceholder-abouttopic-create-article-label": "Label of the article page title input in the 'Create article' popup.",
