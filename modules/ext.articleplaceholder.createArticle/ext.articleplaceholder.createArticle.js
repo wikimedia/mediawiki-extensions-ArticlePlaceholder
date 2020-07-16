@@ -99,6 +99,8 @@
 	};
 
 	/**
+	 * @param $element
+	 * @param index
 	 * @protected
 	 */
 	CreateArticleDialog.prototype.addElement = function ( $element, index ) {
@@ -188,6 +190,7 @@
 	};
 
 	/**
+	 * @param url
 	 * @protected
 	 */
 	CreateArticleDialog.prototype.forwardTo = function ( url ) {
