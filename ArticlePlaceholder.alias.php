@@ -14,6 +14,12 @@ $specialPageAliases['en'] = [
 	'CreateTopicPage' => [ 'CreateTopicPage' ],
 ];
 
+/** Arabic (العربية) */
+$specialPageAliases['ar'] = [
+	'AboutTopic' => [ 'حول_الموضوع' ],
+	'CreateTopicPage' => [ 'إنشاء_صفحة_الموضوع' ],
+];
+
 /** Welsh (Cymraeg) */
 $specialPageAliases['cy'] = [
 	'AboutTopic' => [ 'Am_y_Pwnc' ],
