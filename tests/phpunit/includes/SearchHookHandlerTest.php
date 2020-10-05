@@ -13,14 +13,15 @@ use ReflectionMethod;
 use RequestContext;
 use SpecialSearch;
 use Title;
+use Wikibase\DataAccess\NullPrefetchingTermLookup;
+use Wikibase\DataAccess\Tests\FakePrefetchingTermLookup;
 use Wikibase\DataModel\Entity\EntityId;
 use Wikibase\DataModel\Entity\ItemId;
 use Wikibase\DataModel\Entity\PropertyId;
 use Wikibase\Lib\Interactors\MatchingTermsLookupSearchInteractor;
 use Wikibase\Lib\LanguageFallbackChainFactory;
-use Wikibase\Lib\Store\BufferingTermIndexTermLookup;
 use Wikibase\Lib\TermIndexEntry;
-use Wikibase\Lib\Tests\Store\MockTermIndex;
+use Wikibase\Lib\Tests\Store\MockMatchingTermsLookup;
 
 /**
  * @group ArticlePlaceholder
@@ -32,12 +33,12 @@ use Wikibase\Lib\Tests\Store\MockTermIndex;
  */
 class SearchHookHandlerTest extends MediaWikiTestCase {
 
-	private function getMockTermIndex() {
+	private function getMockMatchingTermLookup() {
 		$typeLabel = TermIndexEntry::TYPE_LABEL;
 		$typeAlias = TermIndexEntry::TYPE_ALIAS;
 		$typeDescription = TermIndexEntry::TYPE_DESCRIPTION;
 
-		return new MockTermIndex(
+		return new MockMatchingTermsLookup(
 			[
 				// Q7246 - Has label, description and alias all the same
 				// (multiple sitelinks and statements in the ApiRequest.json)
@@ -84,14 +85,12 @@ class SearchHookHandlerTest extends MediaWikiTestCase {
 	}
 
 	private function getMockedTermSearchInteractor( $language, $doNotReturnTerms = false ) {
-		$termLookupIndex = $doNotReturnTerms
-			? new MockTermIndex( [] )
-			: $this->getMockTermIndex();
-
 		$termSearchInteractor = new MatchingTermsLookupSearchInteractor(
-			$this->getMockTermIndex(),
+			$this->getMockMatchingTermLookup(),
 			new LanguageFallbackChainFactory,
-			new BufferingTermIndexTermLookup( $termLookupIndex ),
+			$doNotReturnTerms
+				? new NullPrefetchingTermLookup()
+				: new FakePrefetchingTermLookup(),
 			$language
 		);
 		return $termSearchInteractor;
@@ -185,7 +184,7 @@ class SearchHookHandlerTest extends MediaWikiTestCase {
 			[
 				'get term, check if entity with right title is returned',
 				'Unicorn',
-				'>Unicorn</a>: Unicorn</div>'
+				'>Q7246 en label</a>: Q7246 en description</div>'
 			],
 			[
 				'search result with no label and no description',
