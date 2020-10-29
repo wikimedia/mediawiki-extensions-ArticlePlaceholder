@@ -249,8 +249,6 @@ class AboutTopicRenderer {
 	}
 
 	/**
-	 * Set other projects links
-	 *
 	 * @param ItemId $itemId
 	 * @param OutputPage $output
 	 */
@@ -262,6 +260,11 @@ class AboutTopicRenderer {
 		$output->setProperty( 'wikibase-otherprojects-sidebar', $otherProjects );
 	}
 
+	/**
+	 * @param ItemId $itemId
+	 * @param OutputPage $output
+	 * @param Language $language
+	 */
 	private function addMetaTags( ItemId $itemId, OutputPage $output, Language $language ) {
 		$description = $this->getDescription( $itemId, $language );
 		if ( $description !== null ) {

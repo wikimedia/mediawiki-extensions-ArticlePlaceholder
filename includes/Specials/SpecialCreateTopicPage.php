@@ -23,6 +23,9 @@ class SpecialCreateTopicPage extends UnlistedSpecialPage {
 		parent::__construct( 'CreateTopicPage' );
 	}
 
+	/**
+	 * @param string|null $par
+	 */
 	public function execute( $par ) {
 		$out = $this->getOutput();
 		$this->setHeaders();
@@ -93,21 +96,12 @@ class SpecialCreateTopicPage extends UnlistedSpecialPage {
 	 * @throws MWException
 	 */
 	private function showTitleInputWithMessage( Message $msg ) {
-		$form = HTMLForm::factory(
+		HTMLForm::factory(
 			'ooui',
-			[
-				'titleinput' => [
-					'type' => 'text',
-				],
-			],
+			[ 'titleinput' => [ 'type' => 'text' ] ],
 			$this->getContext()
-		);
-
-		$form
-			->setMethod( 'get' )
-			->setWrapperLegendMsg(
-				$msg
-			)
+		)->setMethod( 'get' )
+			->setWrapperLegendMsg( $msg )
 			->setSubmitTextMsg( 'create' )
 			->prepareForm()
 			->displayForm( false );

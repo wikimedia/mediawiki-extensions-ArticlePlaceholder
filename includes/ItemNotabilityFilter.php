@@ -34,7 +34,7 @@ class ItemNotabilityFilter {
 	private $connectionManager;
 
 	/**
-	 * EntityNamespaceLookup
+	 * @var EntityNamespaceLookup
 	 */
 	private $entityNamespaceLookup;
 
@@ -167,8 +167,7 @@ class ItemNotabilityFilter {
 
 		$links = $this->siteLinkLookup->getLinks( array_keys( $itemIds ), [ $this->siteGlobalId ] );
 
-		foreach ( $links as $link ) {
-			list( , , $numericId ) = $link;
+		foreach ( $links as [ , , $numericId ] ) {
 			unset( $itemIds[$numericId] );
 		}
 

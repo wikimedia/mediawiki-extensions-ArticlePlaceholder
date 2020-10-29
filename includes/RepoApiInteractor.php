@@ -23,11 +23,20 @@ class RepoApiInteractor {
 	 */
 	private $statsdDataFactory;
 
+	/**
+	 * @param string $repoApiUrl
+	 * @param StatsdDataFactoryInterface $statsdDataFactory
+	 */
 	public function __construct( $repoApiUrl, StatsdDataFactoryInterface $statsdDataFactory ) {
 		$this->repoApiUrl = $repoApiUrl;
 		$this->statsdDataFactory = $statsdDataFactory;
 	}
 
+	/**
+	 * @param array $params
+	 *
+	 * @return array
+	 */
 	public function request( array $params ) {
 		$url = wfAppendQuery( $this->repoApiUrl, $params );
 		$req = MWHttpRequest::factory(

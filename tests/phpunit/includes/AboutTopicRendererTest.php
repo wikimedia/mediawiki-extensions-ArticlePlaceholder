@@ -170,9 +170,6 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 		$this->assertSame( 'Q123', $output->getProperty( 'wikibase_item' ) );
 	}
 
-	/**
-	 * Test meta tags
-	 */
 	public function testMetaTags() {
 		$output = $this->getInstanceOutput( new ItemId( 'Q123' ) );
 		$this->assertSame(

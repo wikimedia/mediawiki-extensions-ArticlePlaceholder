@@ -14,9 +14,20 @@ use Wikibase\Lib\Interactors\TermSearchResult;
  */
 class TermSearchApiInteractor implements TermSearchInteractor {
 
+	/**
+	 * @var RepoApiInteractor
+	 */
 	private $repoApiInteractor;
+
+	/**
+	 * @var EntityIdParser
+	 */
 	private $entityIdParser;
 
+	/**
+	 * @param RepoApiInteractor $repoApiInteractor
+	 * @param EntityIdParser $entityIdParser
+	 */
 	public function __construct(
 		RepoApiInteractor $repoApiInteractor,
 		EntityIdParser $entityIdParser

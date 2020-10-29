@@ -47,6 +47,11 @@ class SidebarBeforeOutputHookHandler {
 		);
 	}
 
+	/**
+	 * @param EntityIdParser $entityIdParser
+	 * @param RepoLinker $repoLinker
+	 * @param EntityLookup $entityLookup
+	 */
 	public function __construct(
 		EntityIdParser $entityIdParser,
 		RepoLinker $repoLinker,
@@ -87,7 +92,7 @@ class SidebarBeforeOutputHookHandler {
 		// Special:AboutTopic (even before calling newFromGlobalState)
 		$title = $skin->getTitle();
 
-		if ( $title->getNamespace() !== NS_SPECIAL ) {
+		if ( !$title->inNamespace( NS_SPECIAL ) ) {
 			return false;
 		}
 

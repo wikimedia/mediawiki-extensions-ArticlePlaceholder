@@ -215,6 +215,12 @@ class SpecialAboutTopic extends SpecialPage {
 			->displayForm( false );
 	}
 
+	/**
+	 * @param string $name
+	 * @param string $fallback
+	 *
+	 * @return string
+	 */
 	private function getTextParam( $name, $fallback ) {
 		$value = $this->getRequest()->getText( $name, $fallback );
 		return trim( $value );
