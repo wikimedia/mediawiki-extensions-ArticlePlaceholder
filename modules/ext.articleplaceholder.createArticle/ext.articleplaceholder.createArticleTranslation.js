@@ -104,7 +104,7 @@
 		this.translateOption.setSelected( true );
 
 		this.emptyOption = new OO.ui.RadioOptionWidget( {
-			label: mw.msg( 'articleplaceholder-abouttopic-create-emtpy-article-button' )
+			label: mw.msg( 'articleplaceholder-abouttopic-create-empty-article-button' )
 		} );
 
 		this.translateOption.$element.click( function () {
