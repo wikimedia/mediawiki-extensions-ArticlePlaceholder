@@ -16,7 +16,7 @@
 		$( 'body' ).append( windowManager.$element );
 		windowManager.addWindows( [ dialog ] );
 
-		OO.ui.infuse( 'new-article-button' ).on( 'click', function () {
+		OO.ui.infuse( $( '#new-article-button' ) ).on( 'click', function () {
 			mw.track( 'counter.MediaWiki.wikibase.articleplaceholder.button.createArticle' );
 			windowManager.openWindow( dialog );
 		} );
