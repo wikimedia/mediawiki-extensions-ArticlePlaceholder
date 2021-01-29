@@ -122,7 +122,7 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 		$output = $this->getInstanceOutput( new ItemId( 'Q123' ) );
 		$langLinks = $output->getLanguageLinks();
 		$this->assertArrayEquals( [ 'eo:Unicorn' ], $langLinks );
-		$this->assertSame( 1, count( $langLinks ) );
+		$this->assertCount( 1, $langLinks );
 	}
 
 	/**

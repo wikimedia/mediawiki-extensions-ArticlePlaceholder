@@ -68,7 +68,7 @@ class TermSearchApiInteractorTest extends \PHPUnit\Framework\TestCase {
 		);
 		$result = $interactor->searchForEntities( 'Alan', 'en', 'item', [] );
 
-		$this->assertSame( 2, count( $result ) );
+		$this->assertCount( 2, $result );
 
 		$this->assertEquals( new Term( 'en', 'Alan' ), $result[0]->getDisplayLabel() );
 		$this->assertEquals( new Term( 'en', 'male given name' ), $result[0]->getDisplayDescription() );
