@@ -3,7 +3,8 @@
 		"authors": [
 			"Nerogaf",
 			"Red Winged Duck",
-			"Vlad5250"
+			"Vlad5250",
+			"W"
 		]
 	},
 	"createtopicpage": "Стварыць старонку",
@@ -12,6 +13,8 @@
 	"articleplaceholder-abouttopic-create-article-title": "Стварыць новы артыкул",
 	"articleplaceholder-abouttopic-create-article-label": "Назва артыкулу",
 	"articleplaceholder-abouttopic-create-article-button": "Стварыць артыкул",
+	"articleplaceholder-abouttopic-create-empty-article-button": "Пачаць новы артыкул",
+	"articleplaceholder-abouttopic-translate-article-button": "Перакласьці артыкул",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Падпісацца",
 	"articleplaceholder-abouttopic-article-exists-error": "Артыкул з гэтай назвай ужо існуе.",
 	"articleplaceholder-abouttopic-lua-entity": "Сутнасьць",
