@@ -26,8 +26,9 @@ use Wikimedia\Assert\ParameterTypeException;
 class SpecialAboutTopic extends SpecialPage {
 
 	public static function newFromGlobalState() {
+		// TODO inject services
 		$wikibaseClient = WikibaseClient::getDefaultInstance();
-		$settings = $wikibaseClient->getSettings();
+		$settings = WikibaseClient::getSettings();
 
 		$articlePlaceholderSearchEngineIndexed = MediaWikiServices::getInstance()->getMainConfig()->get(
 			'ArticlePlaceholderSearchEngineIndexed'

@@ -57,15 +57,17 @@ class SearchHookHandler {
 	 * @return self
 	 */
 	private static function newFromGlobalState( SpecialPage $specialPage ) {
+		// TODO inject services into hook handler instance
 		$wikibaseClient = WikibaseClient::getDefaultInstance();
 		$repoDB = $wikibaseClient->getDatabaseDomainNameOfLocalRepo();
 		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
+		$clientSettings = WikibaseClient::getSettings();
 
 		$itemNotabilityFilter = new ItemNotabilityFilter(
 			new SessionConsistentConnectionManager( $lbFactory->getMainLB( $repoDB ), $repoDB ),
 			$wikibaseClient->getEntityNamespaceLookup(),
 			$wikibaseClient->getStore()->getSiteLinkLookup(),
-			$wikibaseClient->getSettings()->getSetting( 'siteGlobalID' )
+			$clientSettings->getSetting( 'siteGlobalID' )
 		);
 
 		$statsdDataFactory = MediaWikiServices::getInstance()->getStatsdDataFactory();
@@ -79,8 +81,8 @@ class SearchHookHandler {
 		return new self(
 			$termSearchInteractor,
 			$specialPage->getConfig()->get( 'LanguageCode' ),
-			$wikibaseClient->getSettings()->getSetting( 'repoScriptPath' ),
-			$wikibaseClient->getSettings()->getSetting( 'repoUrl' ),
+			$clientSettings->getSetting( 'repoScriptPath' ),
+			$clientSettings->getSetting( 'repoUrl' ),
 			$itemNotabilityFilter,
 			$statsdDataFactory
 		);

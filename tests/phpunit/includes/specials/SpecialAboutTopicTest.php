@@ -36,7 +36,7 @@ class SpecialAboutTopicTest extends MediaWikiTestCase {
 	}
 
 	public function testNewFromGlobalState() {
-		$settings = WikibaseClient::getDefaultInstance()->getSettings();
+		$settings = WikibaseClient::getSettings();
 
 		$siteGroup = $settings->getSetting( 'siteGroup' );
 		$settings->setSetting( 'siteGroup', 'wikipedia' );
