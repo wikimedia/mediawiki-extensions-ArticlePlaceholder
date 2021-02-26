@@ -96,7 +96,8 @@ class SpecialAboutTopicIntegrationTest extends SpecialPageTestBase {
 	}
 
 	protected function newSpecialPage() {
-		$articlePlaceholderSearchEngineIndexed = MediaWikiServices::getInstance()->getMainConfig()->get(
+		$services = MediaWikiServices::getInstance();
+		$articlePlaceholderSearchEngineIndexed = $services->getMainConfig()->get(
 			'ArticlePlaceholderSearchEngineIndexed'
 		);
 
@@ -110,8 +111,8 @@ class SpecialAboutTopicIntegrationTest extends SpecialPageTestBase {
 			$siteLookup,
 			$this->inMemoryLookup,
 			$this->wikibaseClient->getSidebarLinkBadgeDisplay(),
-			MediaWikiServices::getInstance()->getHookContainer(),
-			$this->wikibaseClient->getLogger()
+			$services->getHookContainer(),
+			WikibaseClient::getLogger( $services )
 		);
 
 		$this->page = new SpecialAboutTopic(
@@ -122,7 +123,7 @@ class SpecialAboutTopicIntegrationTest extends SpecialPageTestBase {
 				$this->wikibaseClient->getLangLinkSiteGroup(),
 				$titleFactory,
 				$factory,
-				MediaWikiServices::getInstance()->getPermissionManager()
+				$services->getPermissionManager()
 			),
 			$this->wikibaseClient->getEntityIdParser(),
 			$this->store->getSiteLinkLookup(),
