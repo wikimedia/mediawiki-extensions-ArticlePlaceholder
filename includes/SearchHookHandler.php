@@ -75,7 +75,7 @@ class SearchHookHandler {
 
 		$termSearchInteractor = new TermSearchApiInteractor(
 			new RepoApiInteractor( $config->get( 'ArticlePlaceholderRepoApiUrl' ), $statsdDataFactory ),
-			$wikibaseClient->getEntityIdParser()
+			WikibaseClient::getEntityIdParser()
 		);
 
 		return new self(

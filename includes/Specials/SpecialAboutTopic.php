@@ -44,7 +44,7 @@ class SpecialAboutTopic extends SpecialPage {
 				$wikibaseClient->getOtherProjectsSidebarGeneratorFactory(),
 				MediaWikiServices::getInstance()->getPermissionManager()
 			),
-			$wikibaseClient->getEntityIdParser(),
+			WikibaseClient::getEntityIdParser(),
 			$wikibaseClient->getStore()->getSiteLinkLookup(),
 			new TitleFactory(),
 			$settings->getSetting( 'siteGlobalID' ),

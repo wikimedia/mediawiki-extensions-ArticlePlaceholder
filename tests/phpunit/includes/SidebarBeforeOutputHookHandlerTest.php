@@ -211,7 +211,7 @@ class SidebarBeforeOutputHookHandlerTest extends MediaWikiTestCase {
 		$mockRepository->putEntity( $item );
 
 		return new SidebarBeforeOutputHookHandler(
-			$wbClient->getEntityIdParser(),
+			WikibaseClient::getEntityIdParser(),
 			$wbClient->newRepoLinker(),
 			$wbClient->getStore()->getEntityLookup()
 		);

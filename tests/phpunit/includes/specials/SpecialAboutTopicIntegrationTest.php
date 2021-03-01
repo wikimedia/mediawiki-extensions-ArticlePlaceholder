@@ -125,7 +125,7 @@ class SpecialAboutTopicIntegrationTest extends SpecialPageTestBase {
 				$factory,
 				$services->getPermissionManager()
 			),
-			$this->wikibaseClient->getEntityIdParser(),
+			WikibaseClient::getEntityIdParser(),
 			$this->store->getSiteLinkLookup(),
 			$titleFactory,
 			$settings->getSetting( 'siteGlobalID' ),

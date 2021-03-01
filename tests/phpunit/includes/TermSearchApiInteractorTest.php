@@ -64,7 +64,7 @@ class TermSearchApiInteractorTest extends \PHPUnit\Framework\TestCase {
 	public function testApiTermSearch() {
 		$interactor = new TermSearchApiInteractor(
 			$this->mockApiInteractor(),
-			WikibaseClient::getDefaultInstance()->getEntityIdParser()
+			WikibaseClient::getEntityIdParser()
 		);
 		$result = $interactor->searchForEntities( 'Alan', 'en', 'item', [] );
 
