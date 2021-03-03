@@ -42,7 +42,7 @@ class SidebarBeforeOutputHookHandler {
 
 		return new self(
 			WikibaseClient::getEntityIdParser(),
-			$wikibaseClient->newRepoLinker(),
+			WikibaseClient::getRepoLinker(),
 			$wikibaseClient->getStore()->getEntityLookup()
 		);
 	}

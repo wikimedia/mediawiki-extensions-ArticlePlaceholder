@@ -134,7 +134,7 @@ class SidebarBeforeOutputHookHandlerTest extends MediaWikiTestCase {
 
 	private function assertLinkArray( $result ) {
 		$itemId = new ItemId( 'Q2013' );
-		$href = WikibaseClient::getDefaultInstance()->newRepoLinker()->getEntityUrl( $itemId );
+		$href = WikibaseClient::getRepoLinker()->getEntityUrl( $itemId );
 
 		$link = [
 			'id' => 't-wikibase',
@@ -212,7 +212,7 @@ class SidebarBeforeOutputHookHandlerTest extends MediaWikiTestCase {
 
 		return new SidebarBeforeOutputHookHandler(
 			WikibaseClient::getEntityIdParser(),
-			$wbClient->newRepoLinker(),
+			WikibaseClient::getRepoLinker(),
 			$wbClient->getStore()->getEntityLookup()
 		);
 	}
