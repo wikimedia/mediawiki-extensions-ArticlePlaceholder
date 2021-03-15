@@ -61,7 +61,7 @@ class ItemNotabilityFilterTest extends MediaWikiTestCase {
 
 		return new ItemNotabilityFilter(
 			new SessionConsistentConnectionManager( $lbFactory->getMainLB() ),
-			$wikibaseRepo->getEntityNamespaceLookup(),
+			WikibaseRepo::getEntityNamespaceLookup(),
 			$wikibaseRepo->getStore()->newSiteLinkStore(),
 			'enwiki'
 		);
