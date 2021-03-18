@@ -60,7 +60,7 @@ class SearchHookHandler {
 		// TODO inject services into hook handler instance
 		$wikibaseClient = WikibaseClient::getDefaultInstance();
 		$mwServices = MediaWikiServices::getInstance();
-		$repoDB = $wikibaseClient->getDatabaseDomainNameOfLocalRepo();
+		$repoDB = WikibaseClient::getItemAndPropertySource()->getDatabaseName();
 		$lbFactory = $mwServices->getDBLoadBalancerFactory();
 		$clientSettings = WikibaseClient::getSettings( $mwServices );
 
