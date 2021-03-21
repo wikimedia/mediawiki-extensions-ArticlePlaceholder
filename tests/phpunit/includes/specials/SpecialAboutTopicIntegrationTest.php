@@ -11,7 +11,6 @@ use MediaWiki\MediaWikiServices;
 use Site;
 use SiteLookup;
 use SpecialPageTestBase;
-use TitleFactory;
 use Wikibase\Client\Hooks\OtherProjectsSidebarGeneratorFactory;
 use Wikibase\Client\Tests\Mocks\MockClientStore;
 use Wikibase\Client\WikibaseClient;
@@ -102,7 +101,7 @@ class SpecialAboutTopicIntegrationTest extends SpecialPageTestBase {
 		);
 
 		$siteLookup = $this->getSiteLookupMock();
-		$titleFactory = new TitleFactory();
+		$titleFactory = $services->getTitleFactory();
 		$settings = $this->newSettings();
 
 		$factory = new OtherProjectsSidebarGeneratorFactory(

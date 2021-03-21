@@ -6,6 +6,7 @@ use ArticlePlaceholder\AboutTopicRenderer;
 use DerivativeContext;
 use Language;
 use MalformedTitleException;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWikiTestCase;
 use OutputPage;
@@ -91,7 +92,7 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 			$this->getSiteLinkLookup(),
 			$this->getSiteLookup(),
 			'wikipedia',
-			$titleFactory ?: new TitleFactory(),
+			$titleFactory ?: MediaWikiServices::getInstance()->getTitleFactory(),
 			$otherProjectsSidebarGeneratorFactory,
 			$permMock
 		);

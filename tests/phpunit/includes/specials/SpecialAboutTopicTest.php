@@ -5,12 +5,12 @@ namespace ArticlePlaceholder\Tests\Specials;
 use ArticlePlaceholder\AboutTopicRenderer;
 use ArticlePlaceholder\Specials\SpecialAboutTopic;
 use DerivativeContext;
+use MediaWiki\MediaWikiServices;
 use MediaWikiTestCase;
 use OutputPage;
 use RequestContext;
 use SpecialPage;
 use Title;
-use TitleFactory;
 use Wikibase\Client\WikibaseClient;
 use Wikibase\DataModel\Entity\EntityIdParser;
 use Wikibase\DataModel\Entity\Item;
@@ -99,7 +99,7 @@ class SpecialAboutTopicTest extends MediaWikiTestCase {
 			$this->getMockBuilder( AboutTopicRenderer::class )->disableOriginalConstructor()->getMock(),
 			$this->getEntityIdParser(),
 			$this->getSiteLinkLookup(),
-			new TitleFactory(),
+			MediaWikiServices::getInstance()->getTitleFactory(),
 			'enwiki',
 			$this->getEntityLookup(),
 			$searchEngineIndexed

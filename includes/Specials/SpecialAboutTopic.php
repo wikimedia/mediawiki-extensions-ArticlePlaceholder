@@ -29,8 +29,9 @@ class SpecialAboutTopic extends SpecialPage {
 		// TODO inject services
 		$wikibaseClient = WikibaseClient::getDefaultInstance();
 		$settings = WikibaseClient::getSettings();
+		$mwServices = MediaWikiServices::getInstance();
 
-		$articlePlaceholderSearchEngineIndexed = MediaWikiServices::getInstance()->getMainConfig()->get(
+		$articlePlaceholderSearchEngineIndexed = $mwServices->getMainConfig()->get(
 			'ArticlePlaceholderSearchEngineIndexed'
 		);
 
@@ -38,15 +39,15 @@ class SpecialAboutTopic extends SpecialPage {
 			new AboutTopicRenderer(
 				$wikibaseClient->getLanguageFallbackLabelDescriptionLookupFactory(),
 				$wikibaseClient->getStore()->getSiteLinkLookup(),
-				MediaWikiServices::getInstance()->getSiteLookup(),
+				$mwServices->getSiteLookup(),
 				$wikibaseClient->getLangLinkSiteGroup(),
-				new TitleFactory(),
+				$mwServices->getTitleFactory(),
 				$wikibaseClient->getOtherProjectsSidebarGeneratorFactory(),
-				MediaWikiServices::getInstance()->getPermissionManager()
+				$mwServices->getPermissionManager()
 			),
 			WikibaseClient::getEntityIdParser(),
 			$wikibaseClient->getStore()->getSiteLinkLookup(),
-			new TitleFactory(),
+			$mwServices->getTitleFactory(),
 			$settings->getSetting( 'siteGlobalID' ),
 			$wikibaseClient->getStore()->getEntityLookup(),
 			$articlePlaceholderSearchEngineIndexed
