@@ -56,13 +56,12 @@ class ItemNotabilityFilterTest extends MediaWikiTestCase {
 	 * @return ItemNotabilityFilter
 	 */
 	private function getInstance() {
-		$wikibaseRepo = WikibaseRepo::getDefaultInstance();
 		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
 
 		return new ItemNotabilityFilter(
 			new SessionConsistentConnectionManager( $lbFactory->getMainLB() ),
 			WikibaseRepo::getEntityNamespaceLookup(),
-			$wikibaseRepo->getStore()->newSiteLinkStore(),
+			WikibaseRepo::getStore()->newSiteLinkStore(),
 			'enwiki'
 		);
 	}
