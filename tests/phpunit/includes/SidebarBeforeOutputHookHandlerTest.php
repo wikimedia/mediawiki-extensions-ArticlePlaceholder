@@ -201,11 +201,8 @@ class SidebarBeforeOutputHookHandlerTest extends MediaWikiTestCase {
 	}
 
 	private function getHookHandler() {
-		$this->markTestSkipped( 'Temporarily skipped (T277482)' );
-
 		$clientStore = new MockClientStore();
-		$wbClient = WikibaseClient::getDefaultInstance();
-		$wbClient->overrideStore( $clientStore );
+		$this->setService( 'WikibaseClient.Store', $clientStore );
 
 		$mockRepository = $clientStore->getEntityRevisionLookup();
 		$item = new Item( new ItemId( 'Q2013' ) );
@@ -215,7 +212,7 @@ class SidebarBeforeOutputHookHandlerTest extends MediaWikiTestCase {
 		return new SidebarBeforeOutputHookHandler(
 			WikibaseClient::getEntityIdParser(),
 			WikibaseClient::getRepoLinker(),
-			$wbClient->getStore()->getEntityLookup()
+			WikibaseClient::getStore()->getEntityLookup()
 		);
 	}
 

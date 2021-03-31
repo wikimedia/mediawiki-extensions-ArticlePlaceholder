@@ -38,12 +38,10 @@ class SidebarBeforeOutputHookHandler {
 	 * @return self
 	 */
 	private static function newFromGlobalState() {
-		$wikibaseClient = WikibaseClient::getDefaultInstance();
-
 		return new self(
 			WikibaseClient::getEntityIdParser(),
 			WikibaseClient::getRepoLinker(),
-			$wikibaseClient->getStore()->getEntityLookup()
+			WikibaseClient::getStore()->getEntityLookup()
 		);
 	}
 

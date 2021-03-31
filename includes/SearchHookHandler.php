@@ -67,7 +67,7 @@ class SearchHookHandler {
 		$itemNotabilityFilter = new ItemNotabilityFilter(
 			new SessionConsistentConnectionManager( $lbFactory->getMainLB( $repoDB ), $repoDB ),
 			WikibaseClient::getEntityNamespaceLookup( $mwServices ),
-			$wikibaseClient->getStore()->getSiteLinkLookup(),
+			WikibaseClient::getStore()->getSiteLinkLookup(),
 			$clientSettings->getSetting( 'siteGlobalID' )
 		);
 
