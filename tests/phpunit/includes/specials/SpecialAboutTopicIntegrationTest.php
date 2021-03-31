@@ -119,7 +119,7 @@ class SpecialAboutTopicIntegrationTest extends SpecialPageTestBase {
 				$this->wikibaseClient->getLanguageFallbackLabelDescriptionLookupFactory(),
 				$this->store->getSiteLinkLookup(),
 				$siteLookup,
-				$this->wikibaseClient->getLangLinkSiteGroup(),
+				WikibaseClient::getLangLinkSiteGroup(),
 				$titleFactory,
 				$factory,
 				$services->getPermissionManager()

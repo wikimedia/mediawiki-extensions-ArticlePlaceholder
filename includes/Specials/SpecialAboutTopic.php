@@ -40,7 +40,7 @@ class SpecialAboutTopic extends SpecialPage {
 				$wikibaseClient->getLanguageFallbackLabelDescriptionLookupFactory(),
 				$wikibaseClient->getStore()->getSiteLinkLookup(),
 				$mwServices->getSiteLookup(),
-				$wikibaseClient->getLangLinkSiteGroup(),
+				WikibaseClient::getLangLinkSiteGroup(),
 				$mwServices->getTitleFactory(),
 				$wikibaseClient->getOtherProjectsSidebarGeneratorFactory(),
 				$mwServices->getPermissionManager()
