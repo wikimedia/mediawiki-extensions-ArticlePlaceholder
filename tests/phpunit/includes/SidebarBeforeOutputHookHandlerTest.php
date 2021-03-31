@@ -201,6 +201,8 @@ class SidebarBeforeOutputHookHandlerTest extends MediaWikiTestCase {
 	}
 
 	private function getHookHandler() {
+		$this->markTestSkipped( 'Temporarily skipped (T277482)' );
+
 		$clientStore = new MockClientStore();
 		$wbClient = WikibaseClient::getDefaultInstance();
 		$wbClient->overrideStore( $clientStore );
