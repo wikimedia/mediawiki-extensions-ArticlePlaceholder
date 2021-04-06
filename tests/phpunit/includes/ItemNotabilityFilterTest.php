@@ -68,7 +68,7 @@ class ItemNotabilityFilterTest extends MediaWikiTestCase {
 
 	private function createTestEntities() {
 		$user = $this->getTestSysop()->getUser();
-		$entityStore = WikibaseRepo::getDefaultInstance()->getEntityStore();
+		$entityStore = WikibaseRepo::getEntityStore();
 
 		$snak = new PropertyValueSnak(
 			new PropertyId( 'P123' ),
