@@ -27,10 +27,10 @@ class SpecialAboutTopic extends SpecialPage {
 
 	public static function newFromGlobalState() {
 		// TODO inject services
-		$wikibaseClient = WikibaseClient::getDefaultInstance();
-		$settings = WikibaseClient::getSettings();
-		$store = WikibaseClient::getStore();
 		$mwServices = MediaWikiServices::getInstance();
+		$wikibaseClient = WikibaseClient::getDefaultInstance();
+		$settings = WikibaseClient::getSettings( $mwServices );
+		$store = WikibaseClient::getStore( $mwServices );
 
 		$articlePlaceholderSearchEngineIndexed = $mwServices->getMainConfig()->get(
 			'ArticlePlaceholderSearchEngineIndexed'
@@ -41,12 +41,12 @@ class SpecialAboutTopic extends SpecialPage {
 				WikibaseClient::getLanguageFallbackLabelDescriptionLookupFactory( $mwServices ),
 				$store->getSiteLinkLookup(),
 				$mwServices->getSiteLookup(),
-				WikibaseClient::getLangLinkSiteGroup(),
+				WikibaseClient::getLangLinkSiteGroup( $mwServices ),
 				$mwServices->getTitleFactory(),
 				$wikibaseClient->getOtherProjectsSidebarGeneratorFactory(),
 				$mwServices->getPermissionManager()
 			),
-			WikibaseClient::getEntityIdParser(),
+			WikibaseClient::getEntityIdParser( $mwServices ),
 			$store->getSiteLinkLookup(),
 			$mwServices->getTitleFactory(),
 			$settings->getSetting( 'siteGlobalID' ),
