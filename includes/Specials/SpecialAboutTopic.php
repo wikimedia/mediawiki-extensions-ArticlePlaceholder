@@ -38,7 +38,7 @@ class SpecialAboutTopic extends SpecialPage {
 
 		return new self(
 			new AboutTopicRenderer(
-				$wikibaseClient->getLanguageFallbackLabelDescriptionLookupFactory(),
+				WikibaseClient::getLanguageFallbackLabelDescriptionLookupFactory( $mwServices ),
 				$store->getSiteLinkLookup(),
 				$mwServices->getSiteLookup(),
 				WikibaseClient::getLangLinkSiteGroup(),
