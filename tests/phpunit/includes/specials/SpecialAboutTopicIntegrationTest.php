@@ -36,11 +36,6 @@ class SpecialAboutTopicIntegrationTest extends SpecialPageTestBase {
 	private $page;
 
 	/**
-	 * @var WikibaseClient
-	 */
-	private $wikibaseClient;
-
-	/**
 	 * @var MockClientStore
 	 */
 	private $store;
@@ -54,7 +49,6 @@ class SpecialAboutTopicIntegrationTest extends SpecialPageTestBase {
 		parent::setUp();
 
 		$this->insertPage( 'Template:AboutTopic', '(aboutTopic: {{{1}}})' );
-		$this->wikibaseClient = WikibaseClient::getDefaultInstance( 'reset' );
 
 		$this->store = new MockClientStore( 'sv' );
 
@@ -109,7 +103,7 @@ class SpecialAboutTopicIntegrationTest extends SpecialPageTestBase {
 			$this->store->getSiteLinkLookup(),
 			$siteLookup,
 			$this->inMemoryLookup,
-			$this->wikibaseClient->getSidebarLinkBadgeDisplay(),
+			WikibaseClient::getSidebarLinkBadgeDisplay( $services ),
 			$services->getHookContainer(),
 			WikibaseClient::getLogger( $services )
 		);
