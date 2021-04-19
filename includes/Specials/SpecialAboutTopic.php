@@ -28,7 +28,6 @@ class SpecialAboutTopic extends SpecialPage {
 	public static function newFromGlobalState() {
 		// TODO inject services
 		$mwServices = MediaWikiServices::getInstance();
-		$wikibaseClient = WikibaseClient::getDefaultInstance();
 		$settings = WikibaseClient::getSettings( $mwServices );
 		$store = WikibaseClient::getStore( $mwServices );
 
@@ -43,7 +42,7 @@ class SpecialAboutTopic extends SpecialPage {
 				$mwServices->getSiteLookup(),
 				WikibaseClient::getLangLinkSiteGroup( $mwServices ),
 				$mwServices->getTitleFactory(),
-				$wikibaseClient->getOtherProjectsSidebarGeneratorFactory(),
+				WikibaseClient::getOtherProjectsSidebarGeneratorFactory( $mwServices ),
 				$mwServices->getPermissionManager()
 			),
 			WikibaseClient::getEntityIdParser( $mwServices ),
