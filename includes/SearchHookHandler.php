@@ -58,7 +58,6 @@ class SearchHookHandler {
 	 */
 	private static function newFromGlobalState( SpecialPage $specialPage ) {
 		// TODO inject services into hook handler instance
-		$wikibaseClient = WikibaseClient::getDefaultInstance();
 		$mwServices = MediaWikiServices::getInstance();
 		$repoDB = WikibaseClient::getItemAndPropertySource()->getDatabaseName();
 		$lbFactory = $mwServices->getDBLoadBalancerFactory();
