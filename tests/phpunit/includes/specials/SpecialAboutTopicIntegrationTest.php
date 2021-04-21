@@ -58,11 +58,6 @@ class SpecialAboutTopicIntegrationTest extends SpecialPageTestBase {
 		$this->inMemoryLookup = new InMemoryEntityLookup( $testItem );
 	}
 
-	protected function tearDown(): void {
-		WikibaseClient::getDefaultInstance( 'reset' );
-		parent::tearDown();
-	}
-
 	private function newSettings() {
 		$defaults = [
 			'siteGlobalID' => 'local-non-default',

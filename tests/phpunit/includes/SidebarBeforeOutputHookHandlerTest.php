@@ -29,12 +29,6 @@ class SidebarBeforeOutputHookHandlerTest extends MediaWikiTestCase {
 		$this->setUserLang( 'qqx' );
 	}
 
-	protected function tearDown() : void {
-		WikibaseClient::getDefaultInstance( 'reset' );
-
-		parent::tearDown();
-	}
-
 	public function testNewFromGlobalState() {
 		$reflectionMethod = new ReflectionMethod(
 			SidebarBeforeOutputHookHandler::class,
