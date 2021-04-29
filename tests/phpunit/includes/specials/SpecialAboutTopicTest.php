@@ -116,10 +116,9 @@ class SpecialAboutTopicTest extends MediaWikiTestCase {
 	private function getSiteLinkLookup() {
 		$siteLinkLookup = $this->createMock( SiteLinkLookup::class );
 
-		$siteLinkLookup->expects( $this->any() )
-			->method( 'getLinks' )
+		$siteLinkLookup->method( 'getLinks' )
 			->with( [ 1234 ], [ 'enwiki' ] )
-			->will( $this->returnValue( [ [ 'enwiki', 'Beer', 1234 ] ] ) );
+			->willReturn( [ [ 'enwiki', 'Beer', 1234 ] ] );
 
 		return $siteLinkLookup;
 	}
@@ -130,10 +129,9 @@ class SpecialAboutTopicTest extends MediaWikiTestCase {
 	private function getEntityIdParser() {
 		$idParser = $this->createMock( EntityIdParser::class );
 
-		$idParser->expects( $this->any() )
-			->method( 'parse' )
+		$idParser->method( 'parse' )
 			->with( 'Q1234' )
-			->will( $this->returnValue( new ItemId( 'Q1234' ) ) );
+			->willReturn( new ItemId( 'Q1234' ) );
 
 		return $idParser;
 	}

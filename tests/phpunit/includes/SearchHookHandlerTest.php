@@ -128,10 +128,9 @@ class SearchHookHandlerTest extends MediaWikiTestCase {
 			->disableOriginalConstructor()
 			->getMock();
 
-		$itemNotabilityFilter->expects( $this->any() )
-			->method( 'getNotableEntityIds' )
+		$itemNotabilityFilter->method( 'getNotableEntityIds' )
 			->with( $this->isType( 'array' ) )
-			->will( $this->returnCallback( function ( array $itemIds ) {
+			->willReturnCallback( function ( array $itemIds ) {
 				// Q7246 is notable, nothing else is
 				$Q7246 = new ItemId( 'Q7246' );
 				if ( in_array( $Q7246, $itemIds ) ) {
@@ -139,12 +138,11 @@ class SearchHookHandlerTest extends MediaWikiTestCase {
 				}
 
 				return [];
-			} ) );
+			} );
 
 		$statsdDataFactory = $this->createMock( StatsdDataFactory::class );
-		$statsdDataFactory->expects( $this->any() )
-			->method( 'increment' )
-			->will( $this->returnCallback( function ( $key ) use ( &$hasResults, &$noResults ) {
+		$statsdDataFactory->method( 'increment' )
+			->willReturnCallback( function ( $key ) use ( &$hasResults, &$noResults ) {
 				if ( $key === 'wikibase.articleplaceholder.search.has_results' ) {
 					$hasResults++;
 				} elseif ( $key === 'wikibase.articleplaceholder.search.no_results' ) {
@@ -152,7 +150,7 @@ class SearchHookHandlerTest extends MediaWikiTestCase {
 				} else {
 					$this->fail( "Unknown key: $key" );
 				}
-			} ) );
+			} );
 
 		$language = $this->getLanguageCode();
 
@@ -170,7 +168,7 @@ class SearchHookHandlerTest extends MediaWikiTestCase {
 		$specialPage = $this->getSpecialSearch();
 		$specialPage->expects( $this->once() )
 			->method( 'getConfig' )
-			->will( $this->returnValue( $this->createMock( Config::class ) ) );
+			->willReturn( $this->createMock( Config::class ) );
 
 		$reflectionMethod = new ReflectionMethod( SearchHookHandler::class, 'newFromGlobalState' );
 		$reflectionMethod->setAccessible( true );

@@ -69,7 +69,7 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 		$otherProjectsSidebarGenerator->expects( $this->once() )
 			->method( 'buildProjectLinkSidebarFromItemId' )
 			->with( $itemId )
-			->will( $this->returnValue( 'other-projects-sidebar' ) );
+			->willReturn( 'other-projects-sidebar' );
 
 		$otherProjectsSidebarGeneratorFactory = $this->getMockBuilder(
 			OtherProjectsSidebarGeneratorFactory::class
@@ -78,13 +78,12 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 
 		$otherProjectsSidebarGeneratorFactory->expects( $this->once() )
 			->method( 'getOtherProjectsSidebarGenerator' )
-			->will( $this->returnValue( $otherProjectsSidebarGenerator ) );
+			->willReturn( $otherProjectsSidebarGenerator );
 
 		$permMock = $this->getMockBuilder( PermissionManager::class )
 			->disableOriginalConstructor()
 			->getMock();
-		$permMock->expects( $this->any() )
-			->method( 'quickUserCan' )
+		$permMock->method( 'quickUserCan' )
 			->willReturn( $canCreate );
 
 		$instance = new AboutTopicRenderer(
@@ -121,9 +120,7 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 	 */
 	public function testLanguageLinks() {
 		$output = $this->getInstanceOutput( new ItemId( 'Q123' ) );
-		$langLinks = $output->getLanguageLinks();
-		$this->assertArrayEquals( [ 'eo:Unicorn' ], $langLinks );
-		$this->assertCount( 1, $langLinks );
+		$this->assertSame( [ 'eo' => 'eo:Unicorn' ], $output->getLanguageLinks() );
 	}
 
 	/**
@@ -191,7 +188,7 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 		$labelDescriptionLookupFactory->expects( $this->atLeastOnce() )
 			->method( 'newLabelDescriptionLookup' )
 			->with( Language::factory( 'eo' ) )
-			->will( $this->returnValue( $this->getLabelDescriptionLookup() ) );
+			->willReturn( $this->getLabelDescriptionLookup() );
 
 		return $labelDescriptionLookupFactory;
 	}
@@ -201,17 +198,15 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 	 */
 	private function getLabelDescriptionLookup() {
 		$labelDescriptionLookup = $this->createMock( LabelDescriptionLookup::class );
-		$labelDescriptionLookup->expects( $this->any() )
-			->method( 'getLabel' )
-			->will( $this->returnCallback( function ( ItemId $id ) {
+		$labelDescriptionLookup->method( 'getLabel' )
+			->willReturnCallback( function ( ItemId $id ) {
 				return new Term( 'eo', 'Label of ' . $id->getSerialization() );
-			} ) );
+			} );
 
-		$labelDescriptionLookup->expects( $this->any() )
-			->method( 'getDescription' )
-			->will( $this->returnCallback( function ( ItemId $id ) {
+		$labelDescriptionLookup->method( 'getDescription' )
+			->willReturnCallback( function ( ItemId $id ) {
 				return new Term( 'eo', 'Description of ' . $id->getSerialization() );
-			} ) );
+			} );
 
 		return $labelDescriptionLookup;
 	}
@@ -222,17 +217,14 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 	private function getSiteLinkLookup() {
 		$siteLinkLookup = $this->createMock( SiteLinkLookup::class );
 
-		$siteLinkLookup->expects( $this->any() )
-			->method( 'getSiteLinksForItem' )
+		$siteLinkLookup->method( 'getSiteLinksForItem' )
 			->with( new ItemId( 'Q123' ) )
-			->will(
-				$this->returnValue( [
-					new SiteLink( 'eowiki', 'Unicorn' ),
-					new SiteLink( 'qwertz', 'Unicorn' ),
-					new SiteLink( 'eowikivoyage', 'TravelUnicorn' ),
-					new SiteLink( 'null', 'A very nully page' )
-				] )
-			);
+			->willReturn( [
+				new SiteLink( 'eowiki', 'Unicorn' ),
+				new SiteLink( 'qwertz', 'Unicorn' ),
+				new SiteLink( 'eowikivoyage', 'TravelUnicorn' ),
+				new SiteLink( 'null', 'A very nully page' )
+			] );
 
 		return $siteLinkLookup;
 	}
@@ -242,9 +234,8 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 			->disableOriginalConstructor()
 			->getMock();
 
-		$siteLookup->expects( $this->any() )
-			->method( 'getSite' )
-			->will( $this->returnCallback( function ( $siteId ) {
+		$siteLookup->method( 'getSite' )
+			->willReturnCallback( function ( $siteId ) {
 				$site = new Site();
 				$site->setGlobalId( $siteId );
 
@@ -264,7 +255,7 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 					case 'null':
 						return null;
 				}
-			} ) );
+			} );
 
 		return $siteLookup;
 	}

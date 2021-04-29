@@ -66,7 +66,7 @@ class SidebarBeforeOutputHookHandlerTest extends MediaWikiTestCase {
 		// Title::getText is only called once, because we abort after checking the name
 		$title->expects( $this->once() )
 			->method( 'getText' )
-			->will( $this->returnValue( 'Preferences' ) );
+			->willReturn( 'Preferences' );
 
 		$skin = $this->getSkin( $title );
 
@@ -158,7 +158,7 @@ class SidebarBeforeOutputHookHandlerTest extends MediaWikiTestCase {
 
 		$title->expects( $this->exactly( 2 ) )
 			->method( 'getText' )
-			->will( $this->returnValue( $titleText ) );
+			->willReturn( $titleText );
 
 		return $title;
 	}
@@ -171,25 +171,22 @@ class SidebarBeforeOutputHookHandlerTest extends MediaWikiTestCase {
 	 */
 	private function getSkin( Title $title, $itemIdParam = null ) {
 		$request = $this->createMock( WebRequest::class );
-		$request->expects( $this->any() )
-			->method( 'getText' )
-			->will( $this->returnCallback( function ( $name, $default ) use ( $itemIdParam ) {
+		$request->method( 'getText' )
+			->willReturnCallback( function ( $name, $default ) use ( $itemIdParam ) {
 				$this->assertSame( 'entityid', $name );
 
 				return $itemIdParam ?: $default;
-			} ) );
+			} );
 
 		$skin = $this->getMockBuilder( Skin::class )
 			->setMethods( [ 'getTitle', 'getRequest' ] )
 			->getMockForAbstractClass();
 
-		$skin->expects( $this->any() )
-			->method( 'getTitle' )
-			->will( $this->returnValue( $title ) );
+		$skin->method( 'getTitle' )
+			->willReturn( $title );
 
-		$skin->expects( $this->any() )
-			->method( 'getRequest' )
-			->will( $this->returnValue( $request ) );
+		$skin->method( 'getRequest' )
+			->willReturn( $request );
 
 		return $skin;
 	}
