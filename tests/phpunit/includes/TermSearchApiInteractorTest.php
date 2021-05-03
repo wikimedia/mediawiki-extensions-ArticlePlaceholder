@@ -20,7 +20,7 @@ class TermSearchApiInteractorTest extends \PHPUnit\Framework\TestCase {
 	private function mockApiInteractor() {
 		$mock = $this->createMock( RepoApiInteractor::class );
 		$mock->method( 'request' )
-			->willReturnCallback( function ( array $params ) {
+			->willReturnCallback( static function ( array $params ) {
 				$result = [];
 				$result['search'] = [
 					[

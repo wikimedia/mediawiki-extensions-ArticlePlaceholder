@@ -130,7 +130,7 @@ class SearchHookHandlerTest extends MediaWikiTestCase {
 
 		$itemNotabilityFilter->method( 'getNotableEntityIds' )
 			->with( $this->isType( 'array' ) )
-			->willReturnCallback( function ( array $itemIds ) {
+			->willReturnCallback( static function ( array $itemIds ) {
 				// Q7246 is notable, nothing else is
 				$Q7246 = new ItemId( 'Q7246' );
 				if ( in_array( $Q7246, $itemIds ) ) {

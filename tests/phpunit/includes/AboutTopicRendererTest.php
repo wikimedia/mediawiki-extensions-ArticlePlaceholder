@@ -199,12 +199,12 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 	private function getLabelDescriptionLookup() {
 		$labelDescriptionLookup = $this->createMock( LabelDescriptionLookup::class );
 		$labelDescriptionLookup->method( 'getLabel' )
-			->willReturnCallback( function ( ItemId $id ) {
+			->willReturnCallback( static function ( ItemId $id ) {
 				return new Term( 'eo', 'Label of ' . $id->getSerialization() );
 			} );
 
 		$labelDescriptionLookup->method( 'getDescription' )
-			->willReturnCallback( function ( ItemId $id ) {
+			->willReturnCallback( static function ( ItemId $id ) {
 				return new Term( 'eo', 'Description of ' . $id->getSerialization() );
 			} );
 
@@ -235,7 +235,7 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 			->getMock();
 
 		$siteLookup->method( 'getSite' )
-			->willReturnCallback( function ( $siteId ) {
+			->willReturnCallback( static function ( $siteId ) {
 				$site = new Site();
 				$site->setGlobalId( $siteId );
 

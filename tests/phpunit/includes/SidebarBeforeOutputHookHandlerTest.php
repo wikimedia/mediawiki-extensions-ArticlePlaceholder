@@ -179,7 +179,7 @@ class SidebarBeforeOutputHookHandlerTest extends MediaWikiTestCase {
 			} );
 
 		$skin = $this->getMockBuilder( Skin::class )
-			->setMethods( [ 'getTitle', 'getRequest' ] )
+			->onlyMethods( [ 'getTitle', 'getRequest' ] )
 			->getMockForAbstractClass();
 
 		$skin->method( 'getTitle' )
