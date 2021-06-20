@@ -41,7 +41,7 @@ local render = function( self, entity )
           label = label:gsub("^%l", string.upper)
         end
 
-        result = result .. '<h2>' .. label .. '</h2>'
+        result = result .. '<h2 title=\'' .. propertyIDs[i] .. '\'>' .. label .. '</h2>'
         result = result .. bestStatementRenderer( entity, propertyIDs[i] )
         result = result .. '</div>'
       end
