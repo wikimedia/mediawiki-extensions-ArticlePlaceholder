@@ -1,10 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
+			"An13sa",
 			"Sator",
 			"Subi"
 		]
 	},
+	"createtopicpage": "Orrialdea sortu",
 	"articleplaceholder-abouttopic": "Gaiari buruz",
+	"articleplaceholder-abouttopic-lua-reference": "Erreferentzia",
 	"articleplaceholder-abouttopic-lua-identifier": "Kanpo baliabideak"
 }
