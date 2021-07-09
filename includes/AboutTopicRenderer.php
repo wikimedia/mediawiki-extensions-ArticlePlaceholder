@@ -14,7 +14,9 @@ use SpecialPage;
 use TitleFactory;
 use User;
 use Wikibase\Client\Hooks\OtherProjectsSidebarGeneratorFactory;
+use Wikibase\Client\RepoLinker;
 use Wikibase\Client\Usage\HashUsageAccumulator;
+use Wikibase\Client\WikibaseClient;
 use Wikibase\DataModel\Entity\ItemId;
 use Wikibase\Lib\Store\LanguageFallbackLabelDescriptionLookupFactory;
 use Wikibase\Lib\Store\SiteLinkLookup;
@@ -65,6 +67,9 @@ class AboutTopicRenderer {
 	 */
 	private $permissionManager;
 
+	/** @var RepoLinker */
+	private $repoLinker;
+
 	/**
 	 * @param LanguageFallbackLabelDescriptionLookupFactory $termLookupFactory
 	 * @param SiteLinkLookup $siteLinkLookup
@@ -73,15 +78,17 @@ class AboutTopicRenderer {
 	 * @param TitleFactory $titleFactory
 	 * @param OtherProjectsSidebarGeneratorFactory $otherProjectsSidebarGeneratorFactory
 	 * @param PermissionManager $permissionManager
+	 * @param RepoLinker $repoLinker
 	 */
 	public function __construct(
 		LanguageFallbackLabelDescriptionLookupFactory $termLookupFactory,
 		SiteLinkLookup $siteLinkLookup,
 		SiteLookup $siteLookup,
-		$langLinkSiteGroup,
+		string $langLinkSiteGroup,
 		TitleFactory $titleFactory,
 		OtherProjectsSidebarGeneratorFactory $otherProjectsSidebarGeneratorFactory,
-		PermissionManager $permissionManager
+		PermissionManager $permissionManager,
+		RepoLinker $repoLinker
 	) {
 		$this->termLookupFactory = $termLookupFactory;
 		$this->siteLinkLookup = $siteLinkLookup;
@@ -90,6 +97,7 @@ class AboutTopicRenderer {
 		$this->titleFactory = $titleFactory;
 		$this->otherProjectsSidebarGeneratorFactory = $otherProjectsSidebarGeneratorFactory;
 		$this->permissionManager = $permissionManager;
+		$this->repoLinker = $repoLinker;
 	}
 
 	/**
@@ -106,27 +114,79 @@ class AboutTopicRenderer {
 		User $user,
 		OutputPage $output
 	) {
-		$output->addModuleStyles( 'ext.articleplaceholder.defaultDisplay' );
-		$output->addWikiTextAsInterface( '{{aboutTopic|' . $entityId->getSerialization() . '}}' );
-
 		$label = $this->getLabel( $entityId, $language );
+		$canEdit = false;
+
 		if ( $label !== null ) {
 			$this->showTitle( $label, $output );
 
 			try {
 				$title = $this->titleFactory->newFromTextThrow( $label );
 				if ( $this->permissionManager->quickUserCan( 'createpage', $user, $title ) ) {
-					$this->showCreateArticle( $entityId, $label, $output );
+					$canEdit = true;
 				}
 			} catch ( MalformedTitleException $ex ) {
 				// When the entity's label contains characters not allowed in page titles
-				$this->showCreateArticle( $entityId, '', $output );
+				$label = '';
+				$canEdit = true;
 			}
 		}
+
+		$this->showTopMessage( $entityId, $label, $output, $canEdit );
+		$output->addModuleStyles( 'ext.articleplaceholder.defaultDisplay' );
+		$output->addWikiTextAsInterface( '{{aboutTopic|' . $entityId->getSerialization() . '}}' );
 
 		$this->showLanguageLinks( $entityId, $output );
 		$this->setOtherProjectsLinks( $entityId, $output );
 		$this->addMetaTags( $entityId, $output, $language );
+	}
+
+	/**
+	 * Adds the top message bar
+	 *
+	 * @param ItemId $entityId
+	 * @param string|null $label
+	 * @param OutputPage $output
+	 * @param bool $canEdit
+	 */
+	private function showTopMessage( ItemId $entityId, ?string $label, OutputPage $output, bool $canEdit ) {
+		$infoIcon = new OOUI\IconWidget( [
+			'icon' => 'infoFilled',
+			'title' => $output->msg( 'articleplaceholder-abouttopic-icon-title' )->text()
+		] );
+
+		$output->enableOOUI();
+
+		$leftDIV = Html::rawElement( 'div',
+			[ 'class' => 'mw-articleplaceholder-topmessage-container-left' ],
+			$infoIcon
+		);
+
+		$buttonCode = '';
+		if ( $label !== null && $canEdit ) {
+			$buttonCode = $this->showCreateArticle( $entityId, $label, $output );
+		}
+
+		$this->repoLinker = WikibaseClient::getRepoLinker();
+		$messageP = Html::rawElement( 'p', [], $output->msg(
+			'articleplaceholder-abouttopic-topmessage-text',
+			$this->repoLinker->getEntityUrl( $entityId )
+			)->parse()
+		);
+		$centerDIV = Html::rawElement( 'div',
+			[ 'class' => [ 'plainlinks', 'mw-articleplaceholder-topmessage-container-center' ] ],
+			$messageP
+		);
+
+		$rightDIV = Html::rawElement( 'div',
+			[ 'class' => 'mw-articleplaceholder-topmessage-container-right' ],
+			$buttonCode
+		);
+
+		$output->addHTML( Html::rawElement( 'div',
+			[ 'class' => 'mw-articleplaceholder-topmessage-container' ],
+			$leftDIV . $rightDIV . $centerDIV )
+		);
 	}
 
 	/**
@@ -135,6 +195,8 @@ class AboutTopicRenderer {
 	 * @param ItemId $itemId
 	 * @param string $label
 	 * @param OutputPage $output
+	 *
+	 * @return string HTML
 	 */
 	private function showCreateArticle( ItemId $itemId, $label, OutputPage $output ) {
 		$siteLinks = $this->siteLinkLookup->getSiteLinksForItem( $itemId );
@@ -159,11 +221,7 @@ class AboutTopicRenderer {
 			$output->addJsConfigVars( 'apContentTranslation', true );
 		}
 
-		$output->addHTML( Html::rawElement(
-			'div',
-			[ 'class' => 'mw-articleplaceholder-createarticle-buttons' ],
-			$contents
-		) );
+		return $contents;
 	}
 
 	/**

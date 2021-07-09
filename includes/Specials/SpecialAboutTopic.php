@@ -43,7 +43,8 @@ class SpecialAboutTopic extends SpecialPage {
 				WikibaseClient::getLangLinkSiteGroup( $mwServices ),
 				$mwServices->getTitleFactory(),
 				WikibaseClient::getOtherProjectsSidebarGeneratorFactory( $mwServices ),
-				$mwServices->getPermissionManager()
+				$mwServices->getPermissionManager(),
+				WikibaseClient::getRepoLinker( $mwServices )
 			),
 			WikibaseClient::getEntityIdParser( $mwServices ),
 			$store->getSiteLinkLookup(),
