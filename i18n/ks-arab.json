@@ -4,6 +4,10 @@
 			"Iflaq"
 		]
 	},
+	"createtopicpage": "صفہٕ بَنٲیو",
+	"articleplaceholder-abouttopic-create-article-button": "مَضموٗن بَنٲیو",
+	"articleplaceholder-abouttopic-create-empty-article-button": "نٔو مَضموٗن بَنٲیو",
 	"articleplaceholder-abouttopic-create-article-submit-button": "رَوانہٕ کٕرو",
-	"articleplaceholder-abouttopic-article-exists-error": "اَمہٕ ناوُک صفہٕ چھُ موجود"
+	"articleplaceholder-abouttopic-article-exists-error": "اَمہٕ ناوُک صفہٕ چھُ موجود",
+	"articleplaceholder-createpage-title": "$1 بَنٲیو"
 }
