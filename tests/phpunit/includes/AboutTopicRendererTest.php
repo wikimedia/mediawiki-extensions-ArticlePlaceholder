@@ -36,7 +36,7 @@ use Wikibase\Lib\Store\SiteLinkLookup;
  */
 class AboutTopicRendererTest extends MediaWikiTestCase {
 
-	protected function setUp() : void {
+	protected function setUp(): void {
 		parent::setUp();
 
 		$this->insertPage( 'Template:AboutTopic', '(aboutTopic: {{{1}}})' );

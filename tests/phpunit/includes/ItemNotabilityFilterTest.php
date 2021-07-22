@@ -36,7 +36,7 @@ class ItemNotabilityFilterTest extends MediaWikiTestCase {
 	 */
 	private $testItemIds = [];
 
-	protected function setUp() : void {
+	protected function setUp(): void {
 		parent::setUp();
 
 		if ( !ExtensionRegistry::getInstance()->isLoaded( 'WikibaseRepository' ) ) {

@@ -45,7 +45,7 @@ class SpecialAboutTopicIntegrationTest extends SpecialPageTestBase {
 	 */
 	private $inMemoryLookup;
 
-	protected function setUp() : void {
+	protected function setUp(): void {
 		parent::setUp();
 
 		$this->insertPage( 'Template:AboutTopic', '(aboutTopic: {{{1}}})' );
