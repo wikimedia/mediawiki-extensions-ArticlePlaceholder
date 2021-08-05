@@ -161,10 +161,6 @@ class ItemNotabilityFilter {
 	 * @return ItemId[]
 	 */
 	private function getItemsWithoutArticle( array $itemIds ) {
-		if ( $itemIds === [] ) {
-			return [];
-		}
-
 		$links = $this->siteLinkLookup->getLinks( array_keys( $itemIds ), [ $this->siteGlobalId ] );
 
 		foreach ( $links as [ , , $numericId ] ) {
