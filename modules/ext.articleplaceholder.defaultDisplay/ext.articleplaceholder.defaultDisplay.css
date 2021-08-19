@@ -15,9 +15,40 @@
 	margin-top: 0;
 }
 
-.mw-articleplaceholder-createarticle-buttons {
-	margin-top: 2em;
-	text-align: right;
+.mw-articleplaceholder-topmessage-container {
+	width: 100%;
+	border-style: solid;
+	border-color: #d3d3d3;
+	border-width: 1px;
+	border-left-width: 10px;
+	margin: 0 auto 0 auto;
+	height: 100%;
+	padding: 0 10px 0 10px;
+	min-height: 50px;
+	background-color: #f9f9f9;
+}
+
+.mw-articleplaceholder-topmessage-container:after {
+	clear: both;
+}
+
+.mw-articleplaceholder-topmessage-container-left {
+	float: left;
+	width: 65px;
+	text-align: center;
+	margin-top: 0.5em;
+}
+
+.mw-articleplaceholder-topmessage-container-right {
+	float: right;
+	width: 150px;
+	text-align: center;
+	margin-top: 0.5em;
+}
+
+.mw-articleplaceholder-topmessage-container-center {
+	overflow: hidden;
+	white-space: nowrap;
 }
 
 .articleplaceholder-sidebar {

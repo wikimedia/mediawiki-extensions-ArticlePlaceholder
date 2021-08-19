@@ -31,5 +31,7 @@
 	"articleplaceholder-createpage-title": "Used as a page Title for [[Special:CreateTopicPage]].\n* $1 - Page title\n{{Identical|Create}}",
 	"articleplaceholder-createpage-alreadyexists": "Description message that the page, the user want to create, already exists, explaining, that the user should choose another title.\n* $1 - The currently used title",
 	"articleplaceholder-createpage-notitleprovided": "Description message on [[Special:CreateTopicPage]], which explains, that no title was given and the user should provide the title of the page to create.",
-	"articleplaceholder-createpage-invalidtitleprovided": "Description message on [[Special:CreateTopicPage]], which explains, that an invalid title was given and the user should provide a valid title of the page to create."
+	"articleplaceholder-createpage-invalidtitleprovided": "Description message on [[Special:CreateTopicPage]], which explains, that an invalid title was given and the user should provide a valid title of the page to create.",
+	"articleplaceholder-abouttopic-topmessage-text": "Text of the explanation message shown inside the top bar.\n* $1 - URL of the item providing the data",
+	"articleplaceholder-abouttopic-icon-title": "Title of the icon on the left in the top bar."
 }

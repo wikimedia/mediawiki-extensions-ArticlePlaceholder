@@ -18,6 +18,7 @@ use TitleFactory;
 use User;
 use Wikibase\Client\Hooks\OtherProjectsSidebarGenerator;
 use Wikibase\Client\Hooks\OtherProjectsSidebarGeneratorFactory;
+use Wikibase\Client\RepoLinker;
 use Wikibase\DataModel\Entity\ItemId;
 use Wikibase\DataModel\Services\Lookup\LabelDescriptionLookup;
 use Wikibase\DataModel\SiteLink;
@@ -86,6 +87,10 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 		$permMock->method( 'quickUserCan' )
 			->willReturn( $canCreate );
 
+		$repoLinker = $this->createMock( RepoLinker::class );
+		$repoLinker->method( 'getEntityUrl' )
+			->willReturn( 'https://example.com/' );
+
 		$instance = new AboutTopicRenderer(
 			$this->getTermLookupFactory(),
 			$this->getSiteLinkLookup(),
@@ -93,7 +98,8 @@ class AboutTopicRendererTest extends MediaWikiTestCase {
 			'wikipedia',
 			$titleFactory ?: MediaWikiServices::getInstance()->getTitleFactory(),
 			$otherProjectsSidebarGeneratorFactory,
-			$permMock
+			$permMock,
+			$repoLinker
 		);
 
 		$instance->showPlaceholder(

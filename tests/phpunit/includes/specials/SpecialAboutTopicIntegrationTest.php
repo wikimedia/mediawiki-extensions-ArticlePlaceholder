@@ -14,6 +14,7 @@ use SpecialPageTestBase;
 use Wikibase\Client\Hooks\OtherProjectsSidebarGeneratorFactory;
 use Wikibase\Client\Tests\Mocks\MockClientStore;
 use Wikibase\Client\WikibaseClient;
+use Wikibase\DataModel\Entity\ItemId;
 use Wikibase\DataModel\Services\Lookup\InMemoryEntityLookup;
 use Wikibase\DataModel\SiteLink;
 use Wikibase\DataModel\SiteLinkList;
@@ -111,7 +112,8 @@ class SpecialAboutTopicIntegrationTest extends SpecialPageTestBase {
 				WikibaseClient::getLangLinkSiteGroup( $services ),
 				$titleFactory,
 				$factory,
-				$services->getPermissionManager()
+				$services->getPermissionManager(),
+				WikibaseClient::getRepoLinker( $services )
 			),
 			WikibaseClient::getEntityIdParser( $services ),
 			$this->store->getSiteLinkLookup(),
@@ -126,7 +128,28 @@ class SpecialAboutTopicIntegrationTest extends SpecialPageTestBase {
 
 	public function testExecution() {
 		list( $specialPageResult, ) = $this->executeSpecialPage( 'Q1' );
-		$expected = '<p>(aboutTopic: Q1)' . "\n</p>";
+		$repoLinker = WikibaseClient::getRepoLinker();
+		$itemID = new ItemId( 'Q1' );
+		$entityUrl = $repoLinker->getEntityUrl( $itemID );
+
+		$expected = '<div class="mw-articleplaceholder-topmessage-container">';
+		$expected = $expected . '<div class="mw-articleplaceholder-topmessage-container-left">';
+		$expected = $expected . '<span aria-disabled=\'false\' title=\'(articleplaceholder-abouttopic-icon-title)\' ';
+		$expected = $expected . 'class=\'oo-ui-widget ';
+		$expected = $expected . 'oo-ui-widget-enabled oo-ui-iconElement-icon oo-ui-icon-infoFilled oo-ui-iconElement ';
+		$expected = $expected . 'oo-ui-labelElement-invisible oo-ui-iconWidget\'></span></div>';
+		$expected = $expected . '<div class="mw-articleplaceholder-topmessage-container-right"></div>';
+		$expected = $expected . '<div class="plainlinks mw-articleplaceholder-topmessage-container-center">';
+
+		$expected = $expected . '<p>(articleplaceholder-abouttopic-topmessage-text: <a rel="nofollow" ';
+		$expected = $expected . 'class="external free" href="';
+
+		$expected = $expected . $entityUrl;
+		$expected = $expected . '">';
+		$expected = $expected . $entityUrl;
+		$expected = $expected . '</a>)';
+		$expected = $expected . '</p></div></div><p>(aboutTopic: Q1)';
+		$expected = $expected . "\n" . '</p>';
 
 		$output = $this->page->getOutput();
 		$sidebar = $output->getProperty( 'wikibase-otherprojects-sidebar' );

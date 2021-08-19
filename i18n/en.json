@@ -27,5 +27,7 @@
 	"articleplaceholder-createpage-title": "Create $1",
 	"articleplaceholder-createpage-alreadyexists": "The page with the title $1 already exists. Please choose another one.",
 	"articleplaceholder-createpage-notitleprovided": "No title was entered, please enter a title for the page you want to create.",
-	"articleplaceholder-createpage-invalidtitleprovided": "The title you entered is invalid. Please provide a valid title."
+	"articleplaceholder-createpage-invalidtitleprovided": "The title you entered is invalid. Please provide a valid title.",
+	"articleplaceholder-abouttopic-topmessage-text": "This is an automatic view based on [$1 data from {{WBREPONAME}}].<br />There is not a complete article yet, but you can help creating one.",
+	"articleplaceholder-abouttopic-icon-title": "Information"
 }
