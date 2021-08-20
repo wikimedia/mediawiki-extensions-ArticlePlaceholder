@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Eduardoaddad",
 			"Felipe L. Ewald",
 			"Luk3"
 		]
@@ -28,5 +29,6 @@
 	"articleplaceholder-createpage-title": "Criado $1",
 	"articleplaceholder-createpage-alreadyexists": "A página com o título $1 já existe. Por favor, escolha outro.",
 	"articleplaceholder-createpage-notitleprovided": "Nenhum título foi digitado, insira um título para a página que deseja criar.",
-	"articleplaceholder-createpage-invalidtitleprovided": "O título que você inseriu é inválido. Forneça um título válido."
+	"articleplaceholder-createpage-invalidtitleprovided": "O título que você inseriu é inválido. Forneça um título válido.",
+	"articleplaceholder-abouttopic-icon-title": "Informação"
 }

@@ -28,5 +28,7 @@
 	"articleplaceholder-createpage-title": "$1 erstellen",
 	"articleplaceholder-createpage-alreadyexists": "Die Seite mit dem Titel $1 ist bereits vorhanden. Bitte wähle einen anderen.",
 	"articleplaceholder-createpage-notitleprovided": "Es wurde kein Titel eingegeben. Bitte gib einen Titel für die Seite ein, die du erstellen möchtest.",
-	"articleplaceholder-createpage-invalidtitleprovided": "Der eingegebene Titel ist ungültig. Bitte gib einen gültigen Titel an."
+	"articleplaceholder-createpage-invalidtitleprovided": "Der eingegebene Titel ist ungültig. Bitte gib einen gültigen Titel an.",
+	"articleplaceholder-abouttopic-topmessage-text": "Dies ist eine automatische Ansicht basierend auf [$1 Daten von {{WBREPONAME}}].<br />Es gibt noch keinen vollständigen Artikel, aber du kannst helfen, einen zu erstellen.",
+	"articleplaceholder-abouttopic-icon-title": "Information"
 }

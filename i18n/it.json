@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Beta16",
-			"Greis"
+			"Greis",
+			"Noretta93"
 		]
 	},
 	"createtopicpage": "Crea pagina",
@@ -28,5 +29,6 @@
 	"articleplaceholder-createpage-title": "Crea $1",
 	"articleplaceholder-createpage-alreadyexists": "La pagina con il titolo $1 esiste già. Scegline un altro.",
 	"articleplaceholder-createpage-notitleprovided": "Non è stato inserito alcun titolo; fornisci un titolo per la pagina che vuoi creare.",
-	"articleplaceholder-createpage-invalidtitleprovided": "Il titolo che hai inserito non è valido. Scegli un titolo valido."
+	"articleplaceholder-createpage-invalidtitleprovided": "Il titolo che hai inserito non è valido. Scegli un titolo valido.",
+	"articleplaceholder-abouttopic-icon-title": "Informazioni"
 }

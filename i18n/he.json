@@ -28,5 +28,7 @@
 	"articleplaceholder-createpage-title": "יצירת הדף $1",
 	"articleplaceholder-createpage-alreadyexists": "הדף עם הכותרת $1 כבר קיים. נא לבחור אחרת.",
 	"articleplaceholder-createpage-notitleprovided": "לא הוזנה כותרת, נא להזין כותרת לדף שברצונך ליצור.",
-	"articleplaceholder-createpage-invalidtitleprovided": "הכותרת שהזנת אינה תקינה. נא לספק כותרת תקינה."
+	"articleplaceholder-createpage-invalidtitleprovided": "הכותרת שהזנת אינה תקינה. נא לספק כותרת תקינה.",
+	"articleplaceholder-abouttopic-topmessage-text": "זאת תצוגה אוטומטית שמבוססת על [$1 נתונים מתוך {{WBREPONAME}}].<br />אין עדיין ערך שלם, אבל {{GENDER:|אתה יכול|את יכולה|באפשרותך}} לעזור ליצור אחד.",
+	"articleplaceholder-abouttopic-icon-title": "מידע"
 }
