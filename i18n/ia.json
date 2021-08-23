@@ -27,5 +27,6 @@
 	"articleplaceholder-createpage-title": "Crear $1",
 	"articleplaceholder-createpage-alreadyexists": "Le pagina con le titulo $1 jam existe. Elige un altere.",
 	"articleplaceholder-createpage-notitleprovided": "Nulle titulo ha essite entrate. Per favor, entra un titulo pro le pagina que tu vole crear.",
-	"articleplaceholder-createpage-invalidtitleprovided": "Le titulo que tu ha entrate non es valide. Per favor, scribe un titulo valide."
+	"articleplaceholder-createpage-invalidtitleprovided": "Le titulo que tu ha entrate non es valide. Per favor, scribe un titulo valide.",
+	"articleplaceholder-abouttopic-icon-title": "Information"
 }

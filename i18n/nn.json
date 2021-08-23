@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Njardarlogar"
+			"Njardarlogar",
+			"Olve Utne"
 		]
 	},
 	"createtopicpage": "Opprett side",
@@ -17,5 +18,6 @@
 	"articleplaceholder-abouttopic-lua-reference": "Kjelder",
 	"articleplaceholder-abouttopic-lua-identifier": "Eksterne ressursar",
 	"articleplaceholder-search-header": "Finn data om emnet",
-	"articleplaceholder-createpage-title": "Opprett $1"
+	"articleplaceholder-createpage-title": "Opprett $1",
+	"articleplaceholder-abouttopic-icon-title": "Informasjon"
 }

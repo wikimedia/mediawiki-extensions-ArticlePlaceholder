@@ -27,5 +27,7 @@
 	"articleplaceholder-createpage-title": "Создај $1",
 	"articleplaceholder-createpage-alreadyexists": "Страницата со наслов $1 веќе постои. Одберете друга.",
 	"articleplaceholder-createpage-notitleprovided": "Немате внесено наслов. Внесете наслов за страницата што сакате да ја создадете.",
-	"articleplaceholder-createpage-invalidtitleprovided": "Внесениот наслов е неважечки. Внесете важечки наслов."
+	"articleplaceholder-createpage-invalidtitleprovided": "Внесениот наслов е неважечки. Внесете важечки наслов.",
+	"articleplaceholder-abouttopic-topmessage-text": "Ова е автоматски преглед според [$1 податоци од {{WBREPONAME}}].<br />Сè уште нема целосна статија, но вие можете да ја направите.",
+	"articleplaceholder-abouttopic-icon-title": "Информации"
 }

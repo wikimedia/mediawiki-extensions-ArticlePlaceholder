@@ -31,5 +31,6 @@
 	"articleplaceholder-createpage-title": "Создать $1",
 	"articleplaceholder-createpage-alreadyexists": "Страницы с названием $1 уже существует. Пожалуйста, выберите другое название.",
 	"articleplaceholder-createpage-notitleprovided": "Заголовок не был введён. Пожалуйста, укажите заголовок для страницы, которую вы хотите создать.",
-	"articleplaceholder-createpage-invalidtitleprovided": "Заголовок некорректен. Пожалуйста, укажите корректный заголовок."
+	"articleplaceholder-createpage-invalidtitleprovided": "Заголовок некорректен. Пожалуйста, укажите корректный заголовок.",
+	"articleplaceholder-abouttopic-icon-title": "Информация"
 }

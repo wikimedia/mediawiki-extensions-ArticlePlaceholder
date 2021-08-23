@@ -3,6 +3,7 @@
 		"authors": [
 			"01miki10",
 			"Joquliina",
+			"MITO",
 			"Stryn",
 			"Valtlait"
 		]
@@ -24,5 +25,6 @@
 	"articleplaceholder-createpage-title": "Luo $1",
 	"articleplaceholder-createpage-alreadyexists": "Sivu nimeltään $1 on jo olemassa. Valitse toinen nimi.",
 	"articleplaceholder-createpage-notitleprovided": "Nimeä ei annettu, anna luotavalle sivulle nimi.",
-	"articleplaceholder-createpage-invalidtitleprovided": "Antamasi nimi oli virheellinen. Anna kelvollinen nimi."
+	"articleplaceholder-createpage-invalidtitleprovided": "Antamasi nimi oli virheellinen. Anna kelvollinen nimi.",
+	"articleplaceholder-abouttopic-icon-title": "Tietoja"
 }
