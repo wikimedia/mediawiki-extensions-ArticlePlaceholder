@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"BaRaN6161 TURK",
-			"HakanIST"
+			"HakanIST",
+			"Hedda"
 		]
 	},
 	"createtopicpage": "Sayfa oluştur",
@@ -28,5 +29,6 @@
 	"articleplaceholder-createpage-title": "$1 sayfasını oluştur",
 	"articleplaceholder-createpage-alreadyexists": "$1 başlıklı sayfa zaten var. Lütfen başka birini seçiniz.",
 	"articleplaceholder-createpage-notitleprovided": "Başlık girilmedi, lütfen oluşturmak istediğiniz sayfa için bir başlık girin.",
-	"articleplaceholder-createpage-invalidtitleprovided": "Girdiğiniz başlık geçersiz. Lütfen geçerli bir başlık girin."
+	"articleplaceholder-createpage-invalidtitleprovided": "Girdiğiniz başlık geçersiz. Lütfen geçerli bir başlık girin.",
+	"articleplaceholder-abouttopic-icon-title": "Bilgi"
 }
