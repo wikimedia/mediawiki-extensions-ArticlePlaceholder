@@ -29,5 +29,6 @@
 	"articleplaceholder-createpage-title": "أنشئ $1",
 	"articleplaceholder-createpage-alreadyexists": "الصفحة التي تحمل العنوان $1 موجودة بالفعل; الرجاء اختيار واحد آخر.",
 	"articleplaceholder-createpage-notitleprovided": "لم يتم إدخال عنوان; يُرجَى إدخال عنوان للصفحة التي تريد إنشاءها.",
-	"articleplaceholder-createpage-invalidtitleprovided": "العنوان الذي أدخلته غير صالح; يُرجَى تقديم عنوان صالح."
+	"articleplaceholder-createpage-invalidtitleprovided": "العنوان الذي أدخلته غير صالح; يُرجَى تقديم عنوان صالح.",
+	"articleplaceholder-abouttopic-icon-title": "معلومات"
 }
