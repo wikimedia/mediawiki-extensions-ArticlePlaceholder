@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"articleplaceholder-abouttopic-intro": "Op deze speciale pagina vind je een kort overzicht van een onderwerp op basis van gegevens uit {{WBREPONAME}}.",
+	"articleplaceholder-createpage-notitleprovided": "Er is geen titel ingevoerd. Voer een titel in voor de pagina die je wilt aanmaken.",
+	"articleplaceholder-abouttopic-topmessage-text": "Dit is een automatische weergave op basis van [$1 gegevens van {{WBREPONAME}}].<br />Er is nog geen volledig artikel, maar jij kunt helpen er een te maken."
+}

@@ -7,7 +7,11 @@
 		]
 	},
 	"createtopicpage": "Pagina aanmaken",
+	"articleplaceholder-desc": "Voorziet in een speciale pagina met {{WBREPONAME}}-informatie over een bepaald onderwerp, met uitnodiging om een artikel over dat onderwerp aan te maken.",
 	"articleplaceholder-abouttopic": "Over het onderwerp",
+	"articleplaceholder-abouttopic-intro": "Op deze speciale pagina vindt u een kort overzicht van een onderwerp op basis van gegevens uit {{WBREPONAME}}.",
+	"articleplaceholder-abouttopic-entityid": "Voer een item-ID in, bv. Q12345",
+	"articleplaceholder-abouttopic-submit": "maken",
 	"articleplaceholder-abouttopic-no-entity-error": "Dit is geen geldig item-ID.",
 	"articleplaceholder-abouttopic-create-article-title": "Maak een nieuw artikel aan",
 	"articleplaceholder-abouttopic-create-article-label": "Paginanaam",
@@ -21,6 +25,11 @@
 	"articleplaceholder-abouttopic-lua-entity": "Entiteit",
 	"articleplaceholder-abouttopic-lua-reference": "Referentie",
 	"articleplaceholder-abouttopic-lua-identifier": "Externe bronnen",
+	"articleplaceholder-search-header": "Ontdek gegevens over het onderwerp",
 	"articleplaceholder-createpage-title": "$1 aanmaken",
-	"articleplaceholder-createpage-alreadyexists": "Een pagina met de titel $1 bestaat al. Kies een andere titel."
+	"articleplaceholder-createpage-alreadyexists": "Een pagina met de titel $1 bestaat al. Kies een andere titel.",
+	"articleplaceholder-createpage-notitleprovided": "Er is geen titel ingevoerd. Voer een titel in voor de pagina die u wilt aanmaken.",
+	"articleplaceholder-createpage-invalidtitleprovided": "De ingevoerde titel is ongeldig. Geef een geldige titel op.",
+	"articleplaceholder-abouttopic-topmessage-text": "Dit is een automatische weergave op basis van [$1 gegevens van {{WBREPONAME}}].<br />Er is nog geen volledig artikel, maar u kunt helpen er een te maken.",
+	"articleplaceholder-abouttopic-icon-title": "Informatie"
 }
