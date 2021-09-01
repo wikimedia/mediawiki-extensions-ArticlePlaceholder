@@ -3,6 +3,7 @@
 		"authors": [
 			"AS",
 			"Base",
+			"DDPAT",
 			"Piramidion",
 			"Ата"
 		]
@@ -30,5 +31,7 @@
 	"articleplaceholder-createpage-title": "Створити $1",
 	"articleplaceholder-createpage-alreadyexists": "Сторінка з назвою «$1» вже існує. Будь ласка, виберіть іншу.",
 	"articleplaceholder-createpage-notitleprovided": "Заголовка не вказано, будь ласка, введіть заголовок сторінки, яку Ви хочете створити.",
-	"articleplaceholder-createpage-invalidtitleprovided": "Заголовок, який Ви ввели, неприпустимий. Будь ласка, вкажіть дійсний заголовок."
+	"articleplaceholder-createpage-invalidtitleprovided": "Заголовок, який Ви ввели, неприпустимий. Будь ласка, вкажіть дійсний заголовок.",
+	"articleplaceholder-abouttopic-topmessage-text": "Це автоматичний перегляд на основі [$1 даних від {{WBREPONAME}}].<br />Повної статті ще немає, але ви можете допомогти створити її.",
+	"articleplaceholder-abouttopic-icon-title": "Інформація"
 }
