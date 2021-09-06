@@ -30,5 +30,6 @@
 	"articleplaceholder-createpage-alreadyexists": "A página com o título $1 já existe. Por favor, escolha outro.",
 	"articleplaceholder-createpage-notitleprovided": "Nenhum título foi digitado, insira um título para a página que deseja criar.",
 	"articleplaceholder-createpage-invalidtitleprovided": "O título que você inseriu é inválido. Forneça um título válido.",
+	"articleplaceholder-abouttopic-topmessage-text": "Esta visualização automática é baseada em [$1 dados de {{WBREPONAME}}].<br />Ainda não existe um artigo completo, mas você pode ajudar a criá-lo.",
 	"articleplaceholder-abouttopic-icon-title": "Informação"
 }
