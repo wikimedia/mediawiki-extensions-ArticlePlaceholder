@@ -5,6 +5,7 @@ namespace ArticlePlaceholder;
 use Wikibase\DataModel\Entity\ItemId;
 use Wikibase\Lib\Store\EntityNamespaceLookup;
 use Wikibase\Lib\Store\SiteLinkLookup;
+use Wikimedia\Rdbms\FakeResultWrapper;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\IResultWrapper;
 use Wikimedia\Rdbms\SessionConsistentConnectionManager;
@@ -133,7 +134,7 @@ class ItemNotabilityFilter {
 
 		if ( !is_int( $entityNamespace ) ) {
 			wfLogWarning( 'The ArticlePlaceholder extension requires an "item" namespace' );
-			return [];
+			return new FakeResultWrapper( [] );
 		}
 
 		$itemIdSerializations = [];

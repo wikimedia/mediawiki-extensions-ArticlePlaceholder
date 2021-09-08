@@ -134,6 +134,7 @@ class SidebarBeforeOutputHookHandler {
 		}
 
 		try {
+			// @phan-suppress-next-line PhanTypeMismatchReturn
 			return $this->entityIdParser->parse( $idSerialization );
 		} catch ( Exception $ex ) {
 			// Ignore
