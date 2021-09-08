@@ -28,5 +28,6 @@
 	"articleplaceholder-createpage-alreadyexists": "Le pagina con le titulo $1 jam existe. Elige un altere.",
 	"articleplaceholder-createpage-notitleprovided": "Nulle titulo ha essite entrate. Per favor, entra un titulo pro le pagina que tu vole crear.",
 	"articleplaceholder-createpage-invalidtitleprovided": "Le titulo que tu ha entrate non es valide. Per favor, scribe un titulo valide.",
+	"articleplaceholder-abouttopic-topmessage-text": "Isto es un representation automatic a base de [$1 datos de {{WBREPONAME}}].<br />Non existe ancora un articulo complete, ma tu pote adjutar a crear un.",
 	"articleplaceholder-abouttopic-icon-title": "Information"
 }
