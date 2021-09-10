@@ -27,5 +27,6 @@
 	"articleplaceholder-createpage-title": "$1 만들기",
 	"articleplaceholder-createpage-alreadyexists": "$1 제목의 문서가 이미 존재합니다. 다른 문서를 선택해 주십시오.",
 	"articleplaceholder-createpage-notitleprovided": "제목이 입력되지 않았습니다. 작성하고자 하는 문서의 제목을 입력해 주십시오.",
-	"articleplaceholder-createpage-invalidtitleprovided": "입력한 제목이 유효하지 않습니다. 유효한 제목을 지정해 주십시오."
+	"articleplaceholder-createpage-invalidtitleprovided": "입력한 제목이 유효하지 않습니다. 유효한 제목을 지정해 주십시오.",
+	"articleplaceholder-abouttopic-icon-title": "정보"
 }
