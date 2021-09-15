@@ -3,6 +3,7 @@
 		"authors": [
 			"Kly",
 			"Liuxinyu970226",
+			"Winston Sung",
 			"一個正常人"
 		]
 	},
@@ -29,5 +30,6 @@
 	"articleplaceholder-createpage-title": "建立$1",
 	"articleplaceholder-createpage-alreadyexists": "標題為$1的頁面已存在，請選擇別的。",
 	"articleplaceholder-createpage-notitleprovided": "未輸入標題，請輸入您所想建立頁面的標題。",
-	"articleplaceholder-createpage-invalidtitleprovided": "您輸入的標題無效，請提供一個有效的標題。"
+	"articleplaceholder-createpage-invalidtitleprovided": "您輸入的標題無效，請提供一個有效的標題。",
+	"articleplaceholder-abouttopic-icon-title": "資訊"
 }
