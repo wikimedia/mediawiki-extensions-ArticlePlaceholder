@@ -9,7 +9,7 @@ use MediaWiki\MediaWikiServices;
 use MediaWikiTestCase;
 use Wikibase\DataModel\Entity\Item;
 use Wikibase\DataModel\Entity\ItemId;
-use Wikibase\DataModel\Entity\PropertyId;
+use Wikibase\DataModel\Entity\NumericPropertyId;
 use Wikibase\DataModel\SiteLink;
 use Wikibase\DataModel\SiteLinkList;
 use Wikibase\DataModel\Snak\PropertyValueSnak;
@@ -71,7 +71,7 @@ class ItemNotabilityFilterTest extends MediaWikiTestCase {
 		$entityStore = WikibaseRepo::getEntityStore();
 
 		$snak = new PropertyValueSnak(
-			new PropertyId( 'P123' ),
+			new NumericPropertyId( 'P123' ),
 			new StringValue( 'foo' )
 		);
 		$statement = new Statement( $snak );

@@ -17,7 +17,7 @@ use Wikibase\DataAccess\NullPrefetchingTermLookup;
 use Wikibase\DataAccess\Tests\FakePrefetchingTermLookup;
 use Wikibase\DataModel\Entity\EntityId;
 use Wikibase\DataModel\Entity\ItemId;
-use Wikibase\DataModel\Entity\PropertyId;
+use Wikibase\DataModel\Entity\NumericPropertyId;
 use Wikibase\Lib\Interactors\MatchingTermsLookupSearchInteractor;
 use Wikibase\Lib\LanguageFallbackChainFactory;
 use Wikibase\Lib\TermIndexEntry;
@@ -58,11 +58,11 @@ class SearchHookHandlerTest extends MediaWikiTestCase {
 				$this->getTermIndexEntry( 'TAAA', 'en-ca', $typeAlias, new ItemId( 'Q12345' ) ),
 				$this->getTermIndexEntry( 'Taa', 'en-ca', $typeAlias, new ItemId( 'Q12345' ) ),
 				// P22
-				$this->getTermIndexEntry( 'Lama', 'en-ca', $typeLabel, new PropertyId( 'P22' ) ),
-				$this->getTermIndexEntry( 'La-description', 'en', $typeDescription, new PropertyId( 'P22' ) ),
+				$this->getTermIndexEntry( 'Lama', 'en-ca', $typeLabel, new NumericPropertyId( 'P22' ) ),
+				$this->getTermIndexEntry( 'La-description', 'en', $typeDescription, new NumericPropertyId( 'P22' ) ),
 				// P44
-				$this->getTermIndexEntry( 'Lama', 'en', $typeLabel, new PropertyId( 'P44' ) ),
-				$this->getTermIndexEntry( 'Lama-de-desc', 'de', $typeDescription, new PropertyId( 'P44' ) ),
+				$this->getTermIndexEntry( 'Lama', 'en', $typeLabel, new NumericPropertyId( 'P44' ) ),
+				$this->getTermIndexEntry( 'Lama-de-desc', 'de', $typeDescription, new NumericPropertyId( 'P44' ) ),
 			]
 		);
 	}
@@ -71,7 +71,7 @@ class SearchHookHandlerTest extends MediaWikiTestCase {
 	 * @param string $text
 	 * @param string $languageCode
 	 * @param string $termType
-	 * @param EntityId|ItemId|PropertyId $entityId
+	 * @param EntityId|ItemId|NumericPropertyId $entityId
 	 *
 	 * @return TermIndexEntry
 	 */
