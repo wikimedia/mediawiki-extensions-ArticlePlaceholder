@@ -27,5 +27,6 @@
 	"articleplaceholder-createpage-title": "Ccreje $1",
 	"articleplaceholder-createpage-alreadyexists": "'A pàgene cu 'u titole $1 già esiste. Scacchie 'n'otre titole.",
 	"articleplaceholder-createpage-notitleprovided": "Non g'ha state mise nisciune titole; mitte 'nu titole pa pàgene ca vuè ccu ccreje.",
-	"articleplaceholder-createpage-invalidtitleprovided": "'U titole ca è mise jè invalide. Scacchie 'nu titole valide."
+	"articleplaceholder-createpage-invalidtitleprovided": "'U titole ca è mise jè invalide. Scacchie 'nu titole valide.",
+	"articleplaceholder-abouttopic-icon-title": "'Mbormaziune"
 }
