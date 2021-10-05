@@ -19,5 +19,6 @@
 	"articleplaceholder-abouttopic-lua-identifier": "Eksterne ressursar",
 	"articleplaceholder-search-header": "Finn data om emnet",
 	"articleplaceholder-createpage-title": "Opprett $1",
+	"articleplaceholder-abouttopic-topmessage-text": "Dette er ei automatisk vising som byggjer på [$1 data frå {{WBREPONAME}}].<br />Det finst ikkje nokon ferdig artikkel enno, men du kan hjelpa til med å laga ein.",
 	"articleplaceholder-abouttopic-icon-title": "Informasjon"
 }
