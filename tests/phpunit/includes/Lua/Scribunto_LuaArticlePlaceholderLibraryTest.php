@@ -3,7 +3,7 @@
 namespace ArticlePlaceholder\Tests\Lua;
 
 use ArticlePlaceholder\Lua\Scribunto_LuaArticlePlaceholderLibrary;
-use MediaWikiTestCase;
+use MediaWikiIntegrationTestCase;
 use RuntimeException;
 use Scribunto_LuaEngine;
 
@@ -15,7 +15,7 @@ use Scribunto_LuaEngine;
  * @license GPL-2.0-or-later
  * @author Thiemo Kreuz
  */
-class Scribunto_LuaArticlePlaceholderLibraryTest extends MediaWikiTestCase {
+class Scribunto_LuaArticlePlaceholderLibraryTest extends MediaWikiIntegrationTestCase {
 
 	protected function setUp(): void {
 		parent::setUp();

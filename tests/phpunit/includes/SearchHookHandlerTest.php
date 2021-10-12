@@ -6,7 +6,7 @@ use ArticlePlaceholder\ItemNotabilityFilter;
 use ArticlePlaceholder\SearchHookHandler;
 use Config;
 use Liuggio\StatsdClient\Factory\StatsdDataFactory;
-use MediaWikiTestCase;
+use MediaWikiIntegrationTestCase;
 use OutputPage;
 use PHPUnit\Framework\MockObject\MockObject;
 use ReflectionMethod;
@@ -31,7 +31,7 @@ use Wikibase\Lib\Tests\Store\MockMatchingTermsLookup;
  * @license GPL-2.0-or-later
  * @author Lucie-Aimée Kaffee
  */
-class SearchHookHandlerTest extends MediaWikiTestCase {
+class SearchHookHandlerTest extends MediaWikiIntegrationTestCase {
 
 	private function getMockMatchingTermLookup() {
 		$typeLabel = TermIndexEntry::TYPE_LABEL;

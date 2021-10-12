@@ -6,7 +6,7 @@ use ArticlePlaceholder\AboutTopicRenderer;
 use ArticlePlaceholder\Specials\SpecialAboutTopic;
 use DerivativeContext;
 use MediaWiki\MediaWikiServices;
-use MediaWikiTestCase;
+use MediaWikiIntegrationTestCase;
 use OutputPage;
 use RequestContext;
 use SpecialPage;
@@ -27,7 +27,7 @@ use Wikibase\Lib\Tests\MockRepository;
  * @author Thiemo Kreuz
  * @author Lucie-Aimée Kaffee
  */
-class SpecialAboutTopicTest extends MediaWikiTestCase {
+class SpecialAboutTopicTest extends MediaWikiIntegrationTestCase {
 
 	protected function setUp(): void {
 		parent::setUp();

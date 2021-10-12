@@ -6,7 +6,7 @@ use ArticlePlaceholder\ItemNotabilityFilter;
 use DataValues\StringValue;
 use ExtensionRegistry;
 use MediaWiki\MediaWikiServices;
-use MediaWikiTestCase;
+use MediaWikiIntegrationTestCase;
 use Wikibase\DataModel\Entity\Item;
 use Wikibase\DataModel\Entity\ItemId;
 use Wikibase\DataModel\Entity\NumericPropertyId;
@@ -29,7 +29,7 @@ use Wikimedia\Rdbms\SessionConsistentConnectionManager;
  * @author Marius Hoch
  * @author Lucie-Aimée Kaffee
  */
-class ItemNotabilityFilterTest extends MediaWikiTestCase {
+class ItemNotabilityFilterTest extends MediaWikiIntegrationTestCase {
 
 	/**
 	 * @var ItemId[]

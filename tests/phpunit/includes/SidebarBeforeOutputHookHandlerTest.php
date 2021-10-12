@@ -3,7 +3,7 @@
 namespace ArticlePlaceholder\Tests;
 
 use ArticlePlaceholder\SidebarBeforeOutputHookHandler;
-use MediaWikiTestCase;
+use MediaWikiIntegrationTestCase;
 use ReflectionMethod;
 use Skin;
 use Title;
@@ -21,7 +21,7 @@ use Wikibase\DataModel\Entity\ItemId;
  * @license GPL-2.0-or-later
  * @author Marius Hoch < hoo@online.de >
  */
-class SidebarBeforeOutputHookHandlerTest extends MediaWikiTestCase {
+class SidebarBeforeOutputHookHandlerTest extends MediaWikiIntegrationTestCase {
 
 	protected function setUp(): void {
 		parent::setUp();

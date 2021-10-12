@@ -8,7 +8,7 @@ use Language;
 use MalformedTitleException;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
-use MediaWikiTestCase;
+use MediaWikiIntegrationTestCase;
 use OutputPage;
 use RequestContext;
 use Site;
@@ -35,7 +35,7 @@ use Wikibase\Lib\Store\SiteLinkLookup;
  * @license GPL-2.0-or-later
  * @author Lucie-Aimée Kaffee
  */
-class AboutTopicRendererTest extends MediaWikiTestCase {
+class AboutTopicRendererTest extends MediaWikiIntegrationTestCase {
 
 	protected function setUp(): void {
 		parent::setUp();

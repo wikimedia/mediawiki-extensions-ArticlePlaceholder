@@ -4,7 +4,7 @@ namespace ArticlePlaceholder\Tests\Specials;
 
 use ArticlePlaceholder\Specials\SpecialCreateTopicPage;
 use DerivativeContext;
-use MediaWikiTestCase;
+use MediaWikiIntegrationTestCase;
 use RequestContext;
 use SpecialPage;
 
@@ -17,7 +17,7 @@ use SpecialPage;
  * @license GPL-2.0-or-later
  * @author Florian Schmidt
  */
-class SpecialCreateTopicPageTest extends MediaWikiTestCase {
+class SpecialCreateTopicPageTest extends MediaWikiIntegrationTestCase {
 
 	protected function setUp(): void {
 		parent::setUp();
