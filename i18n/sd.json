@@ -9,7 +9,7 @@
 	},
 	"createtopicpage": "صفحو سرجيو",
 	"articleplaceholder-abouttopic": "موضوع بابت",
-	"articleplaceholder-abouttopic-create-article-title": "نئون مضمون تطليق ڪيو",
+	"articleplaceholder-abouttopic-create-article-title": "ڪو نئون مضمون سرجيو",
 	"articleplaceholder-abouttopic-create-article-button": "ڪو مضمون سرجيو",
 	"articleplaceholder-abouttopic-create-article-submit-button": "اماڻيو",
 	"articleplaceholder-abouttopic-article-exists-error": "هن نالي سان اڳ ئي هڪ مضمون موجود آهي",
@@ -17,5 +17,5 @@
 	"articleplaceholder-search-header": "موضوع تي مواد دريافت ڪريو",
 	"articleplaceholder-createpage-title": "$1 سرجيو",
 	"articleplaceholder-createpage-notitleprovided": "ڪوبہ عنوان داخل نہ ڪيو ويو ھو، مھرباني ڪري جيڪو صفحو توھان سرجڻ چاھيو ٿا ان لاءِ عنوان داخل ڪريو.",
-	"articleplaceholder-createpage-invalidtitleprovided": "اوهان جو داخل ڪيل عنوان موزون ناهي، مهرباني ڪري بهتر عنوان ڏيو."
+	"articleplaceholder-createpage-invalidtitleprovided": "اوهان جو داخل ڪيل عنوان ناقابلِڪار آھي، مھرباني ڪري بھتر قابلِڪار عنوان ڏيو."
 }
