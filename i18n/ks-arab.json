@@ -5,9 +5,22 @@
 		]
 	},
 	"createtopicpage": "صفہٕ بَنٲیو",
+	"articleplaceholder-abouttopic": "موضوٗعَس مُتعلِق",
+	"articleplaceholder-abouttopic-entityid": "مہربٲنی کٔرِتھ کٔرِو آیتَم شِناختی نَمبَر دَرٕج۔ مِثال Q12345",
+	"articleplaceholder-abouttopic-no-entity-error": "شِناختی نَمبَر چھُ نہٕ ٹھیٖک۔",
+	"articleplaceholder-abouttopic-create-article-title": "نٔو مَضموٗن کٔرِو تَخلیٖق",
+	"articleplaceholder-abouttopic-create-article-label": "مَضموٗن عُنٛوان",
+	"articleplaceholder-abouttopic-create-article-mandatory": "مَضموٗنَس گَژھہ عُنٛوان ضروٗری آسُن۔",
 	"articleplaceholder-abouttopic-create-article-button": "مَضموٗن بَنٲیو",
 	"articleplaceholder-abouttopic-create-empty-article-button": "نٔو مَضموٗن بَنٲیو",
+	"articleplaceholder-abouttopic-translate-article-button": "تَرجَمہٕ مَضموٗن",
 	"articleplaceholder-abouttopic-create-article-submit-button": "رَوانہٕ کٕرو",
 	"articleplaceholder-abouttopic-article-exists-error": "اَمہٕ ناوُک صفہٕ چھُ موجود",
-	"articleplaceholder-createpage-title": "$1 بَنٲیو"
+	"articleplaceholder-abouttopic-lua-reference": "حَوالہٕ",
+	"articleplaceholder-abouttopic-lua-identifier": "بیٖرونِی وَصٲیِل",
+	"articleplaceholder-search-header": "یَتھ موضوٗعَس پؠٹھ کٔرِو مَعلوٗمات تَلاش۔",
+	"articleplaceholder-createpage-title": "$1 بَنٲیو",
+	"articleplaceholder-createpage-alreadyexists": "$1 صَفہٕ چھُ گۄڈے موجوٗد۔ مہربٲنی کٔرِتھ وُچھِو بَدل کانٛہہ عُنٛوان۔",
+	"articleplaceholder-createpage-invalidtitleprovided": "دَرٕج کورمُت عُنٛوان چھُ غلط۔ مہربٲنی کٔرِتھ کٔرِو صحیح عُنٛوان دَرٕج۔",
+	"articleplaceholder-abouttopic-icon-title": "مَعلوٗمات"
 }
