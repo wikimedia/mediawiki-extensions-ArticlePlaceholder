@@ -3,7 +3,8 @@
 		"authors": [
 			"Frisko",
 			"Josve05a",
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Sabelöga"
 		]
 	},
 	"createtopicpage": "Skapa sida",
@@ -29,5 +30,6 @@
 	"articleplaceholder-createpage-title": "Skapa $1",
 	"articleplaceholder-createpage-alreadyexists": "Sidan med titeln $1 finns redan. Välj en annan.",
 	"articleplaceholder-createpage-notitleprovided": "Ingen titel har angivits, ange en titel för sidan du vill skapa.",
-	"articleplaceholder-createpage-invalidtitleprovided": "Titeln du angav är ogiltig. Tillhandahåll en giltig titel."
+	"articleplaceholder-createpage-invalidtitleprovided": "Titeln du angav är ogiltig. Tillhandahåll en giltig titel.",
+	"articleplaceholder-abouttopic-icon-title": "Information"
 }
