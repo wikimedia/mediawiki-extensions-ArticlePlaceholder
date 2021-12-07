@@ -3,7 +3,9 @@
 		"authors": [
 			"01miki10",
 			"Stryn",
-			"Valtlait"
+			"Valtlait",
+			"Joquliina",
+			"MITO"
 		]
 	},
 	"createtopicpage": "Luo sivu",
@@ -19,6 +21,7 @@
 	"articleplaceholder-abouttopic-article-exists-error": "Artikkeli löytyy jo tällä nimellä",
 	"articleplaceholder-abouttopic-lua-entity": "Aihe",
 	"articleplaceholder-abouttopic-lua-reference": "Lähde",
+	"articleplaceholder-abouttopic-lua-identifier": "Ulkoiset resurssit",
 	"articleplaceholder-createpage-title": "Luo $1",
 	"articleplaceholder-createpage-alreadyexists": "Sivu nimeltään $1 on jo olemassa. Valitse toinen nimi.",
 	"articleplaceholder-createpage-notitleprovided": "Nimeä ei annettu, anna luotavalle sivulle nimi.",

@@ -3,7 +3,8 @@
 		"authors": [
 			"Kly",
 			"Liuxinyu970226",
-			"一個正常人"
+			"一個正常人",
+			"Winston Sung"
 		]
 	},
 	"createtopicpage": "建立頁面",
@@ -16,7 +17,7 @@
 	"articleplaceholder-abouttopic-create-article-title": "建立一個新條目",
 	"articleplaceholder-abouttopic-create-article-label": "條目標題",
 	"articleplaceholder-abouttopic-create-article-mandatory": "條目的標題為必須。",
-	"articleplaceholder-abouttopic-create-article-button": "創建條目",
+	"articleplaceholder-abouttopic-create-article-button": "新增條目",
 	"articleplaceholder-abouttopic-create-empty-article-button": "開始新條目",
 	"articleplaceholder-abouttopic-translate-article-label": "來源語言：",
 	"articleplaceholder-abouttopic-translate-article-button": "翻譯條目",

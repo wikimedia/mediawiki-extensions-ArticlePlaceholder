@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Yupik"
+		]
+	},
+	"createtopicpage": "Raaj seeid",
+	"articleplaceholder-abouttopic-create-article-title": "Raaj ođđ artikkeeʹl",
+	"articleplaceholder-abouttopic-create-article-label": "Artikkeeʹl nõmm",
+	"articleplaceholder-abouttopic-create-article-button": "Raaj artikkeeʹl",
+	"articleplaceholder-abouttopic-create-empty-article-button": "Alttâd ođđ artikkeeʹl",
+	"articleplaceholder-abouttopic-translate-article-label": "Käivvǩiõll:",
+	"articleplaceholder-abouttopic-translate-article-button": "Jåårǥlââʹtt artikkeeʹl",
+	"articleplaceholder-abouttopic-lua-reference": "Teâttkääiv",
+	"articleplaceholder-createpage-title": "Raaj $1"
+}
