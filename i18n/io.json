@@ -4,6 +4,9 @@
 			"Joao Xavier"
 		]
 	},
+	"createtopicpage": "Krear pagino",
 	"articleplaceholder-abouttopic-translate-article-label": "Fonto-linguo:",
-	"articleplaceholder-abouttopic-lua-reference": "Refero"
+	"articleplaceholder-abouttopic-create-article-submit-button": "Sendez",
+	"articleplaceholder-abouttopic-lua-reference": "Refero",
+	"articleplaceholder-createpage-title": "Krear $1"
 }

@@ -2,9 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"StanProg",
-			"Ted Masters"
+			"Ted Masters",
+			"Vodnokon4e"
 		]
 	},
+	"createtopicpage": "Създаване на страница",
+	"articleplaceholder-abouttopic-create-article-title": "Създаване на нова статия",
 	"articleplaceholder-abouttopic-create-article-label": "Заглавие на статията",
 	"articleplaceholder-abouttopic-create-article-mandatory": "Заглавието на статията е задължително.",
 	"articleplaceholder-abouttopic-create-article-button": "Създаване на статия",
@@ -13,5 +16,6 @@
 	"articleplaceholder-abouttopic-translate-article-button": "Превод на статия",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Изпращане",
 	"articleplaceholder-abouttopic-article-exists-error": "Вече съществува статия с такова име.",
-	"articleplaceholder-abouttopic-lua-entity": "Обект"
+	"articleplaceholder-abouttopic-lua-entity": "Обект",
+	"articleplaceholder-createpage-alreadyexists": "Страница със заглавие $1 вече съществува. Моля, изберете друго."
 }

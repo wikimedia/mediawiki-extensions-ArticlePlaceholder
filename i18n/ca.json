@@ -1,9 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Fitoschido"
+			"Fitoschido",
+			"Vfc"
 		]
 	},
 	"createtopicpage": "Crea una pàgina",
-	"articleplaceholder-abouttopic-create-article-label": "Títol de l’article"
+	"articleplaceholder-abouttopic-create-article-title": "Creació d’un article nou",
+	"articleplaceholder-abouttopic-create-article-label": "Títol de l’article",
+	"articleplaceholder-abouttopic-create-article-button": "Crea un article",
+	"articleplaceholder-abouttopic-lua-entity": "Entitat",
+	"articleplaceholder-abouttopic-lua-reference": "Referència",
+	"articleplaceholder-createpage-title": "Crea $1"
 }
