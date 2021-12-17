@@ -5,8 +5,13 @@
 		]
 	},
 	"createtopicpage": "Crea pàggina",
+	"articleplaceholder-abouttopic": "Supra l'argumentu",
+	"articleplaceholder-abouttopic-create-article-title": "Crea na vuci nova",
 	"articleplaceholder-abouttopic-create-article-label": "Tìtulu dâ vuci",
+	"articleplaceholder-abouttopic-create-article-button": "Crea na vuci",
+	"articleplaceholder-abouttopic-create-empty-article-button": "Accumenza na vuci nova",
 	"articleplaceholder-abouttopic-translate-article-button": "Traduci vuci",
+	"articleplaceholder-abouttopic-create-article-submit-button": "Manna",
 	"articleplaceholder-abouttopic-article-exists-error": "Na vuci cu stu nomu esisti già",
 	"articleplaceholder-createpage-title": "Crea $1",
 	"articleplaceholder-abouttopic-icon-title": "Nfurmazzioni"
