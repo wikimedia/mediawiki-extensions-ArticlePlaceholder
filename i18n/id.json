@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Beeyan",
+			"Daud I.F. Argana",
 			"Gombang",
 			"Hidayatsrf",
 			"J Nia30",
@@ -29,5 +30,10 @@
 	"articleplaceholder-abouttopic-lua-reference": "Referensi",
 	"articleplaceholder-abouttopic-lua-identifier": "Sumber luar",
 	"articleplaceholder-search-header": "Temukan data tentang topik ini",
-	"articleplaceholder-createpage-title": "Buat $1"
+	"articleplaceholder-createpage-title": "Buat $1",
+	"articleplaceholder-createpage-alreadyexists": "Halaman dengan judul $1 sudah ada. Tolong pilih halaman lain.",
+	"articleplaceholder-createpage-notitleprovided": "Tidak ada judul yang dimasukkan, tolong masukkan judul untuk halaman yang Anda ingin buat.",
+	"articleplaceholder-createpage-invalidtitleprovided": "Judul yang Anda masukkan tidak valid. Tolong berikan judul yang valid.",
+	"articleplaceholder-abouttopic-topmessage-text": "Ini adalah tampilan otomatis berdasarakn [$1 data dari {{WBREPONAME}}].<br />Belum ada artikel lengkapnya, tetapi Anda bisa membantu dengan membuatnya.",
+	"articleplaceholder-abouttopic-icon-title": "Informasi"
 }

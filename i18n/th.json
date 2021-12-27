@@ -5,7 +5,12 @@
 		]
 	},
 	"createtopicpage": "สร้างหน้า",
+	"articleplaceholder-desc": "จัดเตรียมหน้าพิเศษพร้อมข้อมูลใน{{WBREPONAME}}เกี่ยวกับบางหัวข้อ พร้อมคำเชิญให้สร้างบทความสำหรับหัวข้อ",
 	"articleplaceholder-abouttopic": "เกี่ยวกับหัวข้อ",
+	"articleplaceholder-abouttopic-intro": "หน้าพิเศษนี้แสดงภาพรวมของหัวข้อที่ขึ้นกับข้อมูลจาก{{WBREPONAME}}",
+	"articleplaceholder-abouttopic-entityid": "กรุณาป้อนไอดีรายการ ตัวอย่างเช่น Q12345",
+	"articleplaceholder-abouttopic-submit": "งานฝืมือ",
+	"articleplaceholder-abouttopic-no-entity-error": "นี่ไม่ใช่ไอดีรายการที่ถูกต้อง",
 	"articleplaceholder-abouttopic-create-article-title": "สร้างบทความใหม่",
 	"articleplaceholder-abouttopic-create-article-label": "ชื่อบทความ",
 	"articleplaceholder-abouttopic-create-article-mandatory": "ต้องระบุชื่อบทความ",
@@ -15,7 +20,13 @@
 	"articleplaceholder-abouttopic-translate-article-button": "แปลบทความ",
 	"articleplaceholder-abouttopic-create-article-submit-button": "ส่ง",
 	"articleplaceholder-abouttopic-article-exists-error": "มีบทความชื่อนี้อยู่แล้ว",
+	"articleplaceholder-abouttopic-lua-entity": "เอนทิตี",
 	"articleplaceholder-abouttopic-lua-reference": "แหล่งอ้างอิง",
 	"articleplaceholder-abouttopic-lua-identifier": "ทรัพยากรภายนอก",
-	"articleplaceholder-createpage-title": "สร้าง $1"
+	"articleplaceholder-search-header": "ค้นพบข้อมูลเกี่ยวกับหัวข้อ",
+	"articleplaceholder-createpage-title": "สร้าง $1",
+	"articleplaceholder-createpage-alreadyexists": "มีหน้าที่ชื่อ $1 อยู่แล้ว กรุณาเลือกหน้าอื่น",
+	"articleplaceholder-createpage-notitleprovided": "ไม่ได้ป้อนชื่อ กรุณาป้อนชื่อของหน้าที่คุณต้องการที่จะสร้าง",
+	"articleplaceholder-createpage-invalidtitleprovided": "ชื่อที่คุณป้อนไม่ถูกต้อง กรุณาระบุชื่อที่ถูกต้อง",
+	"articleplaceholder-abouttopic-icon-title": "ข้อมูล"
 }
