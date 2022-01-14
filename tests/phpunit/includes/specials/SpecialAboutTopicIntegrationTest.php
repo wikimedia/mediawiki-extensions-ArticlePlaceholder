@@ -134,7 +134,7 @@ class SpecialAboutTopicIntegrationTest extends SpecialPageTestBase {
 
 		$expected = '<div class="mw-articleplaceholder-topmessage-container">';
 		$expected = $expected . '<div class="mw-articleplaceholder-topmessage-container-left">';
-		$expected = $expected . '<span aria-disabled=\'false\' title=\'(articleplaceholder-abouttopic-icon-title)\' ';
+		$expected = $expected . '<span title=\'(articleplaceholder-abouttopic-icon-title)\' ';
 		$expected = $expected . 'class=\'oo-ui-widget ';
 		$expected = $expected . 'oo-ui-widget-enabled oo-ui-iconElement-icon oo-ui-icon-infoFilled oo-ui-iconElement ';
 		$expected = $expected . 'oo-ui-labelElement-invisible oo-ui-iconWidget\'></span></div>';
