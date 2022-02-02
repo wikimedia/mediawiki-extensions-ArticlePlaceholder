@@ -6,7 +6,8 @@
 			"Laboramus",
 			"Okras",
 			"Семён",
-			"Annablazeprobable"
+			"Annablazeprobable",
+			"Base"
 		]
 	},
 	"createtopicpage": "Создать страницу",
@@ -33,6 +34,6 @@
 	"articleplaceholder-createpage-alreadyexists": "Страницы с названием $1 уже существует. Пожалуйста, выберите другое название.",
 	"articleplaceholder-createpage-notitleprovided": "Заголовок не был введён. Пожалуйста, укажите заголовок для страницы, которую вы хотите создать.",
 	"articleplaceholder-createpage-invalidtitleprovided": "Заголовок некорректен. Пожалуйста, укажите корректный заголовок.",
-	"articleplaceholder-abouttopic-topmessage-text": "Это автоматическая версия, основанная на [$1 data from {{WBREPONAME}}].<br />Полноценной статьи еще не существует, но вы можете помочь создать ее.",
+	"articleplaceholder-abouttopic-topmessage-text": "Это автоматическая версия, основанная на [$1 данных из {{GRAMMAR:locative|{{WBREPONAME}}}}].<br />Полноценной статьи ещё не существует, но вы можете помочь создать её.",
 	"articleplaceholder-abouttopic-icon-title": "Информация"
 }
