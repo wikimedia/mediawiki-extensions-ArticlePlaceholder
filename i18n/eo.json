@@ -4,6 +4,7 @@
 			"KuboF",
 			"Lucas",
 			"Robin van der Vliet",
+			"Spenĉjo",
 			"Venca24"
 		]
 	},
@@ -11,7 +12,7 @@
 	"articleplaceholder-desc": "Provizas specialan paĝon kun informoj de {{WBREPONAME}} pri koncerna temo kun invito krei artikolon pri la temo",
 	"articleplaceholder-abouttopic": "Pri la temo",
 	"articleplaceholder-abouttopic-intro": "Ĉi tiu speciala paĝo prezentas al vi rapidan superrigardon de temo bazita sur datumoj de {{WBREPONAME}}.",
-	"articleplaceholder-abouttopic-entityid": "Bonvolu eniri eran identigilon, ekzemple Q12345",
+	"articleplaceholder-abouttopic-entityid": "Entajpu eran identigilon, ekzemple Q12345",
 	"articleplaceholder-abouttopic-submit": "krei",
 	"articleplaceholder-abouttopic-no-entity-error": "Tio ĉi ne estas ĝusta identigilo.",
 	"articleplaceholder-abouttopic-create-article-title": "Krei novan artikolon",
