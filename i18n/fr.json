@@ -30,6 +30,6 @@
 	"articleplaceholder-createpage-alreadyexists": "La page de titre $1 existe déjà. Veuillez en choisir un autre.",
 	"articleplaceholder-createpage-notitleprovided": "Aucun titre n’a été saisi, veuillez en saisir un pour la page que vous voulez créer.",
 	"articleplaceholder-createpage-invalidtitleprovided": "Le titre que vous avez saisi n’est pas valide. Veuillez fournir un titre valide.",
-	"articleplaceholder-abouttopic-topmessage-text": "Ceci est un affichage automatique basé sur [$1 données de {{WBREPONAME}}].<br />Il n’y a pas encore d’article complet, mais vous pouvez aider à en créer un.",
-	"articleplaceholder-abouttopic-icon-title": "Information"
+	"articleplaceholder-abouttopic-topmessage-text": "Ceci est un affichage automatique basé sur [$1 données de {{WBREPONAME}}].<br /> Il n’y a encore aucun article complet, mais vous pouvez aider à en créer un.",
+	"articleplaceholder-abouttopic-icon-title": "Informations"
 }
