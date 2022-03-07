@@ -6,8 +6,12 @@
 		]
 	},
 	"createtopicpage": "Pele vıraze",
+	"articleplaceholder-abouttopic": "Heqa mewzuyi de",
 	"articleplaceholder-abouttopic-submit": "huner",
 	"articleplaceholder-abouttopic-create-article-label": "Sernameyê meqaleyi",
+	"articleplaceholder-abouttopic-create-article-button": "Yew meqale vıraze",
+	"articleplaceholder-abouttopic-translate-article-label": "Zıwanê çımeyi:",
+	"articleplaceholder-abouttopic-translate-article-button": "Meqaleyi bıçarne",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Qeyd ke",
 	"articleplaceholder-abouttopic-lua-reference": "Çıme",
 	"articleplaceholder-createpage-title": "$1 vıraze"
