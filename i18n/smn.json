@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Yupik"
+			"Yupik",
+			"Seipinne"
 		]
 	},
-	"createtopicpage": "Räähti siijđo"
+	"createtopicpage": "Räähti siijđo",
+	"articleplaceholder-abouttopic-create-article-submit-button": "Vuolgât"
 }
