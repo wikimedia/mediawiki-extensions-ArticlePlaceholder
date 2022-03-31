@@ -4,13 +4,14 @@
 			"FarsiNevis",
 			"Jeeputer",
 			"Ladsgroup",
-			"Reza1615"
+			"Reza1615",
+			"Beginneruser"
 		]
 	},
 	"createtopicpage": "ایجاد صفحه",
 	"articleplaceholder-abouttopic": "درباره موضوع",
 	"articleplaceholder-abouttopic-no-entity-error": "این یک شناسه معتبر آیتم نیست.",
-	"articleplaceholder-abouttopic-create-article-title": "یک مقاله جدید بسازید",
+	"articleplaceholder-abouttopic-create-article-title": "ایجاد یک مقالۀ جدید",
 	"articleplaceholder-abouttopic-create-article-label": "عنوان مقاله",
 	"articleplaceholder-abouttopic-create-article-mandatory": "عنوان مقاله اجباری است.",
 	"articleplaceholder-abouttopic-create-article-button": "یک مقاله بسازید",
@@ -25,7 +26,7 @@
 	"articleplaceholder-search-header": "کشف اطلاعات در مورد موضوع",
 	"articleplaceholder-createpage-title": "ایجاد $1",
 	"articleplaceholder-createpage-alreadyexists": "صفحه‌ای با عنوان «$1» از قبل وجود دارد. لطفاً عنوان دیگری انتخاب کنید.",
-	"articleplaceholder-createpage-notitleprovided": "عنوانی وارد نشده است. لطفاً برای صفحهٔ مورد نظرتان عنوانی برگزینید.",
+	"articleplaceholder-createpage-notitleprovided": "هیچ عنوانی وارد نشده است، یک عنوان برای صفحه‌ای که شما می‌خواهید ایجاد کنید وارد کنید.",
 	"articleplaceholder-createpage-invalidtitleprovided": "عنوانی که وارد کردید نامعتبر است. لطفاً عنوانی معتبر ارائه دهید.",
 	"articleplaceholder-abouttopic-topmessage-text": "این یک نمای خودکار برپایهٔ [$1 داده‌های گرفته‌شده از {{WBREPONAME}}] است.<br />هنوز مقالهٔ کاملی موجود نیست، اما می‌توانید در ایجاد آن کمک کنید.",
 	"articleplaceholder-abouttopic-icon-title": "اطلاعات"
