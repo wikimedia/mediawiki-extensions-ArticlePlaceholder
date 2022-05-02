@@ -26,6 +26,6 @@
 	"articleplaceholder-search-header": "کشف اطلاعات در مورد موضوع",
 	"articleplaceholder-createpage-title": "ایجاد $1",
 	"articleplaceholder-createpage-alreadyexists": "صفحه‌ای با عنوان «$1» از قبل وجود دارد. لطفاً عنوان دیگری انتخاب کنید.",
-	"articleplaceholder-createpage-notitleprovided": "هیچ عنوانی وارد نشده است، یک عنوان برای صفحه‌ای که شما می‌خواهید ایجاد کنید وارد کنید.",
+	"articleplaceholder-createpage-notitleprovided": "عنوانی وارد نشده است. لطفاً برای صفحهٔ مورد نظرتان عنوانی برگزینید.",
 	"articleplaceholder-createpage-invalidtitleprovided": "عنوانی که وارد کردید نامعتبر است. لطفاً عنوانی معتبر ارائه دهید."
 }
