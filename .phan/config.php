@@ -10,14 +10,6 @@ $cfg['directory_list'] = array_merge(
 	]
 );
 
-// Exclude Wikibase stub for Scribunto
-$cfg['exclude_file_list'] = array_merge(
-	$cfg['exclude_file_list'],
-	[
-		'../../extensions/Wikibase/.phan/stubs/scribunto.php',
-	]
-);
-
 $cfg['exclude_analysis_directory_list'] = array_merge(
 	$cfg['exclude_analysis_directory_list'],
 	[
