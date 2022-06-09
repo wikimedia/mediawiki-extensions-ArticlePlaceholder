@@ -6,7 +6,8 @@
 			"Hamilton Abreu",
 			"Liuxinyu970226",
 			"Lucie-Aimée Kaffee",
-			"Raymond"
+			"Raymond",
+			"Verdy p"
 		]
 	},
 	"createtopicpage": "Title of [[Special:CreateTopicPage]].\n{{Identical|Create page}}",
@@ -34,5 +35,5 @@
 	"articleplaceholder-createpage-notitleprovided": "Description message on [[Special:CreateTopicPage]], which explains, that no title was given and the user should provide the title of the page to create.",
 	"articleplaceholder-createpage-invalidtitleprovided": "Description message on [[Special:CreateTopicPage]], which explains, that an invalid title was given and the user should provide a valid title of the page to create.",
 	"articleplaceholder-abouttopic-topmessage-text": "Text of the explanation message shown inside the top bar.\n* $1 - URL of the item providing the data",
-	"articleplaceholder-abouttopic-icon-title": "Title of the icon on the top bar (left in LTR, right in LTR)."
+	"articleplaceholder-abouttopic-icon-title": "Title of the icon on the top bar (left in LTR, right in LTR).\n{{Identical|Information}}"
 }
