@@ -2,13 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Revi",
-			"Ykhwong"
+			"Ykhwong",
+			"Bluehill"
 		]
 	},
 	"createtopicpage": "문서 만들기",
 	"articleplaceholder-desc": "특정 주제에 대한 {{WBREPONAME}} 정보를 다루는 특수 문서를 제공하며, 해당 주제에 대한 새 문서를 만들도록 추천합니다",
 	"articleplaceholder-abouttopic": "주제에 대하여",
-	"articleplaceholder-abouttopic-intro": "이 특수 문서는 {{WBREPONAME}}으로 특정한 주제에 대한 문서를 생성합니다.",
+	"articleplaceholder-abouttopic-intro": "이 특수 문서는 {{WBREPONAME}}의 데이터를 기반으로 특정한 주제에 대한 간략한 개요를 제공합니다.",
 	"articleplaceholder-abouttopic-entityid": "Q12345와 같은 항목 ID를 입력해 주십시오.",
 	"articleplaceholder-abouttopic-no-entity-error": "유효한 항목 ID가 아닙니다.",
 	"articleplaceholder-abouttopic-create-article-title": "새 문서 만들기",
