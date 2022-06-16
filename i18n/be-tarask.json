@@ -10,6 +10,7 @@
 	"createtopicpage": "Стварыць старонку",
 	"articleplaceholder-abouttopic": "Пра тэму",
 	"articleplaceholder-abouttopic-submit": "стварыць",
+	"articleplaceholder-abouttopic-no-entity-error": "Гэта не зьяўляецца слушным ідэнтыфікатарам элемэнту",
 	"articleplaceholder-abouttopic-create-article-title": "Стварыць новы артыкул",
 	"articleplaceholder-abouttopic-create-article-label": "Назва артыкулу",
 	"articleplaceholder-abouttopic-create-article-button": "Стварыць артыкул",
