@@ -35,7 +35,7 @@ class SpecialCreateTopicPage extends UnlistedSpecialPage {
 		}
 		$page = $this->getRequest()->getVal( 'wptitleinput', $par );
 		if ( $page === '' || $page === null ) {
-			$this->showNoOrInvalidTitleGivenMessage( 'valid' );
+			$this->showNoOrInvalidTitleGivenMessage();
 			return;
 		}
 		$title = Title::newFromText( $page );
@@ -75,9 +75,9 @@ class SpecialCreateTopicPage extends UnlistedSpecialPage {
 	 * Displays a form that gives the user the information, that the page title, he wants to
 	 * create, is invalid or none is given and that he should provide one.
 	 *
-	 * @param string $invalid Whether the title is valid or invalid
+	 * @param string $invalid
 	 */
-	private function showNoOrInvalidTitleGivenMessage( $invalid = 'valid' ) {
+	private function showNoOrInvalidTitleGivenMessage( $invalid = 'missing' ) {
 		$this->showTitleInputWithMessage(
 			$this->msg( $invalid === 'invalid' ?
 				'articleplaceholder-createpage-invalidtitleprovided' :

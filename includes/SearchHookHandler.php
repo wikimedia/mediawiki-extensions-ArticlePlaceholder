@@ -32,16 +32,6 @@ class SearchHookHandler {
 	private $languageCode;
 
 	/**
-	 * @var string
-	 */
-	private $repoScriptPath;
-
-	/**
-	 * @var string
-	 */
-	private $repoUrl;
-
-	/**
 	 * @var ItemNotabilityFilter
 	 */
 	private $itemNotabilityFilter;
@@ -81,8 +71,6 @@ class SearchHookHandler {
 		return new self(
 			$termSearchInteractor,
 			$specialPage->getConfig()->get( 'LanguageCode' ),
-			$clientSettings->getSetting( 'repoScriptPath' ),
-			$clientSettings->getSetting( 'repoUrl' ),
 			$itemNotabilityFilter,
 			$statsdDataFactory
 		);
@@ -91,23 +79,17 @@ class SearchHookHandler {
 	/**
 	 * @param TermSearchInteractor $termSearchInteractor
 	 * @param string $languageCode content language
-	 * @param string $repoScriptPath
-	 * @param string $repoUrl
 	 * @param ItemNotabilityFilter $itemNotabilityFilter
 	 * @param StatsdDataFactoryInterface $statsdDataFactory
 	 */
 	public function __construct(
 		TermSearchInteractor $termSearchInteractor,
 		$languageCode,
-		$repoScriptPath,
-		$repoUrl,
 		ItemNotabilityFilter $itemNotabilityFilter,
 		StatsdDataFactoryInterface $statsdDataFactory
 	) {
 		$this->termSearchInteractor = $termSearchInteractor;
 		$this->languageCode = $languageCode;
-		$this->repoScriptPath = $repoScriptPath;
-		$this->repoUrl = $repoUrl;
 		$this->itemNotabilityFilter = $itemNotabilityFilter;
 		$this->statsdDataFactory = $statsdDataFactory;
 	}
@@ -134,15 +116,14 @@ class SearchHookHandler {
 		}
 
 		$instance = self::newFromGlobalState( $specialSearch );
-		$instance->addToSearch( $specialSearch, $output, $term );
+		$instance->addToSearch( $output, $term );
 	}
 
 	/**
-	 * @param SpecialSearch $specialSearch
 	 * @param OutputPage $output
 	 * @param string $term
 	 */
-	public function addToSearch( SpecialSearch $specialSearch, OutputPage $output, $term ) {
+	private function addToSearch( OutputPage $output, $term ): void {
 		$termSearchResults = $this->getTermSearchResults( $term );
 
 		if ( !empty( $termSearchResults ) ) {
@@ -245,13 +226,12 @@ class SearchHookHandler {
 	 * @return TermSearchResult[]
 	 */
 	private function searchEntities( $term ) {
-		$searchResults = $this->termSearchInteractor->searchForEntities(
+		return $this->termSearchInteractor->searchForEntities(
 			$term,
 			$this->languageCode,
 			'item',
 			[ TermIndexEntry::TYPE_LABEL, TermIndexEntry::TYPE_ALIAS ]
 		);
-		return $searchResults;
 	}
 
 }

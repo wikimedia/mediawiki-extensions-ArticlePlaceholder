@@ -22,6 +22,7 @@ use Wikibase\Lib\Interactors\MatchingTermsLookupSearchInteractor;
 use Wikibase\Lib\LanguageFallbackChainFactory;
 use Wikibase\Lib\TermIndexEntry;
 use Wikibase\Lib\Tests\Store\MockMatchingTermsLookup;
+use Wikimedia\TestingAccessWrapper;
 
 /**
  * @group ArticlePlaceholder
@@ -154,14 +155,12 @@ class SearchHookHandlerTest extends MediaWikiIntegrationTestCase {
 
 		$language = $this->getLanguageCode();
 
-		return new SearchHookHandler(
+		return TestingAccessWrapper::newFromObject( new SearchHookHandler(
 			$this->getMockedTermSearchInteractor( $language, $doNotReturnTerms ),
 			$language,
-			'repo-script-path',
-			'repo-url',
 			$itemNotabilityFilter,
 			$statsdDataFactory
-		);
+		) );
 	}
 
 	public function testNewFromGlobalState() {
@@ -197,13 +196,12 @@ class SearchHookHandlerTest extends MediaWikiIntegrationTestCase {
 	 * @dataProvider provideAddToSearch
 	 */
 	public function testAddToSearch( $message, $term, $expected, $doNotReturnTerms = false ) {
-		$specialSearch = $this->getSpecialSearch();
 		$output = new OutputPage( new RequestContext() );
 		$output->setTitle( Title::makeTitle( -1, 'Search' ) );
 
 		$hasResults = $noResults = 0;
 		$searchHookHander = $this->newSearchHookHandler( $doNotReturnTerms, $hasResults, $noResults );
-		$searchHookHander->addToSearch( $specialSearch, $output, $term );
+		$searchHookHander->addToSearch( $output, $term );
 		$html = $output->getHTML();
 
 		$this->assertStringNotContainsString( 'Q111', $html );
@@ -214,13 +212,12 @@ class SearchHookHandlerTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function testAddToSearch_nothingFound() {
-		$specialSearch = $this->getSpecialSearch();
 		$output = new OutputPage( new RequestContext() );
 		$output->setTitle( Title::makeTitle( -1, 'Search' ) );
 
 		$hasResults = $noResults = 0;
 		$searchHookHander = $this->newSearchHookHandler( false, $hasResults, $noResults );
-		$searchHookHander->addToSearch( $specialSearch, $output, 'blah blah blah' );
+		$searchHookHander->addToSearch( $output, 'blah blah blah' );
 		$html = $output->getHTML();
 
 		$this->assertSame( '', $html );

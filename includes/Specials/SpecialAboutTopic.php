@@ -137,9 +137,9 @@ class SpecialAboutTopic extends SpecialPage {
 	/**
 	 * @param string|null $itemIdString
 	 */
-	private function showContent( $itemIdString ) {
+	private function showContent( ?string $itemIdString ) {
 		$out = $this->getOutput();
-		$itemId = $this->getItemIdParam( 'entityid', $itemIdString );
+		$itemId = $this->getItemIdParam( $itemIdString );
 
 		if ( $itemId !== null ) {
 			$out->setProperty( 'wikibase_item', $itemId->getSerialization() );
@@ -219,24 +219,12 @@ class SpecialAboutTopic extends SpecialPage {
 	}
 
 	/**
-	 * @param string $name
-	 * @param string $fallback
-	 *
-	 * @return string
-	 */
-	private function getTextParam( $name, $fallback ) {
-		$value = $this->getRequest()->getText( $name, $fallback );
-		return trim( $value );
-	}
-
-	/**
-	 * @param string $name
-	 * @param string $fallback
+	 * @param string|null $fallback
 	 *
 	 * @return ItemId|null
 	 */
-	private function getItemIdParam( $name, $fallback ) {
-		$rawId = $this->getTextParam( $name, $fallback );
+	private function getItemIdParam( ?string $fallback ): ?ItemId {
+		$rawId = trim( $this->getRequest()->getText( 'entityid', $fallback ?? '' ) );
 
 		if ( $rawId === '' ) {
 			return null;
