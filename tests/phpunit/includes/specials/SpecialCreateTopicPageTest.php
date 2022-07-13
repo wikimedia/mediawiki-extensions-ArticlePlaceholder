@@ -29,7 +29,7 @@ class SpecialCreateTopicPageTest extends MediaWikiIntegrationTestCase {
 	/**
 	 * @dataProvider executeDataProvider
 	 */
-	public function testExecute( $testTitle, $expected ) {
+	public function testExecute( string $testTitle, string $expected ) {
 		$context = new DerivativeContext( RequestContext::getMain() );
 		$title = SpecialPage::getTitleFor( 'CreateTopicPage', $testTitle );
 		$context->setTitle( $title );

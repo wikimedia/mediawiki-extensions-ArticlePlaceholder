@@ -10,6 +10,7 @@ use HashSiteStore;
 use MediaWiki\MediaWikiServices;
 use Site;
 use SiteLookup;
+use SpecialPage;
 use SpecialPageTestBase;
 use Wikibase\Client\Hooks\OtherProjectsSidebarGeneratorFactory;
 use Wikibase\Client\Tests\Mocks\MockClientStore;
@@ -32,7 +33,7 @@ use Wikibase\Repo\Tests\NewItem;
 class SpecialAboutTopicIntegrationTest extends SpecialPageTestBase {
 
 	/**
-	 * @var OutputPage
+	 * @var SpecialPage
 	 */
 	private $page;
 
@@ -59,7 +60,7 @@ class SpecialAboutTopicIntegrationTest extends SpecialPageTestBase {
 		$this->inMemoryLookup = new InMemoryEntityLookup( $testItem );
 	}
 
-	private function newSettings() {
+	private function newSettings(): SettingsArray {
 		$defaults = [
 			'siteGlobalID' => 'local-non-default',
 			'otherProjectsLinks' => [ 'non-default' ],
@@ -71,7 +72,7 @@ class SpecialAboutTopicIntegrationTest extends SpecialPageTestBase {
 	/**
 	 * @return SiteLookup
 	 */
-	private function getSiteLookupMock() {
+	private function getSiteLookupMock(): SiteLookup {
 		$sites = [];
 
 		$site = new Site();

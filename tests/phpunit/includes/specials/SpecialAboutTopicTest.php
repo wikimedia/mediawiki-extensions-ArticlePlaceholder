@@ -15,6 +15,7 @@ use Wikibase\Client\WikibaseClient;
 use Wikibase\DataModel\Entity\EntityIdParser;
 use Wikibase\DataModel\Entity\Item;
 use Wikibase\DataModel\Entity\ItemId;
+use Wikibase\DataModel\Services\Lookup\EntityLookup;
 use Wikibase\Lib\Store\SiteLinkLookup;
 use Wikibase\Lib\Tests\MockRepository;
 
@@ -80,11 +81,11 @@ class SpecialAboutTopicTest extends MediaWikiIntegrationTestCase {
 
 	/**
 	 * @param string $itemIdSerialization
-	 * @param bool $searchEngineIndexed
+	 * @param bool|string $searchEngineIndexed
 	 *
 	 * @return OutputPage
 	 */
-	private function getInstanceOutput( $itemIdSerialization, $searchEngineIndexed = true ) {
+	private function getInstanceOutput( string $itemIdSerialization, $searchEngineIndexed = true ): OutputPage {
 		$context = new DerivativeContext( RequestContext::getMain() );
 		$title = SpecialPage::getTitleFor( 'AboutTopic' );
 		$context->setTitle( $title );
@@ -96,7 +97,7 @@ class SpecialAboutTopicTest extends MediaWikiIntegrationTestCase {
 		$context->setOutput( $outputPage );
 
 		$instance = new SpecialAboutTopic(
-			$this->getMockBuilder( AboutTopicRenderer::class )->disableOriginalConstructor()->getMock(),
+			$this->createMock( AboutTopicRenderer::class ),
 			$this->getEntityIdParser(),
 			$this->getSiteLinkLookup(),
 			MediaWikiServices::getInstance()->getTitleFactory(),
@@ -113,7 +114,7 @@ class SpecialAboutTopicTest extends MediaWikiIntegrationTestCase {
 	/**
 	 * @return SiteLinkLookup
 	 */
-	private function getSiteLinkLookup() {
+	private function getSiteLinkLookup(): SiteLinkLookup {
 		$siteLinkLookup = $this->createMock( SiteLinkLookup::class );
 
 		$siteLinkLookup->method( 'getLinks' )
@@ -126,7 +127,7 @@ class SpecialAboutTopicTest extends MediaWikiIntegrationTestCase {
 	/**
 	 * @return EntityIdParser
 	 */
-	private function getEntityIdParser() {
+	private function getEntityIdParser(): EntityIdParser {
 		$idParser = $this->createMock( EntityIdParser::class );
 
 		$idParser->method( 'parse' )
@@ -136,7 +137,7 @@ class SpecialAboutTopicTest extends MediaWikiIntegrationTestCase {
 		return $idParser;
 	}
 
-	private function getEntityLookup() {
+	private function getEntityLookup(): EntityLookup {
 		$item = new Item( new ItemId( 'Q1234' ) );
 		$item->setLabel( 'en', 'Beer' );
 		$item->setDescription( 'en', 'yummy beverage' );
@@ -150,29 +151,17 @@ class SpecialAboutTopicTest extends MediaWikiIntegrationTestCase {
 
 	public function provideRobotPolicy() {
 		return [
-			[
-				true,
-				true
-			],
-			[
-				false,
-				false
-			],
-			[
-				'Q1',
-				false
-			],
-			[
-				'Q2000',
-				true
-			]
+			[ true, true ],
+			[ false, false ],
+			[ 'Q1', false ],
+			[ 'Q2000', true ]
 		];
 	}
 
 	/**
 	 * @dataProvider provideRobotPolicy
 	 */
-	public function testRobotPolicy( $searchEngineIndexed, $expected ) {
+	public function testRobotPolicy( $searchEngineIndexed, bool $expected ) {
 		$output = $this->getInstanceOutput( 'Q1234', $searchEngineIndexed );
 		$metatags = $output->getHeadLinksArray();
 

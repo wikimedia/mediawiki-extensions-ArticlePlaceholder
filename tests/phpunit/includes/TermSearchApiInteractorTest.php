@@ -17,7 +17,7 @@ use Wikibase\DataModel\Term\Term;
  */
 class TermSearchApiInteractorTest extends \PHPUnit\Framework\TestCase {
 
-	private function mockApiInteractor() {
+	private function mockApiInteractor(): RepoApiInteractor {
 		$mock = $this->createMock( RepoApiInteractor::class );
 		$mock->method( 'request' )
 			->willReturnCallback( static function ( array $params ) {

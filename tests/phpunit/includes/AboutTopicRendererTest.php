@@ -54,7 +54,7 @@ class AboutTopicRendererTest extends MediaWikiIntegrationTestCase {
 		ItemId $itemId,
 		$canCreate = true,
 		TitleFactory $titleFactory = null
-	) {
+	): OutputPage {
 		$context = new DerivativeContext( RequestContext::getMain() );
 		$outputPage = $context->getOutput();
 		$title = SpecialPage::getTitleFor( 'AboutTopic' );
@@ -63,27 +63,18 @@ class AboutTopicRendererTest extends MediaWikiIntegrationTestCase {
 		// is set in SpecialAboutTopic
 		$outputPage->setProperty( 'wikibase_item', $itemId->getSerialization() );
 
-		$otherProjectsSidebarGenerator = $this->getMockBuilder( OtherProjectsSidebarGenerator::class )
-			->disableOriginalConstructor()
-			->getMock();
-
-		$otherProjectsSidebarGenerator->expects( $this->once() )
+		$sidebarGenerator = $this->createMock( OtherProjectsSidebarGenerator::class );
+		$sidebarGenerator->expects( $this->once() )
 			->method( 'buildProjectLinkSidebarFromItemId' )
 			->with( $itemId )
 			->willReturn( 'other-projects-sidebar' );
 
-		$otherProjectsSidebarGeneratorFactory = $this->getMockBuilder(
-			OtherProjectsSidebarGeneratorFactory::class
-		)->disableOriginalConstructor()
-		->getMock();
-
-		$otherProjectsSidebarGeneratorFactory->expects( $this->once() )
+		$sidebarGeneratorFactory = $this->createMock( OtherProjectsSidebarGeneratorFactory::class );
+		$sidebarGeneratorFactory->expects( $this->once() )
 			->method( 'getOtherProjectsSidebarGenerator' )
-			->willReturn( $otherProjectsSidebarGenerator );
+			->willReturn( $sidebarGenerator );
 
-		$permMock = $this->getMockBuilder( PermissionManager::class )
-			->disableOriginalConstructor()
-			->getMock();
+		$permMock = $this->createMock( PermissionManager::class );
 		$permMock->method( 'quickUserCan' )
 			->willReturn( $canCreate );
 
@@ -97,7 +88,7 @@ class AboutTopicRendererTest extends MediaWikiIntegrationTestCase {
 			$this->getSiteLookup(),
 			'wikipedia',
 			$titleFactory ?: MediaWikiServices::getInstance()->getTitleFactory(),
-			$otherProjectsSidebarGeneratorFactory,
+			$sidebarGeneratorFactory,
 			$permMock,
 			$repoLinker
 		);
@@ -185,24 +176,20 @@ class AboutTopicRendererTest extends MediaWikiIntegrationTestCase {
 	/**
 	 * @return LanguageFallbackLabelDescriptionLookupFactory
 	 */
-	private function getTermLookupFactory() {
-		$labelDescriptionLookupFactory = $this->getMockBuilder(
-				LanguageFallbackLabelDescriptionLookupFactory::class
-			)
-			->disableOriginalConstructor()
-			->getMock();
-		$labelDescriptionLookupFactory->expects( $this->atLeastOnce() )
+	private function getTermLookupFactory(): LanguageFallbackLabelDescriptionLookupFactory {
+		$factory = $this->createMock( LanguageFallbackLabelDescriptionLookupFactory::class );
+		$factory->expects( $this->atLeastOnce() )
 			->method( 'newLabelDescriptionLookup' )
 			->with( Language::factory( 'eo' ) )
 			->willReturn( $this->getLabelDescriptionLookup() );
 
-		return $labelDescriptionLookupFactory;
+		return $factory;
 	}
 
 	/**
 	 * @return LabelDescriptionLookup
 	 */
-	private function getLabelDescriptionLookup() {
+	private function getLabelDescriptionLookup(): LabelDescriptionLookup {
 		$labelDescriptionLookup = $this->createMock( LabelDescriptionLookup::class );
 		$labelDescriptionLookup->method( 'getLabel' )
 			->willReturnCallback( static function ( ItemId $id ) {
@@ -220,7 +207,7 @@ class AboutTopicRendererTest extends MediaWikiIntegrationTestCase {
 	/**
 	 * @return SiteLinkLookup
 	 */
-	private function getSiteLinkLookup() {
+	private function getSiteLinkLookup(): SiteLinkLookup {
 		$siteLinkLookup = $this->createMock( SiteLinkLookup::class );
 
 		$siteLinkLookup->method( 'getSiteLinksForItem' )
@@ -235,11 +222,8 @@ class AboutTopicRendererTest extends MediaWikiIntegrationTestCase {
 		return $siteLinkLookup;
 	}
 
-	private function getSiteLookup() {
-		$siteLookup = $this->getMockBuilder( SiteLookup::class )
-			->disableOriginalConstructor()
-			->getMock();
-
+	private function getSiteLookup(): SiteLookup {
+		$siteLookup = $this->createMock( SiteLookup::class );
 		$siteLookup->method( 'getSite' )
 			->willReturnCallback( static function ( $siteId ) {
 				$site = new Site();
@@ -258,7 +242,7 @@ class AboutTopicRendererTest extends MediaWikiIntegrationTestCase {
 						$site->setGroup( 'wikivoyage' );
 						$site->setLanguageCode( 'eo' );
 						return $site;
-					case 'null':
+					default:
 						return null;
 				}
 			} );

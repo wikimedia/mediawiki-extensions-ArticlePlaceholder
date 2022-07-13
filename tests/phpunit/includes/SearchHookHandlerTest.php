@@ -8,8 +8,6 @@ use Config;
 use Liuggio\StatsdClient\Factory\StatsdDataFactory;
 use MediaWikiIntegrationTestCase;
 use OutputPage;
-use PHPUnit\Framework\MockObject\MockObject;
-use ReflectionMethod;
 use RequestContext;
 use SpecialSearch;
 use Title;
@@ -19,7 +17,9 @@ use Wikibase\DataModel\Entity\EntityId;
 use Wikibase\DataModel\Entity\ItemId;
 use Wikibase\DataModel\Entity\NumericPropertyId;
 use Wikibase\Lib\Interactors\MatchingTermsLookupSearchInteractor;
+use Wikibase\Lib\Interactors\TermSearchInteractor;
 use Wikibase\Lib\LanguageFallbackChainFactory;
+use Wikibase\Lib\Store\MatchingTermsLookup;
 use Wikibase\Lib\TermIndexEntry;
 use Wikibase\Lib\Tests\Store\MockMatchingTermsLookup;
 use Wikimedia\TestingAccessWrapper;
@@ -34,7 +34,7 @@ use Wikimedia\TestingAccessWrapper;
  */
 class SearchHookHandlerTest extends MediaWikiIntegrationTestCase {
 
-	private function getMockMatchingTermLookup() {
+	private function getMockMatchingTermLookup(): MatchingTermsLookup {
 		$typeLabel = TermIndexEntry::TYPE_LABEL;
 		$typeAlias = TermIndexEntry::TYPE_ALIAS;
 		$typeDescription = TermIndexEntry::TYPE_DESCRIPTION;
@@ -76,7 +76,7 @@ class SearchHookHandlerTest extends MediaWikiIntegrationTestCase {
 	 *
 	 * @return TermIndexEntry
 	 */
-	private function getTermIndexEntry( $text, $languageCode, $termType, EntityId $entityId ) {
+	private function getTermIndexEntry( $text, $languageCode, $termType, EntityId $entityId ): TermIndexEntry {
 		return new TermIndexEntry( [
 			'termText' => $text,
 			'termLanguage' => $languageCode,
@@ -85,8 +85,8 @@ class SearchHookHandlerTest extends MediaWikiIntegrationTestCase {
 		] );
 	}
 
-	private function getMockedTermSearchInteractor( $language, $doNotReturnTerms = false ) {
-		$termSearchInteractor = new MatchingTermsLookupSearchInteractor(
+	private function getMockedTermSearchInteractor( $language, $doNotReturnTerms = false ): TermSearchInteractor {
+		return new MatchingTermsLookupSearchInteractor(
 			$this->getMockMatchingTermLookup(),
 			new LanguageFallbackChainFactory,
 			$doNotReturnTerms
@@ -94,23 +94,6 @@ class SearchHookHandlerTest extends MediaWikiIntegrationTestCase {
 				: new FakePrefetchingTermLookup(),
 			$language
 		);
-		return $termSearchInteractor;
-	}
-
-	/**
-	 * @return SpecialSearch|MockObject
-	 */
-	private function getSpecialSearch() {
-		return $this->getMockBuilder( SpecialSearch::class )
-			->disableOriginalConstructor()
-			->getMock();
-	}
-
-	/**
-	 * @return string
-	 */
-	private function getLanguageCode() {
-		return 'en';
 	}
 
 	/**
@@ -125,10 +108,7 @@ class SearchHookHandlerTest extends MediaWikiIntegrationTestCase {
 		&$hasResults = 0,
 		&$noResults = 0
 	) {
-		$itemNotabilityFilter = $this->getMockBuilder( ItemNotabilityFilter::class )
-			->disableOriginalConstructor()
-			->getMock();
-
+		$itemNotabilityFilter = $this->createMock( ItemNotabilityFilter::class );
 		$itemNotabilityFilter->method( 'getNotableEntityIds' )
 			->with( $this->isType( 'array' ) )
 			->willReturnCallback( static function ( array $itemIds ) {
@@ -153,27 +133,25 @@ class SearchHookHandlerTest extends MediaWikiIntegrationTestCase {
 				}
 			} );
 
-		$language = $this->getLanguageCode();
-
 		return TestingAccessWrapper::newFromObject( new SearchHookHandler(
-			$this->getMockedTermSearchInteractor( $language, $doNotReturnTerms ),
-			$language,
+			$this->getMockedTermSearchInteractor( 'en', $doNotReturnTerms ),
+			'en',
 			$itemNotabilityFilter,
 			$statsdDataFactory
 		) );
 	}
 
 	public function testNewFromGlobalState() {
-		$specialPage = $this->getSpecialSearch();
+		$specialPage = $this->createMock( SpecialSearch::class );
 		$specialPage->expects( $this->once() )
 			->method( 'getConfig' )
 			->willReturn( $this->createMock( Config::class ) );
 
-		$reflectionMethod = new ReflectionMethod( SearchHookHandler::class, 'newFromGlobalState' );
-		$reflectionMethod->setAccessible( true );
-		$handler = $reflectionMethod->invoke( null, $specialPage );
+		/** @var SearchHookHandler $handler */
+		$handler = TestingAccessWrapper::newFromClass( SearchHookHandler::class );
+		$instance = $handler->newFromGlobalState( $specialPage );
 
-		$this->assertInstanceOf( SearchHookHandler::class, $handler );
+		$this->assertInstanceOf( SearchHookHandler::class, $instance );
 	}
 
 	public function provideAddToSearch() {
@@ -223,19 +201,6 @@ class SearchHookHandlerTest extends MediaWikiIntegrationTestCase {
 		$this->assertSame( '', $html );
 		$this->assertSame( 0, $hasResults );
 		$this->assertSame( 1, $noResults );
-	}
-
-	public function testOnSpecialSearchResultsAppend() {
-		$specialSearch = $this->getSpecialSearch();
-		$output = new OutputPage( new RequestContext() );
-
-		$result = SearchHookHandler::onSpecialSearchResultsAppend(
-			$specialSearch,
-			$output,
-			''
-		);
-
-		$this->assertNull( $result );
 	}
 
 }

@@ -4,7 +4,6 @@ namespace ArticlePlaceholder\Tests;
 
 use ArticlePlaceholder\SidebarBeforeOutputHookHandler;
 use MediaWikiIntegrationTestCase;
-use ReflectionMethod;
 use Skin;
 use Title;
 use WebRequest;
@@ -27,17 +26,6 @@ class SidebarBeforeOutputHookHandlerTest extends MediaWikiIntegrationTestCase {
 		parent::setUp();
 
 		$this->setUserLang( 'qqx' );
-	}
-
-	public function testNewFromGlobalState() {
-		$reflectionMethod = new ReflectionMethod(
-			SidebarBeforeOutputHookHandler::class,
-			'newFromGlobalState'
-		);
-		$reflectionMethod->setAccessible( true );
-		$handler = $reflectionMethod->invoke( null );
-
-		$this->assertInstanceOf( SidebarBeforeOutputHookHandler::class, $handler );
 	}
 
 	public function testBuildSidebarLink_wrongNamespace() {
@@ -144,7 +132,7 @@ class SidebarBeforeOutputHookHandlerTest extends MediaWikiIntegrationTestCase {
 	 *
 	 * @return Title
 	 */
-	private function getAboutTopicTitle( $subPage = null ) {
+	private function getAboutTopicTitle( $subPage = null ): Title {
 		$titleText = 'AboutTopic';
 
 		if ( $subPage ) {
@@ -169,7 +157,7 @@ class SidebarBeforeOutputHookHandlerTest extends MediaWikiIntegrationTestCase {
 	 *
 	 * @return Skin
 	 */
-	private function getSkin( Title $title, $itemIdParam = null ) {
+	private function getSkin( Title $title, string $itemIdParam = null ): Skin {
 		$request = $this->createMock( WebRequest::class );
 		$request->method( 'getText' )
 			->willReturnCallback( function ( $name, $default ) use ( $itemIdParam ) {
@@ -191,7 +179,7 @@ class SidebarBeforeOutputHookHandlerTest extends MediaWikiIntegrationTestCase {
 		return $skin;
 	}
 
-	private function getHookHandler() {
+	private function getHookHandler(): SidebarBeforeOutputHookHandler {
 		$clientStore = new MockClientStore();
 		$this->setService( 'WikibaseClient.Store', $clientStore );
 

@@ -57,9 +57,7 @@ class Scribunto_LuaArticlePlaceholderLibraryTest extends MediaWikiIntegrationTes
 	}
 
 	public function testRegister() {
-		$engine = $this->getMockBuilder( Scribunto_LuaEngine::class )
-			->disableOriginalConstructor()
-			->getMock();
+		$engine = $this->createMock( Scribunto_LuaEngine::class );
 		$engine->expects( $this->once() )
 			->method( 'registerInterface' )
 			->willReturnCallback( function (
@@ -79,11 +77,8 @@ class Scribunto_LuaArticlePlaceholderLibraryTest extends MediaWikiIntegrationTes
 		$this->assertSame( 'dummyReturnValue', $actual );
 	}
 
-	private function newInstance() {
-		$engine = $this->getMockBuilder( Scribunto_LuaEngine::class )
-			->disableOriginalConstructor()
-			->getMock();
-
+	private function newInstance(): Scribunto_LuaArticlePlaceholderLibrary {
+		$engine = $this->createMock( Scribunto_LuaEngine::class );
 		return new Scribunto_LuaArticlePlaceholderLibrary( $engine );
 	}
 
