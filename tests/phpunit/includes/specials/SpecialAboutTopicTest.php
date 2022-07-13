@@ -19,7 +19,7 @@ use Wikibase\Lib\Store\SiteLinkLookup;
 use Wikibase\Lib\Tests\MockRepository;
 
 /**
- * @covers ArticlePlaceholder\Specials\SpecialAboutTopic
+ * @covers \ArticlePlaceholder\Specials\SpecialAboutTopic
  *
  * @group ArticlePlaceholder
  *

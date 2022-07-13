@@ -5,7 +5,7 @@ namespace ArticlePlaceholder\Tests;
 use ArticlePlaceholder\Hooks;
 
 /**
- * @covers ArticlePlaceholder\Hooks
+ * @covers \ArticlePlaceholder\Hooks
  *
  * @group ArticlePlaceholder
  *
