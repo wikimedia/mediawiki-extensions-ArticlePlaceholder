@@ -16,7 +16,7 @@ use Wikibase\DataModel\Entity\ItemId;
 /**
  * @group ArticlePlaceholder
  *
- * @covers ArticlePlaceholder\SidebarBeforeOutputHookHandler
+ * @covers \ArticlePlaceholder\SidebarBeforeOutputHookHandler
  *
  * @license GPL-2.0-or-later
  * @author Marius Hoch < hoo@online.de >

@@ -22,7 +22,7 @@ use Wikibase\Lib\SettingsArray;
 use Wikibase\Repo\Tests\NewItem;
 
 /**
- * @covers ArticlePlaceholder\Specials\SpecialAboutTopic
+ * @covers \ArticlePlaceholder\Specials\SpecialAboutTopic
  *
  * @group ArticlePlaceholder
  * @group Database

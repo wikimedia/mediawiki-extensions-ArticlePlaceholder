@@ -23,7 +23,7 @@ use Wikimedia\Rdbms\SessionConsistentConnectionManager;
  * @group Database
  * @group ArticlePlaceholder
  *
- * @covers ArticlePlaceholder\ItemNotabilityFilter
+ * @covers \ArticlePlaceholder\ItemNotabilityFilter
  *
  * @license GPL-2.0-or-later
  * @author Marius Hoch

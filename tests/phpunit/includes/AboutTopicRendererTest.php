@@ -27,7 +27,7 @@ use Wikibase\Lib\Store\LanguageFallbackLabelDescriptionLookupFactory;
 use Wikibase\Lib\Store\SiteLinkLookup;
 
 /**
- * @covers ArticlePlaceholder\AboutTopicRenderer
+ * @covers \ArticlePlaceholder\AboutTopicRenderer
  *
  * @group ArticlePlaceholder
  * @group Database

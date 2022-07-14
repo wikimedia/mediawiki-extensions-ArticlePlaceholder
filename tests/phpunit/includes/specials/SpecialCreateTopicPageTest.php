@@ -9,7 +9,7 @@ use RequestContext;
 use SpecialPage;
 
 /**
- * @covers ArticlePlaceholder\Specials\SpecialCreateTopicPage
+ * @covers \ArticlePlaceholder\Specials\SpecialCreateTopicPage
  *
  * @group ArticlePlaceholder
  * @group Database
