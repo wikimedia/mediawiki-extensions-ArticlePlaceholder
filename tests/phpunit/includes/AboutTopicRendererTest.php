@@ -22,6 +22,7 @@ use Wikibase\Client\RepoLinker;
 use Wikibase\DataModel\Entity\ItemId;
 use Wikibase\DataModel\SiteLink;
 use Wikibase\DataModel\Term\Term;
+use Wikibase\DataModel\Term\TermTypes;
 use Wikibase\Lib\Store\FallbackLabelDescriptionLookup;
 use Wikibase\Lib\Store\FallbackLabelDescriptionLookupFactory;
 use Wikibase\Lib\Store\SiteLinkLookup;
@@ -178,9 +179,13 @@ class AboutTopicRendererTest extends MediaWikiIntegrationTestCase {
 	 */
 	private function getTermLookupFactory(): FallbackLabelDescriptionLookupFactory {
 		$factory = $this->createMock( FallbackLabelDescriptionLookupFactory::class );
-		$factory->expects( $this->atLeastOnce() )
+		$factory->expects( $this->once() )
 			->method( 'newLabelDescriptionLookup' )
-			->with( Language::factory( 'eo' ) )
+			->with(
+				Language::factory( 'eo' ),
+				$this->anything(),
+				[ TermTypes::TYPE_LABEL, TermTypes::TYPE_DESCRIPTION ]
+			)
 			->willReturn( $this->getLabelDescriptionLookup() );
 
 		return $factory;

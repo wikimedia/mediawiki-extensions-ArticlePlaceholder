@@ -18,6 +18,8 @@ use Wikibase\Client\RepoLinker;
 use Wikibase\Client\Usage\HashUsageAccumulator;
 use Wikibase\Client\WikibaseClient;
 use Wikibase\DataModel\Entity\ItemId;
+use Wikibase\DataModel\Term\Term;
+use Wikibase\DataModel\Term\TermTypes;
 use Wikibase\Lib\Store\FallbackLabelDescriptionLookupFactory;
 use Wikibase\Lib\Store\SiteLinkLookup;
 
@@ -114,10 +116,17 @@ class AboutTopicRenderer {
 		User $user,
 		OutputPage $output
 	) {
-		$label = $this->getLabel( $entityId, $language );
+		$termLookup = $this->termLookupFactory->newLabelDescriptionLookup(
+			$language,
+			[ $entityId ],
+			[ TermTypes::TYPE_LABEL, TermTypes::TYPE_DESCRIPTION ]
+		);
+		$label = $termLookup->getLabel( $entityId );
+		$description = $termLookup->getDescription( $entityId );
 		$canEdit = false;
 
 		if ( $label !== null ) {
+			$label = $label->getText();
 			$this->showTitle( $label, $output );
 
 			try {
@@ -138,7 +147,7 @@ class AboutTopicRenderer {
 
 		$this->showLanguageLinks( $entityId, $output );
 		$this->setOtherProjectsLinks( $entityId, $output );
-		$this->addMetaTags( $entityId, $output, $language );
+		$this->addMetaTags( $output, $description );
 	}
 
 	/**
@@ -225,40 +234,6 @@ class AboutTopicRenderer {
 	}
 
 	/**
-	 * @param ItemId $entityId
-	 * @param Language $language
-	 *
-	 * @return string|null null if the item doesn't have a label
-	 */
-	private function getLabel( ItemId $entityId, Language $language ) {
-		$label = $this->termLookupFactory->newLabelDescriptionLookup( $language )
-			->getLabel( $entityId );
-
-		if ( $label !== null ) {
-			return $label->getText();
-		}
-
-		return null;
-	}
-
-	/**
-	 * @param ItemId $entityId
-	 * @param Language $language
-	 *
-	 * @return string|null null if the item doesn't have a description
-	 */
-	private function getDescription( ItemId $entityId, Language $language ) {
-		$description = $this->termLookupFactory->newLabelDescriptionLookup( $language )
-			->getDescription( $entityId );
-
-		if ( $description !== null ) {
-			return $description->getText();
-		}
-
-		return null;
-	}
-
-	/**
 	 * Show label as page title
 	 *
 	 * @param string $label
@@ -319,14 +294,12 @@ class AboutTopicRenderer {
 	}
 
 	/**
-	 * @param ItemId $itemId
 	 * @param OutputPage $output
-	 * @param Language $language
+	 * @param Term|null $description
 	 */
-	private function addMetaTags( ItemId $itemId, OutputPage $output, Language $language ) {
-		$description = $this->getDescription( $itemId, $language );
+	private function addMetaTags( OutputPage $output, ?Term $description ) {
 		if ( $description !== null ) {
-			$output->addMeta( 'description', trim( $description ) );
+			$output->addMeta( 'description', trim( $description->getText() ) );
 		}
 	}
 
