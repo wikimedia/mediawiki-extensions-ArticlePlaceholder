@@ -107,7 +107,7 @@ class SpecialAboutTopicIntegrationTest extends SpecialPageTestBase {
 
 		$this->page = new SpecialAboutTopic(
 			new AboutTopicRenderer(
-				WikibaseClient::getLanguageFallbackLabelDescriptionLookupFactory( $services ),
+				WikibaseClient::getFallbackLabelDescriptionLookupFactory( $services ),
 				$this->store->getSiteLinkLookup(),
 				$siteLookup,
 				WikibaseClient::getLangLinkSiteGroup( $services ),

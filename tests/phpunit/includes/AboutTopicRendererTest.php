@@ -20,10 +20,10 @@ use Wikibase\Client\Hooks\OtherProjectsSidebarGenerator;
 use Wikibase\Client\Hooks\OtherProjectsSidebarGeneratorFactory;
 use Wikibase\Client\RepoLinker;
 use Wikibase\DataModel\Entity\ItemId;
-use Wikibase\DataModel\Services\Lookup\LabelDescriptionLookup;
 use Wikibase\DataModel\SiteLink;
 use Wikibase\DataModel\Term\Term;
-use Wikibase\Lib\Store\LanguageFallbackLabelDescriptionLookupFactory;
+use Wikibase\Lib\Store\FallbackLabelDescriptionLookup;
+use Wikibase\Lib\Store\FallbackLabelDescriptionLookupFactory;
 use Wikibase\Lib\Store\SiteLinkLookup;
 
 /**
@@ -174,10 +174,10 @@ class AboutTopicRendererTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 * @return LanguageFallbackLabelDescriptionLookupFactory
+	 * @return FallbackLabelDescriptionLookupFactory
 	 */
-	private function getTermLookupFactory(): LanguageFallbackLabelDescriptionLookupFactory {
-		$factory = $this->createMock( LanguageFallbackLabelDescriptionLookupFactory::class );
+	private function getTermLookupFactory(): FallbackLabelDescriptionLookupFactory {
+		$factory = $this->createMock( FallbackLabelDescriptionLookupFactory::class );
 		$factory->expects( $this->atLeastOnce() )
 			->method( 'newLabelDescriptionLookup' )
 			->with( Language::factory( 'eo' ) )
@@ -187,10 +187,10 @@ class AboutTopicRendererTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 * @return LabelDescriptionLookup
+	 * @return FallbackLabelDescriptionLookup
 	 */
-	private function getLabelDescriptionLookup(): LabelDescriptionLookup {
-		$labelDescriptionLookup = $this->createMock( LabelDescriptionLookup::class );
+	private function getLabelDescriptionLookup(): FallbackLabelDescriptionLookup {
+		$labelDescriptionLookup = $this->createMock( FallbackLabelDescriptionLookup::class );
 		$labelDescriptionLookup->method( 'getLabel' )
 			->willReturnCallback( static function ( ItemId $id ) {
 				return new Term( 'eo', 'Label of ' . $id->getSerialization() );

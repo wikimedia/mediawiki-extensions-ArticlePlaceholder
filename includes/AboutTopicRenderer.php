@@ -18,7 +18,7 @@ use Wikibase\Client\RepoLinker;
 use Wikibase\Client\Usage\HashUsageAccumulator;
 use Wikibase\Client\WikibaseClient;
 use Wikibase\DataModel\Entity\ItemId;
-use Wikibase\Lib\Store\LanguageFallbackLabelDescriptionLookupFactory;
+use Wikibase\Lib\Store\FallbackLabelDescriptionLookupFactory;
 use Wikibase\Lib\Store\SiteLinkLookup;
 
 /**
@@ -33,7 +33,7 @@ use Wikibase\Lib\Store\SiteLinkLookup;
 class AboutTopicRenderer {
 
 	/**
-	 * @var LanguageFallbackLabelDescriptionLookupFactory
+	 * @var FallbackLabelDescriptionLookupFactory
 	 */
 	private $termLookupFactory;
 
@@ -71,7 +71,7 @@ class AboutTopicRenderer {
 	private $repoLinker;
 
 	/**
-	 * @param LanguageFallbackLabelDescriptionLookupFactory $termLookupFactory
+	 * @param FallbackLabelDescriptionLookupFactory $termLookupFactory
 	 * @param SiteLinkLookup $siteLinkLookup
 	 * @param SiteLookup $siteLookup
 	 * @param string $langLinkSiteGroup
@@ -81,7 +81,7 @@ class AboutTopicRenderer {
 	 * @param RepoLinker $repoLinker
 	 */
 	public function __construct(
-		LanguageFallbackLabelDescriptionLookupFactory $termLookupFactory,
+		FallbackLabelDescriptionLookupFactory $termLookupFactory,
 		SiteLinkLookup $siteLinkLookup,
 		SiteLookup $siteLookup,
 		string $langLinkSiteGroup,
