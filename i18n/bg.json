@@ -3,10 +3,12 @@
 		"authors": [
 			"StanProg",
 			"Ted Masters",
+			"Vlad5250",
 			"Vodnokon4e"
 		]
 	},
 	"createtopicpage": "Създаване на страница",
+	"articleplaceholder-abouttopic": "За темата",
 	"articleplaceholder-abouttopic-create-article-title": "Създаване на нова статия",
 	"articleplaceholder-abouttopic-create-article-label": "Заглавие на статията",
 	"articleplaceholder-abouttopic-create-article-mandatory": "Заглавието на статията е задължително.",
@@ -17,5 +19,12 @@
 	"articleplaceholder-abouttopic-create-article-submit-button": "Изпращане",
 	"articleplaceholder-abouttopic-article-exists-error": "Вече съществува статия с такова име.",
 	"articleplaceholder-abouttopic-lua-entity": "Обект",
-	"articleplaceholder-createpage-alreadyexists": "Страница със заглавие $1 вече съществува. Моля, изберете друго."
+	"articleplaceholder-abouttopic-lua-reference": "Източник",
+	"articleplaceholder-abouttopic-lua-identifier": "Външни ресурси",
+	"articleplaceholder-search-header": "Открийте данни по темата",
+	"articleplaceholder-createpage-title": "Създаване на $1",
+	"articleplaceholder-createpage-alreadyexists": "Страница със заглавие $1 вече съществува. Моля, изберете друго.",
+	"articleplaceholder-createpage-notitleprovided": "Не е въведено заглавие, моля, въведете заглавие за страницата, която искате да създадете.",
+	"articleplaceholder-createpage-invalidtitleprovided": "Въведеното заглавие е невалидно. Моля, въведете валидно заглавие.",
+	"articleplaceholder-abouttopic-icon-title": "Информация"
 }
