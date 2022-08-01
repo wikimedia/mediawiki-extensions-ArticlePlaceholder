@@ -31,5 +31,6 @@
 	"articleplaceholder-createpage-alreadyexists": "Sidan med titeln $1 finns redan. Välj en annan.",
 	"articleplaceholder-createpage-notitleprovided": "Ingen titel har angivits, ange en titel för sidan du vill skapa.",
 	"articleplaceholder-createpage-invalidtitleprovided": "Titeln du angav är ogiltig. Tillhandahåll en giltig titel.",
+	"articleplaceholder-abouttopic-topmessage-text": "Detta är en automatisk vy baserad på [$1 data från {{WBREPONAME}}].<br />Det finns ännu ingen färdig artikel, men du kan hjälpa till att skapa en.",
 	"articleplaceholder-abouttopic-icon-title": "Information"
 }
