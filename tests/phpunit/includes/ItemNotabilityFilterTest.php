@@ -77,8 +77,8 @@ class ItemNotabilityFilterTest extends MediaWikiIntegrationTestCase {
 		$statement = new Statement( $snak );
 
 		$fingerprint = new Fingerprint();
-		$statementListNotable = new StatementList( [ $statement, $statement, $statement ] );
-		$statementListNotNotable = new StatementList( [ $statement, $statement ] );
+		$statementListNotable = new StatementList( $statement, $statement, $statement );
+		$statementListNotNotable = new StatementList( $statement, $statement );
 
 		// Notable:
 		$siteLinkList0 = new SiteLinkList( [
