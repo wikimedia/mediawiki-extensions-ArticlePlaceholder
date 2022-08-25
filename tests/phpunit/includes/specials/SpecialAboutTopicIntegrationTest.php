@@ -19,8 +19,8 @@ use Wikibase\DataModel\Entity\ItemId;
 use Wikibase\DataModel\Services\Lookup\InMemoryEntityLookup;
 use Wikibase\DataModel\SiteLink;
 use Wikibase\DataModel\SiteLinkList;
+use Wikibase\DataModel\Tests\NewItem;
 use Wikibase\Lib\SettingsArray;
-use Wikibase\Repo\Tests\NewItem;
 
 /**
  * @covers \ArticlePlaceholder\Specials\SpecialAboutTopic
