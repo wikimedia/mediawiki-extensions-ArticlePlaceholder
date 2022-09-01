@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Adeliine",
 			"Metsavend",
 			"Pikne"
 		]
@@ -10,7 +11,7 @@
 	"articleplaceholder-abouttopic": "Teema kohta",
 	"articleplaceholder-abouttopic-intro": "See erilehekülg annab kiirülevaate teemast, tuginedes Vikiandmetest pärit andmetele.",
 	"articleplaceholder-abouttopic-entityid": "Palun sisesta üksuse ID, näiteks Q12345",
-	"articleplaceholder-abouttopic-submit": "visand",
+	"articleplaceholder-abouttopic-submit": "Visanda",
 	"articleplaceholder-abouttopic-no-entity-error": "See pole sobiv üksuse ID.",
 	"articleplaceholder-abouttopic-create-article-title": "Uue artikli alustamine",
 	"articleplaceholder-abouttopic-create-article-label": "Artikli pealkiri",
@@ -28,5 +29,7 @@
 	"articleplaceholder-createpage-title": "Loo $1",
 	"articleplaceholder-createpage-alreadyexists": "Lehekülg pealkirjaga $1 on juba olemas. Vali mõni teine.",
 	"articleplaceholder-createpage-notitleprovided": "Pealkirja ei sisestatud, sisesta pealkiri lehele, mida soovid luua.",
-	"articleplaceholder-createpage-invalidtitleprovided": "Sinu sisestatud pealkiri on vigane. Palun sisesta sobiv pealkiri."
+	"articleplaceholder-createpage-invalidtitleprovided": "Sinu sisestatud pealkiri on vigane. Palun sisesta sobiv pealkiri.",
+	"articleplaceholder-abouttopic-topmessage-text": "See on automaatne vaade, mis põhineb [$1 projekti {{WBREPONAME}} andmetel].<br /> Artiklit veel pole, kuid saad aidata seda luua.",
+	"articleplaceholder-abouttopic-icon-title": "Teave"
 }
