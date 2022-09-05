@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Metsavend",
-			"Pikne"
+			"Pikne",
+			"Adeliine"
 		]
 	},
 	"createtopicpage": "Lehekülje alustamine",
@@ -10,7 +11,7 @@
 	"articleplaceholder-abouttopic": "Teema kohta",
 	"articleplaceholder-abouttopic-intro": "See erilehekülg annab kiirülevaate teemast, tuginedes Vikiandmetest pärit andmetele.",
 	"articleplaceholder-abouttopic-entityid": "Palun sisesta üksuse ID, näiteks Q12345",
-	"articleplaceholder-abouttopic-submit": "visand",
+	"articleplaceholder-abouttopic-submit": "Visanda",
 	"articleplaceholder-abouttopic-no-entity-error": "See pole sobiv üksuse ID.",
 	"articleplaceholder-abouttopic-create-article-title": "Uue artikli alustamine",
 	"articleplaceholder-abouttopic-create-article-label": "Artikli pealkiri",
