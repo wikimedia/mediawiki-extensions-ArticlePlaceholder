@@ -27,5 +27,7 @@
 	"articleplaceholder-createpage-title": "Napravi $1",
 	"articleplaceholder-createpage-alreadyexists": "Stranica s naslovom $1 već postoji. Odaberite drugu.",
 	"articleplaceholder-createpage-notitleprovided": "Niste unesli naslov. Unesite naslov za stranicu što želite da napravite.",
-	"articleplaceholder-createpage-invalidtitleprovided": "Uneseni naslov je nevažeći. Unesite važeći naslov."
+	"articleplaceholder-createpage-invalidtitleprovided": "Uneseni naslov je nevažeći. Unesite važeći naslov.",
+	"articleplaceholder-abouttopic-topmessage-text": "Ovo je automatski prikaz temeljen na [$1 podacima od {{WBREPONAME}}].<br />Još ne postoji potpuni članak, ali možete pomoći u njegovom stvaranju.",
+	"articleplaceholder-abouttopic-icon-title": "Informacije"
 }
