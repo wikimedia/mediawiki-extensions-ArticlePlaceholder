@@ -15,11 +15,13 @@
 	"articleplaceholder-abouttopic-create-article-label": "Назва артыкулу",
 	"articleplaceholder-abouttopic-create-article-button": "Стварыць артыкул",
 	"articleplaceholder-abouttopic-create-empty-article-button": "Пачаць новы артыкул",
+	"articleplaceholder-abouttopic-translate-article-label": "Зыходная мова:",
 	"articleplaceholder-abouttopic-translate-article-button": "Перакласьці артыкул",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Падпісацца",
 	"articleplaceholder-abouttopic-article-exists-error": "Артыкул з гэтай назвай ужо існуе.",
 	"articleplaceholder-abouttopic-lua-entity": "Сутнасьць",
 	"articleplaceholder-abouttopic-lua-reference": "Спасылка",
 	"articleplaceholder-abouttopic-lua-identifier": "Вонкавыя рэсурсы",
-	"articleplaceholder-createpage-title": "Стварыць $1"
+	"articleplaceholder-createpage-title": "Стварыць $1",
+	"articleplaceholder-abouttopic-icon-title": "Інфармацыя"
 }

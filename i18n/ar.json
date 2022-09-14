@@ -3,7 +3,8 @@
 		"authors": [
 			"Maroen1990",
 			"ديفيد",
-			"محمد أحمد عبد الفتاح"
+			"محمد أحمد عبد الفتاح",
+			"Dr-Taher"
 		]
 	},
 	"createtopicpage": "إنشاء صفحة",
@@ -30,5 +31,6 @@
 	"articleplaceholder-createpage-alreadyexists": "الصفحة التي تحمل العنوان $1 موجودة بالفعل; الرجاء اختيار واحد آخر.",
 	"articleplaceholder-createpage-notitleprovided": "لم يتم إدخال عنوان; يُرجَى إدخال عنوان للصفحة التي تريد إنشاءها.",
 	"articleplaceholder-createpage-invalidtitleprovided": "العنوان الذي أدخلته غير صالح; يُرجَى تقديم عنوان صالح.",
+	"articleplaceholder-abouttopic-topmessage-text": "هذا عرض تلقائي يعتمد على [بيانات $1 من {{WBREPONAME}}].<br /> لا توجد مقالة كاملة حتى الآن، ولكن يمكنك المساعدة في إنشاء واحدة.",
 	"articleplaceholder-abouttopic-icon-title": "معلومات"
 }
