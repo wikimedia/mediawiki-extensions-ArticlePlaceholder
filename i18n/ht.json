@@ -1,16 +1,31 @@
 {
 	"@metadata": {
 		"authors": [
-			"Lucas"
+			"Lucas",
+			"Amire80"
 		]
 	},
+	"createtopicpage": "Kreye atik sa",
+	"articleplaceholder-desc": "Li bay yon paj espesyal ak enfòmasyon ki sòti nan {{WBREPONAME}} sou yon sèten sijè, ak envitasyon pou kreye yon atik pou sijè sa a",
 	"articleplaceholder-abouttopic": "Sou sijè&nbsp;a",
+	"articleplaceholder-abouttopic-intro": "Paj espesyal sa a ba ou yon apèsi rapid sou yon sijè ki baze sou done ki sòti nan {{WBREPONAME}}.",
+	"articleplaceholder-abouttopic-entityid": "Tanpri antre yon ID eleman tankou Q12345",
 	"articleplaceholder-abouttopic-submit": "reyalize",
+	"articleplaceholder-abouttopic-no-entity-error": "Sa a se pa yon ID eleman ki valab.",
+	"articleplaceholder-abouttopic-create-article-title": "Kreye yon nouvo atik",
 	"articleplaceholder-abouttopic-create-article-label": "Tit atik",
+	"articleplaceholder-abouttopic-create-article-mandatory": "Tit atik la obligatwa.",
 	"articleplaceholder-abouttopic-create-article-button": "Kreye yon atik",
+	"articleplaceholder-abouttopic-translate-article-label": "Lang sous :",
+	"articleplaceholder-abouttopic-translate-article-button": "Tradui atik la",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Soumèt",
+	"articleplaceholder-abouttopic-article-exists-error": "Yon atik ki gen non sa a deja egziste",
 	"articleplaceholder-abouttopic-lua-entity": "Antite",
 	"articleplaceholder-abouttopic-lua-reference": "Referans",
 	"articleplaceholder-abouttopic-lua-identifier": "Resous ekstèn",
-	"articleplaceholder-search-header": "Dekouvri done sou sijè&nbsp;a"
+	"articleplaceholder-search-header": "Dekouvri done sou sijè&nbsp;a",
+	"articleplaceholder-createpage-title": "Kreye $1",
+	"articleplaceholder-createpage-alreadyexists": "Paj ki gen tit $1 deja egziste. Tanpri chwazi yon lòt tit.",
+	"articleplaceholder-createpage-notitleprovided": "Ou pa antre yon tit, tanpri antre yon tit pou paj ou vle kreye a.",
+	"articleplaceholder-createpage-invalidtitleprovided": "Tit ou antre a pa valab. Tanpri bay yon tit ki valab."
 }
