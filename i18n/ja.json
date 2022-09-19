@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Afaz",
+			"MathXplore",
 			"Omotecho",
 			"Otokoume",
 			"RYOUMA1117",
@@ -15,7 +16,7 @@
 	"articleplaceholder-abouttopic": "トピックについて",
 	"articleplaceholder-abouttopic-intro": "この特別ページは{{WBREPONAME}}から情報を抽出し、特定のトピックの概要をかいつまんで表示します。",
 	"articleplaceholder-abouttopic-entityid": "まず項目IDをQ12345のように入力します。",
-	"articleplaceholder-abouttopic-submit": "作成",
+	"articleplaceholder-abouttopic-submit": "クラフト",
 	"articleplaceholder-abouttopic-no-entity-error": "これは有効な項目IDではありません。",
 	"articleplaceholder-abouttopic-create-article-title": "記事を作成する",
 	"articleplaceholder-abouttopic-create-article-label": "記事名",

@@ -5,7 +5,7 @@
 			"Lucas"
 		]
 	},
-	"createtopicpage": "Kreye atik sa",
+	"createtopicpage": "Kreye yon paj",
 	"articleplaceholder-desc": "Li bay yon paj espesyal ak enfòmasyon ki sòti nan {{WBREPONAME}} sou yon sèten sijè, ak envitasyon pou kreye yon atik pou sijè sa a",
 	"articleplaceholder-abouttopic": "Sou sijè&nbsp;a",
 	"articleplaceholder-abouttopic-intro": "Paj espesyal sa a ba ou yon apèsi rapid sou yon sijè ki baze sou done ki sòti nan {{WBREPONAME}}.",
@@ -29,6 +29,6 @@
 	"articleplaceholder-createpage-alreadyexists": "Paj ki gen tit $1 deja egziste. Tanpri chwazi yon lòt tit.",
 	"articleplaceholder-createpage-notitleprovided": "Ou pa antre yon tit, tanpri antre yon tit pou paj ou vle kreye a.",
 	"articleplaceholder-createpage-invalidtitleprovided": "Tit ou antre a pa valab. Tanpri bay yon tit ki valab.",
-	"articleplaceholder-abouttopic-topmessage-text": "Sa a se yon vi otomatik ki baze sou [$1 done ki sòti nan {{WBREPONAME}}].<br />Pa gen yon atik konplè ankò, men ou ka ede kreye li.",
+	"articleplaceholder-abouttopic-topmessage-text": "Sa a se yon parèt otomatik ki baze sou [$1 done ki sòti nan {{WBREPONAME}}].<br />Pa gen yon atik konplè ankò, men ou ka ede kreye li.",
 	"articleplaceholder-abouttopic-icon-title": "Enfòmasyon"
 }

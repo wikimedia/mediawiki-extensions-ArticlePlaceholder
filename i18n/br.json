@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Fulup"
+			"Fulup",
+			"Huñvreüs"
 		]
 	},
 	"createtopicpage": "Krouiñ ar bajenn",
-	"articleplaceholder-abouttopic-submit": "krouiñ",
+	"articleplaceholder-abouttopic-submit": "Krouiñ",
 	"articleplaceholder-abouttopic-create-article-title": "Krouiñ ur pennad nevez",
 	"articleplaceholder-abouttopic-create-article-label": "Titl ar pennad",
 	"articleplaceholder-abouttopic-create-article-mandatory": "Rekis eo merkañ titl ar pennad.",

@@ -11,7 +11,7 @@
 	"articleplaceholder-abouttopic": "Sujet « À propos »",
 	"articleplaceholder-abouttopic-intro": "Cette page spéciale vous donne un aperçu rapide d’un sujet basé sur les données de {{WBREPONAME}}.",
 	"articleplaceholder-abouttopic-entityid": "Veuillez saisir un ID d’élément, tel que Q12345",
-	"articleplaceholder-abouttopic-submit": "fabriquer",
+	"articleplaceholder-abouttopic-submit": "Fabriquer",
 	"articleplaceholder-abouttopic-no-entity-error": "Ce n’est pas un ID d’élément valide.",
 	"articleplaceholder-abouttopic-create-article-title": "Créer un nouvel article",
 	"articleplaceholder-abouttopic-create-article-label": "Titre de l’article",

@@ -9,7 +9,7 @@
 	"articleplaceholder-abouttopic": "A proposito del subjecto",
 	"articleplaceholder-abouttopic-intro": "Iste pagina special te forni un supervista rapide de un subjecto a base de datos de {{WBREPONAME}}.",
 	"articleplaceholder-abouttopic-entityid": "Scribe le ID de un elemento, como Q12345",
-	"articleplaceholder-abouttopic-submit": "crear",
+	"articleplaceholder-abouttopic-submit": "Crear",
 	"articleplaceholder-abouttopic-no-entity-error": "Isto non es un ID de elemento valide.",
 	"articleplaceholder-abouttopic-create-article-title": "Crear un nove articulo",
 	"articleplaceholder-abouttopic-create-article-label": "Titulo del articulo",
