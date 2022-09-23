@@ -7,6 +7,7 @@
 			"Kareyac",
 			"Laboramus",
 			"Okras",
+			"Pacha Tchernof",
 			"Семён"
 		]
 	},
@@ -15,7 +16,7 @@
 	"articleplaceholder-abouttopic": "О теме",
 	"articleplaceholder-abouttopic-intro": "Эта специальная страница представляет краткий обзор темы на основе данных из {{WBREPONAME}}.",
 	"articleplaceholder-abouttopic-entityid": "Введите идентификатор элемента, например, Q12345",
-	"articleplaceholder-abouttopic-submit": "создать",
+	"articleplaceholder-abouttopic-submit": "Создать",
 	"articleplaceholder-abouttopic-no-entity-error": "Это не правильный идентификатор элемента.",
 	"articleplaceholder-abouttopic-create-article-title": "Создать новую статью",
 	"articleplaceholder-abouttopic-create-article-label": "Название статьи",
