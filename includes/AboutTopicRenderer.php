@@ -6,6 +6,7 @@ use ExtensionRegistry;
 use Html;
 use Language;
 use MalformedTitleException;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
 use OOUI;
 use OutputPage;
@@ -270,7 +271,8 @@ class AboutTopicRenderer {
 				// TODO: We may want to filter with user languages
 				$languageNames[] = [
 					'data' => $languageCode,
-					'label' => Language::fetchLanguageName( $languageCode ),
+					'label' => MediaWikiServices::getInstance()->getLanguageNameUtils()
+						->getLanguageName( $languageCode ),
 				];
 				$pageNames[ $languageCode ] = $siteLink->getPageName();
 			}

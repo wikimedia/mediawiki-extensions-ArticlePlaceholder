@@ -4,7 +4,6 @@ namespace ArticlePlaceholder\Tests;
 
 use ArticlePlaceholder\AboutTopicRenderer;
 use DerivativeContext;
-use Language;
 use MalformedTitleException;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
@@ -96,7 +95,7 @@ class AboutTopicRendererTest extends MediaWikiIntegrationTestCase {
 
 		$instance->showPlaceholder(
 			$itemId,
-			Language::factory( 'eo' ),
+			MediaWikiServices::getInstance()->getLanguageFactory()->getLanguage( 'eo' ),
 			$this->createMock( User::class ),
 			$outputPage
 		);
@@ -182,7 +181,7 @@ class AboutTopicRendererTest extends MediaWikiIntegrationTestCase {
 		$factory->expects( $this->once() )
 			->method( 'newLabelDescriptionLookup' )
 			->with(
-				Language::factory( 'eo' ),
+				MediaWikiServices::getInstance()->getLanguageFactory()->getLanguage( 'eo' ),
 				$this->anything(),
 				[ TermTypes::TYPE_LABEL, TermTypes::TYPE_DESCRIPTION ]
 			)
