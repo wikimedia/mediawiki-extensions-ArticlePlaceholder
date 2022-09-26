@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Minh Nguyen",
+			"NguyenHung",
 			"Yue Ling"
 		]
 	},
@@ -10,7 +11,7 @@
 	"articleplaceholder-abouttopic": "Giới thiệu về đề tài",
 	"articleplaceholder-abouttopic-intro": "Trang đặc biệt này tóm lược đề tài dùng dữ liệu từ {{WBREPONAME}}.",
 	"articleplaceholder-abouttopic-entityid": "Xin hãy nhập mã số mục dưới dạng Q12345",
-	"articleplaceholder-abouttopic-submit": "xây dựng",
+	"articleplaceholder-abouttopic-submit": "Xây dựng",
 	"articleplaceholder-abouttopic-no-entity-error": "Mã số mục này không hợp lệ.",
 	"articleplaceholder-abouttopic-create-article-title": "Tạo bài mới",
 	"articleplaceholder-abouttopic-create-article-label": "Tên bài",
