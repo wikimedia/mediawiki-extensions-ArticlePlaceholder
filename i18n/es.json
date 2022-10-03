@@ -3,6 +3,7 @@
 		"authors": [
 			"Dgstranz",
 			"Ihojose",
+			"La Mantis",
 			"Macofe",
 			"SinNovedades",
 			"Warming Hearth"
@@ -13,7 +14,7 @@
 	"articleplaceholder-abouttopic": "Sobre el tema",
 	"articleplaceholder-abouttopic-intro": "Esta página especial te proporciona un resumen rápido de un tema basado en datos de {{WBREPONAME}}.",
 	"articleplaceholder-abouttopic-entityid": "Escribe un identificador de elemento, como Q12345",
-	"articleplaceholder-abouttopic-submit": "crear",
+	"articleplaceholder-abouttopic-submit": "Borrador",
 	"articleplaceholder-abouttopic-no-entity-error": "Este identificador de elemento no es válido.",
 	"articleplaceholder-abouttopic-create-article-title": "Crear un artículo nuevo",
 	"articleplaceholder-abouttopic-create-article-label": "Título del artículo",
