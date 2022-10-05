@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Eleassar"
+			"Eleassar",
+			"Pinky sl"
 		]
 	},
+	"createtopicpage": "Ustvari stran",
 	"articleplaceholder-abouttopic-create-article-title": "Ustvari nov članek",
 	"articleplaceholder-abouttopic-translate-article-label": "Izvirni jezik:",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Objavi",

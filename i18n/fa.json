@@ -10,6 +10,7 @@
 	},
 	"createtopicpage": "ایجاد صفحه",
 	"articleplaceholder-abouttopic": "درباره موضوع",
+	"articleplaceholder-abouttopic-entityid": "لطفاً یک شناسهٔ آیتم نظیر Q12345 را وارد کنید",
 	"articleplaceholder-abouttopic-no-entity-error": "این یک شناسه معتبر آیتم نیست.",
 	"articleplaceholder-abouttopic-create-article-title": "ایجاد یک مقالۀ جدید",
 	"articleplaceholder-abouttopic-create-article-label": "عنوان مقاله",
