@@ -166,7 +166,9 @@ class SpecialAboutTopicTest extends MediaWikiIntegrationTestCase {
 		$metatags = $output->getHeadLinksArray();
 
 		if ( $expected === true ) {
-			$this->assertArrayNotHasKey( 'meta-robots', $metatags );
+			$metaRobots = $metatags['meta-robots'] ?? '';
+			$this->assertStringNotContainsString( 'noindex', $metaRobots );
+			$this->assertStringNotContainsString( 'nofollow', $metaRobots );
 		} else {
 			$this->assertArrayHasKey( 'meta-robots', $metatags );
 			$this->assertStringContainsString( 'noindex,nofollow', $metatags['meta-robots'] );
