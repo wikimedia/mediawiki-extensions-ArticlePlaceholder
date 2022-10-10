@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"EdoAug",
 			"Jon Harald Søby"
 		]
 	},
@@ -9,7 +10,7 @@
 	"articleplaceholder-abouttopic": "Om emnet",
 	"articleplaceholder-abouttopic-intro": "Denne spesialsiden gir deg et raskt overblikk over et emne basert på data fra {{WBREPONAME}}.",
 	"articleplaceholder-abouttopic-entityid": "Skriv inn en element-ID, som f.eks. Q12345",
-	"articleplaceholder-abouttopic-submit": "skap",
+	"articleplaceholder-abouttopic-submit": "Skap",
 	"articleplaceholder-abouttopic-no-entity-error": "Dette er ikke en gyldig element-ID.",
 	"articleplaceholder-abouttopic-create-article-title": "Opprett en ny artikkel",
 	"articleplaceholder-abouttopic-create-article-label": "Artikkeltittel",
