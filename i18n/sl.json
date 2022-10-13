@@ -9,5 +9,7 @@
 	"articleplaceholder-abouttopic-create-article-title": "Ustvari nov članek",
 	"articleplaceholder-abouttopic-translate-article-label": "Izvirni jezik:",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Objavi",
-	"articleplaceholder-abouttopic-lua-reference": "Sklic"
+	"articleplaceholder-abouttopic-lua-entity": "Entiteta",
+	"articleplaceholder-abouttopic-lua-reference": "Sklic",
+	"articleplaceholder-abouttopic-lua-identifier": "Zunanji viri"
 }
