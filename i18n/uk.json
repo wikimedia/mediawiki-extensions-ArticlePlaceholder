@@ -6,7 +6,8 @@
 			"DDPAT",
 			"Ice bulldog",
 			"Piramidion",
-			"Ата"
+			"Ата",
+			"Пан Хаунд"
 		]
 	},
 	"createtopicpage": "Створити сторінку",
@@ -14,7 +15,7 @@
 	"articleplaceholder-abouttopic": "Про тему",
 	"articleplaceholder-abouttopic-intro": "Ця спеціальна сторінка дає Вам коротке уявлення про тему на основі даних з {{GRAMMAR:genitive|{{WBREPONAME}}}}.",
 	"articleplaceholder-abouttopic-entityid": "Будь ласка, введіть ідентифікатор елемента, такий як Q12345",
-	"articleplaceholder-abouttopic-submit": "згенерувати",
+	"articleplaceholder-abouttopic-submit": "Створити",
 	"articleplaceholder-abouttopic-no-entity-error": "Цей ідентифікатор елемента некоректний.",
 	"articleplaceholder-abouttopic-create-article-title": "Створити нову статтю",
 	"articleplaceholder-abouttopic-create-article-label": "Назва статті",
