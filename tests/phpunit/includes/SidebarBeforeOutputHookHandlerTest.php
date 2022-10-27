@@ -3,10 +3,10 @@
 namespace ArticlePlaceholder\Tests;
 
 use ArticlePlaceholder\SidebarBeforeOutputHookHandler;
+use MediaWiki\Request\WebRequest;
 use MediaWikiIntegrationTestCase;
 use Skin;
 use Title;
-use WebRequest;
 use Wikibase\Client\Tests\Mocks\MockClientStore;
 use Wikibase\Client\WikibaseClient;
 use Wikibase\DataModel\Entity\Item;
