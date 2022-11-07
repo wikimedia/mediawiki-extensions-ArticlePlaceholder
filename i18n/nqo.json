@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lancine.kounfantoh.fofana"
+		]
+	},
+	"createtopicpage": "ߞߐߜߍ ߛߌ߲ߘߌ߫",
+	"articleplaceholder-abouttopic-no-entity-error": "ߣߌ߲߬ ߕߍ߫ ߝߛߌ߬ ߘߤߊ߬ߣߍ߲߫ ID ߘߌ߫",
+	"articleplaceholder-abouttopic-create-article-title": "ߞߎߡߘߊ߫ ߞߎߘߊ ߘߏ߫ ߛߌ߲ߘߌ߫",
+	"articleplaceholder-abouttopic-create-article-label": "ߞߎߡߘߊ ߞߎ߲߬ߕߐ߮",
+	"articleplaceholder-abouttopic-create-article-mandatory": "ߞߎߡߘߊ ߞߎ߲߬ߕߐ߮ ߦߋ߫ ߛߋ߲ߛߋߘߋ߲ ߠߋ߬ ߘߌ߫.",
+	"articleplaceholder-abouttopic-create-article-button": "ߞߎߡߘߊ ߘߏ߫ ߛߌ߲ߘߌ߫",
+	"articleplaceholder-abouttopic-translate-article-label": "ߓߐߖߎ߫ ߞߊ߲:",
+	"articleplaceholder-abouttopic-translate-article-button": "ߞߎߡߘߊ ߘߟߊߡߌ߬ߘߊ߬",
+	"articleplaceholder-abouttopic-create-article-submit-button": "ߊ߬ ߞߙߊߓߊ߫",
+	"articleplaceholder-abouttopic-article-exists-error": "ߞߎߡߘߊ ߘߏ߫ ߦߋ߫ ߦߋ߲߬ ߕߐ߮ ߏ߬ ߘߌ߫ ߞߘߐ߬ߡߊ߲߫.",
+	"articleplaceholder-abouttopic-lua-entity": "ߛߞߊߣߌ߲:",
+	"articleplaceholder-abouttopic-lua-reference": "ߦߟߌߡߊߛߙߋ",
+	"articleplaceholder-abouttopic-lua-identifier": "ߞߐߞߊ߲ߠߊ ߛߐ߬ߘߐ߲߬ߘߊ"
+}
