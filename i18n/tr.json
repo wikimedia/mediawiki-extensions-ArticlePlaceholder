@@ -3,7 +3,8 @@
 		"authors": [
 			"BaRaN6161 TURK",
 			"HakanIST",
-			"Hedda"
+			"Hedda",
+			"ToprakM"
 		]
 	},
 	"createtopicpage": "Sayfa oluştur",
@@ -11,7 +12,7 @@
 	"articleplaceholder-abouttopic": "Konu hakkında",
 	"articleplaceholder-abouttopic-intro": "Bu özel sayfa, {{WBREPONAME}} verilerini temel alan bir konuya hızlı bir genel bakış sunar.",
 	"articleplaceholder-abouttopic-entityid": "Lütfen Q12345 gibi bir öğe kimliği girin",
-	"articleplaceholder-abouttopic-submit": "zanaat",
+	"articleplaceholder-abouttopic-submit": "Zanaat",
 	"articleplaceholder-abouttopic-no-entity-error": "Bu geçerli bir öğe kimliği değil.",
 	"articleplaceholder-abouttopic-create-article-title": "Yeni bir madde oluştur",
 	"articleplaceholder-abouttopic-create-article-label": "Madde başlığı",
