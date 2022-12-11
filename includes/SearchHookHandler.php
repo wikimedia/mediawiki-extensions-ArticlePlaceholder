@@ -64,7 +64,11 @@ class SearchHookHandler {
 		$config = MediaWikiServices::getInstance()->getMainConfig();
 
 		$termSearchInteractor = new TermSearchApiInteractor(
-			new RepoApiInteractor( $config->get( 'ArticlePlaceholderRepoApiUrl' ), $statsdDataFactory ),
+			new RepoApiInteractor(
+				$config->get( 'ArticlePlaceholderRepoApiUrl' ),
+				$statsdDataFactory,
+				MediaWikiServices::getInstance()->getHttpRequestFactory()
+			),
 			WikibaseClient::getEntityIdParser()
 		);
 

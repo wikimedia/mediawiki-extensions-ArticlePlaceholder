@@ -4,7 +4,7 @@ namespace ArticlePlaceholder;
 
 use FormatJson;
 use Liuggio\StatsdClient\Factory\StatsdDataFactoryInterface;
-use MWHttpRequest;
+use MediaWiki\Http\HttpRequestFactory;
 
 /**
  * Gateway to API of the repository
@@ -24,12 +24,23 @@ class RepoApiInteractor {
 	private $statsdDataFactory;
 
 	/**
+	 * @var HttpRequestFactory
+	 */
+	private $httpRequestFactory;
+
+	/**
 	 * @param string $repoApiUrl
 	 * @param StatsdDataFactoryInterface $statsdDataFactory
+	 * @param HttpRequestFactory $httpRequestFactory
 	 */
-	public function __construct( $repoApiUrl, StatsdDataFactoryInterface $statsdDataFactory ) {
+	public function __construct(
+		$repoApiUrl,
+		StatsdDataFactoryInterface $statsdDataFactory,
+		HttpRequestFactory $httpRequestFactory
+	) {
 		$this->repoApiUrl = $repoApiUrl;
 		$this->statsdDataFactory = $statsdDataFactory;
+		$this->httpRequestFactory = $httpRequestFactory;
 	}
 
 	/**
@@ -39,7 +50,7 @@ class RepoApiInteractor {
 	 */
 	public function request( array $params ) {
 		$url = wfAppendQuery( $this->repoApiUrl, $params );
-		$req = MWHttpRequest::factory(
+		$req = $this->httpRequestFactory->create(
 			$url,
 			[],
 			__METHOD__
