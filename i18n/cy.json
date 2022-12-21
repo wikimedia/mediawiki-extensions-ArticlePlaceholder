@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Jason.nlw",
-			"Robin Owain"
+			"Robin Owain",
+			"Afalau"
 		]
 	},
 	"createtopicpage": "Creu'r ddalen",
@@ -28,5 +29,6 @@
 	"articleplaceholder-createpage-title": "Creu $1",
 	"articleplaceholder-createpage-alreadyexists": "Mae dalen gyda'r teitl $1 yn bodloi eisioes. Dewisiwch deitl arall.",
 	"articleplaceholder-createpage-notitleprovided": "Ni roesoch deitl; gwnewch hynny ar gyfer y ddalen yr hoffwch ei chreu.",
-	"articleplaceholder-createpage-invalidtitleprovided": "Mae'r teitl a roesoch yn annilys. Rhowch deitl dilys."
+	"articleplaceholder-createpage-invalidtitleprovided": "Mae'r teitl a roesoch yn annilys. Rhowch deitl dilys.",
+	"articleplaceholder-abouttopic-icon-title": "Gwybodaeth"
 }
