@@ -4,5 +4,20 @@
 			"Milicevic01"
 		]
 	},
-	"articleplaceholder-abouttopic": "O temi"
+	"createtopicpage": "Pravljenje stranice",
+	"articleplaceholder-abouttopic": "O temi",
+	"articleplaceholder-abouttopic-create-article-title": "Pravljenje novog članka",
+	"articleplaceholder-abouttopic-create-article-label": "Naslov članka",
+	"articleplaceholder-abouttopic-create-article-mandatory": "Naslov članka je obavezan.",
+	"articleplaceholder-abouttopic-create-article-button": "Napravi članak",
+	"articleplaceholder-abouttopic-create-empty-article-button": "Napravi nov članak",
+	"articleplaceholder-abouttopic-translate-article-label": "Izvorni jezik:",
+	"articleplaceholder-abouttopic-translate-article-button": "Prevedi članak",
+	"articleplaceholder-abouttopic-create-article-submit-button": "Prosledi",
+	"articleplaceholder-abouttopic-article-exists-error": "Članak sa ovim imenom već postoji",
+	"articleplaceholder-abouttopic-lua-entity": "Entitet",
+	"articleplaceholder-abouttopic-lua-reference": "Referenca",
+	"articleplaceholder-abouttopic-lua-identifier": "Spoljašnji resursi",
+	"articleplaceholder-createpage-title": "Napravi $1",
+	"articleplaceholder-abouttopic-icon-title": "Informacija"
 }
