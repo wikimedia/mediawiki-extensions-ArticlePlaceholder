@@ -6,7 +6,12 @@
 		]
 	},
 	"createtopicpage": "Ustvari stran",
+	"articleplaceholder-desc": "Zagotovi posebno stran z informacijami projekta {{WBREPONAME}} o določeni temi, s povabilom k ustvaritvi članka za to temo",
+	"articleplaceholder-abouttopic": "O temi",
+	"articleplaceholder-abouttopic-intro": "Ta posebna stran vam ponuja hiter pregled teme na podlagi podatkov iz projekta {{WBREPONAME}}.",
+	"articleplaceholder-abouttopic-entityid": "Vnesite ID predmeta, npr. Q12345",
 	"articleplaceholder-abouttopic-submit": "Ustvari",
+	"articleplaceholder-abouttopic-no-entity-error": "To ni veljaven ID predmeta.",
 	"articleplaceholder-abouttopic-create-article-title": "Ustvari nov članek",
 	"articleplaceholder-abouttopic-create-article-label": "Naslov članka",
 	"articleplaceholder-abouttopic-create-article-mandatory": "Naslov članka je obvezen.",
@@ -19,6 +24,11 @@
 	"articleplaceholder-abouttopic-lua-entity": "Entiteta",
 	"articleplaceholder-abouttopic-lua-reference": "Sklic",
 	"articleplaceholder-abouttopic-lua-identifier": "Zunanji viri",
+	"articleplaceholder-search-header": "Odkrijte podatke o temi",
 	"articleplaceholder-createpage-title": "Ustvari $1",
+	"articleplaceholder-createpage-alreadyexists": "Stran z naslovom $1 že obstaja. Prosimo, izberite drugega.",
+	"articleplaceholder-createpage-notitleprovided": "Vnesen ni bil noben naslov. Prosimo, vnesite naslov za stran, ki jo želite ustvariti.",
+	"articleplaceholder-createpage-invalidtitleprovided": "Naslov, ki ste ga vnesli, ni veljaven. Prosimo, navedite veljaven naslov.",
+	"articleplaceholder-abouttopic-topmessage-text": "To je samodejni pogled, ki temelji na [$1 podatkih iz projekta {{WBREPONAME}}].<br />Celotnega članka še ni, vendar ga lahko pomagate ustvariti.",
 	"articleplaceholder-abouttopic-icon-title": "Informacije"
 }
