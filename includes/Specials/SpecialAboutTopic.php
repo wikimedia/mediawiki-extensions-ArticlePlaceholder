@@ -211,7 +211,7 @@ class SpecialAboutTopic extends SpecialPage {
 		$form
 			->setMethod( 'get' )
 			->setId( 'ap-abouttopic-form1' )
-			->setHeaderText( $this->msg( 'articleplaceholder-abouttopic-intro' )->parse() )
+			->setHeaderHtml( $this->msg( 'articleplaceholder-abouttopic-intro' )->parse() )
 			->setWrapperLegend( '' )
 			->setSubmitTextMsg( 'articleplaceholder-abouttopic-submit' )
 			->prepareForm()
