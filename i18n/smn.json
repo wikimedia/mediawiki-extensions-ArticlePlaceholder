@@ -7,5 +7,7 @@
 	},
 	"createtopicpage": "Räähti siijđo",
 	"articleplaceholder-abouttopic-translate-article-label": "Käldeekielâ:",
-	"articleplaceholder-abouttopic-create-article-submit-button": "Vuolgât"
+	"articleplaceholder-abouttopic-translate-article-button": "Jurgâl artikkâl",
+	"articleplaceholder-abouttopic-create-article-submit-button": "Vuolgât",
+	"articleplaceholder-abouttopic-lua-reference": "Käldee"
 }
