@@ -3,6 +3,7 @@
 		"authors": [
 			"Eduardoaddad",
 			"Felipe L. Ewald",
+			"Fúlvio",
 			"Luk3"
 		]
 	},
@@ -11,7 +12,7 @@
 	"articleplaceholder-abouttopic": "Sobre o tópico",
 	"articleplaceholder-abouttopic-intro": "Esta página especial oferece uma visão geral rápida de um tópico com base em dados de {{WBREPONAME}}.",
 	"articleplaceholder-abouttopic-entityid": "Digite um ID de item, como Q12345",
-	"articleplaceholder-abouttopic-submit": "criar",
+	"articleplaceholder-abouttopic-submit": "Criar",
 	"articleplaceholder-abouttopic-no-entity-error": "Este não é um ID de item válido.",
 	"articleplaceholder-abouttopic-create-article-title": "Criar uma novo artigo",
 	"articleplaceholder-abouttopic-create-article-label": "Título do artigo",
