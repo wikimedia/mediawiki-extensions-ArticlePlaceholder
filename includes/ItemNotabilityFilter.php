@@ -142,8 +142,8 @@ class ItemNotabilityFilter {
 
 		return $dbr->newSelectQueryBuilder()
 			->select( [ 'page_title', 'pp_propname', 'pp_value' ] )
-			->from( 'page_props' )
-			->leftJoin( 'page', null, 'page_id=pp_page' )
+			->from( 'page' )
+			->join( 'page_props', null, 'page_id=pp_page' )
 			->where( [
 				'page_namespace' => $entityNamespace,
 				'page_title' => $itemIdSerializations,
