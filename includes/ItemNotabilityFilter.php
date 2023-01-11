@@ -140,18 +140,16 @@ class ItemNotabilityFilter {
 			$itemIdSerializations[] = $itemId->getSerialization();
 		}
 
-		return $dbr->select(
-			[ 'page_props', 'page' ],
-			[ 'page_title', 'pp_propname', 'pp_value' ],
-			[
+		return $dbr->newSelectQueryBuilder()
+			->select( [ 'page_title', 'pp_propname', 'pp_value' ] )
+			->from( 'page_props' )
+			->leftJoin( 'page', null, 'page_id=pp_page' )
+			->where( [
 				'page_namespace' => $entityNamespace,
 				'page_title' => $itemIdSerializations,
 				'pp_propname' => [ 'wb-sitelinks', 'wb-claims' ]
-			],
-			__METHOD__,
-			[],
-			[ 'page' => [ 'LEFT JOIN', 'page_id=pp_page' ] ]
-		);
+			] )
+			->caller( __METHOD__ )->fetchResultSet();
 	}
 
 	/**
