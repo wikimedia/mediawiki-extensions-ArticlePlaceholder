@@ -114,8 +114,6 @@ class ItemNotabilityFilter {
 
 		$res = $this->selectPagePropsPage( $dbr, $itemIds );
 
-		$this->connectionManager->releaseConnection( $dbr );
-
 		foreach ( $res as $row ) {
 			$values[$row->page_title][$row->pp_propname] = intval( $row->pp_value ?: 0 );
 		}
