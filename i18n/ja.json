@@ -7,7 +7,9 @@
 			"RYOUMA1117",
 			"Sujiniku",
 			"Yusuke1109",
-			"神樂坂秀吉"
+			"神樂坂秀吉",
+			"MathXplore",
+			"背番号4のエース"
 		]
 	},
 	"createtopicpage": "ページの作成",
@@ -34,5 +36,6 @@
 	"articleplaceholder-createpage-alreadyexists": "$1 という名前のページは既に存在します。別の記事名を指定してください。",
 	"articleplaceholder-createpage-notitleprovided": "記事名が入力されていません。作成する記事名を入力してください。",
 	"articleplaceholder-createpage-invalidtitleprovided": "入力した記事名は無効です。有効な記事名を入力してください。",
+	"articleplaceholder-abouttopic-topmessage-text": "これは [{{WBREPONAME}} からの$1データ] に基づく自動ビューです。<br />まだ不正確な記事であるためあなたの手助けが必要です。",
 	"articleplaceholder-abouttopic-icon-title": "情報"
 }
