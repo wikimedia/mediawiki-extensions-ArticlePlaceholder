@@ -11,6 +11,6 @@
 		"grunt-eslint": "24.0.1",
 		"grunt-stylelint": "0.18.0",
 		"load-grunt-tasks": "5.1.0",
-		"stylelint-config-wikimedia": "0.13.1"
+		"stylelint-config-wikimedia": "0.14.0"
 	}
 }
