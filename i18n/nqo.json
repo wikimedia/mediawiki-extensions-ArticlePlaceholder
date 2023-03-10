@@ -18,5 +18,10 @@
 	"articleplaceholder-abouttopic-lua-entity": "ߛߞߊߣߌ߲:",
 	"articleplaceholder-abouttopic-lua-reference": "ߦߟߌߡߊߛߙߋ",
 	"articleplaceholder-abouttopic-lua-identifier": "ߞߐߞߊ߲ߠߊ ߛߐ߬ߘߐ߲߬ߘߊ",
+	"articleplaceholder-createpage-title": "$1 ߛߌ߲ߘߌ߫",
+	"articleplaceholder-createpage-alreadyexists": "ߞߐߜߍ ߘߏ߫ ߦߋ߫ ߦߋ߲߬ ߞߎ߲߬ߕߐ߮ $1 ߘߌ߫ ߞߘߐ߬ߡߊ߲߫. ߘߏ߫ ߜߘߍ߫ ߛߎߥߊ߲ߘߌ߫ ߖߊ߰ߣߌ߲߫.",
+	"articleplaceholder-createpage-notitleprovided": "ߞߎ߲߬ߕߐ߰ ߡߊ߫ ߟߊߘߏ߲߬߸ ߞߎ߲߬ߕߐ߮ ߘߏ߫ ߟߊߘߏ߲߬ ߌ ߟߊ߫ ߞߐߜߍ߫ ߛߌ߲ߘߌߕߐ ߟߊ߫ ߖߊ߰ߣߌ߲߫.",
+	"articleplaceholder-createpage-invalidtitleprovided": "ߌ ߟߊ߫ ߞߎ߲߬ߕߐ߰ ߟߊߘߏ߲߬ߣߍ߲ ߓߍ߲߬ߣߍ߲߫ ߕߍ߫. ߞߎ߲߬ߕߐ߮ ߓߍ߲߬ߣߍ߲ ߠߊߘߏ߲߬ ߖߊ߰ߣߌ߲߫.",
+	"articleplaceholder-abouttopic-topmessage-text": "ߣߌ߲߬ ߦߋ߫ ߞߍߒߖߘߍߦߋ߫ ߦߋߟߌ ߟߋ߬ ߘߌ߫ ߡߍ߲ ߓߌ߲ߓߌ߲ߣߍ߲߫ ߦߋ߫ [$1 ߓߟߏߡߟߊ ߡߊ߬ ߞߊ߬ ߝߘߊ߫ {{WBREPONAME\n}} ߟߊ߫.<br /> ߞߎߡߘߊ߫ ߘߝߊߣߍ߲߫ ߕߴߦߋ߲߬ ߡߎߣߎ߲߬߸ ߞߏ߬ߣߌ߲߬ ߌ ߘߌ߫ ߛߋ߫ ߘߍ߬ߡߍ߲߬ߠߌ߲ ߞߍ߫ ߟߊ߫ ߞߊ߬ ߞߋߟߋ߲߫ ߛߌ߲ߘߌ߫]",
 	"articleplaceholder-abouttopic-icon-title": "ߞߌ߬ߓߊ߬ߙߏ߬ߦߊ"
 }
