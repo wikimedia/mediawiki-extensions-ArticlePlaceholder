@@ -4,13 +4,14 @@
 			"01miki10",
 			"Joquliina",
 			"MITO",
+			"Pyscowicz",
 			"Stryn",
 			"Valtlai",
 			"Valtlait"
 		]
 	},
 	"createtopicpage": "Luo sivu",
-	"articleplaceholder-abouttopic-submit": "luonnos",
+	"articleplaceholder-abouttopic-submit": "Luonnos",
 	"articleplaceholder-abouttopic-create-article-title": "Luo uusi artikkeli",
 	"articleplaceholder-abouttopic-create-article-label": "Artikkelin otsikko",
 	"articleplaceholder-abouttopic-create-article-mandatory": "Artikkelin otsikko on pakollinen.",
