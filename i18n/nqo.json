@@ -16,5 +16,9 @@
 	"articleplaceholder-abouttopic-article-exists-error": "ߞߎߡߘߊ ߘߏ߫ ߦߋ߫ ߦߋ߲߬ ߕߐ߮ ߏ߬ ߘߌ߫ ߞߘߐ߬ߡߊ߲߫.",
 	"articleplaceholder-abouttopic-lua-entity": "ߛߞߊߣߌ߲:",
 	"articleplaceholder-abouttopic-lua-reference": "ߦߟߌߡߊߛߙߋ",
-	"articleplaceholder-abouttopic-lua-identifier": "ߞߐߞߊ߲ߠߊ ߛߐ߬ߘߐ߲߬ߘߊ"
+	"articleplaceholder-abouttopic-lua-identifier": "ߞߐߞߊ߲ߠߊ ߛߐ߬ߘߐ߲߬ߘߊ",
+	"articleplaceholder-createpage-title": "$1 ߛߌ߲ߘߌ߫",
+	"articleplaceholder-createpage-alreadyexists": "ߞߐߜߍ ߘߏ߫ ߦߋ߫ ߦߋ߲߬ ߞߎ߲߬ߕߐ߮ $1 ߘߌ߫ ߞߘߐ߬ߡߊ߲߫. ߘߏ߫ ߜߘߍ߫ ߛߎߥߊ߲ߘߌ߫ ߖߊ߰ߣߌ߲߫.",
+	"articleplaceholder-createpage-notitleprovided": "ߞߎ߲߬ߕߐ߰ ߡߊ߫ ߟߊߘߏ߲߬߸ ߞߎ߲߬ߕߐ߮ ߘߏ߫ ߟߊߘߏ߲߬ ߌ ߟߊ߫ ߞߐߜߍ߫ ߛߌ߲ߘߌߕߐ ߟߊ߫ ߖߊ߰ߣߌ߲߫.",
+	"articleplaceholder-createpage-invalidtitleprovided": "ߌ ߟߊ߫ ߞߎ߲߬ߕߐ߰ ߟߊߘߏ߲߬ߣߍ߲ ߓߍ߲߬ߣߍ߲߫ ߕߍ߫. ߞߎ߲߬ߕߐ߮ ߓߍ߲߬ߣߍ߲ ߠߊߘߏ߲߬ ߖߊ߰ߣߌ߲߫."
 }

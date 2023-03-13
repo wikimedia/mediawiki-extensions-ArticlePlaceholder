@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"פוילישער"
+			"פוילישער",
+			"Pacha Tchernof"
 		]
 	},
 	"createtopicpage": "שאַפֿן בלאַט",
@@ -21,6 +22,6 @@
 	"articleplaceholder-abouttopic-lua-reference": "רעפערענץ",
 	"articleplaceholder-abouttopic-lua-identifier": "דרויסנדיקע קוואלן",
 	"articleplaceholder-search-header": "אנטדעקן דאטן וועגן דער טעמע",
-	"articleplaceholder-createpage-title": "שאפן $1",
+	"articleplaceholder-createpage-title": "שאַפֿן $1",
 	"articleplaceholder-createpage-alreadyexists": "דער בלאט מיטן טיטל $1 איז שוין פֿאראן. זייט אזוי גוט און קלויבט אן אנדערן."
 }
