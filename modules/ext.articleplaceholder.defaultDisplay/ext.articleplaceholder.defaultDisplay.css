@@ -28,7 +28,7 @@
 	background-color: #f9f9f9;
 }
 
-.mw-articleplaceholder-topmessage-container:after {
+.mw-articleplaceholder-topmessage-container::after {
 	clear: both;
 }
 
