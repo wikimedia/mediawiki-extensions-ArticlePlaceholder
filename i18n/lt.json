@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Eitvys200",
-			"Zygimantus"
+			"Zygimantus",
+			"Nokeoo"
 		]
 	},
 	"createtopicpage": "Kurti puslapį",
@@ -28,5 +29,7 @@
 	"articleplaceholder-createpage-title": "Kurti $1",
 	"articleplaceholder-createpage-alreadyexists": "Puslapis su pavadinimu $1 jau egzistuoja. Prašome pasirinkti kitą.",
 	"articleplaceholder-createpage-notitleprovided": "Neįvestas joks pavadinimas, prašome įvesti puslapio pavadinimą, kurį norite sukurti.",
-	"articleplaceholder-createpage-invalidtitleprovided": "Pavadinimas, kurį įvedėte, yra neteisingas. Prašome nurodyti teisingą."
+	"articleplaceholder-createpage-invalidtitleprovided": "Pavadinimas, kurį įvedėte, yra neteisingas. Prašome nurodyti teisingą.",
+	"articleplaceholder-abouttopic-topmessage-text": "Tai yra automatinė peržiūra, kuri remiasi [$1 duomenimis iš {{WBREPONAME}}].<br /> Kol kas nėra galutinio straipsnio, bet galite padėti jį sukurdami.",
+	"articleplaceholder-abouttopic-icon-title": "Informacija"
 }
