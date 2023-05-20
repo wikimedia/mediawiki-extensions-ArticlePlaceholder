@@ -41,7 +41,7 @@ class SpecialCreateTopicPageTest extends MediaWikiIntegrationTestCase {
 		$this->assertEquals( $expected, $output->getRedirect() );
 	}
 
-	public function executeDataProvider() {
+	public static function executeDataProvider() {
 		return [
 			[ 'TestPage', '/w/index.php?title=TestPage&action=edit' ],
 			[ 'UTPage', '' ],

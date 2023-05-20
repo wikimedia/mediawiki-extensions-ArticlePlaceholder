@@ -154,7 +154,7 @@ class SearchHookHandlerTest extends MediaWikiIntegrationTestCase {
 		$this->assertInstanceOf( SearchHookHandler::class, $instance );
 	}
 
-	public function provideAddToSearch() {
+	public static function provideAddToSearch() {
 		return [
 			[
 				'get term, check if entity with right title is returned',

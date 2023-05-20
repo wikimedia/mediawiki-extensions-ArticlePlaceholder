@@ -50,7 +50,7 @@ class SpecialAboutTopicTest extends MediaWikiIntegrationTestCase {
 		$settings->setSetting( 'siteGroup', $siteGroup );
 	}
 
-	public function provideSearchEngineIndexed() {
+	public static function provideSearchEngineIndexed() {
 		return [
 			[ true ],
 			[ false ],
@@ -149,7 +149,7 @@ class SpecialAboutTopicTest extends MediaWikiIntegrationTestCase {
 		return $entityLookup;
 	}
 
-	public function provideRobotPolicy() {
+	public static function provideRobotPolicy() {
 		return [
 			[ true, true ],
 			[ false, false ],
