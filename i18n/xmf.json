@@ -5,6 +5,12 @@
 		]
 	},
 	"createtopicpage": "ხასჷლაშ გოჭყაფა",
+	"articleplaceholder-abouttopic-create-article-title": "ახალი სტატიაშ გოჭყაფა",
+	"articleplaceholder-abouttopic-create-article-label": "სტატიაშ დუდჯოხო",
+	"articleplaceholder-abouttopic-create-article-mandatory": "სტატიაშ დუდჯოხო რე უციო.",
+	"articleplaceholder-abouttopic-create-article-button": "სტატიაშ გოჭყაფა",
+	"articleplaceholder-abouttopic-translate-article-label": "წყუშ ნინა:",
 	"articleplaceholder-abouttopic-translate-article-button": "სტატიაშ თანგუა",
+	"articleplaceholder-abouttopic-create-article-submit-button": "მეღება",
 	"articleplaceholder-abouttopic-article-exists-error": "სტატია ათე ჯოხოთ უკვე რე"
 }
