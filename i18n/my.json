@@ -18,5 +18,6 @@
 	"articleplaceholder-abouttopic-lua-reference": "ကိုးကား",
 	"articleplaceholder-abouttopic-lua-identifier": "ပြင်ပ အရင်းအမြစ်များ",
 	"articleplaceholder-createpage-title": "$1 ဖန်တီးရန်",
-	"articleplaceholder-createpage-alreadyexists": "$1 ခေါင်းစဉ်ဖြင့် စာမျက်နှာ ရှိနှင့်ပြီးဖြစ်သည်။ ကျေးဇူးပြု၍ အခြားတစ်ခုရွေးပါ။"
+	"articleplaceholder-createpage-alreadyexists": "$1 ခေါင်းစဉ်ဖြင့် စာမျက်နှာ ရှိနှင့်ပြီးဖြစ်သည်။ ကျေးဇူးပြု၍ အခြားတစ်ခုရွေးပါ။",
+	"articleplaceholder-abouttopic-icon-title": "သတင်းအချက်အလက်"
 }
