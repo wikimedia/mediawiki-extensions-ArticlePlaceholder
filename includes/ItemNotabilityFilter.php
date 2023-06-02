@@ -6,7 +6,7 @@ use Wikibase\DataModel\Entity\ItemId;
 use Wikibase\Lib\Store\EntityNamespaceLookup;
 use Wikibase\Lib\Store\SiteLinkLookup;
 use Wikimedia\Rdbms\FakeResultWrapper;
-use Wikimedia\Rdbms\IDatabase;
+use Wikimedia\Rdbms\IReadableDatabase;
 use Wikimedia\Rdbms\IResultWrapper;
 use Wikimedia\Rdbms\SessionConsistentConnectionManager;
 
@@ -122,12 +122,12 @@ class ItemNotabilityFilter {
 	}
 
 	/**
-	 * @param IDatabase $dbr
+	 * @param IReadableDatabase $dbr
 	 * @param ItemId[] $itemIds
 	 *
 	 * @return IResultWrapper
 	 */
-	private function selectPagePropsPage( IDatabase $dbr, array $itemIds ) {
+	private function selectPagePropsPage( IReadableDatabase $dbr, array $itemIds ) {
 		$entityNamespace = $this->entityNamespaceLookup->getEntityNamespace( 'item' );
 
 		if ( !is_int( $entityNamespace ) ) {
