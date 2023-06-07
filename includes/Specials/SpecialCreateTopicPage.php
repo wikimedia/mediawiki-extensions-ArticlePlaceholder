@@ -5,7 +5,6 @@ namespace ArticlePlaceholder\Specials;
 use HTMLForm;
 use MediaWiki\MediaWikiServices;
 use Message;
-use MWException;
 use PermissionsError;
 use Title;
 use UnlistedSpecialPage;
@@ -92,8 +91,6 @@ class SpecialCreateTopicPage extends UnlistedSpecialPage {
 	 * reason why he need to do this.
 	 *
 	 * @param Message $msg
-	 *
-	 * @throws MWException
 	 */
 	private function showTitleInputWithMessage( Message $msg ) {
 		HTMLForm::factory(
