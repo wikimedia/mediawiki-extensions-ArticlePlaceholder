@@ -3,6 +3,7 @@
 namespace ArticlePlaceholder;
 
 use Liuggio\StatsdClient\Factory\StatsdDataFactoryInterface;
+use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use OutputPage;
 use SpecialPage;
@@ -74,7 +75,7 @@ class SearchHookHandler {
 
 		return new self(
 			$termSearchInteractor,
-			$specialPage->getConfig()->get( 'LanguageCode' ),
+			$specialPage->getConfig()->get( MainConfigNames::LanguageCode ),
 			$itemNotabilityFilter,
 			$statsdDataFactory
 		);

@@ -4,8 +4,9 @@ namespace ArticlePlaceholder\Tests;
 
 use ArticlePlaceholder\ItemNotabilityFilter;
 use ArticlePlaceholder\SearchHookHandler;
-use Config;
+use HashConfig;
 use Liuggio\StatsdClient\Factory\StatsdDataFactory;
+use MediaWiki\MainConfigNames;
 use MediaWikiIntegrationTestCase;
 use OutputPage;
 use RequestContext;
@@ -145,7 +146,7 @@ class SearchHookHandlerTest extends MediaWikiIntegrationTestCase {
 		$specialPage = $this->createMock( SpecialSearch::class );
 		$specialPage->expects( $this->once() )
 			->method( 'getConfig' )
-			->willReturn( $this->createMock( Config::class ) );
+			->willReturn( new HashConfig( [ MainConfigNames::LanguageCode => 'en' ] ) );
 
 		/** @var SearchHookHandler $handler */
 		$handler = TestingAccessWrapper::newFromClass( SearchHookHandler::class );
