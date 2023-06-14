@@ -31,7 +31,7 @@ class SidebarBeforeOutputHookHandlerTest extends MediaWikiIntegrationTestCase {
 	public function testBuildSidebarLink_wrongNamespace() {
 		$title = $this->createMock( Title::class );
 		$title->expects( $this->once() )
-			->method( 'inNamespace' )
+			->method( 'isSpecial' )
 			->willReturn( false );
 
 		// We abort early, before Title::getText is ever called
@@ -48,7 +48,7 @@ class SidebarBeforeOutputHookHandlerTest extends MediaWikiIntegrationTestCase {
 	public function testBuildSidebarLink_wrongSpecialPageName() {
 		$title = $this->createMock( Title::class );
 		$title->expects( $this->once() )
-			->method( 'inNamespace' )
+			->method( 'isSpecial' )
 			->willReturn( true );
 
 		// Title::getText is only called once, because we abort after checking the name
@@ -141,10 +141,10 @@ class SidebarBeforeOutputHookHandlerTest extends MediaWikiIntegrationTestCase {
 
 		$title = $this->createMock( Title::class );
 		$title->expects( $this->once() )
-			->method( 'inNamespace' )
+			->method( 'isSpecial' )
 			->willReturn( true );
 
-		$title->expects( $this->exactly( 2 ) )
+		$title->expects( $this->once() )
 			->method( 'getText' )
 			->willReturn( $titleText );
 

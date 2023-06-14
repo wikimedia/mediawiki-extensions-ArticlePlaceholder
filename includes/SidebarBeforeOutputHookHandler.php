@@ -67,15 +67,11 @@ class SidebarBeforeOutputHookHandler {
 	 * @return void
 	 */
 	public static function onSidebarBeforeOutput( Skin $skin, &$sidebar ): void {
-		$self = self::newFromGlobalState();
-		$sidebarLink = $self->buildSidebarLink( $skin );
-
-		if ( !$sidebarLink ) {
-			return;
+		$sidebarLink = self::newFromGlobalState()->buildSidebarLink( $skin );
+		if ( $sidebarLink ) {
+			// Append link
+			$sidebar['TOOLBOX']['wikibase'] = $sidebarLink;
 		}
-
-		// Append link
-		$sidebar['TOOLBOX']['wikibase'] = $sidebarLink;
 	}
 
 	/**
@@ -83,29 +79,20 @@ class SidebarBeforeOutputHookHandler {
 	 *
 	 * @param Skin $skin
 	 *
-	 * @return bool|string[] Array of link elements or False if link cannot be craated
+	 * @return bool|string[] Array of link elements or False if link cannot be created
 	 */
 	public function buildSidebarLink( Skin $skin ) {
 		// Return early (for performance reasons) in case we're not on
 		// Special:AboutTopic (even before calling newFromGlobalState)
-		$title = $skin->getTitle();
-
-		if ( !$title->inNamespace( NS_SPECIAL ) ) {
-			return false;
-		}
-
-		$factory = MediaWikiServices::getInstance()->getSpecialPageFactory();
-		$canonicalSpecialPageName = $factory->resolveAlias( $title->getText() )[0];
-
-		if ( $canonicalSpecialPageName !== 'AboutTopic' ) {
+		if ( !$skin->getTitle()->isSpecial( 'AboutTopic' ) ) {
 			return false;
 		}
 
 		$itemId = $this->getItemId( $skin );
-
-		if ( $itemId === null || !$this->entityLookup->hasEntity( $itemId ) ) {
+		if ( !$itemId || !$this->entityLookup->hasEntity( $itemId ) ) {
 			return false;
 		}
+
 		// Duplicated from Wikibase\ClientHooks::buildWikidataItemLink
 		return [
 			'id' => 't-wikibase',

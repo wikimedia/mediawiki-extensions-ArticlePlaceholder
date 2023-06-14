@@ -59,12 +59,14 @@ class TermSearchApiInteractor implements TermSearchInteractor {
 			return [];
 		}
 
-		$result = [];
+		$results = [];
 		foreach ( $data['search'] as $datum ) {
-			$result[] = $this->parseDatum( $datum, $languageCode );
+			$result = $this->parseDatum( $datum, $languageCode );
+			if ( $result ) {
+				$results[] = $result;
+			}
 		}
-
-		return array_filter( $result );
+		return $results;
 	}
 
 	/**
@@ -73,8 +75,9 @@ class TermSearchApiInteractor implements TermSearchInteractor {
 	 * @return null|TermSearchResult
 	 */
 	private function parseDatum( array $datum, $languageCode ) {
-		if ( !isset( $datum['title'] ) || !isset( $datum['match'] ) ||
-			!isset( $datum['match']['text'] ) || !isset( $datum['match']['type'] )
+		if ( !isset( $datum['title'] ) ||
+			!isset( $datum['match']['text'] ) ||
+			!isset( $datum['match']['type'] )
 		) {
 			return null;
 		}
