@@ -2,7 +2,7 @@
 
 namespace ArticlePlaceholder\Lua;
 
-use RuntimeException;
+use ConfigException;
 use Scribunto_LuaLibraryBase;
 
 /**
@@ -22,7 +22,7 @@ class Scribunto_LuaArticlePlaceholderLibrary extends Scribunto_LuaLibraryBase {
 			!is_string( $wgArticlePlaceholderImageProperty ) ||
 			$wgArticlePlaceholderImageProperty === ''
 		) {
-			throw new RuntimeException( 'Bad value in $wgArticlePlaceholderImageProperty' );
+			throw new ConfigException( 'Bad value in $wgArticlePlaceholderImageProperty' );
 		}
 		return [ $wgArticlePlaceholderImageProperty ];
 	}
