@@ -10,7 +10,6 @@ use MediaWiki\MainConfigNames;
 use MediaWikiIntegrationTestCase;
 use OutputPage;
 use RequestContext;
-use SpecialSearch;
 use Title;
 use Wikibase\DataAccess\NullPrefetchingTermLookup;
 use Wikibase\DataAccess\Tests\FakePrefetchingTermLookup;
@@ -143,14 +142,14 @@ class SearchHookHandlerTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function testNewFromGlobalState() {
-		$specialPage = $this->createMock( SpecialSearch::class );
-		$specialPage->expects( $this->once() )
-			->method( 'getConfig' )
-			->willReturn( new HashConfig( [ MainConfigNames::LanguageCode => 'en' ] ) );
+		$config = new HashConfig( [
+			'ArticlePlaceholderRepoApiUrl' => '',
+			MainConfigNames::LanguageCode => 'en',
+		] );
 
 		/** @var SearchHookHandler $handler */
 		$handler = TestingAccessWrapper::newFromClass( SearchHookHandler::class );
-		$instance = $handler->newFromGlobalState( $specialPage );
+		$instance = $handler->newFromGlobalState( $config );
 
 		$this->assertInstanceOf( SearchHookHandler::class, $instance );
 	}
