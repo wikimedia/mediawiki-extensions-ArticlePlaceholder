@@ -3,8 +3,8 @@
 namespace ArticlePlaceholder\Tests\Lua;
 
 use ArticlePlaceholder\Lua\Scribunto_LuaArticlePlaceholderLibrary;
+use ConfigException;
 use MediaWikiIntegrationTestCase;
-use RuntimeException;
 use Scribunto_LuaEngine;
 
 /**
@@ -37,7 +37,7 @@ class Scribunto_LuaArticlePlaceholderLibraryTest extends MediaWikiIntegrationTes
 		$this->setMwGlobals( 'wgArticlePlaceholderImageProperty', '' );
 		$instance = $this->newInstance();
 
-		$this->expectException( RuntimeException::class );
+		$this->expectException( ConfigException::class );
 		$instance->getImageProperty();
 	}
 
