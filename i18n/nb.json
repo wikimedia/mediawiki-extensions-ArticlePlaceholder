@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Jon Harald Søby"
+			"Jon Harald Søby",
+			"EdoAug"
 		]
 	},
 	"createtopicpage": "Opprett side",
@@ -26,7 +27,7 @@
 	"articleplaceholder-search-header": "Finn data om emnet",
 	"articleplaceholder-createpage-title": "Opprett $1",
 	"articleplaceholder-createpage-alreadyexists": "Siden med tittelen $1 finnes fra før. Velg en annen tittel.",
-	"articleplaceholder-createpage-notitleprovided": "Ingen tittel ble skrevet inn, vennlgist skriv inn en tittel for siden du ønsker å opprette.",
+	"articleplaceholder-createpage-notitleprovided": "Ingen tittel ble skrevet inn, vennligst skriv inn en tittel for siden du ønsker å opprette.",
 	"articleplaceholder-createpage-invalidtitleprovided": "Tittelen du skrev inn er ugyldig. Skriv inn en gyldig tittel.",
 	"articleplaceholder-abouttopic-topmessage-text": "Dette er en automatisk visning basert på [$1 data fra {{WBREPONAME}}].<br />Det finnes ikke noen fullstendig artikkel ennå, men du kan hjelpe til å opprette en.",
 	"articleplaceholder-abouttopic-icon-title": "Informasjon"
