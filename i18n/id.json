@@ -7,7 +7,8 @@
 			"Hidayatsrf",
 			"J Nia30",
 			"Palladin911",
-			"Presidenvolksraad"
+			"Presidenvolksraad",
+			"Agam Riyandana"
 		]
 	},
 	"createtopicpage": "Buat halaman",
@@ -15,7 +16,7 @@
 	"articleplaceholder-abouttopic": "Tentang topik",
 	"articleplaceholder-abouttopic-intro": "Halaman khusus ini memberikan Anda tinjauan cepat tentang topik berdasarkan data dari {{WBREPONAME}}",
 	"articleplaceholder-abouttopic-entityid": "Masukkan sebuah ID item, misalnya Q12345",
-	"articleplaceholder-abouttopic-submit": "konsep",
+	"articleplaceholder-abouttopic-submit": "Rancangan",
 	"articleplaceholder-abouttopic-no-entity-error": "Ini bukan ID item yang sah.",
 	"articleplaceholder-abouttopic-create-article-title": "Buat artikel baru",
 	"articleplaceholder-abouttopic-create-article-label": "Judul artikel",
