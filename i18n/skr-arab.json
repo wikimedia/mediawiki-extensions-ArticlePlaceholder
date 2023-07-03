@@ -4,8 +4,16 @@
 			"Saraiki"
 		]
 	},
+	"articleplaceholder-abouttopic": "موضوع بارے",
+	"articleplaceholder-abouttopic-create-article-title": "ہک نواں مضمون بݨاؤ",
+	"articleplaceholder-abouttopic-create-article-label": "مضمون دا عنوان",
+	"articleplaceholder-abouttopic-create-article-mandatory": "مضمون دا عنوان لازمی ہے۔",
+	"articleplaceholder-abouttopic-create-article-button": "ہک مضمون بݨاؤ",
+	"articleplaceholder-abouttopic-translate-article-label": "ماخذ زبان:",
+	"articleplaceholder-abouttopic-translate-article-button": "مضمون دا ترجمہ کرو",
 	"articleplaceholder-abouttopic-create-article-submit-button": "جمع کرواؤ",
 	"articleplaceholder-abouttopic-lua-entity": "ہستی",
 	"articleplaceholder-abouttopic-lua-reference": "حوالہ",
-	"articleplaceholder-abouttopic-lua-identifier": "ٻاہرلے ماخذ"
+	"articleplaceholder-abouttopic-lua-identifier": "ٻاہرلے ماخذ",
+	"articleplaceholder-createpage-title": "خضقو $1"
 }
