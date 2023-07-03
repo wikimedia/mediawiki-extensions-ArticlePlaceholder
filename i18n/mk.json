@@ -9,7 +9,7 @@
 	"articleplaceholder-abouttopic": "За тема",
 	"articleplaceholder-abouttopic-intro": "Оваа службена страница ви дава краток преглед на темата  на основа на податоците од {{WBREPONAME}}.",
 	"articleplaceholder-abouttopic-entityid": "Внесете назнака на предметот, како на пр. Q12345",
-	"articleplaceholder-abouttopic-submit": "изработи",
+	"articleplaceholder-abouttopic-submit": "Изработи",
 	"articleplaceholder-abouttopic-no-entity-error": "Ова не е важечка назнака на предметот.",
 	"articleplaceholder-abouttopic-create-article-title": "Создајте нова статија",
 	"articleplaceholder-abouttopic-create-article-label": "Наслов на статијата",
