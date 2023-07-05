@@ -1,18 +1,19 @@
 {
 	"@metadata": {
 		"authors": [
-			"Yupik"
+			"Yupik",
+			"Kimberli Mäkäräinen (WMNO)"
 		]
 	},
-	"createtopicpage": "Álggat siiddu",
+	"createtopicpage": "Ráhkat siiddu",
 	"articleplaceholder-abouttopic": "Fáddá birra",
-	"articleplaceholder-abouttopic-create-article-title": "Álggat ođđa artihkal",
+	"articleplaceholder-abouttopic-create-article-title": "Ráhkat ođđa artihkkala",
 	"articleplaceholder-abouttopic-create-article-label": "Namma artihkkalii",
-	"articleplaceholder-abouttopic-create-article-button": "Álggat artihkal",
+	"articleplaceholder-abouttopic-create-article-button": "Ráhkat artihkkala",
 	"articleplaceholder-abouttopic-create-empty-article-button": "Álggat ođđa artihkal",
 	"articleplaceholder-abouttopic-translate-article-label": "Gáldogiella:",
 	"articleplaceholder-abouttopic-translate-article-button": "Jorgal artihkkala",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Sádde",
 	"articleplaceholder-abouttopic-lua-reference": "Gáldu",
-	"articleplaceholder-createpage-title": "Álggat «$1»"
+	"articleplaceholder-createpage-title": "Ráhkat $1"
 }
