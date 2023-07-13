@@ -4,8 +4,10 @@
 			"Saraiki"
 		]
 	},
+	"createtopicpage": "ورقہ بݨاؤ",
 	"articleplaceholder-abouttopic": "موضوع بارے",
 	"articleplaceholder-abouttopic-submit": "دستکاری",
+	"articleplaceholder-abouttopic-no-entity-error": "ایہ ٹھیک آئٹم آئی ڈی کائنی۔",
 	"articleplaceholder-abouttopic-create-article-title": "ہک نواں مضمون بݨاؤ",
 	"articleplaceholder-abouttopic-create-article-label": "مضمون دا عنوان",
 	"articleplaceholder-abouttopic-create-article-mandatory": "مضمون دا عنوان لازمی ہے۔",
