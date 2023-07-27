@@ -1,0 +1,33 @@
+{
+	"@metadata": {
+		"authors": [
+			"Winston Sung"
+		]
+	},
+	"createtopicpage": "Napravi stranicu",
+	"articleplaceholder-desc": "Daje posebnu stranicu s informacijama {{WBREPONAME}} o izvjesnoj temi i pozivnicu za stvaranje članka o toj temi",
+	"articleplaceholder-abouttopic": "O temi",
+	"articleplaceholder-abouttopic-intro": "Ova posebna stranica daje vam kratki pregled teme  na temelju podataka {{WBREPONAME}}.",
+	"articleplaceholder-abouttopic-entityid": "Unesite naznaku predmetota, kao npr. Q12345",
+	"articleplaceholder-abouttopic-submit": "Izraboti",
+	"articleplaceholder-abouttopic-no-entity-error": "Ovo nije važeća naznaka predmetota.",
+	"articleplaceholder-abouttopic-create-article-title": "Napravite novi članak",
+	"articleplaceholder-abouttopic-create-article-label": "Naslov članka",
+	"articleplaceholder-abouttopic-create-article-mandatory": "Naslov članka je obavezan.",
+	"articleplaceholder-abouttopic-create-article-button": "Napravi članak",
+	"articleplaceholder-abouttopic-create-empty-article-button": "Započnite novi članak",
+	"articleplaceholder-abouttopic-translate-article-label": "Izvorni jezik:",
+	"articleplaceholder-abouttopic-translate-article-button": "Prevedi članak",
+	"articleplaceholder-abouttopic-create-article-submit-button": "Pošalji",
+	"articleplaceholder-abouttopic-article-exists-error": "Već postoji članak s tim imenom.",
+	"articleplaceholder-abouttopic-lua-entity": "Jedinica",
+	"articleplaceholder-abouttopic-lua-reference": "Referenca",
+	"articleplaceholder-abouttopic-lua-identifier": "Vanjski resursi",
+	"articleplaceholder-search-header": "Otkrijte podatke o temi",
+	"articleplaceholder-createpage-title": "Napravi $1",
+	"articleplaceholder-createpage-alreadyexists": "Stranica s naslovom $1 već postoji. Odaberite drugu.",
+	"articleplaceholder-createpage-notitleprovided": "Niste unesli naslov. Unesite naslov za stranicu što želite da napravite.",
+	"articleplaceholder-createpage-invalidtitleprovided": "Uneseni naslov je nevažeći. Unesite važeći naslov.",
+	"articleplaceholder-abouttopic-topmessage-text": "Ovo je automatski prikaz temeljen na [$1 podacima od {{WBREPONAME}}].<br />Još ne postoji potpuni članak, ali možete pomoći u njegovom stvaranju.",
+	"articleplaceholder-abouttopic-icon-title": "Informacije"
+}
