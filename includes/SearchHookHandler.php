@@ -2,11 +2,11 @@
 
 namespace ArticlePlaceholder;
 
+use Config;
 use Liuggio\StatsdClient\Factory\StatsdDataFactoryInterface;
 use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use OutputPage;
-use SpecialPage;
 use SpecialSearch;
 use Wikibase\Client\WikibaseClient;
 use Wikibase\Lib\Interactors\TermSearchInteractor;
@@ -43,11 +43,11 @@ class SearchHookHandler {
 	private $statsdDataFactory;
 
 	/**
-	 * @param SpecialPage $specialPage
+	 * @param Config $config
 	 *
 	 * @return self
 	 */
-	private static function newFromGlobalState( SpecialPage $specialPage ) {
+	private static function newFromGlobalState( Config $config ) {
 		// TODO inject services into hook handler instance
 		$mwServices = MediaWikiServices::getInstance();
 		$repoDB = WikibaseClient::getItemAndPropertySource()->getDatabaseName();
@@ -61,21 +61,20 @@ class SearchHookHandler {
 			$clientSettings->getSetting( 'siteGlobalID' )
 		);
 
-		$statsdDataFactory = MediaWikiServices::getInstance()->getStatsdDataFactory();
-		$config = MediaWikiServices::getInstance()->getMainConfig();
+		$statsdDataFactory = $mwServices->getStatsdDataFactory();
 
 		$termSearchInteractor = new TermSearchApiInteractor(
 			new RepoApiInteractor(
 				$config->get( 'ArticlePlaceholderRepoApiUrl' ),
 				$statsdDataFactory,
-				MediaWikiServices::getInstance()->getHttpRequestFactory()
+				$mwServices->getHttpRequestFactory()
 			),
 			WikibaseClient::getEntityIdParser()
 		);
 
 		return new self(
 			$termSearchInteractor,
-			$specialPage->getConfig()->get( MainConfigNames::LanguageCode ),
+			$config->get( MainConfigNames::LanguageCode ),
 			$itemNotabilityFilter,
 			$statsdDataFactory
 		);
@@ -113,14 +112,12 @@ class SearchHookHandler {
 			return;
 		}
 
-		$articlePlaceholderSearchEnabled = MediaWikiServices::getInstance()->getMainConfig()->get(
-			'ArticlePlaceholderSearchIntegrationEnabled'
-		);
-		if ( $articlePlaceholderSearchEnabled !== true ) {
+		$config = $specialSearch->getConfig();
+		if ( !$config->get( 'ArticlePlaceholderSearchIntegrationEnabled' ) ) {
 			return;
 		}
 
-		$instance = self::newFromGlobalState( $specialSearch );
+		$instance = self::newFromGlobalState( $config );
 		$instance->addToSearch( $output, $term );
 	}
 
