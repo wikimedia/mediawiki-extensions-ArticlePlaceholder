@@ -28,12 +28,9 @@ class SpecialAboutTopic extends SpecialPage {
 	public static function newFromGlobalState() {
 		// TODO inject services
 		$mwServices = MediaWikiServices::getInstance();
+		$config = $mwServices->getMainConfig();
 		$settings = WikibaseClient::getSettings( $mwServices );
 		$store = WikibaseClient::getStore( $mwServices );
-
-		$articlePlaceholderSearchEngineIndexed = $mwServices->getMainConfig()->get(
-			'ArticlePlaceholderSearchEngineIndexed'
-		);
 
 		return new self(
 			new AboutTopicRenderer(
@@ -51,7 +48,7 @@ class SpecialAboutTopic extends SpecialPage {
 			$mwServices->getTitleFactory(),
 			$settings->getSetting( 'siteGlobalID' ),
 			$store->getEntityLookup(),
-			$articlePlaceholderSearchEngineIndexed
+			$config->get( 'ArticlePlaceholderSearchEngineIndexed' )
 		);
 	}
 
