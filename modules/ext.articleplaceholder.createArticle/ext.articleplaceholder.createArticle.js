@@ -1,12 +1,9 @@
 /**
- * @param $
- * @param mw
- * @param OO
- * @param module
  * @license GPL-2.0-or-later
  * @author Florian Schmidt
  * @author Jonas M. Kress
  */
+
 ( function ( $, mw, OO, module ) {
 	'use strict';
 
@@ -81,6 +78,7 @@
 
 	/**
 	 * @private
+	 * @return {jQuery.Promise}
 	 */
 	CreateArticleDialog.prototype.process = function () {
 		var self = this;
@@ -103,8 +101,8 @@
 	};
 
 	/**
-	 * @param $element
-	 * @param index
+	 * @param {jQuery} $element
+	 * @param {number} index
 	 * @protected
 	 */
 	CreateArticleDialog.prototype.addElement = function ( $element, index ) {
@@ -194,7 +192,7 @@
 	};
 
 	/**
-	 * @param url
+	 * @param {string} url
 	 * @protected
 	 */
 	CreateArticleDialog.prototype.forwardTo = function ( url ) {

@@ -1,12 +1,9 @@
 /**
- * @param $
- * @param mw
- * @param OO
- * @param module
  * @license GPL-2.0-or-later
  * @author Lucie-Aimée Kaffee
  * @author Florian Schmidt
  */
+
 ( function ( $, mw, OO, module ) {
 	'use strict';
 
