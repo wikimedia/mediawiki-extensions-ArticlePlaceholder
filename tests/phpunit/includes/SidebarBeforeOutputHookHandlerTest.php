@@ -3,9 +3,9 @@
 namespace ArticlePlaceholder\Tests;
 
 use ArticlePlaceholder\SidebarBeforeOutputHookHandler;
+use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
 use Skin;
-use Title;
 use WebRequest;
 use Wikibase\Client\Tests\Mocks\MockClientStore;
 use Wikibase\Client\WikibaseClient;
