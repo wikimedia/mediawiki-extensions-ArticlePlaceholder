@@ -20,6 +20,12 @@ $specialPageAliases['ar'] = [
 	'CreateTopicPage' => [ 'إنشاء_صفحة_الموضوع' ],
 ];
 
+/** Bengali (বাংলা) */
+$specialPageAliases['bn'] = [
+	'AboutTopic' => [ 'প্রসঙ্গ_সম্পর্কে' ],
+	'CreateTopicPage' => [ 'পাতা_তৈরি_করুন', 'পাতা_তৈরি', 'প্রসঙ্গ_তৈরি_করুন' ],
+];
+
 /** Welsh (Cymraeg) */
 $specialPageAliases['cy'] = [
 	'AboutTopic' => [ 'Am_y_Pwnc' ],
