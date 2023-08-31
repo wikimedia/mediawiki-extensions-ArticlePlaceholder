@@ -4,7 +4,8 @@
 			"Frisko",
 			"Josve05a",
 			"Sabelöga",
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Bengtsson96"
 		]
 	},
 	"createtopicpage": "Skapa sida",
@@ -12,7 +13,7 @@
 	"articleplaceholder-abouttopic": "Om ämnet",
 	"articleplaceholder-abouttopic-intro": "Denna specialsida ger dig en snabb översikt för ett ämne baserat på data från {{WBREPONAME}}.",
 	"articleplaceholder-abouttopic-entityid": "Ange ett objekt-ID, t.ex. Q12345",
-	"articleplaceholder-abouttopic-submit": "tillverka",
+	"articleplaceholder-abouttopic-submit": "Tillverka",
 	"articleplaceholder-abouttopic-no-entity-error": "Detta är inte ett giltigt objekt-ID.",
 	"articleplaceholder-abouttopic-create-article-title": "Skapa en ny artikel",
 	"articleplaceholder-abouttopic-create-article-label": "Artikelns titel",

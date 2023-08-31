@@ -9,6 +9,7 @@
 	},
 	"createtopicpage": "Прављење странице",
 	"articleplaceholder-abouttopic": "О теми",
+	"articleplaceholder-abouttopic-no-entity-error": "Ово није важећи ID ставке.",
 	"articleplaceholder-abouttopic-create-article-title": "Прављење новог чланка",
 	"articleplaceholder-abouttopic-create-article-label": "Наслов чланка",
 	"articleplaceholder-abouttopic-create-article-mandatory": "Наслов чланка је обавезан.",
