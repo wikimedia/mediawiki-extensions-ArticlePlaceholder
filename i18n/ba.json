@@ -2,14 +2,15 @@
 	"@metadata": {
 		"authors": [
 			"Айбикә",
+			"З. ӘЙЛЕ",
 			"Ләйсән"
 		]
 	},
 	"articleplaceholder-abouttopic": "Тема тураһында",
-	"articleplaceholder-abouttopic-create-article-button": "Мәҡәлә булдырырға",
+	"articleplaceholder-abouttopic-create-article-button": "Мәҡәлә яҙырға",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Ебәрергә",
-	"articleplaceholder-abouttopic-article-exists-error": "Бындай атамалы тема бар",
+	"articleplaceholder-abouttopic-article-exists-error": "Бындай атамалы тема бар инде",
 	"articleplaceholder-abouttopic-lua-entity": "Төп нигеҙ",
 	"articleplaceholder-abouttopic-lua-reference": "Иҫкәрмә",
-	"articleplaceholder-abouttopic-lua-identifier": "Тышҡы сығанаҡтар"
+	"articleplaceholder-abouttopic-lua-identifier": "Тышҡы ресурстар"
 }
