@@ -29,7 +29,10 @@ class SpecialCreateTopicPageTest extends MediaWikiIntegrationTestCase {
 	/**
 	 * @dataProvider executeDataProvider
 	 */
-	public function testExecute( string $testTitle, string $expected ) {
+	public function testExecute( bool $useExistingPage, string $expected ) {
+		$testTitle = $useExistingPage
+			? $this->getExistingTestPage( 'ExistingPage' )->getTitle()->getText()
+			: 'NonExistentPage';
 		$context = new DerivativeContext( RequestContext::getMain() );
 		$title = SpecialPage::getTitleFor( 'CreateTopicPage', $testTitle );
 		$context->setTitle( $title );
@@ -43,8 +46,8 @@ class SpecialCreateTopicPageTest extends MediaWikiIntegrationTestCase {
 
 	public static function executeDataProvider() {
 		return [
-			[ 'TestPage', '/w/index.php?title=TestPage&action=edit' ],
-			[ 'UTPage', '' ],
+			[ false, '/w/index.php?title=NonExistentPage&action=edit' ],
+			[ true, '' ],
 		];
 	}
 
