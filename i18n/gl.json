@@ -10,7 +10,7 @@
 	"articleplaceholder-abouttopic": "Sobre o tema",
 	"articleplaceholder-abouttopic-intro": "Esta páxina especial proporciónalle unha vista rápida dun tema baseado nos datos de {{WBREPONAME}}.",
 	"articleplaceholder-abouttopic-entityid": "Por favor, indique un identificador de elemento como por exemplo Q12345",
-	"articleplaceholder-abouttopic-submit": "crear",
+	"articleplaceholder-abouttopic-submit": "Crear",
 	"articleplaceholder-abouttopic-no-entity-error": "Este identificador de elemento non é válido.",
 	"articleplaceholder-abouttopic-create-article-title": "Crear un novo artigo",
 	"articleplaceholder-abouttopic-create-article-label": "Título do artigo",
