@@ -1,6 +1,8 @@
 /* eslint-env node */
 
 module.exports = function ( grunt ) {
+	var conf = grunt.file.readJSON( 'extension.json' );
+
 	require( 'load-grunt-tasks' )( grunt );
 
 	grunt.initConfig( {
@@ -15,9 +17,7 @@ module.exports = function ( grunt ) {
 				'!vendor/**'
 			]
 		},
-		banana: {
-			all: 'i18n/'
-		},
+		banana: conf.MessagesDirs,
 		stylelint: {
 			all: [
 				'**/*.css',
