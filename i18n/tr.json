@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"BaRaN6161 TURK",
 			"HakanIST",
 			"Hedda",
@@ -31,6 +32,6 @@
 	"articleplaceholder-createpage-alreadyexists": "$1 başlıklı sayfa zaten var. Lütfen başka birini seçiniz.",
 	"articleplaceholder-createpage-notitleprovided": "Başlık girilmedi, lütfen oluşturmak istediğiniz sayfa için bir başlık girin.",
 	"articleplaceholder-createpage-invalidtitleprovided": "Girdiğiniz başlık geçersiz. Lütfen geçerli bir başlık girin.",
-	"articleplaceholder-abouttopic-topmessage-text": "Bu,  [$1 {{WBREPONAME}}] kaynağından alınan verilere dayalı otomatik bir görünümdür<br/>Henüz tamamlanmış bir madde mevcut değil ancak bir tane yazarak yardımcı olabilirsiniz.",
+	"articleplaceholder-abouttopic-topmessage-text": "Bu, [$1 {{WBREPONAME}}] kaynağından alınan verilere dayalı otomatik bir görünümdür<br/>Henüz tamamlanmış bir madde mevcut değil ancak bir tane yazarak yardımcı olabilirsiniz.",
 	"articleplaceholder-abouttopic-icon-title": "Bilgi"
 }

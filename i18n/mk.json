@@ -1,13 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Bjankuloski06"
 		]
 	},
 	"createtopicpage": "Создај страница",
 	"articleplaceholder-desc": "Дава службена страница со информации од {{WBREPONAME}} за извесна тема и покана за создавање на статија на таа тема",
 	"articleplaceholder-abouttopic": "За тема",
-	"articleplaceholder-abouttopic-intro": "Оваа службена страница ви дава краток преглед на темата  на основа на податоците од {{WBREPONAME}}.",
+	"articleplaceholder-abouttopic-intro": "Оваа службена страница ви дава краток преглед на темата на основа на податоците од {{WBREPONAME}}.",
 	"articleplaceholder-abouttopic-entityid": "Внесете назнака на предметот, како на пр. Q12345",
 	"articleplaceholder-abouttopic-submit": "Изработи",
 	"articleplaceholder-abouttopic-no-entity-error": "Ова не е важечка назнака на предметот.",
