@@ -3,7 +3,9 @@
 		"authors": [
 			"BaRaN6161 TURK",
 			"HakanIST",
-			"Hedda"
+			"Hedda",
+			"Amire80",
+			"ToprakM"
 		]
 	},
 	"createtopicpage": "Sayfa oluştur",
@@ -30,6 +32,6 @@
 	"articleplaceholder-createpage-alreadyexists": "$1 başlıklı sayfa zaten var. Lütfen başka birini seçiniz.",
 	"articleplaceholder-createpage-notitleprovided": "Başlık girilmedi, lütfen oluşturmak istediğiniz sayfa için bir başlık girin.",
 	"articleplaceholder-createpage-invalidtitleprovided": "Girdiğiniz başlık geçersiz. Lütfen geçerli bir başlık girin.",
-	"articleplaceholder-abouttopic-topmessage-text": "Bu,  [$1 {{WBREPONAME}}] kaynağından alınan verilere dayalı otomatik bir görünümdür<br/>Henüz tamamlanmış bir madde mevcut değil ancak bir tane yazarak yardımcı olabilirsiniz.",
+	"articleplaceholder-abouttopic-topmessage-text": "Bu, [$1 {{WBREPONAME}}] kaynağından alınan verilere dayalı otomatik bir görünümdür<br/>Henüz tamamlanmış bir madde mevcut değil ancak bir tane yazarak yardımcı olabilirsiniz.",
 	"articleplaceholder-abouttopic-icon-title": "Bilgi"
 }
