@@ -179,7 +179,7 @@ class SpecialAboutTopic extends SpecialPage {
 	 * @inheritDoc
 	 */
 	public function getDescription() {
-		return $this->msg( 'articleplaceholder-abouttopic' )->text();
+		return $this->msg( 'articleplaceholder-abouttopic' );
 	}
 
 	/**
