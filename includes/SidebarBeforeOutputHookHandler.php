@@ -3,6 +3,7 @@
 namespace ArticlePlaceholder;
 
 use Exception;
+use MediaWiki\Hook\SidebarBeforeOutputHook;
 use MediaWiki\MediaWikiServices;
 use Skin;
 use Wikibase\Client\RepoLinker;
@@ -17,7 +18,7 @@ use Wikibase\DataModel\Services\Lookup\EntityLookup;
  * @license GPL-2.0-or-later
  * @author Marius Hoch < hoo@online.de >
  */
-class SidebarBeforeOutputHookHandler {
+class SidebarBeforeOutputHookHandler implements SidebarBeforeOutputHook {
 
 	/**
 	 * @var EntityIdParser
@@ -37,7 +38,7 @@ class SidebarBeforeOutputHookHandler {
 	/**
 	 * @return self
 	 */
-	private static function newFromGlobalState() {
+	public static function newFromGlobalState() {
 		return new self(
 			WikibaseClient::getEntityIdParser(),
 			WikibaseClient::getRepoLinker(),
@@ -66,8 +67,8 @@ class SidebarBeforeOutputHookHandler {
 	 *
 	 * @return void
 	 */
-	public static function onSidebarBeforeOutput( Skin $skin, &$sidebar ): void {
-		$sidebarLink = self::newFromGlobalState()->buildSidebarLink( $skin );
+	public function onSidebarBeforeOutput( $skin, &$sidebar ): void {
+		$sidebarLink = $this->buildSidebarLink( $skin );
 		if ( $sidebarLink ) {
 			// Append link
 			$sidebar['TOOLBOX']['wikibase'] = $sidebarLink;

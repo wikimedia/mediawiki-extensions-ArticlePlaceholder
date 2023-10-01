@@ -85,10 +85,23 @@
 		]
 	},
 	"Hooks": {
-		"SidebarBeforeOutput": "ArticlePlaceholder\\SidebarBeforeOutputHookHandler::onSidebarBeforeOutput",
+		"SidebarBeforeOutput": "sidebar",
 		"ScribuntoExternalLibraries": "ArticlePlaceholder\\Hooks::onScribuntoExternalLibraries",
 		"ScribuntoExternalLibraryPaths": "ArticlePlaceholder\\Hooks::registerScribuntoExternalLibraryPaths",
-		"SpecialSearchResultsAppend": "ArticlePlaceholder\\SearchHookHandler::onSpecialSearchResultsAppend"
+		"SpecialSearchResultsAppend": "search"
+	},
+	"HookHandlers": {
+		"sidebar": {
+			"class": "ArticlePlaceholder\\SidebarBeforeOutputHookHandler",
+			"factory": "ArticlePlaceholder\\SidebarBeforeOutputHookHandler::newFromGlobalState"
+		},
+		"search": {
+			"class": "ArticlePlaceholder\\SearchHookHandler",
+			"factory": "ArticlePlaceholder\\SearchHookHandler::newFromGlobalState",
+			"services": [
+				"MainConfig"
+			]
+		}
 	},
 	"config": {
 		"ArticlePlaceholderImageProperty": {

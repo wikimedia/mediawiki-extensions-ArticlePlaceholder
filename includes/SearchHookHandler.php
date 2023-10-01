@@ -4,6 +4,7 @@ namespace ArticlePlaceholder;
 
 use Config;
 use Liuggio\StatsdClient\Factory\StatsdDataFactoryInterface;
+use MediaWiki\Hook\SpecialSearchResultsAppendHook;
 use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use OutputPage;
@@ -20,7 +21,7 @@ use Wikimedia\Rdbms\SessionConsistentConnectionManager;
  * @license GPL-2.0-or-later
  * @author Lucie-Aimée Kaffee
  */
-class SearchHookHandler {
+class SearchHookHandler implements SpecialSearchResultsAppendHook {
 
 	/**
 	 * @var TermSearchInteractor
@@ -47,7 +48,7 @@ class SearchHookHandler {
 	 *
 	 * @return self
 	 */
-	private static function newFromGlobalState( Config $config ) {
+	public static function newFromGlobalState( Config $config ) {
 		// TODO inject services into hook handler instance
 		$mwServices = MediaWikiServices::getInstance();
 		$repoDB = WikibaseClient::getItemAndPropertySource()->getDatabaseName();
@@ -103,9 +104,9 @@ class SearchHookHandler {
 	 * @param OutputPage $output
 	 * @param string $term
 	 */
-	public static function onSpecialSearchResultsAppend(
-		SpecialSearch $specialSearch,
-		OutputPage $output,
+	public function onSpecialSearchResultsAppend(
+		$specialSearch,
+		$output,
 		$term
 	) {
 		if ( trim( $term ) === '' ) {
@@ -117,8 +118,7 @@ class SearchHookHandler {
 			return;
 		}
 
-		$instance = self::newFromGlobalState( $config );
-		$instance->addToSearch( $output, $term );
+		$this->addToSearch( $output, $term );
 	}
 
 	/**
