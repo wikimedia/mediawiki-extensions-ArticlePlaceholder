@@ -5,5 +5,20 @@
 		]
 	},
 	"createtopicpage": "АгӀо кхолла",
-	"articleplaceholder-createpage-title": "Кхолла $1"
+	"articleplaceholder-abouttopic": "Темех лаьцна",
+	"articleplaceholder-abouttopic-entityid": "Йазйе элементн идентификатор, масала, Q12345",
+	"articleplaceholder-abouttopic-submit": "Кхолла",
+	"articleplaceholder-abouttopic-no-entity-error": "ХӀара нийса йоцу элементан идентификатор йу.",
+	"articleplaceholder-abouttopic-create-article-title": "Кхолла керла йаззам",
+	"articleplaceholder-abouttopic-create-article-label": "Йаззаман цӀе",
+	"articleplaceholder-abouttopic-create-article-mandatory": "Йаззаман цӀе йазйар тӀехь ду.",
+	"articleplaceholder-abouttopic-create-article-button": "Кхолла йаззам",
+	"articleplaceholder-abouttopic-create-empty-article-button": "Болабе керла йаззам",
+	"articleplaceholder-abouttopic-translate-article-label": "Йуьхьанцара мотт:",
+	"articleplaceholder-abouttopic-translate-article-button": "Гочбе йаззам",
+	"articleplaceholder-abouttopic-create-article-submit-button": "ДӀадахьийта",
+	"articleplaceholder-abouttopic-lua-entity": "Билгало",
+	"articleplaceholder-abouttopic-lua-reference": "Хьажорг",
+	"articleplaceholder-createpage-title": "Кхолла $1",
+	"articleplaceholder-abouttopic-icon-title": "Информаци"
 }
