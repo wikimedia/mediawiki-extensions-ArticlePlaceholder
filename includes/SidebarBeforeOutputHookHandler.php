@@ -2,13 +2,13 @@
 
 namespace ArticlePlaceholder;
 
-use Exception;
 use MediaWiki\Hook\SidebarBeforeOutputHook;
 use MediaWiki\MediaWikiServices;
 use Skin;
 use Wikibase\Client\RepoLinker;
 use Wikibase\Client\WikibaseClient;
 use Wikibase\DataModel\Entity\EntityIdParser;
+use Wikibase\DataModel\Entity\EntityIdParsingException;
 use Wikibase\DataModel\Entity\ItemId;
 use Wikibase\DataModel\Services\Lookup\EntityLookup;
 
@@ -124,7 +124,7 @@ class SidebarBeforeOutputHookHandler implements SidebarBeforeOutputHook {
 		try {
 			// @phan-suppress-next-line PhanTypeMismatchReturn
 			return $this->entityIdParser->parse( $idSerialization );
-		} catch ( Exception $ex ) {
+		} catch ( EntityIdParsingException $ex ) {
 			// Ignore
 		}
 
