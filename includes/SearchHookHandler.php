@@ -128,7 +128,7 @@ class SearchHookHandler implements SpecialSearchResultsAppendHook {
 	private function addToSearch( OutputPage $output, $term ): void {
 		$termSearchResults = $this->getTermSearchResults( $term );
 
-		if ( !empty( $termSearchResults ) ) {
+		if ( $termSearchResults ) {
 			$renderedTermSearchResults = $this->renderTermSearchResults( $termSearchResults );
 
 			if ( $renderedTermSearchResults !== '' ) {
