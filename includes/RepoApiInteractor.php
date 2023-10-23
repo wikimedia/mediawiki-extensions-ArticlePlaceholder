@@ -52,7 +52,9 @@ class RepoApiInteractor {
 		$url = wfAppendQuery( $this->repoApiUrl, $params );
 		$req = $this->httpRequestFactory->create(
 			$url,
-			[],
+			[
+				'userAgent' => 'ArticlePlaceholder ' . $this->httpRequestFactory->getUserAgent(),
+			],
 			__METHOD__
 		);
 
