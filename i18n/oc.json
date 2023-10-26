@@ -3,7 +3,8 @@
 		"authors": [
 			"BrennodAloisi",
 			"Cedric31",
-			"Jfblanc"
+			"Jfblanc",
+			"Nicolas Eynaud"
 		]
 	},
 	"articleplaceholder-desc": "Porgís una pagina especiala d'informacion de {{WBREPONAME}} sus un subjècte determinat, amb invitacion a crear un article sul subjècte.",
@@ -18,5 +19,7 @@
 	"articleplaceholder-abouttopic-lua-entity": "Entitat",
 	"articleplaceholder-abouttopic-lua-reference": "Referéncia",
 	"articleplaceholder-abouttopic-lua-identifier": "Ressorsas extèrnas",
-	"articleplaceholder-search-header": "Descobrir de donadas sobratz lo tèma"
+	"articleplaceholder-search-header": "Descobrir de donadas sobratz lo tèma",
+	"articleplaceholder-createpage-title": "Crear $1",
+	"articleplaceholder-abouttopic-icon-title": "Informacion"
 }
