@@ -4,5 +4,8 @@
 			"P. S. F. Freitas"
 		]
 	},
-	"articleplaceholder-abouttopic-translate-article-button": "Embohasa ambue ñe'ẽme"
+	"articleplaceholder-abouttopic-create-article-title": "Ejapo peteĩ kuatia pyahu",
+	"articleplaceholder-abouttopic-create-article-mandatory": "Kuatia oguereko va'erã herarã.",
+	"articleplaceholder-abouttopic-translate-article-button": "Embohasa ambue ñe'ẽme",
+	"articleplaceholder-abouttopic-article-exists-error": "Oĩma peteĩ kuatia orekóva ko héra"
 }
