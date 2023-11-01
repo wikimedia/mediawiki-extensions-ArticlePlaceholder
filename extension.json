@@ -86,8 +86,8 @@
 	},
 	"Hooks": {
 		"SidebarBeforeOutput": "sidebar",
-		"ScribuntoExternalLibraries": "ArticlePlaceholder\\Hooks::onScribuntoExternalLibraries",
-		"ScribuntoExternalLibraryPaths": "ArticlePlaceholder\\Hooks::registerScribuntoExternalLibraryPaths",
+		"ScribuntoExternalLibraries": "scribunto",
+		"ScribuntoExternalLibraryPaths": "scribunto",
 		"SpecialSearchResultsAppend": "search"
 	},
 	"HookHandlers": {
@@ -101,6 +101,9 @@
 			"services": [
 				"MainConfig"
 			]
+		},
+		"scribunto": {
+			"class": "ArticlePlaceholder\\ScribuntoHooks"
 		}
 	},
 	"config": {
