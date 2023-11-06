@@ -28,5 +28,7 @@
 	"articleplaceholder-createpage-title": "Crear $1",
 	"articleplaceholder-createpage-alreadyexists": "A páxina co título $1 xa existe. Por favor, escolla outro.",
 	"articleplaceholder-createpage-notitleprovided": "Non se indicou ningún título, por favor, escriba un título para a páxina que quere crear.",
-	"articleplaceholder-createpage-invalidtitleprovided": "O título escrito non é válido, por favor, indique un título válido."
+	"articleplaceholder-createpage-invalidtitleprovided": "O título escrito non é válido, por favor, indique un título válido.",
+	"articleplaceholder-abouttopic-topmessage-text": "Esta é unha vista automática baseada en [$1 datos de {{WBREPONAME}}].<br />Aínda non hai un artigo completo, pero pode axudar a crealo.",
+	"articleplaceholder-abouttopic-icon-title": "Información"
 }
