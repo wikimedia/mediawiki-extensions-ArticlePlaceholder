@@ -2,20 +2,20 @@
 
 namespace ArticlePlaceholder\Tests;
 
-use ArticlePlaceholder\Hooks;
+use ArticlePlaceholder\ScribuntoHooks;
 
 /**
- * @covers \ArticlePlaceholder\Hooks
+ * @covers \ArticlePlaceholder\ScribuntoHooks
  *
  * @group ArticlePlaceholder
  *
  * @license GPL-2.0-or-later
  * @author Thiemo Kreuz
  */
-class HooksTest extends \PHPUnit\Framework\TestCase {
+class ScribuntoHooksTest extends \PHPUnit\Framework\TestCase {
 
 	public function testOnScribuntoExternalLibraries() {
-		$instance = new Hooks();
+		$instance = new ScribuntoHooks();
 		$extraLibraries = [];
 		$instance->onScribuntoExternalLibraries( 'lua', $extraLibraries );
 		$this->assertCount( 1, $extraLibraries );
@@ -24,9 +24,9 @@ class HooksTest extends \PHPUnit\Framework\TestCase {
 	}
 
 	public function testRegisterScribuntoExternalLibraryPaths() {
-		$instance = new Hooks();
+		$instance = new ScribuntoHooks();
 		$paths = [];
-		$instance->registerScribuntoExternalLibraryPaths( 'lua', $paths );
+		$instance->onScribuntoExternalLibraryPaths( 'lua', $paths );
 		$this->assertArrayHasKey( 0, $paths );
 		$this->assertStringEndsWith( '/includes/Lua', $paths[0] );
 	}
