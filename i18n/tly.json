@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Patriot Kor"
+			"Patriot Kor",
+			"Гусейн"
 		]
 	},
-	"articleplaceholder-abouttopic-create-article-submit-button": "Təğdim"
+	"articleplaceholder-abouttopic-create-article-submit-button": "Təğdim",
+	"articleplaceholder-abouttopic-icon-title": "Məlumot"
 }
