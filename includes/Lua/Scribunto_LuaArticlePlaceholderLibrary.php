@@ -2,7 +2,7 @@
 
 namespace ArticlePlaceholder\Lua;
 
-use ConfigException;
+use MediaWiki\Config\ConfigException;
 use Scribunto_LuaLibraryBase;
 
 /**

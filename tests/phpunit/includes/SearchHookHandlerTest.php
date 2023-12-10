@@ -4,12 +4,12 @@ namespace ArticlePlaceholder\Tests;
 
 use ArticlePlaceholder\ItemNotabilityFilter;
 use ArticlePlaceholder\SearchHookHandler;
-use HashConfig;
 use Liuggio\StatsdClient\Factory\StatsdDataFactory;
+use MediaWiki\Config\HashConfig;
 use MediaWiki\MainConfigNames;
+use MediaWiki\Output\OutputPage;
 use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
-use OutputPage;
 use RequestContext;
 use Wikibase\DataAccess\NullPrefetchingTermLookup;
 use Wikibase\DataAccess\Tests\FakePrefetchingTermLookup;

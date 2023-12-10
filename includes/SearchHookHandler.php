@@ -2,13 +2,13 @@
 
 namespace ArticlePlaceholder;
 
-use Config;
 use Liuggio\StatsdClient\Factory\StatsdDataFactoryInterface;
+use MediaWiki\Config\Config;
 use MediaWiki\Hook\SpecialSearchResultsAppendHook;
 use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
-use OutputPage;
-use SpecialSearch;
+use MediaWiki\Output\OutputPage;
+use MediaWiki\Specials\SpecialSearch;
 use Wikibase\Client\WikibaseClient;
 use Wikibase\Lib\Interactors\TermSearchInteractor;
 use Wikibase\Lib\Interactors\TermSearchResult;

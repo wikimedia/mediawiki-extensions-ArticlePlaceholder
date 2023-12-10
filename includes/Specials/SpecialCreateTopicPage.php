@@ -4,10 +4,10 @@ namespace ArticlePlaceholder\Specials;
 
 use HTMLForm;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\SpecialPage\UnlistedSpecialPage;
 use MediaWiki\Title\Title;
 use Message;
 use PermissionsError;
-use UnlistedSpecialPage;
 
 /**
  * The CreateTopicPage SpecialPage for the ArticlePlaceholder extension

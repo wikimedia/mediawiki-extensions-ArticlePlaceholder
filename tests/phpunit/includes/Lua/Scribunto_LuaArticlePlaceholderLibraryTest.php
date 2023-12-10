@@ -3,7 +3,7 @@
 namespace ArticlePlaceholder\Tests\Lua;
 
 use ArticlePlaceholder\Lua\Scribunto_LuaArticlePlaceholderLibrary;
-use ConfigException;
+use MediaWiki\Config\ConfigException;
 use MediaWikiIntegrationTestCase;
 use Scribunto_LuaEngine;
 

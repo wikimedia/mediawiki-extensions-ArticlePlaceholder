@@ -4,9 +4,9 @@ namespace ArticlePlaceholder\Tests\Specials;
 
 use ArticlePlaceholder\Specials\SpecialCreateTopicPage;
 use DerivativeContext;
+use MediaWiki\SpecialPage\SpecialPage;
 use MediaWikiIntegrationTestCase;
 use RequestContext;
-use SpecialPage;
 
 /**
  * @covers \ArticlePlaceholder\Specials\SpecialCreateTopicPage

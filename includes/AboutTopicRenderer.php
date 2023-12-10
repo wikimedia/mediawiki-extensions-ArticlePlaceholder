@@ -3,17 +3,17 @@
 namespace ArticlePlaceholder;
 
 use ExtensionRegistry;
-use Html;
 use Language;
-use MalformedTitleException;
+use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Output\OutputPage;
 use MediaWiki\Permissions\PermissionManager;
+use MediaWiki\SpecialPage\SpecialPage;
+use MediaWiki\Title\MalformedTitleException;
 use MediaWiki\Title\TitleFactory;
+use MediaWiki\User\User;
 use OOUI;
-use OutputPage;
 use SiteLookup;
-use SpecialPage;
-use User;
 use Wikibase\Client\Hooks\OtherProjectsSidebarGeneratorFactory;
 use Wikibase\Client\RepoLinker;
 use Wikibase\Client\Usage\HashUsageAccumulator;
