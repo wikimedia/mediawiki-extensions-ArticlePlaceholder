@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Adignyoke",
+			"Akakiiri"
+		]
+	},
+	"articleplaceholder-abouttopic-no-entity-error": "Iŋa ka de 'valid' lɔkɔ ID.",
+	"articleplaceholder-abouttopic-create-article-title": "Maalɛ 'article' paalega",
+	"articleplaceholder-abouttopic-create-article-label": "'Article' zuo",
+	"articleplaceholder-abouttopic-create-article-mandatory": "'Articel' la zuo de la pɛregerɛ.",
+	"articleplaceholder-abouttopic-create-article-button": "Maalɛ 'article'",
+	"articleplaceholder-abouttopic-translate-article-label": "Yetɔgum n ze'ele zi'an na:",
+	"articleplaceholder-abouttopic-translate-article-button": "Lerege 'article'",
+	"articleplaceholder-abouttopic-create-article-submit-button": "Dikɛ kɛ'ɛsɛ",
+	"articleplaceholder-abouttopic-article-exists-error": "'Articel' n tari yudina wa pugum bɔna na mɛ",
+	"articleplaceholder-abouttopic-lua-entity": "\"Entity\"",
+	"articleplaceholder-abouttopic-lua-reference": "Viisegɔ lɔgerɔ",
+	"articleplaceholder-abouttopic-lua-identifier": "'External resources'",
+	"articleplaceholder-search-header": "'Discover data on the topic'",
+	"articleplaceholder-createpage-title": "Maalɛ $1",
+	"articleplaceholder-createpage-alreadyexists": "Pɛgerɛ n tari zuo $1 pugum bɔna na mɛ. N beleni mɛ loe yima yɛ'ɛsa.",
+	"articleplaceholder-createpage-notitleprovided": "Zuo ka kɛ'ɛsɛ ni, n beleni mɛ kɛ'ɛsɛ zuo pɛgerɛ la ti fu bɔta ti fu maalɛ la puan.",
+	"articleplaceholder-createpage-invalidtitleprovided": "Zuo la ti fu kɛ'ɛsɛ la de la 'invalid'. N beleni mɛ bɔ zusɛka n iŋɛ 'valid'."
+}
