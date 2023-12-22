@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Aftabuzzaman",
+			"Aishik Rehman",
 			"আফতাবুজ্জামান"
 		]
 	},
@@ -27,7 +28,7 @@
 	"articleplaceholder-search-header": "বিষয়টির উপর তথ্য আবিষ্কার করুন",
 	"articleplaceholder-createpage-title": "$1 তৈরি করুন",
 	"articleplaceholder-createpage-alreadyexists": "$1 শিরোনামের পৃষ্ঠাটি ইতিমধ্যে বিদ্যমান। দয়া করে অন্য একটি নির্বাচন করুন।",
-	"articleplaceholder-createpage-notitleprovided": "কোন শিরোনাম দেয়া হয়নি, দয়া করে আপনি যে পাতাটি তৈরি করতে চান তার জন্য একটি শিরোনাম লিখুন।",
+	"articleplaceholder-createpage-notitleprovided": "কোনো শিরোনাম দেয়া হয়নি, দয়া করে আপনি যে পাতাটি তৈরি করতে চান তার জন্য একটি শিরোনাম লিখুন।",
 	"articleplaceholder-createpage-invalidtitleprovided": "আপনার প্রবেশ করানো শিরোনামটি অবৈধ। দয়া করে একটি বৈধ শিরোনাম প্রদান করুন।",
 	"articleplaceholder-abouttopic-topmessage-text": "এটি [$1 {{WBREPONAME}} থেকে প্রাপ্ত উপাত্তের] উপর ভিত্তি করে তৈরি একটি স্বয়ংক্রিয় কার্ড দৃশ্য।<br />এই বিষয়ে এই উইকিতে এখনও একটি সম্পূর্ণ নিবন্ধ তৈরি করা হয়নি, তবে আপনি একটি তৈরি করতে সহায়তা করতে পারেন।",
 	"articleplaceholder-abouttopic-icon-title": "তথ্য"
