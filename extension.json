@@ -66,11 +66,7 @@
 				"ext.articleplaceholder.defaultDisplay/ext.articleplaceholder.defaultDisplayMobile.css": {
 					"media": "only screen and (max-device-width: 880px)"
 				}
-			},
-			"targets": [
-				"desktop",
-				"mobile"
-			]
+			}
 		}
 	},
 	"QUnitTestModule": {
