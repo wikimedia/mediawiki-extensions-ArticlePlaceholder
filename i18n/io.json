@@ -5,6 +5,9 @@
 		]
 	},
 	"createtopicpage": "Krear pagino",
+	"articleplaceholder-desc": "Furnisas nova pagino kun informo {{WBREPONAME}} pri certena temo, sen invito por krear artiklo pri la temo",
+	"articleplaceholder-abouttopic-create-article-title": "Kreez nov artiklo",
+	"articleplaceholder-abouttopic-create-article-button": "Krear artiklo",
 	"articleplaceholder-abouttopic-translate-article-label": "Fonto-linguo:",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Sendez",
 	"articleplaceholder-abouttopic-lua-entity": "Ento",
