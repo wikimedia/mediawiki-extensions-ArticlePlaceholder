@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Chrumps",
+			"Msz2001",
 			"Rail",
 			"WaldiSt"
 		]
@@ -11,6 +12,7 @@
 	"articleplaceholder-abouttopic": "O temacie",
 	"articleplaceholder-abouttopic-intro": "Ta strona specjalna daje szybki przegląd tematu na podstawie danych pochodzących z {{GRAMMAR:D.lp|{{WBREPONAME}}}}.",
 	"articleplaceholder-abouttopic-entityid": "Wprowadź identyfikator ID produktu, taki jak Q12345",
+	"articleplaceholder-abouttopic-submit": "Przygotuj",
 	"articleplaceholder-abouttopic-no-entity-error": "Podano nieprawidłowy identyfikator elementu.",
 	"articleplaceholder-abouttopic-create-article-title": "Utwórz nowy artykuł",
 	"articleplaceholder-abouttopic-create-article-label": "Tytuł artykułu",
@@ -21,6 +23,7 @@
 	"articleplaceholder-abouttopic-translate-article-button": "Przetłumacz artykuł",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Wyślij",
 	"articleplaceholder-abouttopic-article-exists-error": "Artykuł o tej nazwie już istnieje",
+	"articleplaceholder-abouttopic-lua-entity": "Obiekt",
 	"articleplaceholder-abouttopic-lua-reference": "Przypis",
 	"articleplaceholder-abouttopic-lua-identifier": "Źródła zewnętrzne",
 	"articleplaceholder-search-header": "Przeglądaj dane na ten temat",
