@@ -53,7 +53,9 @@
 			mw.cx = {
 				SiteMapper: function () {
 					return {
-						getCXUrl: function () { return ARTICLE_URL; }
+						getCXUrl: function () {
+							return ARTICLE_URL;
+						}
 					};
 				}
 			};
