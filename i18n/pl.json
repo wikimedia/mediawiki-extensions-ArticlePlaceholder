@@ -3,7 +3,8 @@
 		"authors": [
 			"Chrumps",
 			"Rail",
-			"WaldiSt"
+			"WaldiSt",
+			"Msz2001"
 		]
 	},
 	"createtopicpage": "Utwórz stronę",
@@ -21,6 +22,7 @@
 	"articleplaceholder-abouttopic-translate-article-button": "Przetłumacz artykuł",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Wyślij",
 	"articleplaceholder-abouttopic-article-exists-error": "Artykuł o tej nazwie już istnieje",
+	"articleplaceholder-abouttopic-lua-entity": "Obiekt",
 	"articleplaceholder-abouttopic-lua-reference": "Przypis",
 	"articleplaceholder-abouttopic-lua-identifier": "Źródła zewnętrzne",
 	"articleplaceholder-search-header": "Przeglądaj dane na ten temat",
