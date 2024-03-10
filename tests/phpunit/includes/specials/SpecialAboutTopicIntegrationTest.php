@@ -128,7 +128,7 @@ class SpecialAboutTopicIntegrationTest extends SpecialPageTestBase {
 	}
 
 	public function testExecution() {
-		list( $specialPageResult, ) = $this->executeSpecialPage( 'Q1' );
+		[ $specialPageResult, ] = $this->executeSpecialPage( 'Q1' );
 		$repoLinker = WikibaseClient::getRepoLinker();
 		$itemID = new ItemId( 'Q1' );
 		$entityUrl = $repoLinker->getEntityUrl( $itemID );
