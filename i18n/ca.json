@@ -2,15 +2,19 @@
 	"@metadata": {
 		"authors": [
 			"Fitoschido",
+			"V27t",
 			"Vfc"
 		]
 	},
 	"createtopicpage": "Crea una pàgina",
 	"articleplaceholder-abouttopic-create-article-title": "Creació d’un article nou",
 	"articleplaceholder-abouttopic-create-article-label": "Títol de l’article",
+	"articleplaceholder-abouttopic-create-article-mandatory": "El títol de l'article és obligatori.",
 	"articleplaceholder-abouttopic-create-article-button": "Crea un article",
 	"articleplaceholder-abouttopic-create-empty-article-button": "Crea un article nou",
+	"articleplaceholder-abouttopic-article-exists-error": "Ja existeix un article amb aquest nom",
 	"articleplaceholder-abouttopic-lua-entity": "Entitat",
 	"articleplaceholder-abouttopic-lua-reference": "Referència",
-	"articleplaceholder-createpage-title": "Crea $1"
+	"articleplaceholder-createpage-title": "Crea $1",
+	"articleplaceholder-abouttopic-icon-title": "Informació"
 }
