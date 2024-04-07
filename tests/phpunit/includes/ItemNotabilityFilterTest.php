@@ -5,7 +5,6 @@ namespace ArticlePlaceholder\Tests;
 use ArticlePlaceholder\ItemNotabilityFilter;
 use DataValues\StringValue;
 use ExtensionRegistry;
-use MediaWiki\MediaWikiServices;
 use MediaWikiIntegrationTestCase;
 use Wikibase\DataModel\Entity\Item;
 use Wikibase\DataModel\Entity\ItemId;
@@ -56,7 +55,7 @@ class ItemNotabilityFilterTest extends MediaWikiIntegrationTestCase {
 	 * @return ItemNotabilityFilter
 	 */
 	private function getInstance(): ItemNotabilityFilter {
-		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
+		$lbFactory = $this->getServiceContainer()->getDBLoadBalancerFactory();
 
 		return new ItemNotabilityFilter(
 			new SessionConsistentConnectionManager( $lbFactory->getMainLB() ),

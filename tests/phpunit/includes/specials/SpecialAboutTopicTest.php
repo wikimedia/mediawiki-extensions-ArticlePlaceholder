@@ -5,7 +5,6 @@ namespace ArticlePlaceholder\Tests\Specials;
 use ArticlePlaceholder\AboutTopicRenderer;
 use ArticlePlaceholder\Specials\SpecialAboutTopic;
 use DerivativeContext;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
@@ -100,7 +99,7 @@ class SpecialAboutTopicTest extends MediaWikiIntegrationTestCase {
 			$this->createMock( AboutTopicRenderer::class ),
 			$this->getEntityIdParser(),
 			$this->getSiteLinkLookup(),
-			MediaWikiServices::getInstance()->getTitleFactory(),
+			$this->getServiceContainer()->getTitleFactory(),
 			'enwiki',
 			$this->getEntityLookup(),
 			$searchEngineIndexed

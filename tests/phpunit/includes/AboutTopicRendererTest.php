@@ -4,7 +4,6 @@ namespace ArticlePlaceholder\Tests;
 
 use ArticlePlaceholder\AboutTopicRenderer;
 use DerivativeContext;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\SpecialPage\SpecialPage;
@@ -87,7 +86,7 @@ class AboutTopicRendererTest extends MediaWikiIntegrationTestCase {
 			$this->getSiteLinkLookup(),
 			$this->getSiteLookup(),
 			'wikipedia',
-			$titleFactory ?: MediaWikiServices::getInstance()->getTitleFactory(),
+			$titleFactory ?: $this->getServiceContainer()->getTitleFactory(),
 			$sidebarGeneratorFactory,
 			$permMock,
 			$repoLinker
@@ -95,7 +94,7 @@ class AboutTopicRendererTest extends MediaWikiIntegrationTestCase {
 
 		$instance->showPlaceholder(
 			$itemId,
-			MediaWikiServices::getInstance()->getLanguageFactory()->getLanguage( 'eo' ),
+			$this->getServiceContainer()->getLanguageFactory()->getLanguage( 'eo' ),
 			$this->createMock( User::class ),
 			$outputPage
 		);
@@ -181,7 +180,7 @@ class AboutTopicRendererTest extends MediaWikiIntegrationTestCase {
 		$factory->expects( $this->once() )
 			->method( 'newLabelDescriptionLookup' )
 			->with(
-				MediaWikiServices::getInstance()->getLanguageFactory()->getLanguage( 'eo' ),
+				$this->getServiceContainer()->getLanguageFactory()->getLanguage( 'eo' ),
 				$this->anything(),
 				[ TermTypes::TYPE_LABEL, TermTypes::TYPE_DESCRIPTION ]
 			)

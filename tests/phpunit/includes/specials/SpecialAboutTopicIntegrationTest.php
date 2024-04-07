@@ -7,7 +7,6 @@ namespace ArticlePlaceholder\Tests\Specials;
 use ArticlePlaceholder\AboutTopicRenderer;
 use ArticlePlaceholder\Specials\SpecialAboutTopic;
 use HashSiteStore;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\SpecialPage\SpecialPage;
 use Site;
 use SiteLookup;
@@ -86,7 +85,7 @@ class SpecialAboutTopicIntegrationTest extends SpecialPageTestBase {
 	}
 
 	protected function newSpecialPage() {
-		$services = MediaWikiServices::getInstance();
+		$services = $this->getServiceContainer();
 		$articlePlaceholderSearchEngineIndexed = $services->getMainConfig()->get(
 			'ArticlePlaceholderSearchEngineIndexed'
 		);
