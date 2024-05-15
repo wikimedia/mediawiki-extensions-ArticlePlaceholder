@@ -42,7 +42,7 @@ class SpecialCreateTopicPage extends UnlistedSpecialPage {
 			$this->showNoOrInvalidTitleGivenMessage( 'invalid' );
 			return;
 		}
-		$out->setPageTitle( $this->msg( 'articleplaceholder-createpage-title', $title->getText() ) );
+		$out->setPageTitleMsg( $this->msg( 'articleplaceholder-createpage-title', $title->getText() ) );
 		if ( $title->exists() ) {
 			$this->showAlreadyExistsMessage( $title );
 			return;
