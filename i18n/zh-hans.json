@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"AYZ04",
+			"LittlePaw365",
 			"Liuxinyu970226",
 			"落花有意12138"
 		]
@@ -13,7 +14,7 @@
 	"articleplaceholder-abouttopic-entityid": "请输入一个项ID，例如Q12345",
 	"articleplaceholder-abouttopic-submit": "工艺",
 	"articleplaceholder-abouttopic-no-entity-error": "这不是有效的实体ID。",
-	"articleplaceholder-abouttopic-create-article-title": "创建一个新条目",
+	"articleplaceholder-abouttopic-create-article-title": "创建新条目",
 	"articleplaceholder-abouttopic-create-article-label": "条目标题",
 	"articleplaceholder-abouttopic-create-article-mandatory": "条目的标题是强制的。",
 	"articleplaceholder-abouttopic-create-article-button": "创建条目",
