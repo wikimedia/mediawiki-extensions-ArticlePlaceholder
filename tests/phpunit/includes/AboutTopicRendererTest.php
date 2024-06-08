@@ -3,17 +3,17 @@
 namespace ArticlePlaceholder\Tests;
 
 use ArticlePlaceholder\AboutTopicRenderer;
-use DerivativeContext;
+use MediaWiki\Context\DerivativeContext;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Permissions\PermissionManager;
+use MediaWiki\Site\Site;
+use MediaWiki\Site\SiteLookup;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\MalformedTitleException;
 use MediaWiki\Title\TitleFactory;
 use MediaWiki\User\User;
 use MediaWikiIntegrationTestCase;
-use RequestContext;
-use Site;
-use SiteLookup;
 use Wikibase\Client\Hooks\OtherProjectsSidebarGenerator;
 use Wikibase\Client\Hooks\OtherProjectsSidebarGeneratorFactory;
 use Wikibase\Client\RepoLinker;

@@ -3,10 +3,10 @@
 namespace ArticlePlaceholder\Tests\Specials;
 
 use ArticlePlaceholder\Specials\SpecialCreateTopicPage;
-use DerivativeContext;
+use MediaWiki\Context\DerivativeContext;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWikiIntegrationTestCase;
-use RequestContext;
 
 /**
  * @covers \ArticlePlaceholder\Specials\SpecialCreateTopicPage

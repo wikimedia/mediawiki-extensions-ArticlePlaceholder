@@ -2,11 +2,11 @@
 
 namespace ArticlePlaceholder\Specials;
 
-use HTMLForm;
+use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Message\Message;
 use MediaWiki\SpecialPage\UnlistedSpecialPage;
 use MediaWiki\Title\Title;
-use Message;
 use PermissionsError;
 
 /**

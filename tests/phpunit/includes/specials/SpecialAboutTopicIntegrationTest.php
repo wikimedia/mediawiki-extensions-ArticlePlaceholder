@@ -6,10 +6,10 @@ namespace ArticlePlaceholder\Tests\Specials;
 
 use ArticlePlaceholder\AboutTopicRenderer;
 use ArticlePlaceholder\Specials\SpecialAboutTopic;
-use HashSiteStore;
+use MediaWiki\Site\HashSiteStore;
+use MediaWiki\Site\Site;
+use MediaWiki\Site\SiteLookup;
 use MediaWiki\SpecialPage\SpecialPage;
-use Site;
-use SiteLookup;
 use SpecialPageTestBase;
 use Wikibase\Client\Hooks\OtherProjectsSidebarGeneratorFactory;
 use Wikibase\Client\Tests\Mocks\MockClientStore;

@@ -3,7 +3,7 @@
 namespace ArticlePlaceholder\Lua;
 
 use MediaWiki\Config\ConfigException;
-use Scribunto_LuaLibraryBase;
+use MediaWiki\Extension\Scribunto\Engines\LuaCommon\LibraryBase;
 
 /**
  * Registers and defines functions needed by the Lua modules
@@ -11,7 +11,7 @@ use Scribunto_LuaLibraryBase;
  * @license GPL-2.0-or-later
  * @author Lucie-Aimée Kaffee
  */
-class Scribunto_LuaArticlePlaceholderLibrary extends Scribunto_LuaLibraryBase {
+class Scribunto_LuaArticlePlaceholderLibrary extends LibraryBase {
 
 	/**
 	 * @return string[]

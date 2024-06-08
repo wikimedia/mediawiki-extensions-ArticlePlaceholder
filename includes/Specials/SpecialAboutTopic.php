@@ -3,7 +3,7 @@
 namespace ArticlePlaceholder\Specials;
 
 use ArticlePlaceholder\AboutTopicRenderer;
-use HTMLForm;
+use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\TitleFactory;

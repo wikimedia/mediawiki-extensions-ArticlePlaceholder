@@ -4,8 +4,8 @@ namespace ArticlePlaceholder\Tests\Lua;
 
 use ArticlePlaceholder\Lua\Scribunto_LuaArticlePlaceholderLibrary;
 use MediaWiki\Config\ConfigException;
+use MediaWiki\Extension\Scribunto\Engines\LuaCommon\LuaEngine;
 use MediaWikiIntegrationTestCase;
-use Scribunto_LuaEngine;
 
 /**
  * @covers \ArticlePlaceholder\Lua\Scribunto_LuaArticlePlaceholderLibrary
@@ -57,7 +57,7 @@ class Scribunto_LuaArticlePlaceholderLibraryTest extends MediaWikiIntegrationTes
 	}
 
 	public function testRegister() {
-		$engine = $this->createMock( Scribunto_LuaEngine::class );
+		$engine = $this->createMock( LuaEngine::class );
 		$engine->expects( $this->once() )
 			->method( 'registerInterface' )
 			->willReturnCallback( function (
@@ -78,7 +78,7 @@ class Scribunto_LuaArticlePlaceholderLibraryTest extends MediaWikiIntegrationTes
 	}
 
 	private function newInstance(): Scribunto_LuaArticlePlaceholderLibrary {
-		$engine = $this->createMock( Scribunto_LuaEngine::class );
+		$engine = $this->createMock( LuaEngine::class );
 		return new Scribunto_LuaArticlePlaceholderLibrary( $engine );
 	}
 
