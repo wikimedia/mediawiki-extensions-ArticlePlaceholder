@@ -28,7 +28,7 @@ class SpecialCreateTopicPage extends UnlistedSpecialPage {
 	public function execute( $par ) {
 		$out = $this->getOutput();
 		$this->setHeaders();
-		if ( $this->getRequest()->getVal( 'ref' ) === 'button' ) {
+		if ( $this->getRequest()->getRawVal( 'ref' ) === 'button' ) {
 			$statsd = MediaWikiServices::getInstance()->getStatsdDataFactory();
 			$statsd->increment( 'wikibase.articleplaceholder.button.createArticle' );
 		}
