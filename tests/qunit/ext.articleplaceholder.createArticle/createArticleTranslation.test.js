@@ -71,16 +71,11 @@
 	} );
 
 	QUnit.test( 'When calling the constructor', function ( assert ) {
-		assert.expect( 1 );
-		assert.ok( new CreateArticleTranslationDialog() instanceof CreateArticleTranslationDialog, 'it should return a valid object' );
+		assert.true( new CreateArticleTranslationDialog() instanceof CreateArticleTranslationDialog, 'it should return a valid object' );
 	} );
 
 	QUnit.test( 'When submit translate article', function ( assert ) {
-		var dialog = null;
-
-		assert.expect( 1 );
-
-		dialog = createAndShowDialog();
+		var dialog = createAndShowDialog();
 		dialog.forwardTo = sandbox.spy();
 
 		return dialog.onSubmit().then( function () {
@@ -90,11 +85,7 @@
 	} );
 
 	QUnit.test( 'When submit and translate selected translate article', function ( assert ) {
-		var dialog = null;
-
-		assert.expect( 1 );
-
-		dialog = createAndShowDialog();
+		var dialog = createAndShowDialog();
 		dialog.forwardTo = sandbox.spy();
 		dialog.translateOption.setSelected( true );
 
@@ -105,15 +96,11 @@
 	} );
 
 	QUnit.test( 'When submit and translate is not selected create article', function ( assert ) {
-		var dialog = null,
-			stub = null;
-		assert.expect( 1 );
-
-		dialog = createAndShowDialog();
+		var dialog = createAndShowDialog();
 		dialog.forwardTo = sandbox.spy();
 		dialog.translateOption.setSelected( false );
 
-		stub = sandbox.stub().returns( $.Deferred().resolve() );
+		var stub = sandbox.stub().returns( $.Deferred().resolve() );
 		dialog.__proto__.onSubmit = stub;
 
 		return dialog.onSubmit().then( function () {
