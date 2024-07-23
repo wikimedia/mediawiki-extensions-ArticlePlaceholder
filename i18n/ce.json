@@ -5,7 +5,9 @@
 		]
 	},
 	"createtopicpage": "АгӀо кхолла",
+	"articleplaceholder-desc": "Леррина агӀо ло {{WBREPONAME}} чуьра билггалчу теманах лаьцна информаци йолуш, цу темина йаззам кхолла кхайкхам а болуш.",
 	"articleplaceholder-abouttopic": "Темех лаьцна",
+	"articleplaceholder-abouttopic-intro": "ХӀокху лерринчу агӀоно {{WBREPONAME}} чуьра хаамашна тӀе а тевжаш, теманах боцца хаам гойту.",
 	"articleplaceholder-abouttopic-entityid": "Йазйе элементн идентификатор, масала, Q12345",
 	"articleplaceholder-abouttopic-submit": "Кхолла",
 	"articleplaceholder-abouttopic-no-entity-error": "ХӀара нийса йоцу элементан идентификатор йу.",
@@ -17,9 +19,15 @@
 	"articleplaceholder-abouttopic-translate-article-label": "Йуьхьанцара мотт:",
 	"articleplaceholder-abouttopic-translate-article-button": "Гочбе йаззам",
 	"articleplaceholder-abouttopic-create-article-submit-button": "ДӀадахьийта",
+	"articleplaceholder-abouttopic-article-exists-error": "Иштта цӀе йолу йаззам хӀинцале а болуш бу.",
 	"articleplaceholder-abouttopic-lua-entity": "Билгало",
 	"articleplaceholder-abouttopic-lua-reference": "Хьажорг",
 	"articleplaceholder-abouttopic-lua-identifier": "Арахьара ресурсаш",
+	"articleplaceholder-search-header": "Темах лаьцна хаамаш схьаэца",
 	"articleplaceholder-createpage-title": "Кхолла $1",
+	"articleplaceholder-createpage-alreadyexists": "$1 цӀе йолу агӀо хӀинцале а йолуш йу. Дехар до, кхин цӀе харжа.",
+	"articleplaceholder-createpage-notitleprovided": "Цхьа а цӀе ца йазйина. Хьайна кхолла луучу агӀонан цӀе йазйе.",
+	"articleplaceholder-createpage-invalidtitleprovided": "ЦӀе нийса йац. Дехар до, нийса цӀе йазйе.",
+	"articleplaceholder-abouttopic-topmessage-text": "ХӀара автоматикин верси йу {{GRAMMAR:locative|{{WBREPONAME}}}} чуьра [$1 хаамашна тӀе а тевжаш].<br />Буьззина йаззам хӀинца а бац, амма хьан гӀо дан аьтто бу иза кхолла.",
 	"articleplaceholder-abouttopic-icon-title": "Информаци"
 }
