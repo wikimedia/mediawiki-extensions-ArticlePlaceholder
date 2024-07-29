@@ -1,9 +1,19 @@
 {
-	"extends": "../../.eslintrc.json",
+	"root": true,
+	"extends": [
+		"wikimedia",
+		"wikimedia/mediawiki",
+		"wikimedia/qunit"
+	],
 	"env": {
-		"qunit": true
+		"browser": true,
+		"jquery": true
 	},
 	"globals": {
 		"sinon": false
+	},
+	"rules": {
+		"no-proto": "off",
+		"qunit/no-loose-assertions": "off"
 	}
 }
