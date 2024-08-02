@@ -20,9 +20,9 @@ class Scribunto_LuaArticlePlaceholderLibraryTest extends MediaWikiIntegrationTes
 	protected function setUp(): void {
 		parent::setUp();
 
-		$this->setMwGlobals( [
-			'wgArticlePlaceholderImageProperty' => 'P2001',
-			'wgArticlePlaceholderReferencesBlacklist' => 'P2002',
+		$this->overrideConfigValues( [
+			'ArticlePlaceholderImageProperty' => 'P2001',
+			'ArticlePlaceholderReferencesBlacklist' => 'P2002',
 		] );
 	}
 
@@ -34,7 +34,7 @@ class Scribunto_LuaArticlePlaceholderLibraryTest extends MediaWikiIntegrationTes
 	}
 
 	public function testGetImageProperty_throwsException() {
-		$this->setMwGlobals( 'wgArticlePlaceholderImageProperty', '' );
+		$this->overrideConfigValue( 'ArticlePlaceholderImageProperty', '' );
 		$instance = $this->newInstance();
 
 		$this->expectException( ConfigException::class );
@@ -49,7 +49,7 @@ class Scribunto_LuaArticlePlaceholderLibraryTest extends MediaWikiIntegrationTes
 	}
 
 	public function testGetReferencePropertyToHide_returnsNull() {
-		$this->setMwGlobals( 'wgArticlePlaceholderReferencesBlacklist', '' );
+		$this->overrideConfigValue( 'ArticlePlaceholderReferencesBlacklist', '' );
 		$instance = $this->newInstance();
 
 		$actual = $instance->getReferencePropertyToHide();

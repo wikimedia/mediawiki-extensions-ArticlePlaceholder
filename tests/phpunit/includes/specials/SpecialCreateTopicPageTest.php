@@ -5,6 +5,7 @@ namespace ArticlePlaceholder\Tests\Specials;
 use ArticlePlaceholder\Specials\SpecialCreateTopicPage;
 use MediaWiki\Context\DerivativeContext;
 use MediaWiki\Context\RequestContext;
+use MediaWiki\MainConfigNames;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWikiIntegrationTestCase;
 
@@ -21,9 +22,7 @@ class SpecialCreateTopicPageTest extends MediaWikiIntegrationTestCase {
 
 	protected function setUp(): void {
 		parent::setUp();
-		$this->setMwGlobals( [
-			'wgScript' => '/w/index.php'
-		] );
+		$this->overrideConfigValue( MainConfigNames::Script, '/w/index.php' );
 	}
 
 	/**
