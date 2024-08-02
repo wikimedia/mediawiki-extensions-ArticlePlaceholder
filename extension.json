@@ -15,7 +15,13 @@
 	},
 	"SpecialPages": {
 		"AboutTopic": "ArticlePlaceholder\\Specials\\SpecialAboutTopic::newFromGlobalState",
-		"CreateTopicPage": "ArticlePlaceholder\\Specials\\SpecialCreateTopicPage"
+		"CreateTopicPage": {
+			"class": "ArticlePlaceholder\\Specials\\SpecialCreateTopicPage",
+			"services": [
+				"PermissionManager",
+				"StatsdDataFactory"
+			]
+		}
 	},
 	"MessagesDirs": {
 		"ArticlePlaceholder": [

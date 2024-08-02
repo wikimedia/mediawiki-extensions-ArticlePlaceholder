@@ -2,9 +2,10 @@
 
 namespace ArticlePlaceholder\Specials;
 
+use IBufferingStatsdDataFactory;
 use MediaWiki\HTMLForm\HTMLForm;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Message\Message;
+use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\SpecialPage\UnlistedSpecialPage;
 use MediaWiki\Title\Title;
 use PermissionsError;
@@ -18,8 +19,16 @@ use PermissionsError;
  */
 class SpecialCreateTopicPage extends UnlistedSpecialPage {
 
-	public function __construct() {
+	private PermissionManager $permissionManager;
+	private IBufferingStatsdDataFactory $statsd;
+
+	public function __construct(
+		PermissionManager $permissionManager,
+		IBufferingStatsdDataFactory $statsd
+	) {
 		parent::__construct( 'CreateTopicPage' );
+		$this->permissionManager = $permissionManager;
+		$this->statsd = $statsd;
 	}
 
 	/**
@@ -29,8 +38,7 @@ class SpecialCreateTopicPage extends UnlistedSpecialPage {
 		$out = $this->getOutput();
 		$this->setHeaders();
 		if ( $this->getRequest()->getRawVal( 'ref' ) === 'button' ) {
-			$statsd = MediaWikiServices::getInstance()->getStatsdDataFactory();
-			$statsd->increment( 'wikibase.articleplaceholder.button.createArticle' );
+			$this->statsd->increment( 'wikibase.articleplaceholder.button.createArticle' );
 		}
 		$page = $this->getRequest()->getVal( 'wptitleinput', $par );
 		if ( $page === '' || $page === null ) {
@@ -48,7 +56,7 @@ class SpecialCreateTopicPage extends UnlistedSpecialPage {
 			return;
 		}
 
-		$permissionErrors = MediaWikiServices::getInstance()->getPermissionManager()
+		$permissionErrors = $this->permissionManager
 			->getPermissionErrors( 'edit', $this->getUser(), $title );
 		if ( $permissionErrors ) {
 			throw new PermissionsError( 'edit', $permissionErrors );
