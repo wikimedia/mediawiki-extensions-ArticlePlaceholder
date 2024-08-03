@@ -35,7 +35,11 @@ class SpecialCreateTopicPageTest extends MediaWikiIntegrationTestCase {
 		$context = new DerivativeContext( RequestContext::getMain() );
 		$title = SpecialPage::getTitleFor( 'CreateTopicPage', $testTitle );
 		$context->setTitle( $title );
-		$instance = new SpecialCreateTopicPage();
+		$services = $this->getServiceContainer();
+		$instance = new SpecialCreateTopicPage(
+			$services->getPermissionManager(),
+			$services->getStatsdDataFactory()
+		);
 		$instance->setContext( $context );
 
 		$instance->execute( $testTitle );
