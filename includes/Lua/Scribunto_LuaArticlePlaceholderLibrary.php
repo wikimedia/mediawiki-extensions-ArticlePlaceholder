@@ -4,6 +4,7 @@ namespace ArticlePlaceholder\Lua;
 
 use MediaWiki\Config\ConfigException;
 use MediaWiki\Extension\Scribunto\Engines\LuaCommon\LibraryBase;
+use MediaWiki\MediaWikiServices;
 
 /**
  * Registers and defines functions needed by the Lua modules
@@ -17,14 +18,15 @@ class Scribunto_LuaArticlePlaceholderLibrary extends LibraryBase {
 	 * @return string[]
 	 */
 	public function getImageProperty() {
-		global $wgArticlePlaceholderImageProperty;
+		$config = MediaWikiServices::getInstance()->getMainConfig();
+		$imageProperty = $config->get( 'ArticlePlaceholderImageProperty' );
 		if (
-			!is_string( $wgArticlePlaceholderImageProperty ) ||
-			$wgArticlePlaceholderImageProperty === ''
+			!is_string( $imageProperty ) ||
+			$imageProperty === ''
 		) {
 			throw new ConfigException( 'Bad value in $wgArticlePlaceholderImageProperty' );
 		}
-		return [ $wgArticlePlaceholderImageProperty ];
+		return [ $imageProperty ];
 	}
 
 	/**
@@ -33,14 +35,15 @@ class Scribunto_LuaArticlePlaceholderLibrary extends LibraryBase {
 	 * @return string[]|null Null if $wgArticlePlaceholderReferencesBlacklist empty or not string
 	 */
 	public function getReferencePropertyToHide() {
-		global $wgArticlePlaceholderReferencesBlacklist;
+		$config = MediaWikiServices::getInstance()->getMainConfig();
+		$referencesBlacklist = $config->get( 'ArticlePlaceholderReferencesBlacklist' );
 		if (
-			!is_string( $wgArticlePlaceholderReferencesBlacklist ) ||
-			$wgArticlePlaceholderReferencesBlacklist === ''
+			!is_string( $referencesBlacklist ) ||
+			$referencesBlacklist === ''
 		) {
 			return null;
 		}
-		return [ $wgArticlePlaceholderReferencesBlacklist ];
+		return [ $referencesBlacklist ];
 	}
 
 	/**
