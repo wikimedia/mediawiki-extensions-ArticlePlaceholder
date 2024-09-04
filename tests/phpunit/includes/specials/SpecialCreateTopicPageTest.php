@@ -38,7 +38,7 @@ class SpecialCreateTopicPageTest extends MediaWikiIntegrationTestCase {
 		$services = $this->getServiceContainer();
 		$instance = new SpecialCreateTopicPage(
 			$services->getPermissionManager(),
-			$services->getStatsdDataFactory()
+			$services->getStatsFactory()
 		);
 		$instance->setContext( $context );
 
