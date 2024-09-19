@@ -7,11 +7,16 @@
 			"Pyscowicz",
 			"Stryn",
 			"Valtlai",
-			"Valtlait"
+			"Valtlait",
+			"Samoasambia"
 		]
 	},
 	"createtopicpage": "Luo sivu",
+	"articleplaceholder-abouttopic": "Tietoja aiheesta",
+	"articleplaceholder-abouttopic-intro": "Tämä toimintosivu antaa lyhyen katsauksen aiheeseen {{GRAMMAR:genitive|{{WBREPONAME}}}} tietojen perusteella.",
+	"articleplaceholder-abouttopic-entityid": "Anna kohdetunniste, esim. Q12345",
 	"articleplaceholder-abouttopic-submit": "Luonnos",
+	"articleplaceholder-abouttopic-no-entity-error": "Tämä ei ole kelvollinen kohdetunniste.",
 	"articleplaceholder-abouttopic-create-article-title": "Luo uusi artikkeli",
 	"articleplaceholder-abouttopic-create-article-label": "Artikkelin otsikko",
 	"articleplaceholder-abouttopic-create-article-mandatory": "Artikkelin otsikko on pakollinen.",
@@ -21,12 +26,14 @@
 	"articleplaceholder-abouttopic-translate-article-button": "Käännä artikkeli",
 	"articleplaceholder-abouttopic-create-article-submit-button": "Lähetä",
 	"articleplaceholder-abouttopic-article-exists-error": "Artikkeli löytyy jo tällä nimellä",
-	"articleplaceholder-abouttopic-lua-entity": "Aihe",
+	"articleplaceholder-abouttopic-lua-entity": "Entiteetti",
 	"articleplaceholder-abouttopic-lua-reference": "Lähde",
 	"articleplaceholder-abouttopic-lua-identifier": "Ulkoiset resurssit",
+	"articleplaceholder-search-header": "Löydä tietoja aiheesta",
 	"articleplaceholder-createpage-title": "Luo $1",
 	"articleplaceholder-createpage-alreadyexists": "Sivu nimeltään $1 on jo olemassa. Valitse toinen nimi.",
 	"articleplaceholder-createpage-notitleprovided": "Nimeä ei annettu, anna luotavalle sivulle nimi.",
 	"articleplaceholder-createpage-invalidtitleprovided": "Antamasi nimi oli virheellinen. Anna kelvollinen nimi.",
+	"articleplaceholder-abouttopic-topmessage-text": "Tämä on automaattinen näkymä, joka perustuu [$1 {{GRAMMAR:genitive|{{WBREPONAME}}}} tietoihin].<br />Täyttä artikkelia ei ole vielä olemassa, mutta voit auttaa sellaisen luonnissa.",
 	"articleplaceholder-abouttopic-icon-title": "Tietoja"
 }
