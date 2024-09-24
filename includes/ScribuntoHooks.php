@@ -2,7 +2,7 @@
 
 namespace ArticlePlaceholder;
 
-use ArticlePlaceholder\Lua\Scribunto_LuaArticlePlaceholderLibrary;
+use ArticlePlaceholder\Lua\ArticlePlaceholderLibrary;
 use MediaWiki\Extension\Scribunto\Hooks\ScribuntoExternalLibrariesHook;
 use MediaWiki\Extension\Scribunto\Hooks\ScribuntoExternalLibraryPathsHook;
 
@@ -27,7 +27,7 @@ class ScribuntoHooks implements
 	public function onScribuntoExternalLibraries( string $engine, array &$extraLibraries ): void {
 		if ( $engine === 'lua' ) {
 			$extraLibraries['mw.ext.articlePlaceholder.entityRenderer'] = [
-				'class' => Scribunto_LuaArticlePlaceholderLibrary::class,
+				'class' => ArticlePlaceholderLibrary::class,
 				'deferLoad' => true,
 			];
 		}

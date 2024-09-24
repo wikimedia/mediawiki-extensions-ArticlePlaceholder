@@ -12,7 +12,7 @@ use MediaWiki\MediaWikiServices;
  * @license GPL-2.0-or-later
  * @author Lucie-Aimée Kaffee
  */
-class Scribunto_LuaArticlePlaceholderLibrary extends LibraryBase {
+class ArticlePlaceholderLibrary extends LibraryBase {
 
 	/**
 	 * @return string[]
