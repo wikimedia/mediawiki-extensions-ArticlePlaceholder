@@ -116,7 +116,7 @@ class AboutTopicRendererTest extends MediaWikiIntegrationTestCase {
 	 */
 	public function testLanguageLinks() {
 		$output = $this->getInstanceOutput( new ItemId( 'Q123' ) );
-		$this->assertSame( [ 'eo' => 'eo:Unicorn' ], $output->getLanguageLinks() );
+		$this->assertSame( [ 'eo:Unicorn' ], $output->getLanguageLinks() );
 	}
 
 	/**
