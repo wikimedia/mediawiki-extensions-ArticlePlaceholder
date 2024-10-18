@@ -90,9 +90,6 @@ class SpecialAboutTopicTest extends MediaWikiIntegrationTestCase {
 		$context->setTitle( $title );
 		$outputPage = new OutputPage( $context );
 
-		// initial robot policy should be like the one gotten from the SpecialPage
-		$outputPage->setRobotPolicy( 'noindex,nofollow' );
-
 		$context->setOutput( $outputPage );
 
 		$instance = new SpecialAboutTopic(
@@ -162,15 +159,13 @@ class SpecialAboutTopicTest extends MediaWikiIntegrationTestCase {
 	 */
 	public function testRobotPolicy( $searchEngineIndexed, bool $expected ) {
 		$output = $this->getInstanceOutput( 'Q1234', $searchEngineIndexed );
-		$metatags = $output->getHeadLinksArray();
 
 		if ( $expected === true ) {
-			$metaRobots = $metatags['meta-robots'] ?? '';
-			$this->assertStringNotContainsString( 'noindex', $metaRobots );
-			$this->assertStringNotContainsString( 'nofollow', $metaRobots );
+			$this->assertSame( 'index', $output->getMetadata()->getIndexPolicy() );
+			$this->assertSame( 'follow', $output->getFollowPolicy() );
 		} else {
-			$this->assertArrayHasKey( 'meta-robots', $metatags );
-			$this->assertStringContainsString( 'noindex,nofollow', $metatags['meta-robots'] );
+			$this->assertSame( 'noindex', $output->getMetadata()->getIndexPolicy() );
+			$this->assertSame( 'nofollow', $output->getFollowPolicy() );
 		}
 	}
 
