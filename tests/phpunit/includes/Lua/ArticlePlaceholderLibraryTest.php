@@ -2,20 +2,20 @@
 
 namespace ArticlePlaceholder\Tests\Lua;
 
-use ArticlePlaceholder\Lua\Scribunto_LuaArticlePlaceholderLibrary;
+use ArticlePlaceholder\Lua\ArticlePlaceholderLibrary;
 use MediaWiki\Config\ConfigException;
 use MediaWiki\Extension\Scribunto\Engines\LuaCommon\LuaEngine;
 use MediaWikiIntegrationTestCase;
 
 /**
- * @covers \ArticlePlaceholder\Lua\Scribunto_LuaArticlePlaceholderLibrary
+ * @covers \ArticlePlaceholder\Lua\ArticlePlaceholderLibrary
  *
  * @group ArticlePlaceholder
  *
  * @license GPL-2.0-or-later
  * @author Thiemo Kreuz
  */
-class Scribunto_LuaArticlePlaceholderLibraryTest extends MediaWikiIntegrationTestCase {
+class ArticlePlaceholderLibraryTest extends MediaWikiIntegrationTestCase {
 
 	protected function setUp(): void {
 		parent::setUp();
@@ -71,15 +71,15 @@ class Scribunto_LuaArticlePlaceholderLibraryTest extends MediaWikiIntegrationTes
 
 				return 'dummyReturnValue';
 			} );
-		$instance = new Scribunto_LuaArticlePlaceholderLibrary( $engine );
+		$instance = new ArticlePlaceholderLibrary( $engine );
 
 		$actual = $instance->register();
 		$this->assertSame( 'dummyReturnValue', $actual );
 	}
 
-	private function newInstance(): Scribunto_LuaArticlePlaceholderLibrary {
+	private function newInstance(): ArticlePlaceholderLibrary {
 		$engine = $this->createMock( LuaEngine::class );
-		return new Scribunto_LuaArticlePlaceholderLibrary( $engine );
+		return new ArticlePlaceholderLibrary( $engine );
 	}
 
 }
