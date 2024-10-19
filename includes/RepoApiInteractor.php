@@ -2,9 +2,9 @@
 
 namespace ArticlePlaceholder;
 
-use FormatJson;
 use Liuggio\StatsdClient\Factory\StatsdDataFactoryInterface;
 use MediaWiki\Http\HttpRequestFactory;
+use MediaWiki\Json\FormatJson;
 
 /**
  * Gateway to API of the repository

@@ -2,13 +2,13 @@
 
 namespace ArticlePlaceholder\Specials;
 
-use IBufferingStatsdDataFactory;
 use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Message\Message;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\SpecialPage\UnlistedSpecialPage;
 use MediaWiki\Title\Title;
 use PermissionsError;
+use Wikimedia\Stats\IBufferingStatsdDataFactory;
 
 /**
  * The CreateTopicPage SpecialPage for the ArticlePlaceholder extension
