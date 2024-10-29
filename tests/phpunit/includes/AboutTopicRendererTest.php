@@ -52,7 +52,7 @@ class AboutTopicRendererTest extends MediaWikiIntegrationTestCase {
 	private function getInstanceOutput(
 		ItemId $itemId,
 		$canCreate = true,
-		TitleFactory $titleFactory = null
+		?TitleFactory $titleFactory = null
 	): OutputPage {
 		$context = new DerivativeContext( RequestContext::getMain() );
 		$outputPage = $context->getOutput();
