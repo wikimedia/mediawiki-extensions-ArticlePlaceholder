@@ -178,8 +178,8 @@ class SearchHookHandlerTest extends MediaWikiIntegrationTestCase {
 		$output->setTitle( Title::makeTitle( -1, 'Search' ) );
 
 		$hasResults = $noResults = 0;
-		$searchHookHander = $this->newSearchHookHandler( $doNotReturnTerms, $hasResults, $noResults );
-		$searchHookHander->addToSearch( $output, $term );
+		$searchHookHandler = $this->newSearchHookHandler( $doNotReturnTerms, $hasResults, $noResults );
+		$searchHookHandler->addToSearch( $output, $term );
 		$html = $output->getHTML();
 
 		$this->assertStringNotContainsString( 'Q111', $html );
@@ -194,8 +194,8 @@ class SearchHookHandlerTest extends MediaWikiIntegrationTestCase {
 		$output->setTitle( Title::makeTitle( -1, 'Search' ) );
 
 		$hasResults = $noResults = 0;
-		$searchHookHander = $this->newSearchHookHandler( false, $hasResults, $noResults );
-		$searchHookHander->addToSearch( $output, 'blah blah blah' );
+		$searchHookHandler = $this->newSearchHookHandler( false, $hasResults, $noResults );
+		$searchHookHandler->addToSearch( $output, 'blah blah blah' );
 		$html = $output->getHTML();
 
 		$this->assertSame( '', $html );
