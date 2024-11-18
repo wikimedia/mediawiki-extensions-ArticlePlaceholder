@@ -8,7 +8,7 @@ use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\SpecialPage\UnlistedSpecialPage;
 use MediaWiki\Title\Title;
 use PermissionsError;
-use Wikimedia\Stats\IBufferingStatsdDataFactory;
+use Wikimedia\Stats\StatsFactory;
 
 /**
  * The CreateTopicPage SpecialPage for the ArticlePlaceholder extension
@@ -20,15 +20,15 @@ use Wikimedia\Stats\IBufferingStatsdDataFactory;
 class SpecialCreateTopicPage extends UnlistedSpecialPage {
 
 	private PermissionManager $permissionManager;
-	private IBufferingStatsdDataFactory $statsd;
+	private StatsFactory $statsFactory;
 
 	public function __construct(
 		PermissionManager $permissionManager,
-		IBufferingStatsdDataFactory $statsd
+		StatsFactory $statsFactory
 	) {
 		parent::__construct( 'CreateTopicPage' );
 		$this->permissionManager = $permissionManager;
-		$this->statsd = $statsd;
+		$this->statsFactory = $statsFactory;
 	}
 
 	/**
@@ -38,7 +38,9 @@ class SpecialCreateTopicPage extends UnlistedSpecialPage {
 		$out = $this->getOutput();
 		$this->setHeaders();
 		if ( $this->getRequest()->getRawVal( 'ref' ) === 'button' ) {
-			$this->statsd->increment( 'wikibase.articleplaceholder.button.createArticle' );
+			$this->statsFactory->getCounter( 'ArticlePlaceholder_button_createArticle_total' )
+				->copyToStatsdAt( 'wikibase.articleplaceholder.button.createArticle' )
+				->increment();
 		}
 		$page = $this->getRequest()->getVal( 'wptitleinput', $par );
 		if ( $page === '' || $page === null ) {

@@ -19,7 +19,7 @@
 			"class": "ArticlePlaceholder\\Specials\\SpecialCreateTopicPage",
 			"services": [
 				"PermissionManager",
-				"StatsdDataFactory"
+				"StatsFactory"
 			]
 		}
 	},
