@@ -4,7 +4,6 @@ namespace ArticlePlaceholder\Tests;
 
 use ArticlePlaceholder\ItemNotabilityFilter;
 use ArticlePlaceholder\SearchHookHandler;
-use Liuggio\StatsdClient\Factory\StatsdDataFactory;
 use MediaWiki\Config\HashConfig;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\MainConfigNames;
@@ -22,6 +21,8 @@ use Wikibase\Lib\LanguageFallbackChainFactory;
 use Wikibase\Lib\Store\MatchingTermsLookup;
 use Wikibase\Lib\TermIndexEntry;
 use Wikibase\Lib\Tests\Store\MockMatchingTermsLookup;
+use Wikimedia\Stats\Metrics\CounterMetric;
+use Wikimedia\Stats\StatsFactory;
 use Wikimedia\TestingAccessWrapper;
 
 /**
@@ -97,16 +98,14 @@ class SearchHookHandlerTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
+	 * @param CounterMetric $counter
 	 * @param bool $doNotReturnTerms
-	 * @param int &$hasResults
-	 * @param int &$noResults
 	 *
 	 * @return SearchHookHandler
 	 */
 	protected function newSearchHookHandler(
-		$doNotReturnTerms = false,
-		&$hasResults = 0,
-		&$noResults = 0
+		$counter,
+		$doNotReturnTerms = false
 	) {
 		$itemNotabilityFilter = $this->createMock( ItemNotabilityFilter::class );
 		$itemNotabilityFilter->method( 'getNotableEntityIds' )
@@ -121,23 +120,11 @@ class SearchHookHandlerTest extends MediaWikiIntegrationTestCase {
 				return [];
 			} );
 
-		$statsdDataFactory = $this->createMock( StatsdDataFactory::class );
-		$statsdDataFactory->method( 'increment' )
-			->willReturnCallback( function ( $key ) use ( &$hasResults, &$noResults ) {
-				if ( $key === 'wikibase.articleplaceholder.search.has_results' ) {
-					$hasResults++;
-				} elseif ( $key === 'wikibase.articleplaceholder.search.no_results' ) {
-					$noResults++;
-				} else {
-					$this->fail( "Unknown key: $key" );
-				}
-			} );
-
 		return TestingAccessWrapper::newFromObject( new SearchHookHandler(
 			$this->getMockedTermSearchInteractor( 'en', $doNotReturnTerms ),
 			'en',
 			$itemNotabilityFilter,
-			$statsdDataFactory
+			$counter
 		) );
 	}
 
@@ -177,30 +164,30 @@ class SearchHookHandlerTest extends MediaWikiIntegrationTestCase {
 		$output = new OutputPage( new RequestContext() );
 		$output->setTitle( Title::makeTitle( -1, 'Search' ) );
 
-		$hasResults = $noResults = 0;
-		$searchHookHandler = $this->newSearchHookHandler( $doNotReturnTerms, $hasResults, $noResults );
+		$counter = StatsFactory::newNull()->getCounter( 'ArticlePlaceholder_search_total' );
+		$searchHookHandler = $this->newSearchHookHandler( $counter, $doNotReturnTerms );
 		$searchHookHandler->addToSearch( $output, $term );
 		$html = $output->getHTML();
 
 		$this->assertStringNotContainsString( 'Q111', $html );
 		$this->assertStringNotContainsString( 'Q222', $html );
 		$this->assertStringContainsString( $expected, $html, $message );
-		$this->assertSame( 1, $hasResults );
-		$this->assertSame( 0, $noResults );
+		// has results
+		$this->assertSame( 'yes', $counter->getSamples()[0]->getLabelValues()[0] );
 	}
 
 	public function testAddToSearch_nothingFound() {
 		$output = new OutputPage( new RequestContext() );
 		$output->setTitle( Title::makeTitle( -1, 'Search' ) );
 
-		$hasResults = $noResults = 0;
-		$searchHookHandler = $this->newSearchHookHandler( false, $hasResults, $noResults );
+		$counter = StatsFactory::newNull()->getCounter( 'ArticlePlaceholder_search_total' );
+		$searchHookHandler = $this->newSearchHookHandler( $counter, false );
 		$searchHookHandler->addToSearch( $output, 'blah blah blah' );
 		$html = $output->getHTML();
 
 		$this->assertSame( '', $html );
-		$this->assertSame( 0, $hasResults );
-		$this->assertSame( 1, $noResults );
+		// no results
+		$this->assertSame( 'no', $counter->getSamples()[0]->getLabelValues()[0] );
 	}
 
 }

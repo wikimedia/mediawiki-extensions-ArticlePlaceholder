@@ -2,7 +2,6 @@
 
 namespace ArticlePlaceholder;
 
-use Liuggio\StatsdClient\Factory\StatsdDataFactoryInterface;
 use MediaWiki\Config\Config;
 use MediaWiki\Hook\SpecialSearchResultsAppendHook;
 use MediaWiki\MainConfigNames;
@@ -14,6 +13,7 @@ use Wikibase\Lib\Interactors\TermSearchInteractor;
 use Wikibase\Lib\Interactors\TermSearchResult;
 use Wikibase\Lib\TermIndexEntry;
 use Wikimedia\Rdbms\SessionConsistentConnectionManager;
+use Wikimedia\Stats\Metrics\CounterMetric;
 
 /**
  * Adding results from ArticlePlaceholder to search
@@ -39,9 +39,9 @@ class SearchHookHandler implements SpecialSearchResultsAppendHook {
 	private $itemNotabilityFilter;
 
 	/**
-	 * @var StatsdDataFactoryInterface
+	 * @var CounterMetric
 	 */
-	private $statsdDataFactory;
+	private $searchesMetric;
 
 	/**
 	 * @param Config $config
@@ -62,12 +62,12 @@ class SearchHookHandler implements SpecialSearchResultsAppendHook {
 			$clientSettings->getSetting( 'siteGlobalID' )
 		);
 
-		$statsdDataFactory = $mwServices->getStatsdDataFactory();
+		$statsFactory = $mwServices->getStatsFactory();
 
 		$termSearchInteractor = new TermSearchApiInteractor(
 			new RepoApiInteractor(
 				$config->get( 'ArticlePlaceholderRepoApiUrl' ),
-				$statsdDataFactory,
+				$statsFactory,
 				$mwServices->getHttpRequestFactory()
 			),
 			WikibaseClient::getEntityIdParser()
@@ -77,7 +77,7 @@ class SearchHookHandler implements SpecialSearchResultsAppendHook {
 			$termSearchInteractor,
 			$config->get( MainConfigNames::LanguageCode ),
 			$itemNotabilityFilter,
-			$statsdDataFactory
+			$statsFactory->getCounter( 'ArticlePlaceholder_search_total' )
 		);
 	}
 
@@ -85,18 +85,18 @@ class SearchHookHandler implements SpecialSearchResultsAppendHook {
 	 * @param TermSearchInteractor $termSearchInteractor
 	 * @param string $languageCode content language
 	 * @param ItemNotabilityFilter $itemNotabilityFilter
-	 * @param StatsdDataFactoryInterface $statsdDataFactory
+	 * @param CounterMetric $searchesMetric
 	 */
 	public function __construct(
 		TermSearchInteractor $termSearchInteractor,
 		$languageCode,
 		ItemNotabilityFilter $itemNotabilityFilter,
-		StatsdDataFactoryInterface $statsdDataFactory
+		CounterMetric $searchesMetric
 	) {
 		$this->termSearchInteractor = $termSearchInteractor;
 		$this->languageCode = $languageCode;
 		$this->itemNotabilityFilter = $itemNotabilityFilter;
-		$this->statsdDataFactory = $statsdDataFactory;
+		$this->searchesMetric = $searchesMetric;
 	}
 
 	/**
@@ -140,17 +140,18 @@ class SearchHookHandler implements SpecialSearchResultsAppendHook {
 
 				$output->addWikiTextAsInterface( $renderedTermSearchResults );
 
-				$this->statsdDataFactory->increment(
-					'wikibase.articleplaceholder.search.has_results'
-				);
+				$this->searchesMetric
+					->setLabel( 'results', 'yes' )
+					->copyToStatsdAt( 'wikibase.articleplaceholder.search.has_results' )
+					->increment();
 
 				return;
 			}
 		}
-
-		$this->statsdDataFactory->increment(
-			'wikibase.articleplaceholder.search.no_results'
-		);
+		$this->searchesMetric
+			->setLabel( 'results', 'no' )
+			->copyToStatsdAt( 'wikibase.articleplaceholder.search.no_results' )
+			->increment();
 	}
 
 	/**

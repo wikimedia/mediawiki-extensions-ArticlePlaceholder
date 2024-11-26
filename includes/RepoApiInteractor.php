@@ -2,9 +2,9 @@
 
 namespace ArticlePlaceholder;
 
-use Liuggio\StatsdClient\Factory\StatsdDataFactoryInterface;
 use MediaWiki\Http\HttpRequestFactory;
 use MediaWiki\Json\FormatJson;
+use Wikimedia\Stats\StatsFactory;
 
 /**
  * Gateway to API of the repository
@@ -19,9 +19,9 @@ class RepoApiInteractor {
 	private $repoApiUrl;
 
 	/**
-	 * @var StatsdDataFactoryInterface
+	 * @var StatsFactory
 	 */
-	private $statsdDataFactory;
+	private $statsFactory;
 
 	/**
 	 * @var HttpRequestFactory
@@ -30,16 +30,16 @@ class RepoApiInteractor {
 
 	/**
 	 * @param string $repoApiUrl
-	 * @param StatsdDataFactoryInterface $statsdDataFactory
+	 * @param StatsFactory $statsFactory
 	 * @param HttpRequestFactory $httpRequestFactory
 	 */
 	public function __construct(
 		$repoApiUrl,
-		StatsdDataFactoryInterface $statsdDataFactory,
+		StatsFactory $statsFactory,
 		HttpRequestFactory $httpRequestFactory
 	) {
 		$this->repoApiUrl = $repoApiUrl;
-		$this->statsdDataFactory = $statsdDataFactory;
+		$this->statsFactory = $statsFactory;
 		$this->httpRequestFactory = $httpRequestFactory;
 	}
 
@@ -57,21 +57,28 @@ class RepoApiInteractor {
 			],
 			__METHOD__
 		);
+		$metric = $this->statsFactory->getCounter( 'ArticlePlaceholder_apitermsearch_total' );
 
 		$status = $req->execute();
 		if ( !$status->isOK() ) {
-			$this->statsdDataFactory->increment( 'articleplaceholder.apitermsearch.errored' );
+			$metric->setLabel( 'status', 'errored' )
+				->copyToStatsdAt( 'articleplaceholder.apitermsearch.errored' )
+				->increment();
 			return [];
 		}
 
 		$json = $req->getContent();
 		$data = FormatJson::decode( $json, true );
 		if ( !$data || !empty( $data['error'] ) ) {
-			$this->statsdDataFactory->increment( 'articleplaceholder.apitermsearch.invalid' );
+			$metric->setLabel( 'status', 'invalid' )
+				->copyToStatsdAt( 'articleplaceholder.apitermsearch.invalid' )
+				->increment();
 			return [];
 		}
 
-		$this->statsdDataFactory->increment( 'articleplaceholder.apitermsearch.ok' );
+		$metric->setLabel( 'status', 'ok' )
+			->copyToStatsdAt( 'articleplaceholder.apitermsearch.ok' )
+			->increment();
 		return $data;
 	}
 
