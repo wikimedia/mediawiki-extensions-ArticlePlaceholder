@@ -162,9 +162,7 @@ class SearchHookHandler implements SpecialSearchResultsAppendHook {
 		$termSearchResults = [];
 
 		foreach ( $this->searchEntities( $term ) as $searchResult ) {
-			$entityId = $searchResult->getEntityId()->getSerialization();
-
-			$termSearchResults[ $entityId ] = $searchResult;
+			$termSearchResults[ $searchResult->getEntityIdSerialization() ] = $searchResult;
 		}
 
 		return $termSearchResults;
@@ -204,15 +202,15 @@ class SearchHookHandler implements SpecialSearchResultsAppendHook {
 	 * @return string Wikitext
 	 */
 	private function renderTermSearchResult( TermSearchResult $searchResult ) {
-		$entityId = $searchResult->getEntityId();
+		$entityIdString = $searchResult->getEntityIdSerialization();
 
 		$displayLabel = $searchResult->getDisplayLabel();
 		$displayDescription = $searchResult->getDisplayDescription();
 
-		$label = $displayLabel ? $displayLabel->getText() : $entityId->getSerialization();
+		$label = $displayLabel ? $displayLabel->getText() : $entityIdString;
 
 		// TODO: Properly construct the page name of the special page.
-		$wikitext = '[[Special:AboutTopic/' . wfEscapeWikiText( $entityId ) . '|'
+		$wikitext = '[[Special:AboutTopic/' . wfEscapeWikiText( $entityIdString ) . '|'
 			. wfEscapeWikiText( $label ) . ']]';
 
 		if ( $displayDescription ) {
