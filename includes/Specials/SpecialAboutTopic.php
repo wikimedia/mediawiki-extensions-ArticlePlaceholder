@@ -110,7 +110,7 @@ class SpecialAboutTopic extends SpecialPage {
 		parent::__construct( 'AboutTopic' );
 
 		Assert::parameterType(
-			'boolean|string',
+			[ 'boolean', 'string' ],
 			$searchEngineIndexed,
 			'$searchEngineIndexed'
 		);
