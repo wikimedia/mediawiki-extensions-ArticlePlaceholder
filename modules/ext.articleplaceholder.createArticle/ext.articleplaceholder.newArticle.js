@@ -23,6 +23,7 @@
 
 		OO.ui.infuse( $( '#new-article-button' ) ).on( 'click', function () {
 			mw.track( 'counter.MediaWiki.wikibase.articleplaceholder.button.createArticle' );
+			mw.track( 'stats.mediawiki_wikibase_articleplaceholder_button_createarticle_total' );
 			windowManager.openWindow( dialog );
 		} );
 	}
