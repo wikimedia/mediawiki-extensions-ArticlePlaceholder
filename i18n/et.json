@@ -7,9 +7,9 @@
 		]
 	},
 	"createtopicpage": "Lehekülje alustamine",
-	"articleplaceholder-desc": "Lisab erilehekülje, mis sisaldab kindla teema kohta Vikiandmetest pärit teavet, ja kutsub sellel teemal artiklit looma.",
+	"articleplaceholder-desc": "Lisab erilehekülje, mis sisaldab kindla teema kohta {{GRAMMAR:elative|{{WBREPONAME}}}} pärit teavet, ja kutsub sellel teemal artiklit looma.",
 	"articleplaceholder-abouttopic": "Teema kohta",
-	"articleplaceholder-abouttopic-intro": "See erilehekülg annab kiirülevaate teemast, tuginedes Vikiandmetest pärit andmetele.",
+	"articleplaceholder-abouttopic-intro": "See erilehekülg annab kiirülevaate teemast, tuginedes {{GRAMMAR:elative|{{WBREPONAME}}}} pärit andmetele.",
 	"articleplaceholder-abouttopic-entityid": "Palun sisesta üksuse ID, näiteks Q12345",
 	"articleplaceholder-abouttopic-submit": "Visanda",
 	"articleplaceholder-abouttopic-no-entity-error": "See pole sobiv üksuse ID.",
@@ -30,6 +30,6 @@
 	"articleplaceholder-createpage-alreadyexists": "Lehekülg pealkirjaga $1 on juba olemas. Vali mõni teine.",
 	"articleplaceholder-createpage-notitleprovided": "Pealkirja ei sisestatud, sisesta pealkiri lehele, mida soovid luua.",
 	"articleplaceholder-createpage-invalidtitleprovided": "Sinu sisestatud pealkiri on vigane. Palun sisesta sobiv pealkiri.",
-	"articleplaceholder-abouttopic-topmessage-text": "See on automaatne vaade, mis põhineb [$1 projekti {{WBREPONAME}} andmetel].<br /> Artiklit veel pole, kuid saad aidata seda luua.",
+	"articleplaceholder-abouttopic-topmessage-text": "See on automaatne vaade, mis põhineb [$1 {{GRAMMAR:elative|{{WBREPONAME}}}} pärit andmetel].<br /> Artiklit veel pole, kuid saad aidata seda luua.",
 	"articleplaceholder-abouttopic-icon-title": "Teave"
 }
