@@ -109,6 +109,11 @@ class SidebarBeforeOutputHookHandler implements SidebarBeforeOutputHook {
 	 */
 	private function getItemId( Skin $skin ): ?ItemId {
 		$title = $skin->getTitle();
+
+		if ( !$title ) {
+			return null;
+		}
+
 		$request = $skin->getRequest();
 
 		$factory = MediaWikiServices::getInstance()->getSpecialPageFactory();
