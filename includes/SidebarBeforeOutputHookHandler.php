@@ -117,7 +117,7 @@ class SidebarBeforeOutputHookHandler implements SidebarBeforeOutputHook {
 		$request = $skin->getRequest();
 
 		$factory = MediaWikiServices::getInstance()->getSpecialPageFactory();
-		$idSerialization = $request->getText(
+		$idSerialization = $request->getVal(
 			'entityid',
 			$factory->resolveAlias( $title->getText() )[1]
 		);

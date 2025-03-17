@@ -159,7 +159,7 @@ class SidebarBeforeOutputHookHandlerTest extends MediaWikiIntegrationTestCase {
 	 */
 	private function getSkin( Title $title, ?string $itemIdParam = null ): Skin {
 		$request = $this->createMock( WebRequest::class );
-		$request->method( 'getText' )
+		$request->method( 'getVal' )
 			->willReturnCallback( function ( $name, $default ) use ( $itemIdParam ) {
 				$this->assertSame( 'entityid', $name );
 
