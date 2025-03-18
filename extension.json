@@ -65,7 +65,7 @@
 		},
 		"ext.articleplaceholder.defaultDisplay": {
 			"styles": {
-				"0": "ext.articleplaceholder.defaultDisplay/ext.articleplaceholder.defaultDisplay.css",
+				"0": "ext.articleplaceholder.defaultDisplay/ext.articleplaceholder.defaultDisplay.less",
 				"ext.articleplaceholder.defaultDisplay/ext.articleplaceholder.defaultDisplaySmall.css": {
 					"media": "(max-width: 880px)"
 				},

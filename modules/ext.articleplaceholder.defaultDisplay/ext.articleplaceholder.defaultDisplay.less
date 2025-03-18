@@ -1,6 +1,8 @@
+@import 'mediawiki.skin.variables.less';
+
 .articleplaceholder-statementgroup {
 	display: inline-block;
-	border: 1px solid #aaa;
+	border: @border-base;
 	vertical-align: top;
 	padding: 10px;
 	margin: 20px;
@@ -17,15 +19,15 @@
 
 .mw-articleplaceholder-topmessage-container {
 	width: 100%;
-	border-style: solid;
-	border-color: #d3d3d3;
-	border-width: 1px;
+	border-style: @border-style-base;
+	border-color: @border-color-muted;
+	border-width: @border-width-base;
 	border-left-width: 10px;
 	margin: 0 auto 0 auto;
 	height: 100%;
 	padding: 0 10px 0 10px;
 	min-height: 50px;
-	background-color: #f9f9f9;
+	background-color: @background-color-neutral-subtle;
 }
 
 .mw-articleplaceholder-topmessage-container::after {
@@ -62,8 +64,8 @@
 
 .articleplaceholder-identifierlist {
 	clear: both;
-	border: 1px solid #ccc;
-	background-color: #f9f9f9;
+	border: @border-subtle;
+	background-color: @background-color-neutral-subtle;
 	width: 100%;
 	padding: 0.4em;
 }
