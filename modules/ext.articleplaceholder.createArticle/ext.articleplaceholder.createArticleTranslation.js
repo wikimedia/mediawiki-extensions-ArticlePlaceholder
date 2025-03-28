@@ -1,14 +1,10 @@
 /**
- * @param $
- * @param mw
- * @param OO
- * @param module
  * @license GPL-2.0-or-later
  * @author Florian Schmidt
  * @author Jonas M. Kress
  */
 
-( function ( $, mw, OO, module ) {
+( function () {
 	'use strict';
 
 	var CreateArticleDialog = module.exports.CreateArticleDialog;
@@ -153,4 +149,4 @@
 
 	module.exports.CreateArticleTranslationDialog = CreateArticleTranslationDialog;
 
-}( jQuery, mediaWiki, OO, module ) );
+}() );
