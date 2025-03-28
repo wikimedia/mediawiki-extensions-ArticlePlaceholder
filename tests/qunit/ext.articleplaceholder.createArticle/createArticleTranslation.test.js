@@ -2,22 +2,15 @@
  * @license GPL-2.0-or-later
  * @author Jonas Kress
  */
-( function () {
+QUnit.module( 'ext.ArticlePlaceHolder.createArticleTranslation', ( hooks ) => {
 	'use strict';
-	/*
-	 * Constants
-	 */
+
+	const { CreateArticleTranslationDialog } = require( 'ext.articleplaceholder.createArticle' );
+
 	var ARTICLE_URL = '[ARTICLE_URL]',
 		PAGE_NAMES = '[PAGE_NAMES]',
 		CONTENT_LANGUAGE = '[CONTENT_LANGUAGE]',
-		sandbox,
-		savedMwCx,
-		CreateArticleTranslationDialog;
-
-	/*
-	 * Helper functions
-	 */
-	CreateArticleTranslationDialog = require( 'ext.articleplaceholder.createArticle' ).CreateArticleTranslationDialog;
+		savedMwCx;
 
 	function createAndShowDialog() {
 		var windowManager = new OO.ui.WindowManager(),
@@ -32,41 +25,34 @@
 		return dialog;
 	}
 
-	/*
-	 * Tests
-	 */
-	QUnit.module( 'ext.ArticlePlaceHolder.createArticleTranslation', {
-		beforeEach: function () {
-			sandbox = sinon.sandbox.create();
-			sandbox.stub( mw, 'track' );
+	hooks.beforeEach( function () {
+		this.sandbox.stub( mw, 'track' );
 
-			// Stub lazy-loading of 'mw.cx.SiteMapper' module
-			sandbox.stub( mw.loader, 'using' )
-				.returns( $.Deferred().resolve() );
+		// Stub lazy-loading of 'mw.cx.SiteMapper' module
+		this.sandbox.stub( mw.loader, 'using' )
+			.returns( Promise.resolve() );
 
-			sandbox.stub( mw.config, 'get' )
-				.withArgs( 'apPageNames' ).returns( PAGE_NAMES )
-				.withArgs( 'wgContentLanguage' ).returns( CONTENT_LANGUAGE );
+		this.sandbox.stub( mw.config, 'get' )
+			.withArgs( 'apPageNames' ).returns( PAGE_NAMES )
+			.withArgs( 'wgContentLanguage' ).returns( CONTENT_LANGUAGE );
 
-			// This may be undefined, so we can't use Sinon to stub
-			savedMwCx = mw.cx;
-			mw.cx = {
-				SiteMapper: function () {
-					return {
-						getCXUrl: function () {
-							return ARTICLE_URL;
-						}
-					};
-				}
-			};
-		},
-		afterEach: function () {
-			sandbox.restore();
-			if ( savedMwCx ) {
-				mw.cx = savedMwCx;
-			} else {
-				delete mw.cx;
+		// This may be undefined, so we can't use Sinon to stub
+		savedMwCx = mw.cx;
+		mw.cx = {
+			SiteMapper: function () {
+				return {
+					getCXUrl: function () {
+						return ARTICLE_URL;
+					}
+				};
 			}
+		};
+	} );
+	hooks.afterEach( function () {
+		if ( savedMwCx ) {
+			mw.cx = savedMwCx;
+		} else {
+			delete mw.cx;
 		}
 	} );
 
@@ -76,7 +62,7 @@
 
 	QUnit.test( 'When submit translate article', function ( assert ) {
 		var dialog = createAndShowDialog();
-		dialog.forwardTo = sandbox.spy();
+		dialog.forwardTo = this.sandbox.spy();
 
 		return dialog.onSubmit().then( function () {
 			assert.equal( dialog.forwardTo.getCall( 0 ).args[ 0 ],
@@ -86,7 +72,7 @@
 
 	QUnit.test( 'When submit and translate selected translate article', function ( assert ) {
 		var dialog = createAndShowDialog();
-		dialog.forwardTo = sandbox.spy();
+		dialog.forwardTo = this.sandbox.spy();
 		dialog.translateOption.setSelected( true );
 
 		return dialog.onSubmit().then( function () {
@@ -97,10 +83,10 @@
 
 	QUnit.test( 'When submit and translate is not selected create article', function ( assert ) {
 		var dialog = createAndShowDialog();
-		dialog.forwardTo = sandbox.spy();
+		dialog.forwardTo = this.sandbox.spy();
 		dialog.translateOption.setSelected( false );
 
-		var stub = sandbox.stub().returns( $.Deferred().resolve() );
+		var stub = this.sandbox.stub().returns( Promise.resolve() );
 		dialog.__proto__.onSubmit = stub;
 
 		return dialog.onSubmit().then( function () {
@@ -108,4 +94,4 @@
 		} );
 	} );
 
-}() );
+} );

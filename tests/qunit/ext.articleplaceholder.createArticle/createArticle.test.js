@@ -2,8 +2,10 @@
  * @license GPL-2.0-or-later
  * @author Jonas Kress
  */
-( function () {
+QUnit.module( 'ext.ArticlePlaceHolder.createArticle', ( hooks ) => {
 	'use strict';
+
+	const { CreateArticleDialog } = require( 'ext.articleplaceholder.createArticle' );
 
 	/*
 	 * Constants
@@ -28,23 +30,17 @@
 			}
 		},
 		SERVER = '[SERVER]',
-		ARTICLE_URL = '[ARTICLE_URL]',
-		sandbox,
-		setupStubs,
-		CreateArticleDialog;
+		ARTICLE_URL = '[ARTICLE_URL]';
 
-	/*
-	 * Stubs
-	 */
-	setupStubs = function () {
-		sandbox.stub( mw, 'msg' ).returnsArg( 1 );
+	hooks.beforeEach( function () {
+		this.sandbox.stub( mw, 'msg' ).returnsArg( 1 );
 
-		sandbox.stub( mw.config, 'get' );
+		this.sandbox.stub( mw.config, 'get' );
 		mw.config.get.withArgs( 'apLabel' ).returns( DEFAULT_TITLE );
 		mw.config.get.withArgs( 'wgServer' ).returns( SERVER );
 
-		sandbox.stub( mw, 'Api' ).returns( {
-			get: sandbox.stub()
+		this.sandbox.stub( mw, 'Api' ).returns( {
+			get: this.sandbox.stub()
 		} );
 
 		mw.Api().get.withArgs( {
@@ -58,16 +54,14 @@
 			titles: NON_EXISTING_ARTICLE_TITLE
 		} ).returns( $.Deferred().resolve( API_NON_EXISTING_RESPONSE ).promise() );
 
-		sandbox.stub( mw.Title, 'newFromUserInput' ).returns( {
-			getUrl: sandbox.stub().returns( ARTICLE_URL )
+		this.sandbox.stub( mw.Title, 'newFromUserInput' ).returns( {
+			getUrl: this.sandbox.stub().returns( ARTICLE_URL )
 		} );
-	};
+	} );
 
 	/*
 	 * Helper functions
 	 */
-
-	CreateArticleDialog = require( 'ext.articleplaceholder.createArticle' ).CreateArticleDialog;
 
 	function createAndShowDialog() {
 		var windowManager = new OO.ui.WindowManager(),
@@ -79,19 +73,6 @@
 
 		return dialog;
 	}
-
-	/*
-	 * Tests
-	 */
-	QUnit.module( 'ext.ArticlePlaceHolder.createArticle', {
-		beforeEach: function () {
-			sandbox = sinon.sandbox.create();
-			setupStubs();
-		},
-		afterEach: function () {
-			sandbox.restore();
-		}
-	} );
 
 	QUnit.test( 'When calling the constructor', function ( assert ) {
 		assert.ok( new CreateArticleDialog() instanceof
@@ -106,7 +87,7 @@
 	QUnit.test( 'When submit creating existing article', function ( assert ) {
 		var done = assert.async(),
 			dialog = createAndShowDialog();
-		dialog.forwardTo = sandbox.spy();
+		dialog.forwardTo = this.sandbox.spy();
 
 		dialog.titleInput.setValue( EXISTING_ARTICLE_TITLE );
 		// assert.rejects( dialog.onSubmit(), 'it should throw an error' );
@@ -119,7 +100,7 @@
 	QUnit.test( 'When submit creating non existing article', function ( assert ) {
 		var done = assert.async(),
 			dialog = createAndShowDialog();
-		dialog.forwardTo = sandbox.spy();
+		dialog.forwardTo = this.sandbox.spy();
 
 		dialog.titleInput.setValue( NON_EXISTING_ARTICLE_TITLE );
 		dialog.onSubmit().done( function () {
@@ -129,4 +110,4 @@
 		} );
 	} );
 
-}() );
+} );
