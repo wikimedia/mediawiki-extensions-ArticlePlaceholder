@@ -47,6 +47,7 @@
 		}
 
 		mw.track( 'counter.MediaWiki.wikibase.articleplaceholder.button.translateArticle' );
+		mw.track( 'stats.mediawiki_articleplaceholder_translatearticle_submit_total' );
 
 		return mw.loader.using( 'mw.cx.SiteMapper' ).then( function () {
 			var siteMapper = new mw.cx.SiteMapper(),
