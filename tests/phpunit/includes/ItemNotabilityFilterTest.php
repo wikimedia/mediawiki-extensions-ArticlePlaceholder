@@ -4,7 +4,6 @@ namespace ArticlePlaceholder\Tests;
 
 use ArticlePlaceholder\ItemNotabilityFilter;
 use DataValues\StringValue;
-use MediaWiki\Registration\ExtensionRegistry;
 use MediaWikiIntegrationTestCase;
 use Wikibase\DataModel\Entity\Item;
 use Wikibase\DataModel\Entity\ItemId;
@@ -38,11 +37,7 @@ class ItemNotabilityFilterTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 
-		if ( !ExtensionRegistry::getInstance()->isLoaded( 'WikibaseRepository' ) ) {
-			$this->markTestSkipped(
-				'ItemNotabilityFilterTest needs the current wiki to be the repo.'
-			);
-		}
+		$this->markTestSkippedIfExtensionNotLoaded( 'WikibaseRepository' );
 
 		static $setUp = false;
 		if ( !$setUp ) {

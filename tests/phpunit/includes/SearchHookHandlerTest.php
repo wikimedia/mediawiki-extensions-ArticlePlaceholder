@@ -109,15 +109,10 @@ class SearchHookHandlerTest extends MediaWikiIntegrationTestCase {
 	) {
 		$itemNotabilityFilter = $this->createMock( ItemNotabilityFilter::class );
 		$itemNotabilityFilter->method( 'getNotableEntityIds' )
-			->with( $this->isType( 'array' ) )
 			->willReturnCallback( static function ( array $itemIds ) {
 				// Q7246 is notable, nothing else is
-				$Q7246 = new ItemId( 'Q7246' );
-				if ( in_array( $Q7246, $itemIds ) ) {
-					return [ $Q7246 ];
-				}
-
-				return [];
+				$notable = new ItemId( 'Q7246' );
+				return in_array( $notable, $itemIds ) ? [ $notable ] : [];
 			} );
 
 		return TestingAccessWrapper::newFromObject( new SearchHookHandler(
