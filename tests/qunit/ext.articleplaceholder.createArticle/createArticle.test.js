@@ -33,8 +33,6 @@ QUnit.module( 'ext.ArticlePlaceHolder.createArticle', ( hooks ) => {
 		ARTICLE_URL = '[ARTICLE_URL]';
 
 	hooks.beforeEach( function () {
-		this.sandbox.stub( mw, 'msg' ).returnsArg( 1 );
-
 		this.sandbox.stub( mw.config, 'get' );
 		mw.config.get.withArgs( 'apLabel' ).returns( DEFAULT_TITLE );
 		mw.config.get.withArgs( 'wgServer' ).returns( SERVER );
