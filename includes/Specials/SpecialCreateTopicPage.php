@@ -71,8 +71,6 @@ class SpecialCreateTopicPage extends UnlistedSpecialPage {
 	 * Displays a form that gives the user the information, that the page (with
 	 * the currently tried title) already exists and that he should
 	 * choose another title.
-	 *
-	 * @param Title $title
 	 */
 	private function showAlreadyExistsMessage( Title $title ) {
 		$this->showTitleInputWithMessage(
@@ -99,8 +97,6 @@ class SpecialCreateTopicPage extends UnlistedSpecialPage {
 	 * Displays a form that with the information that he should
 	 * choose another title. The given message key is used as a
 	 * reason why he need to do this.
-	 *
-	 * @param Message $msg
 	 */
 	private function showTitleInputWithMessage( Message $msg ) {
 		HTMLForm::factory(

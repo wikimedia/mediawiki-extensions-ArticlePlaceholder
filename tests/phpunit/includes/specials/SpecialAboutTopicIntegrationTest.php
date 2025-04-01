@@ -68,9 +68,6 @@ class SpecialAboutTopicIntegrationTest extends SpecialPageTestBase {
 		return new SettingsArray( $defaults );
 	}
 
-	/**
-	 * @return SiteLookup
-	 */
 	private function getSiteLookupMock(): SiteLookup {
 		$sites = [];
 

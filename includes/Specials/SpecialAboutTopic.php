@@ -131,9 +131,6 @@ class SpecialAboutTopic extends SpecialPage {
 		$this->showContent( $sub );
 	}
 
-	/**
-	 * @param string|null $itemIdString
-	 */
 	private function showContent( ?string $itemIdString ) {
 		$out = $this->getOutput();
 		$itemId = $this->getItemIdParam( $itemIdString );

@@ -283,10 +283,6 @@ class AboutTopicRenderer {
 		$output->addJsConfigVars( 'apPageNames', $pageNames );
 	}
 
-	/**
-	 * @param ItemId $itemId
-	 * @param OutputPage $output
-	 */
 	private function setOtherProjectsLinks( ItemId $itemId, OutputPage $output ) {
 		$otherProjectsSidebarGenerator = $this->otherProjectsSidebarGeneratorFactory
 			->getOtherProjectsSidebarGenerator( new HashUsageAccumulator() );

@@ -172,9 +172,6 @@ class AboutTopicRendererTest extends MediaWikiIntegrationTestCase {
 		);
 	}
 
-	/**
-	 * @return FallbackLabelDescriptionLookupFactory
-	 */
 	private function getTermLookupFactory(): FallbackLabelDescriptionLookupFactory {
 		$factory = $this->createMock( FallbackLabelDescriptionLookupFactory::class );
 		$factory->expects( $this->once() )
@@ -189,9 +186,6 @@ class AboutTopicRendererTest extends MediaWikiIntegrationTestCase {
 		return $factory;
 	}
 
-	/**
-	 * @return FallbackLabelDescriptionLookup
-	 */
 	private function getLabelDescriptionLookup(): FallbackLabelDescriptionLookup {
 		$labelDescriptionLookup = $this->createMock( FallbackLabelDescriptionLookup::class );
 		$labelDescriptionLookup->method( 'getLabel' )
@@ -207,9 +201,6 @@ class AboutTopicRendererTest extends MediaWikiIntegrationTestCase {
 		return $labelDescriptionLookup;
 	}
 
-	/**
-	 * @return SiteLinkLookup
-	 */
 	private function getSiteLinkLookup(): SiteLinkLookup {
 		$siteLinkLookup = $this->createMock( SiteLinkLookup::class );
 

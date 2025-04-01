@@ -46,9 +46,6 @@ class ItemNotabilityFilterTest extends MediaWikiIntegrationTestCase {
 		}
 	}
 
-	/**
-	 * @return ItemNotabilityFilter
-	 */
 	private function getInstance(): ItemNotabilityFilter {
 		$lbFactory = $this->getServiceContainer()->getDBLoadBalancerFactory();
 

@@ -107,9 +107,6 @@ class SpecialAboutTopicTest extends MediaWikiIntegrationTestCase {
 		return $instance->getOutput();
 	}
 
-	/**
-	 * @return SiteLinkLookup
-	 */
 	private function getSiteLinkLookup(): SiteLinkLookup {
 		$siteLinkLookup = $this->createMock( SiteLinkLookup::class );
 
@@ -120,9 +117,6 @@ class SpecialAboutTopicTest extends MediaWikiIntegrationTestCase {
 		return $siteLinkLookup;
 	}
 
-	/**
-	 * @return EntityIdParser
-	 */
 	private function getEntityIdParser(): EntityIdParser {
 		$idParser = $this->createMock( EntityIdParser::class );
 
