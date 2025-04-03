@@ -25,7 +25,7 @@ use Wikimedia\Assert\ParameterTypeException;
  */
 class SpecialAboutTopic extends SpecialPage {
 
-	public static function newFromGlobalState() {
+	public static function newFromGlobalState(): self {
 		// TODO inject services
 		$mwServices = MediaWikiServices::getInstance();
 		$config = $mwServices->getMainConfig();
