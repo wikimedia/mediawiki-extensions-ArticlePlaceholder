@@ -1,4 +1,4 @@
-<?php
+<?php declare( strict_types = 1 );
 
 namespace ArticlePlaceholder;
 
@@ -14,37 +14,21 @@ use Wikibase\Lib\Interactors\TermSearchResult;
  */
 class TermSearchApiInteractor implements TermSearchInteractor {
 
-	/**
-	 * @var RepoApiInteractor
-	 */
-	private $repoApiInteractor;
+	private RepoApiInteractor $repoApiInteractor;
+	private EntityIdParser $entityIdParser;
 
-	/**
-	 * @var EntityIdParser
-	 */
-	private $entityIdParser;
-
-	/**
-	 * @param RepoApiInteractor $repoApiInteractor
-	 * @param EntityIdParser $entityIdParser
-	 */
-	public function __construct(
-		RepoApiInteractor $repoApiInteractor,
-		EntityIdParser $entityIdParser
-	) {
+	public function __construct( RepoApiInteractor $repoApiInteractor, EntityIdParser $entityIdParser ) {
 		$this->repoApiInteractor = $repoApiInteractor;
 		$this->entityIdParser = $entityIdParser;
 	}
 
-	/**
-	 * @param string $text Term text to search for
-	 * @param string $languageCode Language code to search in
-	 * @param string $entityType Type of Entity to return
-	 * @param string[] $termTypes Types of Term to return, array of Wikibase\Lib\TermIndexEntry::TYPE_*
-	 *
-	 * @return TermSearchResult[]
-	 */
-	public function searchForEntities( $text, $languageCode, $entityType, array $termTypes ) {
+	/** @inheritDoc */
+	public function searchForEntities(
+		string $text,
+		string $languageCode,
+		string $entityType,
+		array $termTypes
+	): array {
 		$params = [
 			'action' => 'wbsearchentities',
 			'language' => $languageCode,
@@ -69,12 +53,7 @@ class TermSearchApiInteractor implements TermSearchInteractor {
 		return $results;
 	}
 
-	/**
-	 * @param array $datum
-	 * @param string $languageCode
-	 * @return null|TermSearchResult
-	 */
-	private function parseDatum( array $datum, $languageCode ) {
+	private function parseDatum( array $datum, string $languageCode ): ?TermSearchResult {
 		if ( !isset( $datum['title'] ) ||
 			!isset( $datum['match']['text'] ) ||
 			!isset( $datum['match']['type'] )
