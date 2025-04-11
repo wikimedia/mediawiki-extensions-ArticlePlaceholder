@@ -97,7 +97,7 @@ class SpecialAboutTopicIntegrationTest extends SpecialPageTestBase {
 			$siteLookup,
 			$this->inMemoryLookup,
 			WikibaseClient::getSidebarLinkBadgeDisplay( $services ),
-			$services->getHookContainer(),
+			WikibaseClient::getHookRunner( $services ),
 			WikibaseClient::getLogger( $services )
 		);
 
@@ -124,9 +124,6 @@ class SpecialAboutTopicIntegrationTest extends SpecialPageTestBase {
 	}
 
 	public function testExecution() {
-		$this->markTestSkipped(
-			'Temporarily skip test as we change OtherProjectsSidebarGeneratorFactory interface (T391442)'
-		);
 		[ $specialPageResult, ] = $this->executeSpecialPage( 'Q1' );
 		$repoLinker = WikibaseClient::getRepoLinker();
 		$itemID = new ItemId( 'Q1' );
