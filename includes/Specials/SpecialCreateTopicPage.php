@@ -2,12 +2,12 @@
 
 namespace ArticlePlaceholder\Specials;
 
+use MediaWiki\Exception\PermissionsError;
 use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Message\Message;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\SpecialPage\UnlistedSpecialPage;
 use MediaWiki\Title\Title;
-use PermissionsError;
 use Wikimedia\Stats\StatsFactory;
 
 /**

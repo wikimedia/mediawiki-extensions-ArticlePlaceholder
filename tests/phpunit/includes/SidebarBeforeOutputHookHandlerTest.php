@@ -4,9 +4,9 @@ namespace ArticlePlaceholder\Tests;
 
 use ArticlePlaceholder\SidebarBeforeOutputHookHandler;
 use MediaWiki\Request\WebRequest;
+use MediaWiki\Skin\Skin;
 use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
-use Skin;
 use Wikibase\Client\Tests\Mocks\MockClientStore;
 use Wikibase\Client\WikibaseClient;
 use Wikibase\DataModel\Entity\Item;

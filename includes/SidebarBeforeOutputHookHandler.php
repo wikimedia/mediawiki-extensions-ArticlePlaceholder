@@ -4,7 +4,7 @@ namespace ArticlePlaceholder;
 
 use MediaWiki\Hook\SidebarBeforeOutputHook;
 use MediaWiki\MediaWikiServices;
-use Skin;
+use MediaWiki\Skin\Skin;
 use Wikibase\Client\RepoLinker;
 use Wikibase\Client\WikibaseClient;
 use Wikibase\DataModel\Entity\EntityIdParser;
