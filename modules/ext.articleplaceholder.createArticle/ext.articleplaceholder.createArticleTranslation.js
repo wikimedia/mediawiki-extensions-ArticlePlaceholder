@@ -55,7 +55,8 @@
 					mw.config.get( 'apPageNames' )[ self.languageInput.getValue() ],
 					self.titleInput.getValue(),
 					self.languageInput.getValue(),
-					mw.config.get( 'wgContentLanguage' )
+					mw.config.get( 'wgContentLanguage' ),
+					{ campaign: 'articleplaceholder' }
 				);
 
 			self.forwardTo( url );
