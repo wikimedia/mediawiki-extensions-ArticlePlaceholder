@@ -6,6 +6,7 @@
 	},
 	"createtopicpage": "Pravljenje stranice",
 	"articleplaceholder-abouttopic": "O temi",
+	"articleplaceholder-abouttopic-no-entity-error": "Ovo nije važeći ID stavke.",
 	"articleplaceholder-abouttopic-create-article-title": "Pravljenje novog članka",
 	"articleplaceholder-abouttopic-create-article-label": "Naslov članka",
 	"articleplaceholder-abouttopic-create-article-mandatory": "Naslov članka je obavezan.",
