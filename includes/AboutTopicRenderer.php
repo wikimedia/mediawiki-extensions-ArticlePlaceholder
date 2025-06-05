@@ -278,7 +278,7 @@ class AboutTopicRenderer {
 			}
 		}
 
-		$output->setLanguageLinks( $languageLinks );
+		$output->addLanguageLinks( $languageLinks );
 		$output->addJsConfigVars( 'apLanguages', $languageNames );
 		$output->addJsConfigVars( 'apPageNames', $pageNames );
 	}
