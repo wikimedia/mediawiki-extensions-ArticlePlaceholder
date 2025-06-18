@@ -30,7 +30,8 @@ QUnit.module( 'ext.ArticlePlaceHolder.createArticle', ( hooks ) => {
 			}
 		},
 		SERVER = '[SERVER]',
-		ARTICLE_URL = '[ARTICLE_URL]';
+		ARTICLE_URL = '[ARTICLE_URL]',
+		windowManager;
 
 	hooks.beforeEach( function () {
 		this.sandbox.stub( mw.config, 'get' );
@@ -57,13 +58,20 @@ QUnit.module( 'ext.ArticlePlaceHolder.createArticle', ( hooks ) => {
 		} );
 	} );
 
+	hooks.afterEach( function () {
+		if ( windowManager ) {
+			windowManager.destroy();
+			windowManager = undefined;
+		}
+	} );
+
 	/*
 	 * Helper functions
 	 */
 
 	function createAndShowDialog() {
-		var windowManager = new OO.ui.WindowManager(),
-			dialog = new CreateArticleDialog();
+		windowManager = new OO.ui.WindowManager();
+		var dialog = new CreateArticleDialog();
 
 		$( '#qunit-fixture' ).append( windowManager.$element );
 		windowManager.addWindows( [ dialog ] );

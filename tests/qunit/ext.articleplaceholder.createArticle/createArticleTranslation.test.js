@@ -10,11 +10,12 @@ QUnit.module( 'ext.ArticlePlaceHolder.createArticleTranslation', ( hooks ) => {
 	var ARTICLE_URL = '[ARTICLE_URL]',
 		PAGE_NAMES = '[PAGE_NAMES]',
 		CONTENT_LANGUAGE = '[CONTENT_LANGUAGE]',
-		savedMwCx;
+		savedMwCx,
+		windowManager;
 
 	function createAndShowDialog() {
-		var windowManager = new OO.ui.WindowManager(),
-			dialog = new CreateArticleTranslationDialog();
+		windowManager = new OO.ui.WindowManager();
+		var dialog = new CreateArticleTranslationDialog();
 
 		$( '#qunit-fixture' ).append( windowManager.$element );
 		windowManager.addWindows( [
@@ -53,6 +54,10 @@ QUnit.module( 'ext.ArticlePlaceHolder.createArticleTranslation', ( hooks ) => {
 			mw.cx = savedMwCx;
 		} else {
 			delete mw.cx;
+		}
+		if ( windowManager ) {
+			windowManager.destroy();
+			windowManager = undefined;
 		}
 	} );
 
