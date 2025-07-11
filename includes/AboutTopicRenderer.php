@@ -135,7 +135,7 @@ class AboutTopicRenderer {
 				if ( $this->permissionManager->quickUserCan( 'createpage', $user, $title ) ) {
 					$canEdit = true;
 				}
-			} catch ( MalformedTitleException $ex ) {
+			} catch ( MalformedTitleException ) {
 				// When the entity's label contains characters not allowed in page titles
 				$label = '';
 				$canEdit = true;

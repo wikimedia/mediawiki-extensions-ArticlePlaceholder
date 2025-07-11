@@ -129,7 +129,7 @@ class SidebarBeforeOutputHookHandler implements SidebarBeforeOutputHook {
 		try {
 			// @phan-suppress-next-line PhanTypeMismatchReturn
 			return $this->entityIdParser->parse( $idSerialization );
-		} catch ( EntityIdParsingException $ex ) {
+		} catch ( EntityIdParsingException ) {
 			// Ignore
 		}
 

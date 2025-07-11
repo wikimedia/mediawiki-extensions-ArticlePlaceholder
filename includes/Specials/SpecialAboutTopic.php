@@ -231,7 +231,7 @@ class SpecialAboutTopic extends SpecialPage {
 			}
 
 			return $id;
-		} catch ( EntityIdParsingException $ex ) {
+		} catch ( EntityIdParsingException ) {
 			$this->getOutput()->addWikiMsg( 'articleplaceholder-abouttopic-no-entity-error' );
 		}
 
