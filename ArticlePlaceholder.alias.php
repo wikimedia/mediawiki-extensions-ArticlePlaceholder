@@ -37,3 +37,21 @@ $specialPageAliases['ur'] = [
 	'AboutTopic' => [ 'تعارف_موضوع' ],
 	'CreateTopicPage' => [ 'تخلیق_صفحہ_موضوع' ],
 ];
+
+/** Chinese (中文) */
+$specialPageAliases['zh'] = [
+	'AboutTopic' => [ 'AboutTopic' ],
+	'CreateTopicPage' => [ 'CreateTopicPage' ],
+];
+
+/** Simplified Chinese (中文（简体）) */
+$specialPageAliases['zh-hans'] = [
+	'AboutTopic' => [ '关于话题', '关于主题' ],
+	'CreateTopicPage' => [ '创建话题页面', '创建主题页面' ],
+];
+
+/** Traditional Chinese (中文（繁體）) */
+$specialPageAliases['zh-hant'] = [
+	'AboutTopic' => [ '關於話題', '關於主題' ],
+	'CreateTopicPage' => [ '建立話題頁面', '建立主題頁面' ],
+];
