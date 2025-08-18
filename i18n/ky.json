@@ -5,6 +5,14 @@
 		]
 	},
 	"createtopicpage": "Барак түзүү",
+	"articleplaceholder-abouttopic": "Тема тууралуу",
+	"articleplaceholder-abouttopic-create-article-title": "Жаңы макала түзүү",
+	"articleplaceholder-abouttopic-create-article-label": "Макаланын аталышы",
+	"articleplaceholder-abouttopic-create-article-button": "Макала түзүү",
+	"articleplaceholder-abouttopic-create-empty-article-button": "Жаңы макала баштоо",
+	"articleplaceholder-abouttopic-translate-article-label": "Баштапкы тил:",
+	"articleplaceholder-abouttopic-translate-article-button": "Макаланы которуу",
+	"articleplaceholder-abouttopic-create-article-submit-button": "Жөнөтүү",
 	"articleplaceholder-abouttopic-lua-reference": "Булак",
 	"articleplaceholder-createpage-title": "«$1‎»‎ түзүү",
 	"articleplaceholder-abouttopic-icon-title": "Маалымат"
