@@ -1,17 +1,34 @@
 {
 	"@metadata": {
 		"authors": [
+			"Saurmandal",
 			"Sfic"
 		]
 	},
 	"createtopicpage": "पृष्ठ बनाएँ",
+	"articleplaceholder-desc": "विशिष्ट विषय पर {{WBREPONAME}} की जानकारी के साथ एक विशेष पृष्ठ प्रदान करता है, और उस विषय पर एक लेख बनाने को आमंत्रित करता है",
+	"articleplaceholder-abouttopic": "विषय के बारे में",
+	"articleplaceholder-abouttopic-intro": "यह विशेष पृष्ठ आपको {{WBREPONAME}} से विषय पर आधारित त्वरित अवलोकन प्रदान करता है।",
+	"articleplaceholder-abouttopic-entityid": "कृपया एक आयटम ID दर्ज करें, जैसे Q12345",
+	"articleplaceholder-abouttopic-submit": "बनाएँ",
+	"articleplaceholder-abouttopic-no-entity-error": "यह कोई मान्य आयटम ID नहीं है।",
+	"articleplaceholder-abouttopic-create-article-title": "नया लेख बनाएँ",
 	"articleplaceholder-abouttopic-create-article-label": "लेख का शीर्षक",
+	"articleplaceholder-abouttopic-create-article-mandatory": "लेख का शीर्षक अनिवार्य है।",
 	"articleplaceholder-abouttopic-create-article-button": "लेख बनाएँ",
 	"articleplaceholder-abouttopic-create-empty-article-button": "नया लेख शुरू करें",
 	"articleplaceholder-abouttopic-translate-article-label": "स्रोत भाषा:",
 	"articleplaceholder-abouttopic-translate-article-button": "लेख का अनुवाद करें",
-	"articleplaceholder-abouttopic-create-article-submit-button": "भेजें",
+	"articleplaceholder-abouttopic-create-article-submit-button": "जमा करें",
+	"articleplaceholder-abouttopic-article-exists-error": "इस नाम का एक लेख पहले से मौजूद है",
+	"articleplaceholder-abouttopic-lua-entity": "सत्ता",
 	"articleplaceholder-abouttopic-lua-reference": "संदर्भ",
 	"articleplaceholder-abouttopic-lua-identifier": "बाहरी संसाधन",
-	"articleplaceholder-createpage-title": "$1 बनाएँ"
+	"articleplaceholder-search-header": "विषय पर जानकारी हासिल करें",
+	"articleplaceholder-createpage-title": "$1 बनाएँ",
+	"articleplaceholder-createpage-alreadyexists": "$1 शीर्षक वाला पृष्ठ पहले से ही मौजूद है। कृपया कोई दूसरा शीर्षक चुनें।",
+	"articleplaceholder-createpage-notitleprovided": "कोई शीर्षक दर्ज नहीं किया गया है; आप जो पृष्ठ बनाना चाहते हैं, कृपया उसके लिए एक शीर्षक दर्ज करें।",
+	"articleplaceholder-createpage-invalidtitleprovided": "आपके द्वारा दर्ज किया गया शीर्षक अमान्य है। कृपया एक मान्य शीर्षक दर्ज करें।",
+	"articleplaceholder-abouttopic-topmessage-text": "यह [$1 {{WBREPONAME}} से डेटा] के आधार पर एक स्वचालित दृश्य है।<br />अब भी कोई संपूर्ण लेख नहीं है, मगर आप उसे बनाने में मदद कर सकते हैं।",
+	"articleplaceholder-abouttopic-icon-title": "जानकारी"
 }
