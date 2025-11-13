@@ -12,7 +12,6 @@ use Wikibase\Client\WikibaseClient;
 use Wikibase\Lib\Interactors\TermSearchInteractor;
 use Wikibase\Lib\Interactors\TermSearchResult;
 use Wikibase\Lib\TermIndexEntry;
-use Wikimedia\Rdbms\SessionConsistentConnectionManager;
 use Wikimedia\Stats\Metrics\CounterMetric;
 
 /**
@@ -51,18 +50,18 @@ class SearchHookHandler implements SpecialSearchResultsAppendHook {
 	public static function newFromGlobalState( Config $config ) {
 		// TODO inject services into hook handler instance
 		$mwServices = MediaWikiServices::getInstance();
+		$connProvider = $mwServices->getConnectionProvider();
+		$statsFactory = $mwServices->getStatsFactory();
+
 		$repoDB = WikibaseClient::getItemAndPropertySource()->getDatabaseName();
-		$lbFactory = $mwServices->getDBLoadBalancerFactory();
 		$clientSettings = WikibaseClient::getSettings( $mwServices );
 
 		$itemNotabilityFilter = new ItemNotabilityFilter(
-			new SessionConsistentConnectionManager( $lbFactory->getMainLB( $repoDB ), $repoDB ),
+			$connProvider->getReplicaDatabase( $repoDB ),
 			WikibaseClient::getEntityNamespaceLookup( $mwServices ),
 			WikibaseClient::getStore()->getSiteLinkLookup(),
 			$clientSettings->getSetting( 'siteGlobalID' )
 		);
-
-		$statsFactory = $mwServices->getStatsFactory();
 
 		$termSearchInteractor = new TermSearchApiInteractor(
 			new RepoApiInteractor(

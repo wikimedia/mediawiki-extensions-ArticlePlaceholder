@@ -15,7 +15,6 @@ use Wikibase\DataModel\Statement\Statement;
 use Wikibase\DataModel\Statement\StatementList;
 use Wikibase\DataModel\Term\Fingerprint;
 use Wikibase\Repo\WikibaseRepo;
-use Wikimedia\Rdbms\SessionConsistentConnectionManager;
 
 /**
  * @group Database
@@ -47,10 +46,10 @@ class ItemNotabilityFilterTest extends MediaWikiIntegrationTestCase {
 	}
 
 	private function getInstance(): ItemNotabilityFilter {
-		$lbFactory = $this->getServiceContainer()->getDBLoadBalancerFactory();
+		$connProvider = $this->getServiceContainer()->getConnectionProvider();
 
 		return new ItemNotabilityFilter(
-			new SessionConsistentConnectionManager( $lbFactory->getMainLB() ),
+			$connProvider->getReplicaDatabase(),
 			WikibaseRepo::getEntityNamespaceLookup(),
 			WikibaseRepo::getStore()->newSiteLinkStore(),
 			'enwiki'

@@ -21,6 +21,7 @@ use Wikibase\Lib\LanguageFallbackChainFactory;
 use Wikibase\Lib\Store\MatchingTermsLookup;
 use Wikibase\Lib\TermIndexEntry;
 use Wikibase\Lib\Tests\Store\MockMatchingTermsLookup;
+use Wikimedia\Rdbms\IConnectionProvider;
 use Wikimedia\Stats\Metrics\CounterMetric;
 use Wikimedia\Stats\StatsFactory;
 use Wikimedia\TestingAccessWrapper;
@@ -128,6 +129,7 @@ class SearchHookHandlerTest extends MediaWikiIntegrationTestCase {
 			'ArticlePlaceholderRepoApiUrl' => '',
 			MainConfigNames::LanguageCode => 'en',
 		] );
+		$this->setService( 'ConnectionProvider', $this->createMock( IConnectionProvider::class ) );
 
 		/** @var SearchHookHandler $handler */
 		$handler = TestingAccessWrapper::newFromClass( SearchHookHandler::class );

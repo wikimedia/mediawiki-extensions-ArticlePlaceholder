@@ -8,7 +8,6 @@ use Wikibase\Lib\Store\SiteLinkLookup;
 use Wikimedia\Rdbms\FakeResultWrapper;
 use Wikimedia\Rdbms\IReadableDatabase;
 use Wikimedia\Rdbms\IResultWrapper;
-use Wikimedia\Rdbms\SessionConsistentConnectionManager;
 
 /**
  * Filter a list of items by article placeholder notability.
@@ -30,9 +29,9 @@ class ItemNotabilityFilter {
 	private const MIN_SITELINKS = 2;
 
 	/**
-	 * @var SessionConsistentConnectionManager
+	 * @var IReadableDatabase
 	 */
-	private $connectionManager;
+	private $dbr;
 
 	/**
 	 * @var EntityNamespaceLookup
@@ -50,18 +49,18 @@ class ItemNotabilityFilter {
 	private $siteGlobalId;
 
 	/**
-	 * @param SessionConsistentConnectionManager $connectionManager
+	 * @param IReadableDatabase $dbr
 	 * @param EntityNamespaceLookup $entityNamespaceLookup
 	 * @param SiteLinkLookup $siteLinkLookup
 	 * @param string $siteGlobalId
 	 */
 	public function __construct(
-		SessionConsistentConnectionManager $connectionManager,
+		IReadableDatabase $dbr,
 		EntityNamespaceLookup $entityNamespaceLookup,
 		SiteLinkLookup $siteLinkLookup,
 		$siteGlobalId
 	) {
-		$this->connectionManager = $connectionManager;
+		$this->dbr = $dbr;
 		$this->entityNamespaceLookup = $entityNamespaceLookup;
 		$this->siteLinkLookup = $siteLinkLookup;
 		$this->siteGlobalId = $siteGlobalId;
@@ -110,9 +109,7 @@ class ItemNotabilityFilter {
 	private function getPagePropsByItem( array $itemIds ) {
 		$values = [];
 
-		$dbr = $this->connectionManager->getReadConnection();
-
-		$res = $this->selectPagePropsPage( $dbr, $itemIds );
+		$res = $this->selectPagePropsPage( $itemIds );
 
 		foreach ( $res as $row ) {
 			$values[$row->page_title][$row->pp_propname] = intval( $row->pp_value ?: 0 );
@@ -122,12 +119,11 @@ class ItemNotabilityFilter {
 	}
 
 	/**
-	 * @param IReadableDatabase $dbr
 	 * @param ItemId[] $itemIds
 	 *
 	 * @return IResultWrapper
 	 */
-	private function selectPagePropsPage( IReadableDatabase $dbr, array $itemIds ) {
+	private function selectPagePropsPage( array $itemIds ) {
 		$entityNamespace = $this->entityNamespaceLookup->getEntityNamespace( 'item' );
 
 		if ( !is_int( $entityNamespace ) ) {
@@ -140,7 +136,7 @@ class ItemNotabilityFilter {
 			$itemIdSerializations[] = $itemId->getSerialization();
 		}
 
-		return $dbr->newSelectQueryBuilder()
+		return $this->dbr->newSelectQueryBuilder()
 			->select( [ 'page_title', 'pp_propname', 'pp_value' ] )
 			->from( 'page' )
 			->join( 'page_props', null, 'page_id=pp_page' )
