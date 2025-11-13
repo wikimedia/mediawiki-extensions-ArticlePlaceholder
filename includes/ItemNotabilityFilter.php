@@ -28,47 +28,16 @@ class ItemNotabilityFilter {
 	 */
 	private const MIN_SITELINKS = 2;
 
-	/**
-	 * @var IReadableDatabase
-	 */
-	private $dbr;
-
-	/**
-	 * @var EntityNamespaceLookup
-	 */
-	private $entityNamespaceLookup;
-
-	/**
-	 * @var SiteLinkLookup
-	 */
-	private $siteLinkLookup;
-
-	/**
-	 * @var string
-	 */
-	private $siteGlobalId;
-
-	/**
-	 * @param IReadableDatabase $dbr
-	 * @param EntityNamespaceLookup $entityNamespaceLookup
-	 * @param SiteLinkLookup $siteLinkLookup
-	 * @param string $siteGlobalId
-	 */
 	public function __construct(
-		IReadableDatabase $dbr,
-		EntityNamespaceLookup $entityNamespaceLookup,
-		SiteLinkLookup $siteLinkLookup,
-		$siteGlobalId
+		private IReadableDatabase $dbr,
+		private EntityNamespaceLookup $entityNamespaceLookup,
+		private SiteLinkLookup $siteLinkLookup,
+		private string $siteGlobalId
 	) {
-		$this->dbr = $dbr;
-		$this->entityNamespaceLookup = $entityNamespaceLookup;
-		$this->siteLinkLookup = $siteLinkLookup;
-		$this->siteGlobalId = $siteGlobalId;
 	}
 
 	/**
 	 * @param ItemId[] $itemIds
-	 *
 	 * @return ItemId[]
 	 */
 	public function getNotableEntityIds( array $itemIds ) {
@@ -103,7 +72,6 @@ class ItemNotabilityFilter {
 
 	/**
 	 * @param ItemId[] $itemIds
-	 *
 	 * @return int[][] Map of page_title => propname => numeric value
 	 */
 	private function getPagePropsByItem( array $itemIds ) {
@@ -120,7 +88,6 @@ class ItemNotabilityFilter {
 
 	/**
 	 * @param ItemId[] $itemIds
-	 *
 	 * @return IResultWrapper
 	 */
 	private function selectPagePropsPage( array $itemIds ) {
@@ -150,7 +117,6 @@ class ItemNotabilityFilter {
 
 	/**
 	 * @param ItemId[] $itemIds expected to be indexed by numeric item ID
-	 *
 	 * @return ItemId[]
 	 */
 	private function getItemsWithoutArticle( array $itemIds ) {

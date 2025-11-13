@@ -15,39 +15,19 @@ use Wikibase\Lib\TermIndexEntry;
 use Wikimedia\Stats\Metrics\CounterMetric;
 
 /**
- * Adding results from ArticlePlaceholder to search
+ * Add results from ArticlePlaceholder to search
  *
  * @license GPL-2.0-or-later
  * @author Lucie-Aimée Kaffee
  */
 class SearchHookHandler implements SpecialSearchResultsAppendHook {
 
-	/**
-	 * @var TermSearchInteractor
-	 */
-	private $termSearchInteractor;
+	private TermSearchInteractor $termSearchInteractor;
+	private string $languageCode;
+	private ItemNotabilityFilter $itemNotabilityFilter;
+	private CounterMetric $searchesMetric;
 
-	/**
-	 * @var string
-	 */
-	private $languageCode;
-
-	/**
-	 * @var ItemNotabilityFilter
-	 */
-	private $itemNotabilityFilter;
-
-	/**
-	 * @var CounterMetric
-	 */
-	private $searchesMetric;
-
-	/**
-	 * @param Config $config
-	 *
-	 * @return self
-	 */
-	public static function newFromGlobalState( Config $config ) {
+	public static function newFromGlobalState( Config $config ): self {
 		// TODO inject services into hook handler instance
 		$mwServices = MediaWikiServices::getInstance();
 		$connProvider = $mwServices->getConnectionProvider();
@@ -80,15 +60,9 @@ class SearchHookHandler implements SpecialSearchResultsAppendHook {
 		);
 	}
 
-	/**
-	 * @param TermSearchInteractor $termSearchInteractor
-	 * @param string $languageCode content language
-	 * @param ItemNotabilityFilter $itemNotabilityFilter
-	 * @param CounterMetric $searchesMetric
-	 */
 	public function __construct(
 		TermSearchInteractor $termSearchInteractor,
-		$languageCode,
+		string $languageCode,
 		ItemNotabilityFilter $itemNotabilityFilter,
 		CounterMetric $searchesMetric
 	) {
@@ -120,11 +94,7 @@ class SearchHookHandler implements SpecialSearchResultsAppendHook {
 		$this->addToSearch( $output, $term );
 	}
 
-	/**
-	 * @param OutputPage $output
-	 * @param string $term
-	 */
-	private function addToSearch( OutputPage $output, $term ): void {
+	private function addToSearch( OutputPage $output, string $term ): void {
 		$termSearchResults = $this->getTermSearchResults( $term );
 
 		if ( $termSearchResults ) {
@@ -154,11 +124,9 @@ class SearchHookHandler implements SpecialSearchResultsAppendHook {
 	}
 
 	/**
-	 * @param string $term
-	 *
 	 * @return TermSearchResult[]
 	 */
-	private function getTermSearchResults( $term ) {
+	private function getTermSearchResults( string $term ): array {
 		$termSearchResults = [];
 
 		foreach ( $this->searchEntities( $term ) as $searchResult ) {
@@ -171,11 +139,9 @@ class SearchHookHandler implements SpecialSearchResultsAppendHook {
 	/**
 	 * Render search results, filtered for notability.
 	 *
-	 * @param TermSearchResult[] $termSearchResults
-	 *
 	 * @return string Wikitext
 	 */
-	private function renderTermSearchResults( array $termSearchResults ) {
+	private function renderTermSearchResults( array $termSearchResults ): string {
 		$wikitext = '';
 
 		$itemIds = [];
@@ -197,11 +163,9 @@ class SearchHookHandler implements SpecialSearchResultsAppendHook {
 	}
 
 	/**
-	 * @param TermSearchResult $searchResult
-	 *
 	 * @return string Wikitext
 	 */
-	private function renderTermSearchResult( TermSearchResult $searchResult ) {
+	private function renderTermSearchResult( TermSearchResult $searchResult ): string {
 		$entityIdString = $searchResult->getEntityIdSerialization();
 
 		$displayLabel = $searchResult->getDisplayLabel();
@@ -221,11 +185,9 @@ class SearchHookHandler implements SpecialSearchResultsAppendHook {
 	}
 
 	/**
-	 * @param string $term
-	 *
 	 * @return TermSearchResult[]
 	 */
-	private function searchEntities( $term ) {
+	private function searchEntities( string $term ): array {
 		return $this->termSearchInteractor->searchForEntities(
 			$term,
 			$this->languageCode,

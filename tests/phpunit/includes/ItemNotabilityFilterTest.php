@@ -28,9 +28,7 @@ use Wikibase\Repo\WikibaseRepo;
  */
 class ItemNotabilityFilterTest extends MediaWikiIntegrationTestCase {
 
-	/**
-	 * @var ItemId[]
-	 */
+	/** @var ItemId[] */
 	private $testItemIds = [];
 
 	protected function setUp(): void {
