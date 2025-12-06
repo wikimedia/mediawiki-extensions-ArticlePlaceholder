@@ -17,7 +17,6 @@ use OOUI;
 use Wikibase\Client\Hooks\OtherProjectsSidebarGeneratorFactory;
 use Wikibase\Client\RepoLinker;
 use Wikibase\Client\Usage\HashUsageAccumulator;
-use Wikibase\Client\WikibaseClient;
 use Wikibase\DataModel\Entity\ItemId;
 use Wikibase\DataModel\Term\Term;
 use Wikibase\DataModel\Term\TermTypes;
@@ -35,72 +34,16 @@ use Wikibase\Lib\Store\SiteLinkLookup;
  */
 class AboutTopicRenderer {
 
-	/**
-	 * @var FallbackLabelDescriptionLookupFactory
-	 */
-	private $termLookupFactory;
-
-	/**
-	 * @var SiteLinkLookup
-	 */
-	private $siteLinkLookup;
-
-	/**
-	 * @var SiteLookup
-	 */
-	private $siteLookup;
-
-	/**
-	 * @var string
-	 */
-	private $langLinkSiteGroup;
-
-	/**
-	 * @var TitleFactory
-	 */
-	private $titleFactory;
-
-	/**
-	 * @var OtherProjectsSidebarGeneratorFactory
-	 */
-	private $otherProjectsSidebarGeneratorFactory;
-
-	/**
-	 * @var PermissionManager
-	 */
-	private $permissionManager;
-
-	/** @var RepoLinker */
-	private $repoLinker;
-
-	/**
-	 * @param FallbackLabelDescriptionLookupFactory $termLookupFactory
-	 * @param SiteLinkLookup $siteLinkLookup
-	 * @param SiteLookup $siteLookup
-	 * @param string $langLinkSiteGroup
-	 * @param TitleFactory $titleFactory
-	 * @param OtherProjectsSidebarGeneratorFactory $otherProjectsSidebarGeneratorFactory
-	 * @param PermissionManager $permissionManager
-	 * @param RepoLinker $repoLinker
-	 */
 	public function __construct(
-		FallbackLabelDescriptionLookupFactory $termLookupFactory,
-		SiteLinkLookup $siteLinkLookup,
-		SiteLookup $siteLookup,
-		string $langLinkSiteGroup,
-		TitleFactory $titleFactory,
-		OtherProjectsSidebarGeneratorFactory $otherProjectsSidebarGeneratorFactory,
-		PermissionManager $permissionManager,
-		RepoLinker $repoLinker
+		private readonly FallbackLabelDescriptionLookupFactory $termLookupFactory,
+		private readonly SiteLinkLookup $siteLinkLookup,
+		private readonly SiteLookup $siteLookup,
+		private readonly string $langLinkSiteGroup,
+		private readonly TitleFactory $titleFactory,
+		private readonly OtherProjectsSidebarGeneratorFactory $otherProjectsSidebarGeneratorFactory,
+		private readonly PermissionManager $permissionManager,
+		private readonly RepoLinker $repoLinker,
 	) {
-		$this->termLookupFactory = $termLookupFactory;
-		$this->siteLinkLookup = $siteLinkLookup;
-		$this->siteLookup = $siteLookup;
-		$this->langLinkSiteGroup = $langLinkSiteGroup;
-		$this->titleFactory = $titleFactory;
-		$this->otherProjectsSidebarGeneratorFactory = $otherProjectsSidebarGeneratorFactory;
-		$this->permissionManager = $permissionManager;
-		$this->repoLinker = $repoLinker;
 	}
 
 	/**
@@ -177,7 +120,6 @@ class AboutTopicRenderer {
 			$buttonCode = $this->showCreateArticle( $entityId, $label, $output );
 		}
 
-		$this->repoLinker = WikibaseClient::getRepoLinker();
 		$messageP = Html::rawElement( 'p', [], $output->msg(
 			'articleplaceholder-abouttopic-topmessage-text',
 			$this->repoLinker->getEntityUrl( $entityId )

@@ -19,16 +19,11 @@ use Wikimedia\Stats\StatsFactory;
  */
 class SpecialCreateTopicPage extends UnlistedSpecialPage {
 
-	private PermissionManager $permissionManager;
-	private StatsFactory $statsFactory;
-
 	public function __construct(
-		PermissionManager $permissionManager,
-		StatsFactory $statsFactory
+		private readonly PermissionManager $permissionManager,
+		private readonly StatsFactory $statsFactory,
 	) {
 		parent::__construct( 'CreateTopicPage' );
-		$this->permissionManager = $permissionManager;
-		$this->statsFactory = $statsFactory;
 	}
 
 	/**

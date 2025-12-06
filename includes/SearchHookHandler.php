@@ -22,11 +22,6 @@ use Wikimedia\Stats\Metrics\CounterMetric;
  */
 class SearchHookHandler implements SpecialSearchResultsAppendHook {
 
-	private TermSearchInteractor $termSearchInteractor;
-	private string $languageCode;
-	private ItemNotabilityFilter $itemNotabilityFilter;
-	private CounterMetric $searchesMetric;
-
 	public static function newFromGlobalState( Config $config ): self {
 		// TODO inject services into hook handler instance
 		$mwServices = MediaWikiServices::getInstance();
@@ -61,15 +56,11 @@ class SearchHookHandler implements SpecialSearchResultsAppendHook {
 	}
 
 	public function __construct(
-		TermSearchInteractor $termSearchInteractor,
-		string $languageCode,
-		ItemNotabilityFilter $itemNotabilityFilter,
-		CounterMetric $searchesMetric
+		private readonly TermSearchInteractor $termSearchInteractor,
+		private readonly string $languageCode,
+		private readonly ItemNotabilityFilter $itemNotabilityFilter,
+		private readonly CounterMetric $searchesMetric,
 	) {
-		$this->termSearchInteractor = $termSearchInteractor;
-		$this->languageCode = $languageCode;
-		$this->itemNotabilityFilter = $itemNotabilityFilter;
-		$this->searchesMetric = $searchesMetric;
 	}
 
 	/**

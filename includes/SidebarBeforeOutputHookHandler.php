@@ -21,21 +21,6 @@ use Wikibase\DataModel\Services\Lookup\EntityLookup;
 class SidebarBeforeOutputHookHandler implements SidebarBeforeOutputHook {
 
 	/**
-	 * @var EntityIdParser
-	 */
-	private $entityIdParser;
-
-	/**
-	 * @var RepoLinker
-	 */
-	private $repoLinker;
-
-	/**
-	 * @var EntityLookup
-	 */
-	private $entityLookup;
-
-	/**
 	 * @return self
 	 */
 	public static function newFromGlobalState() {
@@ -46,19 +31,11 @@ class SidebarBeforeOutputHookHandler implements SidebarBeforeOutputHook {
 		);
 	}
 
-	/**
-	 * @param EntityIdParser $entityIdParser
-	 * @param RepoLinker $repoLinker
-	 * @param EntityLookup $entityLookup
-	 */
 	public function __construct(
-		EntityIdParser $entityIdParser,
-		RepoLinker $repoLinker,
-		EntityLookup $entityLookup
+		private readonly EntityIdParser $entityIdParser,
+		private readonly RepoLinker $repoLinker,
+		private readonly EntityLookup $entityLookup,
 	) {
-		$this->entityIdParser = $entityIdParser;
-		$this->repoLinker = $repoLinker;
-		$this->entityLookup = $entityLookup;
 	}
 
 	/**
