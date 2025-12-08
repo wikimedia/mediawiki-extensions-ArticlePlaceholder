@@ -1,8 +1,28 @@
 {
 	"@metadata": {
 		"authors": [
-			"पर्वत सुबेदी"
+			"पर्वत सुबेदी",
+			"बडा काजी"
 		]
 	},
-	"articleplaceholder-abouttopic-lua-reference": "सन्दर्भ"
+	"createtopicpage": "पृष्ठ सिर्जना गर्नुहोस्",
+	"articleplaceholder-abouttopic": "विषयको बारेमा",
+	"articleplaceholder-abouttopic-create-article-title": "नयाँ लेख सृजना गर्नुहाेस्",
+	"articleplaceholder-abouttopic-create-article-label": "लेखको शीर्षक",
+	"articleplaceholder-abouttopic-create-article-mandatory": "लेखको शीर्षक अनिवार्य छ।",
+	"articleplaceholder-abouttopic-create-article-button": "एउटा लेख सिर्जना गर्नुहोस्",
+	"articleplaceholder-abouttopic-create-empty-article-button": "नयाँ लेख सृजना गर्नुहाेस्",
+	"articleplaceholder-abouttopic-translate-article-label": "स्रोत भाषाः",
+	"articleplaceholder-abouttopic-translate-article-button": "लेख अनुवाद गर्नुहोस्",
+	"articleplaceholder-abouttopic-create-article-submit-button": "पेस गर्नुहोस्",
+	"articleplaceholder-abouttopic-article-exists-error": "यस नामको एउटा लेख पहिले नै अवस्थित छ",
+	"articleplaceholder-abouttopic-lua-entity": "एकाइ",
+	"articleplaceholder-abouttopic-lua-reference": "सन्दर्भ",
+	"articleplaceholder-abouttopic-lua-identifier": "बाह्य स्रोतहरू",
+	"articleplaceholder-search-header": "विषयमा डेटा पत्ता लगाउनुहोस्",
+	"articleplaceholder-createpage-title": "$1 सिर्जना गर्नुहोस्",
+	"articleplaceholder-createpage-alreadyexists": "$1 शीर्षक भएको पृष्ठ पहिले नै अवस्थित छ। कृपया अर्को एउटा छान्नुहोस्।",
+	"articleplaceholder-createpage-notitleprovided": "कुनै शीर्षक प्रविष्ट गरिएको थिएन, कृपया तपाईंले सिर्जना गर्न चाहनुभएको पृष्ठको लागि शीर्षक प्रविष्ट गर्नुहोस्।",
+	"articleplaceholder-createpage-invalidtitleprovided": "तपाईंले प्रविष्ट गर्नुभएको शीर्षक अमान्य छ। कृपया मान्य शीर्षक प्रदान गर्नुहोस्।",
+	"articleplaceholder-abouttopic-icon-title": "जानकारी"
 }
