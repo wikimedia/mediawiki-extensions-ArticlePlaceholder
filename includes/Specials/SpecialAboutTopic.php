@@ -139,7 +139,7 @@ class SpecialAboutTopic extends SpecialPage {
 			$out->setProperty( 'wikibase_item', $itemId->getSerialization() );
 
 			$out->setCanonicalUrl(
-				$this->getTitleFor( $this->getName(), $itemId->getSerialization() )->getCanonicalURL()
+				SpecialPage::getTitleFor( $this->getName(), $itemId->getSerialization() )->getCanonicalURL()
 			);
 		}
 		$this->setHeaders();
