@@ -13,8 +13,6 @@ use Wikibase\DataModel\Entity\EntityIdParsingException;
 use Wikibase\DataModel\Entity\ItemId;
 use Wikibase\DataModel\Services\Lookup\EntityLookup;
 use Wikibase\Lib\Store\SiteLinkLookup;
-use Wikimedia\Assert\Assert;
-use Wikimedia\Assert\ParameterTypeException;
 
 /**
  * The AboutTopic SpecialPage for the ArticlePlaceholder extension
@@ -52,76 +50,16 @@ class SpecialAboutTopic extends SpecialPage {
 		);
 	}
 
-	/**
-	 * @var AboutTopicRenderer
-	 */
-	private $aboutTopicRenderer;
-
-	/**
-	 * @var EntityIdParser
-	 */
-	private $idParser;
-
-	/**
-	 * @var SiteLinkLookup
-	 */
-	private $siteLinkLookup;
-
-	/**
-	 * @var TitleFactory
-	 */
-	private $titleFactory;
-
-	/**
-	 * @var string
-	 */
-	private $siteGlobalID;
-
-	/**
-	 * @var EntityLookup
-	 */
-	private $entityLookup;
-
-	/**
-	 * @var bool|string
-	 */
-	private $searchEngineIndexed;
-
-	/**
-	 * @param AboutTopicRenderer $aboutTopicRenderer
-	 * @param EntityIdParser $idParser
-	 * @param SiteLinkLookup $siteLinkLookup
-	 * @param TitleFactory $titleFactory
-	 * @param string $siteGlobalID
-	 * @param EntityLookup $entityLookup
-	 * @param bool|string $searchEngineIndexed
-	 *
-	 * @throws ParameterTypeException
-	 */
 	public function __construct(
-		AboutTopicRenderer $aboutTopicRenderer,
-		EntityIdParser $idParser,
-		SiteLinkLookup $siteLinkLookup,
-		TitleFactory $titleFactory,
-		$siteGlobalID,
-		EntityLookup $entityLookup,
-		$searchEngineIndexed
+		private readonly AboutTopicRenderer $aboutTopicRenderer,
+		private readonly EntityIdParser $idParser,
+		private readonly SiteLinkLookup $siteLinkLookup,
+		private readonly TitleFactory $titleFactory,
+		private readonly string $siteGlobalID,
+		private readonly EntityLookup $entityLookup,
+		private readonly bool|string $searchEngineIndexed,
 	) {
 		parent::__construct( 'AboutTopic' );
-
-		Assert::parameterType(
-			[ 'boolean', 'string' ],
-			$searchEngineIndexed,
-			'$searchEngineIndexed'
-		);
-
-		$this->aboutTopicRenderer = $aboutTopicRenderer;
-		$this->idParser = $idParser;
-		$this->siteLinkLookup = $siteLinkLookup;
-		$this->titleFactory = $titleFactory;
-		$this->siteGlobalID = $siteGlobalID;
-		$this->entityLookup = $entityLookup;
-		$this->searchEngineIndexed = $searchEngineIndexed;
 	}
 
 	/**

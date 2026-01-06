@@ -29,10 +29,10 @@ class ItemNotabilityFilter {
 	private const MIN_SITELINKS = 2;
 
 	public function __construct(
-		private IReadableDatabase $dbr,
-		private EntityNamespaceLookup $entityNamespaceLookup,
-		private SiteLinkLookup $siteLinkLookup,
-		private string $siteGlobalId
+		private readonly IReadableDatabase $dbr,
+		private readonly EntityNamespaceLookup $entityNamespaceLookup,
+		private readonly SiteLinkLookup $siteLinkLookup,
+		private readonly string $siteGlobalId,
 	) {
 	}
 

@@ -13,34 +13,11 @@ use Wikimedia\Stats\StatsFactory;
  */
 class RepoApiInteractor {
 
-	/**
-	 * @var string
-	 */
-	private $repoApiUrl;
-
-	/**
-	 * @var StatsFactory
-	 */
-	private $statsFactory;
-
-	/**
-	 * @var HttpRequestFactory
-	 */
-	private $httpRequestFactory;
-
-	/**
-	 * @param string $repoApiUrl
-	 * @param StatsFactory $statsFactory
-	 * @param HttpRequestFactory $httpRequestFactory
-	 */
 	public function __construct(
-		$repoApiUrl,
-		StatsFactory $statsFactory,
-		HttpRequestFactory $httpRequestFactory
+		private readonly string $repoApiUrl,
+		private readonly StatsFactory $statsFactory,
+		private readonly HttpRequestFactory $httpRequestFactory,
 	) {
-		$this->repoApiUrl = $repoApiUrl;
-		$this->statsFactory = $statsFactory;
-		$this->httpRequestFactory = $httpRequestFactory;
 	}
 
 	/**
