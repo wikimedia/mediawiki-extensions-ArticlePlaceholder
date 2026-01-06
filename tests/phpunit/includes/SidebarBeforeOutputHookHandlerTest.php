@@ -180,7 +180,8 @@ class SidebarBeforeOutputHookHandlerTest extends MediaWikiIntegrationTestCase {
 		return new SidebarBeforeOutputHookHandler(
 			WikibaseClient::getEntityIdParser(),
 			WikibaseClient::getRepoLinker(),
-			WikibaseClient::getStore()->getEntityLookup()
+			WikibaseClient::getStore()->getEntityLookup(),
+			$this->getServiceContainer()->getSpecialPageFactory()
 		);
 	}
 

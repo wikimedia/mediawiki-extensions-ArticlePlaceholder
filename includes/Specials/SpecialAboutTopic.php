@@ -3,8 +3,12 @@
 namespace ArticlePlaceholder\Specials;
 
 use ArticlePlaceholder\AboutTopicRenderer;
+use MediaWiki\Config\Config;
 use MediaWiki\HTMLForm\HTMLForm;
+use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Permissions\PermissionManager;
+use MediaWiki\Site\SiteLookup;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\TitleFactory;
 use Wikibase\Client\WikibaseClient;
@@ -23,27 +27,33 @@ use Wikibase\Lib\Store\SiteLinkLookup;
  */
 class SpecialAboutTopic extends SpecialPage {
 
-	public static function newFromGlobalState(): self {
+	public static function newFromGlobalState(
+		Config $config,
+		LanguageNameUtils $languageNameUtils,
+		PermissionManager $permissionManager,
+		SiteLookup $siteLookup,
+		TitleFactory $titleFactory,
+	): self {
 		// TODO inject services
 		$mwServices = MediaWikiServices::getInstance();
-		$config = $mwServices->getMainConfig();
 		$settings = WikibaseClient::getSettings( $mwServices );
 		$store = WikibaseClient::getStore( $mwServices );
 
 		return new self(
 			new AboutTopicRenderer(
 				WikibaseClient::getFallbackLabelDescriptionLookupFactory( $mwServices ),
+				$languageNameUtils,
 				$store->getSiteLinkLookup(),
-				$mwServices->getSiteLookup(),
+				$siteLookup,
 				WikibaseClient::getLangLinkSiteGroup( $mwServices ),
-				$mwServices->getTitleFactory(),
+				$titleFactory,
 				WikibaseClient::getOtherProjectsSidebarGeneratorFactory( $mwServices ),
-				$mwServices->getPermissionManager(),
+				$permissionManager,
 				WikibaseClient::getRepoLinker( $mwServices )
 			),
 			WikibaseClient::getEntityIdParser( $mwServices ),
 			$store->getSiteLinkLookup(),
-			$mwServices->getTitleFactory(),
+			$titleFactory,
 			$settings->getSetting( 'siteGlobalID' ),
 			$store->getEntityLookup(),
 			$config->get( 'ArticlePlaceholderSearchEngineIndexed' )

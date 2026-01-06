@@ -4,7 +4,7 @@ namespace ArticlePlaceholder;
 
 use MediaWiki\Html\Html;
 use MediaWiki\Language\Language;
-use MediaWiki\MediaWikiServices;
+use MediaWiki\Language\LanguageNameUtils;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\Registration\ExtensionRegistry;
@@ -36,6 +36,7 @@ class AboutTopicRenderer {
 
 	public function __construct(
 		private readonly FallbackLabelDescriptionLookupFactory $termLookupFactory,
+		private readonly LanguageNameUtils $languageNameUtils,
 		private readonly SiteLinkLookup $siteLinkLookup,
 		private readonly SiteLookup $siteLookup,
 		private readonly string $langLinkSiteGroup,
@@ -206,8 +207,7 @@ class AboutTopicRenderer {
 				// TODO: We may want to filter with user languages
 				$languageNames[] = [
 					'data' => $languageCode,
-					'label' => MediaWikiServices::getInstance()->getLanguageNameUtils()
-						->getLanguageName( $languageCode ),
+					'label' => $this->languageNameUtils->getLanguageName( $languageCode ),
 				];
 				$pageNames[ $languageCode ] = $siteLink->getPageName();
 			}

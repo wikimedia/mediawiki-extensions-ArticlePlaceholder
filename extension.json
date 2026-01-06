@@ -14,7 +14,17 @@
 		}
 	},
 	"SpecialPages": {
-		"AboutTopic": "ArticlePlaceholder\\Specials\\SpecialAboutTopic::newFromGlobalState",
+		"AboutTopic": {
+			"class": "ArticlePlaceholder\\Specials\\SpecialAboutTopic",
+			"factory": "ArticlePlaceholder\\Specials\\SpecialAboutTopic::newFromGlobalState",
+			"services": [
+				"MainConfig",
+				"LanguageNameUtils",
+				"PermissionManager",
+				"SiteLookup",
+				"TitleFactory"
+			]
+		},
 		"CreateTopicPage": {
 			"class": "ArticlePlaceholder\\Specials\\SpecialCreateTopicPage",
 			"services": [
@@ -95,13 +105,19 @@
 	"HookHandlers": {
 		"sidebar": {
 			"class": "ArticlePlaceholder\\SidebarBeforeOutputHookHandler",
-			"factory": "ArticlePlaceholder\\SidebarBeforeOutputHookHandler::newFromGlobalState"
+			"factory": "ArticlePlaceholder\\SidebarBeforeOutputHookHandler::newFromGlobalState",
+			"services": [
+				"SpecialPageFactory"
+			]
 		},
 		"search": {
 			"class": "ArticlePlaceholder\\SearchHookHandler",
 			"factory": "ArticlePlaceholder\\SearchHookHandler::newFromGlobalState",
 			"services": [
-				"MainConfig"
+				"MainConfig",
+				"ConnectionProvider",
+				"HttpRequestFactory",
+				"StatsFactory"
 			]
 		},
 		"scribunto": {

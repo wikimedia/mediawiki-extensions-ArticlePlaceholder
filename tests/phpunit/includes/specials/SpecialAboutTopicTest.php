@@ -41,9 +41,16 @@ class SpecialAboutTopicTest extends MediaWikiIntegrationTestCase {
 		$siteGroup = $settings->getSetting( 'siteGroup' );
 		$settings->setSetting( 'siteGroup', 'wikipedia' );
 
+		$services = $this->getServiceContainer();
 		$this->assertInstanceOf(
 			SpecialAboutTopic::class,
-			SpecialAboutTopic::newFromGlobalState()
+			SpecialAboutTopic::newFromGlobalState(
+				$services->getMainConfig(),
+				$services->getLanguageNameUtils(),
+				$services->getPermissionManager(),
+				$services->getSiteLookup(),
+				$services->getTitleFactory()
+			)
 		);
 
 		$settings->setSetting( 'siteGroup', $siteGroup );

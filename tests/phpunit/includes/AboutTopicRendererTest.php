@@ -76,6 +76,7 @@ class AboutTopicRendererTest extends MediaWikiIntegrationTestCase {
 
 		$instance = new AboutTopicRenderer(
 			$this->getTermLookupFactory(),
+			$this->getServiceContainer()->getLanguageNameUtils(),
 			$this->getSiteLinkLookup(),
 			$this->getSiteLookup(),
 			'wikipedia',

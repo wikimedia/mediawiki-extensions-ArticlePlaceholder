@@ -4,6 +4,7 @@ namespace ArticlePlaceholder;
 
 use MediaWiki\Config\Config;
 use MediaWiki\Hook\SpecialSearchResultsAppendHook;
+use MediaWiki\Http\HttpRequestFactory;
 use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Output\OutputPage;
@@ -12,7 +13,9 @@ use Wikibase\Client\WikibaseClient;
 use Wikibase\Lib\Interactors\TermSearchInteractor;
 use Wikibase\Lib\Interactors\TermSearchResult;
 use Wikibase\Lib\TermIndexEntry;
+use Wikimedia\Rdbms\IConnectionProvider;
 use Wikimedia\Stats\Metrics\CounterMetric;
+use Wikimedia\Stats\StatsFactory;
 
 /**
  * Add results from ArticlePlaceholder to search
@@ -22,17 +25,20 @@ use Wikimedia\Stats\Metrics\CounterMetric;
  */
 class SearchHookHandler implements SpecialSearchResultsAppendHook {
 
-	public static function newFromGlobalState( Config $config ): self {
+	public static function newFromGlobalState(
+		Config $config,
+		IConnectionProvider $connectionProvider,
+		HttpRequestFactory $httpRequestFactory,
+		StatsFactory $statsFactory,
+	): self {
 		// TODO inject services into hook handler instance
 		$mwServices = MediaWikiServices::getInstance();
-		$connProvider = $mwServices->getConnectionProvider();
-		$statsFactory = $mwServices->getStatsFactory();
 
 		$repoDB = WikibaseClient::getItemAndPropertySource()->getDatabaseName();
 		$clientSettings = WikibaseClient::getSettings( $mwServices );
 
 		$itemNotabilityFilter = new ItemNotabilityFilter(
-			$connProvider->getReplicaDatabase( $repoDB ),
+			$connectionProvider->getReplicaDatabase( $repoDB ),
 			WikibaseClient::getEntityNamespaceLookup( $mwServices ),
 			WikibaseClient::getStore()->getSiteLinkLookup(),
 			$clientSettings->getSetting( 'siteGlobalID' )
@@ -42,7 +48,7 @@ class SearchHookHandler implements SpecialSearchResultsAppendHook {
 			new RepoApiInteractor(
 				$config->get( 'ArticlePlaceholderRepoApiUrl' ),
 				$statsFactory,
-				$mwServices->getHttpRequestFactory()
+				$httpRequestFactory
 			),
 			WikibaseClient::getEntityIdParser()
 		);

@@ -3,8 +3,8 @@
 namespace ArticlePlaceholder;
 
 use MediaWiki\Hook\SidebarBeforeOutputHook;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Skin\Skin;
+use MediaWiki\SpecialPage\SpecialPageFactory;
 use Wikibase\Client\RepoLinker;
 use Wikibase\Client\WikibaseClient;
 use Wikibase\DataModel\Entity\EntityIdParser;
@@ -20,11 +20,12 @@ use Wikibase\DataModel\Services\Lookup\EntityLookup;
  */
 class SidebarBeforeOutputHookHandler implements SidebarBeforeOutputHook {
 
-	public static function newFromGlobalState(): self {
+	public static function newFromGlobalState( SpecialPageFactory $specialPageFactory ): self {
 		return new self(
 			WikibaseClient::getEntityIdParser(),
 			WikibaseClient::getRepoLinker(),
-			WikibaseClient::getStore()->getEntityLookup()
+			WikibaseClient::getStore()->getEntityLookup(),
+			$specialPageFactory
 		);
 	}
 
@@ -32,6 +33,7 @@ class SidebarBeforeOutputHookHandler implements SidebarBeforeOutputHook {
 		private readonly EntityIdParser $entityIdParser,
 		private readonly RepoLinker $repoLinker,
 		private readonly EntityLookup $entityLookup,
+		private readonly SpecialPageFactory $specialPageFactory,
 	) {
 	}
 
@@ -85,10 +87,9 @@ class SidebarBeforeOutputHookHandler implements SidebarBeforeOutputHook {
 
 		$request = $skin->getRequest();
 
-		$factory = MediaWikiServices::getInstance()->getSpecialPageFactory();
 		$idSerialization = $request->getVal(
 			'entityid',
-			$factory->resolveAlias( $title->getText() )[1]
+			$this->specialPageFactory->resolveAlias( $title->getText() )[1]
 		);
 
 		if ( !$idSerialization ) {

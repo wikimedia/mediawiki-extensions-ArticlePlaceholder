@@ -129,11 +129,17 @@ class SearchHookHandlerTest extends MediaWikiIntegrationTestCase {
 			'ArticlePlaceholderRepoApiUrl' => '',
 			MainConfigNames::LanguageCode => 'en',
 		] );
-		$this->setService( 'ConnectionProvider', $this->createMock( IConnectionProvider::class ) );
+		$connectionProvider = $this->createMock( IConnectionProvider::class );
 
 		/** @var SearchHookHandler $handler */
 		$handler = TestingAccessWrapper::newFromClass( SearchHookHandler::class );
-		$instance = $handler->newFromGlobalState( $config );
+		$services = $this->getServiceContainer();
+		$instance = $handler->newFromGlobalState(
+			$config,
+			$connectionProvider,
+			$services->getHttpRequestFactory(),
+			$services->getStatsFactory()
+		);
 
 		$this->assertInstanceOf( SearchHookHandler::class, $instance );
 	}
