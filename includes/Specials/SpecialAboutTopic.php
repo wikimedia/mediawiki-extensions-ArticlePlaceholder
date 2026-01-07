@@ -69,7 +69,7 @@ class SpecialAboutTopic extends SpecialPage {
 		$this->showContent( $sub );
 	}
 
-	private function showContent( ?string $itemIdString ) {
+	private function showContent( ?string $itemIdString ): void {
 		$out = $this->getOutput();
 		$itemId = $this->getItemIdParam( $itemIdString );
 
@@ -150,11 +150,6 @@ class SpecialAboutTopic extends SpecialPage {
 			->displayForm( false );
 	}
 
-	/**
-	 * @param string|null $fallback
-	 *
-	 * @return ItemId|null
-	 */
 	private function getItemIdParam( ?string $fallback ): ?ItemId {
 		$rawId = trim( $this->getRequest()->getText( 'entityid', $fallback ?? '' ) );
 
@@ -176,12 +171,7 @@ class SpecialAboutTopic extends SpecialPage {
 		return null;
 	}
 
-	/**
-	 * @param ItemId $entityId
-	 *
-	 * @return string|null
-	 */
-	private function getArticleUrl( ItemId $entityId ) {
+	private function getArticleUrl( ItemId $entityId ): ?string {
 		$sitelinkTitles = $this->siteLinkLookup->getLinks(
 			[ $entityId->getNumericId() ],
 			[ $this->siteGlobalID ]
@@ -195,10 +185,7 @@ class SpecialAboutTopic extends SpecialPage {
 		return null;
 	}
 
-	/**
-	 * @return string
-	 */
-	protected function getRobotPolicy() {
+	protected function getRobotPolicy(): string {
 		$wikibaseItem = $this->getOutput()->getProperty( 'wikibase_item' );
 		if ( $wikibaseItem === null ) {
 			// No item id set: We're showing the form, not an actual placeholder.

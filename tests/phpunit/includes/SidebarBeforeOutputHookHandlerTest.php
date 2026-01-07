@@ -127,12 +127,7 @@ class SidebarBeforeOutputHookHandlerTest extends MediaWikiIntegrationTestCase {
 		$this->assertSame( $link, $result );
 	}
 
-	/**
-	 * @param string|null $subPage
-	 *
-	 * @return Title
-	 */
-	private function getAboutTopicTitle( $subPage = null ): Title {
+	private function getAboutTopicTitle( ?string $subPage = null ): Title {
 		$titleText = 'AboutTopic';
 
 		if ( $subPage ) {
@@ -151,12 +146,6 @@ class SidebarBeforeOutputHookHandlerTest extends MediaWikiIntegrationTestCase {
 		return $title;
 	}
 
-	/**
-	 * @param Title $title
-	 * @param string|null $itemIdParam
-	 *
-	 * @return Skin
-	 */
 	private function getSkin( Title $title, ?string $itemIdParam = null ): Skin {
 		$request = $this->createMock( WebRequest::class );
 		$request->method( 'getVal' )

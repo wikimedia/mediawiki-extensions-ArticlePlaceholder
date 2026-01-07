@@ -40,7 +40,7 @@ class ItemNotabilityFilter {
 	 * @param ItemId[] $itemIds
 	 * @return ItemId[]
 	 */
-	public function getNotableEntityIds( array $itemIds ) {
+	public function getNotableEntityIds( array $itemIds ): array {
 		if ( $itemIds === [] ) {
 			return [];
 		}
@@ -74,7 +74,7 @@ class ItemNotabilityFilter {
 	 * @param ItemId[] $itemIds
 	 * @return int[][] Map of page_title => propname => numeric value
 	 */
-	private function getPagePropsByItem( array $itemIds ) {
+	private function getPagePropsByItem( array $itemIds ): array {
 		$values = [];
 
 		$res = $this->selectPagePropsPage( $itemIds );
@@ -90,7 +90,7 @@ class ItemNotabilityFilter {
 	 * @param ItemId[] $itemIds
 	 * @return IResultWrapper
 	 */
-	private function selectPagePropsPage( array $itemIds ) {
+	private function selectPagePropsPage( array $itemIds ): IResultWrapper {
 		$entityNamespace = $this->entityNamespaceLookup->getEntityNamespace( 'item' );
 
 		if ( !is_int( $entityNamespace ) ) {
@@ -119,7 +119,7 @@ class ItemNotabilityFilter {
 	 * @param ItemId[] $itemIds expected to be indexed by numeric item ID
 	 * @return ItemId[]
 	 */
-	private function getItemsWithoutArticle( array $itemIds ) {
+	private function getItemsWithoutArticle( array $itemIds ): array {
 		$links = $this->siteLinkLookup->getLinks( array_keys( $itemIds ), [ $this->siteGlobalId ] );
 
 		foreach ( $links as [ , , $numericId ] ) {

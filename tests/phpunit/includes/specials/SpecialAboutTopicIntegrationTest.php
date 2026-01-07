@@ -31,20 +31,9 @@ use Wikibase\Lib\SettingsArray;
  */
 class SpecialAboutTopicIntegrationTest extends SpecialPageTestBase {
 
-	/**
-	 * @var SpecialPage
-	 */
-	private $page;
-
-	/**
-	 * @var MockClientStore
-	 */
-	private $store;
-
-	/**
-	 * @var InMemoryEntityLookup
-	 */
-	private $inMemoryLookup;
+	private SpecialPage $page;
+	private MockClientStore $store;
+	private InMemoryEntityLookup $inMemoryLookup;
 
 	protected function setUp(): void {
 		parent::setUp();

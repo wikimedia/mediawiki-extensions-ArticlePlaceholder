@@ -67,7 +67,7 @@ class SpecialCreateTopicPage extends UnlistedSpecialPage {
 	 * the currently tried title) already exists and that he should
 	 * choose another title.
 	 */
-	private function showAlreadyExistsMessage( Title $title ) {
+	private function showAlreadyExistsMessage( Title $title ): void {
 		$this->showTitleInputWithMessage(
 			$this->msg( 'articleplaceholder-createpage-alreadyexists', $title->getText() )
 		);
@@ -79,7 +79,7 @@ class SpecialCreateTopicPage extends UnlistedSpecialPage {
 	 *
 	 * @param string $invalid
 	 */
-	private function showNoOrInvalidTitleGivenMessage( $invalid = 'missing' ) {
+	private function showNoOrInvalidTitleGivenMessage( $invalid = 'missing' ): void {
 		$this->showTitleInputWithMessage(
 			$this->msg( $invalid === 'invalid' ?
 				'articleplaceholder-createpage-invalidtitleprovided' :
@@ -93,7 +93,7 @@ class SpecialCreateTopicPage extends UnlistedSpecialPage {
 	 * choose another title. The given message key is used as a
 	 * reason why he need to do this.
 	 */
-	private function showTitleInputWithMessage( Message $msg ) {
+	private function showTitleInputWithMessage( Message $msg ): void {
 		HTMLForm::factory(
 			'ooui',
 			[ 'titleinput' => [ 'type' => 'text' ] ],

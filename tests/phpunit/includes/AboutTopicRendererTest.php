@@ -42,16 +42,9 @@ class AboutTopicRendererTest extends MediaWikiIntegrationTestCase {
 		$this->insertPage( 'Template:AboutTopic', '(aboutTopic: {{{1}}})' );
 	}
 
-	/**
-	 * @param ItemId $itemId
-	 * @param bool $canCreate
-	 * @param TitleFactory|null $titleFactory
-	 *
-	 * @return OutputPage
-	 */
 	private function getInstanceOutput(
 		ItemId $itemId,
-		$canCreate = true,
+		bool $canCreate = true,
 		?TitleFactory $titleFactory = null
 	): OutputPage {
 		$context = new DerivativeContext( RequestContext::getMain() );

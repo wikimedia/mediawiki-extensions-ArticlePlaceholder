@@ -20,12 +20,7 @@ class RepoApiInteractor {
 	) {
 	}
 
-	/**
-	 * @param array $params
-	 *
-	 * @return array
-	 */
-	public function request( array $params ) {
+	public function request( array $params ): array {
 		$url = wfAppendQuery( $this->repoApiUrl, $params );
 		$req = $this->httpRequestFactory->create(
 			$url,

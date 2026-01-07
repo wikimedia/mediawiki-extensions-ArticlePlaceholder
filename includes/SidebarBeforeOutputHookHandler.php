@@ -20,10 +20,7 @@ use Wikibase\DataModel\Services\Lookup\EntityLookup;
  */
 class SidebarBeforeOutputHookHandler implements SidebarBeforeOutputHook {
 
-	/**
-	 * @return self
-	 */
-	public static function newFromGlobalState() {
+	public static function newFromGlobalState(): self {
 		return new self(
 			WikibaseClient::getEntityIdParser(),
 			WikibaseClient::getRepoLinker(),
@@ -79,11 +76,6 @@ class SidebarBeforeOutputHookHandler implements SidebarBeforeOutputHook {
 		];
 	}
 
-	/**
-	 * @param Skin $skin
-	 *
-	 * @return ItemId|null
-	 */
 	private function getItemId( Skin $skin ): ?ItemId {
 		$title = $skin->getTitle();
 

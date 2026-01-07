@@ -48,18 +48,13 @@ class AboutTopicRenderer {
 
 	/**
 	 * Show content of the ArticlePlaceholder
-	 *
-	 * @param ItemId $entityId
-	 * @param Language $language
-	 * @param User $user
-	 * @param OutputPage $output
 	 */
 	public function showPlaceholder(
 		ItemId $entityId,
 		Language $language,
 		User $user,
-		OutputPage $output
-	) {
+		OutputPage $output,
+	): void {
 		$termLookup = $this->termLookupFactory->newLabelDescriptionLookup(
 			$language,
 			[ $entityId ],
@@ -96,13 +91,13 @@ class AboutTopicRenderer {
 
 	/**
 	 * Adds the top message bar
-	 *
-	 * @param ItemId $entityId
-	 * @param string|null $label
-	 * @param OutputPage $output
-	 * @param bool $canEdit
 	 */
-	private function showTopMessage( ItemId $entityId, ?string $label, OutputPage $output, bool $canEdit ) {
+	private function showTopMessage(
+		ItemId $entityId,
+		?string $label,
+		OutputPage $output,
+		bool $canEdit,
+	): void {
 		$infoIcon = new OOUI\IconWidget( [
 			'icon' => 'infoFilled',
 			'title' => $output->msg( 'articleplaceholder-abouttopic-icon-title' )->text()
@@ -150,7 +145,11 @@ class AboutTopicRenderer {
 	 *
 	 * @return string HTML
 	 */
-	private function showCreateArticle( ItemId $itemId, $label, OutputPage $output ) {
+	private function showCreateArticle(
+		ItemId $itemId,
+		string $label,
+		OutputPage $output,
+	): string {
 		$siteLinks = $this->siteLinkLookup->getSiteLinksForItem( $itemId );
 
 		$output->enableOOUI();
@@ -178,21 +177,15 @@ class AboutTopicRenderer {
 
 	/**
 	 * Show label as page title
-	 *
-	 * @param string $label
-	 * @param OutputPage $output
 	 */
-	private function showTitle( $label, OutputPage $output ) {
+	private function showTitle( string $label, OutputPage $output ): void {
 		$output->setPageTitle( htmlspecialchars( $label ) );
 	}
 
 	/**
 	 * Set language links
-	 *
-	 * @param ItemId $entityId
-	 * @param OutputPage $output
 	 */
-	private function showLanguageLinks( ItemId $entityId, OutputPage $output ) {
+	private function showLanguageLinks( ItemId $entityId, OutputPage $output ): void {
 		$siteLinks = $this->siteLinkLookup->getSiteLinksForItem( $entityId );
 		$languageLinks = [];
 		$languageNames = [];
@@ -225,7 +218,7 @@ class AboutTopicRenderer {
 		$output->addJsConfigVars( 'apPageNames', $pageNames );
 	}
 
-	private function setOtherProjectsLinks( ItemId $itemId, OutputPage $output ) {
+	private function setOtherProjectsLinks( ItemId $itemId, OutputPage $output ): void {
 		$otherProjectsSidebarGenerator = $this->otherProjectsSidebarGeneratorFactory
 			->getOtherProjectsSidebarGenerator( new HashUsageAccumulator() );
 
@@ -233,11 +226,7 @@ class AboutTopicRenderer {
 		$output->setProperty( 'wikibase-otherprojects-sidebar', $otherProjects );
 	}
 
-	/**
-	 * @param OutputPage $output
-	 * @param Term|null $description
-	 */
-	private function addMetaTags( OutputPage $output, ?Term $description ) {
+	private function addMetaTags( OutputPage $output, ?Term $description ): void {
 		if ( $description !== null ) {
 			$output->addMeta( 'description', trim( $description->getText() ) );
 		}
