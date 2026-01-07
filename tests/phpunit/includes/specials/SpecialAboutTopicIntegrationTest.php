@@ -10,7 +10,7 @@ use MediaWiki\Site\HashSiteStore;
 use MediaWiki\Site\Site;
 use MediaWiki\Site\SiteLookup;
 use MediaWiki\SpecialPage\SpecialPage;
-use SpecialPageTestBase;
+use MediaWiki\Tests\Specials\SpecialPageTestBase;
 use Wikibase\Client\Hooks\OtherProjectsSidebarGeneratorFactory;
 use Wikibase\Client\Tests\Mocks\MockClientStore;
 use Wikibase\Client\WikibaseClient;
