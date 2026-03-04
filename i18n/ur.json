@@ -27,5 +27,6 @@
 	"articleplaceholder-createpage-title": "تخلیق $1",
 	"articleplaceholder-createpage-alreadyexists": "$1 کے عنوان سے ایک صفحہ پہلے سے موجود ہے۔ براہ کرم کوئی دوسرا عنوان درج کریں۔",
 	"articleplaceholder-createpage-notitleprovided": "عنوان درج نہیں کیا گیا ہے، براہ کرم جس صفحہ کو آپ بنانا چاہ رہے ہیں اس کا عنوان درج کریں۔",
-	"articleplaceholder-createpage-invalidtitleprovided": "آپ کا درج کردہ عنوان درست نہیں ہے، براہ کرم درست عنوان درج کریں۔"
+	"articleplaceholder-createpage-invalidtitleprovided": "آپ کا درج کردہ عنوان درست نہیں ہے، براہ کرم درست عنوان درج کریں۔",
+	"articleplaceholder-abouttopic-icon-title": "معلومات"
 }
