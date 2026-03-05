@@ -11,7 +11,7 @@
 	"articleplaceholder-abouttopic": "O tématu",
 	"articleplaceholder-abouttopic-intro": "Tato speciální stránka vám poskytne rychlý přehled tématu na základě dat z {{grammar:2sg|{{WBREPONAME}}}}.",
 	"articleplaceholder-abouttopic-entityid": "Zadejte ID položky, např. Q12345",
-	"articleplaceholder-abouttopic-submit": "sestavit",
+	"articleplaceholder-abouttopic-submit": "Sestavit",
 	"articleplaceholder-abouttopic-no-entity-error": "Toto není platné ID položky.",
 	"articleplaceholder-abouttopic-create-article-title": "Vytvořte nový článek",
 	"articleplaceholder-abouttopic-create-article-label": "Název článku",

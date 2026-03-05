@@ -13,7 +13,7 @@
 	"articleplaceholder-abouttopic": "Pri la temo",
 	"articleplaceholder-abouttopic-intro": "Ĉi tiu speciala paĝo prezentas al vi rapidan superrigardon de temo bazita sur datumoj de {{WBREPONAME}}.",
 	"articleplaceholder-abouttopic-entityid": "Entajpu eran identigilon, ekzemple Q12345",
-	"articleplaceholder-abouttopic-submit": "krei",
+	"articleplaceholder-abouttopic-submit": "Krei",
 	"articleplaceholder-abouttopic-no-entity-error": "Tio ĉi ne estas ĝusta identigilo.",
 	"articleplaceholder-abouttopic-create-article-title": "Krei novan artikolon",
 	"articleplaceholder-abouttopic-create-article-label": "Titolo de la artikolo",
@@ -31,5 +31,7 @@
 	"articleplaceholder-createpage-title": "Krei la paĝon $1",
 	"articleplaceholder-createpage-alreadyexists": "La paĝo kun la titolo $1 jam ekzistas. Bonvolu elekti alian titolon.",
 	"articleplaceholder-createpage-notitleprovided": "Neniu titolo estis enigita, bonvolu enigi titolon por la paĝo, kiun vi volas krei.",
-	"articleplaceholder-createpage-invalidtitleprovided": "La titolo, kiun vi provizis estas nevalida. Bonvolu provizi validan titolon."
+	"articleplaceholder-createpage-invalidtitleprovided": "La titolo, kiun vi provizis estas nevalida. Bonvolu provizi validan titolon.",
+	"articleplaceholder-abouttopic-topmessage-text": "Ĉi tiu estas aŭtomata vido bazita sur [$1 datumoj de {{WBREPONAME}}].<br />Ankoraŭ kompleta artikolo ne ekzistas, sed vi povas helpi krei ĝin.",
+	"articleplaceholder-abouttopic-icon-title": "Informo"
 }
