@@ -108,7 +108,7 @@ class AboutTopicRenderer {
 
 		$leftDIV = Html::rawElement( 'div',
 			[ 'class' => 'mw-articleplaceholder-topmessage-container-left' ],
-			$infoIcon
+			(string)$infoIcon
 		);
 
 		$buttonCode = '';
@@ -173,7 +173,7 @@ class AboutTopicRenderer {
 			$output->addJsConfigVars( 'apContentTranslation', true );
 		}
 
-		return $contents;
+		return (string)$contents;
 	}
 
 	/**
