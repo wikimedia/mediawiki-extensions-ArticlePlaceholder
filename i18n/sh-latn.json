@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Winston Sung"
+			"Winston Sung",
+			"Aca"
 		]
 	},
 	"createtopicpage": "Napravi stranicu",
@@ -10,7 +11,7 @@
 	"articleplaceholder-abouttopic-intro": "Ova posebna stranica daje vam kratki pregled teme na temelju podataka {{WBREPONAME}}.",
 	"articleplaceholder-abouttopic-entityid": "Unesite naznaku predmetota, kao npr. Q12345",
 	"articleplaceholder-abouttopic-submit": "Izraboti",
-	"articleplaceholder-abouttopic-no-entity-error": "Ovo nije važeća naznaka predmetota.",
+	"articleplaceholder-abouttopic-no-entity-error": "Ovo nije ispravan ID stavke.",
 	"articleplaceholder-abouttopic-create-article-title": "Napravite novi članak",
 	"articleplaceholder-abouttopic-create-article-label": "Naslov članka",
 	"articleplaceholder-abouttopic-create-article-mandatory": "Naslov članka je obavezan.",
@@ -25,9 +26,9 @@
 	"articleplaceholder-abouttopic-lua-identifier": "Vanjski resursi",
 	"articleplaceholder-search-header": "Otkrijte podatke o temi",
 	"articleplaceholder-createpage-title": "Napravi $1",
-	"articleplaceholder-createpage-alreadyexists": "Stranica s naslovom $1 već postoji. Odaberite drugu.",
+	"articleplaceholder-createpage-alreadyexists": "Stranica s naslovom $1 već postoji. Izaberite drugu.",
 	"articleplaceholder-createpage-notitleprovided": "Niste unesli naslov. Unesite naslov za stranicu što želite da napravite.",
-	"articleplaceholder-createpage-invalidtitleprovided": "Uneseni naslov je nevažeći. Unesite važeći naslov.",
+	"articleplaceholder-createpage-invalidtitleprovided": "Uneseni naslov nije ispravan. Unesite ispravan naslov.",
 	"articleplaceholder-abouttopic-topmessage-text": "Ovo je automatski prikaz temeljen na [$1 podacima od {{WBREPONAME}}].<br />Još ne postoji potpuni članak, ali možete pomoći u njegovom stvaranju.",
 	"articleplaceholder-abouttopic-icon-title": "Informacije"
 }
