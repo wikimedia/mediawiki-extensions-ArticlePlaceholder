@@ -9,7 +9,7 @@
 	"articleplaceholder-desc": "Daje posebnu stranicu s informacijama {{WBREPONAME}} o izvjesnoj temi i pozivnicu za stvaranje članka o toj temi",
 	"articleplaceholder-abouttopic": "O temi",
 	"articleplaceholder-abouttopic-intro": "Ova posebna stranica daje vam kratki pregled teme na temelju podataka {{WBREPONAME}}.",
-	"articleplaceholder-abouttopic-entityid": "Unesite naznaku predmetota, kao npr. Q12345",
+	"articleplaceholder-abouttopic-entityid": "Unesite ID stavke, npr. Q12345",
 	"articleplaceholder-abouttopic-submit": "Izraboti",
 	"articleplaceholder-abouttopic-no-entity-error": "Ovo nije ispravan ID stavke.",
 	"articleplaceholder-abouttopic-create-article-title": "Napravite novi članak",
