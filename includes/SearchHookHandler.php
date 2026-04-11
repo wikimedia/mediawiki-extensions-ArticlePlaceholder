@@ -136,6 +136,7 @@ class SearchHookHandler implements SpecialSearchResultsAppendHook {
 	/**
 	 * Render search results, filtered for notability.
 	 *
+	 * @param TermSearchResult[] $termSearchResults
 	 * @return string Wikitext
 	 */
 	private function renderTermSearchResults( array $termSearchResults ): string {
