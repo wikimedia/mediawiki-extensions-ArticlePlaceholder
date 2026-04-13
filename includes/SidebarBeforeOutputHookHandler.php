@@ -2,7 +2,7 @@
 
 namespace ArticlePlaceholder;
 
-use MediaWiki\Hook\SidebarBeforeOutputHook;
+use MediaWiki\Skin\Hook\SidebarBeforeOutputHook;
 use MediaWiki\Skin\Skin;
 use MediaWiki\SpecialPage\SpecialPageFactory;
 use Wikibase\Client\RepoLinker;

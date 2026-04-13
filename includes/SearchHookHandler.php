@@ -3,11 +3,11 @@
 namespace ArticlePlaceholder;
 
 use MediaWiki\Config\Config;
-use MediaWiki\Hook\SpecialSearchResultsAppendHook;
 use MediaWiki\Http\HttpRequestFactory;
 use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Output\OutputPage;
+use MediaWiki\Specials\Hook\SpecialSearchResultsAppendHook;
 use MediaWiki\Specials\SpecialSearch;
 use Wikibase\Client\WikibaseClient;
 use Wikibase\Lib\Interactors\TermSearchInteractor;

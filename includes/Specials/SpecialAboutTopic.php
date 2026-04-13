@@ -5,7 +5,7 @@ namespace ArticlePlaceholder\Specials;
 use ArticlePlaceholder\AboutTopicRenderer;
 use MediaWiki\Config\Config;
 use MediaWiki\HTMLForm\HTMLForm;
-use MediaWiki\Languages\LanguageNameUtils;
+use MediaWiki\Language\LanguageNameUtils;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\Site\SiteLookup;
