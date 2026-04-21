@@ -161,7 +161,7 @@ class AboutTopicRenderer {
 			'id' => 'new-article-button',
 			'flags' => [ 'primary', 'progressive' ],
 			'infusable' => true,
-			'label' => wfMessage( 'articleplaceholder-abouttopic-create-article-button' )->text(),
+			'label' => $output->msg( 'articleplaceholder-abouttopic-create-article-button' )->text(),
 			'href' => SpecialPage::getTitleFor( 'CreateTopicPage', $label )
 				->getLocalURL( [ 'ref' => 'button' ] ),
 			'target' => 'blank'
