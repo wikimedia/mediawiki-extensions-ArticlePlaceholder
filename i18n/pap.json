@@ -1,0 +1,27 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kallmemel"
+		]
+	},
+	"createtopicpage": "Krea página",
+	"articleplaceholder-abouttopic": "Tokante tópiko",
+	"articleplaceholder-abouttopic-intro": "E página spesial aki ta proveé un bista rápido tokante un tópiko basá riba dato for di {{WBREPONAME}}.",
+	"articleplaceholder-abouttopic-entityid": "Introdusí un item-ID, p.e. Q12345",
+	"articleplaceholder-abouttopic-create-article-title": "Krea un artíkulo nobo",
+	"articleplaceholder-abouttopic-create-article-label": "Título di artíkulo",
+	"articleplaceholder-abouttopic-create-article-mandatory": "E título di artíkulo ta obligatorio.",
+	"articleplaceholder-abouttopic-create-article-button": "Krea un artíkulo nobo",
+	"articleplaceholder-abouttopic-create-empty-article-button": "Kuminsá un artíkulo nobo",
+	"articleplaceholder-abouttopic-translate-article-label": "Idioma di origen:",
+	"articleplaceholder-abouttopic-translate-article-button": "Tradusí artíkulo",
+	"articleplaceholder-abouttopic-article-exists-error": "Un artíkulo ku e nòmber aki ya ta eksistí",
+	"articleplaceholder-abouttopic-lua-reference": "Referensia",
+	"articleplaceholder-abouttopic-lua-identifier": "Rekurso eksterno",
+	"articleplaceholder-search-header": "Deskubrí dato ofer di e tópiko",
+	"articleplaceholder-createpage-title": "Krea $1",
+	"articleplaceholder-createpage-notitleprovided": "No a introdusí un título. Introdusí un título pa e página ku bo ke krea.",
+	"articleplaceholder-createpage-invalidtitleprovided": "E título ku bo a introdusí ta inbálido. Proveé un título bálido.",
+	"articleplaceholder-abouttopic-topmessage-text": "Esaki ta un bista outomátiko basá riba [$1 dato for di {{WBREPONAME}}].<br /> No tin un artíkulo kompleto ainda, pero bo por yuda krea unu.",
+	"articleplaceholder-abouttopic-icon-title": "Informashon"
+}
