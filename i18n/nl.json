@@ -3,7 +3,8 @@
 		"authors": [
 			"Mainframe98",
 			"McDutchie",
-			"Ooswesthoesbes"
+			"Ooswesthoesbes",
+			"Siebrand"
 		]
 	},
 	"createtopicpage": "Pagina aanmaken",
@@ -13,10 +14,10 @@
 	"articleplaceholder-abouttopic-entityid": "Voer een item-ID in, bv. Q12345",
 	"articleplaceholder-abouttopic-submit": "Aanmaken",
 	"articleplaceholder-abouttopic-no-entity-error": "Dit is geen geldig item-ID.",
-	"articleplaceholder-abouttopic-create-article-title": "Maak een nieuw artikel aan",
+	"articleplaceholder-abouttopic-create-article-title": "Nieuwe pagina aanmaken",
 	"articleplaceholder-abouttopic-create-article-label": "Paginanaam",
 	"articleplaceholder-abouttopic-create-article-mandatory": "De titel van het artikel is verplicht.",
-	"articleplaceholder-abouttopic-create-article-button": "Maak een artikel aan",
+	"articleplaceholder-abouttopic-create-article-button": "Pagina aanmaken",
 	"articleplaceholder-abouttopic-create-empty-article-button": "Begin een nieuw artikel",
 	"articleplaceholder-abouttopic-translate-article-label": "Brontaal:",
 	"articleplaceholder-abouttopic-translate-article-button": "Vertaal artikel",
