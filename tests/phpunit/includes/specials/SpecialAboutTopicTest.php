@@ -82,7 +82,7 @@ class SpecialAboutTopicTest extends MediaWikiIntegrationTestCase {
 	public function testRedirect() {
 		$redirect = $this->getInstanceOutput( 'Q1234' )->getRedirect();
 
-		$this->assertSame( Title::newFromText( 'Beer' )->getLinkURL(), $redirect );
+		$this->assertSame( Title::makeTitle( NS_MAIN, 'Beer' )->getLinkURL(), $redirect );
 	}
 
 	/**
