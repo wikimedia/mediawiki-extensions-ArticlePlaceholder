@@ -4,5 +4,30 @@
 			"AhmedG612"
 		]
 	},
-	"articleplaceholder-createpage-title": "Abuur $1"
+	"createtopicpage": "Samee bog",
+	"articleplaceholder-desc": "Waxay bixisaa bog gaar ah oo leh macluumaad ku saabsan {{WBREPONAME}} oo ku saabsan mawduuc gaar ah, iyadoo lagu dhiirigelinayo in maqaal laga sameeyo mawduucaas",
+	"articleplaceholder-abouttopic": "Ku saabsan mowduuca",
+	"articleplaceholder-abouttopic-intro": "Boggan gaarka ah wuxuu ku siinayaa dulmar degdeg ah oo ku saabsan mawduuc, isagoo ku saleysan xog ka timid {{WBREPONAME}}.",
+	"articleplaceholder-abouttopic-entityid": "Fadlan geli aqoonsiga shay sida Q12345",
+	"articleplaceholder-abouttopic-submit": "Farshaxan",
+	"articleplaceholder-abouttopic-no-entity-error": "Tani ma aha aqoonsi shay sax ah.",
+	"articleplaceholder-abouttopic-create-article-title": "Samee maqaal cusub",
+	"articleplaceholder-abouttopic-create-article-label": "Cinwaanka maqaalka",
+	"articleplaceholder-abouttopic-create-article-mandatory": "Cinwaanka maqaalka waa qasab.",
+	"articleplaceholder-abouttopic-create-article-button": "Samee maqaal",
+	"articleplaceholder-abouttopic-create-empty-article-button": "Bilow maqaal cusub",
+	"articleplaceholder-abouttopic-translate-article-label": "Luqadda isha:",
+	"articleplaceholder-abouttopic-translate-article-button": "Turjun maqaal",
+	"articleplaceholder-abouttopic-create-article-submit-button": "Gudbi",
+	"articleplaceholder-abouttopic-article-exists-error": "Maqaal magacan wata hore ayuu u jiray",
+	"articleplaceholder-abouttopic-lua-entity": "Shay",
+	"articleplaceholder-abouttopic-lua-reference": "Tixraac",
+	"articleplaceholder-abouttopic-lua-identifier": "Ilaha dibadda",
+	"articleplaceholder-search-header": "Soo hel xog ku saabsan mawduuca",
+	"articleplaceholder-createpage-title": "Abuur $1",
+	"articleplaceholder-createpage-alreadyexists": "Bogga leh cinwaanka $1 hore ayuu u jiraa. Fadlan dooro mid kale.",
+	"articleplaceholder-createpage-notitleprovided": "Cinwaan lama gelin. Fadlan geli cinwaan bogga aad rabto inaad abuurto.",
+	"articleplaceholder-createpage-invalidtitleprovided": "Cinwaanka aad gelisay waa khalad. Fadlan geli cinwaan sax ah.",
+	"articleplaceholder-abouttopic-topmessage-text": "Tani waa aragti toos ah oo ku saleysan [$1 xog ka timid {{WBREPONAME}}].<br />\nMaqaal dhammaystiran weli ma jiro, laakiin waad ka caawin kartaa abuuristiisa.",
+	"articleplaceholder-abouttopic-icon-title": "Macluumaad"
 }
