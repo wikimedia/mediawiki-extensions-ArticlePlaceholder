@@ -34,7 +34,6 @@ class SpecialCreateTopicPage extends UnlistedSpecialPage {
 		$this->setHeaders();
 		if ( $this->getRequest()->getRawVal( 'ref' ) === 'button' ) {
 			$this->statsFactory->getCounter( 'ArticlePlaceholder_button_createArticle_total' )
-				->copyToStatsdAt( 'wikibase.articleplaceholder.button.createArticle' )
 				->increment();
 		}
 		$page = $this->getRequest()->getVal( 'wptitleinput', $par );

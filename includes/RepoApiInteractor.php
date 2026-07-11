@@ -34,7 +34,6 @@ class RepoApiInteractor {
 		$status = $req->execute();
 		if ( !$status->isOK() ) {
 			$metric->setLabel( 'status', 'errored' )
-				->copyToStatsdAt( 'articleplaceholder.apitermsearch.errored' )
 				->increment();
 			return [];
 		}
@@ -43,13 +42,11 @@ class RepoApiInteractor {
 		$data = FormatJson::decode( $json, true );
 		if ( !$data || !empty( $data['error'] ) ) {
 			$metric->setLabel( 'status', 'invalid' )
-				->copyToStatsdAt( 'articleplaceholder.apitermsearch.invalid' )
 				->increment();
 			return [];
 		}
 
 		$metric->setLabel( 'status', 'ok' )
-			->copyToStatsdAt( 'articleplaceholder.apitermsearch.ok' )
 			->increment();
 		return $data;
 	}

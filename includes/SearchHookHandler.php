@@ -108,7 +108,6 @@ class SearchHookHandler implements SpecialSearchResultsAppendHook {
 
 				$this->searchesMetric
 					->setLabel( 'results', 'yes' )
-					->copyToStatsdAt( 'wikibase.articleplaceholder.search.has_results' )
 					->increment();
 
 				return;
@@ -116,7 +115,6 @@ class SearchHookHandler implements SpecialSearchResultsAppendHook {
 		}
 		$this->searchesMetric
 			->setLabel( 'results', 'no' )
-			->copyToStatsdAt( 'wikibase.articleplaceholder.search.no_results' )
 			->increment();
 	}
 
