@@ -1,16 +1,33 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ahmed-Najib-Biabani-Ibrahimkhel"
+			"Ahmed-Najib-Biabani-Ibrahimkhel",
+			"شاه زمان پټان"
 		]
 	},
 	"createtopicpage": "مخ جوړول",
-	"articleplaceholder-abouttopic": "د موضوع په اړه",
+	"articleplaceholder-desc": "د يوې ځانگړې سکالو په اړه د {{WBREPONAME}} مالوماتو او د سکالو لپاره د ليکنې جوړولو بلنې سره يو ځانگړی مخ چمتو کوي",
+	"articleplaceholder-abouttopic": "د سکالو په اړه",
+	"articleplaceholder-abouttopic-intro": "دا ځانگړی مخ تاسو ته د {{WBREPONAME}} د مالوماتو پربنسټ د يوې سکالو چټکه ټول‌کتنه درکوي.",
+	"articleplaceholder-abouttopic-entityid": "مهرباني وکړئ د Q12345 په څېر يو توک پېژند ورکړئ",
+	"articleplaceholder-abouttopic-submit": "لاسي‌کار",
+	"articleplaceholder-abouttopic-no-entity-error": "دا يو باوري توک پېژند نه دی.",
+	"articleplaceholder-abouttopic-create-article-title": "يوه نوې ليکنه جوړول",
 	"articleplaceholder-abouttopic-create-article-label": "د ليکنې سرليک",
+	"articleplaceholder-abouttopic-create-article-mandatory": "د ليکنې سرليک لازمي دی.",
 	"articleplaceholder-abouttopic-create-article-button": "يوه ليکنه ليکل",
+	"articleplaceholder-abouttopic-create-empty-article-button": "نوې ليکنه پيلول",
+	"articleplaceholder-abouttopic-translate-article-label": "سرچينيزه ژبه:",
+	"articleplaceholder-abouttopic-translate-article-button": "ليکنه ژباړل",
 	"articleplaceholder-abouttopic-create-article-submit-button": "سپارل",
 	"articleplaceholder-abouttopic-article-exists-error": "په دې نوم يوه ليکنه له پخوا څخه شته.",
+	"articleplaceholder-abouttopic-lua-entity": "شتونتيا",
 	"articleplaceholder-abouttopic-lua-reference": "سرچينه",
 	"articleplaceholder-abouttopic-lua-identifier": "باندنۍ سرچينې",
-	"articleplaceholder-createpage-title": "$1 جوړول"
+	"articleplaceholder-search-header": "د سکالو په اړه اومتوکي موندل",
+	"articleplaceholder-createpage-title": "$1 جوړول",
+	"articleplaceholder-createpage-alreadyexists": "$1 سرليک لاندې يو مخ لادمخه شتون لري. مهرباني وکړئ بل خوښ کړئ.",
+	"articleplaceholder-createpage-invalidtitleprovided": "هغه سرليک چې تاسو ورکړی ناسم دی. مهرباني وکړئ يو باوري سرليک ورکړئ.",
+	"articleplaceholder-abouttopic-topmessage-text": "دا د [$1 اومتوکو پربنسټ د {{WBREPONAME}} څخه اخيستل شوې يوه خپلکاره کتنه ده].<br />تراوسه بشپړه ليکنه نشته؛ خو تاسو کولی شئ د يوې په جوړولو کې مرسته وکړئ.",
+	"articleplaceholder-abouttopic-icon-title": "مالومات"
 }
