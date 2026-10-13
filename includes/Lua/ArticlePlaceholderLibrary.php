@@ -54,8 +54,8 @@ class ArticlePlaceholderLibrary extends LibraryBase {
 		// They are member functions on a Lua table which is private to the module, thus
 		// these can't be called from user code, unless explicitly exposed in Lua.
 		$lib = [
-			'getImageProperty' => [ $this, 'getImageProperty' ],
-			'getReferencePropertyToHide' => [ $this, 'getReferencePropertyToHide' ],
+			'getImageProperty' => $this->getImageProperty( ... ),
+			'getReferencePropertyToHide' => $this->getReferencePropertyToHide( ... ),
 		];
 
 		return $this->getEngine()->registerInterface(
