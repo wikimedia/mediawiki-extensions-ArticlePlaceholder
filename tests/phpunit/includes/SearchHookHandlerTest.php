@@ -167,7 +167,8 @@ class SearchHookHandlerTest extends MediaWikiIntegrationTestCase {
 		$output = new OutputPage( new RequestContext() );
 		$output->setTitle( Title::makeTitle( -1, 'Search' ) );
 
-		$counter = StatsFactory::newNull()->getCounter( 'ArticlePlaceholder_search_total' );
+		$counter = StatsFactory::newUnitTestingHelper()->getStatsFactory()
+			->getCounter( 'ArticlePlaceholder_search_total' );
 		$searchHookHandler = $this->newSearchHookHandler( $counter, $doNotReturnTerms );
 		$searchHookHandler->addToSearch( $output, $term );
 		$html = $output->getHTML();
@@ -183,7 +184,8 @@ class SearchHookHandlerTest extends MediaWikiIntegrationTestCase {
 		$output = new OutputPage( new RequestContext() );
 		$output->setTitle( Title::makeTitle( -1, 'Search' ) );
 
-		$counter = StatsFactory::newNull()->getCounter( 'ArticlePlaceholder_search_total' );
+		$counter = StatsFactory::newUnitTestingHelper()->getStatsFactory()
+			->getCounter( 'ArticlePlaceholder_search_total' );
 		$searchHookHandler = $this->newSearchHookHandler( $counter, false );
 		$searchHookHandler->addToSearch( $output, 'blah blah blah' );
 		$html = $output->getHTML();
